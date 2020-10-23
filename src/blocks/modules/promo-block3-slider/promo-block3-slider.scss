@@ -1,0 +1,48 @@
+.b-promo-block3-slider {
+  padding-bottom: 30px;
+
+  ul {
+    list-style: none;
+  }
+
+  .b-promo-block3-slider__slide {
+    margin: 0;
+  }
+
+  .slick-dots {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    left: 0;
+    margin: 0;
+    text-align: center;
+
+    > li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0;
+      margin-right: .25em;
+    }
+
+    button {
+      @include opacity(.2);
+      width: 10px;
+      height: 10px;
+      border: none;
+      font-size: 0;
+      border-radius: 0;
+      vertical-align: top;
+      background-color: #000;
+
+      &:hover {
+        @include opacity(.7);
+      }
+    }
+
+    .slick-active button {
+      @include opacity(.5);
+      cursor: default;
+    }
+  }
+}

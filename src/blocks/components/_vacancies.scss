@@ -1,0 +1,111 @@
+/* Вакансии */
+.c-vacancies {
+  &__header {
+    @include clearfix;
+    padding-left: 40px;
+    padding-right: 326px;
+    padding-bottom: 20px;
+  }
+
+  &__caption {
+    margin-bottom: 0;
+  }
+
+  &__send-holder {
+    float: right;
+  }
+
+  &__send {
+    font-size: 14px;
+  }
+
+  &__caption {
+    float: left;
+    padding-top: 2px;
+  }
+
+  &__main-holder {
+    @include clearfix;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 6px;
+    padding-bottom: 54px;
+    background-color: #f8f8f8;
+  }
+
+  &__wrap {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__steps {
+    display: table-cell;
+    vertical-align: top;
+    width: 280px;
+  }
+
+  &__list {
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 6px;
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media #{$media-tablet} {
+  .c-vacancies {
+    &__header {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__steps {
+      @include margin(6/20);
+      display: block;
+      width: auto;
+    }
+
+    &__list {
+      display: block;
+      padding-right: 0;
+    }
+
+    &__main-holder {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}
+
+@media #{$media-phone-landscape} {
+  .c-vacancies {
+    &__caption {
+      float: none;
+    }
+
+    &__send-holder {
+      @include margin(10/20);
+      float: none;
+      text-align: center;
+    }
+
+    &__header {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__main-holder {
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+@media #{$media-phone} {
+}

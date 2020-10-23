@@ -1,0 +1,37 @@
+extends ../layout/page-template
+
+block head
+	title Корзина
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block breadcrumbs
+
+block caption
+
+block inner-content
+	section.c-checkout
+		.c-checkout__header
+			.c-checkout__caption
+				.h1 Корзина
+
+			.c-checkout__add-holder
+				a.c-checkout__add.button.js-modal(href="#add-modal") Добавить товар по&nbsp;артикулу
+				.c-checkout__add-modal
+					+add-product()(id="add-modal")
+
+		.c-checkout__main-holder
+			.c-checkout__cart-items
+				+cart()
+
+			.c-checkout__cart-accessories
+				.c-checkout__sub-caption Добавьте аксессуары к&nbsp;заказу
+				+accessories-slider()
+
+			.c-checkout__cols.js-equalizer
+				.c-checkout__discount
+					+discount-plate()
+
+				.c-checkout__total-cart
+					+total_cart()

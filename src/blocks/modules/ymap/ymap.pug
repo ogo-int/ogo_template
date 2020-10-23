@@ -1,0 +1,19 @@
+mixin ymap()
+	.b-ymap.iblock&attributes(attributes)
+		.b-ymap__map(data-center="55.754973,37.690534")
+		ul.b-ymap__points
+			li.b-ymap__point(data-coords="55.754973,37.690534" data-link="ajax/shop-detail.html")
+				.b-ymap__point-address Золоторожский Вал,<br/>д. 4, стр. 2
+				.b-ymap__point-phone <nobr>+7 495 229-56-53</nobr>
+				.b-ymap__point-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+				.b-ymap__point-type Точка выдачи ОГО!
+
+mixin ymap_card()
+	.b-ymap.iblock&attributes(attributes)
+		.b-ymap__map(data-center="55.754973,37.690534")
+		ul.b-ymap__points
+			li.b-ymap__point(data-coords="55.754973,37.690534" data-no-detail)
+				.b-ymap__point-address Золоторожский Вал,<br/>д. 4, стр. 2
+				.b-ymap__point-phone <nobr>+7 495 229-56-53</nobr>
+				.b-ymap__point-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+				.b-ymap__point-type Точка выдачи ОГО!

@@ -1,0 +1,23 @@
+extends ../layout/page-template
+
+block head
+  title Вход
+
+block scripts
+
+block breadcrumbs
+
+block stylesheets
+
+block caption
+
+block inner-content
+  section.c-login
+    .c-login__header
+      .h1.c-login__caption Вход
+
+    .content-center
+      .content-area
+        +simple-form_auth()
+        +socials-login()
+        a.c-login__register-button.button-gray.button(href="register.html") Регистрация

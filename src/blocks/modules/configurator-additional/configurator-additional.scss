@@ -1,0 +1,132 @@
+.b-configurator-additional {
+  min-width: 250px;
+  background-color: #fff;
+
+  &__caption {
+    padding: 15px;
+    font-size: 24/16*100%;
+    line-height: (28/24);
+    font-weight: 200;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__holder {
+    padding: 15px;
+  }
+
+  &__items {
+    @include clearfix;
+    list-style: none;
+    margin: 0;
+    margin-top: -10px;
+
+    &:first-child {
+      margin-top: -10px;
+    }
+  }
+
+  &__item {
+    @include box-sizing;
+    float: left;
+    width: 1/3*100%;
+    padding-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    &:nth-child(3n+1) {
+      clear: left;
+    }
+
+    &._clear {
+      clear: left;
+    }
+  }
+
+  &__holder {
+    overflow: hidden;
+  }
+
+  &__label {
+    font-size: 14/16*100%;
+  }
+}
+
+@mixin mx630($mod: "") {
+  .b-configurator-additional#{$mod} {
+    .b-configurator-additional {
+      &__item {
+        width: 1/2*100%;
+
+        &:nth-child(3n+1) {
+          clear: none;
+        }
+
+        &:nth-child(2n+1) {
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx420($mod: "") {
+  .b-configurator-additional#{$mod} {
+    .b-configurator-additional {
+      &__item {
+        float: none;
+        width: auto;
+        padding-right: 0;
+        max-width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &__label {
+        @include box-sizing;
+        width: 100%;
+        text-align: center;
+      }
+
+      &__caption {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@mixin mn1000($mod: "") {
+  .b-configurator-additional#{$mod} {
+    .b-configurator-additional {
+      &__item {
+        width: 1/4*100%;
+
+        &:nth-child(3n+1) {
+          clear: none;
+        }
+
+        &:nth-child(4n+1) {
+          clear: left;
+        }
+      }
+    }
+  }
+}
+
+@include mx630("._mx630");
+@include mx420("._mx420");
+@include mn1000("._mn1000");
+
+.c-configurator__additional-items {
+  @media (max-width: 670px) {
+    @include mx630();
+  }
+
+  @media (max-width: 460px) {
+    @include mx420();
+  }
+}

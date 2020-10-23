@@ -1,0 +1,48 @@
+.b-configurator-save {
+  &__title {
+    @include margin(20/20);
+    font-size: 18/16*100%;
+    line-height: (22/18);
+    color: #333;
+  }
+
+  &__input {
+    @include box-sizing;
+    font-size: 14/16*100%;
+    width: 100%;
+  }
+
+  &__btn-holder {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+  }
+
+  &__btn {
+    @include box-sizing;
+    width: 108px;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  &__items-holder {
+    @include margin(20/20);
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item-link {
+    @include box-sizing;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14/16*100%;
+    color: #333;
+  }
+}

@@ -1,0 +1,104 @@
+/* Производители */
+.c-brands {
+  &__header {
+    padding: 0 40px 20px;
+    line-height: (26/16);
+  }
+
+  &__caption {
+    @include mbot(20/20);
+  }
+
+  &__main-holder {
+    padding: 10px 40px 40px;
+    background-color: #f8f8f8;
+  }
+
+  &__list {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__brand-image {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__social {
+    @include margin(20/20);
+  }
+
+  &__about-holder {
+    position: relative;
+    padding-top: 45px;
+    padding-bottom: 90px;
+    background-color: #fff;
+  }
+
+  &__about {
+    width: 90%;
+    max-width: 835px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: (26/16);
+
+    p {
+      @include margin(50/20);
+    }
+  }
+
+  &__promoslider {
+    padding-top: 3px;
+  }
+
+  &__popular-products {
+    @include mtop(40/20);
+    @include mbot(60/20);
+  }
+
+  &__top-rated {
+    @include margin(60/20);
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media #{$media-tablet} {
+  .c-brands {
+    &__header {
+      padding: 0 20px 20px;
+    }
+
+    &__main-holder {
+      padding: 10px 20px;
+    }
+  }
+}
+
+@media #{$media-phone-landscape} {
+  .c-brands {
+    &__header {
+      padding-left: 26px;
+      padding-right: 26px;
+    }
+
+    &__main-holder {
+      padding-left: 6px;
+      padding-right: 6px;
+      padding-bottom: 6px;
+    }
+
+    &__list {
+      font-size: 14/16*100%;
+    }
+
+    &__top-rated {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media #{$media-phone} {
+}

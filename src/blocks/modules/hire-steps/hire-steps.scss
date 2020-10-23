@@ -1,0 +1,44 @@
+.b-hire-steps {
+  padding: 20px;
+  background-color: #fff;
+
+  &__caption {
+    @include mbot(20/20);
+    font-size: 18/16*100%;
+    text-align: center;
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: list;
+  }
+
+  &__item {
+    text-align: center;
+    counter-increment: list;
+    max-width: 230px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before {
+      @include margin(20/20);
+      @include pie;
+      content: counter(list);
+      display: inline-block;
+      width: 54px;
+      height: 54px;
+      border: 3px solid #dc3e48;
+      font-size: 36/16*100%;
+      line-height: 54px;
+      color: #ff7575;
+      border-radius: 50%;
+    }
+  }
+
+  &__text {
+    font-size: 14/16*100%;
+    color: #2a2a2a;
+  }
+}

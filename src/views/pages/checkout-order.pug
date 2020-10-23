@@ -1,0 +1,49 @@
+extends ../layout/page-template
+
+block head
+	title Оформление заказа
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block breadcrumbs
+
+block caption
+
+block inner-content
+	section.c-checkout
+		.c-checkout__header
+			.c-checkout__caption
+				.h1 Оформление заказа
+
+			.c-checkout__fast-order-holder
+				a.c-checkout__fast-order.button-fast(href="#") <span>Быстрый заказ</span>
+
+		.c-checkout__main-holder
+			.c-checkout__cols
+				.c-checkout__aside-col
+					+checkout-advantages()
+
+				.c-checkout__main-col
+					.c-checkout__float-wrap
+						.c-checkout__recipient
+							+order-recipient()
+
+						.c-checkout__company-info
+							+details-form_checkout()
+
+						.c-checkout__delivery-info
+							+delivery-choose()
+
+						.c-checkout__paymethods
+							+payment-choose()
+
+						.c-checkout__order-comment
+							+checkout-comment()
+
+						.c-checkout__order-footer
+							.c-checkout__estimate-col
+								+estimate_checkout()
+
+							.c-checkout__submit-col
+								+total_checkout()

@@ -1,0 +1,41 @@
+extends default
+
+//---- Templating variables (default value is necessary) ----//
+
+block default-vars
+	- var modHeader = ''; // доп классы для хедера
+	- var isInner = true; // раскрывать ли подменю в главном меню
+	- var isShowFeaturesInFooter = true; // показывать ли преимущества в футере
+	- var isCatalog = false;
+	- var isTotalStyling = true;
+
+	block vars
+
+block head
+	title Главная страница
+
+block content
+	// performance issue
+	#allfixedelements
+		.mobile-left-aside#aside-mobile-menu
+			+mobile-aside()
+
+		.c-header__mobile-header._fixed#mobile-header
+			+mobile-header()
+
+		.c-footer__fixed-bottom-menu
+			+bottom-menu()
+
+		block fix-area
+
+	.page-wrapper
+		.wrap-for-footer
+			include header
+
+			main
+				block caption
+					h1.full-width Заголовок
+
+				block inner-content
+
+			include footer

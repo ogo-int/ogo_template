@@ -1,0 +1,107 @@
+mixin product-price()
+	.b-product-price.iblock&attributes(attributes)
+		.b-product-price__top-section
+			.b-product-price__left-top
+				.b-product-price__art Арт. <b>34534345</b>
+				.b-product-price__avail Есть в&nbsp;наличии
+
+			.b-product-price__right-top
+				.b-product-price__guarantee
+					span.b-product-price__guarantee-text Гарантия: <b>24&nbsp;месяца</b>
+
+		.b-product-price__sku-holder
+			.b-product-price__cols
+				.b-product-price__col
+					label.b-product-price__field
+						.b-product-price__field-label Цвет корпуса:
+						.b-product-price__field-input
+							select.select2
+								option(selected) Белый
+								option Черный
+								option Синий
+								option Красный
+
+				.b-product-price__col
+					label.b-product-price__field
+						.b-product-price__field-label Размер памяти:
+						.b-product-price__field-input
+							select.select2
+								option(selected) 16 Gb
+								option 8 Gb
+								option 4 Gb
+								option 2 Gb
+
+		.b-product-price__prices-holder
+			.b-product-price__cols
+				.b-product-price__col
+					.b-product-price__curr-price 725&nbsp;350 <span class="rub">i</span>
+					.b-product-price__old-price 46&nbsp;345 <span class="rub">i</span>
+					.b-product-price__bonus +223 бонуса
+
+				.b-product-price__col
+					a.b-product-price__buy.button-buy(href="#")
+						span Добавить в&nbsp;корзину
+
+					.b-product-price__additional-btns
+						.b-product-price__left-btns
+							a.b-product-price__fast.js-modal(href="#fast-buy")
+								span Быстрый заказ
+
+						.b-product-price__right-btns
+							a.b-product-preview__favor(href="#")
+							a.b-product-preview__compare(href="#")
+
+mixin product-price_conf()
+	.b-product-price.iblock&attributes(attributes)
+		.b-product-price__top-section
+			.b-product-price__left-top
+				.b-product-price__art Арт. <b>34534345</b>
+				.b-product-price__avail Есть в&nbsp;наличии
+
+			.b-product-price__right-top
+				.b-product-price__guarantee
+					span.b-product-price__guarantee-text Гарантия: <b>24&nbsp;месяца</b>
+
+		.b-product-price__sku-holder
+			.b-product-price__cols
+				.b-product-price__col
+					label.b-product-price__field
+						.b-product-price__field-label Цвет корпуса:
+						.b-product-price__field-input
+							select.select2
+								option(selected) Белый
+								option Черный
+								option Синий
+								option Красный
+
+				.b-product-price__col
+					label.b-product-price__field
+						.b-product-price__field-label Размер памяти:
+						.b-product-price__field-input
+							select.select2
+								option(selected) 16 Gb
+								option 8 Gb
+								option 4 Gb
+								option 2 Gb
+
+		.b-product-price__prices-holder
+			.b-product-price__cols
+				.b-product-price__col
+					.b-product-price__curr-price 725&nbsp;350 <span class="rub">i</span>
+					.b-product-price__old-price 46&nbsp;345 <span class="rub">i</span>
+					.b-product-price__bonus +223 бонуса
+
+				.b-product-price__col
+					a.b-product-price__add.button-add(href="#")
+						span В&nbsp;конфигуратор
+					a.b-product-price__buy._light.button-buy(href="#")
+						span Добавить в&nbsp;корзину
+
+					.b-product-price__additional-btns
+						.b-product-price__left-btns
+							a.b-product-price__fast(href="#")
+								span Быстрый заказ
+
+						.b-product-price__right-btns
+							a.b-product-preview__favor(href="#")
+							a.b-product-preview__compare(href="#")

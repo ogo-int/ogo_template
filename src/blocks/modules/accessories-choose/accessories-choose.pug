@@ -1,0 +1,42 @@
+mixin accessories-choose()
+	.b-accessories-choose.iblock&attributes(attributes)
+		.b-accessories-choose__header
+			.b-accessories-choose__caption Добавить аксессуары
+			.b-accessories-choose__tags
+				.b-tags
+					ul.b-tags__items
+						li.b-tags__item
+							a.b-tags__tag.b-tags__tag_active(href="") Штативы
+						li.b-tags__item
+							a.b-tags__tag(href="") Сумки и&nbsp;чехлы для зеркальных фотокамер
+						li.b-tags__item
+							a.b-tags__tag(href="") Карты памяти
+						li.b-tags__item
+							a.b-tags__tag(href="") Бленды, крышки для объективов
+
+		.b-accessories-choose__main
+			.b-accessories-choose__items
+				.b-accessories-choose__row
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+				.b-accessories-choose__row
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+				.b-accessories-choose__row
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+					.b-accessories-choose__item
+						+product-small_hovered()
+
+		.b-accessories-choose__more-holder
+			a.b-accessories-choose__more.button-more(href="#") Показать еще 18

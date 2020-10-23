@@ -1,0 +1,48 @@
+.b-rating {
+  height: 1em;
+
+  &__items {
+    display: inline-block;
+    height: 1em;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    line-height: 1;
+    list-style: none;
+
+    &_big {
+      font-size: 18/16*100%;
+    }
+  }
+
+  &__item {
+    display: inline-block;
+    line-height: 1;
+    height: 1em;
+    margin: 0;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-star);
+      vertical-align: top;
+      font-size: 12/16*100%;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 1;
+    }
+
+    &_active {
+      color: #ffcb31;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1em;
+    color: #333;
+    font-size: 12/16*100%;
+    font-weight: 600;
+    line-height: 1;
+  }
+}

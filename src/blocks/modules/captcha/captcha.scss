@@ -1,0 +1,62 @@
+.b-captcha {
+  &__top-section {
+    display: table;
+    width: 100%;
+    background-color: #f1f1f1;
+  }
+
+  &__bottom-section {
+    padding: 15px 20px 20px;
+    background-color: #f8f8f8;
+  }
+
+  &__image-holder {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px 15px 5px;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__ui-holder {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px 15px 5px;
+    text-align: right;
+  }
+
+  &__ui-refresh {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #979797;
+    &:before {
+      @include ft-icon($ft-reload);
+    }
+  }
+
+  &__ui-sound {
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #979797;
+    &:before {
+      @include ft-icon($ft-sound);
+    }
+  }
+
+  &__label {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__input {
+    @include box-sizing;
+    width: 100%;
+    font-size: 14/16*100%;
+  }
+}

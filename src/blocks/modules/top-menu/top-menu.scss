@@ -1,0 +1,35 @@
+.b-top-menu {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &_row {
+      display: block;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #7e7e7e;
+    transition: .2s color;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+}

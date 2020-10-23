@@ -1,0 +1,54 @@
+.b-discount-plate {
+  @include box-sizing;
+  padding: 20px;
+  background-color: #fff;
+
+  &__title {
+    @include margin(10/20);
+    font-size: 18/16*100%;
+    line-height: 1;
+  }
+
+  &__section-content {
+    font-size: 14/16*100%;
+  }
+
+  &__input-item {
+  }
+
+  &__input-holder {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    width: 320px;
+    max-width: 100%;
+  }
+
+  &__input {
+    @include box-sizing;
+    width: 100%;
+  }
+
+  &__submit-holder {
+    display: inline-block;
+    vertical-align: top;
+    //vertical-align: middle;
+    //margin-top: 15px;
+    margin-bottom: 15px;
+
+    @media(max-width: 1023px) {
+      margin-top: 15px;
+    }
+  }
+
+  &__section {
+    padding-bottom: 15px;
+    padding-top: 30px;
+    border-top: 1px solid #f1f1f1;
+
+    &:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+  }
+}

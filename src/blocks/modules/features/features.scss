@@ -1,0 +1,128 @@
+// Блок преимуществ
+.b-features {
+  overflow-x: hidden;
+
+  &__list {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    @include box-sizing;
+    width: 1/4*100%;
+    margin: .5% 0;
+    float: left;
+    padding-left: .5%;
+    padding-right: .5%;
+
+    &:first-child {
+      margin-top: .5%;
+    }
+
+    &:last-child {
+      margin-bottom: .5%;
+    }
+  }
+
+  &__feature {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    border: 1px solid #f5f5f5;
+  }
+
+  &__icon-holder {
+    display: table-cell;
+    width: 40px;
+    padding: 20px 0 20px 15px;
+    vertical-align: middle;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__text {
+    display: table-cell;
+    padding: 20px 10px 20px 15px;
+    vertical-align: middle;
+    font-size: 16/16*100%;
+    font-weight: 200;
+  }
+
+  &__icon {
+    max-width: 100%;
+    height: auto;
+
+    &._clock:before {
+      @include ft-icon($ft-clock);
+      font-size: 46px;
+      color: #dc3e48;
+    }
+
+    &._band:before {
+      @include ft-icon($ft-band);
+      font-size: 52px;
+      color: #dc3e48;
+    }
+
+    &._truck:before {
+      @include ft-icon($ft-truck);
+      font-size: 52px;
+      color: #dc3e48;
+    }
+
+    &._star:before {
+      @include ft-icon($ft-big-star);
+      font-size: 52px;
+      color: #dc3e48;
+    }
+  }
+}
+
+.b-features._nojs {
+  .b-features {
+
+    &__feature {
+      min-height: 110px;
+    }
+  }
+}
+
+@mixin mx1000($mod: "") {
+  .b-features#{$mod} {
+    .b-features {
+      &__item {
+        width: 1/2*100%;
+      }
+    }
+  }
+}
+
+@mixin mx500($mod: "") {
+  .b-features#{$mod} {
+    .b-features {
+      &__item {
+        width: 1/1*100%;
+      }
+    }
+  }
+}
+
+@include mx1000("._mx1000");
+@include mx500("._mx500");
+
+@media (max-width: 1040px) {
+  .c-footer__features {
+    @include mx1000();
+  }
+}
+
+@media (max-width: 540px) {
+  .c-footer__features {
+    @include mx500();
+  }
+}

@@ -1,0 +1,145 @@
+.b-order-status {
+  @include box-sizing;
+  width: 625px;
+  max-width: 100%;
+  padding: 35px 40px;
+
+  &__header {
+    @include margin(30/20);
+  }
+
+  &__caption {
+    font-size: 32/16*100%;
+    font-weight: 200;
+    line-height: 1;
+  }
+
+  &__main {
+    display: none;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__inputs-col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-top: 14px;
+    padding-right: 10px;
+  }
+
+  &__captcha-col {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  &__field {
+    @include margin(20/20);
+    display: block;
+    font-size: 14/16*100%;
+  }
+
+  &__label {
+    @include margin(5/20);
+    font-weight: 200;
+  }
+
+  &__submit-holder {
+    @include margin(30/20);
+    text-align: center;
+  }
+
+  &__submit {
+    @include box-sizing;
+    font-size: 14px;
+    width: 270px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  &__result {
+    display: none;
+    padding-top: 40px;
+    text-align: center;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__status-holder {
+    @include box-sizing;
+    display: inline-block;
+    width: 415px;
+    max-width: 100%;
+    padding: 20px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &__status-text {
+    &._green {
+      color: #81c03d;
+    }
+  }
+
+  &__contact-holder {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 40px;
+    margin-top: 40px;
+    .b-contacts {
+      text-align: center;
+    }
+  }
+
+  input {
+    @include box-sizing;
+    width: 100%;
+  }
+}
+
+@mixin mx610($mod: "") {
+  .b-order-status#{$mod} {
+
+    .b-order-status {
+      &__inputs-col {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__captcha-col {
+        float: none;
+        width: auto;
+        padding-left: 0;
+        margin-top: 20px;
+      }
+
+      &__caption {
+        font-size: 28px;
+      }
+    }
+  }
+}
+
+.fancybox-inner {
+  @media (max-width: 650px) {
+    @include mx610();
+  }
+
+  @media (max-width: 480px) {
+    .b-order-status {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

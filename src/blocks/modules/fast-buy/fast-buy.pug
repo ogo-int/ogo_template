@@ -1,0 +1,13 @@
+mixin fast-buy()
+	.b-fast-buy.iblock&attributes(attributes)
+		.b-fast-buy__title Купить в&nbsp;1 клик
+
+		.b-fast-buy__content-holder
+			.b-fast-buy__cols
+				.b-fast-buy__right-col
+					+gray-remark({
+						text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами для оформления товара'
+					})
+
+				.b-fast-buy__left-col
+					+simple-form()

@@ -1,0 +1,496 @@
+.b-list-product {
+  @include box-sizing;
+  min-width: 300px;
+  // border: 1px solid #f1f1f1;
+  background-color: #fff;
+  transition: .3s box-shadow;
+
+
+  &__main-holder {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__image-holder {
+    @include box-sizing;
+    display: table-cell;
+    width: 190px;
+    max-width: 25%;
+    padding: 20px 10px;
+    transition: .2s opacity;
+    vertical-align: middle;
+    text-align: center;
+
+    &:hover {
+      opacity: .85;
+    }
+  }
+
+  &__content {
+    @include box-sizing;
+    display: table-cell;
+    min-width: 260px;
+    padding: 20px 10px;
+    vertical-align: top;
+    padding-left: 10px;
+  }
+
+  &__footer {
+    @include box-sizing;
+    display: table-cell;
+    width: 210px;
+    max-width: 25%;
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+    border-left: 1px solid #e8e8e8;
+  }
+
+  &__header {
+    @include clearfix;
+    position: relative;
+    margin-bottom: 14px;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__params {
+    font-size: 14/16*100%;
+    font-weight: 400;
+  }
+
+  &__caption {
+    @include mbot(17/20);
+    overflow: hidden;
+  }
+
+  &__avail {
+    display: inline-block;
+    margin-right: .5em;
+  }
+
+  &__caption-text {
+    transition: .2s color;
+    text-decoration: none;
+    font-size: 18/16*100%;
+    line-height: (22/18);
+    color: #262626;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+
+  &__avail-label {
+    font-size: 13/16*100%;
+    font-weight: 200;
+    line-height: (16/13);
+    color: #81c03d;
+
+    &:before {
+      @include bgr("../img/ok","png");
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 11px;
+      height: 9px;
+      margin-top: -2px;
+      margin-right: .5em;
+      background-repeat: no-repeat;
+      background-size: 11px 9px;
+      background-position: 50% 50%;
+    }
+  }
+
+  &__price {
+    font-size: 24/16*100%;
+    color: #35322f;
+  }
+
+  &__price-holder {
+    @include mbot(5/20);
+  }
+
+  &__bonus {
+    display: inline-block;
+    margin-right: .7em;
+    font-size: 12/16*100%;
+    font-weight: 200;
+    line-height: (15/12);
+    color: #3e8bdc;
+  }
+
+  &__number {
+    display: inline-block;
+    font-size: 12/16*100%;
+    font-weight: 200;
+    line-height: (15/12);
+    color: #bfbfbf;
+    margin-right: 1em;
+  }
+
+  &__rating {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__fast-view {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 230px;
+    max-width: 100%;
+    height: 0;
+    overflow: hidden;
+    transform: translateY(-50%);
+    transition: .4s opacity, .3s transform, .2s color;
+    opacity: 0;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #333;
+    line-height: 35px;
+    font-size: 14/16*100%;
+
+    &:before {
+      @include ft-icon($ft-preview);
+      width: 2em;
+      transition: .2s color;
+      margin-right: .5em;
+      color: #969696;
+    }
+
+    &:hover {
+
+      &:before {
+        color: #6c6c6c;
+      }
+    }
+  }
+
+  &__favor {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-heart);
+      font-size: 22px;
+      transition: .2s color;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__compare {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .25em;
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-scale);
+      font-size: 26px;
+      transition: .2s color;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__btn-holder {
+    @include clearfix;
+  }
+
+  &__other-btns {
+    @include clearfix;
+    padding-top: 8px;
+  }
+
+  &__buy-btns {
+  }
+
+  &__buy {
+    @include box-sizing;
+    width: 100%;
+    max-width: 151px;
+    font-size: 14/16*100%;
+  }
+
+  &__image-wrap {
+    position: relative;
+  }
+}
+
+// html.no-touch .b-list-product:hover {
+// 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+// 	.b-list-product {
+// 		&__fast-view {
+// 			height: 35px;
+// 			opacity: 1;
+// 			transform: translateY(0);
+// 			border: 1px solid #c2c2c2;
+// 		}
+
+// 		&__number {
+// 			opacity: 0;
+// 		}
+
+// 		&__rating {
+// 			opacity: 0;
+// 		}
+
+// 		&__avail {
+// 			opacity: 0;
+// 		}
+// 	}
+// }
+
+@mixin mx710($mod: "") {
+  .b-list-product#{$mod} {
+    .b-list-product {
+      &__main-holder {
+        @include clearfix;
+        display: block;
+      }
+
+      &__image-holder {
+        display: block;
+        width: 40%;
+        max-width: 200px;
+        float: left;
+      }
+
+      &__content {
+        display: block;
+        width: 60%;
+        min-width: 0;
+        overflow: hidden;
+        margin-left: auto;
+        padding-right: 20px;
+      }
+
+      &__params {
+        display: none;
+      }
+
+      &__footer {
+        display: block;
+        width: 60%;
+        max-width: none;
+        margin-left: auto;
+        text-align: left;
+        border-left: none;
+        padding-left: 10px;
+        padding-top: 0;
+      }
+
+      &__caption {
+        margin-bottom: 0;
+      }
+
+      &__buy {
+        @include box-sizing;
+        width: 120px;
+        text-align: center;
+      }
+
+      &__buy-btns {
+        float: left;
+        margin-right: 15px;
+      }
+
+      &__other-btns {
+        overflow: hidden;
+        text-align: left;
+      }
+
+      &__bonus {
+        float: left;
+        margin-top: 5px;
+      }
+
+      &__btn-holder {
+        @include clearfix;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@mixin mx510($mod: "") {
+  .b-list-product#{$mod} {
+    .b-list-product {
+      &__btn-holder {
+        position: relative;
+        padding-top: 30px;
+      }
+
+      &__price-holder {
+        margin-bottom: 0;
+      }
+
+      &__bonus {
+        position: absolute;
+        top: 0;
+        left: 0;
+        line-height: 1;
+      }
+
+      &__price {
+        line-height: 1;
+      }
+
+      &__content {
+        padding-bottom: 145px;
+        margin-left: auto;
+        padding-left: 0;
+      }
+
+
+      &__main-holder {
+        position: relative;
+      }
+
+      &__image-holder {
+        width: 35%;
+        max-width: 150px;
+        padding-top: 56px;
+        padding-bottom: 50px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &__header {
+        position: static;
+      }
+
+      &__fast-view {
+        top: 15px;
+        // display: block;
+        left: 40%;
+        width: auto;
+        height: auto;
+        padding: 0;
+        margin-left: 10px;
+        font-size: 12px;
+      }
+
+      &__avail {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+      }
+
+      &__rating {
+        position: absolute;
+        top: 22px;
+        left: 20px;
+      }
+
+      &__footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 60%;
+      }
+
+      &__caption {
+        font-size: 14/16*100%;
+      }
+
+      &__buy {
+        width: auto;
+        padding: 0.35em 1em .65em;
+      }
+    }
+
+    &:hover .b-list-product {
+      &__number {
+        opacity: 1;
+      }
+
+      &__rating {
+        opacity: 1;
+      }
+
+      &__avail {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@mixin mx370($mod: "") {
+  .b-list-product#{$mod} {
+    .b-list-product {
+      &__buy {
+        font-size: 14px;
+        width: auto;
+      }
+
+      &__buy-btns {
+        margin-right: 10px;
+      }
+
+      &__other-btns {
+        padding-top: 4px;
+        white-space: nowrap;
+      }
+
+      &__footer {
+        padding-right: 10px;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include mx710("._mx710");
+@include mx510("._mx510");
+@include mx370("._mx370");
+
+@media (max-width:720px) {
+  .c-catalog__products {
+    @include mx710();
+  }
+}
+
+@media (max-width:670px) {
+  .c-catalog__products {
+    @include mx510();
+  }
+}
+
+@media (max-width:380px) {
+  .c-catalog__products {
+    @include mx370();
+  }
+}
+
+@media screen and (max-width:650px), screen and (max-height: 480px) {
+  .c-catalog__products {
+
+    @include mx710();
+    @include mx510();
+    @include mx370();
+    .b-list-product {
+      @include box-sizing;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

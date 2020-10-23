@@ -1,0 +1,376 @@
+.b-address-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  &__header {
+    @include clearfix;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    overflow: hidden;
+    font-size: 18/16*100%;
+    font-weight: 400;
+    color: #333;
+  }
+
+  &__town {
+    float: right;
+    margin-left: 20px;
+    font-size: 14/16*100%;
+    color: #333;
+  }
+
+  &__save-state {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__save-fields {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__save-field {
+    display: table-row;
+
+    &._hide {
+      display: none;
+    }
+  }
+
+  &__field-label {
+    display: table-cell;
+    width: 150px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    font-size: 14/16*100%;
+    color: #969696;
+  }
+
+  &__field-content {
+    display: table-cell;
+    padding-bottom: 20px;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #141414;
+
+    &_bold {
+      font-weight: 600;
+    }
+  }
+
+  &__edit-state {
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__edit-fields {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__ui {
+    @include clearfix;
+  }
+
+  &__ui-primary {
+    display: none;
+    float: left;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-secondary {
+    display: none;
+    float: left;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-remove {
+    float: right;
+    margin-left: 15px;
+  }
+
+  &__ui-edit {
+    display: none;
+    float: right;
+    margin-left: 15px;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-save {
+    display: none;
+    float: right;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__primary-btn {
+    position: relative;
+    padding-left: 43px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: default;
+
+    &:before {
+      @include ft-icon($ft-star);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 22px;
+      margin-top: -12px;
+      color: #bfbfbf;
+    }
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__secondary-btn {
+    position: relative;
+    padding-left: 43px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include ft-icon($ft-empty-star);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 26px;
+      margin-top: -14px;
+    }
+  }
+
+  &__edit-btn {
+    position: relative;
+    padding-left: 50px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include ft-icon($ft-pencil);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      margin-top: -12px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  &__remove-btn {
+    position: relative;
+    padding-left: 50px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include ft-icon($ft-trash);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      font-size: 24px;
+      margin-top: -12px;
+    }
+  }
+
+  &__save-btn {
+    position: relative;
+    padding-left: 45px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include ft-icon($ft-pencil);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      margin-top: -12px;
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+}
+
+.b-address-item._edit-state {
+  .b-address-item {
+    &__save-state {
+      display: none;
+    }
+
+    &__edit-state {
+      display: block;
+    }
+
+    &__title {
+      color: #bfbfbf;
+    }
+
+    &__town {
+      color: #bfbfbf;
+    }
+  }
+}
+
+@mixin mx540($mod: "") {
+  .b-address-item#{$mod} {
+    .b-address-item {
+      &__ui-primary {
+        @include box-sizing;
+        float: left;
+        width: 50%;
+        padding-right: 5px;
+      }
+
+      &__ui-secondary {
+        @include box-sizing;
+        float: left;
+        width: 50%;
+        padding-right: 5px;
+      }
+
+      &__ui-remove {
+        @include box-sizing;
+        float: left;
+        width: 50%;
+        margin-left: 0;
+        padding-left: 5px;
+      }
+
+      &__ui-edit {
+        @include box-sizing;
+        float: left;
+        width: 50%;
+        margin-left: 0;
+        margin-top: 10px;
+        padding-right: 5px;
+      }
+
+      &__ui-save {
+        @include box-sizing;
+        float: left;
+        width: 50%;
+        margin-top: 10px;
+        padding-right: 5px;
+      }
+
+      &__primary-btn, &__secondary-btn, &__edit-btn, &__remove-btn, &__save-btn {
+        @include box-sizing;
+        width: 100%;
+      }
+
+      &__save-fields {
+        display: block;
+      }
+
+      &__save-field {
+        display: block;
+      }
+
+      &__field-label {
+        display: block;
+        padding-bottom: 10px;
+      }
+
+      &__field-content {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin mx400($mod: "") {
+  .b-address-item#{$mod} {
+    .b-address-item {
+      &__ui-primary {
+        @include box-sizing;
+        float: none;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__ui-secondary {
+        @include box-sizing;
+        float: none;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__ui-remove {
+        @include box-sizing;
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        padding-left: 0;
+      }
+
+      &__ui-edit {
+        @include box-sizing;
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        padding-right: 0;
+      }
+
+      &__ui-save {
+        @include box-sizing;
+        float: none;
+        width: 100%;
+        margin-top: 10px;
+        padding-right: 0;
+      }
+
+      &__town {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@include mx540("._mx540");
+@include mx400("._mx400");
+
+.c-lk__address {
+  @media (max-width: 580px) {
+    @include mx540();
+  }
+
+  @media (max-width: 420px) {
+    @include mx400();
+  }
+}

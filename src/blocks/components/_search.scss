@@ -1,0 +1,61 @@
+/* Поиск */
+.c-search {
+  &__caption {
+    @include margin(20/20);
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+
+    &:before {
+      @include ft-icon($ft-search);
+      margin-right: .5em;
+      color: #dc3e48;
+    }
+  }
+
+  &__input-holder {
+    @include margin(20/20);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &__input[type="text"] {
+    @include box-sizing;
+    width: 100%;
+
+    border: none;
+    padding: 0;
+
+    font-size: 36px;
+    font-weight: 200;
+    line-height: 1;
+    color: #000;
+    border-bottom: 1px solid #f1f1f1;
+    box-shadow: none;
+  }
+
+  &__tags {
+    @include margin(30/20);
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  &__categories {
+    padding: 20px 40px;
+    background-color: #f8f8f8;
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media #{$media-tablet} {
+}
+
+@media #{$media-phone-landscape} {
+}
+
+@media #{$media-phone} {
+}

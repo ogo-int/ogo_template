@@ -1,0 +1,42 @@
+.b-likes {
+  &__plus {
+    display: inline-block;
+    margin-right: .75em;
+    color: #81c03d;
+
+    &:before {
+      @include ft-icon($ft-thumb-up);
+      font-size: 25px;
+      position: relative;
+      top: 2px;
+      margin-right: .1em;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14/16*100%;
+      font-weight: 200;
+    }
+  }
+
+  &__minus {
+    color: #dc3e48;
+
+    &:before {
+      @include ft-icon($ft-thumb-down);
+      font-size: 25px;
+      position: relative;
+      top: 9px;
+      margin-right: .1em;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color: #dc3e48;
+      font-size: 14/16*100%;
+      font-weight: 200;
+    }
+  }
+}

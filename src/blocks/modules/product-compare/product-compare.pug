@@ -1,0 +1,84 @@
+mixin product-compare()
+	.b-product-compare.iblock&attributes(attributes)
+		.b-product-compare__table
+			.b-product-compare__header-group
+				.b-product-compare__header
+					.b-product-compare__ui-header
+						.b-product-compare__ui-caption Критерии выбора
+						.b-product-compare__ui-item
+							select.select2
+								option Стоят примерно столько же
+								option Похожей производительсности
+								option Похожей популярности
+
+						.b-product-compare__ui-item
+							a.b-product-compare__compare-btn.button-compare(href="#") Добавить все в&nbsp;сравнение
+
+					.b-product-compare__product-header
+						.b-product-compare__product-title Nikon D3200 Body
+						.b-product-compare__image-holder
+							img.b-product-compare__image(src="assets/img/content/compare-photo.jpg", alt="Фото" width=103 height=81)
+
+					.b-product-compare__product-header
+						.b-product-compare__product-title Nikon D3200 Body
+						.b-product-compare__image-holder
+							img.b-product-compare__image(src="assets/img/content/compare-photo.jpg", alt="Фото" width=103 height=81)
+
+					.b-product-compare__product-header
+						.b-product-compare__product-title Nikon D3200 Body
+						.b-product-compare__image-holder
+							img.b-product-compare__image(src="assets/img/content/compare-photo.jpg", alt="Фото" width=103 height=81)
+
+					.b-product-compare__product-header
+						.b-product-compare__product-title Nikon D3200 Body
+						.b-product-compare__image-holder
+							img.b-product-compare__image(src="assets/img/content/compare-photo.jpg", alt="Фото" width=103 height=81)
+
+			.b-product-compare__params
+				.b-product-compare__param
+					.b-product-compare__param-name Физический размер
+					.b-product-compare__param-value 23.2&times;15.2&nbsp;мм и&nbsp;если длинное
+					.b-product-compare__param-value 23.2&times;15.2&nbsp;мм и&nbsp;если длинное
+					.b-product-compare__param-value 23.2&times;15.2&nbsp;мм и&nbsp;если длинное
+					.b-product-compare__param-value 23.2&times;15.2&nbsp;мм и&nbsp;если длинное
+
+				.b-product-compare__param
+					.b-product-compare__param-name Диафрагма
+					.b-product-compare__param-value CMOS
+					.b-product-compare__param-value._accent CMOS
+					.b-product-compare__param-value CMOS
+					.b-product-compare__param-value CMOS
+
+				.b-product-compare__param
+					.b-product-compare__param-name Формат записи
+					.b-product-compare__param-value RAW, JPEG
+					.b-product-compare__param-value RAW, JPEG
+					.b-product-compare__param-value RAW, JPEG
+					.b-product-compare__param-value._accent RAW, JPEG
+
+				.b-product-compare__param
+					.b-product-compare__param-name Фокусное расстояние
+					.b-product-compare__param-value._accent 18&ndash;55&nbsp;мм.
+					.b-product-compare__param-value 18&ndash;55&nbsp;мм.
+					.b-product-compare__param-value 18&ndash;55&nbsp;мм.
+					.b-product-compare__param-value 18&ndash;55&nbsp;мм.
+
+			.b-product-compare__footer-group
+				.b-product-compare__footer
+					.b-product-compare__ui-footer
+						+checkbox('Только различающиеся характеристики')
+					.b-product-compare__price-cell
+						.b-product-compare__current-price 34&nbsp;350 <span class="rub">i</span>
+						.b-product-compare__bonus +233 бонуса
+
+					.b-product-compare__price-cell
+						.b-product-compare__current-price 19&nbsp;678 <span class="rub">i</span>
+						.b-product-compare__bonus +233 бонуса
+
+					.b-product-compare__price-cell
+						.b-product-compare__current-price 67&nbsp;999 <span class="rub">i</span>
+						.b-product-compare__bonus +233 бонуса
+
+					.b-product-compare__price-cell
+						.b-product-compare__current-price 77&nbsp;350 <span class="rub">i</span>
+						.b-product-compare__bonus +233 бонуса

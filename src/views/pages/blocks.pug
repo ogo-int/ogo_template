@@ -1,0 +1,85 @@
+extends ../layout/default
+
+block head
+	title Блоки
+
+block default-vars
+	- var modHeader = ''; // доп классы для хедера
+	- var isInner = false; // раскрывать ли подменю в главном меню
+	- var isShowFeaturesInFooter = true; // показывать ли преимущества в футере
+	- var isCatalog = false;
+	- var isTotalStyling = true;
+
+block scripts
+	script(src="./js/tech.js?" + timestamp)
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block stylesheets
+	style(type="text/css").
+		.ui-slider .ui-slider-handle {
+			cursor: pointer;
+		}
+
+		.ui-slider-handle .handle-val {
+			color: black;
+		  position: absolute;
+		  bottom: 100%;
+		  width: 70px;
+		  left: 50%;
+		  margin-left: -35px;
+		  text-align: center;
+		  font-size: 16px;
+		  font-weight: 400;
+		}
+
+		.tech-holder {
+			width: 960px;
+			margin-top: 40px;
+			margin-bottom: 120px;
+			margin-left: auto;
+			margin-right: auto;
+			box-sizing: border-box;
+		}
+
+		.tech-holder._full {
+			width: 100%;
+		}
+
+		.tech-holder._highlighted {
+			outline: 1px solid red;
+		}
+
+		.tech-holder__slider {
+			position: relative;
+			width: 500px;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 40px;
+		}
+
+		.tech-holder__slider input {
+			width: 75px;
+			position: absolute;
+			left: 100%;
+			margin-left: 20px;
+			top: 50%;
+			margin-top: -20px;
+		}
+
+		.tech-holder__highlight {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -14px;
+			margin-right: 10px;
+		}
+
+block content
+	section.blocks-section
+		.tech-holder(data-width=320)
+			+plate-product()(class="._landscape")
+
+		.tech-holder(data-width=320)
+			+list-product()(class="._flexible")

@@ -1,0 +1,36 @@
+.b-questions-answer-modal {
+  padding: 20px;
+
+  .fancybox-inner {
+    min-width: 620px;
+    min-height: 220px;
+  }
+
+  .b-faq-block__text-area_active {
+    width: 85%;
+  }
+
+  &__title {
+    font-size: 112.5%;
+    font-weight: 400;
+    color: #333;
+  }
+}
+
+.fancybox-inner .b-questions-answer-modal {
+  min-width: 620px;
+  min-height: 220px;
+}
+
+@media(max-width: 480px) {
+  .b-questions-answer-modal .b-faq-block__text-area_active {
+    width: 75%;
+  }
+
+  .b-questions-answer-modal {
+    .b-faq-block__btns-holder {
+      float: none;
+      text-align: center;
+    }
+  }
+}

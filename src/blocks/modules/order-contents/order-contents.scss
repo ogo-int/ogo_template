@@ -1,0 +1,44 @@
+.b-order-contents {
+  padding-bottom: 10;
+
+  &_active {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: table;
+    width: 100%;
+    border: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+  }
+
+  &__summ {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1px;
+    padding: 15px;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: 400;
+    color: #dc3e48;
+  }
+
+  &__btns {
+    font-weight: 200;
+    padding-top: 5px;
+    padding-bottom: 15px;
+  }
+}

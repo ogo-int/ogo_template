@@ -1,0 +1,4 @@
+// comments
+$(function () {
+  // code here...
+});

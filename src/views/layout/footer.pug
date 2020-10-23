@@ -1,0 +1,58 @@
+.c-footer
+	if isShowFeaturesInFooter
+		.c-footer__features
+			.c-footer__center
+				+features()
+
+		.c-footer__bottom-menu
+			+bottom-menu()
+
+	.c-footer__contacts
+		.c-footer__center
+			.c-footer__contacts-cols
+				.c-footer__contacts-col
+					.c-footer__contacts-caption Служба поддержки
+					.c-footer__contacts-item
+						a.c-footer__support(href="#") <nobr>+7 (495) 229-56-53</nobr>
+						a.c-footer__call-btn.button-green(href="#") Позвонить
+
+				.c-footer__contacts-col
+					.c-footer__contacts-caption Подпишитесь на&nbsp;акции и&nbsp;скидки
+					.c-footer__contacts-item
+						+subscribe-line()
+
+				.c-footer__contacts-col
+					.c-footer__contacts-caption Оставляйте свои отзывы!
+					.c-footer__contacts-item
+						+market-stars()
+
+				.c-footer__contacts-col
+					.c-footer__contacts-caption Присоединяйтесь
+					.c-footer__contacts-item
+						+social-btns()
+
+	.c-footer__site-map
+		.c-footer__center
+			+footer-links._media()
+
+	.c-footer__bottom-section
+		.c-footer__center
+			.c-footer__copyright
+				+copyright()
+
+			.c-footer__payments
+				+pay-systems()
+
+	.c-footer__modals
+		+town-modal()(id="town-modal")
+		+fast-buy()(id="fast-buy")
+		+enter-modal()(id="enter-modal")
+		+feedback-modal()(id="callback-modal" class="._modal")
+		+main-consult_modal()(id="online-consult")
+		+order-status()(id="order-status")
+		+registration-modal()(id="registration-modal")
+		+add-product()(id="add-product-modal")
+		+cart-added()(id="cart-added-modal")
+		+added-cart()(id="added-cart-modal")
+		+form-success-modal()(id="form-success-modal")
+		+expert-request()(id="expert-request-modal")

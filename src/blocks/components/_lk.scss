@@ -1,0 +1,340 @@
+/* Личный кабинет */
+.c-lk {
+  &__caption {
+    margin-bottom: 20px;
+    line-height: 1;
+  }
+
+  &__header {
+    @include clearfix;
+    padding: 20px 40px 20px 25px;
+    border-top: 1px solid #ececec;
+  }
+
+  &__balance {
+    @include box-sizing;
+    float: left;
+    width: 320px;
+    padding-left: 15px;
+    margin-right: 10px;
+    font-size: 14/16*100%;
+    color: #141414;
+  }
+
+  &__balance-link {
+    @include mtop(2/20);
+    display: table;
+    text-decoration: none;
+    color: #3e8bdc;
+    transition: .2s color;
+
+    &:hover {
+      color: #24578e;
+    }
+  }
+
+  &__scale {
+    @include box-sizing;
+    overflow: hidden;
+    padding-right: 15px;
+  }
+
+  &__main {
+    padding-top: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #f8f8f8;
+
+    &._white {
+      padding-top: 0;
+      border-top: 1px solid #f1f1f1;
+    }
+  }
+
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+
+    &._white {
+      display: block;
+      background-color: #fff;
+    }
+  }
+
+  &__aside-left {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: top;
+    width: 320px;
+    padding-right: 10px;
+    padding-left: 15px;
+    padding-bottom: 40px;
+  }
+
+  &__main-col {
+    @include box-sizing;
+    @include clearfix;
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 40px;
+    padding-right: 15px;
+
+    &._white {
+      display: block;
+      padding-left: 0;
+      padding-right: 0;
+      background-color: #fff;
+    }
+  }
+
+  &__menu {
+    background-color: #fff;
+  }
+
+  &__main-wrap {
+    @include box-sizing;
+    float: left;
+    width: 100%;
+  }
+
+  &__addresses {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__address {
+    background-color: #fff;
+
+    &_blank {
+      display: none;
+    }
+  }
+
+  &__faq {
+    @include margin(10/20);
+  }
+
+  &__consult {
+    @include margin(20/20);
+  }
+
+  &__add-btn {
+    @include margin(10/20);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14/16*100%;
+    text-transform: uppercase;
+
+    &:before {
+      @include ft-icon($ft-plus);
+      vertical-align: middle;
+      font-size: 19px;
+      margin-top: -2px;
+      margin-right: 5px;
+    }
+
+    &:hover {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__mobile-caption {
+    display: none;
+    font-size: 24/16*100%;
+    font-weight: 200;
+  }
+
+  &__order-info-holder {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__password-holder {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__public-profile-holder {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__social-binding-holder {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__faq-block-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__faq-block-item {
+    background-color: #fff;
+  }
+
+  &__feedback-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__feedback-item {
+    background-color: #fff;
+  }
+
+  &__card-activation {
+    background-color: #fff;
+  }
+
+  &__bonus-instruction {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__bonus-history {
+    @include margin(10/20);
+    background-color: #fff;
+  }
+
+  &__details-holder {
+  }
+
+  &__details-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__details-item {
+    background-color: #fff;
+  }
+
+  &__orders-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__orders-item {
+    padding: 20px;
+    padding-top: 0;
+    background-color: #fff;
+  }
+
+  &__bonus-promo {
+    @include margin(10/20);
+    background-color: #fff;
+    padding-top: 40px;
+    padding-right: 20px;
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media #{$media-tablet} {
+  .c-lk {
+    &__header {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &__balance {
+      @include margin(10/20);
+      float: none;
+      width: auto;
+    }
+
+    &__balance-value {
+      display: inline-block;
+    }
+
+    &__balance-link {
+      display: inline-block;
+      margin-left: .5em;
+    }
+
+    &__scale {
+      padding-left: 15px;
+    }
+
+    &__aside-left {
+      float: none;
+      display: block;
+      width: auto;
+      padding-right: 15px;
+      margin-right: 0;
+      padding-bottom: 10px;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__main {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    &__main-col {
+      display: block;
+      padding-left: 15px;
+    }
+
+    &__consult {
+      display: none;
+    }
+
+    &__faq {
+      display: none;
+    }
+
+    &__mobile-caption {
+      display: block;
+    }
+  }
+}
+
+@media #{$media-phone-landscape} {
+}
+
+@media #{$media-phone} {
+  .c-lk {
+    &__scale {
+      display: none;
+    }
+
+    &__balance {
+      margin: 0;
+      padding-right: 15px;
+    }
+
+    &__balance-value {
+      display: block;
+    }
+
+    &__balance-link {
+      margin-left: 0;
+    }
+
+    &__main {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__main-col {
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.b-upload-input {
+  @include clearfix();
+  display: block;
+  position: relative;
+
+  .button-gray {
+    cursor: pointer;
+  }
+
+  &__upload {
+    display: inline-block;
+  }
+
+  &__remove {
+    display: none;
+  }
+
+  &__filename {
+    display: inline-block;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    z-index: 0;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &.is-active {
+		
+    .b-upload-input__upload {
+      display: none;
+    }
+    + .b-upload-input__remove {
+      display: inline-block;
+    }
+  }
+}

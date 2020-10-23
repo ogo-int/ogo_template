@@ -1,0 +1,18 @@
+extends ../layout/page-template
+
+block head
+	title Карточка магазина
+
+block caption
+
+block vars
+	- var isTotalStyling = true; // Использовать бандл
+	- var modHeader = '_breadcrumbs';
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block inner-content
+	section.c-contacts-list
+		.c-contacts-list__detail-card
+			+shop-card()

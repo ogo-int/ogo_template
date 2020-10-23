@@ -1,0 +1,33 @@
+mixin configurator-product()
+	.b-configurator-product.iblock&attributes(attributes)
+		.b-configurator-product__wrap
+			.b-configurator-product__image-col
+				a(href="#")
+					img.b-configurator-product__image(src="assets/img/content/confprod.png", alt="Товар" width=55 height=84)
+
+			.b-configurator-product__description-col
+				.b-configurator-product__art Арт. 34534345
+				a.b-configurator-product__title(href="#") ATX Miditower Accord <nobr>P-25B</nobr> Black
+
+			.b-configurator-product__qtty-col
+				select.select2.b-configurator-product__qtty
+					option 1
+					option 2
+					option 3
+					option 4
+					option 5
+					option 6
+
+			.b-configurator-product__price-col
+				.b-configurator-product__current-price 49&nbsp;999 <span class="rub">i</span>
+				.b-configurator-product__old-price 55&nbsp;999 <span class="rub">i</span>
+				.b-configurator-product__bonus +4&nbsp;999 бонусов
+
+			.b-configurator-product__ui-col
+				.b-configurator-product__btns
+					a.b-configurator-product__favor(href="#")
+					a.b-configurator-product__compare(href="#")
+					a.b-configurator-product__remove(href="#")
+
+				.b-configurator-product__change
+					a.button-gray.b-configurator-product__change-btn(href="#") Заменить

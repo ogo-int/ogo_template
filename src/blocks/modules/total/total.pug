@@ -1,0 +1,133 @@
+mixin total()
+	.b-total.iblock&attributes(attributes)
+		.b-total__title Итоговая сумма
+
+		.b-total__price-holder
+			.b-total__current-price 199&nbsp;156 <span class="rub">i</span>
+			.b-total__old-price 205&nbsp;996 <span class="rub">i</span>
+			.b-total__bonus +4&nbsp;999 бонусов
+
+		.b-total__btns-holder
+			.b-total__top-btns
+				a.b-total__buy.button-buy(href="#") Добавить в&nbsp;корзину
+			.b-total__bottom-btns
+				a.b-total__score.button-gray.js-modal(href="#expert-request-modal") Оценка эксперта
+				a.b-total__print.button-gray(href="#") Распечатать
+
+		.b-total__link-holder
+			+configurator-link()
+
+mixin total_aside()
+	.b-total.iblock&attributes(attributes)
+		.b-total__title Итоговая сумма
+
+		.b-total__price-holder
+			.b-total__current-price 199&nbsp;156 <span class="rub">i</span>
+			.b-total__old-price 205&nbsp;996 <span class="rub">i</span>
+			.b-total__bonus +4&nbsp;999 бонусов
+
+		.b-total__btns-holder
+			.b-total__top-btns
+				a.b-total__buy.button-buy(href="#") Добавить в&nbsp;корзину
+			.b-total__bottom-btns
+				a.b-total__score._icon.button-gray.js-modal(href="#expert-request-modal") Оценка эксперта
+				a.b-total__print._icon.button-gray(href="#") Распечатать
+				a.b-total__mail._icon.button-gray(href="#") Отправить на почту
+
+mixin total_checkout()
+	.b-total.iblock&attributes(attributes)
+		.b-total__title Итоговая сумма
+
+		ul.b-total__table
+			li.b-total__row
+				.b-total__label Стоимость товаров:
+				.b-total__summ 199&nbsp;996 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Скидка по купону:
+				.b-total__summ -300 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Оплата бонусами:
+				.b-total__summ -540 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Сумма:
+				.b-total__summ
+					.b-total__price-holder
+						.b-total__current-price 199&nbsp;156 <span class="rub">i</span>
+						.b-total__old-price 205&nbsp;996 <span class="rub">i</span>
+						.b-total__bonus +4&nbsp;999 бонусов
+
+		.b-total__btns-holder
+			.b-total__top-btns
+				a.b-total__buy.button(href="#") Отправить заказ
+
+		.b-total__link-holder.b-total__link-holder_checkout
+			a.b-total__question(href="#") Что дальше?
+
+mixin total_confirm()
+	.b-total.iblock&attributes(attributes)
+		.b-total__title.b-total__title_confirm Итоговая сумма
+
+		ul.b-total__table
+			li.b-total__row
+				.b-total__label Стоимость товаров:
+				.b-total__summ 199&nbsp;996 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Скидка по купону:
+				.b-total__summ -300 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Оплата бонусами:
+				.b-total__summ -540 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Сумма:
+				.b-total__summ
+					.b-total__price-holder
+						.b-total__current-price 199&nbsp;156 <span class="rub">i</span>
+						.b-total__old-price 205&nbsp;996 <span class="rub">i</span>
+						.b-total__bonus +4&nbsp;999 бонусов
+
+		.b-total__footer
+			.b-total__footer-caption Оплата наличными или картой при получении
+			.b-total__footer-btns
+				.b-total__footer-btn-holder
+					a.b-total__footer-btn.button-gray(href="#") Оплатить онлайн
+				.b-total__footer-btn-holder
+					a.b-total__footer-btn.button-gray(href="#") Оформить кредит
+				.b-total__footer-btn-holder
+					a.b-total__footer-btn.button(href="#") Распечатать накладную
+
+			.b-total__footer-remark С&nbsp;накладной в&nbsp;магазине вы&nbsp;можете сразу направляться в&nbsp;кассу. Распечатать ее&nbsp;можно и&nbsp;на&nbsp;терминалах в&nbsp;самом магазине.
+
+mixin total_cart()
+	.b-total.iblock&attributes(attributes)
+		.b-total__title Итоговая сумма
+
+		ul.b-total__table
+			li.b-total__row
+				.b-total__label Стоимость товаров:
+				.b-total__summ 199&nbsp;996 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Скидка по купону:
+				.b-total__summ -300 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Оплата бонусами:
+				.b-total__summ -540 <span class="rub">i</span>
+
+			li.b-total__row
+				.b-total__label Сумма:
+				.b-total__summ
+					.b-total__price-holder
+						.b-total__current-price 199&nbsp;156 <span class="rub">i</span>
+						.b-total__old-price 205&nbsp;996 <span class="rub">i</span>
+						.b-total__bonus +4&nbsp;999 бонусов
+
+		.b-total__btns-holder
+			.b-total__top-btns
+				a.b-total__buy.button(href="#") Продолжить оформление

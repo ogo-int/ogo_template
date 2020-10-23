@@ -1,0 +1,139 @@
+.b-kit-action {
+  @include bgr("../img/kit-bg","png");
+  @include box-sizing;
+  min-width: 900px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: #dc3e48;
+  background-repeat: no-repeat;
+  background-size: 200px 120px;
+  background-position: 100% 0;
+
+  .jspContainer {
+    padding-bottom: 30px;
+  }
+
+  .jspHorizontalBar {
+    height: 6px;
+    background-color: #a52e35;
+
+    .jspDrag {
+      background-color: #ff7575;
+      cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur), default;
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      cursor: grab;
+
+      &.jspActive {
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+      }
+    }
+
+    .jspTrack {
+      background-color: #a52e35;
+    }
+  }
+
+  &__header {
+    @include margin(40/20);
+    @include clearfix;
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  &__caption {
+    float: left;
+    font-size: 32/16*100%;
+    font-weight: 200;
+    line-height: 1.22;
+    color: #fff;
+  }
+
+  &__buy-holder {
+    float: right;
+    white-space: nowrap;
+  }
+
+  &__old-price {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 18/16*100%;
+    text-decoration: line-through;
+    margin-right: 1.5em;
+    color: #fff;
+  }
+
+  &__buy-btn {
+    @include box-sizing;
+    display: inline-block;
+    min-width: 168px;
+    min-height: 40px;
+    padding: 10px 15px;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    text-align: center;
+    color: #dc3e48;
+    background-color: #fff;
+  }
+
+  &__main {
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__pane {
+    padding-left: 40px;
+  }
+
+  &__products {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+  }
+
+  &__product {
+    @include box-sizing;
+    display: inline-block;
+    position: relative;
+    width: 280px;
+    margin: 0 20px 0 0;
+    vertical-align: middle;
+    background-color: #fff;
+    white-space: normal;
+
+    &:before {
+      content: "+";
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      right: 100%;
+      width: 40px;
+      height: 40px;
+      margin-top: -20px;
+      margin-right: -8px;
+
+      font-weight: 600;
+      text-align: center;
+      line-height: 40px;
+      color: #fff;
+
+      background-color: #ff7575;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+    }
+
+    &:first-child {
+      &:before {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      margin-right: 40px;
+    }
+  }
+}

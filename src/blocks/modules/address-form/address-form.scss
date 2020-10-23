@@ -1,0 +1,109 @@
+.b-address-form {
+  &__cols {
+    @include margin(20/20);
+    @include clearfix;
+  }
+
+  &__left-col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  &__nums {
+    @include clearfix;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+
+  &__num {
+    @include box-sizing;
+    float: left;
+    width: 1/3*100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &__label {
+    @include mbot(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #262626;
+  }
+
+  &__text-area {
+  }
+
+  &__input {
+    position: relative;
+    &._none {
+      outline: 1px solid #ff6161;
+
+      &:after {
+        content: "*";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        color: #ff6161;
+        margin-top: -7px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  input {
+    @include box-sizing;
+    width: 100%;
+    font-size: 14/16*100%;
+  }
+
+  textarea {
+    @include box-sizing;
+    display: block;
+    width: 100%;
+    height: 100%;
+    height: 130px;
+    border: none;
+    border: 1px solid #dfdfdf;
+    padding: .65em 1em;
+    background-color: #fff;
+    box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.1);
+    font-size: 14/16*100%;
+  }
+}
+
+@mixin mx500($mod: "") {
+  .b-address-form#{$mod} {
+    .b-address-form {
+      &__left-col {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include mtop(20/20);
+        float: none;
+        width: auto;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include  mx500("._mx500");
+
+
+.c-lk__address {
+  @media (max-width: 580px) {
+    @include  mx500();
+  }
+}

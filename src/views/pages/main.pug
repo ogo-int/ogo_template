@@ -1,0 +1,67 @@
+extends ../layout/page-template
+
+block head
+	title Главная страница
+
+block vars
+	- var modHeader = '_sticky';
+	- var isInner = false; // раскрывать ли подменю в главном меню
+	- var isTotalStyling = true;
+
+block stylesheets
+
+block breadcrumbs
+
+block caption
+
+block inner-content
+	section.c-main-page
+		.c-main-page__categories
+			+intro-plates()
+
+		.c-main-page__partners
+			+logo-tape()
+
+		.c-main-page__news
+			+news-slider()
+
+		.c-main-page__shops
+			.c-main-page__shops-title 23&nbsp;678 товаров в&nbsp;наличии
+			.c-main-page__shops-remark Электроника, бытовая техника, товары для дома и&nbsp;семьи
+
+		.c-main-page__advantages-holder
+			.c-main-page__advantages
+				+main-advantages()
+			.c-main-page__num-features
+				+nums-features()
+
+		.c-main-page__pickpoints
+			+shops-preview()
+
+		.c-main-page__categories-holder
+			ul.c-main-page__category-items
+				li.c-main-page__category-item
+					+category-preview()
+
+				li.c-main-page__category-item
+					+category-preview2()
+
+				li.c-main-page__category-item
+					+category-preview3()
+
+				li.c-main-page__category-item
+					+category-preview4()
+
+				li.c-main-page__category-item
+					+category-preview5()
+
+		.c-main-page__consult-holder
+			.c-main-page__consult-header
+				.c-main-page__consult-title Мы&nbsp;всегда на&nbsp;cвязи!
+				.c-main-page__consult-remark Вы&nbsp;можете задать свой вопрос прямо здесь
+
+			.c-main-page__consult
+				+main-consult()
+
+		.c-main-page__recent-products
+			+small-product-slider_buy()

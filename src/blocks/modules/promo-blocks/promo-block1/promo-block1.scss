@@ -1,0 +1,71 @@
+.b-promo-block1 {
+  @include box-sizing;
+  min-width: 300px;
+  height: 100%;
+
+  &__holder {
+    @include box-sizing;
+    position: relative;
+    height: 100%;
+    padding-top: 60px;
+    padding-left: 10.2%;
+    padding-right: 10.2%;
+    padding-bottom: 340px;
+    background-color: #dc3e48;
+  }
+
+  &__bg-holder {
+    @include bgr("../img/promo-bg","png");
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: auto (240/630)*100%;
+  }
+
+  &__bg-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    max-width: 85%;
+    height: auto;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    color: white;
+  }
+
+  &__title {
+    @include margin(30/20);
+    display: table;
+    font-size: 28/16*100%;
+    font-weight: 600;
+    line-height: (34/28);
+    text-decoration: none;
+    color: white;
+  }
+}
+
+@mixin mx400($mod: "") {
+  .b-promo-block1#{$mod} {
+    font-size: 14px;
+
+    .b-promo-block1 {
+
+      &__holder {
+        padding: 35px 30px 70%;
+      }
+
+      &__bg-holder {
+        background-size: 100% auto;
+      }
+    }
+  }
+}
+
+@include mx400("._mx400");

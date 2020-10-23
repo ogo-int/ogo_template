@@ -1,0 +1,100 @@
+.b-cert-slider {
+  @include box-sizing;
+  max-width: 310px;
+  padding: 30px 10px;
+  background-color: #f8f8f8;
+
+  .scrollingHotSpotLeft {
+    width: 30px;
+    min-width: 30px;
+  }
+
+  .scrollingHotSpotRight {
+    width: 30px;
+    min-width: 30px;
+  }
+
+  &__cert {
+    width: auto;
+    // width: 200px;
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
+  }
+
+  &__slider-holder {
+    overflow: hidden;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  &__slider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+    white-space: nowrap;
+  }
+
+  &__slide {
+    display: inline-block;
+    width: 1/2*100%;
+    margin: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    white-space: normal;
+  }
+
+  &__slide-link {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  &__slider-holder {
+    position: relative;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 18/16*100%;
+    font-weight: 600;
+    line-height: 0.83;
+  }
+
+  &__header {
+    @include margin(30/20);
+  }
+
+  &__brand {
+    @include margin(30/20);
+    display: table;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    transition: .2s opacity;
+
+    &:hover {
+      @include opacity(.7);
+    }
+  }
+
+  &__logo-holder {
+    display: table-cell;
+    vertical-align: middle;
+    width: 120px;
+    padding-left: 15px;
+  }
+
+  &__logo {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__brand-text {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 11px;
+    padding-right: 15px;
+  }
+}

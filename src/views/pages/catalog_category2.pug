@@ -1,0 +1,28 @@
+extends ../layout/page-template
+
+block head
+	title Категория каталога 3 уровень
+
+block head-scripts
+
+block breadcrumbs
+
+block vars
+	- var isInner = false; // раскрывать ли подменю в главном меню
+
+block caption
+	h1.full-width.c-catalog__category-caption <img class="c-catalog__category-icon" src="assets/img/content/categories/icon-phone.png" alt="Иконка" width="17" height="24"/><span>Комплектующие</span>
+
+block inner-content
+	section.c-catalog
+		.c-catalog__category-holder
+			.c-catalog__category-menu
+				+category-menu2()
+
+			.c-catalog__category-main
+				.c-catalog__category-main-wrap
+					.c-catalog__category-plates
+						+subcategory-plates()
+
+					.c-catalog__category-products
+						+small-product-slider()

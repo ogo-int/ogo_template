@@ -1,0 +1,48 @@
+extends ../layout/page-template
+
+block vars
+	- var modHeader = '_breadcrumbs';
+
+block head
+	title Страница производителя
+
+block head-scripts
+
+block caption
+	h1.full-width.c-brands__caption Samsung
+
+block inner-content
+	section.c-brands
+		.c-brands__header
+			.c-brands__intro-text.content-area
+				p Вне зависимости от&nbsp;того, занимаетесь&nbsp;ли вы&nbsp;фотосъемкой для удовольствия или в&nbsp;коммерческих целях, цифровые зеркальные камеры Canon EOS и&nbsp;компактные камеры сделают этот процесс творческим. Новейшие функции, обеспечивают высокую производительность, на&nbsp;которую вы&nbsp;всегда можете рассчитывать.
+
+			.c-brands__social
+				+social-btns_brand()
+
+		.c-brands__brand-image-holder
+			img.c-brands__brand-image(src="assets/img/content/samsung.jpg", alt="samsung" width=1275 height=200)
+
+		.c-brands__main-holder
+			.c-brands__categories
+				+main-plates_brand()
+
+			.c-brands__promoslider
+				+promo-slider()
+
+			.c-brands__popular-products
+				+product-slider()
+
+			.c-brands__top-rated
+				+top-product-slider()
+
+			.c-brands__about-holder
+				.c-brands__about.content-area
+					.h2.center О компании Samsung
+					p В&nbsp;Samsung мы&nbsp;придерживаемся простой философии бизнеса: использовать наши таланты и&nbsp;технологии для производства совершенных продуктов и&nbsp;услуг, которые способны изменить мир к&nbsp;лучшему. Каждый день сотрудники компании воплощают эту философию в&nbsp;жизнь.<br/>Мы&nbsp;ищем яркие таланты по&nbsp;всему миру и&nbsp;обеспечиваем им&nbsp;ресурсы и&nbsp;условия, позволяющие достичь совершенства в&nbsp;своем деле. В&nbsp;2013 году Samsung Electronics третий раз подряд удостоилась звания &laquo;Любимого бренда россиян&raquo; по&nbsp;результатам исследования компании Online Market Intelligence (OMI). Компания занимает лидирующие позиции в&nbsp;рейтинге OMI на&nbsp;протяжении шести лет. В&nbsp;2008 и&nbsp;2010 году Samsung стала второй в&nbsp;<nobr>ТОП-20</nobr> &laquo;Любимых брендов россиян&raquo;, в&nbsp;2009 году заняла первое место и&nbsp;с&nbsp;2011 года стабильно удерживает первенство в&nbsp;течение трех лет, являясь неизменным лидером в&nbsp;категории &laquo;Бытовая техника&raquo;.
+
+					img.image-full(src="assets/img/content/samsung-tv.jpg", alt="samsung")
+
+					p В&nbsp;2013 году Samsung Electronics третий раз подряд удостоилась звания &laquo;Любимого бренда россиян&raquo;по&nbsp;результатам исследования компании Online Market Intelligence (OMI). Компания занимает лидирующие позиции в&nbsp;рейтинге OMI на&nbsp;протяжении шести лет. В&nbsp;2008 и&nbsp;2010 году Samsung стала второй в&nbsp;<nobr>ТОП-20</nobr> &laquo;Любимых брендов россиян&raquo;, в&nbsp;2009 году заняла первое место и&nbsp;с&nbsp;2011 года стабильно удерживает первенство в&nbsp;течение трех лет, являясь неизменным лидером в&nbsp;категории &laquo;Бытовая техника&raquo;.
+
+					+video-frame()

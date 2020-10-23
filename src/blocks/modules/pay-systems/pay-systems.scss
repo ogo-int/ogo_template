@@ -1,0 +1,19 @@
+.b-pay-systems {
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    display: inline-block;
+    margin: 0;
+    margin-right: .7em;
+  }
+
+  &__caption {
+    @include margin(5/20);
+    font-size: 14/16*100%;
+    color: #333;
+  }
+}

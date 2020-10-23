@@ -1,8 +1,15 @@
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/functions";
-@import "vendor/libs";
-@import "base/fonts";
-@import "base/general";
-@import "../blocks/components/components";
-@import "../blocks/modules/modules";
+@charset "UTF-8";
+
+@import 'helpers/variables';
+@import 'helpers/functions';
+@import 'helpers/css3-mixins';
+@import 'helpers/mixins';
+
+//@import "base/global";
+//@import "components/components";
+//@import "modules/modules";
+//@import "adaptive/adaptive";
+
+.ololo {
+  color: red;
+}

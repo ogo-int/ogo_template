@@ -1,0 +1,348 @@
+.b-configurator-product {
+  @include box-sizing;
+  min-width: 260px;
+  max-width: 100%;
+
+  &__wrap {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    border: 1px solid #dfdfdf;
+  }
+
+  &__image-col {
+    @include box-sizing;
+    display: table-cell;
+    width: 90px;
+    padding: 15px 0 20px 30px;
+    vertical-align: top;
+  }
+
+  &__description-col {
+    display: table-cell;
+    width: 290px;
+    padding: 15px;
+    vertical-align: top;
+    // max-width: 200px;
+    word-wrap: break-word;
+  }
+
+  &__qtty-col {
+    display: table-cell;
+    width: 70px;
+    padding: 15px;
+    vertical-align: top;
+    padding-top: 22px;
+  }
+
+  &__price-col {
+    display: inline-block;
+    width: 120px;
+    padding: 15px;
+    vertical-align: top;
+    padding-top: 20px;
+  }
+
+  &__ui-col {
+    @include box-sizing;
+    display: table-cell;
+    width: 130px;
+    padding: 15px;
+    vertical-align: top;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__art {
+    @include margin(5/20);
+    font-size: 12/16*100%;
+    font-weight: 200;
+    line-height: (15/12);
+    color: #bfbfbf;
+  }
+
+  &__title {
+    font-size: 18/16*100%;
+    text-decoration: none;
+    line-height: (22/18);
+    color: #333;
+  }
+
+  &__current-price {
+    white-space: nowrap;
+    font-size: 18/16*100%;
+    line-height: (22/18);
+    color: #35322f;
+  }
+
+  &__old-price {
+    white-space: nowrap;
+    font-size: 14/16*100%;
+    line-height: (17/14);
+    text-decoration: line-through;
+    color: #dc3e48;
+  }
+
+  &__bonus {
+    white-space: nowrap;
+    font-size: 12/14*100%;
+    font-weight: 200;
+    line-height: (15/12);
+    color: #3e8bdc;
+  }
+
+  &__btns {
+    @include clearfix;
+    @include margin(15/20);
+    text-align: center;
+  }
+
+  &__favor {
+    float: left;
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-heart);
+      position: relative;
+      top: 2px;
+      transition: .2s color;
+      font-size: 22px;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__compare {
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-scale);
+      transition: .2s color;
+      font-size: 26px;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__remove {
+    width: 23px;
+    height: 20px;
+    float: right;
+    margin-top: 2px;
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-close);
+      position: relative;
+      top: 1px;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__change-btn {
+    @include box-sizing;
+    width: 100%;
+    font-size: 14/16*100%;
+    text-align: center;
+  }
+}
+
+@mixin mx620($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+      &__wrap {
+        @include clearfix;
+        position: relative;
+        padding: 20px;
+        padding-left: 120px;
+      }
+
+      &__image-col {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120px;
+        padding-right: 0;
+        padding-left: 0;
+        padding-top: 25px;
+        text-align: center;
+      }
+
+      &__description-col {
+        @include mbot(15/20);
+        display: block;
+        padding: 0;
+      }
+
+      &__qtty-col {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+      }
+
+      &__price-col {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+        margin-left: 1em;
+      }
+
+      &__ui-col {
+        @include margin(20/20);
+        @include clearfix;
+        display: block;
+        width: 230px;
+        padding: 0;
+      }
+
+      &__current-price {
+        display: inline-block;
+      }
+
+      &__old-price {
+        display: inline-block;
+        margin-left: .5em;
+      }
+
+      &__change {
+        float: left;
+        margin-left: 0;
+        width: 120px;
+      }
+
+      &__btns {
+        float: right;
+        width: 80px;
+        margin-top: 6px;
+      }
+    }
+  }
+}
+
+@mixin mx415($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+
+      &__wrap {
+        padding-left: 20px;
+      }
+
+      &__price-col {
+        margin-left: 20px;
+        width: 150px;
+      }
+
+      &__description-col {
+        width: 50%;
+        min-height: 95px;
+        overflow: hidden;
+      }
+
+      &__image-col {
+        display: block;
+        position: relative;
+        width: 90px;
+        padding: 0;
+        float: left;
+        margin-bottom: 20px;
+        margin-right: 20px;
+      }
+
+      &__qtty-col {
+        display: inline-block;
+        width: 90px;
+        clear: both;
+      }
+
+      &__old-price {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@mixin mx350($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+      &__wrap {
+        padding: 15px;
+      }
+      &__price-col {
+        width: 120px;
+      }
+    }
+  }
+}
+
+@include mx620("._mx620");
+@include mx415("._mx415");
+@include mx350("._mx350");
+
+.b-configurator-product__description-col {
+  @media (max-width: 1101px) {
+    width: 270px;
+  }
+
+  @media (max-width: 1050px) {
+    width: 240px;
+  }
+
+  @media (max-width: 1023px) {
+    width: 395px;
+  }
+
+  @media (max-width: 950px) {
+    width: 345px;
+  }
+
+  @media (max-width: 900px) {
+    width: 245px;
+  }
+
+  @media (max-width: 820px) {
+    width: 225px;
+  }
+
+  @media (max-width: 750px) {
+    width: 180px;
+  }
+
+  @media (max-width: 700px) {
+    width: auto;
+  }
+}
+
+.b-configurator-product__qtty-col {
+
+  @media (max-width: 700px) {
+    width: auto;
+  }
+}
+
+.c-configurator__items {
+  @media (max-width: 700px) {
+    @include mx620();
+  }
+
+  @media (max-width: 455px) {
+    @include mx415();
+  }
+
+  @media (max-width: 400px) {
+    @include mx350();
+  }
+}

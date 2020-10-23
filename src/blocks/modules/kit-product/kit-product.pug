@@ -1,0 +1,13 @@
+mixin kit-product()
+	.b-kit-product.iblock&attributes(attributes)
+		.b-kit-product__cols
+			.b-kit-product__left-col
+				.b-kit-product__image-holder
+					img.b-kit-product__image(src="assets/img/content/kit-product.png", alt="Фото" width=90 height=74)
+
+				.b-kit-product__checkbox-holder
+					+checkbox('В комлекте')(checked)
+
+			.b-kit-product__right-col
+				.b-kit-product__title Olympus <nobr>OM-D</nobr> <nobr>E-M10</nobr> Kit с&nbsp;улучшенной матрицей&hellip;
+				.b-kit-product__price 60&nbsp;000 <span class="rub">i</span>

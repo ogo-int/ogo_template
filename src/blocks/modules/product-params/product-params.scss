@@ -1,0 +1,85 @@
+.b-product-params {
+  &__caption {
+    @include margin(30/20);
+    font-size: 32/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__sections {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__section {
+    margin: 0;
+  }
+
+  &__section-caption {
+    position: relative;
+    padding: 10px 20px 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+    color: #dc3e48;
+    font-size: 18/16*100%;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .2s border-bottom-color;
+
+    &:after {
+      @include ft-icon($ft-arrow-down);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 1.7em;
+      transition: .2s transform;
+      font-size: 6px;
+      transform-origin: 50% 50%;
+    }
+
+    &_active {
+      display: block;
+      border-bottom-color: transparent;
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__section-holder {
+    &_active {
+    }
+  }
+
+  &__params {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-weight: 200;
+    font-size: 14/16*100%;
+  }
+
+  &__param {
+    display: table-row;
+    margin: 0;
+    background-color: #f9f9f9;
+
+    &:nth-child(2n) {
+      background-color: #fcfcfc;
+    }
+  }
+
+  &__param-label {
+    display: table-cell;
+    width: 65%;
+    padding: 10px 15px;
+    vertical-align: top;
+  }
+
+  &__param-value {
+    display: table-cell;
+    padding: 10px;
+  }
+}

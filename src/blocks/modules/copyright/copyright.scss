@@ -1,0 +1,14 @@
+.b-copyright {
+  @include clearfix();
+
+  &__logo-holder {
+    float: left;
+    margin-right: 20px;
+  }
+
+  &__text-holder {
+    font-size: 12/16*100%;
+    overflow: hidden;
+    color: #333;
+  }
+}

@@ -1,0 +1,290 @@
+.b-mobile-header {
+  &__holder {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__btn {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 15px;
+    padding-top: 8px;
+    width: 35px;
+  }
+
+  &__logo {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 5px 5px 5px 20px;
+  }
+
+  &__search {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__shops {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__lk {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__cart {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    background-color: #f6f6f6;
+  }
+
+  &__callback {
+    display: none;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__callback-link {
+    display: block;
+    position: relative;
+    padding: 5px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #2a2a2a;
+    white-space: nowrap;
+
+    border-left: 2px solid #f1f1f1;
+
+    &:before {
+      @include ft-icon($ft-phone);
+      font-size: 26px;
+      color: #969696;
+    }
+  }
+
+  &__search-link {
+    display: block;
+    position: relative;
+    padding: 5px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #2a2a2a;
+    white-space: nowrap;
+
+    border-left: 2px solid #f1f1f1;
+
+    &:before {
+      @include ft-icon($ft-search);
+      vertical-align: middle;
+      font-size: 22px;
+      margin-right: .3em;
+      color: #969696;
+    }
+  }
+
+  &__shops-link {
+    display: block;
+    padding: 5px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #2a2a2a;
+    border-left: 2px solid #f1f1f1;
+    white-space: nowrap;
+
+    &:before {
+      @include ft-icon($ft-placemark);
+      content: "";
+      font-size: 26px;
+      vertical-align: middle;
+      margin-right: .25em;
+      color: #969696;
+      margin-top: -2px;
+    }
+  }
+
+  &__lk-link {
+    display: block;
+    position: relative;
+    padding: 5px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #2a2a2a;
+    border-left: 2px solid #f1f1f1;
+    white-space: nowrap;
+
+    &:before {
+      @include bgr("../img/lk","png");
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 22px;
+      vertical-align: middle;
+      margin-right: .7em;
+      background-repeat: no-repeat;
+      background-size: 20px 22px;
+      background-position: 50% 50%;
+    }
+  }
+
+  &__logo-img {
+    width: 99px;
+    height: auto;
+  }
+
+  &__search-line {
+    display: none;
+    text-align: left;
+  }
+}
+
+// Модификторы
+.b-mobile-header._search-open {
+  .b-mobile-header {
+    &__cart {
+      display: none;
+    }
+
+    &__lk {
+      display: none;
+    }
+
+    &__shops {
+      display: none;
+    }
+
+    &__logo {
+      width: 135px;
+    }
+
+    &__search {
+      padding-right: 15px;
+    }
+
+    &__search-line {
+      display: block;
+    }
+
+    &__search-link {
+      display: none;
+    }
+  }
+}
+
+@mixin mx1024($mod: "") {
+  .b-mobile-header#{$mod} {
+    .b-mobile-header {
+      &__cart {
+        .b-cart-link__text_mobile {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+// Адаптация
+@mixin mx680($mod: "") {
+  .b-mobile-header#{$mod} {
+    .b-mobile-header {
+      &__callback {
+        display: table-cell;
+        width: 60px;
+      }
+
+      &__search {
+        display: none;
+      }
+
+      &__shops {
+        display: none;
+      }
+
+      &__callback-link {
+        padding-left: 10px;
+        padding-right: 10px;
+        &:before {
+          margin-right: 0;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      &__lk {
+        display: none;
+      }
+
+      &__lk-link {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        &:before {
+          margin-right: 0;
+        }
+
+        span {
+          display: none;
+        }
+      }
+
+      &__cart {
+        width: 60px;
+        padding-left: 10px;
+        padding-right: 5px;
+
+        .b-cart-link__icon {
+          margin-right: 5px;
+        }
+
+        .b-cart-link__buy, .b-cart-link__text {
+          display: none;
+        }
+
+        .b-cart-link__text_mobile {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx440($mod: "") {
+  .b-mobile-header#{$mod} {
+    .b-mobile-header {
+      &__lk {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mx680("._mx1024");
+@include mx680("._mx680");
+@include mx440("._mx440");
+
+@media (max-width: 1024px) {
+  .c-header__mobile-header {
+    @include mx680();
+  }
+}
+
+@media (max-width: 680px) {
+  .c-header__mobile-header {
+    @include mx680();
+  }
+}
+
+@media (max-width: 440px) {
+  .c-header__mobile-header {
+    @include mx440();
+  }
+}

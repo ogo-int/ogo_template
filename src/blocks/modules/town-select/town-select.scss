@@ -1,0 +1,49 @@
+.b-town-select {
+  display: inline-block;
+  position: relative;
+
+  &__label {
+    display: inline;
+    font-weight: 200;
+    color: #9a9a9a;
+  }
+
+  &__link {
+    font-weight: 400;
+    text-decoration: none;
+    color: #4a4a4a;
+    white-space: nowrap;
+
+
+    &_current {
+      position: relative;
+      border-bottom: 1px dashed #979797;
+      color: #7e7e7e;
+      margin-left: .5em;
+
+      &:hover {
+        border-bottom-style: solid;
+      }
+    }
+  }
+
+  &__options {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 100%;
+    right: auto;
+    left: 0;
+    margin: 0;
+    border: 1px solid #4a4a4a;
+    padding: 10px 15px;
+    list-style: none;
+    margin-top: 10px;
+    margin-left: 50px;
+    background-color: #fff;
+
+    &_active {
+      display: block;
+    }
+  }
+}

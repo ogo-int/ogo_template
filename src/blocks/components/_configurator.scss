@@ -1,0 +1,199 @@
+/* Конфигуратор */
+.c-configurator {
+  &__cols {
+    @include clearfix;
+    overflow: hidden;
+    padding: 25px;
+    background-color: #f8f8f8;
+  }
+
+  &__main-col {
+    @include clearfix;
+    margin-right: 290px;
+    padding-bottom: 10px;
+  }
+
+  &__main-wrap {
+    float: left;
+    width: 100%;
+  }
+
+  &__aside-col {
+    float: right;
+    width: 280px;
+  }
+
+  &__additional-items {
+    @include margin(10/20);
+  }
+
+  &__bottom-section {
+    @include clearfix;
+    display: table;
+    width: 100%;
+  }
+
+  &__estimate {
+    @include box-sizing;
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    vertical-align: top;
+    padding-right: 5px;
+    background-color: #fff;
+
+    .b-estimate {
+      @include box-sizing;
+      height: 100%;
+    }
+  }
+
+  &__total {
+    @include box-sizing;
+    display: table-cell;
+    width: 50%;
+    height: 100%;
+    padding-left: 10px;
+    vertical-align: top;
+
+
+    .b-configurator-total {
+      @include box-sizing;
+      height: 100%;
+    }
+  }
+
+  &__aside-guarantee {
+    @include margin(10/20);
+    @include bgr("../img/content/guarantee","png");
+    background-size: 47px 62px;
+    background-repeat: no-repeat;
+    background-position: 20px 15px;
+    background-color: #fff;
+    padding: 20px 20px 20px 85px;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: (17/14);
+    color: #7c7c7c;
+  }
+
+  &__save {
+    @include margin(10/20)
+      padding: 20px;
+    background-color: #fff;
+  }
+
+  &__link {
+    @include margin(10/20)
+      padding: 20px;
+    background-color: #fff;
+  }
+
+  &__socials {
+    @include margin(10/20)
+      padding: 20px;
+    background-color: #fff;
+  }
+
+  &__consult {
+    @include margin(20/20);
+  }
+}
+
+@media #{$media-desktop} {
+  .c-configurator {
+    &__cols {
+      padding: 10px;
+    }
+  }
+}
+
+@media #{$media-tablet} {
+  .c-configurator {
+    &__cols {
+      padding: 20px;
+    }
+
+    &__aside-col {
+      display: none;
+    }
+
+    &__main-col {
+      @include margin(10/20);
+      margin-right: 0;
+    }
+
+    &__aside-total {
+      display: none;
+    }
+
+    &__link {
+      display: none;
+    }
+
+    &__aside-guarantee {
+      display: none;
+    }
+
+    &__save {
+      float: left;
+      clear: left;
+      width: 215px;
+      margin-top: 0;
+      margin-right: 10px;
+    }
+
+    &__socials {
+      display: none;
+    }
+
+    &__consult {
+      overflow: hidden;
+    }
+  }
+}
+
+@media #{$media-phone-landscape} {
+  .c-configurator {
+    &__save {
+      float: none;
+      width: auto;
+      margin-right: 0;
+    }
+
+    &__consult {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 20px;
+    }
+
+    &__bottom-section {
+      display: block;
+    }
+
+    &__estimate {
+      display: block;
+      width: auto;
+      height: auto;
+      float: none;
+      padding-right: 0;
+    }
+
+    &__total {
+      @include margin(10/20);
+      display: block;
+      width: auto;
+      height: auto;
+      float: none;
+      padding-left: 0;
+    }
+  }
+}
+
+@media #{$media-phone} {
+  .c-configurator {
+    &__cols {
+      padding: 5px;
+    }
+  }
+}

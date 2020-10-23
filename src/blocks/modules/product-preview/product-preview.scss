@@ -1,0 +1,455 @@
+.b-product-preview {
+  min-width: 300px;
+
+  &__caption {
+    padding-right: 40px;
+    padding-left: 30px;
+    padding-top: 20px;
+    max-width: 885px;
+    font-size: 36/16*100%;
+    font-weight: 200;
+    line-height: (46/36);
+    word-wrap: break-word;
+  }
+
+  &__warn {
+    @include margin(10/20);
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 18/16*100%;
+    font-weight: 600;
+    line-height: (22/16);
+    color: #dc3e48;
+  }
+
+  &__remarks {
+    @include margin(20/20);
+  }
+
+  &__footer {
+    padding: 30px 30px 50px;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+
+    @media(max-width: 767px) {
+      display: inline-block;
+    }
+  }
+
+  &__params-holder {
+    display: table-cell;
+    vertical-align: middle;
+    width: 570px;
+
+    @media(max-width: 767px) {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  &__params {
+    @include clearfix;
+    font-size: 14/16*100%;
+  }
+
+  &__param-left {
+    @include box-sizing;
+    width: 50%;
+    float: left;
+    padding-right: 15px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__param-right {
+    @include box-sizing;
+    width: 50%;
+    float: right;
+    padding-left: 15px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &__codes {
+    @include margin(20/20);
+    font-size: 14/16*100%;
+  }
+
+  &__article {
+    margin-right: 1.5em;
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  &__avail {
+    font-weight: 200;
+    line-height: (16/13);
+    color: #81c03d;
+
+    &:before {
+      @include bgr("../img/ok","png");
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 11px;
+      height: 9px;
+      margin-top: -2px;
+      margin-right: .5em;
+      background-repeat: no-repeat;
+      background-size: 11px 9px;
+      background-position: 50% 50%;
+    }
+  }
+
+  &__warn {
+    &:before {
+      @include ft-icon($ft-warn);
+      margin-right: .5em;
+    }
+  }
+
+  &__photos {
+    @include mtop(40/20);
+    @include mbot(30/20)
+	;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__ui-holder {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: middle;
+    max-width: 465px;
+    padding-left: 30px;
+    padding-top: 10px;
+
+    @media(max-width: 767px) {
+      display: inline-block;
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0;
+    }
+  }
+
+  &__ui-wrap {
+    @include clearfix();
+    max-width: 440px;
+    margin-left: auto;
+
+    @media(max-width: 767px) {
+      text-align: center;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__prices {
+    //padding-right: 15px;
+    @include clearfix;
+    float: left;
+
+    @media(max-width: 1279px) {
+      float: right;
+      width: 235px;
+      margin-bottom: 20px;
+      text-align: center;
+      //padding-right: 63px;
+    }
+
+    @media(max-width: 767px) {
+      float: none;
+      width: 100%;
+      padding-right: 0;
+    }
+  }
+
+  &__btns {
+    @include box-sizing;
+    float: right;
+    width: 250px;
+    padding-left: 15px;
+
+    @media(max-width: 767px) {
+      float: none;
+      padding-left: 0;
+      display: inline-block;
+    }
+  }
+
+  &__current-price {
+    @include mbot(15/20);
+    font-size: 37/16*100%;
+    line-height: (39/37);
+    color: #000;
+
+    @media(max-width: 1279px) {
+      margin-bottom: 0;
+    }
+
+    @media(max-width: 767px) {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  &__old-price {
+    float: left;
+    text-decoration: line-through;
+    color: #dc3e48;
+    padding-right: 10px;
+
+
+    @media(max-width: 1279px) {
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  &__bonus {
+    float: right;
+    font-size: 14/16*100%;
+    color: #3e8bdc;
+
+    @media(max-width: 1279px) {
+      float: none;
+      display: inline-block;
+    }
+  }
+
+  &__favor {
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-heart);
+      font-size: 22px;
+      transition: .2s color;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__compare {
+    margin-left: .5em;
+    text-decoration: none;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-scale);
+      font-size: 26px;
+      transition: .2s color;
+    }
+
+    &:hover {
+      color: #6c6c6c;
+    }
+  }
+
+  &__fast-order {
+    float: left;
+    margin-top: 4px;
+    position: relative;
+    padding-left: 20px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #dc3e48;
+
+    &:before {
+      @include ft-icon($ft-cursor);
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -10px;
+    }
+
+    &:hover {
+      color: #a52e35;
+    }
+  }
+
+  &__buy {
+    @include box-sizing;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__additional-btns {
+    @include margin(11/20);
+    @include clearfix();
+    text-align: right;
+  }
+}
+
+// Модификаторы
+.b-product-preview._ajax-append {
+  visibility: hidden;
+}
+
+// Адаптация
+
+@mixin mx1100($mod: "") {
+  .b-product-preview#{$mod} {
+    .b-product-preview {
+      &__prices {
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0;
+        text-align: center;
+      }
+
+      &__current-price {
+        margin-bottom: 0;
+      }
+
+      &__btns {
+        margin-top: 20px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+      }
+
+      &__ui-wrap {
+        width: 260px;
+      }
+
+      &__bonus {
+        float: none;
+        display: inline-block;
+      }
+
+      &__old-price {
+        display: inline-block;
+        float: none;
+        margin-right: .5em;
+      }
+    }
+  }
+}
+
+@mixin mx850($mod: "") {
+  .b-product-preview#{$mod} {
+    .b-product-preview {
+
+      &__cols {
+        display: block;
+      }
+
+      &__params-holder {
+        display: block;
+        width: auto;
+      }
+
+      &__ui-holder {
+        @include mtop(40/20);
+        display: block;
+        width: auto;
+        padding-left: 0;
+        max-width: none;
+      }
+
+      &__ui-wrap {
+        width: auto;
+        max-width: none;
+        margin-left: 0;
+      }
+
+      &__prices {
+        float: left;
+        width: 50%;
+        text-align: left;
+      }
+
+      &__btns {
+        float: left;
+        margin-top: 0;
+        padding-left: 15px;
+      }
+
+      &__current-price {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+@mixin mx600($mod: "") {
+  .b-product-preview#{$mod} {
+    .b-product-preview {
+      &__param-left {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__param-right {
+        float: none;
+        width: auto;
+        padding-left: 0;
+        margin-top: .5em;
+      }
+
+      &__prices {
+        float: none;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0;
+      }
+
+      &__current-price {
+        margin-bottom: 0;
+      }
+
+      &__btns {
+        margin-top: 20px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      &__ui-wrap {
+        width: 260px;
+      }
+
+      &__bonus {
+        float: none;
+        display: inline-block;
+      }
+
+      &__old-price {
+        display: inline-block;
+        float: none;
+        margin-right: .5em;
+      }
+
+      &__footer {
+        padding: 15px 20px 20px;
+      }
+    }
+  }
+}
+
+@include mx1100("._mx1100");
+@include mx850("._mx850");
+@include mx600("._mx600");

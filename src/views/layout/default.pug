@@ -1,0 +1,130 @@
+//---- Variables ----//
+- var jv0 = 'javascript:void(0);';
+- var timestamp = new Date().getTime();
+- var tel = "location.href = 'tel:'+$(this).text().replace(/(\s|\(|\)|\-)/g,'')+'';";
+- var lorem = 'Sed ut&nbsp;perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab&nbsp;illo inventore veritatis et&nbsp;quasi architecto beatae vitae dicta sunt, explicabo.'
+block default-vars
+
+//---- Add blocks ----//
+//-- *OLD* include blocks.pug --//
+include ../helpers/modules
+
+//---- Add frameworks list ----//
+- var scriptList = [[],[],[]];
+- var styleList = [];
+
+include ../helpers/vendor-js
+
+doctype html
+html(lang="ru" class="no-js")
+	head
+		meta(charset='utf-8')
+		meta(name='viewport' id='viewport' content='width=device-width, initial-scale=1, minimal-ui')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='imagetoolbar' content='no')
+		meta(name='msthemecompatible' content='no')
+		meta(name='cleartype' content='on')
+		meta(name='HandheldFriendly' content='True')
+		meta(name='format-detection' content='telephone=no')
+		meta(name='format-detection' content='address=no')
+		meta(name='apple-mobile-web-app-capable' content='yes')
+		meta(name='apple-mobile-web-app-status-bar-style' content='black-translucent')
+
+		// favicons
+		link(rel="apple-touch-icon", sizes="57x57", href="./assets/img/favicon/apple-touch-icon-57x57.png")
+		link(rel="apple-touch-icon", sizes="60x60", href="./assets/img/favicon/apple-touch-icon-60x60.png")
+		link(rel="apple-touch-icon", sizes="72x72", href="./assets/img/favicon/apple-touch-icon-72x72.png")
+		link(rel="apple-touch-icon", sizes="76x76", href="./assets/img/favicon/apple-touch-icon-76x76.png")
+		link(rel="apple-touch-icon", sizes="114x114", href="./assets/img/favicon/apple-touch-icon-114x114.png")
+		link(rel="apple-touch-icon", sizes="120x120", href="./assets/img/favicon/apple-touch-icon-120x120.png")
+		link(rel="apple-touch-icon", sizes="144x144", href="./assets/img/favicon/apple-touch-icon-144x144.png")
+		link(rel="apple-touch-icon", sizes="152x152", href="./assets/img/favicon/apple-touch-icon-152x152.png")
+		link(rel="apple-touch-icon", sizes="180x180", href="./assets/img/favicon/apple-touch-icon-180x180.png")
+		link(rel="manifest", href="./assets/img/favicon/manifest.json")
+		link(rel="mask-icon", href="./assets/img/favicon/safari-pinned-tab.svg", color="#5bbad5")
+		link(rel="shortcut icon", href="./assets/img/favicon/favicon.ico")
+		meta(name="msapplication-TileColor", content="#ffffff")
+		meta(name="msapplication-TileImage", content="./assets/img/favicon/mstile-144x144.png")
+		meta(name="msapplication-config", content="./assets/img/favicon/browserconfig.xml")
+		meta(name="theme-color", content="#ffffff")
+
+		block head
+
+		if isTotalStyling
+			//- vendor styles
+			each src in styleList
+				link(href=src rel='stylesheet')
+
+			// project styles
+			//- link(href='./assets/css/optimize.css' rel='stylesheet')
+			link(href='./assets/css/global.css?' + timestamp rel='stylesheet')
+			//- link(href='./assets/css/fonts.css?' + timestamp rel='stylesheet')
+			link(href='./assets/css/modules.css' rel='stylesheet')
+			link(href='./assets/css/components.css' rel='stylesheet')
+			link(href='./assets/css/adaptive.css?' + timestamp rel='stylesheet')
+			link(href='./assets/css/main.css?' + timestamp rel='stylesheet')
+
+		else
+			link(href='./assets/css/global.css?' + timestamp rel='stylesheet')
+
+			script(type="text/javascript").
+				if (document.getElementsByTagName) {
+					document.write('<!--');
+				}
+
+			//- vendor styles
+			each src in styleList
+				link(href=src rel='stylesheet')
+
+			link(href='./assets/css/components.css' rel='stylesheet')
+			link(href='./assets/css/modules.css' rel='stylesheet')
+			link(href='./assets/css/adaptive.css?' + timestamp rel='stylesheet')
+			<!--[if IE]><![endif]-->
+
+		block stylesheets
+
+		// html5shiv, respond.js
+		//
+		<!--[if lte IE 8]>
+		<script type="text/javascript" src="./assets/js/vendor/html5shiv/html5shiv.min.js"></script>
+		<script type="text/javascript" src="./assets/js/vendor/respond/respond.min.js"></script>
+		<![endif]-->
+
+		block head-scripts
+
+	body
+		block content
+
+		//-
+		// vendor scripts
+		//- Add frameworks scripts
+		each array in scriptList
+			each src in array
+				script(src=src)
+
+		// project scripts
+		block pre-scripts
+
+		script(src="./assets/js/modules.js?" + timestamp)
+		script(src="./assets/js/global.js?" + timestamp)
+		script(src="./assets/js/script.js?" + timestamp)
+		script(src="./assets/js/kladr.js?" + timestamp)
+		script(src="./assets/js/main.js?" + timestamp)
+		script(src="./assets/js/tech.js?" + timestamp)
+
+		//if !minify
+		//	script(src="./assets/js/modules.js?" + timestamp)
+		//	script(src="./assets/js/global.js?" + timestamp)
+		//	script(src="./assets/js/script.js?" + timestamp)
+		//	script(src="./assets/js/kladr.js?" + timestamp)
+		//	script(src="./assets/js/main.js?" + timestamp)
+		//	script(src="./assets/js/tech.js?" + timestamp)
+		//else
+		//	script(src="./assets./js/modules.min.js?" + timestamp)
+		//	script(src="./assets/js/global.min.js?" + timestamp)
+		//	script(src="./assets/js/script.min.js?" + timestamp)
+		//	script(src="./assets/js/kladr.min.js?" + timestamp)
+		//	script(src="./assets/js/main.min.js?" + timestamp)
+		//	script(src="./assets/js/tech.min.js?" + timestamp)
+
+		block scripts

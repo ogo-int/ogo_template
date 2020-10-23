@@ -1,0 +1,54 @@
+extends ../layout/page-template
+
+block head
+	title Конфигуратор
+
+block head-scripts
+
+block vars
+	- var isInner = true; // раскрывать ли подменю в главном меню
+	- var isTotalStyling = true; // Использовать бандл
+	- var modHeader = '_breadcrumbs';
+
+block caption
+	h1.full-width Конфигуратор
+
+block inner-content
+	section.c-configurator
+		.c-configurator__intro
+			+promo-block2()
+
+		.c-configurator__cols
+			.c-configurator__aside-col
+				.c-configurator__aside-total
+					+total_aside()
+
+				.c-configurator__aside-guarantee 2 года гарантии на&nbsp;компьютер при заказе сборки
+
+				.c-configurator__save
+					+configurator-save()
+
+				.c-configurator__link
+					+configurator-link_aside()
+
+				.c-configurator__socials
+					+social-btns_aside()
+
+				.c-configurator__consult
+					+online-consult()
+
+			.c-configurator__main-col
+				.c-configurator__main-wrap
+					.c-configurator__items
+						+configurator-items()
+					.c-configurator__additional-items
+						+configurator-additional()
+
+					.c-configurator__bottom-section
+						.c-configurator__estimate
+							+estimate()
+
+						.c-configurator__total
+							+total()
+
+		+expert-request()(id="expert-request-modal")

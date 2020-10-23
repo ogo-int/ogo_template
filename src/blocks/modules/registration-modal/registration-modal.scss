@@ -1,0 +1,108 @@
+.b-registration-modal {
+  @include box-sizing;
+  width: 660px;
+  max-width: 100%;
+  padding: 30px 40px 40px;
+
+  &__header {
+    @include mbot(30/20);
+    @include clearfix;
+    padding-right: 80px;
+  }
+
+  &__title {
+    padding-top: 5px;
+    float: left;
+    font-size: 32/16*100%;
+    font-weight: 200;
+    color: #333;
+    line-height: 1;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__left-col {
+    @include box-sizing;
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    width: 50%;
+    float: right;
+    margin-top: 25px;
+    padding-left: 20px;
+  }
+
+  &__remark {
+    @include margin(5/20);
+  }
+
+  &__enter-btn {
+    float: right;
+    font-size: 14/16*100%;
+
+    .button {
+      @include box-sizing;
+      min-width: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+  }
+}
+
+@mixin mx610($mod: "") {
+  .b-registration-modal#{$mod} {
+    .b-registration-modal {
+      &__left-col {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include mtop(30/20);
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@mixin mx450($mod: "") {
+  .b-registration-modal#{$mod} {
+    .b-registration-modal {
+      &__enter-btn {
+        display: none;
+      }
+
+      &__title {
+        float: none;
+      }
+    }
+  }
+}
+
+@include mx610("._mx610");
+@include mx450("._mx450");
+
+.fancybox-inner {
+  @media (max-width: 650px) {
+    @include mx610;
+  }
+
+  @media (max-width: 480px) {
+    .b-registration-modal {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    @include mx450;
+  }
+}

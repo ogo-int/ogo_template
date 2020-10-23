@@ -1,0 +1,239 @@
+.b-ymap {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+
+  &__map {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__points {
+    display: none;
+  }
+
+  &__placemark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 178px;
+    height: 46px;
+    margin-top: -65px;
+    margin-left: 0;
+    background-color: #9f3234;
+
+    &._right {
+      right: 0;
+      left: auto;
+
+
+      .b-ymap__placemark-round {
+        right: auto;
+        left: 100%;
+        margin-right: 0;
+        margin-left: -24px;
+      }
+
+      .b-ymap__placemark-text {
+        padding-left: 15px;
+        padding-right: 30px;
+      }
+    }
+  }
+
+  &__placemark-text {
+    overflow: hidden;
+    padding-left: 34px;
+    padding-right: 10px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 46px;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__placemark-round {
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    margin-right: -24px;
+    background-color: #dc3e48;
+    border-radius: 50%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      border: 10px solid transparent;
+      margin-left: -10px;
+      margin-top: -5px;
+      border-width: 15px 10px;
+      border-bottom: none;
+      border-top-color: #dc3e48;
+    }
+  }
+
+  &__balloon-outer {
+    position: absolute;
+    min-width: 260px;
+    margin-top: -20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      border: 10px solid transparent;
+      margin-left: -10px;
+      border-top-color: white;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      border: 11px solid transparent;
+      margin-left: -11px;
+      margin-top: 0;
+      border-top-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__balloon__close {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-top: -15px;
+    margin-right: -15px;
+    float: right;
+  }
+
+  &__balloon__close::before {
+    content: "\e811";
+    font-family: "fontello", serif;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  &__balloon-outer-holder {
+  }
+
+  &__balloon-header {
+    padding: 20px;
+    background-color: #a52e35;
+    text-align: center;
+    font-size: 18/16*100%;
+    font-weight: 400;
+    line-height: 1.22;
+    color: #fff;
+  }
+
+  &__balloon-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+  &__balloon-phone {
+    font-size: 14px;
+    color: #3e8bdc;
+  }
+
+  &__balloon-hours {
+    font-size: 14px;
+    font-weight: 200;
+    color: #969696;
+  }
+
+  &__balloon-details {
+    @include mtop(15/20);
+    @include box-sizing;
+    width: 100%;
+    font-size: 14px;
+  }
+
+  &__balloon-apply {
+    @include margin(20/20);
+    @include box-sizing;
+    display: block;
+    width: 100%;
+    font-size: 14/16*100%;
+    text-align: center;
+  }
+
+  &__metro-items {
+    @include margin(15/20);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+  }
+
+  &__metro-item {
+    .metro-icon {
+      font-size: 16px;
+    }
+  }
+}
+
+// Шаблоны qiwi
+.b-ymap__balloon-inner._qiwi {
+  .b-ymap {
+    &__balloon-header {
+      @include clearfix;
+      text-align: left;
+      background-color: #26b;
+
+      &:before {
+        @include ft-icon($ft-qiwi);
+        float: left;
+        margin-right: .5em;
+        width: 0.9em;
+        font-size: 30px;
+        color: #f90;
+      }
+    }
+
+    &__balloon-address {
+      padding-top: 3px;
+      overflow: hidden;
+    }
+
+    &__balloon-content {
+      text-align: left;
+    }
+  }
+}
+
+.b-ymap__placemark._qiwi {
+  background-color: rgba(20, 56, 97, 0.9);
+  .b-ymap {
+    &__placemark-round {
+      background-color: #26b;
+      text-align: center;
+
+      &:before {
+        border-top-color: #26b;
+      }
+
+      &:after {
+        @include ft-icon($ft-qiwi);
+        width: 0.9em;
+        font-size: 30px;
+        line-height: 48px;
+        color: #f90;
+      }
+    }
+
+    &__placemark-text {
+      font-weight: 200;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+.social-btns {
+
+  .fb {
+    background-color: #2c82e8;
+
+    &:before {
+      @include ft-icon($ft-fb);
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+
+  .tw {
+    background-color: #87d7ff;
+
+    &:before {
+      @include ft-icon($ft-tw);
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+
+  .inst {
+    background-color: #8c837a;
+
+    &:before {
+      @include ft-icon($ft-inst);
+      font-size: 14px;
+      line-height: 30px;
+    }
+  }
+
+  .vk {
+    background-color: #67a6f2;
+
+    &:before {
+      @include ft-icon($ft-vk);
+      font-size: 12px;
+      width: 20px;
+      line-height: 30px;
+    }
+  }
+
+  &__title {
+    @include margin(15/20);
+    font-size: 18/16*100%;
+    font-weight: 400;
+    color: #333;
+
+    &_brand {
+      @include margin(5/20);
+      font-size: 14/16*100%;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    margin-right: .3em;
+  }
+
+  &__btn {
+    @include box-sizing;
+    display: inline-block;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    transition: color .2s, border-color .2s;
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+
+    span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      transition: .2s opacity;
+
+      &:hover {
+        opacity: .85;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+.b-inner-menu {
+  &__top-level {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__top-item {
+    border-top: 1px solid #f1f1f1;
+    margin: 0;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &._opened {
+      .b-inner-menu {
+        &__top-link:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__top-link {
+    display: block;
+    position: relative;
+    padding: 15px 30px 15px 20px;
+    transition: .4s transform;
+    font-size: 18/16*100%;
+    text-decoration: none;
+    color: #333;
+
+    &_contain {
+      &:after {
+        @include ft-icon($ft-arrow-down);
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        width: 14px;
+        transition: .4s transform;
+        margin-top: -2px;
+        font-size: 6px;
+        color: #bfbfbf;
+      }
+    }
+
+    &_marked span {
+      &:after {
+        @include pie;
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        vertical-align: middle;
+        margin-left: .5em;
+        border-radius: 50%;
+        background-color: #dc3e48;
+      }
+    }
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+
+  &__sub-level {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__sub-item {
+    margin: 0;
+  }
+
+  &__sub-link {
+    display: block;
+    position: relative;
+    padding: 10px 0 10px 38px;
+    font-size: 14/16*100%;
+    color: #333;
+    text-decoration: none;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 15px;
+      left: 20px;
+      height: 1px;
+      background-color: #f1f1f1;
+    }
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &_active {
+      color: white;
+      background-color: #3e8bdc;
+      &:before {
+        display: none;
+      }
+
+      &:hover {
+        background-color: #3e8bdc;
+      }
+    }
+  }
+
+  &__sub-link-num {
+    @include pie;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: .5em;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: #dc3e48;
+    text-align: center;
+    color: white;
+    line-height: 19px;
+    font-size: 12px;
+    font-weight: 200;
+  }
+}

@@ -1,0 +1,38 @@
+mixin list-product()
+	.b-list-product.iblock&attributes(attributes)
+		.b-list-product__main-holder
+			.b-list-product__image-holder
+				a(href="#")
+					img.b-list-product__image(src="assets/img/content/products/product-preview1.jpg", alt="Товар" width=218 height=218)
+
+			.b-list-product__content
+
+				.b-list-product__header
+					.b-list-product__avail
+						span.b-list-product__avail-label В&nbsp;наличии
+
+					.b-list-product__number Арт. 34534345
+
+					.b-list-product__rating
+						+rating()
+
+					a.b-list-product__fast-view(href="ajax/preview-modal.html") Быстрый просмотр
+
+				.b-list-product__caption
+					a.b-list-product__caption-text(href="#") Canon PowerShot SX400 IS Body Kit
+
+				.b-list-product__params
+					+params-list()(class="._lined")
+
+			.b-list-product__footer
+				.b-list-product__price-holder
+					span.b-list-product__price 2&nbsp;999 <span class="rub">i</span>
+
+				.b-list-product__btn-holder
+					.b-list-product__buy-btns
+						a.b-list-product__buy.button-buy(href="#") Купить
+
+					.b-list-product__other-btns
+						span.b-list-product__bonus +233 бонуса
+						a.b-list-product__favor(href="#")
+						a.b-list-product__compare(href="#")

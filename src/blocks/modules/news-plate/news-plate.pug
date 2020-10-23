@@ -1,0 +1,31 @@
+mixin news-plate()
+	.b-news-plate.iblock&attributes(attributes)
+		.b-news-plate__header
+			.b-news-plate__header-logo-holder
+				img.b-news-plate__header-logo(src="assets/img/content/apple.png", alt="Лого" width=95 height=53)
+
+			.b-news-plate__caption Дарим подарки от&nbsp;Apple!
+			.b-news-plate__sub-caption При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+		.b-news-plate__body
+			.b-news-plate__arrows
+				a.b-news-plate__prev(href="#")
+				a.b-news-plate__next(href="#")
+
+			ul.b-news-plate__product-items
+				li.b-news-plate__product-item
+					+product-small()
+				li.b-news-plate__product-item
+					+product-small()
+				li.b-news-plate__product-item
+					+product-small()
+				li.b-news-plate__product-item
+					+product-small()
+
+		.b-news-plate__footer
+			.b-news-plate__footer-left
+				.b-news-plate__dates 5.12.2015&nbsp;&mdash; 31.12.2015
+				.b-news-plate__expired Акция завершена
+
+			.b-news-plate__footer-right
+				a.b-news-plate__details.button-gray(href="#") Подробнее

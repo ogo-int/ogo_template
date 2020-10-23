@@ -1,0 +1,60 @@
+.b-filter-scale {
+  min-width: 260px;
+
+  &__inputs-holder {
+    @include margin(25/20);
+    @include clearfix;
+    max-width: 270px;
+    font-size: 13/16*100%;
+  }
+
+  &__from {
+    float: left;
+
+    span {
+      margin-right: .5em;
+    }
+  }
+
+  &__to {
+    float: right;
+
+    span {
+      margin-right: .5em;
+    }
+  }
+
+  &__input[type="tel"] {
+    max-width: 100px;
+    padding: 5px 10px;
+    font-size: 16/16*100%;
+    text-align: center;
+  }
+
+  &__scale {
+
+    &.ui-slider {
+      height: 7px;
+      border: none;
+      background-color: #f1f1f1;
+      border-radius: 0;
+      cursor: pointer;
+
+      .ui-slider-handle {
+        top: 50%;
+        width: 3px;
+        height: 14px;
+        border: none;
+        margin-top: -7px;
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #3e8bdc;
+      }
+
+      .ui-slider-range {
+        background-color: #3e8bdc;
+      }
+    }
+  }
+}
+

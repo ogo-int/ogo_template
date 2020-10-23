@@ -1,0 +1,95 @@
+$fa-font-path: '../fonts/FontAwesome/';
+
+// fonts
+$font-base: 'ProximaNova', Arial, sans-serif;
+
+// grid
+$content-max-width: 1280px; // That's where fluid becomes fixed
+$base-vertical-margin: 20px; // The mother of all margins. Usually = base line height
+
+// media
+$media-desktop: "screen and (max-width: 1101px)"; // 1023 - 1100
+$media-tablet: "screen and (max-width: 1023px)"; // 651 - 1023
+$media-phone-landscape: "screen and (max-width: 650px)"; // 431-650
+$media-phone: "screen and (max-width: 430px)"; // 320-430
+$media-retina: "screen and (min-device-pixel-ratio: 1.5), screen and (-webkit-min-device-pixel-ratio: 1.5)";
+
+// styles
+$font-size-base: 16px;
+$line-height-base: (20/14);
+
+// fontello
+$ft-heart-full: '\e800';
+$ft-phone-chat: '\e801';
+$ft-arrow-up: '\e802';
+$ft-smile: '\e803';
+$ft-arrow-right: '\e804';
+$ft-arrow-left: '\e805';
+$ft-enter: '\e806';
+$ft-tw: '\e807';
+$ft-vk: '\e808';
+$ft-fb: '\e809';
+$ft-inst: '\e80a';
+$ft-list: '\e80b';
+$ft-plate: '\e80c';
+$ft-star: '\e80d';
+$ft-filters: '\e80e';
+$ft-warn: '\e80f';
+$ft-rub: '\e810';
+$ft-close: '\e811';
+$ft-plus: '\e812';
+$ft-ok: '\e813';
+$ft-gg: '\e814';
+$ft-check: '\e815';
+$ft-cancel: '\e816';
+$ft-arrow-down: '\e817';
+$ft-metro: '\e818';
+$ft-qiwi: '\e819';
+$ft-aim: '\e81a';
+$ft-band: '\e81b';
+$ft-big-star: '\e81c';
+$ft-cart: '\e81d';
+$ft-cat-family: '\e81e';
+$ft-cat-house: '\e81f';
+$ft-cat-pc: '\e820';
+$ft-cat-phone: '\e821';
+$ft-cat-teapot: '\e822';
+$ft-cursor: '\e823';
+$ft-scale: '\e824';
+$ft-comment: '\e825';
+$ft-doc: '\e826';
+$ft-empty-star: '\e827';
+$ft-envelop: '\e828';
+$ft-eye: '\e829';
+$ft-gear: '\e82a';
+$ft-heart: '\e82b';
+$ft-man: '\e82c';
+$ft-messages: '\e82d';
+$ft-okey: '\e82e';
+$ft-pencil: '\e82f';
+$ft-phone: '\e830';
+$ft-placemark: '\e831';
+$ft-search: '\e832';
+$ft-shield: '\e833';
+$ft-small-truck: '\e834';
+$ft-sound: '\e835';
+$ft-trash: '\e836';
+$ft-chat: '\e837';
+$ft-graph: '\e838';
+$ft-reload: '\e839';
+$ft-clock: '\e83a';
+$ft-truck: '\e83b';
+$ft-phone-fill: '\e83c';
+$ft-preview: '\e83d';
+$ft-gogles: '\e83e';
+$ft-print: '\e83f';
+$ft-thumb-down: '\e840';
+$ft-thumb-up: '\e841';
+$ft-wrench: '\e842';
+$ft-cars: '\e843';
+$ft-car: '\e844';
+$ft-bus: '\e845';
+$ft-gallery: '\e846';
+$ft-credit: '\e847';
+$ft-man-1: '\e848';
+$ft-conf-check: '\e849';

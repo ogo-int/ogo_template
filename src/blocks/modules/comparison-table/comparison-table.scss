@@ -1,0 +1,249 @@
+.comparison-table {
+  margin-left: 40px;
+  margin-right: 60px;
+  overflow-x: scroll;
+
+  @media(max-width: 767px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  @media(max-width: 320px) {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .comparison-table-main {
+    position: absolute;
+    z-index: 100;
+    left: 40px;
+    background: #fff;
+
+    @media(max-width: 767px) {
+      display: none;
+    }
+		
+    .b-checkbox {
+      display: block;
+      width: 90%;
+
+      .b-checkbox__text {
+        text-align: left;
+      }
+    }
+
+    td {
+      width: 280px;
+      height: 40px;
+      border: 1px solid #f1f1f1;
+      vertical-align: middle;
+      border-left: 0;
+      padding-left: 20px;
+    }
+
+    th {
+      height: 211px;
+      border: 1px solid #f1f1f1;
+      padding: 20px 0 0 20px;
+      border-left: 0;
+      vertical-align: top;
+
+      @media(max-width: 1366px) {
+        height: 204px;
+      }
+
+      @media(max-width: 1280px) {
+        height: 242px;
+      }
+
+      @media(max-width: 1024px) {
+        height: 201px;
+      }
+
+      @media(max-width: 768px) {
+        height: 220px;
+      }
+    }
+  }
+
+  .comparison-table-table {
+    position: relative;
+    border: 1px solid #f1f1f1;
+    border-left: 0;
+    margin-left: 302px;
+
+    @media(max-width: 767px) {
+      margin-left: 0;
+    }
+
+    .scroll-td {
+      min-width: 320px;
+
+      @media(max-width: 1366px) {
+        min-width: 300px;
+      }
+
+      @media(max-width: 1280px) {
+        min-width: 410px;
+      }
+
+      @media(max-width: 1024px) {
+        min-width: 290px;
+      }
+
+      @media(max-width: 768px) {
+        min-width: 345px;
+      }
+
+      @media(max-width: 767px) {
+        min-width: 300px;
+      }
+
+      @media(max-width: 320px) {
+        min-width: 245px;
+      }
+    }
+
+    .b-product-small {
+      border: 0;
+    }
+
+    .b-list-product {
+
+      @media(max-width: 480px) {
+        min-width: 0;
+      }
+    }
+
+    .b-list-product__avail-label {
+      visibility: hidden;
+    }
+
+    .b-list-product__caption {
+      text-align: left;
+    }
+
+    .b-list-product .b-list-product__content {
+      padding-bottom: 0;
+    }
+
+    .b-list-product .b-list-product__footer {
+      position: static;
+      padding-top: 10px;
+      padding-left: 0;
+    }
+
+    .b-list-product .b-list-product__other-btns {
+      text-align: right;
+
+      @media(max-width: 767px) {
+        text-align: left;
+      }
+    }
+
+    .b-list-product .b-list-product__btn-holder {
+
+      @media(max-width: 320px) {
+        margin-left: -30px;
+      }
+    }
+
+    .b-list-product__favor {
+      margin-right: 15px;
+    }
+
+    .b-list-product__compare::before {
+      content: "";
+      font-size: 16px;
+    }
+
+    th {
+      vertical-align: top;
+      border-right: 1px solid #f1f1f1;
+
+      @media(max-width: 767px) {
+        border-left: 1px solid #f1f1f1;
+      }
+    }
+  }
+
+  &__btn-container {
+    padding-left: 40px;
+
+    .b-tags__items {
+      margin-bottom: 20px;
+    }
+
+    .b-tags__tag {
+
+      &__count {
+        display: inline-block;
+        font-size: 14px;
+        position: relative;
+        width: 10px;
+        height: 10px;
+        margin-left: 3px;
+        margin-right: 13px;
+
+        &-reset {
+          content: "";
+          display: inline-block;
+          position: relative;
+          width: 10px;
+          height: 10px;
+          font-size: 16px;
+
+          &:before {
+            content: "";
+            display: block;
+            display: inline-block;
+            position: relative;
+            width: 1em;
+            -webkit-transition: .2s color;
+            -o-transition: .2s color;
+            transition: .2s color;
+            font-family: "fontello", serif;
+            font-style: normal;
+            font-weight: normal;
+            speak: none;
+            text-decoration: inherit;
+            text-align: center;
+            font-variant: normal;
+            text-transform: none;
+            text-decoration: none;
+            line-height: 1em;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  &__checkbox-modile {
+    display: none;
+
+    @media(max-width: 767px) {
+      display: block;
+
+      .b-checkbox {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  table {
+    td {
+      height: 40px;
+      border: 1px solid #f1f1f1;
+      border-left: 0;
+      vertical-align: middle;
+      padding-left: 20px;
+
+      @media(max-width: 767px) {
+        border-left: 1px solid #f1f1f1;
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+.b-order-recipient {
+  padding: 20px;
+  background-color: #fff;
+
+  &__header {
+    @include margin(35/20);
+    display: table;
+    width: 100%;
+  }
+
+  &__enter {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+  }
+
+  &__enter-btn {
+    text-align: center;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    width: 200px;
+  }
+
+  &__title {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 24/16*100%;
+    font-weight: 300;
+    line-height: 1.21;
+    color: #333;
+  }
+
+  &__cols {
+    @include clearfix;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: -20px;
+  }
+
+  &__col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+  }
+
+  &__text-input {
+    @include box-sizing;
+    width: 100%;
+  }
+
+  &__field {
+    font-size: 14/16*100%;
+
+    &._no-label {
+      padding-top: 22px;
+    }
+
+    .b-checkbox__text {
+      color: #262626;
+      font-weight: 200;
+    }
+  }
+
+  &__field-label {
+    @include margin(10/20);
+    font-size: 14/14*100%;
+    font-weight: 200;
+    color: #262626;
+  }
+
+  &__field-input {
+    @include margin(5/20);
+  }
+}
+
+@mixin mx520($mod: "") {
+  .b-order-recipient#{$mod} {
+    .b-order-recipient {
+      &__col {
+        width: 100%;
+      }
+
+      &__field._no-label {
+        padding-top: 0;
+      }
+
+      &__title {
+        display: block;
+      }
+
+      &__enter {
+        @include margin(20/20);
+        display: block;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@include mx520("._mx520");
+
+.c-checkout__recipient {
+  @media (max-width: 540px) {
+    @include mx520();
+  }
+}

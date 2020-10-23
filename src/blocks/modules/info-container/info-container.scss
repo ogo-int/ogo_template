@@ -1,0 +1,132 @@
+.info-container {
+  position: relative;
+  min-height: 465px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  margin-top: -40px;
+  text-align: center;
+  padding-top: 125px;
+
+  &::after, &::before {
+    content: "";
+    display: block;
+    position: absolute;
+  }
+
+  &::before {
+    top: 162px;
+    left: 0;
+    width: 242px;
+    height: 310px;
+    background: url("../img/info-container-left.png") no-repeat;
+  }
+
+  &::after {
+    top: 92px;
+    right: 0;
+    width: 242px;
+    height: 347px;
+    background: url("../img/info-container-right.png") no-repeat;
+  }
+
+  h1 {
+        
+    /* compensate strange shifting after letter-spacing */
+    position: relative;
+    right: -25px;
+    margin: 0;
+    padding: 0;
+    font-size: 200px;
+    line-height: 180px;
+    font-weight: bold;
+    letter-spacing: 50px;
+    color: #ff7575;
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #333;
+  }
+
+  @media (max-width: 1023px) {
+    h1 {
+      font-size: 150px;
+      line-height: 120px;
+    }
+
+    &::before {
+      left: -70px;
+    }
+
+    &::after {
+      right: -70px;
+    }
+  }
+
+  @media (max-width: 890px) {
+    min-height: 400px;
+    padding-top: 200px;
+
+    h1 {
+      font-size: 100px;
+      line-height: 80px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    &::before {
+      top: 100px;
+      left: -100px;
+    }
+
+    &::after {
+      top: 100px;
+      right: -100px;
+    }
+  }
+
+  @media (max-width: 770px) {
+    min-height: 300px;
+    padding-top: 100px;
+        
+    h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 90px;
+      line-height: 130px;
+    }
+
+    h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 20px;
+    }
+
+    &::before {
+      top: 10px;
+      left: -170px;
+    }
+
+    &::after {
+      top: 40px;
+      right: -170px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &::before {
+      left: -200px;
+    }
+
+    &::after {
+      right: -200px;
+    }
+  }
+}

@@ -1,0 +1,232 @@
+.b-socials-bind {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &__header {
+    @include clearfix;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    float: left;
+    font-size: 18/16*100%;
+    color: #333;
+  }
+
+  &__status {
+    display: none;
+    float: right;
+    margin-left: 20px;
+    color: #81c03d;
+    font-size: 14/16*100%;
+    font-weight: 200;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    &_active {
+      .b-socials-bind {
+        &__social-link {
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, .5);
+          }
+        }
+
+        &__checked {
+          display: block;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  &__main {
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+
+  &__social-link {
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: #f1f1f1;
+    text-align: center;
+
+    &_fb {
+      background-color: #435f9d;
+
+      &:before {
+        @include ft-icon($ft-fb);
+        width: 80px;
+        font-size: 35px;
+        line-height: 80px;
+        color: white;
+      }
+    }
+
+    &_vk {
+      background-color: #4b74a5;
+
+      &:before {
+        @include ft-icon($ft-vk);
+        width: 80px;
+        font-size: 25px;
+        line-height: 80px;
+        color: white;
+      }
+    }
+
+    &_ok {
+      background-color: #ff942e;
+
+      &:before {
+        @include ft-icon($ft-ok);
+        width: 80px;
+        font-size: 35px;
+        line-height: 80px;
+        color: white;
+      }
+    }
+
+    &_gg {
+      background-color: #d73d32;
+
+      &:before {
+        @include ft-icon($ft-gg);
+        width: 80px;
+        font-size: 35px;
+        line-height: 80px;
+        color: white;
+      }
+    }
+
+    &_tw {
+      background-color: #55acee;
+
+      &:before {
+        @include ft-icon($ft-tw);
+        width: 80px;
+        font-size: 35px;
+        line-height: 80px;
+        color: white;
+      }
+    }
+  }
+
+  &__checked {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+    text-align: center;
+
+    &:before {
+      @include ft-icon($ft-check);
+      color: #333;
+      line-height: 30px;
+    }
+  }
+
+  &__link-status {
+    display: none;
+  }
+}
+
+html.no-touch, html.no-js {
+  .b-socials-bind {
+    &__social-link {
+      &:after {
+        @include opacity(0);
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000;
+      }
+    }
+
+    &__social-link:hover {
+      &:after {
+        @include opacity(.2);
+      }
+    }
+  }
+}
+
+@mixin mx680($mod: "") {
+  .b-socials-bind#{$mod} {
+    .b-socials-bind {
+      &__title {
+        float: none;
+      }
+      &__status {
+        float: none;
+        width: auto;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@mixin mx320($mod: "") {
+  .b-socials-bind#{$mod} {
+    .b-socials-bind {
+      &__social-link {
+        width: 60px;
+        height: 60px;
+
+        &:before {
+          line-height: 60px;
+          width: 60px;
+        }
+      }
+    }
+  }
+}
+
+@include mx680("._mx680");
+
+.c-lk__social-binding-holder {
+  @media (max-width: 649px) {
+    @include mx680();
+  }
+
+  @media (max-width: 400px) {
+    @include mx320;
+  }
+}

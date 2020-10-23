@@ -1,0 +1,164 @@
+.b-delivery-choose {
+  padding: 20px;
+  background-color: #fff;
+
+  .b-expand-content {
+    @include margin(30/20);
+  }
+
+  .b-pickpoint {
+    @include margin(20/20);
+  }
+
+  &__tab-links-holder {
+    @include mtop(30/20);
+    @include mbot(20/20);
+  }
+
+  &__tab-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__tab-links-item {
+    display: inline-block;
+    margin-right: 1.5em;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &__tab-link {
+    display: inline-block;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 18/16*100%;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1.22;
+    color: #333;
+
+    border-bottom: 4px solid #f1f1f1;
+
+    &_active {
+      border-bottom-color: #3e8bdc;
+    }
+
+    &_disabled {
+      color: #bfbfbf;
+      cursor: default;
+    }
+  }
+
+  &__tabs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__title {
+    font-size: 24/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+    color: #333;
+  }
+
+  &__header {
+    @include margin(30/20);
+  }
+
+  &__field-label {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+    color: #262626;
+  }
+
+  &__town-select-holder {
+    max-width: 420px;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__left-col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-right: 15px;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    padding-left: 15px;
+  }
+
+  &__cost-holder {
+    @include margin(30/20);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  &__cost {
+    font-size: 18/16*100%;
+    font-weight: 400;
+    color: #333;
+  }
+
+  &__company-options {
+    @include margin(30/20);
+  }
+
+  &__options-caption {
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__options-content {
+    .b-pickpoint {
+      @include margin(10/20);
+    }
+  }
+}
+
+@mixin mx680($mod: "") {
+  .b-delivery-choose#{$mod} {
+    .b-delivery-choose {
+      &__left-col {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include margin(40/20);
+        float: none;
+        width: auto;
+        padding-left: 0;
+      }
+
+      &__town-select-holder {
+        max-width: none;
+      }
+    }
+  }
+}
+
+@include mx680("._mx680");
+
+.c-checkout__delivery-info {
+  @media (max-width: 1045px) and (min-width: 1024px) {
+    // @include mx680;
+  }
+
+  @media (max-width: 720px) {
+    @include mx680;
+  }
+}

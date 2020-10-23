@@ -1,0 +1,19 @@
+mixin registration-modal()
+	.b-registration-modal.iblock&attributes(attributes)
+		.b-registration-modal__header
+			.b-registration-modal__title Регистрация
+			.b-registration-modal__enter-btn
+				a.button.js-modal(href="#enter-modal") Вход
+
+		.b-registration-modal__main
+			.b-registration-modal__cols
+				.b-registration-modal__left-col
+					+simple-form_registration()
+				.b-registration-modal__right-col
+					.b-registration-modal__socials
+						+socials-login()
+					.b-registration-modal__remark
+						+gray-remark({
+							caption: 'Обещаем, спама не&nbsp;будет!',
+							text: 'Мы&nbsp;рассылаем смс только о&nbsp;статусах заказов и&nbsp;изменениях бонусного счета. Мы&nbsp;не&nbsp;осуществляем рекламные <nobr>смс-рассылки</nobr> и&nbsp;не&nbsp;передаем телефоны наших клиентов третьим лицам.'
+						})

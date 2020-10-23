@@ -1,0 +1,80 @@
+.b-autocomplete-address {
+  position: relative;
+
+  .ui-menu .ui-menu-item {
+    @include box-sizing;
+    position: static;
+    min-height: 50px;
+    padding: 5px 10px;
+  }
+
+  .ui-menu .ui-state-focus {
+    margin: 0;
+    background-color: #f1f1f1;
+  }
+
+  &__input {
+    width: 100%;
+
+    &_target[type="text"] {
+      @include bgr("../img/target","png");
+      padding-left: 45px;
+      padding-top: 12px;
+      padding-right: 30px;
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: 10px 50%;
+    }
+  }
+
+  &__item {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__item-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__items-list {
+    @include box-sizing;
+    max-width: 100%;
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    background-color: #fff;
+  }
+
+  &__item-title {
+    color: #333;
+    font-size: 14/16*100%;
+    font-weight: 400;
+    line-height: 1.79;
+  }
+
+  &__item-area {
+    color: #969696;
+    font-size: 12/16*100%;
+    font-weight: 400;
+    line-height: 2.08;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -4px;
+    cursor: pointer;
+
+    &:before {
+      @include ft-icon($ft-arrow-down);
+      width: 14px;
+      height: 14px;
+      font-size: 7px;
+      line-height: 14px;
+      vertical-align: top;
+      color: #949494;
+    }
+  }
+}

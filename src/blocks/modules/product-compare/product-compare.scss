@@ -1,0 +1,134 @@
+.b-product-compare {
+  &__table {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__header-group {
+    display: table-header-group;
+  }
+
+  &__header {
+    display: table-row;
+  }
+
+  &__ui-header {
+    display: table-cell;
+    width: 230px;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    vertical-align: top;
+  }
+
+  &__ui-caption {
+    @include mbot(15/20);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #35322f;
+  }
+
+  &__ui-item {
+    @include margin(10/20);
+  }
+
+  &__compare-btn {
+    @include box-sizing;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+
+  &__product-header {
+    display: table-cell;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    vertical-align: top;
+    text-align: center;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__params {
+    display: table-row-group;
+  }
+
+  &__param {
+    display: table-row;
+  }
+
+  &__param-name {
+    display: table-cell;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    font-size: 13/16*100%;
+    font-weight: 600;
+    color: #4f4f4f;
+  }
+
+  &__param-value {
+    display: table-cell;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    font-size: 13/16*100%;
+    color: #4f4f4f;
+    font-weight: 200;
+
+    &._accent {
+      color: #3e8bdc;
+      font-weight: 600;
+    }
+  }
+
+  &__footer-group {
+    display: table-footer-group;
+  }
+
+  &__footer {
+    display: table-row;
+  }
+
+  &__ui-footer {
+    display: table-cell;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+  }
+
+  &__price-cell {
+    display: table-cell;
+    border: 1px solid #f1f1f1;
+    padding: 20px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  &__product-title {
+    @include mbot(10/20);
+    font-weight: 600;
+    line-height: 1.25;
+    color: #35322f;
+  }
+
+  &__current-price {
+    font-size: 25/16*100%;
+    color: #35322f;
+    white-space: nowrap;
+  }
+
+  &__bonus {
+    font-size: 13/16*100%;
+    line-height: 1.23;
+    color: #3e8bdc;
+  }
+}

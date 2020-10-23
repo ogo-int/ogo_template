@@ -1,0 +1,376 @@
+.b-feedback-item {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+
+  &__header {
+    @include box-sizing;
+    @include clearfix;
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__footer {
+    padding-top: 15px;
+  }
+
+  &__title {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18/16*100%;
+    font-weight: 400;
+    color: #333;
+  }
+
+  &__date {
+    display: table-cell;
+    vertical-align: middle;
+    color: #969696;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    text-align: right;
+    width: 90px;
+    white-space: nowrap;
+    padding-left: 20px;
+  }
+
+  &__rating {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    width: 90px;
+    padding-bottom: 3px;
+  }
+
+  &__save-state {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__save-fields {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__save-field {
+    @include margin(15/20);
+
+    &._hide {
+      display: none;
+    }
+  }
+
+  &__field-label {
+    font-size: 14/16*100%;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #141414;
+  }
+
+  &__field-content {
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #262626;
+  }
+
+  &__edit-state {
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  &__edit-fields {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__ui {
+    @include clearfix;
+  }
+
+  &__ui-primary {
+    display: none;
+    float: left;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-secondary {
+    display: none;
+    float: left;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-remove {
+    float: right;
+    margin-left: 15px;
+  }
+
+  &__ui-edit {
+    display: none;
+    float: right;
+    margin-left: 15px;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__ui-save {
+    display: none;
+    float: right;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__primary-btn {
+    position: relative;
+    padding-left: 43px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: default;
+
+    &:before {
+      @include bgr("../img/star-filled","png");
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      width: 25px;
+      height: 23px;
+      background-repeat: no-repeat;
+      background-size: 25px 23px;
+      background-position: 50% 50%;
+      margin-top: -12px;
+    }
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__secondary-btn {
+    position: relative;
+    padding-left: 43px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include bgr("../img/star-empty","png");
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      width: 24px;
+      height: 23px;
+      background-repeat: no-repeat;
+      background-size: 24px 23px;
+      background-position: 50% 50%;
+      margin-top: -12px;
+    }
+  }
+
+  &__edit-btn {
+    position: relative;
+    padding-left: 50px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include bgr("../img/pencil","png");
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 50% 50%;
+      margin-top: -10px;
+    }
+  }
+
+  &__remove-btn {
+    position: relative;
+    padding-left: 50px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include bgr("../img/trash","png");
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      width: 18px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 18px 20px;
+      background-position: 50% 50%;
+      margin-top: -10px;
+    }
+  }
+
+  &__save-btn {
+    position: relative;
+    padding-left: 45px;
+    font-size: 14/16*100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:before {
+      @include bgr("../img/pencil_white","png");
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      width: 20px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: 50% 50%;
+      margin-top: -10px;
+    }
+  }
+
+  &__rating-form {
+    display: none;
+    float: left;
+    margin-top: 6px;
+  }
+
+  &__likes {
+    float: left;
+    margin-top: 6px;
+  }
+}
+
+.b-feedback-item._edit-state {
+  .b-feedback-item {
+    &__save-state {
+      display: none;
+    }
+
+    &__edit-state {
+      display: block;
+    }
+
+    &__rating-form {
+      display: block;
+    }
+
+    &__likes {
+      display: none;
+    }
+  }
+}
+
+// Адаптация
+@mixin mx610($mod: "") {
+  .b-feedback-item#{$mod} {
+    .b-feedback-item {
+      &__rating-form {
+        float: none;
+        text-align: right;
+        margin-top: -20px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@mixin mx480($mod: "") {
+  .b-feedback-item#{$mod} {
+    .b-feedback-item {
+      &__title {
+        display: block;
+        padding-right: 0;
+        padding-bottom: 0;
+      }
+
+      &__rating {
+        display: block;
+        margin-top: 10px;
+      }
+
+      &__date {
+        display: block;
+        padding-left: 0;
+        padding-bottom: 20px;
+      }
+
+      &__likes {
+        float: none;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: right;
+      }
+
+      &__ui-edit {
+        @include margin(10/20);
+        float: none;
+        margin-left: auto;
+      }
+
+      &__ui-remove {
+        @include margin(10/20);
+        float: none;
+        margin-left: auto;
+      }
+
+      &__ui-save {
+        float: none;
+        margin-left: auto;
+      }
+
+      &__edit-btn, &__remove-btn, &__save-btn {
+        @include box-sizing;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:before {
+          display: inline-block;
+          position: relative;
+          top: 3px;
+          left: 0;
+          margin: 0;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
+}
+
+@include mx610("._mx610");
+@include mx480("._mx480");
+
+.c-lk__feedback-item {
+  @media (max-width: 650px) {
+    @include mx610();
+  }
+
+  @media (max-width: 520px) {
+    @include mx480();
+  }
+}

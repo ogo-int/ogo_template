@@ -1,0 +1,507 @@
+.b-shop-card {
+  &__header {
+    @include margin(30/20);
+    padding: 20px;
+    padding-bottom: 0;
+  }
+
+  &__caption {
+    font-size: 32/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__address {
+    @include margin(20/20);
+    font-size: 18/16*100%;
+    font-weight: 400;
+    color: #333;
+
+    &._small {
+      @include margin(5/20);
+    }
+  }
+
+  &__phone {
+    @include margin(5/20);
+    display: table;
+    text-decoration: none;
+    font-size: 14/16*100%;
+    color: #3e8bdc;
+
+    &:hover {
+      color: #3e8bdc;
+    }
+  }
+
+  &__hours {
+    @include margin(5/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+  }
+
+  &__params {
+    @include margin(20/20);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__param-text {
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    color: #141414;
+    font-weight: 400;
+  }
+
+  &__param-link {
+    font-weight: 200;
+    text-decoration: none;
+    color: #3e8bdc;
+  }
+
+  &__icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: .5em;
+
+    &._bus {
+      &:before {
+        @include ft-icon($ft-bus);
+        font-size: 26px;
+        color: #ff7575;
+      }
+    }
+
+    &._credit {
+      &:before {
+        @include ft-icon($ft-credit);
+        font-size: 26px;
+        color: #ff7575;
+      }
+    }
+
+    &._cars {
+      &:before {
+        @include ft-icon($ft-cars);
+        font-size: 26px;
+        color: #ff7575;
+      }
+    }
+
+    &._wrench {
+      &:before {
+        @include ft-icon($ft-wrench);
+        font-size: 26px;
+        color: #ff7575;
+      }
+    }
+
+    &._gallery {
+      &:before {
+        @include ft-icon($ft-gallery);
+        font-size: 26px;
+        color: #ff7575;
+      }
+    }
+  }
+
+  &__cols {
+    @include clearfix;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    &._small {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__left-col {
+    @include box-sizing;
+    float: left;
+    width: 40%;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    float: right;
+    width: 60%;
+  }
+
+  &__map {
+    height: 300px;
+  }
+
+  &__way {
+    @include margin(40/20);
+  }
+
+  &__way-tab-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+
+  &__way-link-holder {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    margin-left: 4%;
+    margin-right: 4%;
+  }
+
+  &__way-link {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+
+    &._active {
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        border: 20px solid transparent;
+        border-top: none;
+        border-bottom-color: #f8f8f8;
+        margin-left: -20px;
+        margin-top: 22px;
+      }
+      .b-shop-card {
+        &__way-icon {
+          border-color: #ff7575;
+          background-color: #ff7575;
+          color: white;
+        }
+
+        &__way-link-text {
+          color: #969696;
+        }
+      }
+    }
+  }
+
+  &__way-icon {
+    @include pie;
+    display: inline-block;
+    vertical-align: top;
+    width: 56px;
+    height: 56px;
+    border: 2px solid #dc3e48;
+    border-radius: 50%;
+    color: #ff7575;
+
+    &._man {
+      &:before {
+        @include ft-icon($ft-man-1);
+        font-size: 24px;
+        width: 56px;
+        line-height: 56px;
+      }
+    }
+
+    &._car {
+      &:before {
+        @include ft-icon($ft-car);
+        font-size: 32px;
+        width: 56px;
+        line-height: 56px;
+      }
+    }
+
+    &._bus {
+      &:before {
+        @include ft-icon($ft-bus);
+        font-size: 28px;
+        width: 56px;
+        line-height: 56px;
+      }
+    }
+  }
+
+  &__way-link-text {
+    display: block;
+    width: 140px;
+    margin-top: 15px;
+    font-size: 18/16*100%;
+    line-height: 1.11;
+    text-align: center;
+  }
+
+  &__way-tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+
+  &__way-tab {
+    display: none;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__slide {
+    @include margin(20/20);
+    max-width: 585px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__slide-image {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__slide-text {
+    @include margin(20/20);
+    color: #141414;
+    font-size: 14/16*100%;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  &__slide-map {
+    height: 400px;
+  }
+
+  &__left-image {
+    float: left;
+    width: 250px;
+    margin-right: 20px;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  &__small-caption {
+    @include margin(10/20);
+    min-height: 60px;
+    font-size: 24/16*100%;
+    font-weight: 200;
+
+    .metro-icon {
+      font-size: 18px;
+      margin-right: 0;
+    }
+  }
+
+  &__more-holder {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    left: 290px;
+  }
+
+  &__more {
+    font-size: 14px;
+  }
+
+  &__content-holder {
+    padding-bottom: 60px;
+  }
+
+  &._modal {
+  }
+
+  &._small {
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+  }
+}
+
+@mixin mx700($mod: "") {
+  .b-shop-card#{$mod} {
+    .b-shop-card {
+      &__left-col {
+        float: none;
+        width: auto;
+      }
+
+      &__right-col {
+        @include margin(20/20);
+        float: none;
+        width: auto;
+      }
+
+      &__param {
+        display: inline-block;
+        margin-right: 1.5em;
+      }
+    }
+  }
+}
+
+@mixin mx625($mod: "") {
+  .b-shop-card#{$mod} {
+    .b-shop-card {
+      &__way-tab {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      &__slide {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@mixin mx570($mod: "") {
+  .b-shop-card#{$mod} {
+    .b-shop-card {
+      &__caption {
+        font-size: 24/16*100%;
+      }
+
+      &__left-image {
+        width: 35%;
+        margin-right: 0;
+      }
+
+      &__content-holder {
+        margin-left: 35%;
+        padding-left: 20px;
+      }
+
+      &__more-holder {
+        left: 35%;
+        padding-left: 20px;
+      }
+
+      &__way-link {
+        text-align: left;
+
+        &._active:after {
+          display: none;
+        }
+      }
+
+      &__way-link-holder {
+        @include margin(20/20);
+        display: block;
+      }
+
+      &__way-link-text {
+        display: inline-block;
+        text-align: left;
+        padding-left: 20px;
+      }
+
+      &__way-tab-links {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+@mixin mx450($mod: "") {
+  .b-shop-card#{$mod} {
+    .b-shop-card {
+      &__left-image {
+        @include margin(20/20);
+        float: none;
+        width: auto;
+      }
+
+      &__image {
+      }
+
+      &__content-holder {
+        @include margin(20/20);
+        margin-left: 0;
+        padding-left: 0;
+      }
+
+      &__small-caption {
+        min-height: 0;
+      }
+
+      &__more-holder {
+        left: 0;
+        padding-left: 20px;
+      }
+
+      &__way-tab {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@include mx700("._mx700");
+@include mx625("._mx625");
+@include mx570("._mx570");
+@include mx450("._mx450");
+
+.c-contacts-list__detail-card {
+  @media (max-width: 700px) {
+    @include mx700;
+  }
+
+  @media (max-width: 625px) {
+    @include mx625;
+  }
+
+  @media (max-width: 570px) {
+    @include mx570;
+  }
+
+  @media (max-width: 450px) {
+    @include mx450;
+  }
+}
+
+.fancybox-inner {
+  @media (max-width: 740px) {
+    @include mx700;
+  }
+
+  @media (max-width: 665px) {
+    @include mx625;
+  }
+
+  @media (max-width: 610px) {
+    @include mx570;
+  }
+
+  @media (max-width: 480px) {
+    .b-shop-card {
+      &__header {
+        padding-top: 35px;
+        padding-right: 55px;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    @include mx450;
+  }
+  .b-shop-card {
+    &__header {
+      padding-top: 28px;
+    }
+  }
+}

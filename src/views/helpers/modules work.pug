@@ -1,0 +1,1918 @@
+mixin mobile-aside()
+	.b-mobile-aside.iblock&attributes(attributes)
+		.b-mobile-aside__scroll-wrap.scroll-fixer
+			.b-mobile-aside__login
+				a.b-mobile-aside__login-link(href="#") Вход
+				a.b-mobile-aside__register-link(href="#") Регистрация
+			.b-mobile-aside__search
+				+search-line_mobile()
+
+			.b-mobile-aside__main-menu
+				+mobile-menu()
+
+			.b-mobile-aside__town
+				+town-select()
+
+			.b-mobile-aside__additional-menu
+				+top-menu_mobile()
+		.b-mobile-aside__callback
+			+contacts()
+			a.b-mobile-aside__callback-btn.button-green(href="#") Позвонить
+
+mixin mobile-header()
+	.b-mobile-header.iblock&attributes(attributes)
+		.b-mobile-header__holder
+			.b-mobile-header__btn
+				+burger-btn()
+
+			.b-mobile-header__logo
+				a(href="#")
+					img.b-mobile-header__logo-img(src="assets/img/logo.png", alt="Логотип" width=150 height=51)
+
+			.b-mobile-header__search
+				a.b-mobile-header__search-link(href="#")
+					span Поиск
+				.b-mobile-header__search-line
+					+search-line_thin()
+
+			.b-mobile-header__shops
+				a.b-mobile-header__shops-link(href="#")
+					span Магазины
+
+			.b-mobile-header__lk
+				a.b-mobile-header__lk-link(href="#")
+					span Личный кабинет
+
+			.b-mobile-header__callback
+				a.b-mobile-header__callback-link.js-modal(href="#callback-modal")
+					span Обратный звонок
+
+			.b-mobile-header__cart
+				+cart-link_mobile()
+
+mixin mobile-menu()
+	.b-mobile-menu.iblock&attributes(attributes)
+		.b-mobile-menu__return
+			a.b-mobile-menu__return-link(href="#") Вернуться к&nbsp;выбору категории
+
+		ul.b-mobile-menu__top-level
+			li.b-mobile-menu__top-item
+				a.b-mobile-menu__top-link._contain(href="#") Электроника
+				.b-mobile-menu__container
+					ul.b-mobile-menu__sub-level
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link._contain(href="#") Мобильные телефоны
+							.b-mobile-menu__sub-container
+								ul.b-mobile-menu__sub-level
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") <nobr>Сплит-системы</nobr>
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Мобильные кондиционеры
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Обогреватели Вентиляторы
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Очистители и&nbsp;увлажнители воздуха
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Погодные станции
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Водонагреватели
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Тепловые пушки
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Осушители воздуха
+									li.b-mobile-menu__sub-item
+										a.b-mobile-menu__sub-link._third(href="#") Электрические камины
+
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Фото и&nbsp;видеокамеры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Телевизоры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Аудио и&nbsp;видео техника
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Плееры и&nbsp;наушники
+
+			li.b-mobile-menu__top-item
+				a.b-mobile-menu__top-link._contain(href="#") Компьютерная техника
+				.b-mobile-menu__container
+					ul.b-mobile-menu__sub-level
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Мобильные телефоны
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Фото и&nbsp;видеокамеры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Телевизоры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Аудио и&nbsp;видео техника
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Плееры и&nbsp;наушники
+
+			li.b-mobile-menu__top-item
+				a.b-mobile-menu__top-link._contain(href="#") Бытовая техника
+				.b-mobile-menu__container
+					ul.b-mobile-menu__sub-level
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Мобильные телефоны
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Фото и&nbsp;видеокамеры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Телевизоры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Аудио и&nbsp;видео техника
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Плееры и&nbsp;наушники
+
+			li.b-mobile-menu__top-item
+				a.b-mobile-menu__top-link._contain(href="#") Семья и&nbsp;дети
+				.b-mobile-menu__container
+					ul.b-mobile-menu__sub-level
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Мобильные телефоны
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Фото и&nbsp;видеокамеры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Телевизоры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Аудио и&nbsp;видео техника
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Плееры и&nbsp;наушники
+
+			li.b-mobile-menu__top-item
+				a.b-mobile-menu__top-link._contain(href="#") Дом, дача, авто
+				.b-mobile-menu__container
+					ul.b-mobile-menu__sub-level
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Мобильные телефоны
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Фото и&nbsp;видеокамеры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Телевизоры
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Аудио и&nbsp;видео техника
+						li.b-mobile-menu__sub-item
+							a.b-mobile-menu__sub-link(href="#") Плееры и&nbsp;наушники
+
+mixin search-line()
+	.b-search-line.iblock&attributes(attributes)
+		form(action="#")
+			.b-search-line__field
+				input.b-search-line__input(type="text")
+				label.b-search-line__send
+					input.b-search-line__submit(type="submit")
+
+				.b-search-line__placeholder
+					.b-search-line__ph-pre Поиск товаров:
+					.b-search-line__ph-main например, Розовый iPhone
+				.b-search-line__field-drop
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+
+mixin search-line_thin()
+	.b-search-line.iblock&attributes(attributes)
+		form(action="#")
+			.b-search-line__field
+				input.b-search-line__input.b-search-line__input_thin(type="text")
+				label.b-search-line__send
+					input.b-search-line__submit(type="submit")
+
+				.b-search-line__placeholder.b-search-line__placeholder_thin
+					.b-search-line__ph-pre Поиск товаров:
+					.b-search-line__ph-main например, Розовый iPhone
+				.b-search-line__field-drop
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+
+mixin search-line_mobile()
+	.b-search-line.iblock&attributes(attributes)
+		form(action="#")
+			.b-search-line__field
+				input.b-search-line__input(type="text" placeholder="Поиск товаров")
+				label.b-search-line__send
+					input.b-search-line__submit(type="submit")
+				.b-search-line__field-drop
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+					.b-search-line__field-drop-section
+						.b-search-line__field-drop-titile Категории
+						a.b-search-line__field-drop-item(href=jv0) Карты памяти
+						a.b-search-line__field-drop-item(href=jv0) Сменные Картриджы
+						a.b-search-line__field-drop-item(href=jv0) Картины настенные
+						.b-search-line__field-drop-border
+
+mixin town-select()
+	.b-town-select.iblock&attributes(attributes)
+		.b-town-select__label Город:
+			a.b-town-select__link.b-town-select__link_current.js-modal(href="#town-modal") <nobr>Санкт-Петербург</nobr>
+
+mixin top-menu()
+	nav.b-top-menu.iblock&attributes(attributes)
+		ul.b-top-menu__list
+			li.b-top-menu__item
+				a(href="#").b-top-menu__link Доставка
+			li.b-top-menu__item.b-top-menu__item_help
+				a(href="#").b-top-menu__link Нужна помощь?
+			li.b-top-menu__item
+				a(href="#").b-top-menu__link Адреса магазинов
+			li.b-top-menu__item
+				a(href="#order-status").b-top-menu__link.js-modal Статус заказа
+
+mixin top-menu_mobile()
+	nav.b-top-menu.iblock&attributes(attributes)
+		ul.b-top-menu__list
+			li.b-top-menu__item.b-top-menu__item_row
+				a(href="#").b-top-menu__link Доставка
+			li.b-top-menu__item.b-top-menu__item_row
+				a(href="#").b-top-menu__link Нужна помощь?
+			li.b-top-menu__item.b-top-menu__item_row
+				a(href="#").b-top-menu__link Адреса магазинов
+			li.b-top-menu__item.b-top-menu__item_row
+				a(href="#order-status").js-modal.b-top-menu__link Статус заказа
+
+mixin contacts()
+	.b-contacts.iblock&attributes(attributes)
+		.b-contacts__phone-holder
+			a.b-contacts__phone(href="tel:74952295653;") <nobr>+7 495 229-56-53</nobr>
+		.b-contacts__bottom-holder
+			span.b-contacts__time Звоните с&nbsp;10:00 до&nbsp;22:00
+			a.b-contacts__callback.js-modal(href="#callback-modal") Перезвонить?
+
+mixin contacts_status()
+	.b-contacts.iblock&attributes(attributes)
+		.b-contacts__phone-holder
+			a.b-contacts__phone(href="tel:74952295653;") <nobr>+7 495 229-56-53</nobr>
+		.b-contacts__bottom-holder
+			a.b-contacts__callback._block.js-modal(href="#callback-modal") Перезвонить?
+			span.b-contacts__time Звоните с&nbsp;10:00 до&nbsp;22:00
+
+mixin burger-btn()
+	.b-burger-btn.iblock&attributes(attributes)
+		.b-burger-btn__line
+		.b-burger-btn__line
+		.b-burger-btn__line
+
+mixin cart-link()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0
+
+mixin cart-link_full()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_red
+			span.b-cart-link__text 25 товаров на&nbsp;334&nbsp;567 <span class="rub">i</span>
+			span.b-cart-link__text.b-cart-link__text_mobile 25
+		a(href="#").b-cart-link__buy.button Оформить
+
+mixin cart-link_mobile()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_mobile
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0
+
+mixin bottom-menu()
+	.b-bottom-menu._closed.iblock&attributes(attributes)
+		nav
+			ul.b-bottom-menu__items
+				li.b-bottom-menu__item.b-bottom-menu__item_consult(data-tab=1)
+					a.b-bottom-menu__wrap(href="#online-consult")
+						span.b-bottom-menu__icon._phone
+						span.b-bottom-menu__text <nobr>Online-консультант</nobr>
+
+				li.b-bottom-menu__item.b-bottom-menu__item_viewed(data-tab=2)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._eye
+						span.b-bottom-menu__text Просмотрено
+
+				li.b-bottom-menu__item.b-bottom-menu__item_compare(data-tab=3)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._graph
+						span.b-bottom-menu__text Сравнение&nbsp;&mdash; <span class="b-bottom-menu__red-num">1</span>
+
+				li.b-bottom-menu__item.b-bottom-menu__item_favor(data-tab=4)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._heart
+						span.b-bottom-menu__text В&nbsp;избранном&nbsp;&mdash; <span class="b-bottom-menu__red-num">2</span>
+
+				li.b-bottom-menu__item.b-bottom-menu__item_cart
+					+cart-link_full()
+
+		ul.b-bottom-menu__holders
+			li.b-bottom-menu__holder._consult
+				.b-bottom-menu__consult-holder
+					.b-bottom-menu__consult
+						+main-consult()
+
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
+
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
+
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
+
+			li.b-bottom-menu__holder
+
+mixin main-consult()
+	.b-main-consult.iblock&attributes(attributes)
+		.b-main-consult__header
+			.b-main-consult__photo-holder
+				img.b-main-consult__photo(src="assets/img/content/photo.jpg", alt="" width=50 height=50)
+				.b-main-consult__photo-title
+					.b-main-consult__name Василий Петров
+					.b-main-consult__job Ваш констультант
+
+			.b-main-consult__callback-holder
+				a.b-main-consult__callback.button-gray.js-modal(href="#callback-modal") Заказать звонок
+
+		.b-main-consult__main
+			.b-main-consult__messages-holder
+				.b-main-consult__messages
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__typing
+
+		.b-main-consult__footer
+			.b-main-consult__ui-holder
+				.b-main-consult__ui-header
+					.b-main-consult__ui-label Сообщение
+					.b-main-consult__ui-send Отправить: Enter &#8629;
+
+				.b-main-consult__textarea-holder
+					textarea.b-main-consult__textarea
+
+mixin main-consult_modal()
+	.b-main-consult._modal.iblock&attributes(attributes)
+		.b-main-consult__caption Мы всегда на связи!
+		.b-main-consult__header
+			.b-main-consult__photo-holder
+				img.b-main-consult__photo(src="assets/img/content/photo.jpg", alt="" width=50 height=50)
+				.b-main-consult__photo-title
+					.b-main-consult__name Василий Петров
+					.b-main-consult__job Ваш констультант
+
+			.b-main-consult__callback-holder
+				a.b-main-consult__callback.button-gray.js-modal(href="#callback-modal") Заказать звонок
+
+		.b-main-consult__main
+			.b-main-consult__messages-holder
+				.b-main-consult__messages
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__typing
+
+		.b-main-consult__footer
+			.b-main-consult__ui-holder
+				.b-main-consult__ui-header
+					.b-main-consult__ui-label Сообщение
+					.b-main-consult__ui-send Отправить: Enter &#8629;
+
+				.b-main-consult__textarea-holder
+					textarea.b-main-consult__textarea
+
+mixin small-product-slider()
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__header
+			.b-small-product-slider__title Лучшее из&nbsp;каталога
+
+			.b-small-product-slider__header-cols
+				.b-small-product-slider__tags
+					.b-tags
+						ul.b-tags__items
+							li.b-tags__item
+								a.b-tags__tag.b-tags__tag_active(href="") Все
+							li.b-tags__item
+								a.b-tags__tag(href="") Умные чаcы
+							li.b-tags__item
+								a.b-tags__tag(href="") Телевизоры 4K
+							li.b-tags__item
+								a.b-tags__tag(href="") Смартфоны Samsung
+
+				.b-small-product-slider__arrows
+					a.b-small-product-slider__prev(href="#")
+					a.b-small-product-slider__next(href="#")
+
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,1,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small()
+
+mixin small-product-slider_favor()
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__bottom-header
+			.b-small-product-slider__more
+				a.b-small-product-slider__more-btn.button(href="#") Перейти ко&nbsp;всем избранным товарам
+
+			.b-small-product-slider__arrows-bottom
+				a.b-small-product-slider__prev(href="#")
+				a.b-small-product-slider__next(href="#")
+
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,11,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small()
+
+
+mixin small-product-slider_buy()
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__header
+			.b-small-product-slider__title Лучшее из&nbsp;каталога
+
+			.b-small-product-slider__header-cols
+				.b-small-product-slider__tags
+					.b-tags
+						ul.b-tags__items
+							li.b-tags__item
+								a.b-tags__tag.b-tags__tag_active(href="") Все
+							li.b-tags__item
+								a.b-tags__tag(href="") Умные чаcы
+							li.b-tags__item
+								a.b-tags__tag(href="") Телевизоры 4K
+							li.b-tags__item
+								a.b-tags__tag(href="") Смартфоны Samsung
+
+				.b-small-product-slider__arrows
+					a.b-small-product-slider__prev(href="#")
+					a.b-small-product-slider__next(href="#")
+
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,1,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small_buttons()
+
+mixin product-small()
+	.b-product-small.iblock&attributes(attributes)
+		.b-product-small__main-wrap
+			.b-product-small__header
+				.b-product-small__cols
+					.b-product-small__left-col
+						+rating()
+					.b-product-small__right-col
+						.b-product-small__art Арт. 34534345
+
+			.b-product-small__main-content
+				.b-product-small__cols
+					.b-product-small__left-col
+						.b-product-small__image-holder
+							a(href="#")
+								img.b-product-small__image(src="assets/img/content/cat5.jpg", alt="Товар" width=170 height=170)
+
+					.b-product-small__right-col
+						.b-product-small__description
+							a.b-product-small__title(href="#") Моноблок Apple iMac MK442RU / A i5 2.8GHz / 8G / 1Tb
+
+						.b-product-small__price-holder
+							.b-product-small__current-price 99&nbsp;280 <span class="rub">i</span>
+							.b-product-small__bonus +233 бонуса
+
+mixin product-small_hovered()
+	.b-product-small.iblock&attributes(attributes)
+		.b-product-small__main-wrap
+			.b-product-small__header
+				.b-product-small__cols
+					.b-product-small__left-col
+						+rating()
+					.b-product-small__right-col
+						.b-product-small__art Арт. 34534345
+
+			.b-product-small__main-content
+				.b-product-small__cols
+					.b-product-small__left-col
+						.b-product-small__image-holder
+							a(href="#")
+								img.b-product-small__image(src="assets/img/content/cat5.jpg", alt="Товар" width=170 height=170)
+
+					.b-product-small__right-col
+						.b-product-small__description
+							a.b-product-small__title(href="#") Моноблок Apple iMac MK442RU / A i5 2.8GHz / 8G / 1Tb
+
+						.b-product-small__price-holder
+							.b-product-small__current-price 99&nbsp;280 <span class="rub">i</span>
+							.b-product-small__bonus +233 бонуса
+
+			.b-product-small__hover-content
+				.b-product-small__hover-top
+					.b-product-small__hover-price 99&nbsp;280 <span class="rub">i</span>
+					a.b-product-small__add-btn.button(href="#") +&nbsp;Добавить
+					a.b-product-small__favor(href="#")
+					a.b-product-small__compare(href="#")
+
+				.b-product-small__hover-bottom
+					.b-product-small__total-remark Итого с&nbsp;этим товаром:
+					.b-product-small__total-price 200&nbsp;436 <span class="rub">i</span>
+
+mixin product-small_buttons()
+	.b-product-small.iblock&attributes(attributes)
+		.b-product-small__main-wrap
+			.b-product-small__header
+				.b-product-small__cols
+					.b-product-small__left-col
+						+rating()
+					.b-product-small__right-col
+						.b-product-small__art Арт. 34534345
+
+			.b-product-small__main-content
+				.b-product-small__cols
+					.b-product-small__left-col
+						.b-product-small__image-holder
+							a(href="#")
+								img.b-product-small__image(src="assets/img/content/cat5.jpg", alt="Товар" width=170 height=170)
+
+					.b-product-small__right-col
+						.b-product-small__description
+							a.b-product-small__title(href="#") Моноблок Apple iMac MK442RU / A i5 2.8GHz / 8G / 1Tb
+
+						.b-product-small__price-holder
+							.b-product-small__current-price 99&nbsp;280 <span class="rub">i</span>
+							.b-product-small__bonus +233 бонуса
+
+			.b-product-small__footer
+				.b-product-small__cols
+					.b-product-small__left-col
+						span.b-product-small__avail <span>В&nbsp;наличии</span>
+
+					.b-product-small__right-col
+						a.b-product-small__buy-btn.button-buy(href="#") Купить
+						.b-product-small__additional-btns
+							a.b-product-small__favor(href="#")
+							a.b-product-small__compare(href="#")
+
+mixin product-small_news()
+	.b-product-small.iblock&attributes(attributes)
+		.b-product-small__main-wrap
+			.b-product-small__header
+				.b-product-small__cols
+					.b-product-small__left-col
+						+rating()
+					.b-product-small__right-col
+						.b-product-small__art Арт. 34534345
+
+			.b-product-small__main-content
+				.b-product-small__cols
+					.b-product-small__left-col
+						.b-product-small__image-holder
+							a(href="#")
+								img.b-product-small__image(src="assets/img/content/cat5.jpg", alt="Товар" width=170 height=170)
+
+					.b-product-small__right-col
+						.b-product-small__description
+							a.b-product-small__title(href="#") Моноблок Apple iMac MK442RU / A i5 2.8GHz / 8G / 1Tb
+
+						.b-product-small__price-holder
+							.b-product-small__current-price 99&nbsp;280 <span class="rub">i</span>
+							.b-product-small__bonus +233 бонуса
+
+			.b-product-small__hover-content
+				.b-product-small__hover-top._news
+					a.b-product-small__buy-btn.button-buy(href="#") Купить
+					a.b-product-small__favor(href="#")
+					a.b-product-small__compare(href="#")
+
+				.b-product-small__hover-bottom
+					.b-product-small__hover-price._news 99&nbsp;280 <span class="rub">i</span>
+
+					.b-product-small__hover-old-price 120&nbsp;208 <span class="rub">i</span>
+
+mixin rating()
+	.b-rating.iblock&attributes(attributes)
+		ul.b-rating__items
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item
+			li.b-rating__item
+
+mixin rating_big()
+	.b-rating.iblock&attributes(attributes)
+		ul.b-rating__items.b-rating__items_big
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item
+			li.b-rating__item
+
+mixin rating_card()
+	.b-rating.iblock&attributes(attributes)
+		ul.b-rating__items.b-rating__items_big
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item.b-rating__item_active
+			li.b-rating__item
+			li.b-rating__item
+
+		.b-rating__text 5 отзывов о&nbsp;товаре
+
+mixin cart-link()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0
+
+mixin cart-link_full()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_red
+			span.b-cart-link__text 25 товаров на&nbsp;334&nbsp;567 <span class="rub">i</span>
+			span.b-cart-link__text.b-cart-link__text_mobile 25
+		a(href="#").b-cart-link__buy.button Оформить
+
+mixin cart-link_mobile()
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_mobile
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0
+
+mixin cabinet-link()
+	.b-cabinet-link.iblock&attributes(attributes)
+		a(href="#").b-cabinet-link__link
+			span.b-cabinet-link__icon
+			span.b-cabinet-link__text Личный кабинет
+
+mixin top-logo()
+	.b-top-logo.iblock&attributes(attributes)
+		.b-top-logo__img-holder
+			img.b-top-logo__img(src="assets/img/logo.png", alt="Логотип" width=150 height=51)
+		.b-top-logo__slogan-holder
+			.b-top-logo__slogan Магазины<br/>для&nbsp;современной<br/>семьи
+
+mixin main-menu()
+	nav.b-main-menu._delay.iblock&attributes(attributes)
+		ul.b-main-menu__top-level
+			li.b-main-menu__top-item._active
+				a.b-main-menu__top-link(href="#" data-color="red") Электроника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
+
+		.b-main-menu__holders
+			.b-main-menu__top-holder._active
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Бытовая техника
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_center
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_center
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_right
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телефоны
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+mixin main-menu_inner()
+	nav.b-main-menu.iblock&attributes(attributes)
+		ul.b-main-menu__top-level
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="red") Электроника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
+
+			li.b-main-menu__top-item
+				a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
+
+		.b-main-menu__holders
+			.b-main-menu__top-holder
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_center
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_center
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+			.b-main-menu__top-holder.b-main-menu__top-holder_right
+				ul.b-main-menu__sub-level
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Телевизоры
+						+main-menu__sub-holder()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+						+main-menu__sub-holder2()
+					li.b-main-menu__sub-item
+						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+						+main-menu__sub-holder()
+
+mixin main-menu__sub-holder()
+	.b-main-menu__sub-holder
+		.b-main-menu__cols
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+				.b-sub-menu.b-main-menu__sub-menu._no-content
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+
+				.b-sub-menu.b-main-menu__sub-menu._no-content
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+
+			.b-main-menu__col.b-main-menu__col_product
+				.b-main-menu__product
+					.b-main-menu__product-caption Товар дня
+					.b-main-menu__product-item
+						+product-small()
+
+mixin main-menu__sub-holder2()
+	.b-main-menu__sub-holder
+		.b-main-menu__cols
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Другая категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+			.b-main-menu__col
+				.b-sub-menu.b-main-menu__sub-menu
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+					ul.b-sub-menu__items
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Сплит-системы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Мобильные кондиционеры
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Погодные станции
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Водонагреватели
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Тепловые пушки
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Осушители воздуха
+						li.b-sub-menu__item
+							a.b-sub-menu__link(href="#") Электрические камины
+
+				.b-sub-menu.b-main-menu__sub-menu._no-content
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+
+				.b-sub-menu.b-main-menu__sub-menu._no-content
+					.b-sub-menu__caption
+						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+
+			.b-main-menu__col.b-main-menu__col_product
+				.b-main-menu__product
+					.b-main-menu__product-caption Товар дня
+					.b-main-menu__product-item
+						+product-small()
+
+mixin qiwi-modal()
+	.b-qiwi-modal.iblock&attributes(attributes)
+		.b-qiwi-modal__header
+			.b-qiwi-modal__title Почтоматы InPost*
+			.b-qiwi-modal__title-remark *Бывший QIWI Post
+		.b-qiwi-modal__main
+			img.b-qiwi-modal__full-image(src="assets/img/content/qiwi.jpg", alt="qiwi" width=622 height=223)
+			.b-qiwi-modal__content.content-area
+				.h4 InPost&nbsp;&mdash; это удобный способ доставки заказов из&nbsp;нашего <nobr>интернет-магазина</nobr>!
+
+				p Почтоматы InPost расположены в&nbsp;удобных местах: на&nbsp;заправках, возле гипермаркетов, рядом с&nbsp;метро <nobr>и т. д.</nobr> Вы&nbsp;можете получить свой заказ в&nbsp;терминалах InPost 24 часа в&nbsp;сутки, 7 дней в&nbsp;неделю.
+
+				.h4 Как воспользоваться доставкой через почтоматы InPost:
+
+				ol
+					li При заказе в&nbsp;нашем <nobr>интернет-магазине</nobr> выберите способ доставки InPost. Затем укажите наиболее удобный терминал.
+					li Когда посылка будет доставлена в&nbsp;выбранный терминал, на&nbsp;указанный в&nbsp;заказе мобильный номер телефона придет SMS с&nbsp;<nobr>6-значным</nobr> кодом доступа к&nbsp;ячейке терминала. Заказ будет находиться в&nbsp;терминале InPost в&nbsp;течение 4 дней.
+					li Следуя инструкциям на&nbsp;мониторе терминала InPost, получите ваш заказ.
+
+				p 98% посылок можно получить уже на&nbsp;следующий день после отправления.
+
+				.h4 Внимание!
+				p <b>Если вы получаете посылку в выбранном терминале в первый раз, рекомендуется взять с собой схему расположения терминала.</b>
+
+mixin status-modal()
+	.b-status-modal.iblock&attributes(attributes)
+		form(action="/" data-validate='Y')
+			.b-add-product__caption Проверка статуса
+			.b-add-product__ui-holder
+				.b-add-product__input-col
+					.b-add-product__label Сдали товар по гарантии
+					input.b-add-product__input(type="tel")
+
+				.b-add-product__submit-col
+					a.b-status-modal__button.button(href="#") Отправить 
+
+		.b-status-modal__succsess 
+			p 24.06.17:
+			span Рекламация закрыта
+		.b-status-modal__error К сожалению, информация по данному документу отсутствует. Уточнить подробности Вы можете по телефону +7 (495) 229-56-53
+
+mixin features()
+	.b-features.iblock._nojs&attributes(attributes)
+		ul.b-features__list
+			li.b-features__item
+				.b-features__feature
+					.b-features__icon-holder
+						.b-features__icon._clock
+					.b-features__text.content-area Ваш заказ можно забрать сегодня с&nbsp;10 до&nbsp;22
+
+			li.b-features__item
+				.b-features__feature
+					.b-features__icon-holder
+						.b-features__icon._band
+					.b-features__text.content-area 20&nbsp;384 товара в&nbsp;наличии с&nbsp;официальной гарантией
+
+			li.b-features__item
+				.b-features__feature
+					.b-features__icon-holder
+						.b-features__icon._truck
+					.b-features__text.content-area Доставка днём и&nbsp;вечером каждый день
+
+			li.b-features__item
+				.b-features__feature
+					.b-features__icon-holder
+						.b-features__icon._star
+					.b-features__text.content-area 5 звёзд на&nbsp;Я.Маркете с&nbsp;2010 года
+
+mixin subscribe-line()
+	.b-subscribe-line.iblock&attributes(attributes)
+		form(action="#")
+			.b-subscribe-line__field
+				input.b-subscribe-line__input(type="text" placeholder="Введите свой e-mail")
+				label.b-subscribe-line__send
+					input.b-subscribe-line__submit(type="submit")
+
+mixin market-stars()
+	.b-market-stars.iblock&attributes(attributes)
+		a.b-market-stars__link(href="#")
+			img.b-market-stars__img(src="assets/img/ya-market.png", alt="Маркет" width=221 height=30)
+
+mixin social-btns()
+	// Начало блока: Соц.сети
+	.social-btns.iblock&attributes(attributes)
+		ul.social-btns__list
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.fb
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.tw
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.inst
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.vk
+	// Конец блока: Соц.сети
+
+mixin social-btns_aside()
+	// Начало блока: Соц.сети
+	.social-btns.iblock&attributes(attributes)
+		.social-btns__title Поделиться в&nbsp;соц. сетях
+
+		ul.social-btns__list
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.fb
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.tw
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.inst
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.vk
+	// Конец блока: Соц.сети
+
+mixin social-btns_brand()
+	// Начало блока: Соц.сети
+	.social-btns.iblock&attributes(attributes)
+		.social-btns__title.social-btns__title_brand Поделиться:
+
+		ul.social-btns__list
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.fb
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.tw
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.inst
+			li.social-btns__item
+				a.social-btns__btn(href="#")
+					span.vk
+	// Конец блока: Соц.сети
+
+mixin footer-links()
+	.b-footer-links.iblock&attributes(attributes)
+		.b-footer-links__cols
+			.b-footer-links__col
+				.b-footer-links__caption Покупателям
+
+				ul.b-footer-links__menu
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Покупки на&nbsp;Ого!
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Доставка, оплата и&nbsp;самовывоз
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Пользовательское соглашение
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Соглашение о&nbsp;конфеденциальности и&nbsp;персональных данных
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Юридическим лицам
+
+			.b-footer-links__col
+				.b-footer-links__caption Сервис
+				ul.b-footer-links__menu
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Гарантия и&nbsp;защита покупателей
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Кредитование <nobr>Банки-партнёры</nobr>
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Бонусная система
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Подарочные карты
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Предложить идею
+
+			.b-footer-links__col
+				.b-footer-links__caption Компания
+				ul.b-footer-links__menu
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Что такое Ого?!
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Работа в&nbsp;Ого!
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Контактные данные
+
+			.b-footer-links__col
+				.b-footer-links__caption Информация
+				ul.b-footer-links__menu
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Блог о&nbsp;технике
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Подарки <nobr>Пресс-центр</nobr>
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Благотворительность
+					li.b-footer-links__menu-item
+						a.b-footer-links__menu-link(href="#") Наша жизнь
+
+mixin copyright()
+	.b-copyright.iblock&attributes(attributes)
+		.b-copyright__logo-holder
+			img.b-copyright__logo(src="assets/img/copyright-logo.png", alt="OGO" width=102 height=59 )
+		.b-copyright__text-holder.content-area
+			p &copy; 2010&ndash;2015 <nobr>ООО &laquo;Название организации&raquo;</nobr><br/>ОГРН: 1122334455667788990,<br/>г.&nbsp;Москва, ул.&nbsp;Местонахождение, д.nbsp;1/2, корп.3, ком.4
+
+mixin pay-systems()
+	.b-pay-systems.iblock&attributes(attributes)
+		.b-pay-systems__caption Принимаем к оплате
+		ul.b-pay-systems__items
+			li.b-pay-systems__item
+				img.b-pay-systems__item-img(src="assets/img/visa.png", alt="visa" width=40 height=24)
+
+			li.b-pay-systems__item
+				img.b-pay-systems__item-img(src="assets/img/maestro.png", alt="maestro" width=40 height=24)
+
+mixin town-modal()
+	.b-town-modal.iblock&attributes(attributes)
+		.b-town-modal__title Выберите ваш город
+		.b-town-modal__content
+			.b-town-modal__field
+				+autocomplete-address_town-modal()
+
+			.b-town-modal__field
+				.b-town-modal__field-caption Есть магазины и&nbsp;точки выдачи ОГО!
+				ul.b-town-modal__field-items
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Москва
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Мытищи
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Люберцы
+
+			.b-town-modal__field
+				.b-town-modal__field-caption Популярные
+				ul.b-town-modal__field-items
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Москва
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Санкт-Петерург
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Екатеринбург
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Казань
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Новосибирск
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Уфа
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Екатеринбург
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Уфа
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Казань
+					li.b-town-modal__field-item
+						a.b-town-modal__link(href="#") Санкт-Петерург
+
+mixin fast-buy()
+	.b-fast-buy.iblock&attributes(attributes)
+		.b-fast-buy__title Купить в&nbsp;1 клик
+
+		.b-fast-buy__content-holder
+			.b-fast-buy__cols
+				.b-fast-buy__right-col
+					+gray-remark({
+						text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами для оформления товара'
+					})
+
+				.b-fast-buy__left-col
+					+simple-form()
+
+mixin enter-modal()
+	.b-enter-modal.iblock&attributes(attributes)
+		.b-enter-modal__header
+			.b-enter-modal__title Вход
+			.b-enter-modal__register-btn
+					a.button.js-modal(href="#registration-modal") Регистрация
+
+		.b-enter-modal__content-holder
+			.b-enter-modal__cols
+				.b-enter-modal__left-col
+					+simple-form_auth()
+				.b-enter-modal__right-col
+					+socials-login()
+
+mixin feedback-modal()
+	.b-feedback-modal.iblock&attributes(attributes)
+		.b-feedback-modal__title Обратная связь
+
+		.b-tabs(data-collapse=530)
+			.b-feedback-modal__tabs-holder
+				ul.b-tabs__cols
+					li.b-tabs__col.b-tabs__col_active
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Отправить вопрос
+					li.b-tabs__col
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Заказать звонок
+					li.b-tabs__col
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Пожаловаться
+
+			.b-feedback-modal__content-holder
+				ul.b-tabs__holders
+					li.b-tabs__holder.b-tabs__holder_active
+						.b-simple-form
+							form(action="#" data-validate="Y")
+								label.b-simple-form__field
+									.b-simple-form__field-label Тема сообщения
+									.b-simple-form__field-inputs_regular
+										select.select2
+											option Предложение о поставке товара
+											option Отзыв
+											option Предложение о закупке
+
+								.b-feedback-modal__cols
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+										+gray-remark({
+											text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами для оформления товара'
+										})
+
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Имя
+											.b-simple-form__field-inputs
+												input(type="text" name="name" required)
+
+										label.b-simple-form__field
+											.b-simple-form__field-label._phone Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем смс-спам своим клиентам'})]
+											.b-simple-form__field-inputs
+												input.phone(type="tel" name="phone" data-mask="phone" placeholder="+7 (___) ___ __ __" required)
+
+										label.b-simple-form__field
+											.b-simple-form__field-label Электронная почта
+											.b-simple-form__field-inputs
+												input.email(type="email" name="email" required)
+
+								label.b-simple-form__field
+									.b-simple-form__field-label Сообщение
+									.b-simple-form__field-inputs
+										textarea(name="comment" disabled)
+
+								.b-feedback-modal__cols
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Прикрепить файл
+											.b-simple-form__field-inputs.b-simple-form__field-inputs_regular
+												+upload-input()
+
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_btn
+										.b-simple-form__field
+											.b-simple-form__field-inputs
+												input.button(type="submit" value="Отправить")
+
+					li.b-tabs__holder
+						.b-feedback-modal__cols
+							.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+								+gray-remark({
+									text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
+								})
+
+							.b-feedback-modal__left-col
+								+simple-form()
+
+					li.b-tabs__holder
+						.b-simple-form
+							form(action="#")
+								.b-feedback-modal__cols
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+										+gray-remark({
+											text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
+										})
+
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Имя
+											.b-simple-form__field-inputs
+												input(type="text" name="name")
+
+										label.b-simple-form__field
+											.b-simple-form__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+											.b-simple-form__field-inputs
+												input(type="tel" name="phone" data-mask="phone" required placeholder="+7 (___) ___ __ __")
+
+										label.b-simple-form__field
+											.b-simple-form__field-label Электронная почта
+											.b-simple-form__field-inputs
+												input(type="email" name="email")
+
+								label.b-simple-form__field
+									.b-simple-form__field-label Сообщение
+									.b-simple-form__field-inputs
+										textarea(name="comment")
+
+								.b-feedback-modal__cols
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Прикрепить файл
+											.b-simple-form__field-inputs.b-simple-form__field-inputs_regular
+												+upload-input()
+
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_btn
+										.b-simple-form__field
+											.b-simple-form__field-inputs
+												input.button(type="submit" value="Отправить")
+
+mixin main-consult()
+	.b-main-consult.iblock&attributes(attributes)
+		.b-main-consult__header
+			.b-main-consult__photo-holder
+				img.b-main-consult__photo(src="assets/img/content/photo.jpg", alt="" width=50 height=50)
+				.b-main-consult__photo-title
+					.b-main-consult__name Василий Петров
+					.b-main-consult__job Ваш констультант
+
+			.b-main-consult__callback-holder
+				a.b-main-consult__callback.button-gray.js-modal(href="#callback-modal") Заказать звонок
+
+		.b-main-consult__main
+			.b-main-consult__messages-holder
+				.b-main-consult__messages
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__typing
+
+		.b-main-consult__footer
+			.b-main-consult__ui-holder
+				.b-main-consult__ui-header
+					.b-main-consult__ui-label Сообщение
+					.b-main-consult__ui-send Отправить: Enter &#8629;
+
+				.b-main-consult__textarea-holder
+					textarea.b-main-consult__textarea
+
+mixin main-consult_modal()
+	.b-main-consult._modal.iblock&attributes(attributes)
+		.b-main-consult__caption Мы всегда на связи!
+		.b-main-consult__header
+			.b-main-consult__photo-holder
+				img.b-main-consult__photo(src="assets/img/content/photo.jpg", alt="" width=50 height=50)
+				.b-main-consult__photo-title
+					.b-main-consult__name Василий Петров
+					.b-main-consult__job Ваш констультант
+
+			.b-main-consult__callback-holder
+				a.b-main-consult__callback.button-gray.js-modal(href="#callback-modal") Заказать звонок
+
+		.b-main-consult__main
+			.b-main-consult__messages-holder
+				.b-main-consult__messages
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__message-holder
+						.b-main-consult__message Здравствуйте!<br/>Не&nbsp;могу найти информацию о&nbsp;доставке по&nbsp;Москве
+						.b-main-consult__message-remark Просмотренно в 12:27
+
+					.b-main-consult__message-holder._consult
+						.b-main-consult__message._consult Стоимость доставки: от&nbsp;150 i! Получить можно уже завтра, если заказ будет оформлен сегодня до&nbsp;16:00.<br/>Подробнее можно узнать здесь: <a href="#">http://ogo1.ru/about/</a>
+
+					.b-main-consult__typing
+
+		.b-main-consult__footer
+			.b-main-consult__ui-holder
+				.b-main-consult__ui-header
+					.b-main-consult__ui-label Сообщение
+					.b-main-consult__ui-send Отправить: Enter &#8629;
+
+				.b-main-consult__textarea-holder
+					textarea.b-main-consult__textarea
+
+mixin order-status()
+	.b-order-status.iblock&attributes(attributes)
+		.b-order-status__header
+			.b-order-status__caption Проверка статуса заказа
+
+		.b-order-status__main._active
+			.b-order-status__cols
+				.b-order-status__inputs-col
+					label.b-order-status__field
+						.b-order-status__label Номер заказа
+						.b-order-status__input-holder
+							input.b-order-status__input(type="tel")
+
+					label.b-order-status__field
+						.b-order-status__label Мобильный телефон #[+info-tooltip({text: 'Сообщение'})]
+						.b-order-status__input-holder
+							input.b-order-status__input(type="tel" data-mask="phone")
+
+				.b-order-status__captcha-col
+					+captcha()
+
+			.b-order-status__submit-holder
+				a.b-order-status__submit.button(href="#") Проверить статус
+
+		.b-order-status__result
+			.b-order-status__status-holder
+				span.b-order-status__status Статус Вашего заказа: <span class="b-order-status__status-text _green">В&nbsp;обработке</span>
+
+			.b-order-status__contact-holder
+				+contacts_status()
+
+mixin registration-modal()
+	.b-registration-modal.iblock&attributes(attributes)
+		.b-registration-modal__header
+			.b-registration-modal__title Регистрация
+			.b-registration-modal__enter-btn
+				a.button.js-modal(href="#enter-modal") Вход
+
+		.b-registration-modal__main
+			.b-registration-modal__cols
+				.b-registration-modal__left-col
+					+simple-form_registration()
+				.b-registration-modal__right-col
+					.b-registration-modal__socials
+						+socials-login()
+					.b-registration-modal__remark
+						+gray-remark({
+							caption: 'Обещаем, спама не&nbsp;будет!',
+							text: 'Мы&nbsp;рассылаем смс только о&nbsp;статусах заказов и&nbsp;изменениях бонусного счета. Мы&nbsp;не&nbsp;осуществляем рекламные <nobr>смс-рассылки</nobr> и&nbsp;не&nbsp;передаем телефоны наших клиентов третьим лицам.'
+						})
+
+mixin add-product()
+	.b-add-product.iblock&attributes(attributes)
+		.b-add-product__caption Добавить товар по&nbsp;артикулу
+		.b-add-product__ui-holder
+			.b-add-product__input-col
+				.b-add-product__label Артикул
+				input.b-add-product__input(type="tel" value='34534345')
+
+			.b-add-product__submit-col
+				a.b-add-product__submit.button-gray(href="#") Найти товар
+
+		.b-add-product__result-holder
+			ul.b-add-product__result-items
+				li.b-add-product__result-item
+					.b-add-product__result-product
+						+product-small._noborder()
+
+					.b-add-product__result-ui
+						.b-add-product__result-qtty
+							select.b-add-product__result-select.select2
+								option 1
+								option 2
+								option 3
+								option 4
+
+						.b-add-product__result-submit-holder
+							a.b-add-product__result-submit.button(href="#") Добавить
+
+			.b-add-product__error Товар не найден
+
+mixin cart-added()
+	.b-cart-added.iblock&attributes(attributes)
+		.b-cart-added__caption Добавить товар по&nbsp;артикулу
+		.b-cart-added__ui-holder
+			.b-cart-added__input-col
+				.b-cart-added__label Артикул
+				input.b-cart-added__input(type="tel" value='34534345')
+
+			.b-cart-added__submit-col
+				a.b-cart-added__submit.button-gray(href="#") Найти товар
+
+		.b-cart-added__result-holder
+			ul.b-cart-added__result-items
+				li.b-cart-added__result-item
+					.b-cart-added__result-product
+						+product-small(class="_noborder")
+
+					.b-cart-added__result-ui
+						.b-cart-added__result-qtty
+							select.b-cart-added__result-select.select2
+								option 1
+								option 2
+								option 3
+								option 4
+
+						.b-cart-added__result-submit-holder
+							a.b-cart-added__result-submit.button(href="#") Добавить
+
+			.b-cart-added__error Товар не найден
+
+mixin added-cart()
+	.b-added-cart.iblock&attributes(attributes)
+		.b-added-cart__caption Товар добавлен в корзину!
+		.b-added-cart__btns
+			a.button-gray(href="#") Перейти в корзину
+			a.button(href="#") Перейти к оформлению
+
+mixin form-success-modal()
+	.b-form-success-modal.iblock&attributes(attributes)
+		.b-form-success-modal__header
+			.b-form-success-modal__title Сообщение успешно отправлено
+		.b-form-success-modal__content-holder
+			p Спасибо
+
+mixin expert-request()
+	.b-expert-request.iblock&attributes(attributes)
+		.b-expert-request__caption Запрос оценки эксперта
+		.b-expert-request__content
+			form(action='#' data-validate='Y')
+				label.b-simple-form__field
+					.b-simple-form__field-label Ваша электронная почта
+					.b-simple-form__field-inputs
+						input.email(type="email" name="email" required)
+				.b-simple-form__field
+					.b-simple-form__field-inputs
+						input.button(type="submit" value="Отправить")
+			.b-expert-request__error
+				h5 Не выбраны обязательны компоненты:
+				ul
+					li Корпус
+					li Материнская плата
+					li Процессор
+
+			p Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты
+
+mixin autocomplete-address()
+	.b-autocomplete-address.iblock
+		input.b-autocomplete-address__input(type="text")&attributes(attributes)
+		input(type="hidden").b-autocomplete-address__code
+
+mixin autocomplete-address_town-modal()
+	.b-autocomplete-address.iblock
+		input.b-autocomplete-address__input.b-autocomplete-address__input_target(type="text" placeholder="Начните вводить название")&attributes(attributes)
+		input(type="hidden").b-autocomplete-address__code
+		.b-autocomplete-address__arrow
+
+mixin gray-remark(data)
+	.b-gray-remark.iblock&attributes(attributes)
+		if data.caption !== undefined
+			.b-gray-remark__caption!= data.caption
+		if data.text !== undefined
+			.b-gray-remark__content!= data.text
+
+mixin simple-form()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Имя
+				.b-simple-form__field-inputs
+					input(type="text" name="name" required)
+
+			.b-simple-form__field
+				.b-simple-form__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+				.b-simple-form__field-inputs
+					input.phone(type="tel" name="phone" data-mask="phone" required placeholder="+7 (___) ___ __ __")
+
+			.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Заказать звонок")
+
+mixin simple-form_auth()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Электронная почта или телефон
+				.b-simple-form__field-inputs
+					input.email(type="text" name="login" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			.b-simple-form__field
+				a.b-simple-form__field-link(href="#") Забыли пароль?
+
+			label.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Войти")
+
+mixin simple-form_registration()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Имя, Фамилия
+				.b-simple-form__field-inputs
+					input(type="text" name="name" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Электронная почта #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+				.b-simple-form__field-inputs
+					input.email(type="email" name="email" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Придумайте пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Повторите пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			.b-simple-form__field
+				ul.b-simple-form__list
+					li.b-simple-form__list-item
+						+checkbox('Принимаю условия <a href="#" class="b-simple-form__field-link">Публичной оферты</a>')(checked)
+						input.checkbox-vadidator(type='text' required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Зарегистрироваться")
+
+mixin info-tooltip(data)
+	span.b-info-tooltip.iblock&attributes(attributes)
+		span.b-info-tooltip__link ?
+		span.b-info-tooltip__container!= data.text
+
+mixin info-tooltip_bonus()
+	span.b-info-tooltip.iblock&attributes(attributes)
+		span.b-info-tooltip__link ?
+		span.b-info-tooltip__container
+			img.b-info-tooltip__image(src="assets/img/content/card.png", alt="Бонусная карта" width=326 height=200)
+
+mixin password-input()
+	.b-password-input.iblock&attributes(attributes)
+		input(type="password")
+		span.b-password-input__eye
+
+mixin socials-login()
+	.b-socials-login.iblock&attributes(attributes)
+		.b-socials-login__title Войти через соц.сети
+		.b-socials-login__main
+			ul.b-socials-login__items
+				li.b-socials-login__item
+					a.b-socials-login__social-link.b-socials-login__social-link_vk(href="#")
+				li.b-socials-login__item
+					a.b-socials-login__social-link.b-socials-login__social-link_fb(href="#")
+				li.b-socials-login__item
+					a.b-socials-login__social-link.b-socials-login__social-link_ok(href="#")
+				li.b-socials-login__item
+					a.b-socials-login__social-link.b-socials-login__social-link_gg(href="#")
+				li.b-socials-login__item
+					a.b-socials-login__social-link.b-socials-login__social-link_tw(href="#")
+
+mixin upload-input()
+	label.b-upload-input.iblock&attributes(attributes)
+		.button-gray.b-upload-input__upload Загрузить документ
+		a.button-gray.b-upload-input__remove.js-upload-remove(href=jv0) Удалить документ
+
+		input(type='file')
+
+mixin captcha()
+	.b-captcha.iblock&attributes(attributes)
+		.b-captcha__top-section
+			.b-captcha__image-holder
+				img.b-captcha__image(src="assets/img/captcha.png", alt="captcha" width=135 height=31)
+
+			.b-captcha__ui-holder
+				a.b-captcha__ui-refresh(href="#")
+				a.b-captcha__ui-sound(href="#")
+
+		.b-captcha__bottom-section
+			.b-captcha__field
+				.b-captcha__label Введите код с&nbsp;картинки
+				.b-captcha__input-holder
+					input.b-captcha__input(type="text")
+
+mixin checkbox(content, disabled)
+	label.b-checkbox.iblock(class = (disabled === true ? 'disabled' : ''))
+		span.b-checkbox__check-holder
+			input.b-checkbox__input.icheck(type="checkbox")&attributes(attributes)
+			span.b-checkbox__label
+
+		span.b-checkbox__text !{content}

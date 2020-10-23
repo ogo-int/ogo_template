@@ -1,0 +1,248 @@
+// Mixins
+
+@mixin mtop($multiplier: 1, $firstlast: true){
+	margin-top: $base-vertical-margin * $multiplier;
+	@if $firstlast {
+		&:first-child { margin-top: 0; }
+	}
+}
+
+@mixin mbot($multiplier: 1, $firstlast: true){
+	margin-bottom: $base-vertical-margin * $multiplier;
+	@if $firstlast {
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+@mixin margin($multiplier: 1, $firstlast: true){
+	margin-top: $base-vertical-margin * $multiplier;
+	margin-bottom: $base-vertical-margin * $multiplier;
+	@if $firstlast {
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+@mixin ptop($multiplier: 1){
+	padding-top: $base-vertical-margin * $multiplier;
+}
+
+@mixin pbot($multiplier: 1){
+	padding-bottom: $base-vertical-margin * $multiplier;
+}
+
+@mixin padding($multiplier: 1){
+	padding-top: $base-vertical-margin * $multiplier;
+	padding-bottom: $base-vertical-margin * $multiplier;
+}
+
+@mixin inline-block {
+	display: -moz-inline-stack;	// ff 2
+	display: inline-block;
+	zoom:1; *display: inline; _height: 15px; // ie 6-7
+}
+
+@mixin box-margin($margin) {
+	margin-top: $margin;
+	margin-bottom: $margin;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+@mixin triangle-down($width, $height, $color){
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: $height $width/2 0 $width/2;
+	border-color: $color transparent transparent transparent;
+}
+
+@mixin fontface($name, $weight, $style, $fontname) {
+	font-family: $name;
+    src: url('../fonts/' + $fontname + '.eot');
+    src: url('../fonts/' + $fontname + '.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/' + $fontname + '.woff') format('woff');
+    font-weight: $weight;
+    font-style: $style;
+}
+
+@mixin retinabg($url, $url2x, $size, $position, $repeat) {
+	background-image: url($url);
+	background-repeat: $repeat;
+	background-position: $position;
+	@media #{$media-retina} {
+		background-image: url($url2x);
+		background-size: $size;
+	}
+}
+
+@mixin fontsize($size, $lineheight: $line-height-base){
+	font-size: $size;
+	line-height: $lineheight;
+}
+
+//- Media queries
+@mixin w320() {
+	@media screen and (max-width: 479px) {
+		& {
+			@content;
+		}
+	}
+}
+
+@mixin w480() {
+	@media screen and (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin w768() {
+	@media screen and (max-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin w1024() {
+	@media screen and (max-width: 1230px) {
+		@content;
+	}
+}
+
+@mixin retina() {
+	@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+		& {
+			@content;
+		}
+	}
+}
+
+//- Retina bg's
+@mixin bgr($url, $ext, $width: 100%, $height: 100%) {
+	background-image: url($url+ '.' + $ext);
+
+	@include retina() {
+		background-image: url($url + '@2x.' + $ext);
+	}
+}
+
+@mixin bgrc($url, $ext) {
+	background-image: url($url+ '.' + $ext);
+
+	@include retina() {
+		background-image: url($url + '@2x.' + $ext);
+		background-size: cover;
+	}
+}
+
+@mixin bgrn($url, $ext) {
+	background-image: url($url+ '.' + $ext);
+
+	@include retina() {
+		background-image: url($url + '@2x.' + $ext);
+	}
+}
+
+
+@mixin clearfix() {
+	&:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+}
+
+@mixin mmtop($margin) {
+	margin-top: $margin;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+@mixin mmleft($margin) {
+	margin-left: $margin;
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-moz-placeholder{
+		@content;
+	}
+	&:-ms-input-placeholder{
+		@content;
+	}
+	&.ui-placeholder {
+		@content;
+	}
+}
+
+@mixin pie() {
+	behavior: url("./css/pie/pie.htc");
+	//- behavior: url("path/to/pie.php");
+}
+
+@mixin reset () {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin reset-list() {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	& > li {
+		margin: 0;
+		padding: 0;
+
+		&:before {
+			content: none;
+		}
+	}
+}
+
+
+@mixin media ($media, $mod: 'undefined') {
+	@media #{$media} {
+		@content;
+	}
+
+	@if ($mod != 'undefined') {
+		#{$mod} {
+			@content;
+		}
+	}
+}
+
+@mixin ft-icon($name: '') {
+	content: $name;
+	font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+
+	line-height: 1em;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

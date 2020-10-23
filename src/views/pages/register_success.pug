@@ -1,0 +1,25 @@
+extends ../layout/page-template
+
+block head
+  title Регистрация
+
+block scripts
+
+block breadcrumbs
+
+block stylesheets
+
+block caption
+
+block inner-content
+  section.c-register
+    .c-register__header
+      .h1.c-register__caption.c-register__caption_gray Регистрация
+
+    .content-center
+      .content-area
+        .c-register__message
+          +gray-remark({
+            caption: 'Вы успешно зарегистрировались!',
+            text: 'Осталось подтвердить регистрацию, перейдя по ссылке, высланной на ваш электронный адрес.'
+          })

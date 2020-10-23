@@ -1,0 +1,147 @@
+.b-category-plates {
+  min-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__items {
+    @include clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    @include box-sizing;
+    float: left;
+    width: 1/4*100%;
+    margin: 0;
+
+    &_big {
+      width: 1/2*100%;
+    }
+
+    &._right {
+      float: right;
+    }
+  }
+
+  &__ratio-holder {
+    position: relative;
+    padding-bottom: 100%;
+
+    &_big {
+      padding-bottom: 50%;
+    }
+  }
+
+  &__item-wrap {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 3px;
+    left: 3px;
+    text-decoration: none;
+    background-color: #fff;
+    text-align: center;
+
+    &._blue {
+      background-color: #3e8bdc;
+    }
+
+    &._red {
+      background-color: #dc3e48;
+    }
+
+    &._gray {
+      background-color: #333;
+    }
+  }
+
+  &__image-holder {
+    @include box-sizing;
+    display: block;
+    height: 80%;
+    padding: 20px;
+  }
+
+  &__image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    vertical-align: bottom;
+  }
+
+  &__bg-holder {
+    position: absolute;
+    top: 0;
+    right: 170px;
+    bottom: 0;
+    left: 0;
+    max-width: 336px;
+    overflow: hidden;
+    text-align: right;
+  }
+
+  &__bg-image {
+    position: absolute;
+    right: 0;
+    width: auto;
+    height: 100%;
+    vertical-align: top;
+  }
+
+  &__title {
+    padding-left: 5px;
+    padding-right: 5px;
+    text-decoration: none;
+    color: #333;
+
+    &_big {
+      @include box-sizing;
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: 0;
+      padding-left: 10px;
+      padding-right: 5%;
+      text-align: right;
+    }
+  }
+}
+
+@mixin mx700($mod: "") {
+  .b-category-plates#{$mod} {
+    .b-category-plates {
+      &__item {
+        width: 1/2*100%;
+
+        &._right {
+          float: left;
+        }
+
+        &_big {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx475($mod: "") {
+  .b-category-plates#{$mod} {
+    .b-category-plates {
+      &__image-holder {
+        height: 75%;
+      }
+      &__title {
+        display: block;
+        font-size: 14/16*100%;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+@include mx700("._mx700");
+@include mx475("._mx475");

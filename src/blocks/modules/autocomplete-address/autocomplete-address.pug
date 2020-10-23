@@ -1,0 +1,10 @@
+mixin autocomplete-address()
+	.b-autocomplete-address.iblock
+		input.b-autocomplete-address__input(type="text")&attributes(attributes)
+		input(type="hidden").b-autocomplete-address__code
+
+mixin autocomplete-address_town-modal()
+	.b-autocomplete-address.iblock
+		input.b-autocomplete-address__input.b-autocomplete-address__input_target(type="text" placeholder="Начните вводить название")&attributes(attributes)
+		input(type="hidden").b-autocomplete-address__code
+		.b-autocomplete-address__arrow

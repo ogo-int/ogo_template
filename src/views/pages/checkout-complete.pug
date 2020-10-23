@@ -1,0 +1,107 @@
+extends ../layout/page-template
+
+block head
+	title Оформление заказа
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block breadcrumbs
+
+block caption
+
+block inner-content
+	section.c-checkout._hands
+		.c-checkout__header
+			.c-checkout__caption
+				.h1 Иван, спасибо за&nbsp;заказ!
+
+		.c-checkout__main-holder
+			.c-checkout__order-cart
+				.b-order-cart.iblock
+					ul.b-order-cart__items
+						li.b-order-cart__item
+							.b-cart-product.iblock
+								.b-cart-product__description
+									.b-cart-product__image-col
+										a(href="#")
+											img.b-cart-product__image(src="assets/img/content/products/product-preview7.jpg", alt="Товар" width=218 height=218)
+
+									.b-cart-product__title-col
+										.b-cart-product__art &nbsp;
+										a.b-cart-product__title(href="#") Умные часы Sony Smartwatch 3 SWR50 Metal, серебристые
+
+										.b-cart-product__mobile-price
+											.b-cart-product__current-price 49&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__old-price._mobile 55&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__bonus._mobile +4&nbsp;999 бонусов
+
+									.b-cart-product__ui.b-cart-product__ui_confirm
+										.b-cart-product__qtty-col
+											.b-cart-product__qtty-val 1 шт.
+
+										.b-cart-product__price-col
+											.b-cart-product__current-price 49&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__old-price 55&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__bonus +4&nbsp;999 бонусов
+
+						li.b-order-cart__item
+							.b-cart-product.iblock
+								.b-cart-product__description
+									.b-cart-product__image-col
+										a(href="#")
+											img.b-cart-product__image(src="assets/img/content/products/product-preview6.jpg", alt="Товар" width=218 height=218)
+
+									.b-cart-product__title-col
+										.b-cart-product__art Арт. 34534345
+										a.b-cart-product__title(href="#") Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
+
+										.b-cart-product__mobile-price
+											.b-cart-product__current-price 99&nbsp;998 <span class="rub">i</span>
+											.b-cart-product__bonus._mobile +4&nbsp;999 бонусов
+
+									.b-cart-product__ui.b-cart-product__ui_confirm
+										.b-cart-product__qtty-col
+											.b-cart-product__qtty-val 2 шт.
+
+										.b-cart-product__price-col
+											.b-cart-product__current-price 49&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__old-price 55&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__bonus +4&nbsp;999 бонусов
+
+						li.b-order-cart__item
+							.b-cart-product.iblock
+								.b-cart-product__description
+									.b-cart-product__image-col
+										a(href="#")
+											img.b-cart-product__image(src="assets/img/content/products/product-preview5.jpg", alt="Товар" width=218 height=218)
+
+									.b-cart-product__title-col
+										.b-cart-product__art Арт. 34534345
+										a.b-cart-product__title(href="#") Автокресло <nobr>Maxi-Cosi</nobr> Cabrio Fix Walnut Brown
+
+										.b-cart-product__mobile-price
+											.b-cart-product__current-price 49&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__old-price._mobile 55&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__bonus._mobile +4&nbsp;999 бонусов
+
+									.b-cart-product__ui.b-cart-product__ui_confirm
+										.b-cart-product__qtty-col
+											.b-cart-product__qtty-val 1 шт.
+
+										.b-cart-product__price-col
+											.b-cart-product__current-price 49&nbsp;999 <span class="rub">i</span>
+											.b-cart-product__bonus +4&nbsp;999 бонусов
+
+			.c-checkout__cols.js-equalizer
+				.c-checkout__order-confirm
+					+order-confirm()
+
+				.c-checkout__total-confirm
+					+total_confirm()
+
+			.c-checkout__pickpoint-confirm
+				+pickpoint-confirm()
+
+			.c-checkout__registration-confirm
+				+order-registration()

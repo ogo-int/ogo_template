@@ -1,0 +1,87 @@
+.b-logo-tape {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: hidden;
+
+  &__items {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    @include box-sizing;
+    float: left;
+    width: 1/7*100%;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  &__image {
+    @include opacity(.25);
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    margin-left: auto;
+    margin-right: auto;
+    transition: .2s opacity;
+
+    &:hover {
+      @include opacity(1);
+    }
+  }
+}
+
+// Модификаторы
+.b-logo-tape._nojs {
+  .b-logo-tape {
+    &__item {
+      &:nth-child(n+8) {
+        display: none;
+      }
+    }
+  }
+}
+
+// Адаптация
+@mixin mx960($mod: "") {
+  .b-logo-tape#{$mod} {
+    .b-logo-tape {
+      &__item {
+        width: 1/5*100%;
+
+        &:nth-child(n+6) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx600($mod: "") {
+  .b-logo-tape#{$mod} {
+    .b-logo-tape {
+      &__item {
+        width: 1/3*100%;
+
+        &:nth-child(n+4) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .c-main-page__partners {
+    @include mx960("._nojs");
+  }
+}
+
+@media (max-width: 620px) {
+  .c-main-page__partners {
+    @include mx600("._nojs");
+  }
+}

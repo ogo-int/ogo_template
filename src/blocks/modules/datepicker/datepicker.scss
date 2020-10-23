@@ -1,0 +1,90 @@
+.b-datepicker {
+
+  .ui-datepicker {
+    width: 100%;
+
+    .ui-datepicker-header {
+      display: none;
+    }
+
+    .ui-datepicker-calendar {
+      text-align: center;
+    }
+
+    .ui-datepicker-today a {
+      background-color: #f1f1f1;
+    }
+
+    td {
+      padding: 2% 1%;
+    }
+
+    td span, td a {
+      width: 45%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      padding: 15%;
+    }
+
+    td span {
+      color: #bfbfbf;
+    }
+
+    td a {
+      color: #333;
+      transition: .2s color, .2s background-color;
+
+      &:hover {
+        background-color: #3e8bdc;
+        color: white;
+      }
+
+      &.ui-state-active {
+        background-color: #3e8bdc;
+        color: white;
+      }
+    }
+  }
+
+  &__header {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__title {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #262626;
+  }
+
+  &__month {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+    text-align: right;
+  }
+
+  &__calendar {
+    @include mtop(10/20);
+    @include mbot(20/20);
+    border: 1px solid #dfdfdf;
+    padding: 15px;
+  }
+
+  &__field {
+    display: block;
+  }
+
+  &__field-label {
+    @include mbot(5/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #262626;
+  }
+}

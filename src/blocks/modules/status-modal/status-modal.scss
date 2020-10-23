@@ -1,0 +1,108 @@
+.b-status-modal {
+  padding: 40px;
+
+  .b-add-product {
+    &__ui-holder {
+      @media(max-width: 480px) {
+        display: block;
+      }
+    }
+
+    &__input-col {
+      @media(max-width: 480px) {
+        display: block;
+        padding-right: 0;
+      }
+    }
+
+    &__submit-col {
+      @media(max-width: 480px) {
+        display: block;
+        width: auto;
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 200%;
+    font-weight: 200;
+  }
+
+  &__button {
+    padding: 0.55em 1em;
+
+    @media(max-width: 480px) {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+
+  &__succsess {
+    width: 600px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+
+    p {
+      display: inline-block;
+      padding-right: 3px;
+    }
+
+    span {
+      display: inline-block;
+      font-weight: 900;
+    }
+  }
+
+  &__error {
+    font-weight: 900;
+    width: 600px;
+
+    @media(max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  p {
+    padding-top: 20px;
+  }
+}
+
+.page-garanty {
+  h1 {
+    display: inline-block;
+    width: auto;
+
+    @media(max-width: 767px) {
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  div {
+    float: right;
+    text-align: center;
+
+    @media(max-width: 767px) {
+      float: none;
+    }
+  }
+
+  p {
+    margin-top: 10px;
+  }
+
+  a {
+    @media(max-width: 767px) {
+      padding: 0.5rem 0.5rem;
+    }
+  }
+}

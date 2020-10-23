@@ -1,0 +1,14 @@
+mixin pickpoint-qiwi()
+	label.b-pickpoint-qiwi.iblock&attributes(attributes)
+		input.b-pickpoint-qiwi__radio-input(type="radio" name="pickpoint")
+		.b-pickpoint-qiwi__cols
+			.b-pickpoint-qiwi__radiocheck-col
+				.b-pickpoint-qiwi__radio
+			.b-pickpoint-qiwi__main-col
+				.b-pickpoint-qiwi__top-section
+					.b-pickpoint-qiwi__cols
+						.b-pickpoint-qiwi__title Доставка в&nbsp;терминал QIWI Post<br/>250 <span class="rub">i</span> (предоплата)
+						.b-pickpoint-qiwi__info Можно забрать завтра (03.02.2016) после&nbsp;18:00
+
+				.b-pickpoint-qiwi__map-section
+					+map-point()

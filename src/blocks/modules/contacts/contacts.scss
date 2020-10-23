@@ -1,0 +1,37 @@
+.b-contacts {
+  display: inline-block;
+  min-width: 230px;
+  text-align: left;
+
+  &__phone {
+    text-decoration: none;
+    font-size: 28/16*100%;
+    font-weight: 200;
+    line-height: (34/28);
+    color: #4a4a4a;
+  }
+
+  &__time {
+    font-size: 12/16*100%;
+    line-height: (16/12);
+    color: #7e7e7e;
+  }
+
+  &__callback {
+    display: inline-block;
+    margin-left: .5em;
+    border-bottom: 1px dashed #dc3e48;
+    font-size: 12/16*100%;
+    line-height: (12/12);
+    text-decoration: none;
+    color: #dc3e48;
+
+    &._block {
+      @include mbot(5/20);
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5px;
+    }
+  }
+}

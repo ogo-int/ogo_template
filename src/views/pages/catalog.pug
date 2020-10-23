@@ -1,0 +1,61 @@
+extends ../layout/page-template
+
+block head
+	title Каталог товаров
+
+block head-scripts
+
+block vars
+	- var isInner = true; // раскрывать ли подменю в главном меню
+	- var isTotalStyling = true; // Использовать бандл
+	- var modHeader = '_breadcrumbs';
+
+block stylesheets
+	//- link(href='css/bundles/catalog.css' rel='stylesheet')
+
+block caption
+	h1.c-catalog__title Каталог товаров
+
+block fix-area
+	.c-catalog__fix-filter
+		.c-catalog__filter-scroll.scroll-fixer
+			+smart-filter()
+
+block inner-content
+	section.c-catalog
+		.c-catalog__intro
+			+catalog-intro()
+
+		.c-catalog__sort
+			+catalog-sort()
+
+		.c-catalog__cols
+			.c-catalog__right-aside
+				.c-catalog__mobile-filters
+					.c-catalog__btn-holder
+						a.button.c-catalog__filter-btn(href="#")
+							span Фильтры
+							span.c-catalog__filter-btn-close Скрыть фильтры
+					.c-catalog__mobile-sort
+						span.c-catalog__label Сортировать по
+						select.c-catalog__sort-select.select2()
+							option Популярности
+							option Новизне
+							option Цене
+
+				.c-catalog__filter
+					.c-catalog__filter-scroll.scroll-fixer
+						+smart-filter()
+
+				.c-catalog__consult
+					+online-consult()
+
+			.c-catalog__main-col
+				.c-catalog__products
+					+catalog-plates()
+
+				.c-catalog__pager
+					+paginator()
+
+				.c-catalog__more
+					a.c-catalog__more-link.button-more(href="ajax/more-plates.html") Показать еще

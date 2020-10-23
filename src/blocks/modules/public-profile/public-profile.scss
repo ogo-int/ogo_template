@@ -1,0 +1,120 @@
+.b-public-profile {
+  padding-left: 20px;
+  padding-right: 20px;
+  &__header {
+    @include clearfix;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    font-size: 18/16*100%;
+    color: #333;
+  }
+
+  &__title-remark {
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+  }
+
+  &__main {
+    padding-top: 20px;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__photo-col {
+    float: left;
+    width: 220px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__nic-col {
+    min-width: 230px;
+    overflow: hidden;
+    padding-bottom: 20px;
+  }
+
+  &__col-title {
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__nic-title {
+    display: inline-block;
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__col-status {
+    display: inline-block;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #81c03d;
+    margin-left: 20px;
+  }
+
+  &__nic-input {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 225px;
+
+    input {
+      width: 100%;
+      font-size: 14/16*100%;
+    }
+  }
+
+  &__nic-btn {
+    display: inline-block;
+  }
+
+  &__nic-header {
+    @include mbot(10/20);
+  }
+
+  &__photo-header {
+    @include mbot(10/20);
+    min-height: 22px;
+  }
+
+  &__save-btn {
+    font-size: 14/16*100%;
+  }
+
+  &__photo-main {
+    @include clearfix;
+  }
+
+  &__photo-img {
+    float: left;
+    margin-right: 10px;
+    width: 100px;
+    height: auto;
+  }
+
+  &__photo-change {
+    float: left;
+    font-size: 14/16*100%;
+  }
+
+
+  &__change-link {
+    position: relative;
+
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 1px;
+      visibility: hidden;
+    }
+  }
+}

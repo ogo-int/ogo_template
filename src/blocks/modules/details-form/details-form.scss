@@ -1,0 +1,154 @@
+.b-details-form {
+  &__cols {
+    @include margin(20/20);
+    @include clearfix;
+  }
+
+  &__left-col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+  }
+
+  &__label {
+    @include mbot(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #262626;
+  }
+
+  &__common-section {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__manual-section {
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__recognizer-section {
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__textarea {
+    position: relative;
+    height: 244px;
+
+    textarea {
+      @include box-sizing;
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background-color: #fff;
+      border: 1px solid #dfdfdf;
+      box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.1);
+      font-size: 14/16*100%;
+      padding: .65em 1em;
+      resize: none;
+      padding-bottom: 55px;
+    }
+
+    &_checkout {
+      height: 100px;
+
+      textarea {
+        padding-bottom: 0;
+      }
+    }
+  }
+
+  &__recognize {
+    position: absolute;
+    right: 35px;
+    bottom: 15px;
+    font-size: 14/16*100%;
+  }
+
+  &__input {
+    position: relative;
+
+    input {
+      @include box-sizing;
+      width: 100%;
+      font-size: 14/16*100%;
+    }
+
+    &._none {
+      outline: 1px solid #ff6161;
+
+      &:after {
+        content: "*";
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        color: #ff6161;
+        margin-top: -7px;
+        font-size: 18px;
+      }
+    }
+  }
+
+  &__checkout-recognize {
+    @include box-sizing;
+    @include margin(20/20);
+    display: block;
+    max-width: 189px;
+    margin-left: auto;
+    font-size: 14/16*100%;
+    text-align: center;
+  }
+}
+
+@mixin mx500($mod: "") {
+  .b-details-form#{$mod} {
+    .b-details-form {
+      &__left-col {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include mtop(20/20);
+        float: none;
+        width: auto;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include mx500("._mx500");
+
+.c-lk__details-item {
+  @media (max-width: 580px) {
+    @include mx500();
+  }
+}
+
+.c-checkout__company-info {
+  @media (max-width: 560px) {
+    @include mx500;
+  }
+}

@@ -1,0 +1,81 @@
+.b-bonus-promo {
+  @include box-sizing;
+  position: relative;
+  max-width: 820px;
+  min-height: 262px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__bg-holder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+  }
+
+  &__bg {
+    position: absolute;
+    right: 320px;
+    bottom: 0;
+  }
+
+  &__content-holder {
+    position: relative;
+    z-index: 2;
+    width: 265px;
+    margin-left: auto;
+    padding-top: 20px;
+    margin-right: 20px;
+    text-align: center;
+  }
+
+  &__caption {
+    color: #000;
+    font-size: 18/16*100%;
+    font-weight: 400;
+  }
+
+  &__text {
+    @include margin(15/20);
+    color: #969696;
+    font-size: 15/16*100%;
+    font-weight: 400;
+  }
+
+  &__btn {
+    width: 190px;
+    text-align: center;
+    color: #fff;
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+}
+
+@mixin mx700($mod: "") {
+  .b-bonus-promo#{$mod} {
+    .b-bonus-promo {
+      &__bg {
+        display: none;
+      }
+
+      &__content-holder {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@include mx700("._mx700");
+
+.c-lk__bonus-promo {
+  @media (max-width: 760px) {
+    @include mx700();
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 15px;
+  }
+}

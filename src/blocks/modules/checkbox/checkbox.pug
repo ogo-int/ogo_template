@@ -1,0 +1,7 @@
+mixin checkbox(content, disabled)
+	label.b-checkbox.iblock(class = (disabled === true ? 'disabled' : ''))
+		span.b-checkbox__check-holder
+			input.b-checkbox__input.icheck(type="checkbox")&attributes(attributes)
+			span.b-checkbox__label
+
+		span.b-checkbox__text !{content}

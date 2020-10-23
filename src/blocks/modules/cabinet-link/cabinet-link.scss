@@ -1,0 +1,33 @@
+.b-cabinet-link {
+  &__link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    color: #4a4a4a;
+    transition: .2s color;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: .5em;
+    color: inherit;
+
+    &:before {
+      @include ft-icon($ft-smile);
+      font-size: 16px;
+      color: inherit;
+    }
+  }
+
+  &__text {
+    font-size: 13/16*100%;
+  }
+}

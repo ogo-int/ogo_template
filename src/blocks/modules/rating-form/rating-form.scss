@@ -1,0 +1,68 @@
+.b-rating-form {
+  &__items {
+    @include clearfix;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    list-style: none;
+
+    &:hover {
+      .b-rating-form__item {
+        color: #f1f1f1;
+
+        &:hover {
+          color: #ffcb31;
+        }
+      }
+    }
+
+    &_big {
+      font-size: 18/16*100%;
+    }
+  }
+
+  &__item {
+    float: right;
+    margin: 0;
+    padding-right: .25em;
+    color: #f1f1f1;
+    transition: .1s color;
+    cursor: pointer;
+
+    &:before {
+      @include ft-icon($ft-star);
+      font-size: 12/14*100%;
+      margin-left: 0;
+      margin-right: 0;
+      line-height: 1;
+    }
+
+    &_active {
+      color: #ffcb31;
+    }
+
+    &:hover {
+      color: #ffcb31;
+
+      ~ .b-rating-form__item {
+        color: #ffcb31;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    color: #141414;
+    font-size: 14/16*100%;
+  }
+
+  &__input {
+    visibility: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+  }
+}

@@ -1,0 +1,180 @@
+.b-order-item {
+  position: relative;
+
+  &__header {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #000;
+    font-size: 18/16*100%;
+  }
+
+  &__date {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #333;
+    font-size: 14/16*100%;
+    font-weight: 400;
+    text-align: right;
+  }
+
+  &__main {
+    padding-top: 30px;
+  }
+
+  &__item {
+    @include box-sizing;
+    @include margin(20/20);
+    display: table;
+    width: 100%;
+  }
+
+  &__item-label {
+    display: table-cell;
+    vertical-align: top;
+    width: 180px;
+    color: #969696;
+    font-size: 14/16*100%;
+    font-weight: 400;
+  }
+
+  &__item-content {
+    display: table-cell;
+    vertical-align: top;
+    color: #262626;
+    font-size: 14/16*100%;
+    font-weight: 400;
+  }
+
+  &__link {
+    border-bottom: 1px dotted #333;
+    text-decoration: none;
+    color: #333;
+
+    &:hover {
+      border-bottom-color: #dc3e48;
+      color: #dc3e48;
+    }
+  }
+
+  &__cost {
+    @include margin(5/20);
+    font-size: 18/14*100%;
+    font-weight: 400;
+    line-height: 1;
+    color: #35322f;
+  }
+
+  &__bonus {
+    color: #3e8bdc;
+    font-size: 12/14*100%;
+    font-weight: 400;
+  }
+
+  &__ui {
+    font-size: 14/16*100%;
+    text-align: right;
+
+    .button-gray {
+      margin-right: 1em;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__footer {
+    @include clearfix;
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    padding-top: 15px;
+  }
+}
+
+@mixin mx780($mod: "") {
+  .b-order-item#{$mod} {
+    .b-order-item {
+      &__item-label {
+        display: block;
+        padding-bottom: 5px;
+      }
+
+      &__item-content {
+        display: block;
+      }
+    }
+  }
+}
+
+@mixin mx590($mod: "") {
+  .b-order-item#{$mod} {
+    .b-order-item {
+      &__footer {
+        position: static;
+      }
+
+      &__ui {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@mixin mx479($mod: "") {
+  .b-order-item#{$mod} {
+    .b-order-item {
+      &__ui {
+        .button-gray {
+          @include margin(10/20);
+          display: block;
+          text-align: center;
+          width: auto;
+          margin-right: 0;
+        }
+      }
+    }
+
+    .b-order-contents__btns {
+      .button {
+        display: block;
+        text-align: center;
+        width: auto;
+      }
+    }
+  }
+}
+
+@include mx780("._mx780");
+@include mx590("._mx590");
+@include mx479("._mx479");
+
+.c-lk__orders-item {
+  @media (max-width: 1180px) and (min-width: 1024px) {
+    @include mx780();
+  }
+
+  @media (max-width: 860px) {
+    @include mx780();
+  }
+
+  @media (max-width: 670px) {
+    @include mx590();
+  }
+
+  @media (max-width: 560px) {
+    @include mx479();
+  }
+}

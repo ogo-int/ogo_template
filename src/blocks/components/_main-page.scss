@@ -1,0 +1,152 @@
+/* Главная страница */
+.c-main-page {
+  &__news {
+    padding: 30px 40px;
+    background-color: #f8f8f8;
+  }
+
+  &__pickpoints {
+    @include clearfix;
+    padding: 30px 30px 40px;
+    border-top: 1px solid #efefef;
+  }
+
+  &__pickpoint {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  &__partners {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &__categories-holder {
+    padding: 40px;
+    border-top: 1px solid #f8f8f8;
+  }
+
+  &__category-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__category-item {
+    @include margin(40/20);
+  }
+
+  &__recent-products {
+    padding: 40px;
+
+    .b-small-product-slider__prev, .b-small-product-slider__next {
+      border: 1px solid #f1f1f1;
+    }
+
+    .b-tags__tag {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  &__consult-holder {
+    @include bgr("../img/consult-bg", "png");
+    padding: 40px;
+    background-color: #3678bd;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 50%;
+  }
+
+  &__consult {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &__consult-header {
+    @include margin(40/20);
+    text-align: center;
+    color: #fff;
+  }
+
+  &__consult-title {
+    font-size: 32/16*100%;
+    font-weight: 200;
+  }
+
+  &__consult-remark {
+    @include opacity(0.6);
+    font-size: 14/16*100%;
+  }
+
+  &__shops {
+    @include box-sizing;
+    @include bgr("../img/content/shop-bg", "jpg");
+    height: 310px;
+    padding-top: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+  }
+
+  &__shops-title {
+    font-size: 56/16*100%;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.09;
+    color: #fff;
+  }
+
+  &__shops-remark {
+    @include margin(10/20);
+    font-size: 18/16*100%;
+    font-weight: 400;
+    line-height: 1.22;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__advantages-holder {
+    background-color: #f8f8f8;
+    padding: 0 40px 40px;
+  }
+
+  &__advantages {
+    background-color: #fff;
+  }
+
+  &__num-features {
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #fff;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 40px;
+      left: 40px;
+      height: 1px;
+      background-color: #f1f1f1;
+    }
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media #{$media-tablet} {
+}
+
+@media #{$media-phone-landscape} {
+}
+
+@media #{$media-phone} {
+}
+

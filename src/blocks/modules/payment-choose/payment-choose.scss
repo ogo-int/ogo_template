@@ -1,0 +1,85 @@
+.b-payment-choose {
+  padding: 20px;
+  background-color: #fff;
+
+  .b-radio {
+    @include box-sizing;
+    width: 100%;
+    padding-top: 20px;
+
+    &__text {
+      font-size: 15/16*100%;
+      line-height: 1.2;
+      color: #4a4a4a;
+    }
+  }
+
+  &__items {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+  }
+
+  &__item {
+    display: table-cell;
+    margin: 0;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 15px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
+@mixin mx930($mod: "") {
+  .b-payment-choose#{$mod} {
+    .b-payment-choose {
+      &__items {
+        @include clearfix;
+        display: block;
+        margin-top: -15px;
+      }
+      &__item {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 0;
+        margin-right: .5em;
+        margin-top: 15px;
+        white-space: normal;
+      }
+    }
+  }
+}
+
+@mixin mx540($mod: "") {
+  .b-payment-choose#{$mod} {
+    .b-payment-choose {
+      &__items {
+        margin-top: 0;
+      }
+      &__item {
+        display: block;
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+@include mx930("._mx930");
+@include mx540("._mx540");
+
+.c-checkout__paymethods {
+  @media (max-width: 1260px) {
+    @include mx930;
+  }
+
+  @media (max-width: 560px) {
+    @include mx540;
+  }
+}

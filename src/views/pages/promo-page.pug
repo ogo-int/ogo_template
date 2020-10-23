@@ -1,0 +1,37 @@
+extends ../layout/page-template
+
+block vars
+	- var modHeader = '_breadcrumbs';
+
+block head
+	title Страница производителя
+
+block head-scripts
+
+block caption
+	h1.full-width.c-promo__caption Погрузись в&nbsp;легенду
+
+block inner-content
+	section.c-promo
+		.c-promo__header
+			.c-promo__timer
+				+promo-timer()
+
+			.c-promo__social
+				+social-btns_brand()
+
+		.c-promo__main-holder
+			.c-promo__content-holder
+				.c-promo__content.content-area
+					img.image-full(src="assets/img/content/tomb.jpg", alt="samsung")
+
+					.h2.center Купи видеокарту или ноутбук от&nbsp;NVIDIA и&nbsp;получи игру Tomb Raider в&nbsp;подарок!
+					p Почувствуйте себя легендарной Ларой Крофт и&nbsp;отправтесь в&nbsp;эпическое приключение на&nbsp;поиски бессмертия по&nbsp;одному из&nbsp;самых опасных и&nbsp;отдаленных регионов мира. Участвуйте в&nbsp;динамичных сражениях с&nbsp;новыми видами оружия, интересной механикой и&nbsp;бесшумными убийствами, которые превратят Ваш геймплей в&nbsp;настоящее кино. Ничто не&nbsp;сможет сделать приключения Лары такими реалистичными, как современные технологии и&nbsp;исключительная производительность видеокарт серии GeForce GTX 900.<br/>Только в&nbsp;течение ограниченного периода времени Вы&nbsp;можете получить игру &laquo;Rise of&nbsp;the Tomb Raider&trade;" БЕСПЛАТНО при покупке видеокарты GeForce GTX 970 и&nbsp;выше или ноутбука на&nbsp;базе GeForce GTX 970M и&nbsp;выше.<br/>Играйте в&nbsp;&laquo;Rise of&nbsp;the Tomb Raider&trade;" именно так, как это задумывалось разработчиками, благодаря видеокартам серии GeForce GTX 900.
+
+					+video-frame()
+
+			.c-promo__categories
+				+main-plates_brand()
+
+			.c-promo__products
+				+product-slider()

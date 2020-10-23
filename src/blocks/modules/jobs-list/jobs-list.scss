@@ -1,0 +1,92 @@
+.b-jobs-list {
+  padding: 20px 20px 60px;
+  background-color: #fff;
+
+  &__header {
+    @include margin(30/20);
+  }
+
+  &__caption {
+    font-size: 32/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__item-caption {
+    position: relative;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    border-bottom: 1px solid #f1f1f1;
+    color: #dc3e48;
+    cursor: pointer;
+
+    &:after {
+      @include ft-icon($ft-arrow-down);
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      width: 1.5em;
+      transition: .4s transform;
+      margin-top: -5px;
+      font-size: 8px;
+      color: inherit;
+      transform-origin: 50% 50%;
+    }
+
+    &._open {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__item-link {
+    font-size: 18/16*100%;
+    text-decoration: none;
+    color: #dc3e48;
+  }
+
+  &__item-content {
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    ul {
+      list-style-type: disc;
+      font-size: 14/16*100%;
+    }
+
+    li {
+      @include margin(5/20);
+    }
+
+    .h4, h4 {
+      font-size: 16px;
+    }
+
+    .h5, h5 {
+      margin-top: 30px;
+      margin-bottom: 20px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__item-send-holder {
+    @include margin(30/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+}

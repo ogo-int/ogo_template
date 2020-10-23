@@ -1,0 +1,32 @@
+.b-params-list {
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  &__label {
+    color: #9b9b9b;
+    margin-right: .5em;
+  }
+
+  &__value {
+    color: #4f4f4f;
+  }
+}
+
+.b-params-list._lined {
+  .b-params-list {
+    &__item {
+      display: inline-block;
+      margin-right: .5em;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}

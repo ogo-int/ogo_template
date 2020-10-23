@@ -1,0 +1,69 @@
+mixin simple-form()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Имя
+				.b-simple-form__field-inputs
+					input(type="text" name="name" required)
+
+			.b-simple-form__field
+				.b-simple-form__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+				.b-simple-form__field-inputs
+					input.phone(type="tel" name="phone" data-mask="phone" required placeholder="+7 (___) ___ __ __")
+
+			.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Заказать звонок")
+
+mixin simple-form_auth()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Электронная почта или телефон
+				.b-simple-form__field-inputs
+					input.email(type="text" name="login" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			.b-simple-form__field
+				a.b-simple-form__field-link(href="#") Забыли пароль?
+
+			label.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Войти")
+
+mixin simple-form_registration()
+	.b-simple-form.iblock&attributes(attributes)
+		form(action="#" data-validate='Y')
+			label.b-simple-form__field
+				.b-simple-form__field-label Имя, Фамилия
+				.b-simple-form__field-inputs
+					input(type="text" name="name" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Электронная почта #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+				.b-simple-form__field-inputs
+					input.email(type="email" name="email" required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Придумайте пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			label.b-simple-form__field
+				.b-simple-form__field-label Повторите пароль
+				.b-simple-form__field-inputs
+					+password-input()
+
+			.b-simple-form__field
+				ul.b-simple-form__list
+					li.b-simple-form__list-item
+						+checkbox('Принимаю условия <a href="#" class="b-simple-form__field-link">Публичной оферты</a>')(checked)
+						input.checkbox-vadidator(type='text' required)
+
+			label.b-simple-form__field
+				.b-simple-form__field-inputs
+					input.button(type="submit" value="Зарегистрироваться")

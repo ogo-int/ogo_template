@@ -1,0 +1,84 @@
+.b-date-select {
+  position: relative;
+
+  .ui-menu {
+    @include box-sizing;
+    max-width: 100%;
+    background-color: #fff;
+    border: 1px solid #dfdfdf;
+
+    .ui-state-focus {
+      margin: 0;
+      background-color: #f1f1f1;
+    }
+
+    .ui-menu-item {
+      padding: .65em 1em;
+    }
+  }
+
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__day-col, &__month-col, &__year-col {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__day-col {
+    width: 25%;
+  }
+
+  &__month-col {
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .select2-container .select2-selection {
+      height: 39px;
+    }
+  }
+
+  &__year-col {
+    width: 30%;
+  }
+
+  &__input-wrap {
+    position: relative;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    width: 12px;
+    height: 8px;
+    margin-top: -2px;
+    cursor: pointer;
+
+    &:after {
+      @include ft-icon($ft-arrow-down);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 12px;
+      height: 12px;
+      font-size: 6px;
+      color: #949494;
+    }
+  }
+}
+
+html.touch {
+  .b-date-select {
+    &__month-col {
+      select {
+        height: 39px;
+      }
+    }
+  }
+}

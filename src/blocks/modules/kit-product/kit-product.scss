@@ -1,0 +1,50 @@
+.b-kit-product {
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__left-col {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #fff;
+    padding: 20px;
+    padding-bottom: 15px;
+  }
+
+  &__checkbox-holder {
+    @include margin(25/20);
+    text-align: center;
+    font-size: 14/16*100%;
+    white-space: nowrap;
+  }
+
+  &__image-holder {
+    text-align: center;
+  }
+
+  &__right-col {
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #f8f8f8;
+    padding: 20px;
+    padding-bottom: 15px;
+  }
+
+  &__title {
+    max-width: 100px;
+    height: 100px;
+    overflow: hidden;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #35322f;
+    word-wrap: break-word;
+  }
+
+  &__price {
+    @include margin(10/20);
+    font-weight: 600;
+    color: #dc3e48;
+  }
+}

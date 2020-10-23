@@ -1,0 +1,46 @@
+mixin questions-answer()
+	.questions-answer
+		.questions-answer__title Вопросы и ответы
+		a.questions-answer__button.button.js-modal(href="#questions-answer-modal") Задать вопрос
+		.b-feedback-product__main.js-feedback-items Оставьте свой отзыв о товаре, чтобы помочь другим покупателям!
+				
+		div(style="display: none;")
+			+questions-answer-modal()(id="questions-answer-modal")
+		.b-faq-block.iblock&attributes(attributes)
+			.b-faq-block__header
+				.b-faq-block__title Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
+				.b-faq-block__date 23 июня 2015
+
+			.b-faq-block__main
+				ul.b-faq-block__comments-list
+					li.b-faq-block__comment
+						.b-faq-block__comment-photo
+							img.b-faq-block__photo-img(src="assets/img/content/photo.jpg", alt="Фото" width=50 height=50)
+
+						.b-faq-block__comment-content
+							.b-faq-block__comment-text.content-area
+								p В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры?
+
+					li.b-faq-block__comment
+						.b-faq-block__comment-photo.b-faq-block__comment-photo_left
+							img.b-faq-block__photo-img(src="assets/img/content/photo.jpg", alt="Фото" width=50 height=50)
+
+						.b-faq-block__comment-content
+							.b-faq-block__comment-text.content-area
+								p.
+									Здравствуйте, Константин! <br/>
+									Подъем на этаж, с заносом в квартиру, осуществляется только в случае, если товар в упаковке проходит по габаритам в дверной проем подъезда, лифт, дверной проем квартиры?<br/>
+									Вот ссылка: <a href="#">ogo1.ru/photo?SX400ISCanonPowerShot</a>
+
+							.b-faq-block__comment-sign
+								.b-faq-block__sign-name Василий Петров
+								.b-faq-block__sign-job Специалист по&nbsp;фототехнике
+
+				.b-faq-block__ui-holder
+					.b-faq-block__feedback
+						a.b-faq-block__feedback-link.link-thumbup(href="#") <span>Помогло</span>
+						a.b-faq-block__feedback-link.link-thumbdown(href="#") <span>Не помогло</span>
+
+					.b-faq-block__text-area
+						.b-faq-block__comment-photo.b-faq-block__comment-photo_reply
+							img.b-faq-block__photo-img(src="assets/img/content/photo.jpg", alt="Фото" width=50 height=50)

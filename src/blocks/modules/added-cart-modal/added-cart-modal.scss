@@ -1,0 +1,42 @@
+.b-added-cart {
+  padding: 63px 89px;
+
+  &__caption {
+    font-size: 230%;
+    font-weight: 200;
+    line-height: 1;
+  }
+
+  &__btns {
+    margin-top: 60px;
+
+    .button, .button-gray {
+      padding: 0.6em 1.3em;
+    }
+
+    a {
+      &:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+.fancybox-inner {
+  @media (max-width: 480px) {
+    .b-added-cart {
+      padding-left: 30px;
+      padding-right: 30px;
+
+      &__btns {
+        a {
+          box-sizing: border-box;
+          display: inline-block;
+          vertical-align: top;
+          width: 100%;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

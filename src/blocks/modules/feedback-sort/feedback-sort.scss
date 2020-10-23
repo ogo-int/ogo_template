@@ -1,0 +1,122 @@
+.b-feedback-sort {
+  @include box-sizing;
+  display: table;
+  width: 100%;
+  background-color: #f9f9f9;
+
+  &__checkboxes {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+    font-size: 13/16*100%;
+    font-weight: 200;
+
+
+    .b-radio.iblock {
+      margin-right: 1.5em;
+    }
+  }
+
+  &__sort {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 15px;
+  }
+
+  &__sort-label {
+    display: inline;
+    margin-right: 1em;
+    color: #9a9a9a;
+    font-size: 13/16*100%;
+    font-weight: 200;
+  }
+
+  &__sort-item {
+    display: inline-block;
+    margin-right: .5em;
+
+    &._active {
+      .b-feedback-sort__sort-link {
+        font-weight: 400;
+        color: #3e8bdc;
+      }
+
+      .b-feedback-sort__arrow-down {
+        border-top-color: #3e8bdc;
+      }
+
+      .b-feedback-sort__arrow-up {
+        border-bottom-color: #3e8bdc;
+      }
+    }
+  }
+
+  &__sort-link {
+    margin-right: .25em;
+    font-size: 13/16*100%;
+    font-weight: 200;
+    color: #7e7e7e;
+    text-decoration: none;
+  }
+
+  &__arrow-down {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    border: 4px solid transparent;
+    border-bottom: none;
+    border-top-color: #bfbfbf;
+  }
+
+  &__arrow-up {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    border: 4px solid transparent;
+    border-top: none;
+    border-bottom-color: #bfbfbf;
+  }
+}
+
+@mixin mx620($mod: "") {
+  .b-feedback-sort#{$mod} {
+    .b-feedback-sort {
+      &__checkboxes {
+        display: block;
+        padding-bottom: 10px;
+      }
+
+      &__sort {
+        display: block;
+        padding-top: 10px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@mixin mx380($mod: "") {
+  .b-feedback-sort#{$mod} {
+    .b-feedback-sort {
+      &__sort-label {
+        display: block;
+      }
+    }
+  }
+}
+
+@include mx620("._mx620");
+@include mx380("._mx380");
+
+@media (max-width: 650px) {
+  .c-catalog__feedbacks {
+    @include mx620();
+  }
+}
+
+@media (max-width: 400px) {
+  .c-catalog__feedbacks {
+    @include mx380();
+  }
+}

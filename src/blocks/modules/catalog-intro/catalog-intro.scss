@@ -1,0 +1,114 @@
+.b-catalog-intro {
+  position: relative;
+  margin-top: -30px;
+
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &__aside-image {
+    width: 30%;
+    margin-top: -60px;
+    text-align: right;
+    float: right;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+  }
+
+  &__content-holder {
+    float: left;
+    width: 60%;
+    padding-right: 10%;
+    min-height: 167px;
+
+    @media (max-width: 820px) {
+      padding-right: 0;
+    }
+  }
+
+  &__content {
+    min-height: 90px;
+  }
+
+  &__tags {
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -82px;
+    right: 0;
+    margin-bottom: 5px;
+    color: #d2d2d2;
+    text-decoration: none;
+    transition: .2s color;
+
+    &:before {
+      @include ft-icon($ft-close);
+      font-size: 16px;
+    }
+
+    &:hover {
+      color: #333;
+    }
+  }
+
+  &._hide {
+    // display: none;
+    // margin-top: 0;
+
+    .b-catalog-intro__content, .b-catalog-intro__aside-image {
+      display: none;
+    }
+
+    .b-catalog-intro__content-open {
+      display: inline;
+    }
+
+    .b-catalog-intro__content-holder {
+      min-height: 60px;
+    }
+
+    p:last-child {
+      margin-top: 0;
+    }
+  }
+
+  &__content-open {
+    font-size: 14/16*100%;
+    display: none;
+    font-weight: 200;
+    color: #333;
+  }
+}
+
+@mixin mx890($mod: "") {
+  .b-catalog-intro#{$mod} {
+    .b-catalog-intro {
+      &__aside-image {
+        display: none;
+      }
+
+      &__content-holder {
+        margin-right: 0;
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+}
+
+@include mx890("._mx890");
+
+@media (max-width: 920px) {
+  .c-catalog__intro {
+    @include mx890();
+  }
+}

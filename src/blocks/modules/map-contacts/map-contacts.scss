@@ -1,0 +1,49 @@
+.b-map-contacts {
+  &__cols {
+    @include clearfix;
+    position: relative;
+    min-height: 700px;
+  }
+
+  &__list-col {
+    float: left;
+    width: 280px;
+  }
+
+  &__map-col {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 132px;
+    left: 280px;
+    overflow: hidden;
+    padding-left: 10px;
+  }
+}
+
+@mixin mx880($mod: "") {
+  .b-map-contacts#{$mod} {
+    .b-map-contacts {
+      &__list-col {
+        float: none;
+        width: auto;
+        height: auto;
+      }
+
+      &__map-col {
+        @include margin(20/20);
+        position: static;
+        padding-left: 0;
+        height: 320px;
+      }
+    }
+  }
+}
+
+@include mx880("._mx880");
+
+.c-contacts-list__map {
+  @media (max-width: 880px) {
+    @include mx880;
+  }
+}

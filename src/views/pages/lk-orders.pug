@@ -1,0 +1,105 @@
+extends ../layout/page-template
+
+block head
+	title Личный кабинет
+
+block head-scripts
+
+block breadcrumbs
+
+block caption
+	h1.full-width.c-lk__caption Личный кабинет
+
+block inner-content
+	section.c-lk
+		.c-lk__header
+			.c-lk__balance
+				.c-lk__balance-value Вы&nbsp;можете потратить: 416 бонусов
+				a.c-lk__balance-link(href="#") Как тратить?
+
+			.c-lk__scale
+				+bonus-scale()
+
+		.c-lk__main
+			.c-lk__cols
+				.c-lk__aside-left
+					.c-lk__mobile-caption Мои адреса
+
+					.c-lk__menu
+						.b-inner-menu.iblock
+							ul.b-inner-menu__top-level
+								li.b-inner-menu__top-item._opened
+									a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+										span Мои заказы
+									ul.b-inner-menu__sub-level
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link.b-inner-menu__sub-link_active(href="#")
+												span Текущие
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Завершенные
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Невыкупленные
+
+								li.b-inner-menu__top-item
+									a.b-inner-menu__top-link(href="#")
+										span Бонусная карта
+
+								li.b-inner-menu__top-item
+									a.b-inner-menu__top-link.b-inner-menu__top-link_contain.b-inner-menu__top-link_marked(href="#")
+										span Сообщения
+									ul.b-inner-menu__sub-level
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Мои отзывы
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Вопросы и&nbsp;ответы
+												span.b-inner-menu__sub-link-num 2
+
+								li.b-inner-menu__top-item
+									a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+										span Конфигуратор
+
+									ul.b-inner-menu__sub-level
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Личные данные
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Мои адреса
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Юрлицо
+
+								li.b-inner-menu__top-item
+									a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+										span Настройки
+									ul.b-inner-menu__sub-level
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Личные данные
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#")
+												span Мои адреса
+										li.b-inner-menu__sub-item
+											a.b-inner-menu__sub-link(href="#") Юрлицо
+
+					.c-lk__faq
+						+faq-list()
+
+					.c-lk__consult
+						+online-consult()
+
+				.c-lk__main-col
+					.c-lk__main-wrap
+						ul.c-lk__orders-list
+							li.c-lk__orders-item
+								+order-item()
+
+							li.c-lk__orders-item
+								+order-item()
+
+						.c-lk__bonus-promo
+							+bonus-promo()

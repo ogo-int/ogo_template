@@ -1,0 +1,60 @@
+mixin inner-menu()
+	.b-inner-menu.iblock&attributes(attributes)
+		ul.b-inner-menu__top-level
+			li.b-inner-menu__top-item
+				a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+					span Мои заказы
+				ul.b-inner-menu__sub-level
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Личные данные
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Мои адреса
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Юрлицо
+
+			li.b-inner-menu__top-item
+				a.b-inner-menu__top-link(href="#")
+					span Бонусная карта
+
+			li.b-inner-menu__top-item
+				a.b-inner-menu__top-link.b-inner-menu__top-link_contain.b-inner-menu__top-link_marked(href="#")
+					span Сообщения
+				ul.b-inner-menu__sub-level
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Мои отзывы
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Вопросы и&nbsp;ответы
+							span.b-inner-menu__sub-link-num 2
+
+			li.b-inner-menu__top-item
+				a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+					span Конфигуратор
+
+				ul.b-inner-menu__sub-level
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Личные данные
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Мои адреса
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Юрлицо
+
+			li.b-inner-menu__top-item
+				a.b-inner-menu__top-link.b-inner-menu__top-link_contain(href="#")
+					span Настройки
+				ul.b-inner-menu__sub-level
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Личные данные
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link(href="#")
+							span Мои адреса
+					li.b-inner-menu__sub-item
+						a.b-inner-menu__sub-link.b-inner-menu__sub-link_active(href="#") Юрлицо

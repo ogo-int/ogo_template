@@ -1,0 +1,89 @@
+mixin shop-card()
+	.b-shop-card.iblock&attributes(attributes)
+		.b-shop-card__header
+			.b-shop-card__caption Магазин ОГО! Площадь Ильича
+		div(style="display: none;")
+			+shop-slider-modal(id="shop-slider-modal")
+		.b-shop-card__cols
+			.b-shop-card__left-col
+				.b-shop-card__address Золоторожский Вал, д. 4, стр.&nbsp;4
+				a.b-shop-card__phone(href="tel:74952295653") <nobr>+7 495 229-56-53</nobr>
+				.b-shop-card__hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+
+				ul.b-shop-card__params
+					li.b-shop-card__param
+						.b-shop-card__icon._bus
+						span.b-shop-card__param-text Бесплатное такси от&nbsp;метро
+					li.b-shop-card__param
+						.b-shop-card__icon._credit
+						span.b-shop-card__param-text Оплата картами
+					li.b-shop-card__param
+						.b-shop-card__icon._cars
+						span.b-shop-card__param-text Бесплатная парковка
+					li.b-shop-card__param
+						.b-shop-card__icon._wrench
+						span.b-shop-card__param-text <nobr>Сервис-центр</nobr>
+					li.b-shop-card__param
+						.b-shop-card__icon._gallery
+						span.b-shop-card__param-text.js-modal(href="#shop-slider-modal") <a href="#"" class="b-shop-card__param-link">Смотреть в&nbsp;<nobr>фото-галерее</nobr></a>
+
+			.b-shop-card__right-col
+				.b-shop-card__map
+					+ymap_card()
+
+		.b-shop-card__way
+			ul.b-shop-card__way-tab-links
+				li.b-shop-card__way-link-holder
+					a.b-shop-card__way-link._active(href="#")
+						span.b-shop-card__way-icon._man
+						span.b-shop-card__way-link-text Как пройти от&nbsp;метро
+
+				li.b-shop-card__way-link-holder
+					a.b-shop-card__way-link(href="#")
+						span.b-shop-card__way-icon._car
+						span.b-shop-card__way-link-text Проехать на&nbsp;машине
+
+				li.b-shop-card__way-link-holder
+					a.b-shop-card__way-link(href="#")
+						span.b-shop-card__way-icon._bus
+						span.b-shop-card__way-link-text Бесплатное такси от&nbsp;метро
+
+			ul.b-shop-card__way-tabs
+				li.b-shop-card__way-tab._active
+					.b-shop-card__slide
+						img.b-shop-card__slide-image(src="assets/img/content/way-slide1.jpg", alt="Путь")
+						.b-shop-card__slide-text Повернув направо, видим перед собой знакомый логотип ОГО! Выходим прямо в&nbsp;город
+
+					.b-shop-card__slide
+						img.b-shop-card__slide-image(src="assets/img/content/way-slide2.jpg", alt="Путь")
+						.b-shop-card__slide-text Выйдя в&nbsp;город, вы&nbsp;можете пройти прямо до&nbsp;дороги (ждать наше маршрутное такси) или вы&nbsp;можете повернуть на&nbsp;право в&nbsp;подземный переход и&nbsp;добраться пешком:) см.&nbsp;фото.
+
+					.b-shop-card__slide
+						img.b-shop-card__slide-image(src="assets/img/content/way-slide3.jpg", alt="Путь")
+						.b-shop-card__slide-text 10&nbsp;минут и&nbsp;Вы&nbsp;на&nbsp;месте. При входе в&nbsp;магазин расположен стенд с&nbsp;расписанием нашей маршрутки, которая довезёт Вас с&nbsp;покупками обратно до&nbsp;метро.
+
+				li.b-shop-card__way-tab
+					.b-shop-card__slide
+						.b-shop-card__slide-map
+							+ymap_card()
+
+						.b-shop-card__slide-text Если Вы&nbsp;едете к&nbsp;нам на&nbsp;машине, удобнее всего заезжать с&nbsp;внешней стороны третьего кольца. Вам необходимо уйти правее в&nbsp;дублирующий тоннель параллельно Лефортовскому тоннелю, сразу после съезда на&nbsp;Шоссе Энтузиастов в&nbsp;центр, под указатель &laquo;Красноказарменная ул.&raquo;. При выезде из&nbsp;тоннеля поверните налево, и, проехав 100&nbsp;метров и&nbsp;пропустив поворот на&nbsp;Танковый проезд, Вы&nbsp;увидите справа наше одноэтажное стеклянное здание, огороженное забором.
+
+				li.b-shop-card__way-tab
+					.b-shop-card__slide
+						+bus-timetable()
+
+mixin shop-card_small()
+	.b-shop-card.iblock._small&attributes(attributes)
+		.b-shop-card__cols._small
+			.b-shop-card__left-image
+				img.b-shop-card__image(src="assets/img/content/shop1.jpg", alt="Магазин")
+			.b-shop-card__content-holder
+				.b-shop-card__small-caption Магазин <nobr><span class="metro-icon">м</span>&nbsp;Динамо</nobr>
+				.b-shop-card__content
+					.b-shop-card__address._small Золоторожский Вал, д. 4, стр.&nbsp;4
+					a.b-shop-card__phone(href="tel:74952295653") <nobr>+7 495 229-56-53</nobr>
+					.b-shop-card__hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+
+				.b-shop-card__more-holder
+					a.b-shop-card__more.button-gray(href="#") Подробнее

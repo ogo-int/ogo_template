@@ -1,0 +1,48 @@
+mixin bonus-history()
+	.b-bonus-history.iblock&attributes(attributes)
+		.b-bonus-history__header
+			.b-bonus-history__title История начислений и&nbsp;списаний
+			.b-bonus-history__balance Ваш баланс: 750 бонусов
+
+		.b-bonus-history__main
+			.b-bonus-history__data-table
+				.b-bonus-history__table-headers
+					.b-bonus-history__date-header Дата
+					.b-bonus-history__order-header &#8470;&nbsp;Заказа
+					.b-bonus-history__status-header Статус
+					.b-bonus-history__bonus-header Бонусы
+
+				.b-bonus-history__row
+					.b-bonus-history__date 12.12.2015
+					.b-bonus-history__order
+						a(href="#") 33120
+					.b-bonus-history__status Начисление
+					.b-bonus-history__bonus <b>+250</b> (Остаток: 750)
+
+				.b-bonus-history__row
+					.b-bonus-history__date 12.12.2015
+					.b-bonus-history__order
+						a(href="#") 33120
+					.b-bonus-history__status Списание
+					.b-bonus-history__bonus.b-bonus-history__bonus_red <b>-2500</b> (Остаток: 500)
+
+				.b-bonus-history__row
+					.b-bonus-history__date 05.07.2015
+					.b-bonus-history__order
+						a(href="#") 55599
+					.b-bonus-history__status Списание
+					.b-bonus-history__bonus.b-bonus-history__bonus_red <b>-400</b> (Остаток: 3000)
+
+				.b-bonus-history__row
+					.b-bonus-history__date 10.08.2015
+					.b-bonus-history__order
+						a(href="#") 47300
+					.b-bonus-history__status Начисление
+					.b-bonus-history__bonus <b>+2000</b> (Остаток: 3400)
+
+				.b-bonus-history__row
+					.b-bonus-history__date 28.01.2014
+					.b-bonus-history__order
+						a(href="#") 13168
+					.b-bonus-history__status Начисление
+					.b-bonus-history__bonus <b>+1400</b> (Остаток: 1400)

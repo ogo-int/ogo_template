@@ -1,0 +1,79 @@
+@include keyframes(rotateR) {
+  from {
+    @include transform(translateY(0) rotate(0));
+  }
+  to {
+    @include transform(translateY(9px) rotate(45deg));
+  }
+}
+@include keyframes(rotateL) {
+  from {
+    @include transform(translateY(0) rotate(0));
+  }
+  to {
+    @include transform(translateY(-9px) rotate(-45deg));
+  }
+}
+@include keyframes(fade) {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.b-burger-btn {
+  @include border-radius(100%);
+  @include box-sizing;
+  position: relative;
+  width: 25px;
+  height: 27px;
+  transform: translateX(0);
+  padding-top: 2px;
+  cursor: pointer;
+
+  &__line {
+    @include border-radius(10px);
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 2px;
+    margin: 6px auto;
+    transition: .2s;
+    background-color: gray;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &:nth-of-type(1) {
+      @include animation(rotateR 1.5s cubic-bezier(.5, .2, .2, 1) );
+    }
+    &:nth-of-type(2) {
+      @include animation(fade 1.5s cubic-bezier(.1, .8, .1, 1) );
+    }
+    &:nth-of-type(3) {
+      @include animation(rotateL 1.5s cubic-bezier(.5, .2, .2, 1));
+    }
+  }
+
+  &._opened {
+    .b-burger-btn__line {
+      &:nth-of-type(1) {
+        @include transform(translateY(8px) rotate(45deg));
+      }
+      &:nth-of-type(2) {
+        opacity: 0;
+      }
+      &:nth-of-type(3) {
+        @include transform(translateY(-8px) rotate(-45deg));
+      }
+    }
+  }
+}
+

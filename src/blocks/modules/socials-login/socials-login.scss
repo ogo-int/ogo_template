@@ -1,0 +1,119 @@
+.b-socials-login {
+  padding: 15px 20px 20px;
+  background-color: #f8f8f8;
+
+  &__title {
+    @include mbot(10/20);
+    font-size: 14/16*100%;
+    color: #262626;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    &_active {
+      .b-socials-bind {
+        &__social-link {
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, .5);
+          }
+        }
+
+        &__checked {
+          display: block;
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  &__social-link {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #f1f1f1;
+    text-align: center;
+
+    &_fb {
+      background-color: #435f9d;
+
+      &:before {
+        @include ft-icon($ft-fb);
+        width: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        color: white;
+      }
+    }
+
+    &_vk {
+      background-color: #4b74a5;
+
+      &:before {
+        @include ft-icon($ft-vk);
+        width: 50px;
+        font-size: 14px;
+        line-height: 50px;
+        color: white;
+      }
+    }
+
+    &_ok {
+      background-color: #ff942e;
+
+      &:before {
+        @include ft-icon($ft-ok);
+        width: 50px;
+        font-size: 20px;
+        line-height: 50px;
+        color: white;
+      }
+    }
+
+    &_gg {
+      background-color: #d73d32;
+
+      &:before {
+        @include ft-icon($ft-gg);
+        width: 50px;
+        font-size: 18px;
+        line-height: 50px;
+        color: white;
+      }
+    }
+
+    &_tw {
+      background-color: #55acee;
+
+      &:before {
+        @include ft-icon($ft-tw);
+        width: 50px;
+        font-size: 18px;
+        line-height: 50px;
+        color: white;
+      }
+    }
+  }
+}

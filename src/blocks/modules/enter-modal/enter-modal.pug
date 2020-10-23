@@ -1,0 +1,13 @@
+mixin enter-modal()
+	.b-enter-modal.iblock&attributes(attributes)
+		.b-enter-modal__header
+			.b-enter-modal__title Вход
+			.b-enter-modal__register-btn
+					a.button.js-modal(href="#registration-modal") Регистрация
+
+		.b-enter-modal__content-holder
+			.b-enter-modal__cols
+				.b-enter-modal__left-col
+					+simple-form_auth()
+				.b-enter-modal__right-col
+					+socials-login()

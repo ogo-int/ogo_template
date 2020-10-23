@@ -1,0 +1,20 @@
+.b-def-list {
+
+  &__item {
+    @include margin(15/20);
+    font-weight: 200;
+  }
+
+  &__def {
+    @include mbot(5/20);
+    font-size: 18/16*100%;
+  }
+
+  &__detail {
+    @include opacity(0.7);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 20px;
+    color: #fff;
+  }
+}

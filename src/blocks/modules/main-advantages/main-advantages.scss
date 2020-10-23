@@ -1,0 +1,144 @@
+.b-main-advantages {
+  &__items {
+    @include box-sizing;
+    @include clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    @include box-sizing;
+    width: 1/3*100%;
+    height: 100%;
+    margin: 0;
+    padding: 35px;
+    float: left;
+
+    &._green {
+      background-color: #bfe796;
+    }
+
+    &._orange {
+      background-color: #ffe2ba;
+    }
+
+    &._pink {
+      background-color: rgba(255, 188, 200, 0.93);
+    }
+  }
+
+  &__item-wrap {
+    @include box-sizing;
+    position: relative;
+  }
+
+  &__content-holder {
+    @include margin(20/20);
+    text-align: center;
+  }
+
+  &__title {
+    @include margin(10/20);
+    min-height: 90px;
+    font-size: 24/16*100%;
+    line-height: 1.22;
+  }
+
+  &__text {
+    @include margin(20/20);
+    max-width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14/16*100%;
+    color: #969696;
+    font-size: 14px;
+  }
+
+  &__image-holder {
+    text-align: center;
+  }
+
+  &__image {
+    width: 210px;
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+}
+
+@mixin mx1000($mod: "") {
+  .b-main-advantages#{$mod} {
+    .b-main-advantages {
+      &__item {
+        @include box-sizing;
+        display: table;
+        width: 100%;
+        height: auto;
+        float: none;
+      }
+
+      &__title {
+        min-height: 0;
+        margin-left: 0;
+      }
+
+      &__text {
+        margin-left: 0;
+      }
+
+      &__image-holder {
+        display: table-cell;
+        vertical-align: middle;
+        width: 150px;
+      }
+
+      &__content-holder {
+        display: table-cell;
+        vertical-align: middle;
+        padding-left: 30px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@mixin mx480($mod: "") {
+  .b-main-advantages#{$mod} {
+    .b-main-advantages {
+      &__image-holder {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      &__content-holder {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        padding-left: 0;
+      }
+
+      &__text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+@include mx1000("._mx1000");
+@include mx480("._mx480");
+
+@media (max-width: 1000px) {
+  .c-main-page__advantages {
+    @include mx1000();
+  }
+}
+
+@media (max-width: 560px) {
+  .c-main-page__advantages {
+    @include mx480();
+  }
+}

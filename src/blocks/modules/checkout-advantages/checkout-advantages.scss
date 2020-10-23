@@ -1,0 +1,40 @@
+.b-checkout-advantages {
+  background-color: #fff;
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  &__item {
+    @include margin(50/20);
+    max-width: 220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__img-holder {
+    @include margin(10/20);
+  }
+
+  &__title {
+    @include margin(10/20);
+    font-weight: 200;
+    color: #7c7c7c;
+    line-height: 1.25;
+  }
+
+  &__text {
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+    color: #bfbfbf;
+  }
+}

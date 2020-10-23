@@ -1,0 +1,199 @@
+.b-catalog-sort {
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #3e8bdc;
+
+  &__holder {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    height: 55px;
+  }
+
+  &__pager {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__qtty {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 4px;
+    font-size: 13/16*100%;
+    line-height: (16/13);
+  }
+
+  &__sort {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 4px;
+    font-size: 13/16*100%;
+    line-height: (16/13);
+  }
+
+  &__view {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: 4px;
+    font-size: 13/16*100%;
+    line-height: (16/13);
+  }
+
+  &__params {
+    color: #a4cbf7;
+  }
+
+  &__params-label {
+    margin-right: 1.2em;
+  }
+
+  &__link {
+    margin-right: 1.2em;
+    text-decoration: none;
+    color: #a4cbf7;
+    transition: .2s color, .2s border-color;
+
+    &_down {
+      &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: .25em;
+        margin-top: -2px;
+        border-width: 4px 4px 0 4px;
+        border-color: transparent;
+        border-style: solid;
+        border-top-color: #a4cbf7;
+      }
+    }
+
+    &_up {
+      &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: .25em;
+        margin-top: -2px;
+        border-width: 0 4px 4px 4px;
+        border-color: transparent;
+        border-style: solid;
+        border-bottom-color: #a4cbf7;
+      }
+    }
+
+    &:hover {
+      color: white;
+
+      &:after {
+        border-top-color: white;
+        border-bottom-color: white;
+      }
+    }
+
+    &_active {
+      color: white;
+
+      &:after {
+        border-top-color: white;
+        border-bottom-color: white;
+      }
+    }
+  }
+
+  &__list-view {
+    margin-right: 1em;
+    color: #a4cbf7;
+
+    &:before {
+      @include ft-icon($ft-list);
+    }
+
+    &_active {
+      cursor: default;
+    }
+
+    &_active, &:hover {
+      color: white;
+    }
+  }
+
+  &__plate-view {
+    color: #a4cbf7;
+
+    &:before {
+      @include ft-icon($ft-plate);
+    }
+
+    &_active {
+      cursor: default;
+    }
+
+    &_active, &:hover {
+      color: white;
+    }
+  }
+}
+
+@mixin mx1000($mod: "") {
+  .b-catalog-sort#{$mod} {
+    .b-catalog-sort {
+      &__sort {
+        display: none;
+      }
+
+      &__qtty {
+        text-align: left;
+      }
+
+      &__pager {
+        width: 270px;
+      }
+
+      &__view {
+        width: 100px;
+      }
+    }
+  }
+}
+
+@mixin mx767($mod: "") {
+  .b-catalog-sort#{$mod} {
+    .b-catalog-sort {
+      &__pager {
+        display: none;
+      }
+    }
+  }
+}
+
+@mixin mx479($mod: "") {
+  .b-catalog-sort#{$mod} {
+    .b-catalog-sort {
+      &__qtty {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mx1000("._mx1000");
+@include mx767("._mx767");
+@include mx479("._mx479");
+
+@media (max-width: 1000px) {
+  .c-catalog__sort {
+    @include mx1000();
+  }
+}
+
+@media (max-width: 767px) {
+  .c-catalog__sort {
+    @include mx767();
+  }
+}
+
+@media (max-width: 479px) {
+  .c-catalog__sort {
+    @include mx479();
+  }
+}

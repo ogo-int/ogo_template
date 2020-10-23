@@ -1,0 +1,25 @@
+extends ../layout/page-template
+
+block head
+	title Вакансии
+
+block head-scripts
+
+block breadcrumbs
+
+block caption
+
+block inner-content
+	section.c-vacancies
+		.c-vacancies__header
+			.h1.c-vacancies__caption Работа в&nbsp;ОГО!
+			.c-vacancies__send-holder
+				a.c-vacancies__send.button(href="#") Отправить резюме
+
+		.c-vacancies__main-holder
+			.c-vacancies__wrap
+				.c-vacancies__list
+					+jobs-list()
+
+				.c-vacancies__steps
+					+hire-steps()

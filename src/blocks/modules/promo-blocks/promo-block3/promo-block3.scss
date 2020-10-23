@@ -1,0 +1,115 @@
+.b-promo-block3 {
+  @include bgr("../img/promo3-bg","png");
+  @include clearfix;
+  @include box-sizing;
+  min-width: 1000px;
+  color: white;
+  background-color: #3e8bdc;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  background-size: 359px 319px;
+  padding: 40px 80px 40px 40px;
+
+  &__image-holder {
+    float: right;
+    margin-left: 40px;
+
+    &.b-promo-block3__image-holder_right {
+      margin-right: -80px;
+    }
+  }
+
+  &__image {
+    vertical-align: top;
+  }
+
+  &__intro {
+    font-size: 14/16*100%;
+    font-weight: 600;
+  }
+
+  &__title {
+    @include mtop(20/20);
+    @include mbot(35/20)
+      font-size: 32/16*100%;
+    font-weight: 200;
+    line-height: 1.22;
+
+    a {
+      border-bottom: 1px solid white;
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    b {
+      font-weight: 700;
+    }
+  }
+
+  &__apply {
+    display: inline-block;
+    margin-right: 1em;
+    padding: .75em 1em;
+    text-decoration: none;
+    color: #3e8bdc;
+    background-color: #fff;
+    transition: .2s color;
+
+    &:hover {
+      color: #002c60;
+    }
+  }
+
+  &__timer {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 75px;
+  }
+
+  &__time {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 22px;
+    transform: translateZ(0);
+    font-weight: 600;
+    will-change: transform;
+    line-height: 1.7;
+
+    > span {
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      font-size: 11px;
+      text-align: center;
+      line-height: 1;
+
+
+      span {
+        display: inline-block;
+        width: 20px;
+        padding: 3px 10px 4px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #24578e;
+        font-size: 18px;
+      }
+    }
+
+    &-days {
+      margin-right: 7px;
+    }
+
+    &-hrs, &-min, &-sec {
+      margin: 0 3px;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+.b-pickpoint-confirm {
+  &__caption {
+    @include mbot(30/20);
+    font-size: 32/16*100%;
+    font-weight: 200;
+  }
+
+  &__title {
+    @include margin(15/20);
+    font-size: 18/16*100%;
+  }
+
+  &__address {
+    @include mtop(15/20);
+    @include mbot(10/20);
+    color: #141414;
+    font-size: 18/16*100%;
+  }
+
+  &__remark {
+    @include mtop(10/20);
+    @include mbot(20/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+  }
+
+  &__prop {
+    @include margin(10/20);
+    color: #262626;
+    font-size: 14/16*100%;
+    line-height: 1.5;
+    font-weight: 200;
+  }
+
+  &__prop-label {
+    font-weight: 400;
+    margin-right: .5em;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__info-col {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+  }
+
+  &__map-col {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    padding-left: 10px;
+    height: 350px;
+  }
+}
+
+@mixin mx750($mod: "") {
+  .b-pickpoint-confirm#{$mod} {
+    .b-pickpoint-confirm {
+      &__info-col {
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__map-col {
+        @include margin(20/20);
+        float: none;
+        width: auto;
+        padding-left: 0;
+      }
+
+      &__caption {
+        font-size: 24/16*100%;
+      }
+    }
+  }
+}
+
+@include mx750("._mx750");
+
+.c-checkout__pickpoint-confirm {
+  @media (max-width: 830px) {
+    @include mx750;
+  }
+}

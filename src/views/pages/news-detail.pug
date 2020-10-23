@@ -1,0 +1,25 @@
+extends ../layout/page-template
+
+block head
+	title Страница новости
+
+block head-scripts
+
+block caption
+
+block inner-content
+	section.c-news
+		.c-news__header
+			.h1.c-news__caption Покупай смартфоны Samsung Galaxy S6 по&nbsp;лучшей цене!
+			.c-news__intro-text.content-area
+				p Вне зависимости от&nbsp;того, занимаетесь&nbsp;ли вы&nbsp;фотосъемкой для удовольствия или в&nbsp;коммерческих целях, цифровые зеркальные камеры Canon EOS и&nbsp;компактные камеры сделают этот процесс творческим. Новейшие функции, обеспечивают высокую производительность, на&nbsp;которую вы&nbsp;всегда можете рассчитывать.
+
+			.c-news__social
+				+social-btns_brand()
+
+		.c-news__promo
+			+promo-block5()
+
+		.c-news__main-holder
+			.c-news__products
+				+catalog-plates_news()

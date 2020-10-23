@@ -1,0 +1,39 @@
+.b-sub-menu {
+  &__caption {
+    @include mbot(20/20);
+  }
+
+  &__caption-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: #333;
+    transition: .2s color;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    @include margin(5/20);
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 18px;
+    color: #333;
+    transition: .2s color;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+}

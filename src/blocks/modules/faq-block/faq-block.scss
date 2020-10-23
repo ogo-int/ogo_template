@@ -1,0 +1,288 @@
+.b-faq-block {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &__header {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__title {
+    display: table-cell;
+    padding: 20px 20px 20px 0;
+    vertical-align: middle;
+    font-size: 18/16*100%;
+  }
+
+  &__date {
+    display: table-cell;
+    width: 100px;
+    padding: 20px 0;
+    vertical-align: middle;
+    text-align: right;
+    font-size: 14/16*100%;
+    color: #969696;
+    white-space: nowrap;
+  }
+
+  &__main {
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  &__comments-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__comment {
+    position: relative;
+  }
+
+  &__comment-photo {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 25px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -12px;
+      margin-right: 13px;
+      border-width: 12px;
+      border-style: solid;
+      border-color: transparent;
+      border-right-width: 0;
+      border-left-color: #f8f8f8;
+    }
+
+    &_left {
+      top: auto;
+      right: 100%;
+      bottom: 0;
+      left: auto;
+      margin-left: 0;
+      margin-right: 25px;
+
+      &:before {
+        right: 0;
+        left: 100%;
+        border-left: none;
+        border-right: 12px solid #f8f8f8;
+        margin-right: 0;
+        margin-left: 13px;
+      }
+    }
+
+    &_reply {
+      &:before {
+        z-index: 2;
+        border-left-color: white;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 100%;
+        margin-top: -13px;
+        margin-right: 11px;
+        border-width: 13px;
+        border-style: solid;
+        border-color: transparent;
+        border-right-width: 0;
+        border-left-color: #e2e2e2;
+      }
+    }
+  }
+
+  &__photo-img {
+    border-radius: 50%;
+    vertical-align: top;
+  }
+
+  &__comment-content {
+    font-size: 14/16*100%;
+    line-height: 1.5;
+    font-weight: 200;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+
+  &__comment-sign {
+    @include mtop(15/20);
+  }
+
+  &__sign-name {
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__sign-job {
+    font-size: 12/14*100%;
+    font-weight: 200;
+    color: #9a9a9a;
+  }
+
+  &__text-area {
+    @include margin(10/20);
+    display: none;
+    position: relative;
+    clear: left;
+    height: 138px;
+    border: 1px solid #dfdfdf;
+    // box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.1);
+
+    textarea {
+      width: 100%;
+      height: 100%;
+      border: none;
+      padding: 10px 15px;
+      background: none;
+      font-size: 14/16*100%;
+      border-radius: 0;
+      resize: none;
+    }
+
+    &_active {
+      display: block;
+      clear: both;
+    }
+  }
+
+  &__send {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+
+  &__feedback {
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  &__feedback-link {
+    margin-right: 15px;
+  }
+
+  &__ui-holder {
+    @include mtop(20/20)
+      padding-bottom: 20px;
+    @include clearfix;
+  }
+
+  &__btns-holder {
+    float: right;
+    font-size: 14/16*100%;
+  }
+
+  &__answer {
+    display: none;
+
+    &_active {
+      display: block;
+    }
+  }
+}
+
+@mixin mx550($mod: "") {
+  .b-faq-block#{$mod} {
+    .b-faq-block {
+      &__main {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      &__comment {
+        @include margin(20/20);
+      }
+
+      &__comment-photo {
+        position: relative;
+        right: auto;
+        left: auto;
+        width: 50px;
+        margin-left: auto;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        text-align: right;
+
+        &:before {
+          top: 100%;
+          right: 50%;
+          border-left-color: transparent;
+          border-right: 12px solid transparent;
+          border-top: none;
+          border-bottom-color: #f8f8f8;
+          margin-top: 5px;
+          margin-right: -12px;
+        }
+
+        &_left {
+          margin-left: 20px;
+          margin-right: auto;
+
+          &:before {
+            left: auto;
+            border-left: 12px solid transparent;
+          }
+        }
+
+        &_reply {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx400($mod: "") {
+  .b-faq-block#{$mod} {
+    .b-faq-block {
+      &__title {
+        display: block;
+        padding-bottom: 5px;
+      }
+
+      &__date {
+        display: block;
+        text-align: left;
+        padding-top: 5px;
+        padding-bottom: 10px;
+      }
+
+      &__btns-holder {
+        float: none;
+        clear: left;
+        text-align: center;
+      }
+
+      &__ui-holder {
+        padding-bottom: 20px;
+      }
+    }
+  }
+}
+
+@include mx550("._mx550");
+@include mx400("._mx400");
+
+.c-lk__faq-block-item {
+  @media (max-width: 590px) {
+    @include mx550();
+  }
+
+  @media (max-width: 420px) {
+    @include mx400();
+  }
+}

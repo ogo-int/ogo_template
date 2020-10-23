@@ -1,0 +1,276 @@
+mixin delivery-choose()
+	.b-delivery-choose.iblock&attributes(attributes)
+		.b-delivery-choose__header
+			.b-delivery-choose__title Информация о&nbsp;доставке
+
+		.b-tabs.b-tabs_lined(data-collapse=1)
+			.b-delivery-choose__main
+				.b-delivery-choose__town-select-holder
+					.b-delivery-choose__field
+						.b-delivery-choose__field-label Населённый пункт (город) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+						.b-delivery-choose__fielf-inputs
+							select.b-delivery-choose__town-select.select2(name="delivery-town")
+								option Москва, Москвоская область
+								option Санкт-Петербург
+								option Киров
+								option Тольятти
+
+				.b-delivery-choose__tab-links-holder
+					ul.b-tabs__cols
+						li.b-tabs__col
+							a.b-tabs__link(href="#")
+								span.b-tabs__link-text Доставить
+						li.b-tabs__col.b-tabs__col_active
+							a.b-tabs__link(href="#")
+								span.b-tabs__link-text Забрать самому
+
+				ul.b-delivery-choose__tabs.b-tabs__holders
+					li.b-tabs__holder.b-delivery-choose__tab
+						.b-delivery-choose__courier-form
+							.b-delivery-choose__cols
+								.b-delivery-choose__left-col
+									+delivery-address()
+
+								.b-delivery-choose__right-col
+									+datepicker()
+							.b-delivery-choose__cost-holder
+								.b-delivery-choose__cost Стоимость доставки: 240 <span class="rub">i</span>
+
+					li.b-tabs__holder.b-delivery-choose__tab.b-tabs__holder_active
+						.b-expand-content
+							.b-expand-content__link-holder
+								a.b-expand-content__link(href="#")
+									span Гипермаркет ОГО!
+
+							.b-expand-content__content-holder
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Площадь Ильича</span>
+											.b-pickpoint__address-info Театральная аллея, д. 3, стр.&nbsp;1
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/>после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Динамо</span>
+											.b-pickpoint__address-info Золоторожский Вал, д. 4, стр.&nbsp;4
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time.b-pickpoint__time_green Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/> после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+						.b-expand-content
+							.b-expand-content__link-holder
+								a.b-expand-content__link(href="#")
+									span Экспресс точки выдачи ОГО!
+
+							.b-expand-content__content-holder
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Площадь Ильича</span>
+											.b-pickpoint__address-info Театральная аллея, д. 3, стр.&nbsp;1
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/>после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Динамо</span>
+											.b-pickpoint__address-info Золоторожский Вал, д. 4, стр.&nbsp;4
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time.b-pickpoint__time_green Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/> после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+						.b-expand-content
+							.b-expand-content__link-holder
+								a.b-expand-content__link(href="#")
+									span Точки выдачи ОГО!
+							.b-expand-content__content-holder
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Площадь Ильича</span>
+											.b-pickpoint__address-info Театральная аллея, д. 3, стр.&nbsp;1
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/>после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+								label.b-pickpoint
+									input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+									.b-pickpoint__cols
+										.b-pickpoint__radiocheck-col
+											.b-pickpoint__radio
+										.b-pickpoint__address-col
+											.b-pickpoint__address-title <span class="metro-icon">м</span> <span>Динамо</span>
+											.b-pickpoint__address-info Золоторожский Вал, д. 4, стр.&nbsp;4
+
+										.b-pickpoint__time-col
+											.b-pickpoint__time.b-pickpoint__time_green Можно забрать сегодня (<nobr>01.02.2016</nobr>)<br/> после 15:00
+
+											label.b-pickpoint__field
+												.b-pickpoint__field-label Дата получения заказа
+												.b-pickpoint__field-inputs
+													select.b-pickpoint__date-select.select2(name="order-date")
+														option 01.02.2016
+														option 02.02.2016
+														option 03.02.2016
+														option 04.02.2016
+														option 05.02.2016
+
+										.b-pickpoint__info-col
+											a.b-pickpoint__info-btn.button-gray.js-shop-info(href="ajax/shop-detail.html") Подробнее
+
+						.b-expand-content
+							.b-expand-content__link-holder
+								a.b-expand-content__link(href="#")
+									span Терминалы QIWI Post
+							.b-expand-content__content-holder
+								+pickpoint-qiwi()
+
+mixin delivery-choose_contract()
+	.b-delivery-choose.iblock&attributes(attributes)
+		.b-delivery-choose__header
+			.b-delivery-choose__title Информация о&nbsp;доставке
+
+		.b-tabs.b-tabs_lined(data-collapse=1)
+			.b-delivery-choose__main
+				.b-delivery-choose__town-select-holder
+					.b-delivery-choose__field
+						.b-delivery-choose__field-label Населённый пункт (город) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+						.b-delivery-choose__fielf-inputs
+							select.b-delivery-choose__town-select.select2(name="delivery-town")
+								option г.Мечниково, Ростовская область
+								option Санкт-Петербург
+								option Киров
+								option Тольятти
+
+				.b-delivery-choose__tab-links-holder
+					ul.b-tabs__cols
+						li.b-tabs__col.b-tabs__col_active
+							a.b-tabs__link(href="#")
+								span.b-tabs__link-text Доставить
+						li.b-tabs__col
+							a.b-tabs__link._disabled(href="#")
+								span.b-tabs__link-text Забрать самому
+
+				ul.b-delivery-choose__tabs.b-tabs__holders
+					li.b-tabs__holder.b-delivery-choose__tab.b-tabs__holder_active
+						.b-delivery-choose__courier-form
+							.b-delivery-choose__cols
+								.b-delivery-choose__left-col
+									+delivery-address_contract()
+
+							.b-delivery-choose__company-options
+								.b-delivery-choose__options-caption Служба доставки
+								.b-delivery-choose__options-content
+									label.b-pickpoint
+										input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+										.b-pickpoint__cols
+											.b-pickpoint__radiocheck-col
+												.b-pickpoint__radio
+											.b-pickpoint__address-col
+												.b-pickpoint__address-title <span>Служба КурьерСервисЭкспресс</span>
+												.b-pickpoint__address-info._contract <span class="b-pickpoint__contract-price">455 <span class="rub">i</span></span> Тариф &laquo;Срочная&raquo;
+												.b-pickpoint__address-remark Доставка курьером осуществляется до&nbsp;дверей лично в&nbsp;руки
+
+											.b-pickpoint__time-col
+												.b-pickpoint__time.b-pickpoint__time_green Ожидаемая дата доставки: <br/>завтра после 15:00
+
+									label.b-pickpoint
+										input.b-pickpoint__radio-input(type="radio" name="pickpoint")
+										.b-pickpoint__cols
+											.b-pickpoint__radiocheck-col
+												.b-pickpoint__radio
+											.b-pickpoint__address-col
+												.b-pickpoint__address-title <span>Служба CDEK</span>
+												.b-pickpoint__address-info._contract <span class="b-pickpoint__contract-price">455 <span class="rub">i</span></span> Экспресс-лайт &laquo;<nobr>Склад-Дверь</nobr>&raquo;
+												.b-pickpoint__address-remark Доставка курьером осуществляется до&nbsp;дверей лично в&nbsp;руки
+
+											.b-pickpoint__time-col
+												.b-pickpoint__time.b-pickpoint__time_green Ожидаемая дата доставки: <br/>завтра после 15:00
+
+					li.b-tabs__holder.b-delivery-choose__tab

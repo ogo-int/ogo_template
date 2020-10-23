@@ -1,0 +1,404 @@
+/* Чекаут и корзина */
+.c-checkout {
+  &__header {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__caption {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 20px;
+    padding-left: 40px;
+  }
+
+  &__add-holder {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 40px;
+  }
+
+  &__add {
+    font-size: 14/16*100%;
+    padding: .575em 2em;
+  }
+
+  &__sub-caption {
+    @include mbot(10/20);
+    font-size: 18/16*100%;
+  }
+
+  &__fast-order-holder {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding-bottom: 20px;
+    padding-right: 40px;
+  }
+
+  &__fast-order {
+    width: 150px;
+    text-align: center;
+    font-size: 14/16*100%;
+  }
+
+  &__main-holder {
+    padding: 5px 40px 40px;
+    background-color: #f8f8f8;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__main-col {
+    @include clearfix;
+    margin-right: 285px;
+  }
+
+  &__aside-col {
+    @include box-sizing;
+    float: right;
+    width: 280px;
+  }
+
+  &__float-wrap {
+    float: left;
+    width: 100%;
+  }
+
+  &__recipient {
+    @include margin(5/20);
+  }
+
+  &__delivery-info {
+    @include margin(5/20);
+  }
+
+  &__order-footer {
+    @include margin(5/20);
+    @include clearfix;
+  }
+
+  &__estimate-col {
+    @include box-sizing;
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    float: left;
+    padding-right: 3px;
+
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+    }
+  }
+
+  &__submit-col {
+    @include box-sizing;
+    position: relative;
+    z-index: 1;
+    width: 50%;
+    height: 100%;
+    float: right;
+    padding-left: 3px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 3px;
+      background-color: #fff;
+    }
+  }
+
+  &__order-comment {
+    @include margin(5/20);
+  }
+
+  &__order-cart {
+    margin-bottom: 6px;
+  }
+
+  &__order-confirm {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding-right: 3px;
+
+    .b-order-confirm {
+      @include box-sizing;
+      height: 100%;
+
+      &__footer {
+        min-height: 142px;
+      }
+    }
+  }
+
+  &__total-confirm {
+    @include box-sizing;
+    float: right;
+    width: 50%;
+    height: 100%;
+    padding-left: 3px;
+
+    .b-total {
+      @include box-sizing;
+      height: 100%;
+    }
+  }
+
+  &__total-cart {
+    @include box-sizing;
+    float: right;
+    width: 38%;
+    height: 100%;
+    padding-left: 3px;
+
+    .b-total {
+      height: 100%;
+    }
+  }
+
+  &__pickpoint-confirm {
+    @include margin(6/20);
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__registration-confirm {
+    @include margin(6/20);
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__discount {
+    @include box-sizing;
+    float: left;
+    width: 62%;
+    height: 100%;
+    padding-right: 3px;
+
+    .b-discount-plate {
+      height: 100%;
+    }
+  }
+
+  &__cart-accessories {
+    @include margin(20/20);
+  }
+
+  &__cart-items {
+    @include margin(25/20);
+
+    .b-cart-product__wrap {
+      border: none;
+    }
+  }
+
+  &__company-info {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__add-modal {
+    display: none;
+  }
+}
+
+.c-checkout._hands {
+  position: relative;
+
+  &:after {
+    @include bgr("../img/hands", "png");
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 302px;
+    height: 155px;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    background-size: cover;
+  }
+
+  .c-checkout__caption {
+    padding-top: 15px;
+  }
+}
+
+@media #{$media-desktop} {
+}
+
+@media (max-width: 1170px) and (min-width: 1024px) {
+  .c-checkout {
+    &__order-confirm {
+      width: 43%;
+
+      .b-order-confirm__footer {
+        min-height: 182px;
+      }
+    }
+
+    &__total-confirm {
+      width: 57%;
+
+      .b-total__footer {
+        min-height: 182px;
+      }
+    }
+  }
+}
+
+@media #{$media-tablet} {
+  .c-checkout {
+    &__aside-col {
+      display: none;
+    }
+
+    &__main-col {
+      margin-right: 0;
+    }
+
+    &__main-holder {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &__caption {
+      padding-top: 0;
+      padding-left: 20px;
+    }
+
+    &__add-holder {
+      padding-right: 20px;
+    }
+
+    &__fast-order-holder {
+      padding-right: 15px;
+    }
+
+    &__discount {
+      width: 50%;
+    }
+
+    &__total-cart {
+      width: 50%;
+    }
+
+    &__order-confirm {
+      float: none;
+      width: auto;
+      padding-right: 0;
+      height: auto;
+    }
+
+    &__total-confirm {
+      @include margin(6/20);
+      float: none;
+      width: auto;
+      padding-left: 0;
+      height: auto;
+    }
+
+    &._hands:after {
+      display: none;
+    }
+
+    &__order-confirm {
+      .b-order-confirm__footer {
+        min-height: 0;
+      }
+    }
+
+    &__total-confirm {
+      .b-total__footer {
+        min-height: 0;
+      }
+    }
+  }
+
+  .c-checkout._hands .c-checkout__caption {
+    padding-top: 0;
+  }
+}
+
+@media #{$media-phone-landscape} {
+  .c-checkout {
+    &__caption {
+      display: block;
+      padding-top: 10px;
+      padding-left: 0;
+      padding-bottom: 10px;
+    }
+
+    &__main-holder {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    &__add-holder {
+      display: block;
+      padding-bottom: 20px;
+      padding-right: 0;
+      text-align: center;
+    }
+
+    &__fast-order-holder {
+      display: block;
+      text-align: center;
+      padding-left: 15px;
+      padding-top: 0;
+    }
+
+    &__estimate-col {
+      float: none;
+      width: auto;
+      padding-right: 0;
+      height: auto;
+    }
+
+    &__submit-col {
+      @include margin(5/20);
+      float: none;
+      width: auto;
+      padding-left: 0;
+      height: auto;
+    }
+
+    &__discount {
+      @include margin(5/20);
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      padding-right: 0;
+    }
+
+    &__total-cart {
+      @include margin(5/20);
+      width: 100%;
+      height: auto;
+      min-height: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@media #{$media-phone} {
+}

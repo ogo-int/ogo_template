@@ -1,0 +1,89 @@
+.b-estimate {
+  padding: 20px;
+  background-color: #fff;
+
+  &__title {
+    @include mbot(30/20);
+    font-size: 24/16*100%;
+    line-height: (28/24);
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__item {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__item-name {
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    vertical-align: bottom;
+  }
+
+  &__item-cost {
+    display: table-cell;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    width: 1px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    color: #969696;
+  }
+
+  &__sub-title {
+    @include mtop(20/20);
+    @include mbot(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__sub-items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #333;
+  }
+
+  &__sub-item {
+    @include box-sizing;
+    @include margin(5/20);
+    @include clearfix;
+    display: table;
+    width: 100%;
+  }
+
+  &__sub-item-name {
+    display: table-cell;
+    vertical-align: bottom;
+  }
+
+  &__sub-item-cost {
+    display: table-cell;
+    width: 1px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    color: #969696;
+  }
+
+  &__sub-wrap {
+    padding-bottom: 15px;
+    // border-bottom: 1px solid #f1f1f1;
+  }
+}

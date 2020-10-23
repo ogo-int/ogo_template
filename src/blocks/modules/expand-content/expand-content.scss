@@ -1,0 +1,36 @@
+.b-expand-content {
+  &__link-holder {
+    padding-top: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__link {
+    font-size: 18/16*100%;
+    text-decoration: none;
+    line-height: 1.22;
+    color: #dc3e48;
+
+    &:before {
+      @include ft-icon($ft-arrow-down);
+      position: relative;
+      top: -.2em;
+      font-size: 7/18*100%;
+      width: 2em;
+      margin-right: 1em;
+      transform-origin: 50% 50%;
+      transition: .4s transform;
+    }
+
+    &._open {
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__content-holder {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

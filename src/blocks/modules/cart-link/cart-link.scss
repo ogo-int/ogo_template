@@ -1,0 +1,69 @@
+// Ссылка на корзину
+.b-cart-link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  white-space: nowrap;
+
+  &__link {
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    color: #4a4a4a;
+  }
+
+  &__icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+
+    &:before {
+      @include ft-icon($ft-cart);
+      font-size: 22px;
+      position: relative;
+      top: -4px;
+    }
+
+    &_red {
+      color: #dc3e48;
+    }
+
+    &_mobile:before {
+      @include ft-icon($ft-cart);
+      font-size: 24px;
+      position: relative;
+      top: -4px;
+      color: #969696;
+    }
+  }
+
+  &__buy {
+    vertical-align: middle;
+    margin-left: 1.75em;
+    padding-top: 12px;
+    font-size: 13/15*100%;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    line-height: 30px;
+  }
+
+  &__text_mobile {
+    display: none;
+    color: #dc3e48;
+  }
+}
+
+// Адаптация
+.b-cart-link._mx350 {
+  .b-cart-link {
+    &__buy {
+      display: none;
+    }
+  }
+}

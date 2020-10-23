@@ -1,0 +1,40 @@
+extends ../layout/page-template
+
+block head
+	title Конфигуратор
+
+block head-scripts
+
+block vars
+	- var modHeader = '_breadcrumbs'; // доп классы для хедера
+	- var isInner = true; // раскрывать ли подменю в главном меню
+	- var isShowFeaturesInFooter = true; // показывать ли преимущества в футере
+	- var isCatalog = true;
+	- var isTotalStyling = true;
+
+block caption
+	h1.full-width Конфигуратор
+
+block inner-content
+	section.c-catalog
+		.c-catalog__warn Этот товар не совместим с Корпусом ATX Miditower Accord P-25B Black
+
+		.c-catalog__product-rating
+			+rating_card()
+
+		.c-catalog__product-detail._gray
+			.c-catalog__product-photo
+				+product-images()
+
+				.c-catalog__product-discount -20%
+
+			.c-catalog__product-info
+				.c-catalog__product-price
+					+product-price_conf()
+
+				.c-catalog__town-delivery
+					+town-delivery()
+
+		.c-catalog__product-links
+			.content-center
+				+product-links()

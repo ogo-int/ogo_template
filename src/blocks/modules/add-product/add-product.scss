@@ -1,0 +1,186 @@
+.b-add-product {
+  width: 480px;
+  max-width: 100%;
+  padding: 30px;
+  padding-bottom: 50px;
+
+  &__caption {
+    @include margin(30/20);
+    font-size: 32/16*100%;
+    font-weight: 200;
+  }
+
+  &__label {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__ui-holder {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    max-width: 500px;
+  }
+
+  &__input-col {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-right: 4px;
+  }
+
+  &__submit-col {
+    display: table-cell;
+    width: 120px;
+    vertical-align: bottom;
+    padding-left: 4px;
+  }
+
+  &__submit {
+    @include box-sizing;
+    width: 100%;
+    font-size: 14/16*100%;
+    text-align: center;
+  }
+
+  &__result-holder {
+    @include margin(20/20);
+  }
+
+  &__result-items {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__result-item {
+    @include clearfix;
+    border: 1px solid #f1f1f1;
+    padding: 10px;
+  }
+
+  &__result-product {
+    width: 60%;
+    min-width: 260px;
+    float: left;
+  }
+
+  &__result-ui {
+    float: left;
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+
+  &__result-submit-holder {
+    @include margin(10/20);
+  }
+
+  &__result-qtty {
+    max-width: 90px;
+  }
+
+  &__result-submit {
+    padding: .55em 2em;
+    font-size: 14/16*100%;
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 14/16*100%;
+  }
+
+  &__error {
+    display: none;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #dc3e48;
+  }
+}
+
+.b-add-product._success {
+  padding-bottom: 30px;
+  .b-add-product {
+    &__result-items {
+      display: block;
+    }
+  }
+}
+
+.b-add-product._error {
+  padding-bottom: 30px;
+  .b-add-product {
+    &__input {
+      border-color: #ff7575;
+    }
+
+    &__error {
+      display: block;
+    }
+  }
+}
+
+@mixin mx600($mod: "") {
+  .b-add-product#{$mod} {
+    width: auto;
+    .b-add-product {
+      &__caption {
+        font-size: 24/16*100%;
+        padding-right: 45px;
+      }
+    }
+  }
+}
+
+@mixin mx470($mod: "") {
+  .b-add-product#{$mod} {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .b-add-product {
+      &__result-product {
+        float: none;
+        width: auto;
+      }
+
+      &__result-ui {
+        @include clearfix;
+        float: none;
+        width: auto;
+        padding-top: 0;
+      }
+
+      &__result-qtty {
+        float: left;
+        width: 70px;
+        margin-right: 10px;
+      }
+
+      &__result-submit-holder {
+        margin-top: 0;
+      }
+
+      &__result-submit {
+        margin-top: 0;
+      }
+    }
+
+    .b-product-small__main-wrap {
+      margin-left: 0;
+    }
+  }
+}
+
+@include mx600("._mx600");
+@include mx470("._mx470");
+
+.fancybox-inner {
+  @media (max-width: 550px) {
+    @include mx600;
+    @include mx470;
+
+    .b-add-product__result-product {
+
+    }
+  }
+}

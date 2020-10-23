@@ -1,0 +1,130 @@
+.b-product-links {
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__col {
+    display: table-cell;
+    width: 1/4*100%;
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    white-space: nowrap;
+    width: 180px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 27px;
+    padding-top: 30px;
+    color: black;
+    font-size: 15/16*100%;
+    text-decoration: none;
+    border-bottom: 3px solid #e8e8e8;
+
+    &:hover, &._active {
+      color: #3e8bdc;
+      border-bottom-color: #3e8bdc;
+
+      &:before {
+        background-position: 0 -25px;
+      }
+    }
+
+    &:before {
+    }
+
+    &_gear {
+      &:before {
+        @include ft-icon($ft-gear);
+        font-size: 24px;
+        margin-right: 10px;
+        position: relative;
+        top: 4px;
+      }
+
+      &:hover:before {
+        color: #3e8bdc;
+      }
+    }
+
+    &_sms {
+      &:before {
+        @include ft-icon($ft-chat);
+        font-size: 24px;
+        margin-right: 10px;
+        position: relative;
+        top: 4px;
+      }
+
+      &:hover:before {
+        color: #3e8bdc;
+      }
+    }
+
+    &_document {
+      &:before {
+        @include ft-icon($ft-doc);
+        font-size: 24px;
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+      }
+
+      &:hover:before {
+        color: #3e8bdc;
+      }
+    }
+
+    &_chat {
+      &:before {
+        @include ft-icon($ft-messages);
+        font-size: 24px;
+        margin-right: 10px;
+        position: relative;
+        top: 2px;
+      }
+
+      &:hover:before {
+        color: #3e8bdc;
+      }
+    }
+  }
+}
+
+@mixin mx720($mod: "") {
+  .b-product-links#{$mod} {
+    .b-product-links {
+      &__cols {
+        @include clearfix;
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+
+      &__col {
+        @include box-sizing;
+        display: block;
+        width: auto;
+        width: 50%;
+        min-width: 180px;
+        max-width: none;
+        margin: 0;
+        float: left;
+        text-align: left;
+      }
+
+      &__link {
+        width: auto;
+        max-width: none;
+        border: none;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+@include mx720("._mx720");

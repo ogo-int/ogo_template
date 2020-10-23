@@ -1,0 +1,38 @@
+header.c-header(class="#{modHeader}")
+	.c-header__desktop-header
+		.c-header__top-holder
+			.c-header__top-section
+				.c-header__town
+					+town-select
+				.c-header__top-menu
+					+top-menu
+
+				.c-header__right-btns
+					.c-header__lk
+						+cabinet-link
+
+					.c-header__cart
+						+cart-link
+
+		.c-header__middle-holder
+			.full-width
+				.c-header__middle-section
+					.c-header__logo
+						+top-logo
+
+					.c-header__search
+						+search-line
+
+					.c-header__contacts
+						+contacts
+
+		.c-header__bottom-holder
+			if isInner
+				+main-menu
+			else
+				+main-menu_inner
+
+	block breadcrumbs
+		.c-header__breadcrumbs
+			.full-width
+				a(href="#").c-header__breadcrumbs-link <span>Вернуться ко всей электронике</span>

@@ -1,0 +1,31 @@
+.b-catalog-list {
+  min-width: 280px;
+
+  &__items {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-bottom: 5px;
+  }
+
+  &__item {
+    @include box-sizing;
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+.c-catalog__products {
+  @media screen and (max-width:650px) and (min-width: 620px), screen and (max-height: 480px) and (min-width: 620px) {
+    .b-catalog-list {
+      &__item {
+        @include box-sizing;
+        float: left;
+        width: 1/2*100%;
+        margin: 0;
+        padding: 5px;
+      }
+    }
+  }
+}

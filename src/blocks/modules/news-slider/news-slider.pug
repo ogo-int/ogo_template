@@ -1,0 +1,60 @@
+mixin news-slider()
+	.b-news-slider.iblock._nojs&attributes(attributes)
+		.b-news-slider__header
+			.b-news-slider__title Новости
+
+			.b-news-slider__arrows
+				a.b-news-slider__all.button-gray(href="#") Все новости
+				a.b-news-slider__prev(href="#")
+				a.b-news-slider__next(href="#")
+
+		.b-news-slider__slider-holder
+			.b-news-slider__slider
+				each val in [v,v,v]
+					.b-news-slider__slide
+						.b-news-slider__slide-wrap
+							.b-news-slider__caption Дарим подарки от&nbsp;Apple!
+							.b-news-slider__text.content-area
+								p При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+							.b-news-slider__slide-footer
+								.b-news-slider__logo-holder
+									.b-news-slider__logo-wrap
+										img.b-news-slider__logo(src="assets/img/content/news/news_preview1.jpg", alt="Логотип" width=96 height=53)
+
+								.b-news-slider__bottom-section
+
+									.b-news-slider__date <nobr>10.02.2016</nobr>&nbsp;&mdash; <nobr>10.05.2016</nobr>
+									.b-news-slider__more-holder
+										a.b-news-slider__more.button-gray(href="#") Подробнее
+
+					.b-news-slider__slide
+						.b-news-slider__slide-wrap
+							.b-news-slider__caption Покупай смартфоны Samsung Galaxy S6 по&nbsp;лучшей цене!
+							.b-news-slider__text.content-area
+								p При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+							.b-news-slider__slide-footer
+								.b-news-slider__logo-holder
+									.b-news-slider__logo-wrap
+										img.b-news-slider__logo(src="assets/img/content/news/news_preview2.jpg", alt="Логотип" width=81 height=14)
+								.b-news-slider__bottom-section
+									.b-news-slider__date <nobr>10.02.2016</nobr>&nbsp;&mdash; <nobr>10.05.2016</nobr>
+									.b-news-slider__more-holder
+										a.b-news-slider__more.button-gray(href="#") Подробнее
+
+					.b-news-slider__slide
+						.b-news-slider__slide-wrap
+							.b-news-slider__caption +1000 бонусов на&nbsp;карту при покупке компьютера
+
+							.b-news-slider__text.content-area
+								p В&nbsp;акции учавствуют все станционарные компьютеры брендов MSI. ACER. ASUS, Lenovo
+
+							.b-news-slider__slide-footer
+								.b-news-slider__logo-holder
+									.b-news-slider__logo-wrap
+										img.b-news-slider__logo(src="assets/img/content/news/news_preview3.jpg", alt="Логотип" width=79 height=27)
+								.b-news-slider__bottom-section
+									.b-news-slider__date <nobr>10.02.2016</nobr>&nbsp;&mdash; <nobr>10.05.2016</nobr>
+									.b-news-slider__more-holder
+										a.b-news-slider__more.button-gray(href="#") Подробнее

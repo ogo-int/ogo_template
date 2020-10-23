@@ -1,0 +1,15 @@
+.b-gray-remark {
+  padding: 20px;
+  background-color: #f8f8f8;
+
+  &__caption {
+    @include margin(10/20);
+    color: #333;
+  }
+
+  &__content {
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+  }
+}

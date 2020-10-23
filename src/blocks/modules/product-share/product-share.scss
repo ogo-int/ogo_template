@@ -1,0 +1,114 @@
+.b-product-share {
+  &__caption {
+    @include margin(30/20);
+    font-size: 32/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+    color: #333;
+  }
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__btn-holder {
+    @include box-sizing;
+    float: left;
+    width: 500px;
+  }
+
+  &__socials-holder {
+    @include box-sizing;
+    overflow: hidden;
+    padding-top: 5px;
+    text-align: right;
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1em;
+    font-size: 18/16*100%;
+    color: #333;
+  }
+
+  &__socials {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__favor {
+    margin-right: .75em;
+    font-size: 14/16*100%;
+  }
+
+  &__email {
+    font-size: 14/16*100%;
+  }
+}
+
+@mixin mx860($mod: "") {
+  .b-product-share#{$mod} {
+    .b-product-share {
+      &__label {
+        @include mbot(10/20);
+        display: block;
+      }
+
+      &__btn-holder {
+        width: 340px;
+        margin-right: 20px;
+      }
+
+      &__socials-holder {
+        text-align: left;
+      }
+    }
+  }
+}
+@mixin mx560($mod: "") {
+  .b-product-share#{$mod} {
+    .b-product-share {
+      &__btn-holder {
+        float: none;
+        display: block;
+        width: auto;
+        margin-right: 0;
+      }
+
+      &__socials-holder {
+        @include mtop(10/20);
+        display: block;
+        width: auto;
+        margin-right: 0;
+      }
+
+      &__favor, &__email {
+        @include mbot(10/20);
+        display: block;
+        max-width: 160px;
+      }
+    }
+  }
+}
+
+@include mx860("._mx860");
+@include mx560("._mx560");
+
+.c-catalog__share {
+  @media (max-width: 1023px) {
+    .b-product-share {
+      &__caption {
+        font-size: 22/16*100%;
+      }
+    }
+  }
+
+  @media (max-width: 910px) {
+    @include mx860();
+  }
+
+  @media (max-width: 610px) {
+    @include mx560();
+  }
+}

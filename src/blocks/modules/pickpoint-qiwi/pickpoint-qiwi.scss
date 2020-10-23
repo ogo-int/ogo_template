@@ -1,0 +1,210 @@
+.b-pickpoint-qiwi {
+  display: block;
+  border: 1px solid #dfdfdf;
+
+  &__cols {
+    @include clearfix;
+  }
+
+  &__title {
+    @include box-sizing;
+    display: table-cell;
+    width: 50%;
+  }
+
+  &__info {
+    @include box-sizing;
+    display: table-cell;
+    width: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #969696;
+
+    &_green {
+      color: #81c03d;
+    }
+  }
+
+  &__radiocheck-col {
+    float: left;
+    padding: 25px 15px;
+  }
+
+  &__main-col {
+    overflow: hidden;
+  }
+
+  &__address-col {
+    @include box-sizing;
+    display: table-cell;
+    min-width: 180px;
+    padding: 20px 5px;
+    vertical-align: top;
+  }
+
+  &__address-info {
+    font-size: 14/16*100%;
+    font-weight: 400;
+    line-height: 1.29;
+    color: #969696;
+  }
+
+  &__time {
+    @include margin(15/20);
+    padding-right: 20px;
+    font-size: 14/16*100%;
+    font-weight: 400;
+    color: #969696;
+  }
+
+  &__field {
+    display: none;
+  }
+
+  &__field-label {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1;
+    color: #333;
+  }
+
+  &__field-inputs {
+    max-width: 200px;
+  }
+
+  &__radio {
+    @include pie;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #d7d7d7;
+    box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.07);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__radio-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &__top-section {
+    padding-top: 20px;
+  }
+
+  &__map-section {
+    @include margin(20/20);
+    padding-bottom: 15px;
+    padding-right: 20px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__map-btn {
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.21;
+  }
+
+  &__bottom-section {
+    padding-bottom: 20px;
+  }
+
+  &__address-title {
+    @include mbot(10/20);
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &__address-detail {
+    @include margin(5/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #333;
+  }
+
+  &__address-remark {
+    @include margin(5/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    line-height: 1.5;
+    color: #969696;
+  }
+}
+
+.b-pickpoint-qiwi._checked {
+  border-color: #3e8bdc;
+
+  .b-pickpoint-qiwi {
+    &__radio {
+      background-color: #3e8bdc;
+      &:before {
+        @include pie;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 50%;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.49);
+      }
+    }
+
+    &__field {
+      display: block;
+    }
+  }
+}
+
+@mixin mx530($mod: "") {
+  .b-pickpoint-qiwi#{$mod} {
+    .b-pickpoint-qiwi {
+      &__radiocheck-col {
+        // float: left;
+      }
+
+      &__main-col {
+        overflow: visible;
+      }
+
+      &__title {
+        display: block;
+        margin-left: 50px;
+      }
+
+      &__info {
+        @include margin(10/20);
+        display: block;
+        margin-left: 50px;
+        padding: 0;
+      }
+
+      &__map-section {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+@include mx530("._mx530");
+
+.c-checkout__delivery-info {
+  @media (max-width: 590px) {
+    @include mx530;
+  }
+}

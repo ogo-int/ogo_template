@@ -1,0 +1,126 @@
+.b-paginator {
+  &__items {
+    @include box-sizing;
+    display: table;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-collapse: collapse;
+
+    &_center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__link {
+    @include box-sizing;
+    display: inline-block;
+    width: 40px;
+    height: 55px;
+    font-size: 14/16*100%;
+    line-height: 55px;
+    text-decoration: none;
+    text-align: center;
+    color: #35322f;
+    transition: .2s background-color;
+
+    &:hover {
+      background-color: #f1f1f1;
+    }
+
+    &_current {
+      background-color: #3e8bdc;
+      color: white;
+
+      &:hover {
+        background-color: #3e8bdc;
+      }
+    }
+  }
+
+  &__prev-link {
+    display: inline-block;
+    text-decoration: none;
+    width: 40px;
+    height: 55px;
+    line-height: 55px;
+    color: #35322f;
+    background-color: #ececec;
+    text-align: center;
+    transition: .2s background-color;
+
+    &:before {
+      @include ft-icon($ft-arrow-left);
+      font-size: 10px;
+    }
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__next-link {
+    display: inline-block;
+    text-decoration: none;
+    width: 40px;
+    height: 55px;
+    line-height: 55px;
+    color: #35322f;
+    background-color: #ececec;
+    text-align: center;
+    transition: .2s background-color;
+
+    &:before {
+      @include ft-icon($ft-arrow-right);
+      font-size: 10px;
+    }
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+}
+
+.b-paginator_white {
+  .b-paginator {
+    &__link {
+      color: white;
+
+      &:hover {
+        background-color: #0071ba;
+      }
+
+      &_current {
+        background-color: #24578e;
+
+        &:hover {
+          background-color: #24578e;
+        }
+      }
+    }
+
+    &__prev-link {
+      background: none;
+      color: white;
+
+      &:hover {
+        background-color: #0071ba;
+      }
+    }
+
+    &__next-link {
+      background: none;
+      color: white;
+
+      &:hover {
+        background-color: #0071ba;
+      }
+    }
+  }
+}

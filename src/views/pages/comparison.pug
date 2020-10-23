@@ -1,0 +1,17 @@
+extends ../layout/page-template
+
+block head
+	title Каталог товаров
+
+block head-scripts
+
+block vars
+	- var isInner = true; // раскрывать ли подменю в главном меню
+	- var isTotalStyling = true; // Использовать бандл
+
+block stylesheets
+	//- link(href='css/bundles/catalog.css' rel='stylesheet')
+
+block caption
+	h1.c-catalog__title Сравнение товаров
+	+comparison-table()

@@ -158,6 +158,8 @@ AddType text/vtt .vtt
     # Fonts
     ExpiresByType application/x-font-woff "access plus 1 year"
     ExpiresByType application/font-woff2 "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType application/x-font-truetype "access plus 1 year"
 
     # Other
     ExpiresByType text/x-cross-domain-policy "access plus 1 week"
@@ -176,7 +178,7 @@ AddType text/vtt .vtt
     </FilesMatch>
 
     # 1 year - Favicon, fonts
-    <FilesMatch "\.(ico|woff|woff2)$">
+    <FilesMatch "\.(ico|woff|woff2|eot|svg|ttf)$">
         Header set Cache-Control "max-age=31536000, public"
     </FilesMatch>
 

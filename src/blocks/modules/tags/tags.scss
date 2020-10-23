@@ -1,0 +1,133 @@
+.b-tags {
+  overflow: hidden;
+
+  &__items {
+    @include clearfix;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: -10px;
+
+    &:first-child {
+      margin-top: -10px;
+    }
+  }
+
+  &__item {
+    float: left;
+    background-color: #fff;
+    margin-right: 10px;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+
+  &__show-more:hover {
+    cursor: pointer;
+  }
+
+  &__tag {
+    display: inline-block;
+    position: relative;
+    border: 1px solid #e3e3e3;
+    padding: 8px 10px;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #4f4f4f;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f8f8f8;
+      cursor: pointer;
+    }
+
+    &_new {
+      color: #bd4149;
+      padding-left: 35px;
+
+      &:before {
+        @include bgr("../img/new","png");
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 19px;
+        margin-top: -9px;
+        background-size: 20px 19px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+    }
+
+    &_img_holder {
+      color: #bd4149;
+      padding-left: 35px;
+
+      &_not_red {
+        padding-left: 35px;
+
+        .b-tags__tag_img {
+          position: absolute;
+          top: 50%;
+          left: 10px;
+          width: 20px;
+          height: 19px;
+          margin-top: -9px;
+        }
+      }
+
+      .b-tags__tag_img {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 19px;
+        margin-top: -9px;
+      }
+    }
+
+    &_discount {
+      color: #bd4149;
+      padding-left: 35px;
+
+      &:before {
+        @include bgr("../img/discount","png");
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        width: 20px;
+        height: 19px;
+        margin-top: -9px;
+        background-size: 20px 19px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+      }
+    }
+
+    &_active {
+      color: white;
+      background-color: #3e8bdc !important;
+      cursor: default !important;
+
+      &:hover {
+        background-color: #3e8bdc !important;
+      }
+    }
+
+    &_disabled {
+      cursor: default !important;
+      background-color: transparent;
+
+      &:hover {
+        cursor: default !important;
+        background-color: transparent;
+      }
+    }
+  }
+}

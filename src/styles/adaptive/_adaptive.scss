@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+@import '../helpers/variables';
+@import '../helpers/functions';
+@import '../helpers/css3-mixins';
+@import '../helpers/mixins';
+
+@include media($media-desktop, '._w1024') {
+	.c-header {
+		.b-top-menu__item_help {
+			display: none;
+		}
+	}
+}
+
+@include media($media-tablet, '._w768') {
+
+	.page-wrapper {
+		padding-top: 50px;
+	}
+
+	.mobile-left-aside {
+    	//display: block;
+    	position: absolute;
+  	}
+
+  	.mobile-left-aside._opened {
+    	position: fixed;
+    	display: block;
+  	}
+
+	.full-width {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	h2, .h2 {
+		font-size: 24/16*100%;
+	}
+
+	// Компоненты
+	.c-header {
+		margin-bottom: 20px;
+
+		&__mobile-header {
+			display: block;
+		}
+
+		&__desktop-header {
+			display: none;
+		}
+
+		&._mobile-fixed {
+			padding-top: 60px;
+			margin-bottom: 0;
+		}
+
+		&__breadcrumbs {
+			margin-top: 15px;
+		}
+	}
+
+	.c-main-page {
+		&__news {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__pickpoints {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__pickpoint {
+			float: none;
+			width: auto;
+			padding: 0;
+			@include margin(20/20);
+		}
+
+		&__categories-holder {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__recent-products {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__partners {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__consult-holder {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__shops {
+			height: auto;
+			padding: 15% 20px;
+		}
+	}
+
+	.c-search {
+		&__caption {
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-top: 10px;
+		}
+
+		&__input-holder {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__tags {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__categories {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	.c-news {
+		&__header {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__news-list-holder {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__list-col {
+			width: 100%;
+			height: auto !important;
+		}
+
+		.b-promo-block5__header {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	.c-contacts-list {
+		&__header {
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 20px;
+		}
+
+		&__main-holder {
+			padding: 6px;
+			background-color: #f1f1f1;
+		}
+
+
+		&__detail-card {
+			.b-shop-card {
+				&__header {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+
+				&__cols {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		}
+	}
+}
+
+@include media($media-phone-landscape, '._w480') {
+	h1, .h1 {
+		@include mbot(30/20);
+		font-size: 24/16*100%;
+		text-align: center;
+	}
+
+	h2, .h2 {
+		@include mbot(30/20);
+		font-size: 22/16*100%;
+	}
+
+	.full-width {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	table.table {
+		display: none;
+	}
+
+	.mobile-hide {
+		display: none;
+	}
+
+	.b-smart-filter__header {
+		display: none;
+	}
+
+	.c-header {
+		&__breadcrumbs {
+			margin-top: 0;
+			margin-bottom: 20px;
+			//padding-top: 10px;
+			//padding-bottom: 10px;
+			//border-bottom: 1px solid #f1f1f1;
+			text-align: center;
+		}
+	}
+
+	.c-main-page {
+		&__pickpoint {
+			float: none;
+			width: auto;
+			padding: 0;
+			@include margin(20/20);
+		}
+
+		&__advantages-holder {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+
+		&__shops {
+			height: auto;
+			padding: 60px 20px;
+			font-size: 12px;
+		}
+	}
+
+	.c-search {
+		&__caption {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__input-holder {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__tags {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__categories {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.c-news {
+		&__header {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+
+		.b-news-plate__caption {
+			font-size: 18px;
+		}
+	}
+
+	.c-contacts-list {
+		&__header {
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 10px;
+		}
+
+		&__main-holder {
+			padding: 6px 5px 20px;
+			background-color: #f1f1f1;
+		}
+
+		&__detail-card {
+			.b-shop-card {
+				&__header {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+
+				&__cols {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		}
+
+		&__switcher {
+			display: none;
+		}
+	}
+}
+
+@include media($media-phone, '._w320') {
+	.c-main-page {
+		&__news {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__pickpoints {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__categories-holder {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__partners {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		&__recent-products {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__consult-holder {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	.c-news {
+		&__header {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.b-promo-block5__header {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		&__news-list-holder {
+			padding-left: 6px;
+			padding-right: 6px;
+		}
+	}
+
+	.c-main-page {
+		&__advantages-holder {
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 10px;
+		}
+	}
+}
+
+// Fancybox fullscreen
+@media (max-width: 480px) {
+	.fancybox-wrap {
+		left: 0 !important;
+		top: 0 !important;
+		right: 0 !important;
+		bottom: 0 !important;
+		width: 100% !important;
+		margin-bottom: 0;
+	}
+
+	.fancybox-skin {
+		min-height: 100% !important;
+	}
+
+	.fancybox-inner {
+		width: 100% !important;
+	}
+
+	.fancybox-close {
+		font-size: 15px;
+	}
+}

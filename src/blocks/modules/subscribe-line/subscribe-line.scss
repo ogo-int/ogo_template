@@ -1,0 +1,79 @@
+.b-subscribe-line {
+
+  &__field {
+    position: relative;
+
+    &._filled {
+      .b-subscribe-line__placeholder {
+        display: none;
+      }
+    }
+  }
+
+  &__input[type="text"] {
+    @include box-sizing;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 30px;
+    font-size: 12/16*100%;
+    box-shadow: none;
+  }
+
+  &__submit {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+  }
+
+  &__send {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: 5px;
+    width: 21px;
+    height: 22px;
+    margin-top: -11px;
+    cursor: pointer;
+    color: #bfbfbf;
+
+    &:before {
+      @include ft-icon($ft-enter);
+      font-size: 10px;
+    }
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    left: 1em;
+    overflow: hidden;
+    margin-top: -9px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: text;
+
+    &_thin {
+      margin-top: -10px;
+    }
+  }
+
+  &__ph-pre {
+    display: inline;
+    color: #bfbfbf;
+  }
+
+  &__ph-main {
+    display: inline;
+  }
+
+  input[type="text"]:focus ~ .b-subscribe-line__placeholder {
+    display: none;
+  }
+}

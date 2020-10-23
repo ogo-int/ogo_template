@@ -1,0 +1,27 @@
+.b-top-logo {
+  display: table;
+
+  &__img-holder {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &__img {
+    vertical-align: top;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__slogan-holder {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-left: 20px;
+    font-size: 13/16*100%;
+    line-height: (14/13);
+    color: #4a4a4a;
+  }
+
+  &__slogan {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,168 @@
+.b-promo-block2 {
+  @include box-sizing;
+  min-width: 300px;
+  height: 100%;
+
+  &__holder {
+    @include box-sizing;
+    position: relative;
+    height: 100%;
+    padding: 40px;
+    background-color: #3678bd;
+  }
+
+  &__bg-holder {
+    @include bgr("../img/promo2bg","png");
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: auto 100%;
+  }
+
+  &__bg-image {
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    max-width: 85%;
+    height: auto;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    width: 50%;
+    color: white;
+  }
+
+  &__title {
+    @include margin(30/20);
+    display: table;
+    font-size: 24/16*100%;
+    font-weight: 200;
+    line-height: (34/24);
+    text-decoration: none;
+    color: white;
+  }
+
+  &__expand-link {
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+    color: inherit;
+    cursor: default;
+  }
+
+  &__close {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 30px;
+    color: #d2d2d2;
+    text-decoration: none;
+
+    &:before {
+      @include ft-icon($ft-close);
+    }
+
+    &:hover {
+      color: #333;
+    }
+  }
+}
+
+.b-promo-block2._collapsed {
+  .b-promo-block2 {
+    &__expand-link {
+      border-bottom: 1px dashed #fff;
+      cursor: pointer;
+      transition: .2s opacity;
+
+      &:hover {
+        @include opacity(.8);
+      }
+    }
+
+    &__close {
+      display: none;
+    }
+
+    &__list {
+      display: none;
+    }
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__bg-holder {
+      @include bgr("../img/promo_collapsed","png");
+      background-position: 100% 0;
+      background-size: auto 102%;
+    }
+
+    &__bg-image {
+      @include opacity(0);
+    }
+
+    &__holder {
+      padding: 20px 40px 30px;
+    }
+  }
+}
+
+@mixin mx780($mod: "") {
+  .b-promo-block2#{$mod} {
+    .b-promo-block2 {
+      &__bg-image {
+        top: auto;
+        right: 20px;
+        bottom: 0;
+        width: 30%;
+      }
+
+      &__content {
+        @include box-sizing;
+        width: 70%;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+@mixin mx780($mod: "") {
+  .b-promo-block2#{$mod} {
+    .b-promo-block2 {
+      &__bg-image {
+        display: none;
+      }
+
+      &__content {
+        @include box-sizing;
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__bg-holder {
+        background-size: auto;
+      }
+    }
+  }
+}
+
+@include mx780("._mx780");
+@include mx700("._mx700");
+
+.c-configurator__intro, .c-catalog__intro {
+  @media (max-width: 780px) {
+    @include mx780();
+  }
+
+  @media (max-width: 700px) {
+    @include mx700();
+  }
+}

@@ -1,0 +1,45 @@
+mixin category-slider()
+	.b-category-slider.iblock&attributes(attributes)
+		.b-category-slider__header
+			.b-category-slider__title
+				img.b-category-slider__icon(src="assets/img/content/categories/icon-family.png" alt="Иконка" width=33 height=22)
+				span Компьютерная техника
+
+			.b-category-slider__arrows
+				a.b-category-slider__more-link(href="#") Перейти к&nbsp;26 категориям
+				a.b-category-slider__prev(href="#")
+				a.b-category-slider__next(href="#")
+
+		.b-category-slider__main
+			ul.b-category-slider__slider
+				each val in [0,0,0]
+					li.b-category-slider__slide
+						+category-plate()
+
+					li.b-category-slider__slide
+						+category-plate()
+
+					li.b-category-slider__slide
+						+category-plate()
+
+					li.b-category-slider__slide
+						+category-plate()
+
+mixin category-slider_data(data)
+	.b-category-slider.iblock&attributes(attributes)
+		.b-category-slider__header
+			.b-category-slider__title
+				if data.iconSrc !== undefined
+				img.b-category-slider__icon(src="#{data.iconSrc}" alt="Иконка" width=data.iconWidth height=data.iconHeight)
+				span !{data.title}
+
+			.b-category-slider__arrows
+				a.b-category-slider__more-link(href="#") !{data.more}
+				a.b-category-slider__prev(href="#")
+				a.b-category-slider__next(href="#")
+
+		.b-category-slider__main
+			ul.b-category-slider__slider
+				each val in data.plates
+					li.b-category-slider__slide
+						+category-plate_data(val)

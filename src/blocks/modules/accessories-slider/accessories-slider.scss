@@ -1,0 +1,141 @@
+.b-accessories-slider {
+
+  .slick-list {
+    height: 100%;
+  }
+
+  .slick-track {
+    height: 100%;
+  }
+  &__slider {
+    @include clearfix;
+  }
+
+  &__slide {
+    @include box-sizing;
+    margin: 0;
+    padding: 5px;
+  }
+
+  &__item {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    height: 100%;
+    min-height: 130px;
+    background-color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+
+      .b-accessories-slider__content-holder {
+        color: #3e8bdc;
+      }
+    }
+  }
+
+  &__image-holder {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: middle;
+    width: 130px;
+    padding: 15px;
+  }
+
+  &__image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__content-holder {
+    @include box-sizing;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 15px;
+    padding-left: 0;
+    color: #262626;
+    font-size: 18/16*100%;
+    transition: .3s color;
+  }
+
+  &__wrap {
+    position: relative;
+    border: 3px dashed #ececec;
+    padding: 2px 7px;
+  }
+
+  &__prev {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: -3px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background-color: #ff7575;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+
+    &:before {
+      @include ft-icon($ft-arrow-left)
+        width: 1.1em;
+      font-size: 12px;
+      line-height: 30px;
+    }
+  }
+
+  &__next {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    right: -3px;
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    background-color: #ff7575;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+
+    &:before {
+      @include ft-icon($ft-arrow-right)
+        width: 1.1em;
+      font-size: 12px;
+      line-height: 30px;
+    }
+  }
+}
+
+.b-accessories-slider._no-js {
+  .b-accessories-slider {
+    &__slide {
+      float: left;
+      width: 1/4*100%;
+
+      &:nth-child(4n+1) {
+        clear: left;
+      }
+    }
+  }
+}
+
+@mixin mx950($mod: "") {
+  .b-accessories-slider#{$mod}, {
+    .b-accessories-slider {
+      &__content {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@include mx950("._mx950");
+
+
+.c-checkout__cart-accessories {
+  @media (max-width: 1030px) {
+    @include mx950;
+  }
+}

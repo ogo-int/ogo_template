@@ -1,0 +1,75 @@
+.b-town-delivery {
+  min-width: 230px;
+  background-color: #fff;
+  &__cols {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__icon-holder {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 30px;
+  }
+
+  &__content-holder {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 30px;
+  }
+
+  &__caption {
+    @include mbot(5/20);
+    color: #7c7c7c;
+    font-weight: 200;
+  }
+
+  &__content {
+    color: #bfbfbf;
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+}
+
+@mixin mx400($mod: "") {
+  .b-town-delivery#{$mod} {
+    .b-town-delivery {
+      &__icon-holder {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+}
+
+@mixin mx290($mod: "") {
+  .b-town-delivery#{$mod} {
+    .b-town-delivery {
+      &__icon-holder {
+        display: block;
+        padding: 15px 15px 0;
+        text-align: center;
+      }
+
+      &__content-holder {
+        display: block;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include mx400("._mx400");
+@include mx290("._mx290");
+
+.c-catalog__town-delivery {
+  @media (max-width: 420px) {
+    @include mx400();
+  }
+
+  @media (max-width: 330px) {
+    @include mx290();
+  }
+}

@@ -1,0 +1,31 @@
+extends ../layout/page-template
+
+block head
+  title Регистрация
+
+block scripts
+
+block breadcrumbs
+
+block stylesheets
+
+block caption
+
+block inner-content
+  section.c-register
+    .c-register__header
+      .h1.c-register__caption Регистрация
+
+    .content-center
+      .content-area
+        .c-register__cols
+          .c-register__main-col
+            +simple-form_registration()
+          .c-register__aside-col
+            .c-register__remark
+              +gray-remark({
+                caption: 'Обещаем, спама не&nbsp;будет!',
+                text: 'Мы&nbsp;рассылаем смс только о&nbsp;статусах заказов и&nbsp;изменениях бонусного счета. Мы&nbsp;не&nbsp;осуществляем рекламные <nobr>смс-рассылки</nobr> и&nbsp;не&nbsp;передаем телефоны наших клиентов третьим лицам.'
+              })
+            +socials-login()
+            a.c-register__login-button.button-gray.button(href="register.html") Регистрация

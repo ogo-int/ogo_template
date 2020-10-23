@@ -1,0 +1,203 @@
+extends ../layout/page-template
+
+block head
+	title Список новостей
+
+block breadcrumbs
+
+block head-scripts
+
+block caption
+
+block inner-content
+	section.c-news
+		.c-news__header
+			.h1.c-news__caption Новости
+
+		.c-news__news-list-holder
+			.c-news__list-cols
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/apple.png", alt="Лого" width=95 height=53)
+
+								.b-news-plate__caption Дарим подарки от&nbsp;Apple!
+								.b-news-plate__sub-caption При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+							.b-news-plate__body
+								.b-news-plate__arrows
+									a.b-news-plate__prev(href="#")
+									a.b-news-plate__next(href="#")
+								ul.b-news-plate__product-items
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+
+							.b-news-plate__footer
+								.b-news-plate__footer-left
+									.b-news-plate__dates 5.12.2015&nbsp;&mdash; 31.12.2015
+
+								.b-news-plate__footer-right
+									a.b-news-plate__details.button-gray(href="#") Подробнее
+
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/tree.png", alt="Лого" width=40 height=55)
+
+								.b-news-plate__caption Режим работы в праздничные дни
+
+							.b-news-plate__body
+								.b-news-plate__content.content-area
+									.h5 Режим работы онлайн-гипермаркетов ОГО!:
+									ul.nostyle
+										li 31 декабря до&nbsp;16:00,
+										li 1 января&nbsp;&mdash; выходной,
+										li с&nbsp;2 января в&nbsp;обычном режиме с&nbsp;10:00 до&nbsp;22:00
+
+									.h4 Режимы работы точек выдачи:
+									.b-news-plate__shops
+										select.select2
+											option Мытищи
+											option Москва
+											option Домодедово
+
+									ul.nostyle
+										li 31 декабря до&nbsp;18:00,
+										li 1 и&nbsp;7 января&nbsp;&mdash; выходной,
+										li 2 и&nbsp;8 января с&nbsp;13:00 до&nbsp;20:00,
+										li 3 и&nbsp;6 января до&nbsp;18:00,
+										li 4 и&nbsp;5 января до&nbsp;20:00
+
+				.c-news__wide-col
+					+promo-block4()
+
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/tree.png", alt="Лого" width=40 height=55)
+
+								.b-news-plate__caption Покупай смартфоны Samsung Galaxy&nbsp;S6 по&nbsp;лучшей цене!
+
+							.b-news-plate__body
+								.b-news-plate__content.content-area
+									p Вне зависимости от&nbsp;того, занимаетесь&nbsp;ли вы&nbsp;фотосъемкой для удовольствия или в&nbsp;коммерческих целях, цифровые зеркальные камеры Canon EOS и&nbsp;компактные камеры сделают этот процесс творческим.
+									p Новейшие функции, обеспечивают высокую производительность, на&nbsp;которую вы&nbsp;всегда можете рассчитывать.
+
+							.b-news-plate__footer
+								.b-news-plate__footer-left
+									.b-news-plate__dates 5.12.2015&nbsp;&mdash; 31.12.2015
+									.b-news-plate__expired Акция завершена
+
+								.b-news-plate__footer-right
+									a.b-news-plate__details.button-gray(href="#") Подробнее
+
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/apple.png", alt="Лого" width=95 height=53)
+
+								.b-news-plate__caption Дарим подарки от&nbsp;Apple!
+								.b-news-plate__sub-caption При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+							.b-news-plate__body
+								.b-news-plate__arrows
+									a.b-news-plate__prev(href="#")
+									a.b-news-plate__next(href="#")
+								ul.b-news-plate__product-items
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+
+							.b-news-plate__footer
+								.b-news-plate__footer-left
+									.b-news-plate__dates 5.12.2015&nbsp;&mdash; 31.12.2015
+
+								.b-news-plate__footer-right
+									a.b-news-plate__details.button-gray(href="#") Подробнее
+
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/apple.png", alt="Лого" width=95 height=53)
+
+								.b-news-plate__caption Дарим подарки от&nbsp;Apple!
+								.b-news-plate__sub-caption При покупке iPhone до&nbsp;2000&nbsp;рублей в&nbsp;подарок
+
+							.b-news-plate__body
+								.b-news-plate__arrows
+									a.b-news-plate__prev(href="#")
+									a.b-news-plate__next(href="#")
+								ul.b-news-plate__product-items
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+									li.b-news-plate__product-item
+										+product-small_news()
+
+							.b-news-plate__footer
+								.b-news-plate__footer-left
+									.b-news-plate__dates 5.12.2015&nbsp;&mdash; 31.12.2015
+
+								.b-news-plate__footer-right
+									a.b-news-plate__details.button-gray(href="#") Подробнее
+
+				.c-news__list-col
+					.c-news__list-col-item
+						.b-news-plate
+							.b-news-plate__header
+								.b-news-plate__header-logo-holder
+									img.b-news-plate__header-logo(src="assets/img/content/tree.png", alt="Лого" width=40 height=55)
+
+								.b-news-plate__caption Выгодное предложение от&nbsp;Samsung!
+
+							.b-news-plate__body
+								.b-news-plate__content.content-area
+									.h5 Режим работы онлайн-гипермаркетов ОГО!:
+									ul.nostyle
+										li 31 декабря до&nbsp;16:00,
+										li 1 января&nbsp;&mdash; выходной,
+										li с&nbsp;2 января в&nbsp;обычном режиме с&nbsp;10:00 до&nbsp;22:00
+
+									.h4 Режимы работы точек выдачи:
+									.b-news-plate__shops
+										select.select2
+											option Мытищи
+											option Москва
+											option Домодедово
+
+									ul.nostyle
+										li 31 декабря до&nbsp;18:00,
+										li 1 и&nbsp;7 января&nbsp;&mdash; выходной,
+										li 2 и&nbsp;8 января с&nbsp;13:00 до&nbsp;20:00,
+										li 3 и&nbsp;6 января до&nbsp;18:00,
+										li 4 и&nbsp;5 января до&nbsp;20:00
+
+			.c-news__paginator
+				+paginator()
+
+			.c-news__more-holder
+				a.c-news__more.button-more(href="#") Показать еще

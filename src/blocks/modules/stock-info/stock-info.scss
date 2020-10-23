@@ -1,0 +1,155 @@
+.b-stock-info {
+  min-width: 250px;
+
+  &__title {
+    position: relative;
+    padding-top: 15px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+    cursor: pointer;
+
+    &:after {
+      @include ft-icon($ft-arrow-down);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 17px;
+      transition: .4s transform;
+      font-size: 7px;
+      margin-right: 10px;
+      margin-top: -2px;
+      color: #dc3e48;
+    }
+
+    &_car {
+      padding-left: 40px;
+      &:before {
+        @include ft-icon($ft-small-truck);
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        vertical-align: middle;
+        font-size: 26px;
+        margin-right: 10px;
+        margin-top: -2px;
+        color: #dc3e48;
+      }
+    }
+
+    &_place {
+      padding-left: 40px;
+      &:before {
+        @include ft-icon($ft-placemark);
+        content: "";
+        position: absolute;
+        top: 16px;
+        left: 0;
+        vertical-align: middle;
+        font-size: 26px;
+        margin-right: 10px;
+        margin-top: -4px;
+        color: #dc3e48;
+        margin-right: 10px;
+      }
+    }
+
+    &._open {
+      &:after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__title-text {
+    font-size: 18/16*100%;
+    font-weight: 400;
+    line-height: 1.22;
+    color: #dc3e48;
+  }
+
+  &__container {
+    // display: none;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f1;
+
+    &._open {
+      // display: block;
+    }
+  }
+
+  &__cols {
+    @include clearfix;
+    font-size: 14/16*100%;
+  }
+
+  &__left-col {
+    @include box-sizing;
+    float: left;
+    width: 45%;
+    padding-right: 5px;
+  }
+
+  &__right-col {
+    @include box-sizing;
+    float: right;
+    width: 55%;
+    padding-left: 5px;
+  }
+
+  &__sub-caption {
+    @include mbot(10/20);
+    font-weight: 600;
+  }
+
+  &__list {
+    @include mbot(10/20);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__list-item {
+    @include margin(5/20);
+    line-height: 1;
+  }
+
+  &__more-link {
+    text-decoration: none;
+    color: #bfbfbf;
+    transition: .2s color;
+
+    &:hover {
+      color: #dc3e48;
+    }
+  }
+}
+
+@mixin mx470($mod: "") {
+  .b-stock-info#{$mod} {
+    .b-stock-info {
+      &__left-col {
+        @include margin(15/20);
+        float: none;
+        width: auto;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include margin(15/20);
+        float: none;
+        width: auto;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@include mx470("._mx470");
+
+@media (max-width: 1023px) {
+  .c-catalog__product-avail {
+    @include mx470();
+  }
+}

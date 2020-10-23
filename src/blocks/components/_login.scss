@@ -1,0 +1,35 @@
+.c-login {
+  padding-bottom: 50px;
+
+  .b-simple-form {
+    .b-simple-form__field-inputs {
+      height: 50px;
+      font-size: 16px;
+    }
+  }
+
+  .b-simple-form, .b-socials-login, &__header, &__register-button {
+    box-sizing: border-box;
+    max-width: 415px;
+    margin: auto;
+
+    @media (max-width: 480px) {
+      max-width: 100%;
+    }
+  }
+
+  .b-simple-form {
+    margin-bottom: 40px;
+  }
+
+  &__header {
+    margin-bottom: 30px;
+    padding: 0 20px;
+  }
+
+  &__register-button {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+  }
+}

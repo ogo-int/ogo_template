@@ -1,0 +1,76 @@
+.b-product-review {
+  &__right-image {
+    max-width: 100%;
+    height: auto;
+  }
+  &__right-holder {
+    float: right;
+    margin-left: 2.5%;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    word-wrap: break-word;
+    float: left;
+    max-width: 552px;
+    margin-bottom: 20px;
+    li:last-child {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__more-holder {
+    @include margin(50/20);
+    clear: both;
+
+    &._more-open {
+      display: none;
+    }
+  }
+
+  &__more {
+    display: block;
+    text-align: center;
+    font-size: 14/16*100%;
+  }
+
+  &__full-text {
+    @include margin(0/20);
+    clear: both;
+    display: none;
+
+    h3, .h3 {
+      &:first-child {
+        padding-top: 20px;
+      }
+    }
+  }
+}
+
+@mixin mx930($mod: "") {
+  .b-product-review#{$mod} {
+    .b-product-review {
+      &__text {
+        float: none;
+      }
+
+      &__right-holder {
+        @include margin(20/20);
+        float: none;
+        margin-left: 0;
+      }
+
+      &__more-holder {
+        @include margin(20/20);
+      }
+    }
+  }
+}
+
+@include mx930("._mx930");
+
+@media (max-width: 1023px) {
+  .c-catalog__product-review {
+    @include mx930();
+  }
+}

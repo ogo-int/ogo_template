@@ -21,14 +21,17 @@ gulp.task("styles", () => {
     return gulp.src(paths.styles.src)
         .pipe(gulpif(!production, sourcemaps.init()))
         .pipe(plumber())
-        .pipe(sass())
-        .pipe(groupmedia())
+        .pipe(sass({
+            outputStyle: "expanded"
+        }))
+    //.pipe(groupmedia())
         .pipe(gulpif(production, autoprefixer({
             cascade: false,
             grid: true
         })))
         .pipe(gulpif(production, mincss({
-            compatibility: "ie8", level: {
+            compatibility: "ie10",
+            level: {
                 1: {
                     specialComments: 0,
                     removeEmpty: true,

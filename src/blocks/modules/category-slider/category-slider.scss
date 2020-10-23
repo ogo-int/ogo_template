@@ -1,0 +1,162 @@
+.b-category-slider {
+
+  .slick-slide img {
+    display: inline-block;
+  }
+  &__header {
+    @include clearfix;
+    padding-bottom: 15px;
+  }
+
+  &__arrows {
+    float: right;
+  }
+
+  &__prev {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin-right: .5em;
+    text-decoration: none;
+    text-align: center;
+    color: #969696;
+    background-color: #fff;
+
+    &:before {
+      @include ft-icon($ft-arrow-left);
+      font-size: 12px;
+      line-height: 40px;
+    }
+
+    &:hover {
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__next {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+    color: #969696;
+    background-color: #fff;
+
+    &:before {
+      @include ft-icon($ft-arrow-right);
+      font-size: 12px;
+      line-height: 40px;
+    }
+
+    &:hover {
+      color: #333;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &__slider {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-left: -3px;
+    margin-right: -3px;
+  }
+
+  &__slide {
+    @include box-sizing;
+    margin: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  &__more-link {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    margin-right: .5em;
+    font-size: 14/16*100%;
+    text-decoration: none;
+    color: #969696;
+    background-color: #fff;
+  }
+
+  &__title {
+    float: left;
+    font-size: 32/16*100%;
+    line-height: 1;
+    font-weight: 200;
+
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &__icon {
+    margin-right: .5em;
+    vertical-align: middle;
+  }
+}
+
+html.no-js .b-category-slider {
+  &__slider {
+    @include clearfix;
+  }
+
+  &__slide {
+    float: left;
+    width: 1/4*100%;
+    margin-top: 6px;
+
+    &:first-child {
+      margin-top: 6px;
+    }
+  }
+}
+
+@mixin mx720($mod: "") {
+  .b-category-slider#{$mod} {
+    .b-category-slider {
+      &__title {
+        float: none;
+      }
+
+      &__arrows {
+        @include margin(20/20);
+        @include clearfix;
+        float: none;
+        text-align: right;
+      }
+
+      &__more-link {
+        float: left;
+      }
+    }
+  }
+}
+
+@mixin mx400($mod: "") {
+  .b-category-slider#{$mod} {
+    .b-category-slider {
+      &__title {
+        font-size: 24px;
+      }
+    }
+
+    .b-category-plate__title {
+      font-size: 16/16*100%;
+    }
+
+    .b-category-plate__image-holder {
+      height: 75%;
+      padding-top: 0;
+    }
+  }
+}
+
+
+@include mx720("._mx720");
+@include mx400("._mx400");

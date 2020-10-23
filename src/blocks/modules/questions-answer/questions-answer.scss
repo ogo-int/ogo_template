@@ -1,0 +1,73 @@
+.questions-answer {
+  padding-top: 20px;
+  margin-top: 60px;
+
+  @media(max-width: 480px) {
+
+    .b-faq-block__main {
+      padding: 0;
+    }
+
+    .b-faq-block__comment:nth-child(odd) {
+      margin-right: 60px;
+    }
+
+    .b-faq-block__comment:nth-child(even) {
+      margin-left: 60px;
+    }
+  }
+
+  .b-feedback-product__main {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    text-align: left;
+
+    @media(max-width: 480px) {
+      width: auto;
+      padding-right: 20px;
+      padding-left: 20px;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    float: left;
+    font-size: 200%;
+    font-weight: 200;
+    line-height: 1.22;
+    color: #333;
+    margin-top: -20px;
+
+    @media(max-width: 1023px) {
+      font-size: 137.5%;
+    }
+
+    @media(max-width: 480px) {
+      width: 100%;
+      float: none;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__button {
+    float: right;
+    //margin-bottom: 40px;
+    margin-top: -30px;
+
+    @media(max-width: 1023px) {
+      float: right;
+      padding: 0.4rem 1rem;
+      margin-left: 15px;
+    }
+
+    @media(max-width: 480px) {
+      display: block;
+      width: 120px;
+      margin: 0 auto;
+      text-align: center;
+      float: none;
+    }
+  }
+}

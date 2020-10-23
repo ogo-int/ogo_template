@@ -1,0 +1,206 @@
+.b-main-consult {
+
+  .jspVerticalBar {
+    width: 6px;
+
+    .jspTrack {
+      background-color: #f8f8f8;
+    }
+
+    .jspDrag {
+      background-color: #dbdbdb;
+    }
+  }
+  &__caption {
+    @include box-sizing;
+    padding: 20px;
+    font-size: 32/16*100%;
+    font-weight: 200;
+  }
+  &__header {
+    @include box-sizing;
+    display: table;
+    width: 100%;
+    background-color: #3e8bdc;
+  }
+
+  &__photo-holder {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
+  }
+
+  &__callback-holder {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+    padding: 20px;
+  }
+
+  &__callback {
+    font-size: 14/16*100%;
+    background-color: #fff;
+  }
+
+  &__photo {
+    vertical-align: middle;
+    margin-right: .5em;
+    border-radius: 50%;
+  }
+
+  &__photo-title {
+    display: inline-block;
+    padding-top: 10px;
+    vertical-align: middle;
+    color: #fff;
+  }
+
+  &__name {
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__job {
+    font-size: 12/16*100%;
+    font-weight: 200;
+    line-height: 1.17;
+  }
+
+  &__main {
+    overflow: hidden;
+    padding: 8px 10px 8px 20px;
+    background-color: #fff;
+  }
+
+  &__messages-holder {
+    position: relative;
+    height: 230px;
+  }
+
+  &__message {
+    @include box-sizing;
+    display: inline-block;
+    max-width: 80%;
+    padding: 10px 15px;
+    font-size: 14/16*100%;
+    text-align: left;
+    background-color: #ffe2ba;
+
+    &._consult {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &__message-holder {
+    @include margin(10/20);
+    text-align: right;
+
+    &._consult {
+      text-align: left;
+    }
+  }
+
+  &__message-remark {
+    @include margin(5/20);
+    font-size: 12/16*100%;
+    font-weight: 200;
+    letter-spacing: 0.2px;
+    color: #969696;
+  }
+
+  &__footer {
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  &__ui-header {
+    @include margin(10/20);
+    @include box-sizing;
+    display: table;
+    width: 100%;
+  }
+
+  &__ui-label {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__ui-send {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    text-align: right;
+  }
+
+  &__textarea {
+    @include box-sizing;
+    width: 100%;
+    height: 60px;
+    resize: none;
+  }
+
+  &._modal {
+    width: 624px;
+    max-width: 100%;
+  }
+}
+
+@mixin mx420($mod: "") {
+  .b-main-consult#{$mod} {
+    .b-main-consult {
+      &__caption {
+        padding: 20px 10px;
+        font-size: 24/16*100%;
+      }
+      &__main {
+        padding-left: 15px;
+        padding-right: 5px;
+      }
+
+      &__footer {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      &__photo-holder {
+        display: block;
+      }
+
+      &__callback-holder {
+        display: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+@include mx420("._mx420");
+
+.c-main-page__consult, .b-bottom-menu__consult-holder {
+  @media (max-width: 460px) {
+    @include mx420();
+  }
+}
+
+.fancybox-inner {
+
+  @media (max-width: 480px) {
+    .b-main-consult__caption {
+      font-size: 28px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    @include mx420();
+
+    .b-main-consult {
+      padding-top: 15px;
+    }
+  }
+  .b-main-consult {
+    padding-top: 6px;
+  }
+}

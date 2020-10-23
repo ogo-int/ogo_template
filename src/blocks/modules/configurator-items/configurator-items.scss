@@ -1,0 +1,216 @@
+.b-configurator-items {
+  min-width: 300px;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    background-color: #fff;
+  }
+
+  &__hat {
+    @include clearfix;
+    @include box-sizing;
+    min-height: 56px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &__name {
+    display: block;
+    float: left;
+    max-width: 50%;
+    margin-top: 6px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 21px;
+      height: 21px;
+      vertical-align: middle;
+      background-color: #f7f7f7;
+    }
+
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    &._checked {
+      &:before {
+        @include ft-icon($ft-conf-check);
+        position: relative;
+        font-size: 24px;
+        top: -3px;
+        color: #3e8bdc;
+        background: none;
+      }
+
+      .b-configurator-items__name-text {
+        color: #3e8bdc;
+      }
+    }
+  }
+
+  &__name-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 1.7em;
+    color: #333;
+    font-size: 18/16*100%;
+
+    @media(max-width: 480px) {
+      width: 75%;
+      text-align: right;
+    }
+  }
+
+  &__require {
+    width: 66%;
+    max-width: 345px;
+    float: right;
+    margin-top: 9px;
+    color: #81c03d;
+    font-size: 14/16*100%;
+    font-weight: 200;
+    text-align: right;
+
+    @media(max-width: 768px) {
+      width: 60%;
+      padding-left: 0;
+    }
+  }
+
+  &__contain {
+    @include clearfix;
+    padding: 20px;
+  }
+
+  &__choose {
+    float: right;
+    margin-left: 20px;
+    font-size: 14/16*100%;
+
+    @media(max-width: 425px) {
+      margin-top: 0;
+    }
+  }
+
+  &__select-holder {
+    @include box-sizing;
+    float: left;
+    width: 50%;
+    min-width: 260px;
+    padding-right: 20px;
+
+    .select2 {
+      max-width: 100%;
+    }
+  }
+
+  &__contain-price {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    color: #35322f;
+    font-size: 18/16*100%;
+  }
+
+  &__name-price {
+    float: left;
+    margin-top: 6px;
+    color: #35322f;
+    font-size: 18/16*100%;
+
+    @media(max-width: 425px) {
+      margin-top: 0;
+    }
+  }
+
+  &__name-right {
+    @include clearfix;
+    float: right;
+    width: 50%;
+  }
+}
+
+@mixin mx600($mod: "") {
+  .b-configurator-items#{$mod} {
+    .b-configurator-items {
+      &__name {
+        float: none;
+        width: auto;
+        max-width: none;
+      }
+
+      &__name-right {
+        float: none;
+        width: auto;
+        text-align: left;
+        margin-top: 10px;
+        //white-space: nowrap;
+      }
+
+      &__choose {
+        float: none;
+        margin-left: 0;
+      }
+
+      &__require {
+        display: inline-block;
+        //margin-left: 25px;
+        float: right;
+        width: 70%;
+        text-align: right;
+        white-space: normal;
+        margin-top: 0;
+
+        @media(max-width: 480px) {
+          margin-top: 20px;
+        }
+      }
+
+      &__name-price {
+        margin-right: 25px;
+      }
+      &__name-text {
+        width: 80%;
+        float: right;
+        text-align: right;
+
+        @media(max-width: 320px) {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+@mixin mx350($mod: "") {
+  .b-configurator-items#{$mod} {
+    .b-configurator-items {
+      &__require {
+        margin-left: 5px;
+        width: 67%;
+      }
+    }
+  }
+}
+
+@include mx600("._mx600");
+@include mx350("._mx350");
+
+.c-configurator__items {
+  @media (max-width: 640px) {
+    @include mx600();
+  }
+
+  @media (max-width: 390px) {
+    @include mx350();
+  }
+}

@@ -1,0 +1,138 @@
+.b-promo-block6 {
+  @include box-sizing;
+  position: relative;
+  height: 400px;
+
+  &__bg-holder {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: right;
+    background-image: linear-gradient(145deg, #fff 0%, #fdeae1 100%);
+  }
+
+  &__bg {
+    vertical-align: top;
+    margin-right: 40px;
+  }
+
+  &__content-holder {
+    @include box-sizing;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    max-width: 600px;
+    padding: 60px 40px 20px;
+    text-align: left;
+  }
+
+  &__title {
+    @include margin(20/20);
+    font-size: 44/16*100%;
+    font-weight: 200;
+    color: #000;
+    & a {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+
+  &__text {
+    @include margin(20/20);
+    max-height: 85px;
+    overflow: hidden;
+    font-size: 24/16*100%;
+    line-height: 1.21;
+    font-weight: 200;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    color: #969696;
+  }
+
+  &__price {
+    @include margin(20/20);
+    font-size: 32/16*100%;
+    line-height: 1.2;
+    color: #35322f;
+  }
+}
+
+// Адаптация
+@mixin mx1020 ($mod: "") {
+  .b-promo-block6#{$mod} {
+    height: 350px;
+    .b-promo-block6 {
+      &__bg {
+        width: 400px;
+        height: auto;
+      }
+    }
+  }
+}
+
+@mixin mx950 ($mod: "") {
+  .b-promo-block6#{$mod} {
+    height: 300px;
+    .b-promo-block6 {
+      &__title {
+        font-size: 24/16*100%;
+      }
+
+      &__price {
+        font-size: 25/16*100%;
+      }
+      &__bg {
+        margin-right: -40px;
+      }
+
+      &__content-holder {
+        max-width: 350px;
+      }
+    }
+  }
+}
+
+@mixin mx630 ($mod: "") {
+  .b-promo-block6#{$mod} {
+    .b-promo-block6 {
+      &__bg-holder {
+        padding-left: 310px;
+      }
+    }
+  }
+}
+
+// Применение адаптации
+@include mx1020("._mx1020");
+@include mx950("._mx950");
+@include mx630("._mx630");
+
+.c-main-page__categories {
+  @media (min-width: 1011px) {
+    @include mx1020();
+  }
+
+  @media (max-width: 1010px) {
+    @include mx950();
+  }
+
+  @media (max-width: 1010px) and (min-width: 881px) {
+    @include mx630();
+  }
+
+  @media (max-width: 630px) {
+    @include mx630();
+  }
+}
+
+.c-catalog__category-plates {
+  @include mx950();
+  @include mx630();
+}

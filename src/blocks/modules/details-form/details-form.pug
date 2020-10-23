@@ -1,0 +1,151 @@
+mixin details-form()
+	.b-details-form.iblock&attributes(attributes)
+		form(action="/" data-validate='Y')
+			.b-details-form__common-section
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Название организации
+							.b-details-form__input
+								input(type="text" name="company-name" required value="ООО «Минус вектор»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label Юридический адрес
+							.b-details-form__input
+								input(type="text" name="company-legal-address" value="Москва, улица Нижняя Масловка, дом 23, квартира 47")
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Фактический адрес
+							.b-details-form__input
+								input(type="text" name="company-real-address" value="Москва, улица Нижняя Масловка, дом 23, квартира 47")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label Телефон
+							.b-details-form__input
+								input.phone(type="tel" name="company-phone" data-mask="phone" placeholder="+7 (___) ___ __ __" value="+7 (495) 145 21 01" required)
+
+			.b-details-form__manual-section._active
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label ИНН
+							.b-details-form__input
+								input.inn(type="inn" name="inn" required)
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label КПП
+							.b-details-form__input
+								input.kpp(type="tel" name="kpp" required)
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Наименование банка
+							.b-details-form__input
+								input(type="text" name="bank" value="ОАО «Сбербанк России»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label Р/С
+							.b-details-form__input
+								input.rs(type="tel" name="rs")
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label К/С
+							.b-details-form__input
+								input(type="text" name="ks" value="ОАО «Сбербанк России»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label БИК
+							.b-details-form__input
+								input.bic(type="tel" name="bic" required)
+
+			.b-details-form__recognizer-section
+				label
+						.b-details-form__label Реквизиты
+						.b-details-form__input
+							.b-details-form__textarea
+								textarea ИНН: 08980707096900600; КПП: 5555757975111122; Наименование банка: ОАО «Сбербанк России»; Р/С: 00006764; К/С: ОАО «Сбербанк России»; БИК: 00006764
+
+								a.b-details-form__recognize.button(href="#") Распознать данные
+
+mixin details-form_checkout()
+	.b-details-form.iblock&attributes(attributes)
+		form(action="/" data-validate='Y')
+			.b-details-form__common-section
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Название организации
+							.b-details-form__input
+								input(type="text" name="company-name" required value="ООО «Минус вектор»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label Юридический адрес
+							.b-details-form__input
+								input(type="text" name="company-legal-address" value="Москва, улица Нижняя Масловка, дом 23, квартира 47")
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Фактический адрес
+							.b-details-form__input
+								input(type="text" name="company-real-address" value="Москва, улица Нижняя Масловка, дом 23, квартира 47")
+
+			.b-details-form__manual-section._active
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label ИНН
+							.b-details-form__input
+								input.inn(type="tel" name="inn" required)
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label КПП
+							.b-details-form__input
+								input.kpp(type="tel" name="kpp" required )
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label Наименование банка
+							.b-details-form__input
+								input(type="text" name="bank" value="ОАО «Сбербанк России»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label Р/С
+							.b-details-form__input
+								input.rs(type="tel" name="rs")
+
+				.b-details-form__cols
+					.b-details-form__left-col
+						label
+							.b-details-form__label К/С
+							.b-details-form__input
+								input.b-order-recipient__text-input(type="text" name="ks" value="ОАО «Сбербанк России»")
+
+					.b-details-form__right-col
+						label
+							.b-details-form__label БИК
+							.b-details-form__input
+								input.bic(type="tel" name="bic" required)
+
+			.b-details-form__checkout-textarea
+				label
+					.b-details-form__label Вставить данные сплошным текстом
+					.b-details-form__input
+						.b-details-form__textarea.b-details-form__textarea_checkout
+							textarea ИНН: 08980707096900600; КПП: 5555757975111122; Наименование банка: ОАО «Сбербанк России»; Р/С: 00006764; К/С: ОАО «Сбербанк России»; БИК: 00006764
+
+						a.b-details-form__checkout-recognize.button-gray(href="#") Распознать данные

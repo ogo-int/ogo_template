@@ -1,0 +1,65 @@
+.b-form-success-modal {
+  padding: 30px 40px 40px;
+
+  &__header {
+    @include mbot(30/20);
+    @include clearfix;
+    padding-right: 80px;
+  }
+
+  &__title {
+    padding-top: 5px;
+    float: left;
+    font-size: 32/16*100%;
+    font-weight: 200;
+    color: #333;
+    line-height: 1;
+  }
+}
+
+@mixin mx610($mod: "") {
+  .b-form-success-modal-modal#{$mod} {
+    .b-form-success-modal-modal {
+      &__left-col {
+        width: 100%;
+        padding-right: 0;
+      }
+
+      &__right-col {
+        @include margin(20/20);
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+@mixin mx450($mod: "") {
+  .b-form-success-modal-modal#{$mod} {
+    .b-form-success-modal-modal {
+      &__register-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mx610("._mx610");
+@include mx450("._mx450");
+
+.fancybox-inner {
+  @media (max-width: 650px) {
+    @include mx610;
+  }
+
+  @media (max-width: 480px) {
+    .b-form-success-modal-modal {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    @include mx450;
+  }
+}

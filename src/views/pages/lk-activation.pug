@@ -1,0 +1,43 @@
+extends ../layout/page-template
+
+block head
+	title Личный кабинет
+
+block head-scripts
+
+block breadcrumbs
+
+block caption
+	h1.full-width.c-lk__caption Личный кабинет
+
+block inner-content
+	section.c-lk
+		.c-lk__header
+			.c-lk__balance
+				.c-lk__balance-value Вы&nbsp;можете потратить: 416 бонусов
+				a.c-lk__balance-link(href="#") Как тратить?
+
+			.c-lk__scale
+				+bonus-scale()
+
+		.c-lk__main
+			.c-lk__cols
+				.c-lk__aside-left
+					.c-lk__mobile-caption Мои адреса
+
+					.c-lk__menu
+						+inner-menu()
+
+					.c-lk__faq
+						+faq-list()
+
+					.c-lk__consult
+						+online-consult()
+
+				.c-lk__main-col
+					.c-lk__main-wrap
+						.c-lk__card-activation
+							+bonus-card()
+
+						.c-lk__bonus-instruction
+							+bonus-instruction()
