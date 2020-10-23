@@ -6,19 +6,19 @@
 * используются препроцессоры [Pug](https://pugjs.org/) и [SCSS](https://sass-lang.com/)
 * используется транспайлер [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * используется [Webpack](https://webpack.js.org/) для сборки JavaScript-модулей
-* используется CSS-сетка [smart-grid](https://github.com/dmitry-lavrik/smart-grid) на основе Bootstrap для быстрой адаптивной вёрстки
 * используется жёсткий кодгайд
+<!--
 * используется проверка кода на ошибки перед коммитом
+-->
 
 ## :hammer_and_wrench: Установка
-* установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
-* скачайте сборку в консоли с помощью [Git](https://git-scm.com/downloads): ```git clone https://github.com/andreyalexeich/gulp-pug-starter.git```
-* установите ```gulp``` глобально: ```yarn global add gulp-cli```
-* установите ```bem-tools-core``` глобально: ```yarn global add bem-tools-core```
-* перейдите в скачанную папку со сборкой: ```cd gulp-pug-starter```
-* скачайте необходимые зависимости: ```yarn```
-* чтобы начать работу, введите команду: ```yarn run dev``` (режим разработки)
-* чтобы собрать проект, введите команду ```yarn run build``` (режим сборки)
+* Установите [NodeJS](https://nodejs.org/en/) (если требуется) и [Yarn](https://yarnpkg.com/en/docs/install)
+* Установите ```gulp``` глобально: ```yarn global add gulp-cli```
+* Установите ```bem-tools-core``` глобально: ```yarn global add bem-tools-core```
+* Перейдите в скачанную папку со сборкой: ```cd ogo_template```
+* Установите необходимые зависимости: ```yarn```
+* Чтобы начать работу, введите команду: ```yarn run dev``` (режим разработки)
+* Чтобы собрать проект, введите команду ```yarn run build``` (режим сборки)
 
 Если вы всё сделали правильно, у вас должен открыться браузер с локальным сервером.
 Режим сборки предполагает оптимизацию проекта: сжатие изображений, минифицирование CSS и JS-файлов для загрузки на сервер.
@@ -71,22 +71,20 @@ gulp-pug-starter
 * Папка ```gulp-tasks``` - папка с Gulp-тасками
 
 ## :keyboard: Команды
-* ```yarn run lint:styles``` - проверить SCSS-файлы. Для VSCode необходимо установить [плагин](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint). Для WebStorm
-или PHPStorm необходимо включить Stylelint в ```Languages & Frameworks - Style Sheets - Stylelint``` (ошибки будут исправлены автоматически при сохранении файла)
-* ```yarn run lint:styles --fix``` - исправить ошибки в SCSS-файлах
-* ```yarn run lint:scripts``` - проверить JS-файлы
-* ```yarn run lint:scripts --fix``` - исправить ошибки в JS-файлах
 * ```yarn run dev``` - запуск сервера для разработки проекта
 * ```yarn run build``` - собрать проект с оптимизацией без запуска сервера
 * ```yarn run build:views``` - скомпилировать Pug-файлы
 * ```yarn run build:styles``` - скомпилировать SCSS-файлы
 * ```yarn run build:scripts``` - собрать JS-файлы
 * ```yarn run build:images``` - собрать изображения
-* ```yarn run build:webp``` - сконвертировать изображения в формат ```.webp```
 * ```yarn run build:sprites```- собрать спрайты
 * ```yarn run build:fonts``` - собрать шрифты
 * ```yarn run build:favicons``` - собрать фавиконки
 * ```yarn run build:gzip``` - собрать конфигурацию Apache
+* ```yarn run lint:styles``` - проверить SCSS-файлы.
+* ```yarn run lint:styles --fix``` - исправить ошибки в SCSS-файлах
+* ```yarn run lint:scripts``` - проверить JS-файлы
+* ```yarn run lint:scripts --fix``` - исправить ошибки в JS-файлах
 * ```yarn run bem-m``` - добавить БЭМ-блок
 * ```yarn run bem-c``` - добавить компонент
 
@@ -113,28 +111,43 @@ blocks
 * ```yarn run bem-с my-component``` - для создания компонента в ```src/blocks/components``` (для компонентов), где ```my-component``` - имя компонента
 
 ### Компоненты
-* компоненты (например, иконки, кнопки) оформляются в Pug с помощью примесей
-* каждый компонент имеет свою папку внутри ```src/blocks/components```
-* папка одного компонента содержит в себе один Pug-файл, один SCSS-файл и один JS-файл (если у компонента используется скрипт)
-    * Pug-файл компонента импортируется в файл главной страницы ```src/views/index.pug``` (или в необходимый файл страницы, откуда будет вызываться компонент)
-    * SCSS-файл компонента импортируется в файл ```src/blocks/components/_components.scss```
-    * JS-файл компонента импортируется в файл ```src/js/import/components.js```
+* компоненты используют только SCSS-файлы
+    <!--
+    * Pug-файлы склeиваются в ```src/views/helpers/vendor-js.pug```
+    -->
+    * SCSS-файлы склeиваются в ```src/styles/components/_components.scss``` и при сборке импортиуются в ```src/styles/components.scss```
+    <!--
+    * JS-файлы импортируются в ```src/js/components.js```
+    -->
 
 ### Страницы проекта
 * страницы проекта находятся в папке ```src/views/pages```
-    * каждая страница (в том числе главная) наследует шаблон ```src/views/layouts/default.pug```
+    * каждая страница (в том числе главная) наследует шаблон ```src/views/layout/default.pug```
     * главная страница: ```src/views/index.pug```
-
-### Шрифты
-* шрифты находятся в папке ```src/fonts```
-    * используйте [форматы](https://caniuse.com/#search=woff) ```.woff``` и ```.woff2```
-    * шрифты подключаются в файл ```src/styles/base/_fonts.scss```
-    * сконвертировать локальные шрифты можно с помощью [данного сервиса](https://onlinefontconverter.com/)
 
 ### Изображения
 * изображения находятся в папке ```src/img```
-    * изображение для генерации фавиконок должно находиться в папке ```src/img/favicon``` и иметь размер не менее ```1024px x 1024px```
-    * изображения автоматически конвертируются в формат ```.webp```. Подробная информация по использованию [тут](https://vk.com/@vk_it-webp).
+    * при сборке в продакшн изображения сжимаются и оптимизируются и это занимает много времени (700 файлов на i3 2120 за 14 минут )
+
+### Скрипты
+* Точки входа указываются в файле ```webpack.config.js``` в разделе ```entry:```
+    * эти файлы будут сжаты вебпаком и скопированы в папку ```/dist/js```
+    * скрипты библиотек из ```/src/js/vendor``` будут просто скопированы в ```dist/js/vendor```
+
+### Шрифты
+* шрифты находятся в папке ```src/fonts```
+    <!--
+    * используйте [форматы](https://caniuse.com/#search=woff) ```.woff``` и ```.woff2```
+    -->
+    * шрифты вручную подключаются в файл ```src/styles/base/_fonts.scss```
+    * сконвертировать локальные шрифты можно с помощью [данного сервиса](https://onlinefontconverter.com/)
+    * при
+
+### Сторонние библиотеки
+* все сторонние библиотеки устанавливаются в папку ```js/vendor```
+    * для каждой библиотеки своя папка
+    * файлы ```.pug``` из каждой папки библиотек склеиваются в /styles/helpers/vendor-js.pug и импортируются в ```/src/views/layout/default.pug, где далее пути вставляются в свой массив, определяющий их место на странице
+    * JS-файлы, изображения и стили копируются в ```dist/js/vendor/*```
 <!---
 ### Сторонние библиотеки
 * все сторонние библиотеки устанавливаются в папку ```node_modules```

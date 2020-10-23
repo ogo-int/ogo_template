@@ -15,7 +15,6 @@
     "build:styles": "gulp styles --production",
     "build:scripts": "gulp scripts --production",
     "build:images": "gulp images --production",
-    "build:webp": "gulp webp --production",
     "build:sprites": "gulp sprites --production",
     "build:fonts": "gulp fonts --production",
     "build:favicons": "gulp favicons --production",
@@ -56,7 +55,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-watch": "^5.0.0",
-    "gulp-webp": "^4.0.1",
     "imagemin-giflossy": "^5.1.10",
     "imagemin-jpeg-recompress": "~7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
@@ -73,11 +71,6 @@
     "yargs": "~15.4.1"
   },
   "dependencies": {},
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "!(_*).scss": [
       "stylelint --fix --color --config ./.stylelintrc"
