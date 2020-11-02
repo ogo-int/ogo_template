@@ -86,29 +86,29 @@ $(function () {
 
     function buildPlacemark (params) {
       var icon =
-					"<div class=\"b-ymap__placemark"+ params.mod +"\">" +
-						"<div class=\"b-ymap__placemark-round\"></div>" +
-						"<div class=\"b-ymap__placemark-text\">" +
-							params.iconContent +
-						"</div>" +
-					"</div>";
+          "<div class=\"b-ymap__placemark"+ params.mod +"\">" +
+            "<div class=\"b-ymap__placemark-round\"></div>" +
+            "<div class=\"b-ymap__placemark-text\">" +
+              params.iconContent +
+            "</div>" +
+          "</div>";
 
       var balloon =
-					"<div class=\"b-ymap__balloon-outer"+ params.mod +"\">" +
-						"<div class=\"b-ymap__balloon-outer-holder\">" +
-							"<div class=\"b-ymap__balloon-inner"+ params.mod +"\">" +
-								"<div class=\"b-ymap__balloon-header\">" +
-									"<div class=\"b-ymap__balloon__close\"></div>" +
-									"<div class=\"b-ymap__balloon-address\">" + params.address + "</div>" +
-								"</div>" +
-								"<div class=\"b-ymap__balloon-content\">" +
-									"<div class=\"b-ymap__balloon-phone\">" + params.phone + "</div>" +
-									"<div class=\"b-ymap__balloon-hours\">" + params.hours + "</div>" +
-									"<a href=" + params.link + " class=\"b-ymap__balloon-details button js-shop-info\">Подробнее</a>" +
-								"</div>" +
-							"</div>" +
-						"</div>" +
-					"</div>";
+          "<div class=\"b-ymap__balloon-outer"+ params.mod +"\">" +
+            "<div class=\"b-ymap__balloon-outer-holder\">" +
+              "<div class=\"b-ymap__balloon-inner"+ params.mod +"\">" +
+                "<div class=\"b-ymap__balloon-header\">" +
+                  "<div class=\"b-ymap__balloon__close\"></div>" +
+                  "<div class=\"b-ymap__balloon-address\">" + params.address + "</div>" +
+                "</div>" +
+                "<div class=\"b-ymap__balloon-content\">" +
+                  "<div class=\"b-ymap__balloon-phone\">" + params.phone + "</div>" +
+                  "<div class=\"b-ymap__balloon-hours\">" + params.hours + "</div>" +
+                  "<a href=" + params.link + " class=\"b-ymap__balloon-details button js-shop-info\">Подробнее</a>" +
+                "</div>" +
+              "</div>" +
+            "</div>" +
+          "</div>";
 
       return {
         icon: icon,

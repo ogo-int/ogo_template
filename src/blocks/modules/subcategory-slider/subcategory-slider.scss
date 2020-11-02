@@ -1,14 +1,17 @@
+/**
+* MODULE UPDATE 26.10.2020
+*/
 .b-subcategory-slider {
-
+  color: red;
   .slick-slide img {
     display: inline-block;
   }
 
   .slick-dots {
     position: absolute;
-    right: 0;
-    bottom: 15px;
+    bottom: 7px;
     left: 0;
+    right: 0;
     margin: 0;
     text-align: center;
 
@@ -19,9 +22,9 @@
 
     > li {
       display: inline-block;
+      margin: 0;
       width: 10px;
       height: 10px;
-      margin: 0;
       margin-right: .25em;
     }
 
@@ -34,49 +37,49 @@
       border-radius: 0;
       vertical-align: top;
       background-color: #000;
-
+      border: 1px solid #fff ;
       &:hover {
         @include opacity(.7);
       }
     }
   }
+
   &__slider {
-    height: 100%;
-    margin: 0;
-    padding: 0;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
   }
 
   &__slide {
-    height: 100%;
     margin: 0;
     background-color: #fff;
-  }
-
-  &__slide-wrap {
-    position: relative;
+    height: 100%;
+    &-wrap {
+      position: relative;
+    }
   }
 
   &__bg-holder {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 
   &__bg {
     position: absolute;
-    top: 0;
     right: 0;
+    top: 0;
   }
 
   &__bg-colors {
     position: absolute;
-    bottom: 0;
     left: 0;
-    width: auto;
+    bottom: 0;
     height: 100%;
+    width: auto;
   }
 
   &__content-holder {
@@ -101,6 +104,12 @@
 
   &__logo-holder {
     @include margin(20/20);
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   &__more {

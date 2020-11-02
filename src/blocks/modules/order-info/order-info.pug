@@ -1,55 +1,55 @@
 mixin order-info()
-	.b-order-info.iblock&attributes(attributes)
-		form(action="/")
-			.b-order-info__header
-				.b-order-info__title Информация для заказов
-				.b-order-info__status Изменения сохранены
+  .b-order-info.iblock&attributes(attributes)
+    form(action="/")
+      .b-order-info__header
+        .b-order-info__title Информация для заказов
+        .b-order-info__status Изменения сохранены
 
-			.b-order-info__main
-				.b-order-info__input-cols
-					.b-order-info__input-col
-						label.b-order-info__field
-							.b-order-info__field-label Имя
-							.b-order-info__field-input
-								input(type="text")
+      .b-order-info__main
+        .b-order-info__input-cols
+          .b-order-info__input-col
+            label.b-order-info__field
+              .b-order-info__field-label Имя
+              .b-order-info__field-input
+                input(type="text")
 
-					.b-order-info__input-col
-						label.b-order-info__field
-							.b-order-info__field-label Фамилия
-							.b-order-info__field-input
-								input(type="text")
+          .b-order-info__input-col
+            label.b-order-info__field
+              .b-order-info__field-label Фамилия
+              .b-order-info__field-input
+                input(type="text")
 
-					.b-order-info__input-col
-						label.b-order-info__field
-							.b-order-info__field-label Отчество
-							.b-order-info__field-input
-								input(type="text")
+          .b-order-info__input-col
+            label.b-order-info__field
+              .b-order-info__field-label Отчество
+              .b-order-info__field-input
+                input(type="text")
 
-					.b-order-info__input-col
-						.b-order-info__field
-							.b-order-info__field-label Дата рождения
-							.b-order-info__field-input
-								+date-select()
+          .b-order-info__input-col
+            .b-order-info__field
+              .b-order-info__field-label Дата рождения
+              .b-order-info__field-input
+                +date-select()
 
-					.b-order-info__input-col
-						label.b-order-info__field
-							.b-order-info__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
-							.b-order-info__field-input
-								input(type="tel" data-mask='phone' placeholder="+7 (___) ___ __ __")
+          .b-order-info__input-col
+            label.b-order-info__field
+              .b-order-info__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+              .b-order-info__field-input
+                input(type="tel" data-mask='phone' placeholder="+7 (___) ___ __ __")
 
-					.b-order-info__input-col
-						label.b-order-info__field
-							.b-order-info__field-label Электронная почта #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
-							.b-order-info__field-input
-								input(type="text")
+          .b-order-info__input-col
+            label.b-order-info__field
+              .b-order-info__field-label Электронная почта #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+              .b-order-info__field-input
+                input(type="text")
 
-			.b-order-info__footer
-				.b-order-info__left-footer
-					ul.b-order-info__checkboxes
-						li.b-order-info__checkbox
-							+checkbox('Подписаться на&nbsp;рассылку выгодных предложения по&nbsp;электронной почте')
-						li.b-order-info__checkbox
-							+checkbox('Присылать мне СМС уведомления о&nbsp;состоянии моего заказа')
+      .b-order-info__footer
+        .b-order-info__left-footer
+          ul.b-order-info__checkboxes
+            li.b-order-info__checkbox
+              +checkbox('Подписаться на&nbsp;рассылку выгодных предложения по&nbsp;электронной почте')
+            li.b-order-info__checkbox
+              +checkbox('Присылать мне СМС уведомления о&nbsp;состоянии моего заказа')
 
-				.b-order-info__right-footer
-					a.b-order-info__save.button-gray(href="#") Сохранить изменения
+        .b-order-info__right-footer
+          a.b-order-info__save.button-gray(href="#") Сохранить изменения

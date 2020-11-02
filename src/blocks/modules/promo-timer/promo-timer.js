@@ -13,7 +13,7 @@ $(function () {
       window.setInterval(function () {
         requestAnimFrame(function () {
           var c = new Date();
-          var	d = new Date($dateTo);
+          var  d = new Date($dateTo);
           var diff = new Date(d - c);
           var timeDiff = Math.abs(d.getTime() - c.getTime());
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));

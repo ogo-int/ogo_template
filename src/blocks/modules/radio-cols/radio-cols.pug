@@ -1,70 +1,70 @@
 mixin radio-cols()
-	.b-radio-cols.iblock&attributes(attributes)
-		.b-radio-cols__visible-container
-			.b-radio-cols__cols
-				.b-radio-cols__col
-					ul.b-radio-cols__items
-						li.b-radio-cols__item
-							+radio('Canon')
-						li.b-radio-cols__item
-							+radio('Fujifilm')
-						li.b-radio-cols__item
-							+radio('Nikon')
-						li.b-radio-cols__item
-							+radio('Panasonic')
-						li.b-radio-cols__item
-							+radio('Leica')
+  .b-radio-cols.iblock&attributes(attributes)
+    .b-radio-cols__visible-container
+      .b-radio-cols__cols
+        .b-radio-cols__col
+          ul.b-radio-cols__items
+            li.b-radio-cols__item
+              +radio('Canon')
+            li.b-radio-cols__item
+              +radio('Fujifilm')
+            li.b-radio-cols__item
+              +radio('Nikon')
+            li.b-radio-cols__item
+              +radio('Panasonic')
+            li.b-radio-cols__item
+              +radio('Leica')
 
-				.b-radio-cols__col
-					ul.b-radio-cols__items
-						li.b-radio-cols__item
-							+radio('Olympus')
-						li.b-radio-cols__item
-							+radio('Pentax')
-						li.b-radio-cols__item
-							+radio('Sigma')
-						li.b-radio-cols__item
-							+radio('Geleral Electrics')
-						li.b-radio-cols__item
-							+radio('Zenit')
+        .b-radio-cols__col
+          ul.b-radio-cols__items
+            li.b-radio-cols__item
+              +radio('Olympus')
+            li.b-radio-cols__item
+              +radio('Pentax')
+            li.b-radio-cols__item
+              +radio('Sigma')
+            li.b-radio-cols__item
+              +radio('Geleral Electrics')
+            li.b-radio-cols__item
+              +radio('Zenit')
 
-		.b-radio-cols__more-container
-			.b-radio-cols__cols
-				.b-radio-cols__col
-					ul.b-radio-cols__items
-						li.b-radio-cols__item
-							+radio('Canon')
-						li.b-radio-cols__item
-							+radio('Fujifilm')
-						li.b-radio-cols__item
-							+radio('Nikon')
-						li.b-radio-cols__item
-							+radio('Panasonic')
-						li.b-radio-cols__item
-							+radio('Leica')
+    .b-radio-cols__more-container
+      .b-radio-cols__cols
+        .b-radio-cols__col
+          ul.b-radio-cols__items
+            li.b-radio-cols__item
+              +radio('Canon')
+            li.b-radio-cols__item
+              +radio('Fujifilm')
+            li.b-radio-cols__item
+              +radio('Nikon')
+            li.b-radio-cols__item
+              +radio('Panasonic')
+            li.b-radio-cols__item
+              +radio('Leica')
 
-				.b-radio-cols__col
-					ul.b-radio-cols__items
-						li.b-radio-cols__item
-							+radio('Olympus')
-						li.b-radio-cols__item
-							+radio('Pentax')
-						li.b-radio-cols__item
-							+radio('Sigma')
-						li.b-radio-cols__item
-							+radio('Geleral Electrics')
-						li.b-radio-cols__item
-							+radio('Zenit')
+        .b-radio-cols__col
+          ul.b-radio-cols__items
+            li.b-radio-cols__item
+              +radio('Olympus')
+            li.b-radio-cols__item
+              +radio('Pentax')
+            li.b-radio-cols__item
+              +radio('Sigma')
+            li.b-radio-cols__item
+              +radio('Geleral Electrics')
+            li.b-radio-cols__item
+              +radio('Zenit')
 
-		.b-radio-cols__btn-holder
-			a.b-radio-cols__btn.button-gray(href="#")
-				span Скрыть
-				span Показать еще
+    .b-radio-cols__btn-holder
+      a.b-radio-cols__btn.button-gray(href="#")
+        span Скрыть
+        span Показать еще
 
 mixin radio-cols_one()
-	.b-radio-cols.iblock&attributes(attributes)
-		ul.b-radio-cols__items
-			li.b-radio-cols__item
-				+radio('Только совместимые')(name="conf-check")
-			li.b-radio-cols__item
-				+radio('Показать все')(name="conf-check")
+  .b-radio-cols.iblock&attributes(attributes)
+    ul.b-radio-cols__items
+      li.b-radio-cols__item
+        +radio('Только совместимые')(name="conf-check")
+      li.b-radio-cols__item
+        +radio('Показать все')(name="conf-check")

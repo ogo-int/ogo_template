@@ -1,16 +1,16 @@
 mixin status-modal()
-	.b-status-modal.iblock&attributes(attributes)
-		form(action="/" data-validate='Y')
-			.b-add-product__caption Проверка статуса
-			.b-add-product__ui-holder
-				.b-add-product__input-col
-					.b-add-product__label Сдали товар по гарантии
-					input.b-add-product__input(type="tel")
+  .b-status-modal.iblock&attributes(attributes)
+    form(action="/" data-validate='Y')
+      .b-add-product__caption Проверка статуса
+      .b-add-product__ui-holder
+        .b-add-product__input-col
+          .b-add-product__label Сдали товар по гарантии
+          input.b-add-product__input(type="tel")
 
-				.b-add-product__submit-col
-					a.b-status-modal__button.button(href="#") Отправить 
+        .b-add-product__submit-col
+          a.b-status-modal__button.button(href="#") Отправить 
 
-		.b-status-modal__succsess 
-			p 24.06.17:
-			span Рекламация закрыта
-		.b-status-modal__error К сожалению, информация по данному документу отсутствует. Уточнить подробности Вы можете по телефону +7 (495) 229-56-53
+    .b-status-modal__succsess 
+      p 24.06.17:
+      span Рекламация закрыта
+    .b-status-modal__error К сожалению, информация по данному документу отсутствует. Уточнить подробности Вы можете по телефону +7 (495) 229-56-53

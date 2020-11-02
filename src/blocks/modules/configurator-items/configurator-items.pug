@@ -1,70 +1,70 @@
 mixin configurator-items()
-	.b-configurator-items.iblock&attributes(attributes)
-		ul.b-configurator-items__list
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name._checked
-						span.b-configurator-items__name-text Корпус компьютера
+  .b-configurator-items.iblock&attributes(attributes)
+    ul.b-configurator-items__list
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name._checked
+            span.b-configurator-items__name-text Корпус компьютера
 
-					.b-configurator-items__name-right
-						.b-configurator-items__require Обязательный компонент
+          .b-configurator-items__name-right
+            .b-configurator-items__require Обязательный компонент
 
-				.b-configurator-items__contain
-					+configurator-product()
+        .b-configurator-items__contain
+          +configurator-product()
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					label.b-configurator-items__name
-						span.b-configurator-items__name-text Блок питания
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          label.b-configurator-items__name
+            span.b-configurator-items__name-text Блок питания
 
-					.b-configurator-items__name-right
-						a.b-configurator-items__choose.button-gray(href="#") Выбрать
-						.b-configurator-items__require Обязательный компонент
+          .b-configurator-items__name-right
+            a.b-configurator-items__choose.button-gray(href="#") Выбрать
+            .b-configurator-items__require Обязательный компонент
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name
-						span.b-configurator-items__name-text Материнская плата
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name
+            span.b-configurator-items__name-text Материнская плата
 
-					.b-configurator-items__name-right
-						a.b-configurator-items__choose.button-gray(href="#") Выбрать
+          .b-configurator-items__name-right
+            a.b-configurator-items__choose.button-gray(href="#") Выбрать
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name
-						span.b-configurator-items__name-text Жесткий диск
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name
+            span.b-configurator-items__name-text Жесткий диск
 
-					.b-configurator-items__name-right
-						a.b-configurator-items__choose.button-gray(href="#") Выбрать
+          .b-configurator-items__name-right
+            a.b-configurator-items__choose.button-gray(href="#") Выбрать
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name
-						span.b-configurator-items__name-text Операционная система
-				.b-configurator-items__contain
-					.b-configurator-items__select-holder
-						select.select2
-							option(selected) Без операционной системы
-							option Debian
-							option Ubuntu
-							option OSX
-							option Windows
-					.b-configurator-items__contain-price 0 <span class="rub">i</span>
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name
+            span.b-configurator-items__name-text Операционная система
+        .b-configurator-items__contain
+          .b-configurator-items__select-holder
+            select.select2
+              option(selected) Без операционной системы
+              option Debian
+              option Ubuntu
+              option OSX
+              option Windows
+          .b-configurator-items__contain-price 0 <span class="rub">i</span>
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name
-						span.b-configurator-items__name-text Сборка системного блока
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name
+            span.b-configurator-items__name-text Сборка системного блока
 
-					.b-configurator-items__name-right
-						.b-configurator-items__name-price 500 <span class="rub">i</span>
+          .b-configurator-items__name-right
+            .b-configurator-items__name-price 500 <span class="rub">i</span>
 
-						a.b-configurator-items__choose.button-gray(href="#") Выбрать
+            a.b-configurator-items__choose.button-gray(href="#") Выбрать
 
-			li.b-configurator-items__item
-				.b-configurator-items__hat
-					.b-configurator-items__name._checked
-						span.b-configurator-items__name-text Колонки
+      li.b-configurator-items__item
+        .b-configurator-items__hat
+          .b-configurator-items__name._checked
+            span.b-configurator-items__name-text Колонки
 
-				.b-configurator-items__contain
-					+configurator-product()
+        .b-configurator-items__contain
+          +configurator-product()

@@ -1,20 +1,20 @@
 mixin expert-request()
-	.b-expert-request.iblock&attributes(attributes)
-		.b-expert-request__caption Запрос оценки эксперта
-		.b-expert-request__content
-			form(action='#' data-validate='Y')
-				label.b-simple-form__field
-					.b-simple-form__field-label Ваша электронная почта
-					.b-simple-form__field-inputs
-						input.email(type="email" name="email" required)
-				.b-simple-form__field
-					.b-simple-form__field-inputs
-						input.button(type="submit" value="Отправить")
-			.b-expert-request__error
-				h5 Не выбраны обязательны компоненты:
-				ul
-					li Корпус
-					li Материнская плата
-					li Процессор
+  .b-expert-request.iblock&attributes(attributes)
+    .b-expert-request__caption Запрос оценки эксперта
+    .b-expert-request__content
+      form(action='#' data-validate='Y')
+        label.b-simple-form__field
+          .b-simple-form__field-label Ваша электронная почта
+          .b-simple-form__field-inputs
+            input.email(type="email" name="email" required)
+        .b-simple-form__field
+          .b-simple-form__field-inputs
+            input.button(type="submit" value="Отправить")
+      .b-expert-request__error
+        h5 Не выбраны обязательны компоненты:
+        ul
+          li Корпус
+          li Материнская плата
+          li Процессор
 
-			p Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты
+      p Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты

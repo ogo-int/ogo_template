@@ -1,43 +1,43 @@
 mixin feedback-item()
-	.b-feedback-item.iblock&attributes(attributes)
-		form(action="/")
-			.b-feedback-item__header
-				.b-feedback-item__title Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
-				.b-feedback-item__rating
-					+rating_big()
-				.b-feedback-item__date 23 июня 2015
+  .b-feedback-item.iblock&attributes(attributes)
+    form(action="/")
+      .b-feedback-item__header
+        .b-feedback-item__title Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
+        .b-feedback-item__rating
+          +rating_big()
+        .b-feedback-item__date 23 июня 2015
 
-			.b-feedback-item__main
-				.b-feedback-item__save-state
-					ul.b-feedback-item__save-fields
-						li.b-feedback-item__save-field.b-feedback-item__save-field_plus
-							.b-feedback-item__field-label Плюсы:
-							.b-feedback-item__field-content Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
+      .b-feedback-item__main
+        .b-feedback-item__save-state
+          ul.b-feedback-item__save-fields
+            li.b-feedback-item__save-field.b-feedback-item__save-field_plus
+              .b-feedback-item__field-label Плюсы:
+              .b-feedback-item__field-content Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
 
-						li.b-feedback-item__save-field.b-feedback-item__save-field_minus
-							.b-feedback-item__field-label Минусы:
-							.b-feedback-item__field-content Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
+            li.b-feedback-item__save-field.b-feedback-item__save-field_minus
+              .b-feedback-item__field-label Минусы:
+              .b-feedback-item__field-content Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
 
-						li.b-feedback-item__save-field.b-feedback-item__save-field_comment
-							.b-feedback-item__field-label Комментарий:
-							.b-feedback-item__field-content До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
+            li.b-feedback-item__save-field.b-feedback-item__save-field_comment
+              .b-feedback-item__field-label Комментарий:
+              .b-feedback-item__field-content До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
 
-				.b-feedback-item__edit-state
-					ul.b-feedback-item__edit-fields
-						li.b-feedback-item__edit-field
-							+feedback-form()
+        .b-feedback-item__edit-state
+          ul.b-feedback-item__edit-fields
+            li.b-feedback-item__edit-field
+              +feedback-form()
 
-			.b-feedback-item__footer
-				.b-feedback-item__rating-form
-					+rating-form_big()
+      .b-feedback-item__footer
+        .b-feedback-item__rating-form
+          +rating-form_big()
 
-				.b-feedback-item__likes
-					+likes()
+        .b-feedback-item__likes
+          +likes()
 
-				.b-feedback-item__ui
-					.b-feedback-item__ui-remove
-						a.b-feedback-item__remove-btn.button-gray(href="/") <span>Удалить</span>
-					.b-feedback-item__ui-edit.b-feedback-item__ui-edit_active
-						a.b-feedback-item__edit-btn.button-gray(href="#") <span>Редактировать</span>
-					.b-feedback-item__ui-save
-						a.b-feedback-item__save-btn.button(href="#") <span>Сохранить изменения</span>
+        .b-feedback-item__ui
+          .b-feedback-item__ui-remove
+            a.b-feedback-item__remove-btn.button-gray(href="/") <span>Удалить</span>
+          .b-feedback-item__ui-edit.b-feedback-item__ui-edit_active
+            a.b-feedback-item__edit-btn.button-gray(href="#") <span>Редактировать</span>
+          .b-feedback-item__ui-save
+            a.b-feedback-item__save-btn.button(href="#") <span>Сохранить изменения</span>

@@ -1,12 +1,12 @@
 mixin filter-scale()
-	.b-filter-scale.iblock&attributes(attributes)
-		.b-filter-scale__inputs-holder
-			.b-filter-scale__from
-				span от
-				input.b-filter-scale__input.js-min(type="tel" value=0)
-			.b-filter-scale__to
-				span до
-				input.b-filter-scale__input.js-max(type="tel" value=12000)
+  .b-filter-scale.iblock&attributes(attributes)
+    .b-filter-scale__inputs-holder
+      .b-filter-scale__from
+        span от
+        input.b-filter-scale__input.js-min(type="tel" value=0)
+      .b-filter-scale__to
+        span до
+        input.b-filter-scale__input.js-max(type="tel" value=12000)
 
-		.b-filter-scale__scale-holder
-			.b-filter-scale__scale(data-max='12000' data-min='0' data-step='100')
+    .b-filter-scale__scale-holder
+      .b-filter-scale__scale(data-max='12000' data-min='0' data-step='100')

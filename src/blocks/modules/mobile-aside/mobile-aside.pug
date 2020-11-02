@@ -1,20 +1,20 @@
 mixin mobile-aside()
-	.b-mobile-aside.iblock&attributes(attributes)
-		.b-mobile-aside__scroll-wrap.scroll-fixer
-			.b-mobile-aside__login
-				a.b-mobile-aside__login-link(href="#") Вход
-				a.b-mobile-aside__register-link(href="#") Регистрация
-			.b-mobile-aside__search
-				+search-line_mobile()
+  .b-mobile-aside.iblock&attributes(attributes)
+    .b-mobile-aside__scroll-wrap.scroll-fixer
+      .b-mobile-aside__login
+        a.b-mobile-aside__login-link(href="#") Вход
+        a.b-mobile-aside__register-link(href="#") Регистрация
+      .b-mobile-aside__search
+        +search-line_mobile()
 
-			.b-mobile-aside__main-menu
-				+mobile-menu()
+      .b-mobile-aside__main-menu
+        +mobile-menu()
 
-			.b-mobile-aside__town
-				+town-select()
+      .b-mobile-aside__town
+        +town-select()
 
-			.b-mobile-aside__additional-menu
-				+top-menu_mobile()
-		.b-mobile-aside__callback
-			+contacts()
-			a.b-mobile-aside__callback-btn.button-green(href="#") Позвонить
+      .b-mobile-aside__additional-menu
+        +top-menu_mobile()
+    .b-mobile-aside__callback
+      +contacts()
+      a.b-mobile-aside__callback-btn.button-green(href="#") Позвонить

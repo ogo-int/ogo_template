@@ -1,102 +1,102 @@
 mixin feedback-product()
-	.b-feedback-product.iblock&attributes(attributes)
-		div(style="display: none;")
-			+comments-modal()(id="comments-modal")
-		.b-feedback-product__header
-			.b-feedback-product__caption Оценки и&nbsp;отзывы
-			a.button.b-feedback-product__button.js-modal(href="#comments-modal") Оставить отзыв
-			.b-feedback-product__rating
-				+rating_big()
-				.b-feedback-product__text-rating Общая оценка&nbsp;&mdash; 4.<br/>На&nbsp;основе 15 отзывов
+  .b-feedback-product.iblock&attributes(attributes)
+    div(style="display: none;")
+      +comments-modal()(id="comments-modal")
+    .b-feedback-product__header
+      .b-feedback-product__caption Оценки и&nbsp;отзывы
+      a.button.b-feedback-product__button.js-modal(href="#comments-modal") Оставить отзыв
+      .b-feedback-product__rating
+        +rating_big()
+        .b-feedback-product__text-rating Общая оценка&nbsp;&mdash; 4.<br/>На&nbsp;основе 15 отзывов
 
-		.b-feedback-product__sort-holder
-			+feedback-sort()
+    .b-feedback-product__sort-holder
+      +feedback-sort()
 
-		.b-feedback-product__main
-			ul.b-feedback-product__items
-				li.b-feedback-product__item
-					.b-feedback-product__cols
-						.b-feedback-product__contact-col
-							.b-feedback-product__photo-holder
-								img.b-feedback-product__photo(src="assets/img/content/feed-photo.png", alt="Фото" width=49 height=49)
-							.b-feedback-product__name Марина Иванова
-							.b-feedback-product__date 26 июля 2015
-							.b-feedback-product__score
-								+rating()
+    .b-feedback-product__main
+      ul.b-feedback-product__items
+        li.b-feedback-product__item
+          .b-feedback-product__cols
+            .b-feedback-product__contact-col
+              .b-feedback-product__photo-holder
+                img.b-feedback-product__photo(src="assets/img/content/feed-photo.png", alt="Фото" width=49 height=49)
+              .b-feedback-product__name Марина Иванова
+              .b-feedback-product__date 26 июля 2015
+              .b-feedback-product__score
+                +rating()
 
-						.b-feedback-product__content-col
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Плюсы
-								.b-feedback-product__content-text Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
+            .b-feedback-product__content-col
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Плюсы
+                .b-feedback-product__content-text Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
 
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Минусы
-								.b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Минусы
+                .b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
 
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Комментарии
-								.b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Комментарии
+                .b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
 
-							.b-feedback-product__content-result
-								a.b-feedback-product__plus.link-thumbup <span>23</span>
-								span.b-feedback-product__minus.link-thumbdown <span>22</span>
+              .b-feedback-product__content-result
+                a.b-feedback-product__plus.link-thumbup <span>23</span>
+                span.b-feedback-product__minus.link-thumbdown <span>22</span>
 
-				li.b-feedback-product__item
-					.b-feedback-product__cols
-						.b-feedback-product__contact-col
-							.b-feedback-product__photo-holder
-								img.b-feedback-product__photo(src="assets/img/content/feed-photo2.png", alt="Фото" width=49 height=49)
-							.b-feedback-product__name Владимир Макаров
-							.b-feedback-product__date 26 июля 2015
-							.b-feedback-product__score
-								+rating()
+        li.b-feedback-product__item
+          .b-feedback-product__cols
+            .b-feedback-product__contact-col
+              .b-feedback-product__photo-holder
+                img.b-feedback-product__photo(src="assets/img/content/feed-photo2.png", alt="Фото" width=49 height=49)
+              .b-feedback-product__name Владимир Макаров
+              .b-feedback-product__date 26 июля 2015
+              .b-feedback-product__score
+                +rating()
 
-						.b-feedback-product__content-col
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Плюсы
-								.b-feedback-product__content-text.content-area.
-									1. &laquo;Мегапиксельность&raquo;&nbsp;&mdash; мне понравилась детализация снимков.<br/>
-									2. Наличие видеосъемки FullHD. Очень пригодилась!<br/>
-									3. Много функций можно &laquo;тонко&raquo; настроить под себя.
+            .b-feedback-product__content-col
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Плюсы
+                .b-feedback-product__content-text.content-area.
+                  1. &laquo;Мегапиксельность&raquo;&nbsp;&mdash; мне понравилась детализация снимков.<br/>
+                  2. Наличие видеосъемки FullHD. Очень пригодилась!<br/>
+                  3. Много функций можно &laquo;тонко&raquo; настроить под себя.
 
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Минусы
-								.b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Минусы
+                .b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
 
-							.b-feedback-product__content-item
-								.b-feedback-product__content-caption Комментарии
-								.b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
+              .b-feedback-product__content-item
+                .b-feedback-product__content-caption Комментарии
+                .b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
 
-		.b-feedback-product__footer
-			.b-feedback-product__paginator
-				+paginator()
+    .b-feedback-product__footer
+      .b-feedback-product__paginator
+        +paginator()
 
-			a.b-feedback-product__more-btn.button-more(href="#") Показать еще
+      a.b-feedback-product__more-btn.button-more(href="#") Показать еще
 
 mixin feedback-product_pure()
-	.b-feedback-product.iblock&attributes(attributes)
-		.b-feedback-product__cols
-			.b-feedback-product__contact-col
-				.b-feedback-product__photo-holder
-					img.b-feedback-product__photo(src="assets/img/content/feed-photo.png", alt="Фото" width=49 height=49)
-				.b-feedback-product__name Марина Иванова
-				.b-feedback-product__date 26 июля 2015
-				.b-feedback-product__score
-					+rating()
+  .b-feedback-product.iblock&attributes(attributes)
+    .b-feedback-product__cols
+      .b-feedback-product__contact-col
+        .b-feedback-product__photo-holder
+          img.b-feedback-product__photo(src="assets/img/content/feed-photo.png", alt="Фото" width=49 height=49)
+        .b-feedback-product__name Марина Иванова
+        .b-feedback-product__date 26 июля 2015
+        .b-feedback-product__score
+          +rating()
 
-			.b-feedback-product__content-col
-				.b-feedback-product__content-item
-					.b-feedback-product__content-caption Плюсы
-					.b-feedback-product__content-text Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
+      .b-feedback-product__content-col
+        .b-feedback-product__content-item
+          .b-feedback-product__content-caption Плюсы
+          .b-feedback-product__content-text Аккумулятор очень долго держит зарядку&nbsp;&mdash; две недели и&nbsp;это по&nbsp;30 -40 снимков в&nbsp;день, объектив китовый неплохой для быстрой съемки, а&nbsp;для художественного фото использовал советские объективы Таир -11, Гелиос 40 и&nbsp;44, Юпитер 37а&nbsp;&mdash; все подходят через переходное кольцо, Тушка аппарата неплохо сделана&nbsp;&mdash; все просто.
 
-				.b-feedback-product__content-item
-					.b-feedback-product__content-caption Минусы
-					.b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
+        .b-feedback-product__content-item
+          .b-feedback-product__content-caption Минусы
+          .b-feedback-product__content-text Китовый объектив это как дешевая пластиковая игрушка (имеются люфты).
 
-				.b-feedback-product__content-item
-					.b-feedback-product__content-caption Комментарии
-					.b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
+        .b-feedback-product__content-item
+          .b-feedback-product__content-caption Комментарии
+          .b-feedback-product__content-text До&nbsp;этого снимал Зенитом Е&nbsp;<nobr>и т. д.</nobr> Никон D3200 использую в&nbsp;режиме М&nbsp;и&nbsp;очень нравится&nbsp;&mdash; вручную можно легко выставить диафрагму, выдержку и&nbsp;чувствительность матрицы (ISO)
 
-				.b-feedback-product__content-result
-					span.b-feedback-product__plus.link-thumbup 23
-					span.b-feedback-product__minus.link-thumbdown 22
+        .b-feedback-product__content-result
+          span.b-feedback-product__plus.link-thumbup 23
+          span.b-feedback-product__minus.link-thumbdown 22

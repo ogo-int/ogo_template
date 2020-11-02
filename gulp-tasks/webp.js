@@ -11,19 +11,19 @@ import browsersync from "browser-sync";
 import yargs from "yargs";
 
 const argv = yargs.argv,
-    production = !!argv.production;
+  production = !!argv.production;
 
 gulp.task("webp", () => {
-    return gulp.src(paths.images.src)
-        .pipe(newer(paths.images.dist))
-        .pipe(webp(gulpif(production, imageminWebp({
-            lossless: true,
-            quality: 100,
-            alphaQuality: 100
-        }))))
-        .pipe(gulp.dest(paths.images.dist))
-        .pipe(debug({
-            "title": "Images"
-        }))
-        .on("end", browsersync.reload);
+  return gulp.src(paths.images.src)
+    .pipe(newer(paths.images.dist))
+    .pipe(webp(gulpif(production, imageminWebp({
+      lossless: true,
+      quality: 100,
+      alphaQuality: 100
+    }))))
+    .pipe(gulp.dest(paths.images.dist))
+    .pipe(debug({
+      "title": "Images"
+    }))
+    .on("end", browsersync.reload);
 });

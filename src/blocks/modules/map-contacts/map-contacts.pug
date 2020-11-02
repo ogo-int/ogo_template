@@ -1,108 +1,108 @@
 mixin map-contacts()
-	.b-map-contacts.iblock&attributes(attributes)
-		.b-map-contacts__cols
-			.b-map-contacts__list-col
-				.b-shops-list.iblock
-					.b-shops-list__town-holder
-						select.b-shops-list__town.select2
-							option Москва и&nbsp;подмосковье
-							option Санкт-Петербург
-							option Казань
+  .b-map-contacts.iblock&attributes(attributes)
+    .b-map-contacts__cols
+      .b-map-contacts__list-col
+        .b-shops-list.iblock
+          .b-shops-list__town-holder
+            select.b-shops-list__town.select2
+              option Москва и&nbsp;подмосковье
+              option Санкт-Петербург
+              option Казань
 
-					.b-map-contacts__map-col
-						+ymap()
+          .b-map-contacts__map-col
+            +ymap()
 
-					.b-shops-list__section
-						.b-shops-list__section-name Москва
-						.b-shops-list__section-content
-							.b-shops-list__group
-								.b-shops-list__group-name(data-map-title="Гипермаркет ОГО!") Гипермаркеты
-								.b-shops-list__group-content
-									ul.b-shops-list__items
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.793227,37.559883' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffcb31;"></span> Площадь Ильича
-												.b-shops-list__shop-address Театральная аллея, д. 3, стр.&nbsp;1
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+          .b-shops-list__section
+            .b-shops-list__section-name Москва
+            .b-shops-list__section-content
+              .b-shops-list__group
+                .b-shops-list__group-name(data-map-title="Гипермаркет ОГО!") Гипермаркеты
+                .b-shops-list__group-content
+                  ul.b-shops-list__items
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.793227,37.559883' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffcb31;"></span> Площадь Ильича
+                        .b-shops-list__shop-address Театральная аллея, д. 3, стр.&nbsp;1
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.754973,37.690534' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Динамо
-												.b-shops-list__shop-address Золоторожский Вал, д. 4, стр. 4
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.754973,37.690534' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Динамо
+                        .b-shops-list__shop-address Золоторожский Вал, д. 4, стр. 4
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-							.b-shops-list__group
-								.b-shops-list__group-name(data-map-title="Точка выдачи ОГО!") Точки выдачи
-								.b-shops-list__group-content
-									ul.b-shops-list__items
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.680828,37.662821' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Коломенская
-												.b-shops-list__shop-address Проспект Андропова, д. 26, ТК&nbsp;&laquo;Коломенский пассаж&raquo;, каб. &#8470;&nbsp;3.
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+              .b-shops-list__group
+                .b-shops-list__group-name(data-map-title="Точка выдачи ОГО!") Точки выдачи
+                .b-shops-list__group-content
+                  ul.b-shops-list__items
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.680828,37.662821' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Коломенская
+                        .b-shops-list__shop-address Проспект Андропова, д. 26, ТК&nbsp;&laquo;Коломенский пассаж&raquo;, каб. &#8470;&nbsp;3.
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.896024,37.588224' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #bfbfbf;"></span> Алтуфьево
-												.b-shops-list__shop-address Алтуфьевское шоссе, дом 84, 2 этаж, павильон 36
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.896024,37.588224' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #bfbfbf;"></span> Алтуфьево
+                        .b-shops-list__shop-address Алтуфьевское шоссе, дом 84, 2 этаж, павильон 36
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.722325,37.688979' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #c70070;"></span> Волгоградский пр-т
-												.b-shops-list__shop-address Волгоградский <nobr>пр-т</nobr>, д.32, корп. 8, ТЦ&nbsp;<nobr>&laquo;Техно-Холл&raquo;</nobr>, 2 этаж, павильон <nobr>D7-8</nobr>
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.722325,37.688979' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #c70070;"></span> Волгоградский пр-т
+                        .b-shops-list__shop-address Волгоградский <nobr>пр-т</nobr>, д.32, корп. 8, ТЦ&nbsp;<nobr>&laquo;Техно-Холл&raquo;</nobr>, 2 этаж, павильон <nobr>D7-8</nobr>
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.684528,37.624103' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #bfbfbf;"></span> Нагатинская
-												.b-shops-list__shop-address Варшавское шоссе, дом 39, БЦ&nbsp;&laquo;Нагатинский&raquo;, 3 этаж, 330 комната
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.684528,37.624103' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #bfbfbf;"></span> Нагатинская
+                        .b-shops-list__shop-address Варшавское шоссе, дом 39, БЦ&nbsp;&laquo;Нагатинский&raquo;, 3 этаж, 330 комната
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.751431,37.816114' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffd569;"></span> Новогиреево
-												.b-shops-list__shop-address ТК&nbsp;Федеративный, цокольный этаж, кабинет &#8470;&nbsp;12.
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.751431,37.816114' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffd569;"></span> Новогиреево
+                        .b-shops-list__shop-address ТК&nbsp;Федеративный, цокольный этаж, кабинет &#8470;&nbsp;12.
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.845107,37.361732' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #0255ac;"></span> Митино
-												.b-shops-list__shop-address Митинская улица, д. 27, 1 этаж (вход со&nbsp;двора)
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.845107,37.361732' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #0255ac;"></span> Митино
+                        .b-shops-list__shop-address Митинская улица, д. 27, 1 этаж (вход со&nbsp;двора)
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-					.b-shops-list__section
-						.b-shops-list__section-name Подмосковье
-						.b-shops-list__section-content
-							.b-shops-list__group
-								.b-shops-list__group-name(data-map-title="Точка выдачи ОГО!") Точки выдачи
-								.b-shops-list__group-content
-									ul.b-shops-list__items
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.683244,37.89349' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title г. Люберцы
-												.b-shops-list__shop-address МО, г.&nbsp;Люберцы, ул.&nbsp;Волковская, 2Б, ТЦ&nbsp;&laquo;Фламинго&raquo;, <nobr>2-й</nobr> этаж
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+          .b-shops-list__section
+            .b-shops-list__section-name Подмосковье
+            .b-shops-list__section-content
+              .b-shops-list__group
+                .b-shops-list__group-name(data-map-title="Точка выдачи ОГО!") Точки выдачи
+                .b-shops-list__group-content
+                  ul.b-shops-list__items
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.683244,37.89349' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title г. Люберцы
+                        .b-shops-list__shop-address МО, г.&nbsp;Люберцы, ул.&nbsp;Волковская, 2Б, ТЦ&nbsp;&laquo;Фламинго&raquo;, <nobr>2-й</nobr> этаж
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-										li.b-shops-list__item
-											.b-shops-list__shop(data-coords='55.914731,37.763953' data-link="ajax/shop-detail.html")
-												.b-shops-list__shop-title г. Мытищи
-												.b-shops-list__shop-address МО, г.&nbsp;Мытищи, ул.&nbsp;Колонцова, д. 5, ТЦ&nbsp;&laquo;Торус&raquo;, 3&#8208;й&nbsp;этаж
-												.b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
-												.b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
+                    li.b-shops-list__item
+                      .b-shops-list__shop(data-coords='55.914731,37.763953' data-link="ajax/shop-detail.html")
+                        .b-shops-list__shop-title г. Мытищи
+                        .b-shops-list__shop-address МО, г.&nbsp;Мытищи, ул.&nbsp;Колонцова, д. 5, ТЦ&nbsp;&laquo;Торус&raquo;, 3&#8208;й&nbsp;этаж
+                        .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
+                        .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
-					.b-shops-list__section
-						.b-shops-list__section-name Точки выдачи InPost
-						.b-shops-list__section-sub (бывший Qiwi)
-						.b-shops-list__section-content
-							a.b-shops-list__qiwi-btn.button(href="#") Найти терминал
-							a.b-shops-list__qiwi-more.button-gray(href="#") Подробнее
+          .b-shops-list__section
+            .b-shops-list__section-name Точки выдачи InPost
+            .b-shops-list__section-sub (бывший Qiwi)
+            .b-shops-list__section-content
+              a.b-shops-list__qiwi-btn.button(href="#") Найти терминал
+              a.b-shops-list__qiwi-more.button-gray(href="#") Подробнее
