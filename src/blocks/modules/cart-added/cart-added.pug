@@ -1,29 +1,29 @@
 mixin cart-added()
-	.b-cart-added.iblock&attributes(attributes)
-		.b-cart-added__caption Добавить товар по&nbsp;артикулу
-		.b-cart-added__ui-holder
-			.b-cart-added__input-col
-				.b-cart-added__label Артикул
-				input.b-cart-added__input(type="tel" value='34534345')
+  .b-cart-added.iblock&attributes(attributes)
+    .b-cart-added__caption Добавить товар по&nbsp;артикулу
+    .b-cart-added__ui-holder
+      .b-cart-added__input-col
+        .b-cart-added__label Артикул
+        input.b-cart-added__input(type="tel" value='34534345')
 
-			.b-cart-added__submit-col
-				a.b-cart-added__submit.button-gray(href="#") Найти товар
+      .b-cart-added__submit-col
+        a.b-cart-added__submit.button-gray(href="#") Найти товар
 
-		.b-cart-added__result-holder
-			ul.b-cart-added__result-items
-				li.b-cart-added__result-item
-					.b-cart-added__result-product
-						+product-small(class="_noborder")
+    .b-cart-added__result-holder
+      ul.b-cart-added__result-items
+        li.b-cart-added__result-item
+          .b-cart-added__result-product
+            +product-small(class="_noborder")
 
-					.b-cart-added__result-ui
-						.b-cart-added__result-qtty
-							select.b-cart-added__result-select.select2
-								option 1
-								option 2
-								option 3
-								option 4
+          .b-cart-added__result-ui
+            .b-cart-added__result-qtty
+              select.b-cart-added__result-select.select2
+                option 1
+                option 2
+                option 3
+                option 4
 
-						.b-cart-added__result-submit-holder
-							a.b-cart-added__result-submit.button(href="#") Добавить
+            .b-cart-added__result-submit-holder
+              a.b-cart-added__result-submit.button(href="#") Добавить
 
-			.b-cart-added__error Товар не найден
+      .b-cart-added__error Товар не найден

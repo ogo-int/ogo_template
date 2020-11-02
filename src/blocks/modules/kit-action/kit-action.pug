@@ -1,16 +1,16 @@
 mixin kit-action()
-	.b-kit-action.iblock&attributes(attributes)
-		.b-kit-action__header
-			.b-kit-action__caption Купите комплект со&nbsp;скидкой 50%!
+  .b-kit-action.iblock&attributes(attributes)
+    .b-kit-action__header
+      .b-kit-action__caption Купите комплект со&nbsp;скидкой 50%!
 
-			.b-kit-action__buy-holder
-				span.b-kit-action__old-price 60&nbsp;000 <span class="rub">i</span>
-				a.b-kit-action__buy-btn(href="#") Купить за&nbsp;30&nbsp;000 <span class="rub">i</span>
+      .b-kit-action__buy-holder
+        span.b-kit-action__old-price 60&nbsp;000 <span class="rub">i</span>
+        a.b-kit-action__buy-btn(href="#") Купить за&nbsp;30&nbsp;000 <span class="rub">i</span>
 
-		.b-kit-action__main
-			.b-kit-action__container
-				.b-kit-action__pane
-					ul.b-kit-action__products
-						each val in [1,1,1,1,1,1]
-							li.b-kit-action__product
-								+kit-product()
+    .b-kit-action__main
+      .b-kit-action__container
+        .b-kit-action__pane
+          ul.b-kit-action__products
+            each val in [1,1,1,1,1,1]
+              li.b-kit-action__product
+                +kit-product()

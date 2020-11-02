@@ -234,28 +234,28 @@
 }
 
 // html.no-touch .b-list-product:hover {
-// 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+//   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-// 	.b-list-product {
-// 		&__fast-view {
-// 			height: 35px;
-// 			opacity: 1;
-// 			transform: translateY(0);
-// 			border: 1px solid #c2c2c2;
-// 		}
+//   .b-list-product {
+//     &__fast-view {
+//       height: 35px;
+//       opacity: 1;
+//       transform: translateY(0);
+//       border: 1px solid #c2c2c2;
+//     }
 
-// 		&__number {
-// 			opacity: 0;
-// 		}
+//     &__number {
+//       opacity: 0;
+//     }
 
-// 		&__rating {
-// 			opacity: 0;
-// 		}
+//     &__rating {
+//       opacity: 0;
+//     }
 
-// 		&__avail {
-// 			opacity: 0;
-// 		}
-// 	}
+//     &__avail {
+//       opacity: 0;
+//     }
+//   }
 // }
 
 @mixin mx710($mod: "") {

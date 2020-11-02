@@ -1,15 +1,15 @@
 mixin captcha()
-	.b-captcha.iblock&attributes(attributes)
-		.b-captcha__top-section
-			.b-captcha__image-holder
-				img.b-captcha__image(src="assets/img/captcha.png", alt="captcha" width=135 height=31)
+  .b-captcha.iblock&attributes(attributes)
+    .b-captcha__top-section
+      .b-captcha__image-holder
+        img.b-captcha__image(src="assets/img/captcha.png", alt="captcha" width=135 height=31)
 
-			.b-captcha__ui-holder
-				a.b-captcha__ui-refresh(href="#")
-				a.b-captcha__ui-sound(href="#")
+      .b-captcha__ui-holder
+        a.b-captcha__ui-refresh(href="#")
+        a.b-captcha__ui-sound(href="#")
 
-		.b-captcha__bottom-section
-			.b-captcha__field
-				.b-captcha__label Введите код с&nbsp;картинки
-				.b-captcha__input-holder
-					input.b-captcha__input(type="text")
+    .b-captcha__bottom-section
+      .b-captcha__field
+        .b-captcha__label Введите код с&nbsp;картинки
+        .b-captcha__input-holder
+          input.b-captcha__input(type="text")

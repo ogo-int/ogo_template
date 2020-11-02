@@ -1,447 +1,447 @@
 mixin main-menu()
-	nav.b-main-menu._delay.iblock&attributes(attributes)
-		ul.b-main-menu__top-level
-			li.b-main-menu__top-item._active
-				a.b-main-menu__top-link(href="#" data-color="red") Электроника
+  nav.b-main-menu._delay.iblock&attributes(attributes)
+    ul.b-main-menu__top-level
+      li.b-main-menu__top-item._active
+        a.b-main-menu__top-link(href="#" data-color="red") Электроника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
 
-		.b-main-menu__holders
-			.b-main-menu__top-holder._active
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+    .b-main-menu__holders
+      .b-main-menu__top-holder._active
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Бытовая техника
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Бытовая техника
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_center
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_center
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_center
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_center
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_right
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телефоны
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_right
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телефоны
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
 mixin main-menu_inner()
-	nav.b-main-menu.iblock&attributes(attributes)
-		ul.b-main-menu__top-level
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="red") Электроника
+  nav.b-main-menu.iblock&attributes(attributes)
+    ul.b-main-menu__top-level
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="red") Электроника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="blue") Компьютерная техника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="cyan") Бытовая техника
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="yellow") Семья и&nbsp;дети
 
-			li.b-main-menu__top-item
-				a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
+      li.b-main-menu__top-item
+        a.b-main-menu__top-link(href="#" data-color="green") Дом, дача, авто
 
-		.b-main-menu__holders
-			.b-main-menu__top-holder
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+    .b-main-menu__holders
+      .b-main-menu__top-holder
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_center
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_center
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_center
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_center
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
-			.b-main-menu__top-holder.b-main-menu__top-holder_right
-				ul.b-main-menu__sub-level
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Телевизоры
-						+main-menu__sub-holder()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
-						+main-menu__sub-holder2()
-					li.b-main-menu__sub-item
-						a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
-						+main-menu__sub-holder()
+      .b-main-menu__top-holder.b-main-menu__top-holder_right
+        ul.b-main-menu__sub-level
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Мобильные телефоны
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Фото и&nbsp;видеокамеры
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Телевизоры
+            +main-menu__sub-holder()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Аудио и&nbsp;видео техника
+            +main-menu__sub-holder2()
+          li.b-main-menu__sub-item
+            a.b-main-menu__sub-link._contain(href="#") Плееры и&nbsp;наушники
+            +main-menu__sub-holder()
 
 mixin main-menu__sub-holder()
-	.b-main-menu__sub-holder
-		.b-main-menu__cols
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+  .b-main-menu__sub-holder
+    .b-main-menu__cols
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
 
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
 
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-				.b-sub-menu.b-main-menu__sub-menu._no-content
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+        .b-sub-menu.b-main-menu__sub-menu._no-content
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
 
-				.b-sub-menu.b-main-menu__sub-menu._no-content
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+        .b-sub-menu.b-main-menu__sub-menu._no-content
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
 
-			.b-main-menu__col.b-main-menu__col_product
-				.b-main-menu__product
-					.b-main-menu__product-caption Товар дня
-					.b-main-menu__product-item
-						+product-small()
+      .b-main-menu__col.b-main-menu__col_product
+        .b-main-menu__product
+          .b-main-menu__product-caption Товар дня
+          .b-main-menu__product-item
+            +product-small()
 
 mixin main-menu__sub-holder2()
-	.b-main-menu__sub-holder
-		.b-main-menu__cols
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Другая категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+  .b-main-menu__sub-holder
+    .b-main-menu__cols
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Другая категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
 
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
 
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-			.b-main-menu__col
-				.b-sub-menu.b-main-menu__sub-menu
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
-					ul.b-sub-menu__items
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Сплит-системы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Мобильные кондиционеры
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Погодные станции
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Водонагреватели
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Тепловые пушки
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Осушители воздуха
-						li.b-sub-menu__item
-							a.b-sub-menu__link(href="#") Электрические камины
+      .b-main-menu__col
+        .b-sub-menu.b-main-menu__sub-menu
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+          ul.b-sub-menu__items
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Сплит-системы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Мобильные кондиционеры
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Обогреватели Вентиляторы
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Очистители и&nbsp;увлажнители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Погодные станции
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Водонагреватели
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Тепловые пушки
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Осушители воздуха
+            li.b-sub-menu__item
+              a.b-sub-menu__link(href="#") Электрические камины
 
-				.b-sub-menu.b-main-menu__sub-menu._no-content
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+        .b-sub-menu.b-main-menu__sub-menu._no-content
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
 
-				.b-sub-menu.b-main-menu__sub-menu._no-content
-					.b-sub-menu__caption
-						a.b-sub-menu__caption-link(href="#") Категория 3 уровня
+        .b-sub-menu.b-main-menu__sub-menu._no-content
+          .b-sub-menu__caption
+            a.b-sub-menu__caption-link(href="#") Категория 3 уровня
 
-			.b-main-menu__col.b-main-menu__col_product
-				.b-main-menu__product
-					.b-main-menu__product-caption Товар дня
-					.b-main-menu__product-item
-						+product-small()
+      .b-main-menu__col.b-main-menu__col_product
+        .b-main-menu__product
+          .b-main-menu__product-caption Товар дня
+          .b-main-menu__product-item
+            +product-small()

@@ -1,30 +1,30 @@
 mixin order-status()
-	.b-order-status.iblock&attributes(attributes)
-		.b-order-status__header
-			.b-order-status__caption Проверка статуса заказа
+  .b-order-status.iblock&attributes(attributes)
+    .b-order-status__header
+      .b-order-status__caption Проверка статуса заказа
 
-		.b-order-status__main._active
-			.b-order-status__cols
-				.b-order-status__inputs-col
-					label.b-order-status__field
-						.b-order-status__label Номер заказа
-						.b-order-status__input-holder
-							input.b-order-status__input(type="tel")
+    .b-order-status__main._active
+      .b-order-status__cols
+        .b-order-status__inputs-col
+          label.b-order-status__field
+            .b-order-status__label Номер заказа
+            .b-order-status__input-holder
+              input.b-order-status__input(type="tel")
 
-					label.b-order-status__field
-						.b-order-status__label Мобильный телефон #[+info-tooltip({text: 'Сообщение'})]
-						.b-order-status__input-holder
-							input.b-order-status__input(type="tel" data-mask="phone")
+          label.b-order-status__field
+            .b-order-status__label Мобильный телефон #[+info-tooltip({text: 'Сообщение'})]
+            .b-order-status__input-holder
+              input.b-order-status__input(type="tel" data-mask="phone")
 
-				.b-order-status__captcha-col
-					+captcha()
+        .b-order-status__captcha-col
+          +captcha()
 
-			.b-order-status__submit-holder
-				a.b-order-status__submit.button(href="#") Проверить статус
+      .b-order-status__submit-holder
+        a.b-order-status__submit.button(href="#") Проверить статус
 
-		.b-order-status__result
-			.b-order-status__status-holder
-				span.b-order-status__status Статус Вашего заказа: <span class="b-order-status__status-text _green">В&nbsp;обработке</span>
+    .b-order-status__result
+      .b-order-status__status-holder
+        span.b-order-status__status Статус Вашего заказа: <span class="b-order-status__status-text _green">В&nbsp;обработке</span>
 
-			.b-order-status__contact-holder
-				+contacts_status()
+      .b-order-status__contact-holder
+        +contacts_status()

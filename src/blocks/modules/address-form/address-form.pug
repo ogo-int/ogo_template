@@ -1,50 +1,50 @@
 mixin address-form()
-	.b-address-form.iblock&attributes(attributes)
-		form(action="/")
-			input(type="hidden" name="addressID" value="sdfsvi12")
-			.b-address-form__cols
-				.b-address-form__left-col
-					label
-						.b-address-form__label Название адреса (например: дача)
-						.b-address-form__input
-							input(type="text" name="name" required)
+  .b-address-form.iblock&attributes(attributes)
+    form(action="/")
+      input(type="hidden" name="addressID" value="sdfsvi12")
+      .b-address-form__cols
+        .b-address-form__left-col
+          label
+            .b-address-form__label Название адреса (например: дача)
+            .b-address-form__input
+              input(type="text" name="name" required)
 
-				.b-address-form__right-col
-					label
-						.b-address-form__label Населённый пункт (город)
-						.b-address-form__input
-							input(type="text" name="town" required)
+        .b-address-form__right-col
+          label
+            .b-address-form__label Населённый пункт (город)
+            .b-address-form__input
+              input(type="text" name="town" required)
 
-			.b-address-form__cols
-				.b-address-form__left-col
-					label
-						.b-address-form__label Улица
-						.b-address-form__input
-							input(type="text" name="street" required)
+      .b-address-form__cols
+        .b-address-form__left-col
+          label
+            .b-address-form__label Улица
+            .b-address-form__input
+              input(type="text" name="street" required)
 
-				.b-address-form__right-col
-					.b-address-form__nums
-						.b-address-form__num
-							label
-								.b-address-form__label Дом
-								.b-address-form__input
-									input(type="tel" name="building" required)
+        .b-address-form__right-col
+          .b-address-form__nums
+            .b-address-form__num
+              label
+                .b-address-form__label Дом
+                .b-address-form__input
+                  input(type="tel" name="building" required)
 
-						.b-address-form__num
-							label
-								.b-address-form__label Корпус
-								.b-address-form__input
-									input(type="tel" name="block")
+            .b-address-form__num
+              label
+                .b-address-form__label Корпус
+                .b-address-form__input
+                  input(type="tel" name="block")
 
-						.b-address-form__num
-							label
-								.b-address-form__label Квартира
-								.b-address-form__input
-									input(type="tel" name="flat")
+            .b-address-form__num
+              label
+                .b-address-form__label Квартира
+                .b-address-form__input
+                  input(type="tel" name="flat")
 
-			.b-address-form__comment
-				label
-						.b-address-form__label Комментарий курьеру
-						.b-address-form__input
-							.b-address-form__textarea
-								textarea(name="comment") В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
+      .b-address-form__comment
+        label
+            .b-address-form__label Комментарий курьеру
+            .b-address-form__input
+              .b-address-form__textarea
+                textarea(name="comment") В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.

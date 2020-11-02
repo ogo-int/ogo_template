@@ -1,30 +1,30 @@
 mixin mobile-header()
-	.b-mobile-header.iblock&attributes(attributes)
-		.b-mobile-header__holder
-			.b-mobile-header__btn
-				+burger-btn()
+  .b-mobile-header.iblock&attributes(attributes)
+    .b-mobile-header__holder
+      .b-mobile-header__btn
+        +burger-btn()
 
-			.b-mobile-header__logo
-				a(href="#")
-					img.b-mobile-header__logo-img(src="assets/img/logo.png", alt="Логотип" width=150 height=51)
+      .b-mobile-header__logo
+        a(href="#")
+          img.b-mobile-header__logo-img(src="assets/img/logo.png", alt="Логотип" width=150 height=51)
 
-			.b-mobile-header__search
-				a.b-mobile-header__search-link(href="#")
-					span Поиск
-				.b-mobile-header__search-line
-					+search-line_thin()
+      .b-mobile-header__search
+        a.b-mobile-header__search-link(href="#")
+          span Поиск
+        .b-mobile-header__search-line
+          +search-line_thin()
 
-			.b-mobile-header__shops
-				a.b-mobile-header__shops-link(href="#")
-					span Магазины
+      .b-mobile-header__shops
+        a.b-mobile-header__shops-link(href="#")
+          span Магазины
 
-			.b-mobile-header__lk
-				a.b-mobile-header__lk-link(href="#")
-					span Личный кабинет
+      .b-mobile-header__lk
+        a.b-mobile-header__lk-link(href="#")
+          span Личный кабинет
 
-			.b-mobile-header__callback
-				a.b-mobile-header__callback-link.js-modal(href="#callback-modal")
-					span Обратный звонок
+      .b-mobile-header__callback
+        a.b-mobile-header__callback-link.js-modal(href="#callback-modal")
+          span Обратный звонок
 
-			.b-mobile-header__cart
-				+cart-link_mobile()
+      .b-mobile-header__cart
+        +cart-link_mobile()

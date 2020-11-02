@@ -2,7 +2,7 @@
 $(function () {
   $(".b-catalog-plates").livequery(function() {
     var $context = $(this);
-			
+      
     function equalizer() {
       var $container = $(".b-catalog-plates");
       var $platesHolder = $(".b-catalog-plates__items", $container);

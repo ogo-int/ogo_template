@@ -1,45 +1,45 @@
 mixin bonus-card()
-	.b-bonus-card.iblock&attributes(attributes)
-		.b-bonus-card__header
-			.b-bonus-card__title Активация бонусной карты ОГО!
+  .b-bonus-card.iblock&attributes(attributes)
+    .b-bonus-card__header
+      .b-bonus-card__title Активация бонусной карты ОГО!
 
-		.b-bonus-card__main
-			.b-bonus-card__input-cols
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label Номер карты
-						.b-bonus-card__field-input
-							input(type="tel" value='06547')
+    .b-bonus-card__main
+      .b-bonus-card__input-cols
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label Номер карты
+            .b-bonus-card__field-input
+              input(type="tel" value='06547')
 
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label <nobr>Пин-код</nobr> #[+info-tooltip_bonus()]
-						.b-bonus-card__field-input
-							input(type="tel")
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label <nobr>Пин-код</nobr> #[+info-tooltip_bonus()]
+            .b-bonus-card__field-input
+              input(type="tel")
 
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label Мобильный #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
-						.b-bonus-card__field-input
-							input(type="tel" value='+7 (926) 333 45 55' data-mask="phone")
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label Мобильный #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+            .b-bonus-card__field-input
+              input(type="tel" value='+7 (926) 333 45 55' data-mask="phone")
 
-				.b-bonus-card__input-separator
+        .b-bonus-card__input-separator
 
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label Дата рождения
-						.b-bonus-card__field-input
-							+date-select()
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label Дата рождения
+            .b-bonus-card__field-input
+              +date-select()
 
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label Пол
-						.b-bonus-card__field-input.b-bonus-card__field-input_checkbox
-							+radio('Мужской')(name="gender")
-							+radio('Женский')(name="gender")
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label Пол
+            .b-bonus-card__field-input.b-bonus-card__field-input_checkbox
+              +radio('Мужской')(name="gender")
+              +radio('Женский')(name="gender")
 
-				.b-bonus-card__input-col
-					label.b-bonus-card__field
-						.b-bonus-card__field-label &nbsp;
-						.b-bonus-card__field-input.b-bonus-card__field-input_right
-							a.b-bonus-card__activation.button(href="#") Активировать карту
+        .b-bonus-card__input-col
+          label.b-bonus-card__field
+            .b-bonus-card__field-label &nbsp;
+            .b-bonus-card__field-input.b-bonus-card__field-input_right
+              a.b-bonus-card__activation.button(href="#") Активировать карту

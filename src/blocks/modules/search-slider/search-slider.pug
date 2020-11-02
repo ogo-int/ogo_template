@@ -1,33 +1,33 @@
 mixin search-slider()
-	.b-search-slider.iblock&attributes(attributes)
-		.b-search-slider__wrap
-			.b-search-slider__prev
-			.b-search-slider__next
+  .b-search-slider.iblock&attributes(attributes)
+    .b-search-slider__wrap
+      .b-search-slider__prev
+      .b-search-slider__next
 
-			.b-search-slider__slider
-				each val in [1,1]
-					.b-search-slider__slide
-						+category-plate_data({
-							imgSource: 'img/content/categories/cat28.png',
-							title: 'Карты памяти'
-						})
-					.b-search-slider__slide
-						+category-plate_data({
-							imgSource: 'img/content/categories/cat29.png',
-							title: 'Звуковые карты'
-						})
-					.b-search-slider__slide
-						+category-plate_data({
-							imgSource: 'img/content/categories/cat30.png',
-							title: 'WiFi Сетевые карты'
-						})
-					.b-search-slider__slide
-						+category-plate_data({
-							imgSource: 'img/content/categories/cat31.png',
-							title: 'Сетевые карты'
-						})
-					.b-search-slider__slide
-						+category-plate_data({
-							imgSource: 'img/content/categories/cat32.png',
-							title: 'Карты и&nbsp;путеводители'
-						})
+      .b-search-slider__slider
+        each val in [1,1]
+          .b-search-slider__slide
+            +category-plate_data({
+              imgSource: 'img/content/categories/cat28.png',
+              title: 'Карты памяти'
+            })
+          .b-search-slider__slide
+            +category-plate_data({
+              imgSource: 'img/content/categories/cat29.png',
+              title: 'Звуковые карты'
+            })
+          .b-search-slider__slide
+            +category-plate_data({
+              imgSource: 'img/content/categories/cat30.png',
+              title: 'WiFi Сетевые карты'
+            })
+          .b-search-slider__slide
+            +category-plate_data({
+              imgSource: 'img/content/categories/cat31.png',
+              title: 'Сетевые карты'
+            })
+          .b-search-slider__slide
+            +category-plate_data({
+              imgSource: 'img/content/categories/cat32.png',
+              title: 'Карты и&nbsp;путеводители'
+            })

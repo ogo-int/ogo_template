@@ -21,5 +21,5 @@ $(function (){
     else if(target.is(":not(.b-product-small__hover-content)")) {
       remove();
     }
-  });	
+  });  
 });

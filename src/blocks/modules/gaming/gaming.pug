@@ -1,0 +1,88 @@
+
+mixin gaming-banner()
+  .b-gaming-banner.iblock&attributes(attributes)
+    .b-gaming-banner__logo
+      img(src="assets/img/gaming/gaming_white.png")
+    h2.b-gaming-banner__title Погружайся в игры<br>вместе&nbsp;с&nbsp;ОГО! Gaming
+    .b-gaming-banner__content
+      p Мы предлагаем  большой выбор товаров для геймеров и производим игровые компьютеры высокого класса со сбалансированными системами, позволяющие получить максимум впечатлений от самых требовательных игр.
+    form.b-gaming-subscribe
+      span.b-gaming-subscribe__caption Будь в курсе всех новинок и&nbsp;акций<br>в&nbsp;мире гейминга!
+      .b-gaming-subscribe-fields
+        input(type="email" placeholder="Введите e-mail").b-gaming-subscribe__input
+        button(type="submit").b-gaming-subscribe__submit.button-gaming Подписаться
+
+mixin gaming-carousel(...data)
+  .b-gaming-carousel
+    for item in data
+      a.b-gaming-carousel__slide(href="#")
+        .b-gaming-carousel__slide-body
+          .b-gaming-carousel__slide-image-wrap
+            img.b-gaming-carousel__slide-image(src=item.image, alt=item.title)
+          span.b-gaming-carousel__slide-title= item.title
+
+mixin gaming-slider(...data)
+  .b-gaming-slider
+    for item in data
+      .b-gaming-slider__slide
+        .b-gaming-slider__slide-body
+          .b-gaming-slider__slide-image-wrap
+            img.b-gaming-slider__slide-image(src=item.image, alt=item.title)
+          span.b-gaming-slider__slide-title= item.title
+          span.b-gaming-slider__slide-price= item.price + ' ₽'
+          a.b-gaming-slider__button.button-gaming(href="#") Буду первым!
+
+mixin gaming-categories()
+  .c-gaming-pc&attributes(attributes)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category5.png', 'Компьютеры для киберспорта', 'от 120 000 ₽', true)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category6.png', 'Мощные игровые компьютеры', 'от 120 000 ₽', true)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category7.png', 'Профессиональные игровые компьютеры', 'от 120 000 ₽', true)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category8.png', 'Оптимальные игровые компьютеры', 'от 120 000 ₽', true)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category9.png', 'Бюджетные игровые компьютеры', 'от 120 000 ₽', true)
+    .c-gaming-pc__cell
+      +gaming-category('assets/img/gaming/gaming-category10.png', 'Компьютеры для видео, графики и стрима', 'от 120 000 ₽', true)
+
+mixin gaming-parts()
+  .b-gaming-parts.iblock&attributes(attributes)
+    .b-gaming-parts-grid
+      .b-gaming-parts__cell
+        a.b-gaming-parts__category(href="#")
+          img.b-gaming-parts__category-image(src="assets/img/gaming/line2-OGO_Gaming1.jpg", alt="Мониторы")
+          span.b-gaming-parts__category-title Мониторы
+      .b-gaming-parts__cell
+        a.b-gaming-parts__category(href="#")
+          img.b-gaming-parts__category-image(src="assets/img/gaming/line2-OGO_Gaming2.jpg", alt="Столы")
+          span.b-gaming-parts__category-title Столы
+      .b-gaming-parts__cell
+        a.b-gaming-parts__category(href="#")
+          img.b-gaming-parts__category-image(src="assets/img/gaming/line2-OGO_Gaming3.jpg", alt="Кресла")
+          span.b-gaming-parts__category-title Кресла
+      .b-gaming-parts__cell
+        a.b-gaming-parts__category(href="#")
+          img.b-gaming-parts__category-image(src="assets/img/gaming/line2-OGO_Gaming4.jpg", alt="Медиаплееры и приставки")
+          span.b-gaming-parts__category-title Медиаплееры и приставки
+
+mixin gaming-category(image, title, desc, noarrow, social)
+  .b-gaming-category
+    a.b-gaming-category-link(href="#")
+      img.b-gaming-category__image(src=image, alt=title)
+      .b-gaming-category-header
+        span.b-gaming-category__title= title
+        span.b-gaming-category__pseudolink(class=noarrow ? "b-gaming-category__pseudolink--no-arrow" : "")= desc
+      .b-gaming-category-footer
+        if social
+          span.b-gaming-category__social
+            img(src="assets/img/socials/vkontakte.png", alt="ОГО! в ВК")
+            span @ogo4you
+
+mixin gaming-event(image, title, desc)
+  .b-gaming-event
+    a.b-gaming-event-link(href="#")
+      img.b-gaming-event__image(src=image, alt=title)
+      span.b-gaming-event__title= title
+      span.b-gaming-event__pseudolink= desc
