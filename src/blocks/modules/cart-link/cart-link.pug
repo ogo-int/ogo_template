@@ -1,21 +1,21 @@
 mixin cart-link()
-  .b-cart-link.iblock&attributes(attributes)
-    a(href="#").b-cart-link__link
-      span.b-cart-link__icon
-      span.b-cart-link__text В&nbsp;корзине пусто
-      span.b-cart-link__text.b-cart-link__text_mobile 0
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0
 
 mixin cart-link_full()
-  .b-cart-link.iblock&attributes(attributes)
-    a(href="#").b-cart-link__link
-      span.b-cart-link__icon.b-cart-link__icon_red
-      span.b-cart-link__text 25 товаров на&nbsp;334&nbsp;567 <span class="rub">i</span>
-      span.b-cart-link__text.b-cart-link__text_mobile 25
-    a(href="#").b-cart-link__buy.button Оформить
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_red
+			span.b-cart-link__text 25 товаров на&nbsp;334&nbsp;567 <span class="rub">i</span>
+			span.b-cart-link__text.b-cart-link__text_mobile 25
+		a(href="#").b-cart-link__buy.button Оформить
 
 mixin cart-link_mobile()
-  .b-cart-link.iblock&attributes(attributes)
-    a(href="#").b-cart-link__link
-      span.b-cart-link__icon.b-cart-link__icon_mobile
-      span.b-cart-link__text В&nbsp;корзине пусто
-      span.b-cart-link__text.b-cart-link__text_mobile 0
+	.b-cart-link.iblock&attributes(attributes)
+		a(href="#").b-cart-link__link
+			span.b-cart-link__icon.b-cart-link__icon_mobile
+			span.b-cart-link__text В&nbsp;корзине пусто
+			span.b-cart-link__text.b-cart-link__text_mobile 0

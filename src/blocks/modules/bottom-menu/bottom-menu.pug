@@ -1,43 +1,43 @@
 mixin bottom-menu()
-  .b-bottom-menu._closed.iblock&attributes(attributes)
-    nav
-      ul.b-bottom-menu__items
-        li.b-bottom-menu__item.b-bottom-menu__item_consult(data-tab=1)
-          a.b-bottom-menu__wrap(href="#online-consult")
-            span.b-bottom-menu__icon._phone
-            span.b-bottom-menu__text <nobr>Online-консультант</nobr>
+	.b-bottom-menu._closed.iblock&attributes(attributes)
+		nav
+			ul.b-bottom-menu__items
+				li.b-bottom-menu__item.b-bottom-menu__item_consult(data-tab=1)
+					a.b-bottom-menu__wrap(href="#online-consult")
+						span.b-bottom-menu__icon._phone
+						span.b-bottom-menu__text <nobr>Online-консультант</nobr>
 
-        li.b-bottom-menu__item.b-bottom-menu__item_viewed(data-tab=2)
-          a.b-bottom-menu__wrap(href="#")
-            span.b-bottom-menu__icon._eye
-            span.b-bottom-menu__text Просмотрено
+				li.b-bottom-menu__item.b-bottom-menu__item_viewed(data-tab=2)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._eye
+						span.b-bottom-menu__text Просмотрено
 
-        li.b-bottom-menu__item.b-bottom-menu__item_compare(data-tab=3)
-          a.b-bottom-menu__wrap(href="#")
-            span.b-bottom-menu__icon._graph
-            span.b-bottom-menu__text Сравнение&nbsp;&mdash; <span class="b-bottom-menu__red-num">1</span>
+				li.b-bottom-menu__item.b-bottom-menu__item_compare(data-tab=3)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._graph
+						span.b-bottom-menu__text Сравнение&nbsp;&mdash; <span class="b-bottom-menu__red-num">1</span>
 
-        li.b-bottom-menu__item.b-bottom-menu__item_favor(data-tab=4)
-          a.b-bottom-menu__wrap(href="#")
-            span.b-bottom-menu__icon._heart
-            span.b-bottom-menu__text В&nbsp;избранном&nbsp;&mdash; <span class="b-bottom-menu__red-num">2</span>
+				li.b-bottom-menu__item.b-bottom-menu__item_favor(data-tab=4)
+					a.b-bottom-menu__wrap(href="#")
+						span.b-bottom-menu__icon._heart
+						span.b-bottom-menu__text В&nbsp;избранном&nbsp;&mdash; <span class="b-bottom-menu__red-num">2</span>
 
-        li.b-bottom-menu__item.b-bottom-menu__item_cart
-          +cart-link_full()
+				li.b-bottom-menu__item.b-bottom-menu__item_cart
+					+cart-link_full()
 
-    ul.b-bottom-menu__holders
-      li.b-bottom-menu__holder._consult
-        .b-bottom-menu__consult-holder
-          .b-bottom-menu__consult
-            +main-consult()
+		ul.b-bottom-menu__holders
+			li.b-bottom-menu__holder._consult
+				.b-bottom-menu__consult-holder
+					.b-bottom-menu__consult
+						+main-consult()
 
-      li.b-bottom-menu__holder
-        +small-product-slider_favor()
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
 
-      li.b-bottom-menu__holder
-        +small-product-slider_favor()
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
 
-      li.b-bottom-menu__holder
-        +small-product-slider_favor()
+			li.b-bottom-menu__holder
+				+small-product-slider_favor()
 
-      li.b-bottom-menu__holder
+			li.b-bottom-menu__holder

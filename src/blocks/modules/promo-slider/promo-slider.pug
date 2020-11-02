@@ -1,18 +1,18 @@
 mixin promo-slider()
-  .b-promo-slider.iblock._nojs&attributes(attributes)
-    ul.b-promo-slider__slider
-      each val in [1,1,1,1,1]
-        li.b-promo-slider__slide
-          .b-promo-slider__slide-wrap
-            .b-promo-slider__bg-holder
-              img.b-promo-slider__bg(src="assets/img/content/bear.png", alt="Мишка" width=602 height=350)
-              img.b-promo-slider__bg-colors(src="assets/img/content/promo-slider-bg.png", alt="Мишка" width=404 height=350)
+	.b-promo-slider.iblock._nojs&attributes(attributes)
+		ul.b-promo-slider__slider
+			each val in [1,1,1,1,1]
+				li.b-promo-slider__slide
+					.b-promo-slider__slide-wrap
+						.b-promo-slider__bg-holder
+							img.b-promo-slider__bg(src="assets/img/content/bear.png", alt="Мишка" width=602 height=350)
+							img.b-promo-slider__bg-colors(src="assets/img/content/promo-slider-bg.png", alt="Мишка" width=404 height=350)
 
-            .b-promo-slider__content-holder
-              .b-promo-slider__caption Видеть больше чуствовать
+						.b-promo-slider__content-holder
+							.b-promo-slider__caption Видеть больше чуствовать
 
-              .b-promo-slider__logo-holder
-                img.b-promo-slider__logo(src="assets/img/content/curved-tv.png", alt="curved" width=155 height=49)
+							.b-promo-slider__logo-holder
+								img.b-promo-slider__logo(src="assets/img/content/curved-tv.png", alt="curved" width=155 height=49)
 
-              .b-promo-slider__more-holder
-                a.b-promo-slider__more.button-gray(href="#") Подробнее
+							.b-promo-slider__more-holder
+								a.b-promo-slider__more.button-gray(href="#") Подробнее

@@ -1,27 +1,27 @@
 mixin product-slider()
-  .b-product-slider.iblock._nojs&attributes(attributes)
-    .b-product-slider__header
-      .b-product-slider__title Популярные товары Samsung
-      .b-product-slider__arrows
-        a.b-product-slider__prev(href="#")
-        a.b-product-slider__next(href="#")
+	.b-product-slider.iblock._nojs&attributes(attributes)
+		.b-product-slider__header
+			.b-product-slider__title Популярные товары Samsung
+			.b-product-slider__arrows
+				a.b-product-slider__prev(href="#")
+				a.b-product-slider__next(href="#")
 
-    .b-product-slider__slider-holder
-      ul.b-product-slider__slider
-        each val in [1,1,1,1,1,1,11,1,1,1,1]
-          li.b-product-slider__slide
-            +plate-product()
+		.b-product-slider__slider-holder
+			ul.b-product-slider__slider
+				each val in [1,1,1,1,1,1,11,1,1,1,1]
+					li.b-product-slider__slide
+						+plate-product()
 
 mixin product-slider_subcategory()
-  .b-product-slider._nojs&attributes(attributes)
-    .b-product-slider__header
-      .b-product-slider__title Популярные товары Samsung
-      .b-product-slider__arrows
-        a.b-product-slider__prev(href="#")
-        a.b-product-slider__next(href="#")
+	.b-product-slider._nojs&attributes(attributes)
+		.b-product-slider__header
+			.b-product-slider__title Популярные товары Samsung
+			.b-product-slider__arrows
+				a.b-product-slider__prev(href="#")
+				a.b-product-slider__next(href="#")
 
-    .b-product-slider__slider-holder
-      ul.b-product-slider__slider
-        each val in [1,1,1,1,1,1,11,1,1,1,1]
-          li.b-product-slider__slide
-            +product-small()
+		.b-product-slider__slider-holder
+			ul.b-product-slider__slider
+				each val in [1,1,1,1,1,1,11,1,1,1,1]
+					li.b-product-slider__slide
+						+product-small()

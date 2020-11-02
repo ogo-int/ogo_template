@@ -1,332 +1,332 @@
 mixin address-item()
-  .b-address-item.iblock&attributes(attributes)
-    .b-address-item__header
-      .b-address-item__town <nobr>Санкт-Петербург</nobr>
-      .b-address-item__title Дедушка с&nbsp;бабушкой
+	.b-address-item.iblock&attributes(attributes)
+		.b-address-item__header
+			.b-address-item__town <nobr>Санкт-Петербург</nobr>
+			.b-address-item__title Дедушка с&nbsp;бабушкой
 
-    .b-address-item__main
-      .b-address-item__save-state
-        ul.b-address-item__save-fields
-          li.b-address-item__save-field
-            .b-address-item__field-label Адрес получения:
-            .b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address <nobr>Санкт-Петербург</nobr>, улица Нижняя Масловка, дом 23, квартира 47
-          li.b-address-item__save-field
-            .b-address-item__field-label Комментарий курьеру:
-            .b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
+		.b-address-item__main
+			.b-address-item__save-state
+				ul.b-address-item__save-fields
+					li.b-address-item__save-field
+						.b-address-item__field-label Адрес получения:
+						.b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address <nobr>Санкт-Петербург</nobr>, улица Нижняя Масловка, дом 23, квартира 47
+					li.b-address-item__save-field
+						.b-address-item__field-label Комментарий курьеру:
+						.b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
 
-      .b-address-item__edit-state
-        ul.b-address-item__edit-fields
-          li.b-address-item__edit-field
-            .b-address-form
-              form(action="/")
-                input(type="hidden" name="addressID" value="sdfsvi12")
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Название адреса (например: дача)
-                      .b-address-form__input
-                        input(type="text" name="name" required value="Дедушка с бабушкой")
+			.b-address-item__edit-state
+				ul.b-address-item__edit-fields
+					li.b-address-item__edit-field
+						.b-address-form
+							form(action="/")
+								input(type="hidden" name="addressID" value="sdfsvi12")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Название адреса (например: дача)
+											.b-address-form__input
+												input(type="text" name="name" required value="Дедушка с бабушкой")
 
-                  .b-address-form__right-col
-                    label
-                      .b-address-form__label Населённый пункт (город)
-                      .b-address-form__input
-                        +autocomplete-address(name="town" required value="Санкт-Петербург")
-                        //- input(type="text" name="town" required value="Санкт-Петербург")
+									.b-address-form__right-col
+										label
+											.b-address-form__label Населённый пункт (город)
+											.b-address-form__input
+												+autocomplete-address(name="town" required value="Санкт-Петербург")
+												//- input(type="text" name="town" required value="Санкт-Петербург")
 
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Улица
-                      .b-address-form__input
-                        input(type="text" name="street" required value="Нижняя Масловка")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Улица
+											.b-address-form__input
+												input(type="text" name="street" required value="Нижняя Масловка")
 
-                  .b-address-form__right-col
-                    .b-address-form__nums
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Дом
-                          .b-address-form__input
-                            input(type="tel" name="building" required value=23)
+									.b-address-form__right-col
+										.b-address-form__nums
+											.b-address-form__num
+												label
+													.b-address-form__label Дом
+													.b-address-form__input
+														input(type="tel" name="building" required value=23)
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Корпус
-                          .b-address-form__input
-                            input(type="tel" name="block")
+											.b-address-form__num
+												label
+													.b-address-form__label Корпус
+													.b-address-form__input
+														input(type="tel" name="block")
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Квартира
-                          .b-address-form__input
-                            input(type="tel" name="flat" value="47")
+											.b-address-form__num
+												label
+													.b-address-form__label Квартира
+													.b-address-form__input
+														input(type="tel" name="flat" value="47")
 
-                .b-address-form__comment
-                  label
-                    .b-address-form__label Комментарий курьеру
-                    .b-address-form__input
-                      .b-address-form__textarea
-                        textarea(name="comment").scroll-fixer В&nbsp;случае, если вес какого-либо товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
+								.b-address-form__comment
+									label
+										.b-address-form__label Комментарий курьеру
+										.b-address-form__input
+											.b-address-form__textarea
+												textarea(name="comment").scroll-fixer В&nbsp;случае, если вес какого-либо товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
 
-    .b-address-item__footer
-      .b-address-item__ui
-        .b-address-item__ui-primary.b-address-item__ui-primary_active
-          span.b-address-item__primary-btn.button-gray Главный адрес
-        .b-address-item__ui-secondary
-          a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
+		.b-address-item__footer
+			.b-address-item__ui
+				.b-address-item__ui-primary.b-address-item__ui-primary_active
+					span.b-address-item__primary-btn.button-gray Главный адрес
+				.b-address-item__ui-secondary
+					a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
 
-        .b-address-item__ui-remove
-          a.b-address-item__remove-btn.button-gray(href="#") Удалить
-        .b-address-item__ui-edit.b-address-item__ui-edit_active
-          a.b-address-item__edit-btn.button-gray(href="#") Редактировать
-        .b-address-item__ui-save
-          a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
+				.b-address-item__ui-remove
+					a.b-address-item__remove-btn.button-gray(href="#") Удалить
+				.b-address-item__ui-edit.b-address-item__ui-edit_active
+					a.b-address-item__edit-btn.button-gray(href="#") Редактировать
+				.b-address-item__ui-save
+					a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
 
 mixin address-item2()
-  .b-address-item.iblock&attributes(attributes)
-    .b-address-item__header
-      .b-address-item__town Москва
-      .b-address-item__title Работа
+	.b-address-item.iblock&attributes(attributes)
+		.b-address-item__header
+			.b-address-item__town Москва
+			.b-address-item__title Работа
 
-    .b-address-item__main
-      .b-address-item__save-state
-        ul.b-address-item__save-fields
-          li.b-address-item__save-field
-            .b-address-item__field-label Адрес получения:
-            .b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address Москва, улица Нижняя Масловка, дом 23, квартира 47
-          li.b-address-item__save-field
-            .b-address-item__field-label Комментарий курьеру:
-            .b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру.
+		.b-address-item__main
+			.b-address-item__save-state
+				ul.b-address-item__save-fields
+					li.b-address-item__save-field
+						.b-address-item__field-label Адрес получения:
+						.b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address Москва, улица Нижняя Масловка, дом 23, квартира 47
+					li.b-address-item__save-field
+						.b-address-item__field-label Комментарий курьеру:
+						.b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру.
 
-      .b-address-item__edit-state
-        ul.b-address-item__edit-fields
-          li.b-address-item__edit-field
-            .b-address-form
-              form(action="/")
-                input(type="hidden" name="addressID" value="sdfsvi72")
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Название адреса (например: дача)
-                      .b-address-form__input
-                        input(type="text" name="name" required value="Работа")
+			.b-address-item__edit-state
+				ul.b-address-item__edit-fields
+					li.b-address-item__edit-field
+						.b-address-form
+							form(action="/")
+								input(type="hidden" name="addressID" value="sdfsvi72")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Название адреса (например: дача)
+											.b-address-form__input
+												input(type="text" name="name" required value="Работа")
 
-                  .b-address-form__right-col
-                    label
-                      .b-address-form__label Населённый пункт (город)
-                      .b-address-form__input
-                        input(type="text" name="town" required value="Москва")
+									.b-address-form__right-col
+										label
+											.b-address-form__label Населённый пункт (город)
+											.b-address-form__input
+												input(type="text" name="town" required value="Москва")
 
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Улица
-                      .b-address-form__input
-                        input(type="text" name="street" required value="Нижняя Масловка")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Улица
+											.b-address-form__input
+												input(type="text" name="street" required value="Нижняя Масловка")
 
-                  .b-address-form__right-col
-                    .b-address-form__nums
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Дом
-                          .b-address-form__input
-                            input(type="tel" name="building" required value=23)
+									.b-address-form__right-col
+										.b-address-form__nums
+											.b-address-form__num
+												label
+													.b-address-form__label Дом
+													.b-address-form__input
+														input(type="tel" name="building" required value=23)
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Корпус
-                          .b-address-form__input
-                            input(type="tel" name="block")
+											.b-address-form__num
+												label
+													.b-address-form__label Корпус
+													.b-address-form__input
+														input(type="tel" name="block")
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Квартира
-                          .b-address-form__input
-                            input(type="tel" name="flat" value="47")
+											.b-address-form__num
+												label
+													.b-address-form__label Квартира
+													.b-address-form__input
+														input(type="tel" name="flat" value="47")
 
-                .b-address-form__comment
-                  label
-                    .b-address-form__label Комментарий курьеру
-                    .b-address-form__input
-                      .b-address-form__textarea
-                        textarea(name="comment").scroll-fixer В случае, если вес какого-либо товара в заказе превышает 25 кг, подъем на этаж, с заносом в квартиру.
+								.b-address-form__comment
+									label
+										.b-address-form__label Комментарий курьеру
+										.b-address-form__input
+											.b-address-form__textarea
+												textarea(name="comment").scroll-fixer В случае, если вес какого-либо товара в заказе превышает 25 кг, подъем на этаж, с заносом в квартиру.
 
-    .b-address-item__footer
-      .b-address-item__ui
-        .b-address-item__ui-primary
-          span.b-address-item__primary-btn.button-gray Главный адрес
-        .b-address-item__ui-secondary.b-address-item__ui-secondary_active
-          a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
+		.b-address-item__footer
+			.b-address-item__ui
+				.b-address-item__ui-primary
+					span.b-address-item__primary-btn.button-gray Главный адрес
+				.b-address-item__ui-secondary.b-address-item__ui-secondary_active
+					a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
 
-        .b-address-item__ui-remove
-          a.b-address-item__remove-btn.button-gray(href="#") Удалить
-        .b-address-item__ui-edit.b-address-item__ui-edit_active
-          a.b-address-item__edit-btn.button-gray(href="#") Редактировать
-        .b-address-item__ui-save
-          a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
+				.b-address-item__ui-remove
+					a.b-address-item__remove-btn.button-gray(href="#") Удалить
+				.b-address-item__ui-edit.b-address-item__ui-edit_active
+					a.b-address-item__edit-btn.button-gray(href="#") Редактировать
+				.b-address-item__ui-save
+					a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
 
 mixin address-item3()
-  .b-address-item.iblock&attributes(attributes)
-    .b-address-item__header
-      .b-address-item__town Москва
-      .b-address-item__title Дом
+	.b-address-item.iblock&attributes(attributes)
+		.b-address-item__header
+			.b-address-item__town Москва
+			.b-address-item__title Дом
 
-    .b-address-item__main
-      .b-address-item__save-state
-        ul.b-address-item__save-fields
-          li.b-address-item__save-field
-            .b-address-item__field-label Адрес получения:
-            .b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address Москва, улица Нижняя Масловка, дом 23, квартира 47
-          li.b-address-item__save-field
-            .b-address-item__field-label Комментарий курьеру:
-            .b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
+		.b-address-item__main
+			.b-address-item__save-state
+				ul.b-address-item__save-fields
+					li.b-address-item__save-field
+						.b-address-item__field-label Адрес получения:
+						.b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address Москва, улица Нижняя Масловка, дом 23, квартира 47
+					li.b-address-item__save-field
+						.b-address-item__field-label Комментарий курьеру:
+						.b-address-item__field-content.b-address-item__comment В&nbsp;случае, если вес <nobr>какого-либо</nobr> товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
 
-      .b-address-item__edit-state
-        ul.b-address-item__edit-fields
-          li.b-address-item__edit-field
-            .b-address-form
-              form(action="/")
-                input(type="hidden" name="addressID" value="sdfsvi12")
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Название адреса (например: дача)
-                      .b-address-form__input
-                        input(type="text" name="name" required value="Дом")
+			.b-address-item__edit-state
+				ul.b-address-item__edit-fields
+					li.b-address-item__edit-field
+						.b-address-form
+							form(action="/")
+								input(type="hidden" name="addressID" value="sdfsvi12")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Название адреса (например: дача)
+											.b-address-form__input
+												input(type="text" name="name" required value="Дом")
 
-                  .b-address-form__right-col
-                    label
-                      .b-address-form__label Населённый пункт (город)
-                      .b-address-form__input
-                        input(type="text" name="town" required value="Москва")
+									.b-address-form__right-col
+										label
+											.b-address-form__label Населённый пункт (город)
+											.b-address-form__input
+												input(type="text" name="town" required value="Москва")
 
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Улица
-                      .b-address-form__input
-                        input(type="text" name="street" required value="Нижняя Масловка")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Улица
+											.b-address-form__input
+												input(type="text" name="street" required value="Нижняя Масловка")
 
-                  .b-address-form__right-col
-                    .b-address-form__nums
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Дом
-                          .b-address-form__input
-                            input(type="tel" name="building" required value=23)
+									.b-address-form__right-col
+										.b-address-form__nums
+											.b-address-form__num
+												label
+													.b-address-form__label Дом
+													.b-address-form__input
+														input(type="tel" name="building" required value=23)
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Корпус
-                          .b-address-form__input
-                            input(type="tel" name="block")
+											.b-address-form__num
+												label
+													.b-address-form__label Корпус
+													.b-address-form__input
+														input(type="tel" name="block")
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Квартира
-                          .b-address-form__input
-                            input(type="tel" name="flat" value="47")
+											.b-address-form__num
+												label
+													.b-address-form__label Квартира
+													.b-address-form__input
+														input(type="tel" name="flat" value="47")
 
-                .b-address-form__comment
-                  label
-                    .b-address-form__label Комментарий курьеру
-                    .b-address-form__input
-                      .b-address-form__textarea
-                        textarea(name="comment").scroll-fixer В&nbsp;случае, если вес какого-либо товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
+								.b-address-form__comment
+									label
+										.b-address-form__label Комментарий курьеру
+										.b-address-form__input
+											.b-address-form__textarea
+												textarea(name="comment").scroll-fixer В&nbsp;случае, если вес какого-либо товара в&nbsp;заказе превышает 25 кг, подъем на&nbsp;этаж, с&nbsp;заносом в&nbsp;квартиру (офис), осуществляется только в&nbsp;случае, если товар в&nbsp;упаковке проходит по&nbsp;габаритам в&nbsp;дверной проем подъезда, лифт, дверной проем квартиры. В&nbsp;противном случае товары доставляются к&nbsp;подъезду или на&nbsp;лестничную площадку.
 
-    .b-address-item__footer
-      .b-address-item__ui
-        .b-address-item__ui-primary
-          span.b-address-item__primary-btn.button-gray Главный адрес
-        .b-address-item__ui-secondary.b-address-item__ui-secondary_active
-          a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
+		.b-address-item__footer
+			.b-address-item__ui
+				.b-address-item__ui-primary
+					span.b-address-item__primary-btn.button-gray Главный адрес
+				.b-address-item__ui-secondary.b-address-item__ui-secondary_active
+					a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
 
-        .b-address-item__ui-remove
-          a.b-address-item__remove-btn.button-gray(href="#") Удалить
-        .b-address-item__ui-edit.b-address-item__ui-edit_active
-          a.b-address-item__edit-btn.button-gray(href="#") Редактировать
-        .b-address-item__ui-save
-          a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
+				.b-address-item__ui-remove
+					a.b-address-item__remove-btn.button-gray(href="#") Удалить
+				.b-address-item__ui-edit.b-address-item__ui-edit_active
+					a.b-address-item__edit-btn.button-gray(href="#") Редактировать
+				.b-address-item__ui-save
+					a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
 
 mixin address-item_blank()
-  .b-address-item.iblock._edit-state&attributes(attributes)
-    .b-address-item__header
-      .b-address-item__town
-      .b-address-item__title
+	.b-address-item.iblock._edit-state&attributes(attributes)
+		.b-address-item__header
+			.b-address-item__town
+			.b-address-item__title
 
-    .b-address-item__main
-      .b-address-item__save-state
-        ul.b-address-item__save-fields
-          li.b-address-item__save-field
-            .b-address-item__field-label Адрес получения:
-            .b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address
-          li.b-address-item__save-field
-            .b-address-item__field-label Комментарий курьеру:
-            .b-address-item__field-content.b-address-item__comment
+		.b-address-item__main
+			.b-address-item__save-state
+				ul.b-address-item__save-fields
+					li.b-address-item__save-field
+						.b-address-item__field-label Адрес получения:
+						.b-address-item__field-content.b-address-item__field-content_bold.b-address-item__address
+					li.b-address-item__save-field
+						.b-address-item__field-label Комментарий курьеру:
+						.b-address-item__field-content.b-address-item__comment
 
-      .b-address-item__edit-state
-        ul.b-address-item__edit-fields
-          li.b-address-item__edit-field
-            .b-address-form
-              form(action="/")
-                input(type="hidden" name="addressID" value="sdfsvi12")
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Название адреса (например: дача)
-                      .b-address-form__input
-                        input(type="text" name="name" required)
+			.b-address-item__edit-state
+				ul.b-address-item__edit-fields
+					li.b-address-item__edit-field
+						.b-address-form
+							form(action="/")
+								input(type="hidden" name="addressID" value="sdfsvi12")
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Название адреса (например: дача)
+											.b-address-form__input
+												input(type="text" name="name" required)
 
-                  .b-address-form__right-col
-                    label
-                      .b-address-form__label Населённый пункт (город)
-                      .b-address-form__input
-                        input(type="text" name="town" required)
+									.b-address-form__right-col
+										label
+											.b-address-form__label Населённый пункт (город)
+											.b-address-form__input
+												input(type="text" name="town" required)
 
-                .b-address-form__cols
-                  .b-address-form__left-col
-                    label
-                      .b-address-form__label Улица
-                      .b-address-form__input
-                        input(type="text" name="street" required)
+								.b-address-form__cols
+									.b-address-form__left-col
+										label
+											.b-address-form__label Улица
+											.b-address-form__input
+												input(type="text" name="street" required)
 
-                  .b-address-form__right-col
-                    .b-address-form__nums
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Дом
-                          .b-address-form__input
-                            input(type="tel" name="building" required)
+									.b-address-form__right-col
+										.b-address-form__nums
+											.b-address-form__num
+												label
+													.b-address-form__label Дом
+													.b-address-form__input
+														input(type="tel" name="building" required)
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Корпус
-                          .b-address-form__input
-                            input(type="tel" name="block")
+											.b-address-form__num
+												label
+													.b-address-form__label Корпус
+													.b-address-form__input
+														input(type="tel" name="block")
 
-                      .b-address-form__num
-                        label
-                          .b-address-form__label Квартира
-                          .b-address-form__input
-                            input(type="tel" name="flat")
+											.b-address-form__num
+												label
+													.b-address-form__label Квартира
+													.b-address-form__input
+														input(type="tel" name="flat")
 
-                .b-address-form__comment
-                  label
-                    .b-address-form__label Комментарий курьеру
-                    .b-address-form__input
-                      .b-address-form__textarea
-                        textarea(name="comment").scroll-fixer
+								.b-address-form__comment
+									label
+										.b-address-form__label Комментарий курьеру
+										.b-address-form__input
+											.b-address-form__textarea
+												textarea(name="comment").scroll-fixer
 
-    .b-address-item__footer
-      .b-address-item__ui
-        .b-address-item__ui-primary
-          span.b-address-item__primary-btn.button-gray Главный адрес
-        .b-address-item__ui-secondary.b-address-item__ui-secondary_active
-          a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
+		.b-address-item__footer
+			.b-address-item__ui
+				.b-address-item__ui-primary
+					span.b-address-item__primary-btn.button-gray Главный адрес
+				.b-address-item__ui-secondary.b-address-item__ui-secondary_active
+					a.b-address-item__secondary-btn.button-gray(href="#paste-url-for-action") Сделать главным
 
-        .b-address-item__ui-remove
-          a.b-address-item__remove-btn.button-gray(href="#") Удалить
-        .b-address-item__ui-edit
-          a.b-address-item__edit-btn.button-gray(href="#") Редактировать
-        .b-address-item__ui-save.b-address-item__ui-save_active
-          a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить
+				.b-address-item__ui-remove
+					a.b-address-item__remove-btn.button-gray(href="#") Удалить
+				.b-address-item__ui-edit
+					a.b-address-item__edit-btn.button-gray(href="#") Редактировать
+				.b-address-item__ui-save.b-address-item__ui-save_active
+					a.b-address-item__save-btn.button(href="#paste-url-for-remove") Сохранить

@@ -1,77 +1,77 @@
 mixin order-item()
-  .b-order-item.iblock&attributes(attributes)
-    .b-order-item__header
-      .b-order-item__title Заказ №4563465
-      .b-order-item__date Оформлен 30 августа 2015
+	.b-order-item.iblock&attributes(attributes)
+		.b-order-item__header
+			.b-order-item__title Заказ №4563465
+			.b-order-item__date Оформлен 30 августа 2015
 
-    .b-order-item__main
-      .b-order-item__item
-        .b-order-item__item-label Статус:
-        .b-order-item__item-content Комплектуется
+		.b-order-item__main
+			.b-order-item__item
+				.b-order-item__item-label Статус:
+				.b-order-item__item-content Комплектуется
 
-      .b-order-item__item
-        .b-order-item__item-label Зарезервирован до:
-        .b-order-item__item-content 3 сентября, 2015, 23:59 <a href="#" class="b-order-item__link">Продлить резерв</a>
+			.b-order-item__item
+				.b-order-item__item-label Зарезервирован до:
+				.b-order-item__item-content 3 сентября, 2015, 23:59 <a href="#" class="b-order-item__link">Продлить резерв</a>
 
-      .b-order-item__item
-        .b-order-item__item-label Способ получения:
-        .b-order-item__item-content Доставка по&nbsp;адресу: Москва, улица Нижняя Масловка, дом 23, подъезд 3. <a href="#" class="b-order-item__link">Смотреть на&nbsp;карте</a>
+			.b-order-item__item
+				.b-order-item__item-label Способ получения:
+				.b-order-item__item-content Доставка по&nbsp;адресу: Москва, улица Нижняя Масловка, дом 23, подъезд 3. <a href="#" class="b-order-item__link">Смотреть на&nbsp;карте</a>
 
-      .b-order-item__item
-        .b-order-item__item-label Стоимость доставки:
-        .b-order-item__item-content 300 <span class="rub">i</span>
+			.b-order-item__item
+				.b-order-item__item-label Стоимость доставки:
+				.b-order-item__item-content 300 <span class="rub">i</span>
 
-      .b-order-item__item
-        .b-order-item__item-label Состав заказа:
-        .b-order-item__item-content
-          +order-contents()
+			.b-order-item__item
+				.b-order-item__item-label Состав заказа:
+				.b-order-item__item-content
+					+order-contents()
 
-      .b-order-item__item
-        .b-order-item__item-label Итого:
-        .b-order-item__item-content
-          .b-order-item__cost 725&nbsp;350 <span class="rub">i</span>
-          .b-order-item__bonus +4&nbsp;999 бонусов
+			.b-order-item__item
+				.b-order-item__item-label Итого:
+				.b-order-item__item-content
+					.b-order-item__cost 725&nbsp;350 <span class="rub">i</span>
+					.b-order-item__bonus +4&nbsp;999 бонусов
 
-    .b-order-item__footer
-      .b-order-item__ui
-        a.b-order-item__pay-btn.button-gray(href="#") Оплатить онлайн
-        a.b-order-item__print-btn.button-gray(href="#") Распечатать накладную
-        a.b-order-item__cancel-btn.button-gray(href="#") Отменить заказ
+		.b-order-item__footer
+			.b-order-item__ui
+				a.b-order-item__pay-btn.button-gray(href="#") Оплатить онлайн
+				a.b-order-item__print-btn.button-gray(href="#") Распечатать накладную
+				a.b-order-item__cancel-btn.button-gray(href="#") Отменить заказ
 
 mixin order-item_complete()
-  .b-order-item&attributes(attributes)
-    .b-order-item__header
-      .b-order-item__title Заказ №4563465
-      .b-order-item__date Оформлен 30 августа 2015
+	.b-order-item&attributes(attributes)
+		.b-order-item__header
+			.b-order-item__title Заказ №4563465
+			.b-order-item__date Оформлен 30 августа 2015
 
-    .b-order-item__main
-      .b-order-item__item
-        .b-order-item__item-label Статус:
-        .b-order-item__item-content Доставлен (5 сентября 2015)
+		.b-order-item__main
+			.b-order-item__item
+				.b-order-item__item-label Статус:
+				.b-order-item__item-content Доставлен (5 сентября 2015)
 
-      .b-order-item__item
-        .b-order-item__item-label Зарезервирован до:
-        .b-order-item__item-content 3 сентября, 2015, 23:59 <a href="#" class="b-order-item__link">Продлить резерв</a>
+			.b-order-item__item
+				.b-order-item__item-label Зарезервирован до:
+				.b-order-item__item-content 3 сентября, 2015, 23:59 <a href="#" class="b-order-item__link">Продлить резерв</a>
 
-      .b-order-item__item
-        .b-order-item__item-label Способ получения:
-        .b-order-item__item-content Доставка по&nbsp;адресу: Москва, улица Нижняя Масловка, дом 23, подъезд 3. <a href="#" class="b-order-item__link">Смотреть на&nbsp;карте</a>
+			.b-order-item__item
+				.b-order-item__item-label Способ получения:
+				.b-order-item__item-content Доставка по&nbsp;адресу: Москва, улица Нижняя Масловка, дом 23, подъезд 3. <a href="#" class="b-order-item__link">Смотреть на&nbsp;карте</a>
 
-      .b-order-item__item
-        .b-order-item__item-label Стоимость доставки:
-        .b-order-item__item-content 300 <span class="rub">i</span>
+			.b-order-item__item
+				.b-order-item__item-label Стоимость доставки:
+				.b-order-item__item-content 300 <span class="rub">i</span>
 
-      .b-order-item__item
-        .b-order-item__item-label Состав заказа:
-        .b-order-item__item-content
-          +order-contents_complete()
+			.b-order-item__item
+				.b-order-item__item-label Состав заказа:
+				.b-order-item__item-content
+					+order-contents_complete()
 
-      .b-order-item__item
-        .b-order-item__item-label Итого:
-        .b-order-item__item-content
-          .b-order-item__cost 725&nbsp;350 <span class="rub">i</span>
-          .b-order-item__bonus +4&nbsp;999 бонусов
+			.b-order-item__item
+				.b-order-item__item-label Итого:
+				.b-order-item__item-content
+					.b-order-item__cost 725&nbsp;350 <span class="rub">i</span>
+					.b-order-item__bonus +4&nbsp;999 бонусов
 
-    .b-order-item__footer
-      .b-order-item__ui
-        a.b-order-item__print-btn.button-gray(href="#") Распечатать накладную
+		.b-order-item__footer
+			.b-order-item__ui
+				a.b-order-item__print-btn.button-gray(href="#") Распечатать накладную

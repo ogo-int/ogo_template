@@ -44,8 +44,8 @@ $(function () {
     function hideBlock () {
       $context.addClass("_hide");
       // setCookie('hideCatalogIntro', 1, {
-      //   expires: (1*24*60*60*1000), // 1 day
-      //   path: window.location.pathname
+      // 	expires: (1*24*60*60*1000), // 1 day
+      // 	path: window.location.pathname
       // });
       return false;
     }
@@ -53,8 +53,8 @@ $(function () {
     function showBlock () {
       $context.removeClass("_hide");
       // setCookie('hideCatalogIntro', 0, {
-      //   expires: (1*24*60*60*1000), // 1 day
-      //   path: window.location.pathname
+      // 	expires: (1*24*60*60*1000), // 1 day
+      // 	path: window.location.pathname
       // });
       return false;
     }

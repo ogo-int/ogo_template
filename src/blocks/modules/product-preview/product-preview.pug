@@ -1,36 +1,36 @@
 mixin product-preview()
-  .b-product-preview.iblock&attributes(attributes)
-    .b-product-preview__caption Зеркальная фотокамера Nikon D3200 Kit 18&ndash;55 VR&nbsp;II D3200 Kit 18&ndash;55 VR&nbsp;II
-    .b-product-preview__remarks
-      .b-product-preview__warn Этот товар не совместим с Корпусом ATX Miditower Accord P-25B Black
+	.b-product-preview.iblock&attributes(attributes)
+		.b-product-preview__caption Зеркальная фотокамера Nikon D3200 Kit 18&ndash;55 VR&nbsp;II D3200 Kit 18&ndash;55 VR&nbsp;II
+		.b-product-preview__remarks
+			.b-product-preview__warn Этот товар не совместим с Корпусом ATX Miditower Accord P-25B Black
 
-    .b-product-preview__photos
-      +photo-slider()
+		.b-product-preview__photos
+			+photo-slider()
 
-    .b-product-preview__footer
-      .b-product-preview__cols
-        .b-product-preview__params-holder
-          .b-product-preview__codes
-            span.b-product-preview__article Арт. <b>34534345</b>
-            span.b-product-preview__avail Есть в&nbsp;наличии
+		.b-product-preview__footer
+			.b-product-preview__cols
+				.b-product-preview__params-holder
+					.b-product-preview__codes
+						span.b-product-preview__article Арт. <b>34534345</b>
+						span.b-product-preview__avail Есть в&nbsp;наличии
 
-          .b-product-preview__params
-            .b-product-preview__param-left
-              +params-list()
-            .b-product-preview__param-right
-              +params-list()
+					.b-product-preview__params
+						.b-product-preview__param-left
+							+params-list()
+						.b-product-preview__param-right
+							+params-list()
 
-        .b-product-preview__ui-holder
-          .b-product-preview__ui-wrap
-            .b-product-preview__prices
-              .b-product-preview__current-price 725&nbsp;350 <span class="rub">i</span>
-              .b-product-preview__old-price 46&nbsp;345 <span class="rub">i</span>
-              .b-product-preview__bonus +223 бонуса
+				.b-product-preview__ui-holder
+					.b-product-preview__ui-wrap
+						.b-product-preview__prices
+							.b-product-preview__current-price 725&nbsp;350 <span class="rub">i</span>
+							.b-product-preview__old-price 46&nbsp;345 <span class="rub">i</span>
+							.b-product-preview__bonus +223 бонуса
 
-            .b-product-preview__btns
-              a.b-product-preview__buy.button-buy(href="#") <span>Добавить в&nbsp;корзину</span>
+						.b-product-preview__btns
+							a.b-product-preview__buy.button-buy(href="#") <span>Добавить в&nbsp;корзину</span>
 
-              .b-product-preview__additional-btns
-                a.b-product-preview__fast-order.js-modal(href="#fast-buy") <span>Быстрый заказ</span>
-                a.b-product-preview__favor(href="#")
-                a.b-product-preview__compare(href="#")
+							.b-product-preview__additional-btns
+								a.b-product-preview__fast-order.js-modal(href="#fast-buy") <span>Быстрый заказ</span>
+								a.b-product-preview__favor(href="#")
+								a.b-product-preview__compare(href="#")

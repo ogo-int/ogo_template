@@ -1,10 +1,10 @@
 mixin info-tooltip(data)
-  span.b-info-tooltip.iblock&attributes(attributes)
-    span.b-info-tooltip__link ?
-    span.b-info-tooltip__container!= data.text
+	span.b-info-tooltip.iblock&attributes(attributes)
+		span.b-info-tooltip__link ?
+		span.b-info-tooltip__container!= data.text
 
 mixin info-tooltip_bonus()
-  span.b-info-tooltip.iblock&attributes(attributes)
-    span.b-info-tooltip__link ?
-    span.b-info-tooltip__container
-      img.b-info-tooltip__image(src="assets/img/content/card.png", alt="Бонусная карта" width=326 height=200)
+	span.b-info-tooltip.iblock&attributes(attributes)
+		span.b-info-tooltip__link ?
+		span.b-info-tooltip__container
+			img.b-info-tooltip__image(src="assets/img/content/card.png", alt="Бонусная карта" width=326 height=200)

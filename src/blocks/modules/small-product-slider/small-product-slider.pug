@@ -1,72 +1,72 @@
 mixin small-product-slider()
-  .b-small-product-slider.iblock._nojs&attributes(attributes)
-    .b-small-product-slider__header
-      .b-small-product-slider__title Лучшее из&nbsp;каталога
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__header
+			.b-small-product-slider__title Лучшее из&nbsp;каталога
 
-      .b-small-product-slider__header-cols
-        .b-small-product-slider__tags
-          .b-tags
-            ul.b-tags__items
-              li.b-tags__item
-                a.b-tags__tag.b-tags__tag_active(href="") Все
-              li.b-tags__item
-                a.b-tags__tag(href="") Умные чаcы
-              li.b-tags__item
-                a.b-tags__tag(href="") Телевизоры 4K
-              li.b-tags__item
-                a.b-tags__tag(href="") Смартфоны Samsung
+			.b-small-product-slider__header-cols
+				.b-small-product-slider__tags
+					.b-tags
+						ul.b-tags__items
+							li.b-tags__item
+								a.b-tags__tag.b-tags__tag_active(href="") Все
+							li.b-tags__item
+								a.b-tags__tag(href="") Умные чаcы
+							li.b-tags__item
+								a.b-tags__tag(href="") Телевизоры 4K
+							li.b-tags__item
+								a.b-tags__tag(href="") Смартфоны Samsung
 
-        .b-small-product-slider__arrows
-          a.b-small-product-slider__prev(href="#")
-          a.b-small-product-slider__next(href="#")
+				.b-small-product-slider__arrows
+					a.b-small-product-slider__prev(href="#")
+					a.b-small-product-slider__next(href="#")
 
-    .b-small-product-slider__slider-holder
-      ul.b-small-product-slider__slider
-        each val in [1,1,1,1,1,1,1,1,1,1,1]
-          li.b-small-product-slider__slide
-            +product-small()
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,1,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small()
 
 mixin small-product-slider_favor()
-  .b-small-product-slider.iblock._nojs&attributes(attributes)
-    .b-small-product-slider__bottom-header
-      .b-small-product-slider__more
-        a.b-small-product-slider__more-btn.button(href="#") Перейти ко&nbsp;всем избранным товарам
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__bottom-header
+			.b-small-product-slider__more
+				a.b-small-product-slider__more-btn.button(href="#") Перейти ко&nbsp;всем избранным товарам
 
-      .b-small-product-slider__arrows-bottom
-        a.b-small-product-slider__prev(href="#")
-        a.b-small-product-slider__next(href="#")
+			.b-small-product-slider__arrows-bottom
+				a.b-small-product-slider__prev(href="#")
+				a.b-small-product-slider__next(href="#")
 
-    .b-small-product-slider__slider-holder
-      ul.b-small-product-slider__slider
-        each val in [1,1,1,1,1,1,11,1,1,1,1]
-          li.b-small-product-slider__slide
-            +product-small()
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,11,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small()
 
 
 mixin small-product-slider_buy()
-  .b-small-product-slider.iblock._nojs&attributes(attributes)
-    .b-small-product-slider__header
-      .b-small-product-slider__title Лучшее из&nbsp;каталога
+	.b-small-product-slider.iblock._nojs&attributes(attributes)
+		.b-small-product-slider__header
+			.b-small-product-slider__title Лучшее из&nbsp;каталога
 
-      .b-small-product-slider__header-cols
-        .b-small-product-slider__tags
-          .b-tags
-            ul.b-tags__items
-              li.b-tags__item
-                a.b-tags__tag.b-tags__tag_active(href="") Все
-              li.b-tags__item
-                a.b-tags__tag(href="") Умные чаcы
-              li.b-tags__item
-                a.b-tags__tag(href="") Телевизоры 4K
-              li.b-tags__item
-                a.b-tags__tag(href="") Смартфоны Samsung
+			.b-small-product-slider__header-cols
+				.b-small-product-slider__tags
+					.b-tags
+						ul.b-tags__items
+							li.b-tags__item
+								a.b-tags__tag.b-tags__tag_active(href="") Все
+							li.b-tags__item
+								a.b-tags__tag(href="") Умные чаcы
+							li.b-tags__item
+								a.b-tags__tag(href="") Телевизоры 4K
+							li.b-tags__item
+								a.b-tags__tag(href="") Смартфоны Samsung
 
-        .b-small-product-slider__arrows
-          a.b-small-product-slider__prev(href="#")
-          a.b-small-product-slider__next(href="#")
+				.b-small-product-slider__arrows
+					a.b-small-product-slider__prev(href="#")
+					a.b-small-product-slider__next(href="#")
 
-    .b-small-product-slider__slider-holder
-      ul.b-small-product-slider__slider
-        each val in [1,1,1,1,1,1,1,1,1,1,1]
-          li.b-small-product-slider__slide
-            +product-small_buttons()
+		.b-small-product-slider__slider-holder
+			ul.b-small-product-slider__slider
+				each val in [1,1,1,1,1,1,1,1,1,1,1]
+					li.b-small-product-slider__slide
+						+product-small_buttons()

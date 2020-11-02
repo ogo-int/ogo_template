@@ -1,19 +1,19 @@
 mixin feedback-sort()
-  .b-feedback-sort.iblock&attributes(attributes)
-    .b-feedback-sort__checkboxes
-      +radio('Яндекс.Маркет')
-      +radio('ОГО!')
+	.b-feedback-sort.iblock&attributes(attributes)
+		.b-feedback-sort__checkboxes
+			+radio('Яндекс.Маркет')
+			+radio('ОГО!')
 
-    .b-feedback-sort__sort
-      .b-feedback-sort__sort-label Сортировать по:
-      .b-feedback-sort__sort-item._active
-        a.b-feedback-sort__sort-link(href="#") Полезности
-        span.b-feedback-sort__arrow-down
+		.b-feedback-sort__sort
+			.b-feedback-sort__sort-label Сортировать по:
+			.b-feedback-sort__sort-item._active
+				a.b-feedback-sort__sort-link(href="#") Полезности
+				span.b-feedback-sort__arrow-down
 
-      .b-feedback-sort__sort-item
-        a.b-feedback-sort__sort-link(href="#") Оценке
-        span.b-feedback-sort__arrow-down
+			.b-feedback-sort__sort-item
+				a.b-feedback-sort__sort-link(href="#") Оценке
+				span.b-feedback-sort__arrow-down
 
-      .b-feedback-sort__sort-item
-        a.b-feedback-sort__sort-link(href="#") Дате
-        span.b-feedback-sort__arrow-up
+			.b-feedback-sort__sort-item
+				a.b-feedback-sort__sort-link(href="#") Дате
+				span.b-feedback-sort__arrow-up

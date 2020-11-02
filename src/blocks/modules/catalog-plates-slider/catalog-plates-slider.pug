@@ -1,26 +1,26 @@
 mixin catalog-plates-slider()
-  .catalog-plates-slider.iblock._nojs&attributes(attributes)
-    ul.catalog-plates-slider__slider
-      each val in [1,1,1,1,1]
-        li.catalog-plates-slider__slide
-          .catalog-plates-slider__slide-wrap
-            +plate-product()
+	.catalog-plates-slider.iblock._nojs&attributes(attributes)
+		ul.catalog-plates-slider__slider
+			each val in [1,1,1,1,1]
+				li.catalog-plates-slider__slide
+					.catalog-plates-slider__slide-wrap
+						+plate-product()
 
 mixin catalog-plates-slider_wide-banner()
-  .catalog-plates-slider.catalog-plates-slider_wide-banner.iblock._nojs&attributes(attributes)
-    ul.catalog-plates-slider__slider
-      each val in [1,1,1,1,1]
-        li.catalog-plates-slider__slide
-          .catalog-plates-slider__slide-wrap
-            .b-catalog-plates__wide-baner
-              a(href="#")
-                img.b-catalog-plates__img(src="assets/img/content/wide-baner.png", alt="Акция" width=956 height=190)
+	.catalog-plates-slider.catalog-plates-slider_wide-banner.iblock._nojs&attributes(attributes)
+		ul.catalog-plates-slider__slider
+			each val in [1,1,1,1,1]
+				li.catalog-plates-slider__slide
+					.catalog-plates-slider__slide-wrap
+						.b-catalog-plates__wide-baner
+							a(href="#")
+								img.b-catalog-plates__img(src="assets/img/content/wide-baner.png", alt="Акция" width=956 height=190)
 
 mixin catalog-plates-slider_medium-banner()
-  .catalog-plates-slider.catalog-plates-slider_medium-banner.iblock._nojs&attributes(attributes)
-    ul.catalog-plates-slider__slider
-      each val in [1,1,1,1,1]
-        li.catalog-plates-slider__slide
-          .catalog-plates-slider__slide-wrap
-            .b-catalog-plates__medium-baner
-              +promo-block1()
+	.catalog-plates-slider.catalog-plates-slider_medium-banner.iblock._nojs&attributes(attributes)
+		ul.catalog-plates-slider__slider
+			each val in [1,1,1,1,1]
+				li.catalog-plates-slider__slide
+					.catalog-plates-slider__slide-wrap
+						.b-catalog-plates__medium-baner
+							+promo-block1()

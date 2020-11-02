@@ -1,25 +1,25 @@
 mixin catalog-sort()
-  .b-catalog-sort.iblock&attributes(attributes)
-    .b-catalog-sort__holder
-      .b-catalog-sort__pager
-        +paginator_sort()
-        
-      .b-catalog-sort__qtty
-        .b-catalog-sort__params
-          span.b-catalog-sort__params-label Выводить по:
-          a.b-catalog-sort__link.b-catalog-sort__link_active(href="#") 15
-          a.b-catalog-sort__link(href="#") 60
-          a.b-catalog-sort__link(href="#") Показывать все
+	.b-catalog-sort.iblock&attributes(attributes)
+		.b-catalog-sort__holder
+			.b-catalog-sort__pager
+				+paginator_sort()
+				
+			.b-catalog-sort__qtty
+				.b-catalog-sort__params
+					span.b-catalog-sort__params-label Выводить по:
+					a.b-catalog-sort__link.b-catalog-sort__link_active(href="#") 15
+					a.b-catalog-sort__link(href="#") 60
+					a.b-catalog-sort__link(href="#") Показывать все
 
-      .b-catalog-sort__sort
-        .b-catalog-sort__params
-          span.b-catalog-sort__params-label Сортировать по:
-          a.b-catalog-sort__link.b-catalog-sort__link_active.b-catalog-sort__link_up(href="#") Популярности
-          a.b-catalog-sort__link.b-catalog-sort__link_down(href="#") Новизне
-          a.b-catalog-sort__link.b-catalog-sort__link_down(href="#") Цене
+			.b-catalog-sort__sort
+				.b-catalog-sort__params
+					span.b-catalog-sort__params-label Сортировать по:
+					a.b-catalog-sort__link.b-catalog-sort__link_active.b-catalog-sort__link_up(href="#") Популярности
+					a.b-catalog-sort__link.b-catalog-sort__link_down(href="#") Новизне
+					a.b-catalog-sort__link.b-catalog-sort__link_down(href="#") Цене
 
-      .b-catalog-sort__view
-        .b-catalog-sort__params
-          span.b-catalog-sort__params-label Вид:
-          a.b-catalog-sort__list-view(href="#")
-          a.b-catalog-sort__plate-view.b-catalog-sort__plate-view_active(href="#")
+			.b-catalog-sort__view
+				.b-catalog-sort__params
+					span.b-catalog-sort__params-label Вид:
+					a.b-catalog-sort__list-view(href="#")
+					a.b-catalog-sort__plate-view.b-catalog-sort__plate-view_active(href="#")

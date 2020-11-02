@@ -1,36 +1,36 @@
 mixin top-product()
-  .b-top-product.iblock&attributes(attributes)
-    .b-top-product__product-wrap
-      .b-top-product__header
-        .b-top-product__rating
-          +rating()
-        .b-top-product__art Арт. 34534345
+	.b-top-product.iblock&attributes(attributes)
+		.b-top-product__product-wrap
+			.b-top-product__header
+				.b-top-product__rating
+					+rating()
+				.b-top-product__art Арт. 34534345
 
-      .b-top-product__main
-        .b-top-product__image-col
-          .b-top-product__image-holder
-            img.b-plate-product__image(src="assets/img/content/products/product-preview2.jpg", alt="Товар" width=218 height=218)
+			.b-top-product__main
+				.b-top-product__image-col
+					.b-top-product__image-holder
+						img.b-plate-product__image(src="assets/img/content/products/product-preview2.jpg", alt="Товар" width=218 height=218)
 
-        .b-top-product__description-col
-          a.b-top-product__title(href="#") Canon PowerShot SX400 IS&nbsp;Body Kit
+				.b-top-product__description-col
+					a.b-top-product__title(href="#") Canon PowerShot SX400 IS&nbsp;Body Kit
 
-          .b-top-product__params
-            +params-list()
+					.b-top-product__params
+						+params-list()
 
-          .b-top-product__bottom-section
-            .b-top-product__price-holder
-              span.b-top-product__price 2&nbsp;999 <span class="rub">i</span>
+					.b-top-product__bottom-section
+						.b-top-product__price-holder
+							span.b-top-product__price 2&nbsp;999 <span class="rub">i</span>
 
-            .b-top-product__avail В&nbsp;наличии
+						.b-top-product__avail В&nbsp;наличии
 
-            .b-top-product__btn-holder
-              .b-top-product__buy-btns
-                a.b-top-product__buy.button-buy(href="#") Купить
-                span.b-top-product__bonus +233 бонуса
+						.b-top-product__btn-holder
+							.b-top-product__buy-btns
+								a.b-top-product__buy.button-buy(href="#") Купить
+								span.b-top-product__bonus +233 бонуса
 
-              .b-top-product__other-btns
-                a.b-top-product__favor(href="#")
-                  a.b-top-product__compare(href="#")
+							.b-top-product__other-btns
+								a.b-top-product__favor(href="#")
+									a.b-top-product__compare(href="#")
 
-    .b-top-product__feedback-wrap
-      +feedback-product_pure()
+		.b-top-product__feedback-wrap
+			+feedback-product_pure()

@@ -1,32 +1,32 @@
 mixin order-recipient()
-  .b-order-recipient.iblock&attributes(attributes)
-    .b-order-recipient__header
-      .b-order-recipient__title Кто получит заказ?
-      .b-order-recipient__enter
-        a.b-order-recipient__enter-btn.button(href="#") Войти в&nbsp;личный кабинет
-    form(action="#" data-validate="Y")
-      .b-order-recipient__main
-        .b-order-recipient__cols
-          .b-order-recipient__col
-            .b-order-recipient__field
-              .b-order-recipient__field-label Имя, Фамилия
-              .b-order-recipient__field-input
-                input.b-order-recipient__text-input(type="text" name="name" required)
+	.b-order-recipient.iblock&attributes(attributes)
+		.b-order-recipient__header
+			.b-order-recipient__title Кто получит заказ?
+			.b-order-recipient__enter
+				a.b-order-recipient__enter-btn.button(href="#") Войти в&nbsp;личный кабинет
+		form(action="#" data-validate="Y")
+			.b-order-recipient__main
+				.b-order-recipient__cols
+					.b-order-recipient__col
+						.b-order-recipient__field
+							.b-order-recipient__field-label Имя, Фамилия
+							.b-order-recipient__field-input
+								input.b-order-recipient__text-input(type="text" name="name" required)
 
-          .b-order-recipient__col
-            .b-order-recipient__field
-              .b-order-recipient__field-label Электронная почта
-              .b-order-recipient__field-input
-                input.email.b-order-recipient__text-input(type="email" name="email" required)
+					.b-order-recipient__col
+						.b-order-recipient__field
+							.b-order-recipient__field-label Электронная почта
+							.b-order-recipient__field-input
+								input.email.b-order-recipient__text-input(type="email" name="email" required)
 
-          .b-order-recipient__col
-            .b-order-recipient__field
-              .b-order-recipient__field-label Мобильный телефон
-              .b-order-recipient__field-input 
-                input.phone.b-order-recipient__text-input(type="tel" name="phone" data-mask="phone" required)
-          .b-order-recipient__col
-            .b-order-recipient__field._no-label
-              .b-order-recipient__field-input
-                +checkbox('Я&nbsp;&mdash; представитель юридического лица или ИП')
-              .b-order-recipient__field-input
-                +checkbox('Присылать мне СМС уведомления о&nbsp;состоянии моего заказа')(checked)
+					.b-order-recipient__col
+						.b-order-recipient__field
+							.b-order-recipient__field-label Мобильный телефон
+							.b-order-recipient__field-input 
+								input.phone.b-order-recipient__text-input(type="tel" name="phone" data-mask="phone" required)
+					.b-order-recipient__col
+						.b-order-recipient__field._no-label
+							.b-order-recipient__field-input
+								+checkbox('Я&nbsp;&mdash; представитель юридического лица или ИП')
+							.b-order-recipient__field-input
+								+checkbox('Присылать мне СМС уведомления о&nbsp;состоянии моего заказа')(checked)

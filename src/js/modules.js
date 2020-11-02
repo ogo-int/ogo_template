@@ -895,8 +895,8 @@ $(function () {
     function hideBlock () {
       $context.addClass("_hide");
       // setCookie('hideCatalogIntro', 1, {
-      //   expires: (1*24*60*60*1000), // 1 day
-      //   path: window.location.pathname
+      // 	expires: (1*24*60*60*1000), // 1 day
+      // 	path: window.location.pathname
       // });
       return false;
     }
@@ -904,8 +904,8 @@ $(function () {
     function showBlock () {
       $context.removeClass("_hide");
       // setCookie('hideCatalogIntro', 0, {
-      //   expires: (1*24*60*60*1000), // 1 day
-      //   path: window.location.pathname
+      // 	expires: (1*24*60*60*1000), // 1 day
+      // 	path: window.location.pathname
       // });
       return false;
     }
@@ -939,7 +939,7 @@ $(function () {
 $(function () {
   $(".b-catalog-plates").livequery(function() {
     var $context = $(this);
-      
+			
     function equalizer() {
       var $container = $(".b-catalog-plates");
       var $platesHolder = $(".b-catalog-plates__items", $container);
@@ -1233,22 +1233,22 @@ $(function () {
     var $slider = $(".b-cert-slider__slider", $context);
 
     // $slider.slick({
-    //   slidesToShow: 1,
-    //   slidesToScroll: 1,
-    //   centerMode: true,
-    //   arrows: false,
-    //   autoplay: true,
-    //   autoplaySpeed: 0,
-    //   infinite: true,
-    //   centerMode: true,
-    //   speed: 4000,
-    //   centerPadding: '70px',
-    //   easing: 'linear'
+    // 	slidesToShow: 1,
+    // 	slidesToScroll: 1,
+    // 	centerMode: true,
+    // 	arrows: false,
+    // 	autoplay: true,
+    // 	autoplaySpeed: 0,
+    // 	infinite: true,
+    // 	centerMode: true,
+    // 	speed: 4000,
+    // 	centerPadding: '70px',
+    // 	easing: 'linear'
     // });
 
     // $context.on('resize.block', function () {
-    //   $slider.slick('checkResponsive');
-    //   $slider.slick('setPosition');
+    // 	$slider.slick('checkResponsive');
+    // 	$slider.slick('setPosition');
     // });
 
     $slider.smoothDivScroll({
@@ -1308,13 +1308,13 @@ $(function () {
 });
 
 // (function (){
-//       var td = document.querySelector('.scroll-td');
-//       var tr = document.querySelectorAll('.scloll-tr');
-//       var table = document.querySelector('.comparison-table-table');
-//       var trLenght = tr.length - 1
-//       var tdWidth = parseInt(window.getComputedStyle(td).width);
+//     	var td = document.querySelector('.scroll-td');
+//     	var tr = document.querySelectorAll('.scloll-tr');
+//     	var table = document.querySelector('.comparison-table-table');
+//     	var trLenght = tr.length - 1
+//     	var tdWidth = parseInt(window.getComputedStyle(td).width);
 
-//       table.style.width = tdWidth * trLenght  + 'px';
+//     	table.style.width = tdWidth * trLenght  + 'px';
 
 // }) ();
 // Дополнительные компоненты конфигуратора
@@ -1871,53 +1871,6 @@ $(function () {
   });
 });
 
-// Слайдер новостей
-$(function () {
-  $(".b-events-slider").livequery(function () {
-    var $context = $(this);
-    var $slider = $(".b-events-slider__slider", $context);
-    var $prev = $(".b-events-slider__prev", $context);
-    var $next = $(".b-events-slider__next", $context);
-
-    $context.removeClass("_nojs");
-
-    (function initSlider() {
-      $slider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: $prev,
-        nextArrow: $next,
-        respondTo: "slider",
-        infinite: false,
-        draggable: false,
-        responsive: [{
-            breakpoint: 930,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    })();
-
-    $context.on("resize.block", function () {
-      $slider.slick("checkResponsive");
-      $slider.slick("setPosition");
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        950: "_mx950"
-      }
-    });
-  });
-});
 // Контент в экспандере
 $(function () {
   $(".b-expand-content").livequery(function () {
@@ -2539,54 +2492,6 @@ $(function () {
   });
 });
 
-// Gaming
-$(function () {
-  $('.b-gaming-slider').slick({
-    useTransform: true,
-    speed: 640,
-    cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>'
-  });
-  $('.b-gaming-carousel').slick({
-    arrows: true,
-    dots: false,
-    slidesToShow: 5,
-    centerMode: true,
-    centerPadding: 0,
-    swipeToSlide: false,
-    useTransform: true,
-    touchThreshold: 20,
-    speed: 640,
-    cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>',
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          arrows: true,
-          slidesToShow: 3,
-          centerPadding: 0,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          arrows: true,
-          slidesToShow: 1,
-          centerPadding: 0,
-        }
-      }
-    ]
-  });
-  $('.b-gaming-slider__slide-price').text(
-    function() {
-      var price = $(this).text();
-      return price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
-    }
-  );
-})
 // comments
 $(function () {
   // code here...
@@ -3201,31 +3106,31 @@ $(function () {
           // Шаблонизация https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Template-docpage
           // Если будут использоваться внешние данные, то необходимо обойти использование |raw, иначе возможен XSS. Используется в основном для типографики.
           balloonTemplate:
-              "<div class=\"b-ymap__balloon-inner _qiwi\">" +
-                "<div class=\"b-ymap__balloon-header\">" +
-                  "<div class=\"b-ymap__balloon__close\"></div>" +
-                  "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
-                "</div>" +
-                "<div class=\"b-ymap__balloon-content\">" +
-                  "{% if properties.metro.length != 0 %}" +
-                  "<ul class=\"b-ymap__metro-items\">" +
-                    "{% for metro in properties.metro %}" +
-                      "<li class=\"b-ymap__metro-item\">{{metro|raw}}</li>"+
-                    "{% endfor %}" +
-                  "</ul>" +
-                  "{% endif %}" +
-                  "<div class=\"b-ymap__balloon-hours\">{{properties.hours|raw}}</div>" +
-                  "<a href=\"#\" class=\"b-ymap__balloon-apply button\" data-index=\"{{properties.index}}\"\">Заберу отсюда</a>" +
-                "</div>" +
-              "</div>",
+							"<div class=\"b-ymap__balloon-inner _qiwi\">" +
+								"<div class=\"b-ymap__balloon-header\">" +
+									"<div class=\"b-ymap__balloon__close\"></div>" +
+									"<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
+								"</div>" +
+								"<div class=\"b-ymap__balloon-content\">" +
+									"{% if properties.metro.length != 0 %}" +
+									"<ul class=\"b-ymap__metro-items\">" +
+										"{% for metro in properties.metro %}" +
+											"<li class=\"b-ymap__metro-item\">{{metro|raw}}</li>"+
+										"{% endfor %}" +
+									"</ul>" +
+									"{% endif %}" +
+									"<div class=\"b-ymap__balloon-hours\">{{properties.hours|raw}}</div>" +
+									"<a href=\"#\" class=\"b-ymap__balloon-apply button\" data-index=\"{{properties.index}}\"\">Заберу отсюда</a>" +
+								"</div>" +
+							"</div>",
 
           markTemplate:
-              "<div class=\"b-ymap__placemark _qiwi\">" +
-                "<div class=\"b-ymap__placemark-round\"></div>" +
-                "<div class=\"b-ymap__placemark-text\">" +
-                  "{{ properties.iconContent }}" +
-                "</div>" +
-              "</div>",
+							"<div class=\"b-ymap__placemark _qiwi\">" +
+								"<div class=\"b-ymap__placemark-round\"></div>" +
+								"<div class=\"b-ymap__placemark-text\">" +
+									"{{ properties.iconContent }}" +
+								"</div>" +
+							"</div>",
 
           buildCallback: balloonBehavior
         }]);
@@ -3283,7 +3188,7 @@ $(".b-shops-list__shop").on("click",function () {
   var w = screen.width;
   var mapContent = document.getElementsByClassName("b-map-contacts__cols");
   var mapContentHeight = parseInt(window.getComputedStyle(mapContent[0]).height);
-  var scroll = mapContentHeight/2;  
+  var scroll = mapContentHeight/2;	
 
   if(w > 768) {
     window.scrollTo(0,scroll);
@@ -3385,29 +3290,29 @@ $(function () {
 
     function buildPlacemark (params) {
       var icon =
-          "<div class=\"b-ymap__placemark"+ params.mod +"\">" +
-            "<div class=\"b-ymap__placemark-round\"></div>" +
-            "<div class=\"b-ymap__placemark-text\">" +
-              params.iconContent +
-            "</div>" +
-          "</div>";
+					"<div class=\"b-ymap__placemark"+ params.mod +"\">" +
+						"<div class=\"b-ymap__placemark-round\"></div>" +
+						"<div class=\"b-ymap__placemark-text\">" +
+							params.iconContent +
+						"</div>" +
+					"</div>";
 
       var balloon =
-          "<div class=\"b-ymap__balloon-outer"+ params.mod +"\">" +
-            "<div class=\"b-ymap__balloon-outer-holder\">" +
-              "<div class=\"b-ymap__balloon-inner"+ params.mod +"\">" +
-                "<div class=\"b-ymap__balloon-header\">" +
-                  "<div class=\"b-ymap__balloon__close\"></div>" +
-                  "<div class=\"b-ymap__balloon-address\">" + params.address + "</div>" +
-                "</div>" +
-                "<div class=\"b-ymap__balloon-content\">" +
-                  "<div class=\"b-ymap__balloon-phone\">" + params.phone + "</div>" +
-                  "<div class=\"b-ymap__balloon-hours\">" + params.hours + "</div>" +
-                  "<a href=" + params.link + " class=\"b-ymap__balloon-details button js-shop-info\">Подробнее</a>" +
-                "</div>" +
-              "</div>" +
-            "</div>" +
-          "</div>";
+					"<div class=\"b-ymap__balloon-outer"+ params.mod +"\">" +
+						"<div class=\"b-ymap__balloon-outer-holder\">" +
+							"<div class=\"b-ymap__balloon-inner"+ params.mod +"\">" +
+								"<div class=\"b-ymap__balloon-header\">" +
+									"<div class=\"b-ymap__balloon__close\"></div>" +
+									"<div class=\"b-ymap__balloon-address\">" + params.address + "</div>" +
+								"</div>" +
+								"<div class=\"b-ymap__balloon-content\">" +
+									"<div class=\"b-ymap__balloon-phone\">" + params.phone + "</div>" +
+									"<div class=\"b-ymap__balloon-hours\">" + params.hours + "</div>" +
+									"<a href=" + params.link + " class=\"b-ymap__balloon-details button js-shop-info\">Подробнее</a>" +
+								"</div>" +
+							"</div>" +
+						"</div>" +
+					"</div>";
 
       return {
         icon: icon,
@@ -3520,20 +3425,6 @@ $(function () {
     $subLinks.filter("._contain").on("click", toggleThirdMenu);
     $returnLink.on("click", closeSubMenu);
   });
-});
-
-modules.define('my-block', ['i-bem-dom'], function(provide, bemDom) {
-
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
 });
 
 // Плитка с новстью
@@ -4392,7 +4283,7 @@ $(function (){
     else if(target.is(":not(.b-product-small__hover-content)")) {
       remove();
     }
-  });  
+  });	
 });
 // Промослайдер
 $(function () {
@@ -4471,7 +4362,7 @@ $(function () {
       window.setInterval(function () {
         requestAnimFrame(function () {
           var c = new Date();
-          var  d = new Date($dateTo);
+          var	d = new Date($dateTo);
           var diff = new Date(d - c);
           var timeDiff = Math.abs(d.getTime() - c.getTime());
           var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
@@ -5747,18 +5638,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5784,6 +5663,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });

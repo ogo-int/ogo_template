@@ -1,111 +1,111 @@
 mixin smart-filter()
-  .b-smart-filter.iblock._nojs&attributes(attributes)
-    form(action="#" name="form")
-      .b-smart-filter__header
-        ul.b-smart-filter__btns
-          li.b-smart-filter__btn
-            label.b-smart-filter__submit.button Показать результат (38)
-              input(type="submit" value="Показать результат")
-          li.b-smart-filter__btn
-            label.b-smart-filter__reset.button-gray Очистить фильтр
-              input(type="reset")
-      .b-smart-filter__body
-        ul.b-smart-filter__params
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Цена, руб.
-            .b-smart-filter__params-holder
-              +filter-scale()
+	.b-smart-filter.iblock._nojs&attributes(attributes)
+		form(action="#" name="form")
+			.b-smart-filter__header
+				ul.b-smart-filter__btns
+					li.b-smart-filter__btn
+						label.b-smart-filter__submit.button Показать результат (38)
+							input(type="submit" value="Показать результат")
+					li.b-smart-filter__btn
+						label.b-smart-filter__reset.button-gray Очистить фильтр
+							input(type="reset")
+			.b-smart-filter__body
+				ul.b-smart-filter__params
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Цена, руб.
+						.b-smart-filter__params-holder
+							+filter-scale()
 
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Производитель
-            .b-smart-filter__params-holder
-              +checkbox-cols()
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Производитель
+						.b-smart-filter__params-holder
+							+checkbox-cols()
 
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Тип камеры
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Тип камеры
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
 
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name Вес камеры, г
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name Вес камеры, г
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
 
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name Тип видоискателя
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name Тип видоискателя
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
 
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name Наличие в магазине
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name Наличие в магазине
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
 
-      .b-smart-filter__footer
-        ul.b-smart-filter__btns
-          li.b-smart-filter__btn
-            label.b-smart-filter__submit.button Показать результат (38)
-              input(type="submit" value="Показать результат")
-          li.b-smart-filter__btn
-            label.b-smart-filter__reset.button-gray Очистить фильтр
-              input(type="reset")
+			.b-smart-filter__footer
+				ul.b-smart-filter__btns
+					li.b-smart-filter__btn
+						label.b-smart-filter__submit.button Показать результат (38)
+							input(type="submit" value="Показать результат")
+					li.b-smart-filter__btn
+						label.b-smart-filter__reset.button-gray Очистить фильтр
+							input(type="reset")
 
 mixin smart-filter_config()
-  .b-smart-filter.iblock&attributes(attributes)
-    form(action="#" name="form")
-      .b-smart-filter__header
-        ul.b-smart-filter__btns
-          li.b-smart-filter__btn
-            label.b-smart-filter__submit.button Показать результат (38)
-              input(type="submit" value="Показать результат")
-          li.b-smart-filter__btn
-            label.b-smart-filter__reset.button-gray Очистить фильтр
-              input(type="reset")
+	.b-smart-filter.iblock&attributes(attributes)
+		form(action="#" name="form")
+			.b-smart-filter__header
+				ul.b-smart-filter__btns
+					li.b-smart-filter__btn
+						label.b-smart-filter__submit.button Показать результат (38)
+							input(type="submit" value="Показать результат")
+					li.b-smart-filter__btn
+						label.b-smart-filter__reset.button-gray Очистить фильтр
+							input(type="reset")
 
-      .b-smart-filter__body
-        ul.b-smart-filter__params
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Конфигуратор
-            .b-smart-filter__params-holder
-              +radio-cols_one()
-
-
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Цена, руб.
-            .b-smart-filter__params-holder
-              +filter-scale()
-
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Производитель
-            .b-smart-filter__params-holder
-              +checkbox-cols()
-
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name.b-smart-filter__params-name_marked Тип камеры
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
-
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name Вес камеры, г
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
-
-          li.b-smart-filter__params-item._opened
-            .b-smart-filter__params-name Тип видоискателя
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
-
-          li.b-smart-filter__params-item
-            .b-smart-filter__params-name Наличие в магазине
-            .b-smart-filter__params-holder
-              +checkbox-cols_one()
+			.b-smart-filter__body
+				ul.b-smart-filter__params
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Конфигуратор
+						.b-smart-filter__params-holder
+							+radio-cols_one()
 
 
-      .b-smart-filter__footer
-        ul.b-smart-filter__btns
-          li.b-smart-filter__btn
-            label.b-smart-filter__submit.button Показать результат (38)
-              input(type="submit" value="Показать результат")
-          li.b-smart-filter__btn
-            label.b-smart-filter__reset.button-gray Очистить фильтр
-              input(type="reset")
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Цена, руб.
+						.b-smart-filter__params-holder
+							+filter-scale()
+
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Производитель
+						.b-smart-filter__params-holder
+							+checkbox-cols()
+
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name.b-smart-filter__params-name_marked Тип камеры
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
+
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name Вес камеры, г
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
+
+					li.b-smart-filter__params-item._opened
+						.b-smart-filter__params-name Тип видоискателя
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
+
+					li.b-smart-filter__params-item
+						.b-smart-filter__params-name Наличие в магазине
+						.b-smart-filter__params-holder
+							+checkbox-cols_one()
+
+
+			.b-smart-filter__footer
+				ul.b-smart-filter__btns
+					li.b-smart-filter__btn
+						label.b-smart-filter__submit.button Показать результат (38)
+							input(type="submit" value="Показать результат")
+					li.b-smart-filter__btn
+						label.b-smart-filter__reset.button-gray Очистить фильтр
+							input(type="reset")

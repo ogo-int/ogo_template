@@ -34,31 +34,31 @@ $(function () {
           // Шаблонизация https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Template-docpage
           // Если будут использоваться внешние данные, то необходимо обойти использование |raw, иначе возможен XSS. Используется в основном для типографики.
           balloonTemplate:
-              "<div class=\"b-ymap__balloon-inner _qiwi\">" +
-                "<div class=\"b-ymap__balloon-header\">" +
-                  "<div class=\"b-ymap__balloon__close\"></div>" +
-                  "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
-                "</div>" +
-                "<div class=\"b-ymap__balloon-content\">" +
-                  "{% if properties.metro.length != 0 %}" +
-                  "<ul class=\"b-ymap__metro-items\">" +
-                    "{% for metro in properties.metro %}" +
-                      "<li class=\"b-ymap__metro-item\">{{metro|raw}}</li>"+
-                    "{% endfor %}" +
-                  "</ul>" +
-                  "{% endif %}" +
-                  "<div class=\"b-ymap__balloon-hours\">{{properties.hours|raw}}</div>" +
-                  "<a href=\"#\" class=\"b-ymap__balloon-apply button\" data-index=\"{{properties.index}}\"\">Заберу отсюда</a>" +
-                "</div>" +
-              "</div>",
+							"<div class=\"b-ymap__balloon-inner _qiwi\">" +
+								"<div class=\"b-ymap__balloon-header\">" +
+									"<div class=\"b-ymap__balloon__close\"></div>" +
+									"<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
+								"</div>" +
+								"<div class=\"b-ymap__balloon-content\">" +
+									"{% if properties.metro.length != 0 %}" +
+									"<ul class=\"b-ymap__metro-items\">" +
+										"{% for metro in properties.metro %}" +
+											"<li class=\"b-ymap__metro-item\">{{metro|raw}}</li>"+
+										"{% endfor %}" +
+									"</ul>" +
+									"{% endif %}" +
+									"<div class=\"b-ymap__balloon-hours\">{{properties.hours|raw}}</div>" +
+									"<a href=\"#\" class=\"b-ymap__balloon-apply button\" data-index=\"{{properties.index}}\"\">Заберу отсюда</a>" +
+								"</div>" +
+							"</div>",
 
           markTemplate:
-              "<div class=\"b-ymap__placemark _qiwi\">" +
-                "<div class=\"b-ymap__placemark-round\"></div>" +
-                "<div class=\"b-ymap__placemark-text\">" +
-                  "{{ properties.iconContent }}" +
-                "</div>" +
-              "</div>",
+							"<div class=\"b-ymap__placemark _qiwi\">" +
+								"<div class=\"b-ymap__placemark-round\"></div>" +
+								"<div class=\"b-ymap__placemark-text\">" +
+									"{{ properties.iconContent }}" +
+								"</div>" +
+							"</div>",
 
           buildCallback: balloonBehavior
         }]);
@@ -116,7 +116,7 @@ $(".b-shops-list__shop").on("click",function () {
   var w = screen.width;
   var mapContent = document.getElementsByClassName("b-map-contacts__cols");
   var mapContentHeight = parseInt(window.getComputedStyle(mapContent[0]).height);
-  var scroll = mapContentHeight/2;  
+  var scroll = mapContentHeight/2;	
 
   if(w > 768) {
     window.scrollTo(0,scroll);

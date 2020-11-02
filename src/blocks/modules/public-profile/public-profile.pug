@@ -1,27 +1,27 @@
 mixin public-profile()
-  .b-public-profile.iblock&attributes(attributes)
-    .b-public-profile__header
-      .b-public-profile__title Публичные данные
-      .b-public-profile__title-remark Эти данные могут видеть другие посетители сайта. Например, когда Вы&nbsp;оставляете комментарий на&nbsp;товар.
+	.b-public-profile.iblock&attributes(attributes)
+		.b-public-profile__header
+			.b-public-profile__title Публичные данные
+			.b-public-profile__title-remark Эти данные могут видеть другие посетители сайта. Например, когда Вы&nbsp;оставляете комментарий на&nbsp;товар.
 
-    .b-public-profile__main
-      .b-public-profile__cols
-        .b-public-profile__photo-col
-          .b-public-profile__photo-header
-            .b-public-profile__col-title Фото
-          .b-public-profile__photo-main
-            img.b-public-profile__photo-img(src="assets/img/content/photo2.png", alt="Фото" width=100 height=100)
-            .b-public-profile__photo-change
-              label.b-public-profile__change-link.button-gray(href="#") Изменить
-                form(enctype="multipart/form-data" method="post")
-                  input.b-public-profile__change-input(type="file")
+		.b-public-profile__main
+			.b-public-profile__cols
+				.b-public-profile__photo-col
+					.b-public-profile__photo-header
+						.b-public-profile__col-title Фото
+					.b-public-profile__photo-main
+						img.b-public-profile__photo-img(src="assets/img/content/photo2.png", alt="Фото" width=100 height=100)
+						.b-public-profile__photo-change
+							label.b-public-profile__change-link.button-gray(href="#") Изменить
+								form(enctype="multipart/form-data" method="post")
+									input.b-public-profile__change-input(type="file")
 
-        .b-public-profile__nic-col
-          .b-public-profile__nic-header
-            .b-public-profile__nic-title Никнейм
-            .b-public-profile__col-status Изменения сохранены
-          .b-public-profile__nic-main
-            .b-public-profile__nic-input
-              input(type="text" value="kostik3000")
-            .b-public-profile__nic-btn
-              a.b-public-profile__save-btn.button-gray(href="#") Сохранить изменения
+				.b-public-profile__nic-col
+					.b-public-profile__nic-header
+						.b-public-profile__nic-title Никнейм
+						.b-public-profile__col-status Изменения сохранены
+					.b-public-profile__nic-main
+						.b-public-profile__nic-input
+							input(type="text" value="kostik3000")
+						.b-public-profile__nic-btn
+							a.b-public-profile__save-btn.button-gray(href="#") Сохранить изменения

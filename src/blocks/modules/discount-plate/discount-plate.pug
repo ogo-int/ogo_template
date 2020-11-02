@@ -1,21 +1,21 @@
 mixin discount-plate()
-  form(action="#" data-validate="Y")
-    .b-discount-plate.iblock&attributes(attributes)
-      .b-discount-plate__section
-        .b-discount-plate__title Использовать бонусы для оплаты
-        .b-discount-plate__section-content
-          .b-discount-plate__input-item
-            .b-discount-plate__input-holder
-              input.b-discount-plate__input(type="text" name="bonus" data-mask="bonus" placeholder= "500 из 10000 бонусов")
+	form(action="#" data-validate="Y")
+		.b-discount-plate.iblock&attributes(attributes)
+			.b-discount-plate__section
+				.b-discount-plate__title Использовать бонусы для оплаты
+				.b-discount-plate__section-content
+					.b-discount-plate__input-item
+						.b-discount-plate__input-holder
+							input.b-discount-plate__input(type="text" name="bonus" data-mask="bonus" placeholder= "500 из 10000 бонусов")
 
-            .b-discount-plate__submit-holder
-              input.b-discount-plate__submit.button-gray(type="submit" value="Применить")
+						.b-discount-plate__submit-holder
+							input.b-discount-plate__submit.button-gray(type="submit" value="Применить")
 
-      .b-discount-plate__section
-        .b-discount-plate__title Активировать купон
-        .b-discount-plate__section-content
-          .b-discount-plate__input-item
-            .b-discount-plate__input-holder
-              input.b-discount-plate__input.coupon(type="tel" name="coupon")
-            .b-discount-plate__submit-holder
-              input.b-discount-plate__submit.button-gray(type="submit" value="Применить")
+			.b-discount-plate__section
+				.b-discount-plate__title Активировать купон
+				.b-discount-plate__section-content
+					.b-discount-plate__input-item
+						.b-discount-plate__input-holder
+							input.b-discount-plate__input.coupon(type="tel" name="coupon")
+						.b-discount-plate__submit-holder
+							input.b-discount-plate__submit.button-gray(type="submit" value="Применить")

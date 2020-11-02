@@ -1,12 +1,12 @@
 mixin payment-choose()
-  .b-payment-choose.iblock&attributes(attributes)
-    .h3.b-payment-choose__caption Способ оплаты
-    ul.b-payment-choose__items
-      li.b-payment-choose__item
-        +radio_box('Наличные или карта при получении')(name="paymethod")
-      li.b-payment-choose__item
-        +radio_box('Банковская карта')(name="paymethod")
-      li.b-payment-choose__item
-        +radio_box('Банковский перевод')(name="paymethod")
-      li.b-payment-choose__item
-        +radio_box('Яндекс.Деньги')(name="paymethod")
+	.b-payment-choose.iblock&attributes(attributes)
+		.h3.b-payment-choose__caption Способ оплаты
+		ul.b-payment-choose__items
+			li.b-payment-choose__item
+				+radio_box('Наличные или карта при получении')(name="paymethod")
+			li.b-payment-choose__item
+				+radio_box('Банковская карта')(name="paymethod")
+			li.b-payment-choose__item
+				+radio_box('Банковский перевод')(name="paymethod")
+			li.b-payment-choose__item
+				+radio_box('Яндекс.Деньги')(name="paymethod")

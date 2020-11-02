@@ -1,14 +1,14 @@
 mixin product-share()
-  .b-product-share.iblock&attributes(attributes)
-    .b-product-share__caption Понравился товар?
+	.b-product-share.iblock&attributes(attributes)
+		.b-product-share__caption Понравился товар?
 
-    .b-product-share__cols
-      .b-product-share__btn-holder
-        .b-product-share__label Сохраните его
-        a.b-product-share__favor.button-favor(href="#") <span>В избарнное</span>
-        a.b-product-share__email.button-email(href="#") <span>Отправить на&nbsp;почту</span>
+		.b-product-share__cols
+			.b-product-share__btn-holder
+				.b-product-share__label Сохраните его
+				a.b-product-share__favor.button-favor(href="#") <span>В избарнное</span>
+				a.b-product-share__email.button-email(href="#") <span>Отправить на&nbsp;почту</span>
 
-      .b-product-share__socials-holder
-        .b-product-share__label Расскажите друзьям
-        .b-product-share__socials
-          +social-btns()
+			.b-product-share__socials-holder
+				.b-product-share__label Расскажите друзьям
+				.b-product-share__socials
+					+social-btns()

@@ -1,120 +1,120 @@
 mixin feedback-modal()
-  .b-feedback-modal.iblock&attributes(attributes)
-    .b-feedback-modal__title Обратная связь
+	.b-feedback-modal.iblock&attributes(attributes)
+		.b-feedback-modal__title Обратная связь
 
-    .b-tabs(data-collapse=530)
-      .b-feedback-modal__tabs-holder
-        ul.b-tabs__cols
-          li.b-tabs__col.b-tabs__col_active
-            a.b-tabs__link(href="#")
-              span.b-tabs__link-text Отправить вопрос
-          li.b-tabs__col
-            a.b-tabs__link(href="#")
-              span.b-tabs__link-text Заказать звонок
-          li.b-tabs__col
-            a.b-tabs__link(href="#")
-              span.b-tabs__link-text Пожаловаться
+		.b-tabs(data-collapse=530)
+			.b-feedback-modal__tabs-holder
+				ul.b-tabs__cols
+					li.b-tabs__col.b-tabs__col_active
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Отправить вопрос
+					li.b-tabs__col
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Заказать звонок
+					li.b-tabs__col
+						a.b-tabs__link(href="#")
+							span.b-tabs__link-text Пожаловаться
 
-      .b-feedback-modal__content-holder
-        ul.b-tabs__holders
-          li.b-tabs__holder.b-tabs__holder_active
-            .b-simple-form
-              form(action="#" data-validate="Y")
-                label.b-simple-form__field
-                  .b-simple-form__field-label Тема сообщения
-                  .b-simple-form__field-inputs_regular
-                    select.select2
-                      option Предложение о поставке товара
-                      option Отзыв
-                      option Предложение о закупке
+			.b-feedback-modal__content-holder
+				ul.b-tabs__holders
+					li.b-tabs__holder.b-tabs__holder_active
+						.b-simple-form
+							form(action="#" data-validate="Y")
+								label.b-simple-form__field
+									.b-simple-form__field-label Тема сообщения
+									.b-simple-form__field-inputs_regular
+										select.select2
+											option Предложение о поставке товара
+											option Отзыв
+											option Предложение о закупке
 
-                .b-feedback-modal__cols
-                  .b-feedback-modal__right-col.b-feedback-modal__right-col_callback
-                    +gray-remark({
-                      text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами для оформления товара'
-                    })
+								.b-feedback-modal__cols
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+										+gray-remark({
+											text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами для оформления товара'
+										})
 
-                  .b-feedback-modal__left-col
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Имя
-                      .b-simple-form__field-inputs
-                        input(type="text" name="name" required)
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Имя
+											.b-simple-form__field-inputs
+												input(type="text" name="name" required)
 
-                    label.b-simple-form__field
-                      .b-simple-form__field-label._phone Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем смс-спам своим клиентам'})]
-                      .b-simple-form__field-inputs
-                        input.phone(type="tel" name="phone" data-mask="phone" placeholder="+7 (___) ___ __ __" required)
+										label.b-simple-form__field
+											.b-simple-form__field-label._phone Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем смс-спам своим клиентам'})]
+											.b-simple-form__field-inputs
+												input.phone(type="tel" name="phone" data-mask="phone" placeholder="+7 (___) ___ __ __" required)
 
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Электронная почта
-                      .b-simple-form__field-inputs
-                        input.email(type="email" name="email" required)
+										label.b-simple-form__field
+											.b-simple-form__field-label Электронная почта
+											.b-simple-form__field-inputs
+												input.email(type="email" name="email" required)
 
-                label.b-simple-form__field
-                  .b-simple-form__field-label Сообщение
-                  .b-simple-form__field-inputs
-                    textarea(name="comment" disabled)
+								label.b-simple-form__field
+									.b-simple-form__field-label Сообщение
+									.b-simple-form__field-inputs
+										textarea(name="comment" disabled)
 
-                .b-feedback-modal__cols
-                  .b-feedback-modal__left-col
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Прикрепить файл
-                      .b-simple-form__field-inputs.b-simple-form__field-inputs_regular
-                        +upload-input()
+								.b-feedback-modal__cols
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Прикрепить файл
+											.b-simple-form__field-inputs.b-simple-form__field-inputs_regular
+												+upload-input()
 
-                  .b-feedback-modal__right-col.b-feedback-modal__right-col_btn
-                    .b-simple-form__field
-                      .b-simple-form__field-inputs
-                        input.button(type="submit" value="Отправить")
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_btn
+										.b-simple-form__field
+											.b-simple-form__field-inputs
+												input.button(type="submit" value="Отправить")
 
-          li.b-tabs__holder
-            .b-feedback-modal__cols
-              .b-feedback-modal__right-col.b-feedback-modal__right-col_callback
-                +gray-remark({
-                  text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
-                })
+					li.b-tabs__holder
+						.b-feedback-modal__cols
+							.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+								+gray-remark({
+									text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
+								})
 
-              .b-feedback-modal__left-col
-                +simple-form()
+							.b-feedback-modal__left-col
+								+simple-form()
 
-          li.b-tabs__holder
-            .b-simple-form
-              form(action="#")
-                .b-feedback-modal__cols
-                  .b-feedback-modal__right-col.b-feedback-modal__right-col_callback
-                    +gray-remark({
-                      text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
-                    })
+					li.b-tabs__holder
+						.b-simple-form
+							form(action="#")
+								.b-feedback-modal__cols
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_callback
+										+gray-remark({
+											text: 'Пожалуйста, представьтесь и&nbsp;оставьте ваш номер телефона, чтобы менеджер связался с&nbsp;вами по интересующему вопросу'
+										})
 
-                  .b-feedback-modal__left-col
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Имя
-                      .b-simple-form__field-inputs
-                        input(type="text" name="name")
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Имя
+											.b-simple-form__field-inputs
+												input(type="text" name="name")
 
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
-                      .b-simple-form__field-inputs
-                        input(type="tel" name="phone" data-mask="phone" required placeholder="+7 (___) ___ __ __")
+										label.b-simple-form__field
+											.b-simple-form__field-label Мобильный телефон (спама не&nbsp;будет) #[+info-tooltip({text:'Мы&nbsp;отправляем смс при начислении бонусов, но&nbsp;никогда не&nbsp;рассылаем <nobr>смс-спам</nobr> своим клиентам'})]
+											.b-simple-form__field-inputs
+												input(type="tel" name="phone" data-mask="phone" required placeholder="+7 (___) ___ __ __")
 
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Электронная почта
-                      .b-simple-form__field-inputs
-                        input(type="email" name="email")
+										label.b-simple-form__field
+											.b-simple-form__field-label Электронная почта
+											.b-simple-form__field-inputs
+												input(type="email" name="email")
 
-                label.b-simple-form__field
-                  .b-simple-form__field-label Сообщение
-                  .b-simple-form__field-inputs
-                    textarea(name="comment")
+								label.b-simple-form__field
+									.b-simple-form__field-label Сообщение
+									.b-simple-form__field-inputs
+										textarea(name="comment")
 
-                .b-feedback-modal__cols
-                  .b-feedback-modal__left-col
-                    label.b-simple-form__field
-                      .b-simple-form__field-label Прикрепить файл
-                      .b-simple-form__field-inputs.b-simple-form__field-inputs_regular
-                        +upload-input()
+								.b-feedback-modal__cols
+									.b-feedback-modal__left-col
+										label.b-simple-form__field
+											.b-simple-form__field-label Прикрепить файл
+											.b-simple-form__field-inputs.b-simple-form__field-inputs_regular
+												+upload-input()
 
-                  .b-feedback-modal__right-col.b-feedback-modal__right-col_btn
-                    .b-simple-form__field
-                      .b-simple-form__field-inputs
-                        input.button(type="submit" value="Отправить")
+									.b-feedback-modal__right-col.b-feedback-modal__right-col_btn
+										.b-simple-form__field
+											.b-simple-form__field-inputs
+												input.button(type="submit" value="Отправить")

@@ -1,22 +1,22 @@
 mixin category-plate()
-  .b-category-plate.iblock&attributes(attributes)
-    a.b-category-plate__wrap(href="#")
-      span.b-category-plate__image-holder
-        span.b-category-plate__full-image(style="background-image: url('assets/img/content/categories/cat-bg4.png');")
-        span.b-category-plate__full-image._2x(style="background-image: url('assets/img/content/categories/cat-bg4@2x.png');")
-        img.b-category-plate__image(src="assets/img/content/cat1.jpg", alt="Категория")
+	.b-category-plate.iblock&attributes(attributes)
+		a.b-category-plate__wrap(href="#")
+			span.b-category-plate__image-holder
+				span.b-category-plate__full-image(style="background-image: url('assets/img/content/categories/cat-bg4.png');")
+				span.b-category-plate__full-image._2x(style="background-image: url('assets/img/content/categories/cat-bg4@2x.png');")
+				img.b-category-plate__image(src="assets/img/content/cat1.jpg", alt="Категория")
 
-      span.b-category-plate__title Конфигуратор компьютера
+			span.b-category-plate__title Конфигуратор компьютера
 
 mixin category-plate_data(data)
-  .b-category-plate.iblock&attributes(attributes)
-    a.b-category-plate__wrap(href="#")
-      span.b-category-plate__image-holder
-        if data.bgSource !== undefined
-          span.b-category-plate__full-image(style="background-image: url('#{data.bgSource}');")
-        if data.bgSource2x !== undefined
-          span.b-category-plate__full-image._2x(style="background-image: url('#{data.bgSource2x}');")
-        if data.imgSource !== undefined
-          img.b-category-plate__image(src="#{data.imgSource}", alt="Категория")
+	.b-category-plate.iblock&attributes(attributes)
+		a.b-category-plate__wrap(href="#")
+			span.b-category-plate__image-holder
+				if data.bgSource !== undefined
+					span.b-category-plate__full-image(style="background-image: url('#{data.bgSource}');")
+				if data.bgSource2x !== undefined
+					span.b-category-plate__full-image._2x(style="background-image: url('#{data.bgSource2x}');")
+				if data.imgSource !== undefined
+					img.b-category-plate__image(src="#{data.imgSource}", alt="Категория")
 
-      span.b-category-plate__title !{data.title}
+			span.b-category-plate__title !{data.title}

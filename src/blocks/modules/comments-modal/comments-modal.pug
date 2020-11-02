@@ -1,47 +1,47 @@
 mixin comments-modal()
-  .b-comments-modal.iblock&attributes(attributes)
-    form
-      .b-feedback-item__header
-        .b-feedback-item__title Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
+	.b-comments-modal.iblock&attributes(attributes)
+		form
+			.b-feedback-item__header
+				.b-feedback-item__title Canon PowerShot SX400 IS&nbsp;с&nbsp;улучшенной матрицей и&nbsp;объективом
 
-      .b-feedback-item__main
-        .b-feedback-item__save-state
-          ul.b-feedback-item__save-fields
-            li.b-feedback-item__save-field.b-feedback-item__save-field_plus
-              .b-comments-modal__field Плюсы:
-              .b-feedback-form__input
-                .b-feedback-form__textarea
-                  textarea.scroll-fixer(name="plus")
-            li.b-comments-modal__save-field.b-feedback-item__save-field_minus
-              .b-comments-modal__field Минусы:
-              .b-feedback-form__input
-                .b-feedback-form__textarea
-                textarea.scroll-fixer(name="plus")
-            li.b-feedback-item__save-field.b-feedback-item__save-field_comment
-              .b-comments-modal__field Комментарий:
-              .b-feedback-form__input
-                .b-feedback-form__textarea
-                  textarea(name="plus" class="scroll-fixer")
-        .b-feedback-item__edit-state
-          ul.b-feedback-item__edit-fields
-            li.b-feedback-item__edit-field
-              +feedback-form()
-      .b-feedback-item__footer
-        .b-feedback-item__rating-form
-          +rating-form_big()
-        .b-rating-form.iblock
-          .b-rating-form__input
-          .input(type="text" value="3" name="rating")
-          .b-rating-form__title Ваша оценка:
-            ul.b-rating-form__items.b-rating-form__items_big
-              li.b-rating-form__item
-              li.b-rating-form__item
-              li.b-rating-form__item.b-rating-form__item_active
-              li.b-rating-form__item.b-rating-form__item_active
-              li.b-rating-form__item.b-rating-form__item_active
-        //- .b-feedback-item__likes
-        //-   +likes()
+			.b-feedback-item__main
+				.b-feedback-item__save-state
+					ul.b-feedback-item__save-fields
+						li.b-feedback-item__save-field.b-feedback-item__save-field_plus
+							.b-comments-modal__field Плюсы:
+							.b-feedback-form__input
+								.b-feedback-form__textarea
+									textarea.scroll-fixer(name="plus")
+						li.b-comments-modal__save-field.b-feedback-item__save-field_minus
+							.b-comments-modal__field Минусы:
+							.b-feedback-form__input
+								.b-feedback-form__textarea
+								textarea.scroll-fixer(name="plus")
+						li.b-feedback-item__save-field.b-feedback-item__save-field_comment
+							.b-comments-modal__field Комментарий:
+							.b-feedback-form__input
+								.b-feedback-form__textarea
+									textarea(name="plus" class="scroll-fixer")
+				.b-feedback-item__edit-state
+					ul.b-feedback-item__edit-fields
+						li.b-feedback-item__edit-field
+							+feedback-form()
+			.b-feedback-item__footer
+				.b-feedback-item__rating-form
+					+rating-form_big()
+				.b-rating-form.iblock
+					.b-rating-form__input
+					.input(type="text" value="3" name="rating")
+					.b-rating-form__title Ваша оценка:
+						ul.b-rating-form__items.b-rating-form__items_big
+							li.b-rating-form__item
+							li.b-rating-form__item
+							li.b-rating-form__item.b-rating-form__item_active
+							li.b-rating-form__item.b-rating-form__item_active
+							li.b-rating-form__item.b-rating-form__item_active
+				//- .b-feedback-item__likes
+				//- 	+likes()
 
-        .b-feedback-item__ui
-          .b-feedback-item__ui-save
-            button.b-feedback-item__save-btn.button <span>Отправить отзыв</span>
+				.b-feedback-item__ui
+					.b-feedback-item__ui-save
+						button.b-feedback-item__save-btn.button <span>Отправить отзыв</span>
