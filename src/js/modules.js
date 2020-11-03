@@ -1871,53 +1871,6 @@ $(function () {
   });
 });
 
-// Слайдер новостей
-$(function () {
-  $(".b-events-slider").livequery(function () {
-    var $context = $(this);
-    var $slider = $(".b-events-slider__slider", $context);
-    var $prev = $(".b-events-slider__prev", $context);
-    var $next = $(".b-events-slider__next", $context);
-
-    $context.removeClass("_nojs");
-
-    (function initSlider() {
-      $slider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: $prev,
-        nextArrow: $next,
-        respondTo: "slider",
-        infinite: false,
-        draggable: false,
-        responsive: [{
-            breakpoint: 930,
-            settings: {
-              slidesToShow: 2
-            }
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1
-            }
-          }
-        ]
-      });
-    })();
-
-    $context.on("resize.block", function () {
-      $slider.slick("checkResponsive");
-      $slider.slick("setPosition");
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        950: "_mx950"
-      }
-    });
-  });
-});
 // Контент в экспандере
 $(function () {
   $(".b-expand-content").livequery(function () {
@@ -2545,8 +2498,8 @@ $(function () {
     useTransform: true,
     speed: 640,
     cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>'
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"></button>'
   });
   $('.b-gaming-carousel').slick({
     arrows: true,
@@ -2554,13 +2507,13 @@ $(function () {
     slidesToShow: 5,
     centerMode: true,
     centerPadding: 0,
-    swipeToSlide: false,
+    swipeToSlide: true,
     useTransform: true,
     touchThreshold: 20,
     speed: 640,
     cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>',
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"></button>',
     responsive: [
       {
         breakpoint: 1024,
@@ -2574,6 +2527,7 @@ $(function () {
         breakpoint: 640,
         settings: {
           arrows: true,
+          dots: true,
           slidesToShow: 1,
           centerPadding: 0,
         }
@@ -3520,20 +3474,6 @@ $(function () {
     $subLinks.filter("._contain").on("click", toggleThirdMenu);
     $returnLink.on("click", closeSubMenu);
   });
-});
-
-modules.define('my-block', ['i-bem-dom'], function(provide, bemDom) {
-
-provide(bemDom.declBlock(this.name, {
-    onSetMod: {
-        js: {
-            inited: function() {
-                
-            }
-        }
-    }
-}));
-
 });
 
 // Плитка с новстью
@@ -5124,6 +5064,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Ссылки на содержимое карточки продукта
 $(function () {
   $(".b-tabs").livequery(function () {
@@ -5160,11 +5105,6 @@ $(function () {
 
     $context.adaptBlock(adaptParams);
   });
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -5839,18 +5779,6 @@ $(function () {
 });
 // Промоблок 4
 $(function () {
-  $(".b-promo-block4").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        580: "_mx580"
-      }
-    });
-  });
-});
-
-// Промоблок 4
-$(function () {
   $(".b-promo-block5").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
@@ -5858,6 +5786,18 @@ $(function () {
         1120: "_mx1120",
         900: "_mx900",
         500: "_mx500"
+      }
+    });
+  });
+});
+
+// Промоблок 4
+$(function () {
+  $(".b-promo-block4").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        580: "_mx580"
       }
     });
   });

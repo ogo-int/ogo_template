@@ -4,8 +4,8 @@ $(function () {
     useTransform: true,
     speed: 640,
     cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>'
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"></button>'
   });
   $('.b-gaming-carousel').slick({
     arrows: true,
@@ -13,13 +13,13 @@ $(function () {
     slidesToShow: 5,
     centerMode: true,
     centerPadding: 0,
-    swipeToSlide: false,
+    swipeToSlide: true,
     useTransform: true,
     touchThreshold: 20,
     speed: 640,
     cssEase: 'cubic-bezier(0.65, 0.05, 0.36, 1)',
-    prevArrow: '<button type="button" class="slider-arrow slider-arrow-prev slick-prev"></button>',
-    nextArrow: '<button type="button" class="slider-arrow slider-arrow-next slick-next"></button>',
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"></button>',
     responsive: [
       {
         breakpoint: 1024,
@@ -33,6 +33,7 @@ $(function () {
         breakpoint: 640,
         settings: {
           arrows: true,
+          dots: true,
           slidesToShow: 1,
           centerPadding: 0,
         }
