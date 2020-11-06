@@ -1,0 +1,17 @@
+mixin product-status()
+  .b-product-status&attributes(attributes)
+    span.b-product-status__available В наличии
+    span.b-product-status__available Доступен
+    span.b-product-status__notavailable Нет в наличии
+
+mixin product-mark()
+  .b-product-mark&attributes(attributes)
+    span.b-product-mark__abroad Товар из-за рубежа
+    span.b-product-mark__warning Уцененный
+    span.b-product-mark__alert Не работает
+    a.b-product-mark__link(href="#") Есть такой новый
+
+mixin product-discount()
+  .b-product-discount&attributes(attributes)
+    strong Причина уценки
+    p Был в использовании. Комплектация полная. Упаковка оригинальная. Не работает материнская плата. 

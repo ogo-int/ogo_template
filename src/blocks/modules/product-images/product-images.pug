@@ -1,47 +1,42 @@
 mixin product-images()
-  .b-product-images.iblock._nojs&attributes(attributes)
-    .b-product-images__cols
-      .b-product-images__thumbs-holder
-        ul.b-product-images__thumbs
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link._active(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb1.png", alt="Изображение" width=80 height=80)
+  .b-product-images&attributes(attributes)
+    .b-product-images__thumbs-holder
+      .b-product-images__thumbs
+        // Тумбы по дефолту 72х72, но делайте пожалуйста и в двойном размере для мобилок и ретины
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb1.png" srcset="assets/img/content/catalog_card/product-thumb1@2x.png 2x, assets/img/content/catalog_card/product-thumb1.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb2.png" srcset="assets/img/content/catalog_card/product-thumb2@2x.png 2x, assets/img/content/catalog_card/product-thumb2.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb3.png" srcset="assets/img/content/catalog_card/product-thumb3@2x.png 2x, assets/img/content/catalog_card/product-thumb3.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb4.png" srcset="assets/img/content/catalog_card/product-thumb4@2x.png 2x, assets/img/content/catalog_card/product-thumb4.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb1.png" srcset="assets/img/content/catalog_card/product-thumb1@2x.png 2x, assets/img/content/catalog_card/product-thumb1.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
+        .b-product-images__thumb
+          img.b-product-images__thumb-img(src="assets/img/content/catalog_card/product-thumb2.png" srcset="assets/img/content/catalog_card/product-thumb2@2x.png 2x, assets/img/content/catalog_card/product-thumb2.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Изображение")
 
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb2.png", alt="Изображение" width=80 height=80)
-
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb3.png", alt="Изображение" width=80 height=80)
-
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb4.png", alt="Изображение" width=80 height=80)
-
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb1.png", alt="Изображение" width=80 height=80)
-
-          li.b-product-images__thumb
-            a.b-product-images__thumb-link(href="javascript:void(0);")
-              img.b-product-images__thumb-img(src="assets/img/content/thumb4.png", alt="Изображение" width=80 height=80)
-
-      .b-product-images__main-holder
-        .b-product-images__slider-wrap
-          a.b-product-images__prev(href="#")
-          a.b-product-images__next(href="#")
-
-          ul.b-product-images__slider
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
-            li.b-product-images__slide
-              img.b-product-images__main-img(src="assets/img/content/product-photo1.jpg", alt="Товар" width=548 height=446)
+    .b-product-images__slider-holder
+      .b-plate-product__icons
+        span.b-plate-product__icon.b-plate-product__icon--discount -3%
+      .b-plate-product__label.b-plate-product__label--hit Хит продаж
+      .b-product-images__slider
+        // Ссылка в галерею на фулсайз, в слайдере 400x400. Плюс двойные размеры для мобилок и ретины
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo1.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo1_md.png", srcset="assets/img/content/catalog_card/product-photo1@2x.png 2x, assets/img/content/catalog_card/product-photo1.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo2.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo2_md.png", srcset="assets/img/content/catalog_card/product-photo2@2x.png 2x, assets/img/content/catalog_card/product-photo2.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo3.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo3_md.png", srcset="assets/img/content/catalog_card/product-photo3@2x.png 2x, assets/img/content/catalog_card/product-photo3.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo4.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo4_md.png", srcset="assets/img/content/catalog_card/product-photo4@2x.png 2x, assets/img/content/catalog_card/product-photo4.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo1.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo1_md.png", srcset="assets/img/content/catalog_card/product-photo1@2x.png 2x, assets/img/content/catalog_card/product-photo1.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
+        .b-product-images__slide
+          a.b-product-images__slide-link(href="assets/img/content/catalog_card/product-photo2.png")
+            img.b-product-images__slide-img(src="assets/img/content/catalog_card/product-photo2_md.png", srcset="assets/img/content/catalog_card/product-photo2@2x.png 2x, assets/img/content/catalog_card/product-photo2.png", sizes="(min-device-pixel-ratio: 2), 100%" alt="Товар")
