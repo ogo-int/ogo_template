@@ -1,10 +1,11 @@
 mixin stock-info()
+  // CATALOG CARD
   .b-stock-info.iblock&attributes(attributes)
     .b-stock-info__delivery-section
-      .b-stock-info__title.b-stock-info__title_car._open
-        span.b-stock-info__title-text Доставка в&nbsp;<nobr>Санкт-Петербург</nobr>
+      .b-stock-info__title.b-stock-info__title_car
+        span.b-stock-info__title-text <strong>Доставка 8 августа</strong> бесплатно
 
-      .b-stock-info__container._open
+      .b-stock-info__container
         .b-stock-info__cols
           .b-stock-info__left-col
             .b-stock-info__sub-caption В&nbsp;руки
@@ -47,3 +48,4 @@ mixin stock-info()
               li.b-stock-info__list-item 250 <span class="rub">i</span>&nbsp;&mdash; 3&ndash;4 дня, КСЭ
 
             a.b-stock-info__more-link(href="#") Подробнее
+  // endof CATALOG CARD

@@ -1,0 +1,89 @@
+/** CATALOG CARD */
+.b-product-status {
+  margin-bottom: 14px;
+  font-size: rem(14);
+  line-height: rem(20);
+  font-weight: 600;
+  &__available {
+    color: #81C03D;
+    &:before {
+      @include ft-icon($ft-check);
+      margin-right: 5px;
+    }
+  }
+  &__notavailable {
+    color: #DC3E48;
+  }
+}
+
+.b-product-marks {
+  display: flex;
+  flex-flow: row wrap;
+  font-size: rem(12);
+  line-height: rem(15);
+  > span,
+  > a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    margin: 0 10px 14px 0;
+    padding: 2px 10px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+.b-product-mark {
+  &__abroad {
+    border: 1px solid #DC3E48;
+  }
+  &__alert {
+    color: #fff;
+    background: #941137;
+    &:before {
+      @include ft-icon($ft-close);
+      width: 12px;
+      height: 12px;
+      margin-top: -1px;
+      margin-right: 4px;
+      color: #941137;
+      font-size: 6px;
+      line-height: 12px;
+      background: #fff;
+      border-radius: 50%;
+    }
+  }
+  &__link {
+    font-size: rem(14);
+    font-weight: 300;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &__secondary {
+    color: #fff;
+    background: #3E8BDC;
+  }
+  &__warning {
+    background: #FEBF00;
+  }
+}
+
+.b-product-discount {
+  padding: 15px 20px;
+  color: #000;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 19px;
+  border: 1px solid #F1F1F1;
+  p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  strong {
+    font-weight: 600;
+  }
+}
+/** CATALOG CARD */

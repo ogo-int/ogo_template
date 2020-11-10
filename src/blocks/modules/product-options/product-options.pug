@@ -1,0 +1,51 @@
+mixin product-options()
+  .b-product-options&attributes(attributes)
+    .b-product-options__group
+      p.b-product-options__group-title Цвет:&nbsp;<strong>желтый</strong>
+      a(href="#" title="Белый").b-product__option
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone1.png")
+      a(href="#" title="Желтый" class="b-product__option _is-active")
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone2.png")
+      a(href="#" title="Зеленый").b-product__option
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone3.png")
+      a(href="#" title="Фиолетовый (нет в наличии)" class="b-product__option _is-disabled")
+        svg
+          line(x1="0" y1="100%" x2="100%" y2="0")
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone4.png")
+      a(href="#" title="Черный").b-product__option
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone5.png")
+      a(href="#" title="Красный (PRODUCT) RED").b-product__option
+        img.b-product__option-image(src="assets/img/content/catalog_card/iphone6.png")
+  
+    .b-product-options__group
+      p.b-product-options__group-title Встроенная память (ROM):&nbsp;<strong>64 ГБ</strong>
+      a(href="#" class="b-product__option _is-active") 64 ГБ
+      a(href="#").b-product__option 256 ГБ
+      a(href="#" class="b-product__option _is-disabled") 512 ГБ
+        svg
+          line(x1="0" y1="100%" x2="100%" y2="0")
+    
+    .b-product-options__group
+      p.b-product-options__group-title Подписка:&nbsp;<strong>6 мес</strong>
+      a(href="#" class="b-product__option") 1 мес.
+      a(href="#" class="b-product__option _is-active") 6 мес.
+      a(href="#" class="b-product__option") 12 мес.
+
+    .b-product__guarantee
+      .b-product__guarantee-text Гарантия: 12 месяцев
+    
+    .b-product__certificate
+      img.b-product__certificate-image(src="assets/img/content/catalog_card/eac.png")
+      span.b-product__certificate-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст") ?
+
+    .b-product__series
+      ul.b-product__series-list
+        li.b-product__series-item
+          a(href="#") Все товары <b>Серия I</b>
+        li.b-product__series-item
+          a(href="#") Все товары <b>Apple</b>
+        li.b-product__series-item
+          a(href="#") Все товары <b>Apple</b> из-за рубежа
+        li.b-product__series-item
+          img.b-product__series-logo(src="assets/img/content/catalog_card/apple-gray.png" alt="Логотип Apple")
+        

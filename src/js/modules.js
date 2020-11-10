@@ -2914,30 +2914,6 @@ $(function () {
   });
 });
 
-// Блок консультанта на главной
-$(function () {
-  $(".b-main-consult").livequery(function () {
-    var $context = $(this);
-    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
-    var api;
-
-    setTimeout(function () {
-      $messagesHolder.jScrollPane();
-      api = $messagesHolder.data("jsp");
-    }, 400);
-
-    $context.on("resize.block", function () {
-      api.reinitialise();
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        420: "_mx420"
-      }
-    });
-  });
-});
-
 // Главное меню
 $(function blockMainMenu() {
   $(".b-main-menu").livequery(function () {
@@ -3046,6 +3022,30 @@ $(function blockMainMenu() {
     $context.adaptBlock({
       maxWidth: {
         1060: "_mx1060"
+      }
+    });
+  });
+});
+
+// Блок консультанта на главной
+$(function () {
+  $(".b-main-consult").livequery(function () {
+    var $context = $(this);
+    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
+    var api;
+
+    setTimeout(function () {
+      $messagesHolder.jScrollPane();
+      api = $messagesHolder.data("jsp");
+    }, 400);
+
+    $context.on("resize.block", function () {
+      api.reinitialise();
+    });
+
+    $context.adaptBlock({
+      maxWidth: {
+        420: "_mx420"
       }
     });
   });
@@ -4052,6 +4052,10 @@ $(function () {
 
 
 
+// Артикул товара
+$(function () {
+ 
+});
 // comments
 $(function () {
   // code here...
@@ -4059,6 +4063,75 @@ $(function () {
 
 // Изображения в карточке товара
 $(function () {
+  
+  var $slider = $(".b-product-images__slider");
+  var $thumbs = $(".b-product-images__thumbs");
+  var gallery = $('.b-product-images__slide-link');
+
+  //при клике на ссылку в слайде запускаем галерею
+  $('.b-product-images__slide-link').on('click', function (e) {
+    e.preventDefault();
+    //узнаём индекс слайда без учёта клонов
+    var totalSlides = +$(this).parents('.slider').slick("getSlick").slideCount,
+      dataIndex = +$(this).parents('.slide').data('slick-index'),
+      trueIndex;
+    switch (true) {
+      case (dataIndex < 0):
+        trueIndex = totalSlides + dataIndex;
+        break;
+      case (dataIndex >= totalSlides):
+        trueIndex = dataIndex % totalSlides;
+        break;
+      default:
+        trueIndex = dataIndex;
+    }
+    //вызывается элемент галереи, соответствующий индексу слайда
+    $.fancybox.open(gallery, {}, trueIndex);
+    return false;
+  });
+
+  $slider.slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    adaptiveHeight: false,
+    speed: 400,
+    fade: true,
+    asNavFor: $thumbs,
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M27.5 45L12.5 30L27.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M22.5 45L37.5 30L22.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          arrows: true
+        }
+      }
+    ]
+  });
+  $thumbs.slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: $slider,
+    arrows: false,
+    dots: false,
+    centerMode: true,
+    centerPadding: 0,
+    vertical: true,
+    verticalSwiping: true,
+    infinite: false,
+    focusOnSelect: true,
+    swipeToSlide: true,
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M27.5 45L12.5 30L27.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M22.5 45L37.5 30L22.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: 'unslick'
+      }
+    ]
+  });
+  /*
   $(".b-product-images").livequery(function () {
     var $context = $(this);
     var $thumbs = $(".b-product-images__thumb", $context);
@@ -4069,21 +4142,6 @@ $(function () {
     var $thumb = $(".b-product-images__thumbs", $context);
 
     $context.removeClass("_nojs");
-
-    function changeMainImage(customIndex) {
-      var $link = $(this);
-      var currentImageIndex = $thumbLinks.index($link);
-
-      if ($link.hasClass("_active")) return false;
-
-      $thumbLinks.removeClass("_active");
-
-      $thumbLinks.eq(currentImageIndex).addClass("_active");
-
-      $slider.slick("slickGoTo", currentImageIndex);
-
-      return false;
-    }
 
     //Слайдер
     function initSlider() {
@@ -4098,13 +4156,15 @@ $(function () {
         asNavFor: $thumb
       });
 
-      $thumb.slick({
+      $thumbs.slick({
         slidesToShow: 5,
         slidesToScroll: 1,
         asNavFor: $slider,
         dots: false,
-        centerMode: false,
+        centerMode: true,
+        centerPadding: 0,
         vertical: true,
+        verticalSwiping: true,
         infinite: false,
         focusOnSelect: true
       });
@@ -4125,6 +4185,7 @@ $(function () {
       }
     });
   });
+  */
 });
 // Ссылки на содержимое карточки продукта
 $(function () {
@@ -4155,6 +4216,10 @@ $(function () {
   });
 });
 
+// Выбор опций товара(цвет, форма, размер и т.д)
+$(function () {
+ 
+});
 // Параметры продукта
 $(function () {
   $(".b-product-params").livequery(function () {
@@ -4333,6 +4398,10 @@ $(function (){
       remove();
     }
   });  
+});
+// Статус наличия товара
+$(function () {
+ 
 });
 // Промослайдер
 $(function () {
@@ -5064,11 +5133,6 @@ $(function () {
   });
 });
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Ссылки на содержимое карточки продукта
 $(function () {
   $(".b-tabs").livequery(function () {
@@ -5105,6 +5169,11 @@ $(function () {
 
     $context.adaptBlock(adaptParams);
   });
+});
+
+// comments
+$(function () {
+  // code here...
 });
 
 // comments
@@ -5779,13 +5848,11 @@ $(function () {
 });
 // Промоблок 4
 $(function () {
-  $(".b-promo-block5").livequery(function () {
+  $(".b-promo-block4").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
       maxWidth: {
-        1120: "_mx1120",
-        900: "_mx900",
-        500: "_mx500"
+        580: "_mx580"
       }
     });
   });
@@ -5793,11 +5860,13 @@ $(function () {
 
 // Промоблок 4
 $(function () {
-  $(".b-promo-block4").livequery(function () {
+  $(".b-promo-block5").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
       maxWidth: {
-        580: "_mx580"
+        1120: "_mx1120",
+        900: "_mx900",
+        500: "_mx500"
       }
     });
   });
