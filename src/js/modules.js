@@ -1,8 +1,3 @@
-// comments
-$(function () {
-  // code here...
-});
-
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -29,6 +24,11 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
+
+// comments
+$(function () {
+  // code here...
+});
 
 // Добавить аксессуары
 $(function () {
@@ -5064,11 +5064,6 @@ $(function () {
   });
 });
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Ссылки на содержимое карточки продукта
 $(function () {
   $(".b-tabs").livequery(function () {
@@ -5105,6 +5100,11 @@ $(function () {
 
     $context.adaptBlock(adaptParams);
   });
+});
+
+// comments
+$(function () {
+  // code here...
 });
 
 // comments
@@ -5779,13 +5779,11 @@ $(function () {
 });
 // Промоблок 4
 $(function () {
-  $(".b-promo-block5").livequery(function () {
+  $(".b-promo-block4").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
       maxWidth: {
-        1120: "_mx1120",
-        900: "_mx900",
-        500: "_mx500"
+        580: "_mx580"
       }
     });
   });
@@ -5793,11 +5791,13 @@ $(function () {
 
 // Промоблок 4
 $(function () {
-  $(".b-promo-block4").livequery(function () {
+  $(".b-promo-block5").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
       maxWidth: {
-        580: "_mx580"
+        1120: "_mx1120",
+        900: "_mx900",
+        500: "_mx500"
       }
     });
   });

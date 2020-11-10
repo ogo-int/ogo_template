@@ -1,6 +1,6 @@
 /** 
 * GAMING START
-* UPDATE: 03.11.2020 Карцев Михаил
+* UPDATE: 10.11.2020 Карцев Михаил
 */
 @mixin gradient-background {
   background: #242424;
@@ -10,6 +10,90 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#242424', endColorstr='#1d1d1d',GradientType=1 );
   box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.25); 
 }
+@keyframes blink {
+  0%,
+  22%,
+  36%,
+  75% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+  28%,
+  33% {
+    color: #ff65bd;
+    text-shadow: none;
+  }
+  82%,
+  97% {
+    color: #ff2483;
+    text-shadow: none;
+  }
+}
+@keyframes shine {
+  0% {
+    color: #6b1839;
+    text-shadow: none;
+  }
+  100% {
+    color: #ffe6ff;
+    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
+      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
+      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  }
+}
+@keyframes flicker {
+  from {
+    opacity: 1;
+  }
+
+  4% {opacity: 0.9;}
+  6% {opacity: 0.85;}
+  8% {opacity: 0.95;}
+  10% {opacity: 0.9;}
+  11% {opacity: 0.922;}
+  12% {opacity: 0.9;}
+  14% {opacity: 0.95;}
+  16% {opacity: 0.98;}
+  17% {opacity: 0.9;}
+  19% {opacity: 0.93;}
+  20% {opacity: 0.99;}
+  24% {opacity: 1;}
+  26% {opacity: 0.94;}
+  28% {opacity: 0.98;}
+  37% {opacity: 0.93;}
+  38% {opacity: 0.5;}
+  39% {opacity: 0.96;}
+  42% {opacity: 1;}
+  44% {opacity: 0.97;}
+  46% {opacity: 0.94;}
+  56% {opacity: 0.9;}
+  58% {opacity: 0.9;}
+  60% {opacity: 0.99;}
+  68% {opacity: 1;}
+  70% {opacity: 0.9;}
+  72% {opacity: 0.95;}
+  93% {opacity: 0.93;}
+  95% {opacity: 0.95;}
+  97% {opacity: 0.93;}
+
+  to {
+    opacity: 1;
+  }
+}
+@keyframes float {
+	0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+	}
+	50% {
+   transform: translate3d(0, -20px, 0) rotate(0.02deg) scale(1.01);
+	}
+	100% {
+	transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+	}
+}
+
 .button {
   &-gaming {
     display: inline-block;
@@ -61,6 +145,12 @@
       border-color: #fff !important;
     }
   }
+}
+.flicker {
+  animation: shine 2s forwards, blink 3s 2s infinite;
+}
+.fast-flicker {
+  animation: shine 2s forwards, blink 10s 1s infinite;
 }
 .slider-arrow {
   display: inline-block;
@@ -206,12 +296,12 @@
     &-left {
       display: flex;
       flex-flow: row wrap;
-      flex: 0 2 auto;
+      flex: 2 2 auto;
       margin: 0 -7px;
     }
     &-right {
       display: block;
-      flex: 1 0 calc(33.333% - 14px);
+      flex: 1 1 calc(33.333% - 14px);
       max-width: calc(33.333% - 14px);
       margin-left: 14px;
     }
@@ -909,7 +999,47 @@
     }
   }
 }
+.b-gaming4k {
+  &-product {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    &__title {
+      color: #fff;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 36px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    &__image {
+      &-wrapper {
+        position: relative;
+      }
+    }
+    &__price {
 
+    }
+    &__desc {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+.b-subcategory-slider {
+  .slick-arrow {
+    font-size: 0;
+    &:before {
+      font-size: 1rem;
+    }
+  }
+  .slick-dots {
+    left: 50%;
+    bottom: 3em;
+  }
+}
 .b-news-slider--gaming {
   .b-news-slider__header {
     flex-wrap: wrap;
@@ -942,6 +1072,7 @@
     @extend .button-gaming;
   }
 }
+
 @include w1024 {
   .b-gaming {
     &-hero {
@@ -992,6 +1123,13 @@
     }
   }
   
+}
+@media screen and (max-width: 500px){
+  .c-gaming {
+    .slick-prev, .slick-next { 
+      display: block !important;
+    }
+  }
 }
 @include w480 {
   .c-gaming {
@@ -1128,95 +1266,7 @@
   }
 }
 
-@keyframes blink {
-  0%,
-  22%,
-  36%,
-  75% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-  }
-  28%,
-  33% {
-    color: #ff65bd;
-    text-shadow: none;
-  }
-  82%,
-  97% {
-    color: #ff2483;
-    text-shadow: none;
-  }
-}
-@keyframes shine {
-  0% {
-    color: #6b1839;
-    text-shadow: none;
-  }
-  100% {
-    color: #ffe6ff;
-    text-shadow: 0 0 0.6rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-  }
-}
-@keyframes flicker {
-  from {
-    opacity: 1;
-  }
 
-  4% {opacity: 0.9;}
-  6% {opacity: 0.85;}
-  8% {opacity: 0.95;}
-  10% {opacity: 0.9;}
-  11% {opacity: 0.922;}
-  12% {opacity: 0.9;}
-  14% {opacity: 0.95;}
-  16% {opacity: 0.98;}
-  17% {opacity: 0.9;}
-  19% {opacity: 0.93;}
-  20% {opacity: 0.99;}
-  24% {opacity: 1;}
-  26% {opacity: 0.94;}
-  28% {opacity: 0.98;}
-  37% {opacity: 0.93;}
-  38% {opacity: 0.5;}
-  39% {opacity: 0.96;}
-  42% {opacity: 1;}
-  44% {opacity: 0.97;}
-  46% {opacity: 0.94;}
-  56% {opacity: 0.9;}
-  58% {opacity: 0.9;}
-  60% {opacity: 0.99;}
-  68% {opacity: 1;}
-  70% {opacity: 0.9;}
-  72% {opacity: 0.95;}
-  93% {opacity: 0.93;}
-  95% {opacity: 0.95;}
-  97% {opacity: 0.93;}
-
-  to {
-    opacity: 1;
-  }
-}
-@keyframes float {
-	0% {
-    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-	}
-	50% {
-   transform: translate3d(0, -20px, 0) rotate(0.02deg) scale(1.01);
-	}
-	100% {
-	transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
-	}
-}
-.flicker {
-  animation: shine 2s forwards, blink 3s 2s infinite;
-}
-.fast-flicker {
-  animation: shine 2s forwards, blink 10s 1s infinite;
-}
 
 /** 
 * GAMING END
