@@ -1,109 +1,114 @@
 extends ../layout/page-template
 
 block head
-	title Каталог товаров
+  title Каталог товаров
 
 block head-scripts
 
 block vars
-	- var isInner = true; // раскрывать ли подменю в главном меню
-	- var isTotalStyling = true; // Использовать бандл
-	- var modHeader = '_breadcrumbs';
+  - var isInner = true; // раскрывать ли подменю в главном меню
+  - var isTotalStyling = true; // Использовать бандл
+  - var modHeader = '_breadcrumbs';
 
 block caption
-	h1.full-width Зеркальная фотокамера Nikon D3200 Kit 18&ndash;55 VR&nbsp;II
+  h1.full-width Смартфон Apple iPhone 11 64GB Yellow (MWLW2RU/A)
 
 block inner-content
-	section.c-catalog
-		.c-catalog__product-rating(data-href="#prod-2")
-			+rating_card()
+  section.c-catalog
+    .c-catalog__product-rating
+      +rating_card()
+      +product-art()
+      +product-mark()
 
-		.c-catalog__product-detail
-			.c-catalog__product-photo
-				+product-images()
+    .c-catalog__product-detail
+      .c-catalog__product-photo
+        +product-images()
 
-				.c-catalog__product-discount -20%
+      .c-catalog__product-options
+        +product-status()
+        +product-mark()
+        +product-options()
+        +product-discount()
 
-			.c-catalog__product-info
-				.c-catalog__product-price
-					+product-price()
+      .c-catalog__product-info
+        .c-catalog__product-price
+          +product-price()
+        .c-catalog__product-avail
+          +stock-info()
 
-				.c-catalog__product-avail
-					+stock-info()
+    .c-catalog__product-links
+      .content-center
+        +product-links()
 
-		.c-catalog__product-links
-			.content-center
-				+product-links()
+    block fix-area
+      .c-catalog__product-links-fixed
+        .content-center
+          +product-links()
 
-		block fix-area
-			.c-catalog__product-links-fixed
-				.content-center
-					+product-links()
+    .c-catalog__know-how
+      .content-center
+        +know-how()
 
-		.c-catalog__know-how
-			.content-center
-				+know-how()
+    .c-catalog__params#prod-1
+      .content-center
+        +product-params()
 
-		.c-catalog__params#prod-1
-			.content-center
-				+product-params()
+    .c-catalog__product-promo
+      .content-center
+        +promo-block3-slider()
 
-		.c-catalog__product-promo
-			.content-center
-				+promo-block3-slider()
+    .c-catalog__product-review#prod-3
+      .content-center
+        +product-review()
 
-		.c-catalog__product-review#prod-3
-			.content-center
-				+product-review()
+    .c-catalog__feedbacks#prod-2
+      .content-center
+        +feedback-product()
 
-		.c-catalog__feedbacks#prod-2
-			.content-center
-				+feedback-product()
+    .c-catalog__kit-action
+      .content-center
+        +kit-action()
 
-		.c-catalog__kit-action
-			.content-center
-				+kit-action()
+    .c-catalog__share
+      .content-center
+        +product-share()
+    .c-catalog-questions-answer
+      .content-center
+        +questions-answer()
 
-		.c-catalog__share
-			.content-center
-				+product-share()
-		.c-catalog-questions-answer
-			.content-center
-				+questions-answer()
+    .c-catalog__additional
+      .h2.c-catalog__sub-caption.center Аксессуары
+      .c-catalog__additional-tags.center
+        .b-tags
+          ul.b-tags__items
+            li.b-tags__item
+              a.b-tags__tag(href="") Сумки
+            li.b-tags__item
+              a.b-tags__tag(href="") Чехлы
+            li.b-tags__item
+              a.b-tags__tag(href="") Объективы
+            li.b-tags__item
+              a.b-tags__tag(href="") Бленды
+            li.b-tags__item
+              a.b-tags__tag(href="") Светофильтры
+            li.b-tags__item
+              a.b-tags__tag(href="") Все аксессуары
 
-		.c-catalog__additional
-			.h2.c-catalog__sub-caption.center Аксессуары
-			.c-catalog__additional-tags.center
-				.b-tags
-					ul.b-tags__items
-						li.b-tags__item
-							a.b-tags__tag(href="") Сумки
-						li.b-tags__item
-							a.b-tags__tag(href="") Чехлы
-						li.b-tags__item
-							a.b-tags__tag(href="") Объективы
-						li.b-tags__item
-							a.b-tags__tag(href="") Бленды
-						li.b-tags__item
-							a.b-tags__tag(href="") Светофильтры
-						li.b-tags__item
-							a.b-tags__tag(href="") Все аксессуары
+      .c-catalog__additional-products
+        .b-catalog-plates._additional
+          .b-catalog-plates__items
+            .b-catalog-plates__item
+              +plate-product()
+            .b-catalog-plates__item
+              +plate-product()
+            .b-catalog-plates__item
+              +plate-product()
+            .b-catalog-plates__item
+              +plate-product()
+        a.c-catalog__additional-more.button-more(href="#") Показать еще 20
 
-			.c-catalog__additional-products
-				.b-catalog-plates._additional
-					.b-catalog-plates__items
-						.b-catalog-plates__item
-							+plate-product()
-						.b-catalog-plates__item
-							+plate-product()
-						.b-catalog-plates__item
-							+plate-product()
-						.b-catalog-plates__item
-							+plate-product()
-				a.c-catalog__additional-more.button-more(href="#") Показать еще 20
+    .c-catalog__compare
+      .h2.c-catalog__sub-caption.center Сравните этот товар с похожими
 
-		.c-catalog__compare
-			.h2.c-catalog__sub-caption.center Сравните этот товар с похожими
-
-			.c-catalog__compare-items
-				+product-compare()
+      .c-catalog__compare-items
+        +product-compare()
