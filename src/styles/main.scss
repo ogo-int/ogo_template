@@ -13,3 +13,15 @@
 .ololo {
   color: red;
 }
+.show-for-large {
+  display: revert;
+  @include w1024 {
+    display: none;
+  }
+  @include w768 {
+    display: none;
+  }
+  @include w480 {
+    display: none;
+  }
+}

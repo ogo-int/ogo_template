@@ -15,8 +15,10 @@ block caption
 
 block inner-content
   section.c-catalog
-    .c-catalog__product-rating(data-href="#prod-2")
+    .c-catalog__product-rating
       +rating_card()
+      +product-art()
+      +product-mark()
 
     .c-catalog__product-detail
       .c-catalog__product-photo

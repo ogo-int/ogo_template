@@ -2914,30 +2914,6 @@ $(function () {
   });
 });
 
-// Блок консультанта на главной
-$(function () {
-  $(".b-main-consult").livequery(function () {
-    var $context = $(this);
-    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
-    var api;
-
-    setTimeout(function () {
-      $messagesHolder.jScrollPane();
-      api = $messagesHolder.data("jsp");
-    }, 400);
-
-    $context.on("resize.block", function () {
-      api.reinitialise();
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        420: "_mx420"
-      }
-    });
-  });
-});
-
 // Главное меню
 $(function blockMainMenu() {
   $(".b-main-menu").livequery(function () {
@@ -3046,6 +3022,30 @@ $(function blockMainMenu() {
     $context.adaptBlock({
       maxWidth: {
         1060: "_mx1060"
+      }
+    });
+  });
+});
+
+// Блок консультанта на главной
+$(function () {
+  $(".b-main-consult").livequery(function () {
+    var $context = $(this);
+    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
+    var api;
+
+    setTimeout(function () {
+      $messagesHolder.jScrollPane();
+      api = $messagesHolder.data("jsp");
+    }, 400);
+
+    $context.on("resize.block", function () {
+      api.reinitialise();
+    });
+
+    $context.adaptBlock({
+      maxWidth: {
+        420: "_mx420"
       }
     });
   });
@@ -4052,6 +4052,10 @@ $(function () {
 
 
 
+// Артикул товара
+$(function () {
+ 
+});
 // comments
 $(function () {
   // code here...

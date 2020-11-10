@@ -357,15 +357,21 @@
   }
 
   &__product-rating {
-    max-width: 240px;
-    padding-left: 40px;
-    padding-right: 40px;
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 35px;
+    padding-right: 35px;
     margin-top: -30px;
-    margin-bottom: 30px;
-    cursor: pointer;
-
-    &:hover .b-rating__text {
-      color: #dc3e48;
+    //margin-bottom: 15px;
+    //cursor: pointer;
+    //&:hover .b-rating__text {
+    //  color: #dc3e48;
+    //}
+    > div {
+      margin-right: 20px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -927,6 +933,10 @@
 
     &__category-products {
       padding: 15px;
+    }
+    &__product-options {
+      width: 100%;
+      padding: 0;
     }
   }
 }

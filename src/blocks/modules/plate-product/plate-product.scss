@@ -170,14 +170,51 @@
     margin-bottom: 10px;
     background: #DC3E48;
     z-index: 1;
-    &--discount {
-      background: #FEBF00;
-    }
     &:last-child {
       margin-bottom: 0;
     }
+    &--discount {
+      background: #FEBF00;
+    }
+    &--delivery {
+      background-image: url('/assets/img/icon-delivery.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 22px 18px;
+    }
+    &--gift {
+      background-image: url('/assets/img/icon-gift.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 20px 20px;
+    }
+    &--gaming {
+      background-color: #181415;
+      background-image: url('/assets/img/icon-gaming.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 36px 36px;
+    }
+    @include w480 {
+      font-size: 10px;
+      line-height: 24px;
+      width: 24px;
+      height: 24px;
+      margin-bottom: 4px;
+      &--delivery {
+        background-size: 16px 14px;
+      }
+      &--gift {
+        background-size: 16px 16px;
+      }
+      &--gaming {
+        background-image: url('/assets/img/icon-gaming-sm.png');
+        background-size: 24px 24px;
+      }
+    }
   }
   /** endof CATALOG CARD */
+  
   &__rating {
     float: left;
   }
