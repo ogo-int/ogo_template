@@ -13,6 +13,12 @@
 .ololo {
   color: red;
 }
+/** TASKS */
+
+/** #1487 CATALOG CARD*/
+  
+/** endof #1487 CATALOG CARD*/
+
 .show-for-large {
   display: revert;
   @include w1024 {
@@ -25,3 +31,4 @@
     display: none;
   }
 }
+/** endof TASKS */
