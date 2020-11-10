@@ -1,3 +1,8 @@
+// comments
+$(function () {
+  // code here...
+});
+
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -24,11 +29,6 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
-
-// comments
-$(function () {
-  // code here...
-});
 
 // Добавить аксессуары
 $(function () {
@@ -2914,6 +2914,30 @@ $(function () {
   });
 });
 
+// Блок консультанта на главной
+$(function () {
+  $(".b-main-consult").livequery(function () {
+    var $context = $(this);
+    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
+    var api;
+
+    setTimeout(function () {
+      $messagesHolder.jScrollPane();
+      api = $messagesHolder.data("jsp");
+    }, 400);
+
+    $context.on("resize.block", function () {
+      api.reinitialise();
+    });
+
+    $context.adaptBlock({
+      maxWidth: {
+        420: "_mx420"
+      }
+    });
+  });
+});
+
 // Главное меню
 $(function blockMainMenu() {
   $(".b-main-menu").livequery(function () {
@@ -3022,30 +3046,6 @@ $(function blockMainMenu() {
     $context.adaptBlock({
       maxWidth: {
         1060: "_mx1060"
-      }
-    });
-  });
-});
-
-// Блок консультанта на главной
-$(function () {
-  $(".b-main-consult").livequery(function () {
-    var $context = $(this);
-    var $messagesHolder = $(".b-main-consult__messages-holder", $context);
-    var api;
-
-    setTimeout(function () {
-      $messagesHolder.jScrollPane();
-      api = $messagesHolder.data("jsp");
-    }, 400);
-
-    $context.on("resize.block", function () {
-      api.reinitialise();
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        420: "_mx420"
       }
     });
   });
@@ -5768,36 +5768,6 @@ $(function () {
   });
 });
 
-// Промоблок 2
-$(function () {
-  $(".b-promo-block2").livequery(function () {
-    var $context = $(this);
-    var $expandLink = $(".b-promo-block2__expand-link", $context);
-    var $closeLink = $(".b-promo-block2__close", $context);
-
-    function expandBlock (e) {
-      $context.removeClass("_collapsed");
-      e.preventDefault();
-    }
-
-    function closeBlock (e) {
-      //$context.addClass('_collapsed');
-      $context.remove();
-      e.preventDefault();
-    }
-
-    $expandLink.on("click", expandBlock);
-    $closeLink.on("click", closeBlock);
-
-    $context.adaptBlock({
-      maxWidth: {
-        780: "_mx780",
-        700: "_mx700",
-      }
-    });
-  });
-});
-
 // Промоблок 1
 $(function () {
   $(".b-promo-block3").livequery(function () {
@@ -5846,6 +5816,36 @@ $(function () {
     });
   });
 });
+// Промоблок 2
+$(function () {
+  $(".b-promo-block2").livequery(function () {
+    var $context = $(this);
+    var $expandLink = $(".b-promo-block2__expand-link", $context);
+    var $closeLink = $(".b-promo-block2__close", $context);
+
+    function expandBlock (e) {
+      $context.removeClass("_collapsed");
+      e.preventDefault();
+    }
+
+    function closeBlock (e) {
+      //$context.addClass('_collapsed');
+      $context.remove();
+      e.preventDefault();
+    }
+
+    $expandLink.on("click", expandBlock);
+    $closeLink.on("click", closeBlock);
+
+    $context.adaptBlock({
+      maxWidth: {
+        780: "_mx780",
+        700: "_mx700",
+      }
+    });
+  });
+});
+
 // Промоблок 4
 $(function () {
   $(".b-promo-block4").livequery(function () {

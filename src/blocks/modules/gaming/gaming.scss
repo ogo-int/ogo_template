@@ -1000,6 +1000,25 @@
   }
 }
 .b-gaming4k {
+  &-section {
+    padding: 35px;
+    &__title {
+      margin-bottom: 20px;
+      color: #fff;
+      font-size: rem(32);
+      font-size: rem(36);
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33%, 50%));
+    grid-gap: 14px;
+    &__cell {
+      box-shadow: border-box;
+    }
+  }
   &-product {
     display: flex;
     flex-flow: column nowrap;
@@ -1014,17 +1033,31 @@
       text-transform: uppercase;
     }
     &__image {
+      display: block;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: center;
       &-wrapper {
         position: relative;
+        margin-bottom: 20px;
       }
     }
     &__price {
-
+      margin-bottom: 16px;
+      color: #9A9A9A;
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: rem(22);
+      text-align: center;
     }
     &__desc {
+      min-height: 3em;
+      margin-bottom: 16px;
+      color: #fff;
       font-weight: 300;
-      font-size: 16px;
-      line-height: 22px;
+      font-size: rem(16);
+      line-height: rem(22);
+      text-align: center;
     }
   }
 }

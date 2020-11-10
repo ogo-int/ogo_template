@@ -92,7 +92,8 @@ mixin gaming4k-product(title, desc, price, image, buy)
     .b-gaming4k-product__image-wrapper
       img.b-gaming4k-product__image(src=image, alt=title)
     span.b-gaming4k-product__title= title
-    if price!=''
+    if price != ''
       .b-gaming4k-product__price= price
-    .b-gaming4k-product__desc= desc
-    a(href="#" class="b-gaming4k-product__desc button-gaming")= buy ? 'Купить' : 'Выбрать'
+    if desc != ''
+      .b-gaming4k-product__desc= desc
+    a(href="#" class="b-gaming4k-product__button button-gaming")= buy ? 'Купить' : 'Выбрать'
