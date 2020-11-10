@@ -1,0 +1,80 @@
+extends ../layout/page-template
+  
+block head
+  title Игры в 4К: мониторы, компьютеры, видеокарты
+
+block scripts
+
+block stylesheets
+
+block breadcrumbs
+
+block vars
+  - var isInner = true; // раскрывать ли подменю в главном меню
+
+block head-scripts
+
+block caption
+
+block inner-content
+  section.c-gaming
+
+    +gaming-banner(style="background-image: url('assets/img/gaming/OGO!Gaming-pc8.jpg')")
+
+    section.b-gaming4k-section
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell
+          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-pc.jpg")
+        .b-gaming4k-grid__cell
+          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-gpu.jpg")
+        .b-gaming4k-grid__cell
+          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-monitor.jpg")
+
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title ПОЛНЫЙ ДОСТУП К ТЕХНОЛОГИЯМ ДЛЯ ИГР, РАБОТЫ И СТРИМИНГА
+    
+    section.b-gaming4k-section
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell
+          p NVIDIA DLSS
+        .b-gaming4k-grid__cell
+          p RTX ON
+    
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title DLSS – МАКСИМУМ FPS И КАЧЕСТВА 
+    
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title ТРАССИРОВКА ЛУЧЕЙ
+   
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title ПОПУЛЯРНЫЕ ИГРЫ С ПОДДЕРЖКОЙ RTX
+    
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title КУПИТЬ ВИДЕОКАРТУ ДЛЯ ИГР В 4К
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3070", "", "от 45 490 ₽", "assets/img/gaming/4k/gaming4k-3070.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3080", "", "от 63 490₽", "assets/img/gaming/4k/gaming4k-3080.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3090", "", "от 136 990 ₽", "assets/img/gaming/4k/gaming4k-3090.jpg", true)
+    
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title ИГРОВЫЕ ПК
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3070", "", "от 45 490 ₽", "assets/img/gaming/4k/gaming4k-pc3070.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3080", "", "от 63 490₽", "assets/img/gaming/4k/gaming4k-pc3080.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3090", "", "от 136 990 ₽", "assets/img/gaming/4k/gaming4k-pc3090.jpg", true)
+    
+    section.b-gaming4k-section
+      h2.b-gaming4k-section__title МОНИТОРЫ 4К
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3070", "", "от 20 000 ₽", "assets/img/gaming/4k/gaming4k-monik3070.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3080", "", "от 40 000 ₽", "assets/img/gaming/4k/gaming4k-monik3080.jpg", true)
+        .b-gaming4k-grid__cell
+          +gaming4k-product("GEFORCE RTX 3090", "", "от 60 000 ₽", "assets/img/gaming/4k/gaming4k-monik3090.jpg", true)
