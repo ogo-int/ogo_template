@@ -42,6 +42,18 @@
   font-style: normal;
 }
 @font-face {
+  font-family: 'ProximaNova';
+  src: url('../fonts/ProximaNova_Bold/ProximaNova_Bold.eot');
+  src: url('../fonts/ProximaNova_Bold/ProximaNova_Bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/ProximaNova_Bold/ProximaNova_Bold.woff2') format('woff2'),
+       url('../fonts/ProximaNova_Bold/ProximaNova_Bold.woff') format('woff'),
+       url('../fonts/ProximaNova_Bold/ProximaNova_Bold.ttf') format('truetype'),
+       url('../fonts/ProximaNova_Bold/ProximaNova_Bold.svg#ProximaNova-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Rouble';
   src: url('../fonts/Rouble/rouble.eot');
   src: url('../fonts/Rouble/rouble.eot?#iefix') format('embedded-opentype'),

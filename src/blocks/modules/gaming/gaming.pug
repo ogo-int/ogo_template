@@ -1,4 +1,3 @@
-
 mixin gaming-banner()
   .b-gaming-banner&attributes(attributes)
     .b-gaming-banner__logo
@@ -11,6 +10,20 @@ mixin gaming-banner()
       .b-gaming-subscribe-fields
         input(type="email" placeholder="Введите e-mail").b-gaming-subscribe__input
         button(type="submit").b-gaming-subscribe__submit.button-gaming Подписаться
+
+mixin gaming4k-banner()
+  .b-gaming4k-banner&attributes(attributes)
+    .b-gaming4k-grid
+      .b-gaming4k-grid__cell.lg-6.md-6.sm-12
+        .b-gaming4k-banner__header
+          h2.b-gaming4k-banner__title Игры в разрешении 4К <br>стали доступны, как никогда ранее!
+        .b-gaming4k-banner__body
+          p С выходом видеокарт NVIDIA GeForce RTX 30-й серии, стало возможным играть в 4К на ультра - настройках качества с заветными 60 FPS и выше. Самое время думать о переходе на игры в высоких разрешениях. Тем более, что благодаря трассировке лучей и DLSS 2.0 игры в 4К выглядят потрясающе красивыми.
+          p Попробуй Cyberpunk 2077 в 4К и пройди свои любимые игры снова в супер – качестве!
+        .b-gaming4k-banner__footer
+          .b-gaming4k-banner__logo
+            img(src="assets/img/gaming/4k/gaming4k-pc2021.png")
+            img(src="assets/img/gaming/4k/gaming4k-nvidia.png")
 
 mixin gaming-carousel(...data)
   .b-gaming-carousel&attributes(attributes)
@@ -87,13 +100,15 @@ mixin gaming-event(image, title, desc)
       span.b-gaming-event__title= title
       span.b-gaming-event__pseudolink= desc
 
-mixin gaming4k-product(title, desc, price, image, buy)
+mixin gaming4k-product(title, desc, price, image, buy, ratio)
   .b-gaming4k-product&attributes(attributes)
-    .b-gaming4k-product__image-wrapper
-      img.b-gaming4k-product__image(src=image, alt=title)
-    span.b-gaming4k-product__title= title
-    if price != ''
-      .b-gaming4k-product__price= price
-    if desc != ''
-      .b-gaming4k-product__desc= desc
-    a(href="#" class="b-gaming4k-product__button button-gaming")= buy ? 'Купить' : 'Выбрать'
+    .b-gaming4k-product__body
+      .b-gaming4k-product__image-wrapper(class=ratio)
+        img.b-gaming4k-product__image(src=image, alt=title)
+      span.b-gaming4k-product__title= title
+      if price != ''
+        .b-gaming4k-product__price= price
+      if desc != ''
+        .b-gaming4k-product__desc= desc
+    .b-gaming4k-product__footer
+      a(href="#" class="b-gaming4k-product__button button-gaming")= buy ? 'Купить' : 'Выбрать'

@@ -2494,6 +2494,16 @@ $(function () {
 
 // Gaming
 $(function () {
+  
+  function smoothScroll(e) {
+    e.preventDefault();
+    var $target = $($(this).attr('href'));
+    console.log($(this).attr('href'));
+    $('html, body').animate({
+      scrollTop: ($target.offset().top - 40)
+    }, 400)
+  }
+
   $('.b-gaming-slider').slick({
     useTransform: true,
     speed: 640,
@@ -2501,6 +2511,7 @@ $(function () {
     prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
     nextArrow: '<button type="button" class="slick-arrow slick-next"></button>'
   });
+
   $('.b-gaming-carousel').slick({
     arrows: true,
     dots: false,
@@ -2534,12 +2545,21 @@ $(function () {
       }
     ]
   });
+  
   $('.b-gaming-slider__slide-price').text(
     function() {
       var price = $(this).text();
       return price.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
     }
   );
+  $(window).load(function() {
+    $("#twentytwenty").twentytwenty({
+      before_label: '',
+      after_label: '',
+      //no_overlay: true
+    });
+  });
+  $(document).on('click', '.smoothscroll', smoothScroll);
 })
 // comments
 $(function () {
@@ -5768,6 +5788,36 @@ $(function () {
   });
 });
 
+// Промоблок 2
+$(function () {
+  $(".b-promo-block2").livequery(function () {
+    var $context = $(this);
+    var $expandLink = $(".b-promo-block2__expand-link", $context);
+    var $closeLink = $(".b-promo-block2__close", $context);
+
+    function expandBlock (e) {
+      $context.removeClass("_collapsed");
+      e.preventDefault();
+    }
+
+    function closeBlock (e) {
+      //$context.addClass('_collapsed');
+      $context.remove();
+      e.preventDefault();
+    }
+
+    $expandLink.on("click", expandBlock);
+    $closeLink.on("click", closeBlock);
+
+    $context.adaptBlock({
+      maxWidth: {
+        780: "_mx780",
+        700: "_mx700",
+      }
+    });
+  });
+});
+
 // Промоблок 1
 $(function () {
   $(".b-promo-block3").livequery(function () {
@@ -5816,36 +5866,6 @@ $(function () {
     });
   });
 });
-// Промоблок 2
-$(function () {
-  $(".b-promo-block2").livequery(function () {
-    var $context = $(this);
-    var $expandLink = $(".b-promo-block2__expand-link", $context);
-    var $closeLink = $(".b-promo-block2__close", $context);
-
-    function expandBlock (e) {
-      $context.removeClass("_collapsed");
-      e.preventDefault();
-    }
-
-    function closeBlock (e) {
-      //$context.addClass('_collapsed');
-      $context.remove();
-      e.preventDefault();
-    }
-
-    $expandLink.on("click", expandBlock);
-    $closeLink.on("click", closeBlock);
-
-    $context.adaptBlock({
-      maxWidth: {
-        780: "_mx780",
-        700: "_mx700",
-      }
-    });
-  });
-});
-
 // Промоблок 4
 $(function () {
   $(".b-promo-block4").livequery(function () {

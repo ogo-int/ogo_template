@@ -17,64 +17,165 @@ block head-scripts
 block caption
 
 block inner-content
-  section.c-gaming
+  section.c-gaming4k
 
-    +gaming-banner(style="background-image: url('assets/img/gaming/OGO!Gaming-pc8.jpg')")
+    +gaming4k-banner(style="background-image: url('assets/img/gaming/4k/gaming4k-banner.jpg')")
 
     section.b-gaming4k-section
       .b-gaming4k-grid
-        .b-gaming4k-grid__cell
-          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-pc.jpg")
-        .b-gaming4k-grid__cell
-          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-gpu.jpg")
-        .b-gaming4k-grid__cell
-          +gaming4k-product("Игровые ПК", "Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга", "", "assets/img/gaming/4k/gaming4k-monitor.jpg")
+        .b-gaming4k-grid__cell.lg-4.md-4.sm-12
+          .b-gaming4k-product
+            .b-gaming4k-product__body
+              .b-gaming4k-product__image-wrapper.four-by-three
+                img.b-gaming4k-product__image(src="assets/img/gaming/4k/gaming4k-pc.jpg", alt="Игровые ПК")
+              span.b-gaming4k-product__title Игровые ПК
+              .b-gaming4k-product__desc Мощные игровые компьютеры на базе GeForce RTX 30 Для игр в 4К, работы и стриминга
+            .b-gaming4k-product__footer
+              a(href="#pc").b-gaming4k-product__button.button-gaming.smoothscroll Выбрать
+
+        .b-gaming4k-grid__cell.lg-4.md-4.sm-12
+          .b-gaming4k-product
+            .b-gaming4k-product__body
+              .b-gaming4k-product__image-wrapper.four-by-three
+                img.b-gaming4k-product__image(src="assets/img/gaming/4k/gaming4k-gpu.jpg", alt="Видеокарты")
+              span.b-gaming4k-product__title Видеокарты
+              .b-gaming4k-product__desc Видеокарты GeForce RTX 30 Для игр в 4К, работы и стриминга
+            .b-gaming4k-product__footer
+              a(href="#gpu").b-gaming4k-product__button.button-gaming.smoothscroll Выбрать
+
+        .b-gaming4k-grid__cell.lg-4.md-4.sm-12
+          .b-gaming4k-product
+            .b-gaming4k-product__body
+              .b-gaming4k-product__image-wrapper.four-by-three
+                img.b-gaming4k-product__image(src="assets/img/gaming/4k/gaming4k-monitor.jpg", alt="Мониторы 4К")
+              span.b-gaming4k-product__title Мониторы 4К
+              .b-gaming4k-product__desc Мониторы 4К для всех
+            .b-gaming4k-product__footer
+              a(href="#monitor").b-gaming4k-product__button.button-gaming.smoothscroll Выбрать
 
     section.b-gaming4k-section
-      h2.b-gaming4k-section__title ПОЛНЫЙ ДОСТУП К ТЕХНОЛОГИЯМ ДЛЯ ИГР,<br>РАБОТЫ И СТРИМИНГА
-    
-    section.b-gaming4k-section
+      h2.b-gaming4k-section__title ПОЛНЫЙ ДОСТУП К ТЕХНОЛОГИЯМ<br>ДЛЯ ИГР, РАБОТЫ И СТРИМИНГА
       .b-gaming4k-grid
-        .b-gaming4k-grid__cell
-          p NVIDIA DLSS
-        .b-gaming4k-grid__cell
-          p RTX ON
-    
-    section.b-gaming4k-section
+        .b-gaming4k-grid__cell.lg-6.md-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-image-wrapper
+                img(src="assets/img/gaming/4k/gaming4k-dlss.jpg", alt="NVIDIA DLSS").b-gaming4k__block-image
+              .b-gaming4k__block-heading.b-gaming4k__block-heading--large NVIDIA DLSS
+              .b-gaming4k__block-subheading.b-gaming4k__block-subheading--large МАКСИМУМ FPS И КАЧЕСТВА В ИГРАХ
+              p Технология, повышающая качество изображения в играх и увеличивающая FPS. Основана на новом методе рендеринга с помощью алгоритмов искусственного интеллекта и широко применяемая в играх: Cyberpunk 2077, Fortnite, Call of Duty, Watch Dogs: Legion, Control, и многие др. Уже в 17 играх и скоро еще в 25 проектах.
+            .b-gaming4k__block-footer
+              a(href="#dlss").button-gaming.smoothscroll Подробнее
+
+        .b-gaming4k-grid__cell.lg-6.md-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-image-wrapper
+                img(src="assets/img/gaming/4k/gaming4k-rtxon.jpg", alt="RTX ON").b-gaming4k__block-image
+              .b-gaming4k__block-heading.b-gaming4k__block-heading--large RTX ON
+              .b-gaming4k__block-subheading.b-gaming4k__block-subheading--large ТЕХНОЛОГИЯ ТРАССИРОВКИ ЛУЧЕЙ
+              p Видеокарты NVIDIA GeForce RTX – все еще единственные в мире, обеспечивающие технологию трассировки лучей в реальном времени в играх: Cyberpunk 2077, Fortnite, Call of Duty, Control, Watch Dogs: Legion, Metro Exodus и многие др. RTX уже используют около 20 игр.
+            .b-gaming4k__block-footer
+              a(href="#rtxon").button-gaming.smoothscroll Подробнее
+
+      .b-gaming4k-divider
+
+      .b-gaming4k-grid
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading NVIDIA REFLEX
+              .b-gaming4k__block-subheading МАКСИМАЛЬНАЯ СКОРОСТЬ ОТКЛИКА СИСТЕМЫ
+              p NVIDIA Reflex обеспечивает уникальное конкурентное преимущество. Минимальная задержка системы и наилучший отклик с видеокартами GeForce RTX™ 30 и игровыми мониторами NVIDIA G-SYNC®.
+
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading NVIDIA BROADCAST
+              .b-gaming4k__block-subheading МАКСИМАЛЬНАЯ СКОРОСТЬ ОТКЛИКА СИСТЕМЫ
+              p Приложение NVIDIA превращающее игровой компьютер в профессиональную студию для стриминга. Высокий уровень качества стримов без хромакея, чистый звук без внешних шумов, невероятные возможности трансляций с помощью алгоритмов искусственного интеллекта.
+        
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading NVIDIA STUDIO
+              .b-gaming4k__block-subheading ПРОФЕССИОНАЛЬНАЯ СТОРОНА ТВОЕГО ПК
+              p Графические процессоры NVIDIA с драйверами Studio обеспечивают высочайший уровень производительности в более, чем 40 профессиональных приложениях по работе с графическим контентом и видео. 
+        
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading NVIDIA G-SYNC
+              .b-gaming4k__block-subheading АППАРАТНАЯ ТЕХНОЛОГИЯ СИНХРОНИЗАЦИИ
+              p Высококачественная технология адаптивной синхронизации для устранения разрывов изображения во время игры. Обладает максимальной эффективностью. Высоко ценится киберспортсменами, а также игроками, предпочитающими играть с лучшим качеством.
+
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading GEFORCE EXPERIENCE
+              .b-gaming4k__block-subheading НАБОР ПОЛЕЗНЫХ УТИЛИТ И ПРОГРАММ 
+              p Высококачественная технология адаптивной синхронизации для устранения разрывов изображения во время игры. Обладает максимальной эффективностью. Высоко ценится киберспортсменами, а также игроками, предпочитающими играть с лучшим качеством.
+
+        .b-gaming4k-grid__cell.lg-6.sm-12
+          .b-gaming4k__block
+            .b-gaming4k__block-body
+              .b-gaming4k__block-heading ДРАЙВЕРЫ GAME READY
+              .b-gaming4k__block-subheading ЛЕГЕНДАРНЫЕ ВЫСОКОКАЧЕСТВЕННЫЕ ДРАЙВЕРЫ NVIDIA
+              p Многолетняя репутация самых стабильных драйверов для видеокарт GeForce, обеспечивают максимальную производительность и плавность игры с первых секунд. Регулярно обновляются.   
+
+    section.b-gaming4k-section#dlss
       h2.b-gaming4k-section__title DLSS – МАКСИМУМ FPS И КАЧЕСТВА 
-    
-    section.b-gaming4k-section
+      .b-gaming4k-grid.align-center
+        .b-gaming4k-grid__cell.lg-8.md-10.sm-12
+          p.text-center NVIDIA DLSS – революционная технология рендеринга с использованием искусственного интеллекта, обеспечивает новый уровень качества графики в играх, одновременно увеличивая частоту кадров (FPS). Технология работает на специальных тензорных ядрах графического процессора GeForce RTX и использует алгоритмы глубокого обучения. С помощью DLSS стало возможным играть в игры на максимальных настройках с частотой от 60 FPS даже в разрешении 8К. Технология обеспечивает один из высших уровней сглаживания и позволяет повысить настройки качества до максимальных даже в высоких разрешениях. 
+          .b-gaming4k-divider
+          .b-gaming4k__video
+            iframe(width="560" height="315" src="https://www.youtube.com/embed/NZP4_gaZACc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+    section.b-gaming4k-section#rtxon
       h2.b-gaming4k-section__title ТРАССИРОВКА ЛУЧЕЙ
-   
+      .b-gaming4k-grid.align-center
+        .b-gaming4k-grid__cell.lg-10
+          p.text-center Трассировка лучей – новый стандарт современной игровой графики в играх. Впервые была выведена на рынок компанией NVIDIA и получившая высокие оценки со стороны разработчиков. Позволяет моделировать естественное поведение света в играх, включая всевозможные отражения, тени и многое др. С помощью трассировки лучей удалось получить наиболее высокий реализм изображения максимально приближенный к реальной жизни. Технология используется практически во всех новых топовых проектах, таких как Cyberpunk 2077, Watch Dogs: Legion, Call of Duty: Cold War, Fortnite, Control и многих других. 
+          .b-gaming4k-divider
+        .b-gaming4k-grid__cell
+          .twentytwenty-container#twentytwenty
+            img(src="assets/img/gaming/4k/rtx-off.jpg")
+            img(src="assets/img/gaming/4k/rtx-on.jpg")
+
     section.b-gaming4k-section
       h2.b-gaming4k-section__title ПОПУЛЯРНЫЕ ИГРЫ С ПОДДЕРЖКОЙ RTX
-    
-    section.b-gaming4k-section
+      .b-gaming4k-grid.align-center
+        .b-gaming4k-grid__cell.lg-8.md-10.sm-12
+          .b-gaming4k__video
+            iframe(width="560" height="315" src="https://www.youtube.com/embed/ccPUj5cCs4c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+
+    section.b-gaming4k-section#gpu
       h2.b-gaming4k-section__title КУПИТЬ ВИДЕОКАРТУ ДЛЯ ИГР В 4К
       .b-gaming4k-grid
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3070", "", "от 45 490 ₽", "assets/img/gaming/4k/gaming4k-3070.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3080", "", "от 63 490 ₽", "assets/img/gaming/4k/gaming4k-3080.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3090", "", "от 136 990 ₽", "assets/img/gaming/4k/gaming4k-3090.jpg", true)
     
-    section.b-gaming4k-section
+    section.b-gaming4k-section#pc
       h2.b-gaming4k-section__title ИГРОВЫЕ ПК
       .b-gaming4k-grid
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3070", "", "от 45 490 ₽", "assets/img/gaming/4k/gaming4k-pc3070.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3080", "", "от 63 490₽", "assets/img/gaming/4k/gaming4k-pc3080.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3090", "", "от 136 990 ₽", "assets/img/gaming/4k/gaming4k-pc3090.jpg", true)
     
-    section.b-gaming4k-section
+    section.b-gaming4k-section#monitor
       h2.b-gaming4k-section__title МОНИТОРЫ 4К
       .b-gaming4k-grid
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3070", "", "от 20 000 ₽", "assets/img/gaming/4k/gaming4k-monik3070.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3080", "", "от 40 000 ₽", "assets/img/gaming/4k/gaming4k-monik3080.jpg", true)
-        .b-gaming4k-grid__cell
+        .b-gaming4k-grid__cell.lg-4.sm-12
           +gaming4k-product("GEFORCE RTX 3090", "", "от 60 000 ₽", "assets/img/gaming/4k/gaming4k-monik3090.jpg", true)
