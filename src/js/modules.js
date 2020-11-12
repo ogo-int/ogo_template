@@ -427,22 +427,6 @@ $(function () {
   });
 });
 
-// Алфавитный список брендов
-$(function () {
-  $(".b-alphabetic-cols").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        790: "_mx790",
-        560: "_mx560",
-        480: "_mx480",
-        320: "_mx320"
-      }
-    });
-  });
-});
-
 // Инпут выбора города с автокомплитом
 $(function () {
   $(".b-autocomplete-address").each(function () {
@@ -539,6 +523,22 @@ $(function () {
     }
   });
 });
+// Алфавитный список брендов
+$(function () {
+  $(".b-alphabetic-cols").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        790: "_mx790",
+        560: "_mx560",
+        480: "_mx480",
+        320: "_mx320"
+      }
+    });
+  });
+});
+
 // ЛК, бонусная карта
 $(function () {
   $(".b-bonus-card").livequery(function () {
@@ -5251,6 +5251,20 @@ $(function () {
     });
   });
 });
+// Баннер о доставке в ваш город
+$(function () {
+  $(".b-town-delivery").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400",
+        290: "_mx290"
+      }
+    });
+  });
+});
+
 // Стоимость набора конфигуратора
 $(function () {
   $(".b-total").livequery(function() {
@@ -5264,20 +5278,6 @@ $(function () {
       },
       minWidth: {
         460: "_mn460"
-      }
-    });
-  });
-});
-
-// Баннер о доставке в ваш город
-$(function () {
-  $(".b-town-delivery").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400",
-        290: "_mx290"
       }
     });
   });
@@ -5776,18 +5776,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5813,6 +5801,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });
