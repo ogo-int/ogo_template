@@ -330,7 +330,6 @@
     //  }
     //}
   }
-
   &__product-photo {
     display: flex;
     position: relative;
@@ -355,7 +354,6 @@
     line-height: 80px;
     text-align: center;
   }
-
   &__product-rating {
     display: flex;
     flex-flow: row wrap;
@@ -374,7 +372,6 @@
       }
     }
   }
-
   &__product-info {
     width: 25%;
     position: relative;
@@ -418,9 +415,8 @@
       background-color: #81C03D;
     }
   }
-
   &__product-avail {
-    padding: 10px 20px 60px;
+    padding: 0; //10px 20px 60px;
   }
 
    /** endof CATALOG CARD*/
