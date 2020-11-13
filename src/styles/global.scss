@@ -728,9 +728,17 @@ textarea {
   font-weight: 400;
   background: none;
   border: 1px solid #3E8BDC;
+  &:before {
+    @include ft-icon($ft-percent);
+    color: #3E8BDC;
+    margin-right: 8px;
+  }
   &:hover {
     color: #fff;
     background-color: #3E8BDC;
+    &:before {
+      color: #fff;
+    }
   }
 }
 .button-analog {

@@ -72,9 +72,9 @@
     font-size: rem(14);
     text-align: center;
     white-space: nowrap;
-    &:before {
-      display: none;
-    }
+    //&:before {
+    //  display: none;
+    //}
     &:first-child {
       margin-top: 0;
     }
