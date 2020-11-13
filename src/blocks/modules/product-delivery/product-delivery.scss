@@ -36,8 +36,9 @@
         @include ft-icon($ft-arrow-down);
         position: absolute;
         width: auto;
-        top: 21px;
+        top: 50%;
         right: 15px;
+        margin-top: -3px;
         color: #9a9a9a;
         font-size: 6px;
         transform-origin: 50% 50%;
@@ -61,6 +62,26 @@
         width: 100%;
         height: 100%;
         fill: currentColor;
+      }
+      &::before {
+        color: #DC3E48;
+      }
+      &.package {
+        &:before {
+          @include ft-icon($ft-package);
+          font-size: 1.25em;
+        }
+      }
+      &.truck {
+        &:before {
+          @include ft-icon($ft-truck);
+          font-size: 1.5em;
+        }
+      }
+      &.cloud {
+        &:before {
+          @include ft-icon($ft-cloud);
+        }
       }
     }
     &-body {
@@ -101,6 +122,15 @@
     color: #9a9a9a;
     font-size: rem(12);
     line-height: rem(15);
+  }
+}
+@include w1024 {
+  .b-product-delivery {
+    &__desc,
+    &__misc {
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
 }
 /** CATALOG CARD */

@@ -1,15 +1,15 @@
-mixin product-delivery(title, icon)
+mixin product-delivery()
   .b-product-delivery&attributes(attributes)
     .b-product-delivery__section
       .b-product-delivery__section-title <b>Самовывоз</b> м. Коломенская
-        span.b-product-delivery__section-icon
+        span.b-product-delivery__section-icon.package
       .b-product-delivery__section-body
         span.b-product-delivery__type пр. Андропова, д. 22
         span.b-product-delivery__payment Мы не доставляем уцененные товары. Уцененные товары можно купить только в гипермаркете на м. Коломенская.
 
     .b-product-delivery__section._open
       .b-product-delivery__section-title <b>Самовывоз</b> из постаматов
-        span.b-product-delivery__section-icon
+        span.b-product-delivery__section-icon.package
       .b-product-delivery__section-body
         span.b-product-delivery__type Транспортная компания
         span.b-product-delivery__payment Оплата картой на сайте
@@ -17,7 +17,7 @@ mixin product-delivery(title, icon)
     
     .b-product-delivery__section
       .b-product-delivery__section-title <b>Доставка</b> 8 августа бесплатно
-        span.b-product-delivery__section-icon
+        span.b-product-delivery__section-icon.truck
       .b-product-delivery__section-body
         span.b-product-delivery__type Постаматы или ПВЗ
         span.b-product-delivery__payment Оплата картой на сайте
@@ -25,7 +25,7 @@ mixin product-delivery(title, icon)
 
     .b-product-delivery__section
       .b-product-delivery__section-title-fix Как получить <a href="#">цифровой товар?</a>
-        span.b-product-delivery__section-icon
+        span.b-product-delivery__section-icon.cloud
 
     .b-product-delivery__desc
       p Обратите внимание!
