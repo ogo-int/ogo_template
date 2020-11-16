@@ -82,4 +82,9 @@
     font-weight: 600;
   }
 }
+@include w768 {
+  .c-catalog__product-rating .b-product-marks {
+    margin-top: 10px;
+  }
+}
 /** CATALOG CARD */

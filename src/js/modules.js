@@ -4081,21 +4081,16 @@ $(function () {
   // code here...
 });
 
-// Аккордион доставки и самовывоза товара
+// Универсальный аккордион
 $(function () {
-
-  var $container = ".b-product-delivery__section";
-  var $toggler = ".b-product-delivery__section-title";
-  var $content = ".b-product-delivery__section-body";
-
-  function toggleContainer () {
-    var $this = $(this);
-    $this.siblings($content).slideToggle('fast');
-    $this.parents($container).toggleClass("_open");
-  }
-
-   $(document).on('click', $toggler, toggleContainer);
+  $(document).ready(function(){
+    accordion.init({
+      speed: 100,
+      single: false
+    });
+  });
 });
+
 // Изображения в карточке товара
 $(function () {
   
@@ -5791,18 +5786,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5828,6 +5811,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });
@@ -5922,5 +5917,5 @@ $(function () {
 });
 
 $(function () {
-    $(document).trigger("blocksReady");
+  $(document).trigger("blocksReady");
 });

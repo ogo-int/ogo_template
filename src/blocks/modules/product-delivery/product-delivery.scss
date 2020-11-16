@@ -1,5 +1,6 @@
 /** CATALOG CARD */
 .b-product-delivery {
+  margin-bottom: 14px;
   &__section {
     margin-bottom: 14px;
     border: 1px solid #f1f1f1;
@@ -7,14 +8,15 @@
     &:last-child {
       margin-bottom: 0;
     }
-    &._open {
-      .b-product-delivery__section-body {
-        display: block;
-      }
-      .b-product-delivery__section-title:after {
-        transform: rotate(-180deg);
-      }
-    }
+    //&._open,
+    //&.active {
+    //  .b-product-delivery__section-body {
+    //    display: block;
+    //  }
+    //  .b-product-delivery__section-title:after {
+    //    transform: rotate(-180deg);
+    //  }
+    //}
     &-title {
       position: relative;
       padding: 15px 40px;
@@ -30,24 +32,6 @@
         line-height: rem(19);
         b, strong {
           font-weight: 600;
-        }
-      }
-      &:after {
-        @include ft-icon($ft-arrow-down);
-        position: absolute;
-        width: auto;
-        top: 50%;
-        right: 15px;
-        margin-top: -3px;
-        color: #9a9a9a;
-        font-size: 6px;
-        transform-origin: 50% 50%;
-        transition: transform 0.3s ease-in-out;
-      }
-      &:hover {
-        cursor: pointer;
-        &:after {
-          color: #dc3e48;
         }
       }
     }
