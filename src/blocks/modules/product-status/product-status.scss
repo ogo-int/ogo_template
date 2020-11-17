@@ -15,12 +15,14 @@
     color: #DC3E48;
   }
 }
-
 .b-product-marks {
   display: flex;
   flex-flow: row wrap;
   font-size: rem(12);
   line-height: rem(15);
+  .c-catalog__product-rating &{
+    margin-top: 10px;
+  }
   > span,
   > a {
     display: inline-flex;
@@ -66,8 +68,8 @@
     background: #FEBF00;
   }
 }
-
 .b-product-discount {
+  margin-bottom: 14px;
   padding: 15px 20px;
   color: #000;
   font-weight: 300;
@@ -87,4 +89,4 @@
     margin-top: 10px;
   }
 }
-/** CATALOG CARD */
+/** endof CATALOG CARD */

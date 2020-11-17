@@ -240,6 +240,7 @@
     text-decoration: none;
     &:before {
       color: #9a9a9a;
+      margin-top: -3px;
       margin-right: 8px;
       //font-size: 14px;
       transition: .2s color;
@@ -255,18 +256,19 @@
   &__favor {
     &:before {
       @include ft-icon($ft-like);
-      margin-top: -2px;
+      font-size: 1em;
     }
   }
   &__compare {
     &:before {
       @include ft-icon($ft-comparsion);
+      font-size: 1em;
     }
   }
-
   &__share {
     &:before {
       @include ft-icon($ft-share);
+      font-size: 1em;
     }
   }
   /** endof CATALOG CARD */

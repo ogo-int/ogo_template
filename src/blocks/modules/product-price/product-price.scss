@@ -2,11 +2,19 @@
 .b-product-price {
   @include box-sizing;
   min-width: 240px;
+  background: none;
 
   &__prices-holder {
     margin-bottom: 20px;
     padding: 20px 10px 15px;
     background-color: #f8f8f8;
+    @media (max-width: 1200px) {
+      .c-catalog__product-price .b-product-price & {
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
   &__main {
     display: flex;
@@ -68,10 +76,11 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding: 9px 14px;
+    padding: 9px;
     font-size: rem(14);
     text-align: center;
     white-space: nowrap;
+    text-decoration: none;
     //&:before {
     //  display: none;
     //}
@@ -88,7 +97,6 @@
       }
     }
   }
-
   &__actions {
     display: flex;
     flex-flow: row wrap;
@@ -101,6 +109,7 @@
       }
     }
   }
+
   &__favor {
     flex: 0 1 auto;
     font-weight: 300;
@@ -319,6 +328,7 @@
   .b-product-price {
     &__actions {
       flex-flow: column nowrap;
+      align-items: flex-start;
     }
   }
 }

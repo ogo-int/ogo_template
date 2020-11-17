@@ -155,6 +155,7 @@
     position: absolute;
     top: 0;
     right: 1px;
+    z-index: 1;
   }
   &__icon {
     position: relative;
@@ -196,10 +197,12 @@
     }
     &--gaming {
       background-color: #181415;
-      background-image: url('/assets/img/icon-gaming.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 36px 36px;
+      &:before {
+        @include ft-icon($ft-gaming);
+        width: auto;
+        color: #fff;
+        font-size: 1em;
+      }
     }
     &--digital {
       &:before {
