@@ -212,6 +212,10 @@
     * {
       @include box-sizing;
     }
+    &:before,
+    &:after {
+      display: none
+    }
     //&._gray {
     //  position: relative;
     //  &:before {
@@ -225,13 +229,19 @@
     //  }
     //}
   }
-
   &__product-photo {
     display: flex;
-    position: relative;
+    position: static;
+    position: sticky;
+    top: 25px;
     flex-flow: row nowrap;
     align-self: flex-start;
     width: 41.667%;
+    //overlap old ↓
+    float: none;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
   &__product-options {
     width: 33.333%;
@@ -250,13 +260,16 @@
     line-height: 80px;
     text-align: center;
   }
-
   &__product-rating {
     display: flex;
     flex-flow: row wrap;
+    align-items: baseline;
     padding-left: 35px;
     padding-right: 35px;
-    margin-top: -30px;
+    max-width: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    cursor: default;
     //margin-bottom: 15px;
     //cursor: pointer;
     //&:hover .b-rating__text {
@@ -269,15 +282,12 @@
       }
     }
   }
-
   &__product-info {
     width: 25%;
     position: relative;
-    //overflow: hidden;
-    //z-index: 1;
-    //&._gray {
-    //  background-color: #f8f8f8;
-    //}
+    //old overlap ↓
+    float: none;
+    border: none;
   }
   &__product-label {
     position: absolute;
@@ -313,9 +323,8 @@
       background-color: #81C03D;
     }
   }
-
   &__product-avail {
-    padding: 10px 20px 60px;
+    padding: 0; //10px 20px 60px;
   }
 
    /** endof CATALOG CARD*/
@@ -481,22 +490,30 @@
     background-color: #fff;
   }
 }
-
+/** CATALOG CARD*/
 @media #{$media-desktop} {
   .c-catalog {
+    &__product-photo {
+      position: static;
+      top: unset;
+    }
     &__product-detail {
-      
       padding: 15px;
     }
-    &__product-promo {
-      display: none;
-    }
-    &__product-photo {
-      width: 50%;
-    }
+  } 
+}
+@media screen and (max-width: 1040px) { 
+  .c-catalog__product-detail {
+    flex-flow: row wrap;
+  }
+  .c-catalog__product-price,
+  .c-catalog__product-avail {
+    display: block;
+    width: auto;
+    background: none;
   }
 }
-
+/** endof CATALOG CARD*/
 @media #{$media-tablet} {
   .c-catalog {
     &__title {
@@ -567,51 +584,47 @@
     &__main-col {
       margin-right: 0;
     }
-
+    /** CATALOG CARD*/
+    &__product-detail {
+      justify-content: space-between;
+    }
     &__product-photo {
       float: none;
       width: 100%;
       padding: 0;
     }
-
+    &__product-options {
+      width: 49%;
+      padding: 0;
+    }
     &__product-info {
-      @include box-sizing;
-      @include clearfix;
-      display: table;
-      width: 100%;
+      //@include box-sizing;
+      //@include clearfix;
+      display: block;
+      width: 49%;
       float: none;
       max-width: none;
     }
-
+    &__product-promo {
+      display: none;
+    }
     &__product-price {
-      @include box-sizing;
-      display: table-cell;
-      vertical-align: top;
-      width: 50%;
-      background-color: #f8f8f8;
+      display: block;
+      width: 100%;
+      background: none;
     }
 
     &__product-avail {
-      @include box-sizing;
-      display: table-cell;
-      vertical-align: top;
-      width: 50%;
-      padding-top: 3px;
-      background-color: #fff;
-      border-top: 1px solid #f1f1f1;
+      display: block;
+      width: 100%;
+      border-top: none;
     }
 
     &__product-rating {
       padding-left: 20px;
       padding-right: 20px;
     }
-
-    &__product-detail {
-      position: relative;
-      padding: 15px;
-      flex-flow: column wrap;
-    }
-
+    /** endof CATALOG CARD*/
     &__product-links {
       border-top: 1px solid #f1f1f1;
 
@@ -745,34 +758,54 @@
         left: 0;
       }
     }
-
+    /** CATALOG CARD */
     &__product-rating {
-      text-align: center;
+      text-align: left;
       max-width: none;
-      margin-top: -10px;
+      margin-top: 0; //-10px;
     }
-
     &__product-info {
       display: block;
+      width: 100%;
     }
-
     &__product-price {
       display: block;
       width: auto;
       float: none;
     }
+    &__product-detail {
+      position: relative;
+      padding: 15px;
+      flex-flow: column wrap;
+     
+    }
+    &__product-photo {
+      float: none;
+      width: 100%;
+      padding: 0;
+    }
+    &__product-options {
+      width: 100%;
+      padding: 0;
+    }
+    &__product-promo {
+      display: none;
+    }
+    &__product-price {
+      display: block;
+      width: 100%;
+      background: none;
+    }
 
     &__product-avail {
       display: block;
-      width: auto;
-      float: none;
-      padding-bottom: 0;
+      width: 100%;
+      border-top: none;
     }
 
-    &__product-detail {
-      &:before {
-        display: none;
-      }
+    &__product-rating {
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     &__product-discount {
@@ -782,7 +815,7 @@
       font-size: 14px;
       font-weight: 600;
     }
-
+    /**endof CATALOG CARD */
     &__town-delivery {
       @include box-sizing;
       float: none;

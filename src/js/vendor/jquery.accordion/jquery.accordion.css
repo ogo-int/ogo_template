@@ -1,0 +1,41 @@
+.js-accordion {}
+.js-accordion-item {}
+.js-accordion-item.active > .js-accordion-header:after {
+  transform: rotate(-180deg);
+}
+.js-accordion-header {
+  position: relative;
+  padding-right: 40px;
+}
+.js-accordion-header:after {
+  content: "";
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  width: auto;
+  top: 50%;
+  right: 15px;
+  margin-top: -3px;
+  color: #9a9a9a;
+  font-size: 6px;
+  transform-origin: 50% 50%;
+  transition: transform 0.3s ease-in-out;
+}
+.js-accordion-header:hover {
+  cursor: pointer;
+}
+.js-accordion-header:hover:after {
+  color: #dc3e48;
+}
+.js-accordion-body {}

@@ -5,18 +5,29 @@ mixin product-price()
       .b-product-price__main
         .b-product-price__current 100&nbsp;990&nbsp;₽
         .b-product-price__old 107&nbsp;990&nbsp;₽
+        .b-product-price__notavail 107&nbsp;990&nbsp;₽
       .b-product-price__jur Для организаций по б/н 62&nbsp;210&nbsp;₽
-      .b-product-price__bonus +223 бонуса
+      .b-product-price__bonus 
+        span.b-product-price__bonus-text +223 бонуса
+        span.b-product-price__bonus-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст") ?
+
       .b-product-price__cta
-        a.b-product-price__buy.button-buy(href="#")
+        a.b-product-price__buy.button(href="#")
           span Купить
         a.b-product-price__buy.button-abroad(href="#")
           span Купить за 97&nbsp;000&nbsp;₽<span class="show-for-large"> из-за рубежа</span>
+        a.b-product-price__buy.button-analog(href="#")
+          span Смотреть популярные аналоги
 
     .b-product-price__actions
-      a(href="#" class="b-product-price__favor") В избранное
-      a(href="#" class="b-product-price__compare") Сравнить
-      a(href="#" class="b-product-price__share") Поделиться
+      a(href="#" class="b-product-preview__favor") В избранное
+      a(href="#" class="b-product-preview__compare") Сравнить
+      a(href="#" class="b-product-preview__share") Поделиться
+
+    .b-product-price__categories
+      a(href="#").b-product-price__category Смотреть все чехлы
+      a(href="#").b-product-price__category Смотреть все чехлы для Microsoft Limia 650
+      a(href="#").b-product-price__category Смотреть все чехлы Flip-case
   //endof EDITED PRODUCT PRICE
   
 mixin product-price_conf()

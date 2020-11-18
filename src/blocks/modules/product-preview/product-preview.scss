@@ -229,38 +229,49 @@
       display: inline-block;
     }
   }
-
+  /** CATALOG CARD */
+  &__favor,
+  &__compare,
+  &__share {
+    color: #1d1d1d;
+    font-size: rem(13);
+    font-weight: 300;
+    line-height: rem(19);
+    text-decoration: none;
+    &:before {
+      color: #9a9a9a;
+      margin-top: -3px;
+      margin-right: 8px;
+      //font-size: 14px;
+      transition: .2s color;
+      vertical-align: middle;
+    }
+    &:hover{
+      color: #3E8BDC;
+      &:before {
+        color: currentColor;
+      }
+    }
+  }
   &__favor {
-    text-decoration: none;
-    color: #bfbfbf;
-
     &:before {
-      @include ft-icon($ft-heart);
-      font-size: 22px;
-      transition: .2s color;
-    }
-
-    &:hover {
-      color: #6c6c6c;
+      @include ft-icon($ft-like);
+      font-size: 1em;
     }
   }
-
   &__compare {
-    margin-left: .5em;
-    text-decoration: none;
-    color: #bfbfbf;
-
     &:before {
-      @include ft-icon($ft-scale);
-      font-size: 26px;
-      transition: .2s color;
-    }
-
-    &:hover {
-      color: #6c6c6c;
+      @include ft-icon($ft-comparsion);
+      font-size: 1em;
     }
   }
-
+  &__share {
+    &:before {
+      @include ft-icon($ft-share);
+      font-size: 1em;
+    }
+  }
+  /** endof CATALOG CARD */
   &__fast-order {
     float: left;
     margin-top: 4px;

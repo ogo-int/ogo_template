@@ -88,9 +88,7 @@
 //- Media queries
 @mixin w320() {
 	@media screen and (max-width: 479px) {
-		& {
-			@content;
-		}
+		@content;
 	}
 }
 

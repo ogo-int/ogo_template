@@ -1,0 +1,120 @@
+/** CATALOG CARD */
+.b-product-delivery {
+  margin-bottom: 14px;
+  &__section {
+    margin-bottom: 14px;
+    border: 1px solid #f1f1f1;
+    transition: border-color 0.2s ease-in-out;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    //&._open,
+    //&.active {
+    //  .b-product-delivery__section-body {
+    //    display: block;
+    //  }
+    //  .b-product-delivery__section-title:after {
+    //    transform: rotate(-180deg);
+    //  }
+    //}
+    &-title {
+      position: relative;
+      padding: 15px 40px;
+      font-size: rem(13);
+      line-height: rem(19);
+      b, strong {
+        font-weight: 600;
+      }
+      &-fix {
+        position: relative;
+        padding: 15px 40px;
+        font-size: rem(13);
+        line-height: rem(19);
+        b, strong {
+          font-weight: 600;
+        }
+      }
+    }
+    &-icon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 16px;
+      left: 14px;
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+      }
+      &::before {
+        color: #DC3E48;
+      }
+      &.package {
+        &:before {
+          @include ft-icon($ft-package);
+          font-size: 1.25em;
+        }
+      }
+      &.truck {
+        &:before {
+          @include ft-icon($ft-truck);
+          font-size: 1.5em;
+        }
+      }
+      &.cloud {
+        &:before {
+          @include ft-icon($ft-cloud);
+        }
+      }
+    }
+    &-body {
+      display: none;
+      padding: 0 10px 20px 40px;
+    }
+  }
+  &__desc {
+    margin: 15px 0;
+    padding: 0 15px;
+    color: #7e7e7e;
+    font-size: rem(12);
+  }
+  &__misc {
+    margin: 15px 0;
+    padding: 0 15px;
+    font-size: rem(13);
+    line-height: rem(19);
+  }
+  &__date,
+  &__type,
+  &__payment {
+    display: block;
+    font-weight: 300;
+    
+  }
+  &__date {
+    font-size: rem(13);
+    line-height: rem(23);
+  }
+  &__type {
+    margin-bottom: 5px;
+    font-size: rem(16);
+    line-height: rem(19);
+  }
+  &__payment {
+    margin-bottom: 5px;
+    color: #9a9a9a;
+    font-size: rem(12);
+    line-height: rem(15);
+  }
+}
+@include w1024 {
+  .b-product-delivery {
+    &__desc,
+    &__misc {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+/** CATALOG CARD */
