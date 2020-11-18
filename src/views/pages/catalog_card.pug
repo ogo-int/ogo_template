@@ -11,10 +11,11 @@ block vars
   - var modHeader = '_breadcrumbs';
 
 block caption
-  h1.full-width Смартфон Apple iPhone 11 64GB Yellow (MWLW2RU/A)
+  h1.full-width.text-left Смартфон Apple iPhone 11 64GB Yellow (MWLW2RU/A)
 
 block inner-content
   section.c-catalog
+
     .c-catalog__product-rating
       +rating_card()
       +product-art()
@@ -34,7 +35,8 @@ block inner-content
         .c-catalog__product-price
           +product-price()
         .c-catalog__product-avail
-          +stock-info()
+          +product-delivery()
+          //- +stock-info()
 
     .c-catalog__product-links
       .content-center

@@ -1,8 +1,3 @@
-// comments
-$(function () {
-  // code here...
-});
-
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -29,6 +24,11 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
+
+// comments
+$(function () {
+  // code here...
+});
 
 // Добавить аксессуары
 $(function () {
@@ -4081,6 +4081,16 @@ $(function () {
   // code here...
 });
 
+// Универсальный аккордион
+$(function () {
+  $(document).ready(function(){
+    accordion.init({
+      speed: 100,
+      single: false
+    });
+  });
+});
+
 // Изображения в карточке товара
 $(function () {
   
@@ -5907,5 +5917,5 @@ $(function () {
 });
 
 $(function () {
-    $(document).trigger("blocksReady");
+  $(document).trigger("blocksReady");
 });

@@ -2,11 +2,19 @@
 .b-product-price {
   @include box-sizing;
   min-width: 240px;
+  background: none;
 
   &__prices-holder {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     padding: 20px 10px 15px;
     background-color: #f8f8f8;
+    @media (max-width: 1200px) {
+      .c-catalog__product-price .b-product-price & {
+        text-align: left;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
   }
   &__main {
     display: flex;
@@ -20,7 +28,6 @@
     font-weight: 300;
     line-height: 1;
   }
-
   &__old {
     margin-left: 0.5em;
     color: #000;
@@ -28,6 +35,12 @@
     line-height: 22 / 16;
     font-weight: 300;
     text-decoration: line-through;
+  }
+  &__notavail {
+    color: #1D1D1D;
+    font-size: rem(32);
+    font-weight: 300;
+    line-height: 1;
   }
   &__jur {
     margin-bottom: 10px;
@@ -42,6 +55,20 @@
     font-weight: 300;
     font-size: rem(13);
     line-height: rem(19);
+    &-helper {
+      display: inline-block;
+      min-width: 14px;
+      height: 14px;
+      margin-left: 5px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: center;
+      background: #3E8BDC;
+      border-radius: 14px;
+      vertical-align: text-top;
+    }
   }
   &__buy {
     @include box-sizing;
@@ -49,11 +76,14 @@
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+    padding: 9px;
+    font-size: rem(14);
     text-align: center;
     white-space: nowrap;
-    &:before {
-      display: none;
-    }
+    text-decoration: none;
+    //&:before {
+    //  display: none;
+    //}
     &:first-child {
       margin-top: 0;
     }
@@ -67,7 +97,6 @@
       }
     }
   }
-
   &__actions {
     display: flex;
     flex-flow: row wrap;
@@ -80,6 +109,7 @@
       }
     }
   }
+
   &__favor {
     flex: 0 1 auto;
     font-weight: 300;
@@ -135,6 +165,23 @@
       background-repeat: no-repeat;
       background-position: 50% 50%;
       background-size: 23px 18px;
+    }
+  }
+  &__categories {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  &__category {
+    display: block;
+    margin-bottom: 8px;
+    padding: 9px 12px;
+    color: #1d1d1d;
+    font-size: rem(13);
+    line-height: rem(20);
+    text-decoration: none;
+    background: #F8F8F8;
+    &:hover {
+      color: #0b8bfb;
     }
   }
   &__art {
@@ -277,7 +324,14 @@
     }
   }
 }
-@include w1024 {}
+@include w1024 {
+  .b-product-price {
+    &__actions {
+      flex-flow: column nowrap;
+      align-items: flex-start;
+    }
+  }
+}
 @include w768 {}
 @include w480 {}
 /** endof CATALOG CARD*/
