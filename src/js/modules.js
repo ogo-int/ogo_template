@@ -3271,6 +3271,21 @@ $(function () {
   // code here...
 });
 
+// Боковая панель в мобильной версии
+$(function() {
+  $(".b-mobile-aside").livequery(function () {
+    var $context = $(this);
+
+    $context.on("mobile-menu.open", function () {
+      $context.addClass("_sub-menu-opened");
+    });
+
+    $context.on("mobile-menu.close", function () {
+      $context.removeClass("_sub-menu-opened");
+    });
+  });
+});
+
 // Карта метро
 $(function () {
   $(".b-metro-map").livequery(function () {
@@ -3397,21 +3412,6 @@ $(function () {
         790: "_mx790",
         600: "_mx600"
       }
-    });
-  });
-});
-
-// Боковая панель в мобильной версии
-$(function() {
-  $(".b-mobile-aside").livequery(function () {
-    var $context = $(this);
-
-    $context.on("mobile-menu.open", function () {
-      $context.addClass("_sub-menu-opened");
-    });
-
-    $context.on("mobile-menu.close", function () {
-      $context.removeClass("_sub-menu-opened");
     });
   });
 });
@@ -4869,13 +4869,6 @@ $(function () {
   });
 });
 
-// Простые формы
-$(function () {
-  $(".b-simple-form").livequery(function () {
-    var $context = $(this);
-  });
-});
-
 // Слайдер продуктов
 $(function () {
   $(".b-small-product-slider").livequery(function () {
@@ -4967,6 +4960,13 @@ $(function () {
     });
   });
 });
+// Простые формы
+$(function () {
+  $(".b-simple-form").livequery(function () {
+    var $context = $(this);
+  });
+});
+
 // Фильтр товаров каталога
 $(function () {
   $(".b-smart-filter").livequery(function () {
@@ -5354,31 +5354,6 @@ $(function () {
   });
 });
 
-// Видеофрейм
-$(function () {
-  $(".b-video-frame").livequery(function () {
-    var $context = $(this);
-    var $iframe = $("iframe", $context);
-    var width = $iframe.width();
-    var height= $iframe.height();
-    var ratio = width / height;
-
-    function setFullVideo () {
-      ratio = width / height;
-      width = $context.parent().innerWidth();
-      height = width / ratio;
-
-      $iframe.width(width);
-      $iframe.height(height);
-    }
-
-    setFullVideo();
-    $(window).on("resize", setFullVideo);
-    $context.on("resize.block", setFullVideo);
-
-  });
-});
-
 $(function() {
   $.validator.addMethod("email", function(value, element) { 
     return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
@@ -5535,6 +5510,31 @@ $(".b-checkbox").on("click", function(){
     b.val("true");
   }
 });
+// Видеофрейм
+$(function () {
+  $(".b-video-frame").livequery(function () {
+    var $context = $(this);
+    var $iframe = $("iframe", $context);
+    var width = $iframe.width();
+    var height= $iframe.height();
+    var ratio = width / height;
+
+    function setFullVideo () {
+      ratio = width / height;
+      width = $context.parent().innerWidth();
+      height = width / ratio;
+
+      $iframe.width(width);
+      $iframe.height(height);
+    }
+
+    setFullVideo();
+    $(window).on("resize", setFullVideo);
+    $context.on("resize.block", setFullVideo);
+
+  });
+});
+
 $(function () {
   $(".b-ymap").livequery(function () {
     var $context = $(this);
