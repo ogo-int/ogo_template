@@ -1,3 +1,8 @@
+// comments
+$(function () {
+  // code here...
+});
+
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -24,11 +29,6 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
-
-// comments
-$(function () {
-  // code here...
-});
 
 // Добавить аксессуары
 $(function () {
@@ -1226,6 +1226,25 @@ $(function () {
     });
   });
 });
+// Чек-бокс
+$(function () {
+  $(".b-checkbox").livequery(function () {
+    var $context = $(this);
+    var $input = $("input[type=\"checkbox\"]", $context);
+
+    function changeState () {
+      if($input.prop("checked")) {
+        $context.addClass("_checked");
+      } else {
+        $context.removeClass("_checked");
+      }
+    }
+
+    changeState();
+    $input.on("change", changeState);
+  });
+});
+
 // Слайдер сертификатов
 $(function () {
   $(".b-cert-slider").livequery(function () {
@@ -1258,25 +1277,6 @@ $(function () {
       autoScrollingStep: 1,
       autoScrollingInterval: 20
     });
-  });
-});
-
-// Чек-бокс
-$(function () {
-  $(".b-checkbox").livequery(function () {
-    var $context = $(this);
-    var $input = $("input[type=\"checkbox\"]", $context);
-
-    function changeState () {
-      if($input.prop("checked")) {
-        $context.addClass("_checked");
-      } else {
-        $context.removeClass("_checked");
-      }
-    }
-
-    changeState();
-    $input.on("change", changeState);
   });
 });
 
@@ -5786,6 +5786,18 @@ $(function () {
   // code here...
 });
 
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
+      }
+    });
+  });
+});
+
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5811,18 +5823,6 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
-      }
-    });
-  });
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
       }
     });
   });
