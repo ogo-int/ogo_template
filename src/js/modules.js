@@ -1226,25 +1226,6 @@ $(function () {
     });
   });
 });
-// Чек-бокс
-$(function () {
-  $(".b-checkbox").livequery(function () {
-    var $context = $(this);
-    var $input = $("input[type=\"checkbox\"]", $context);
-
-    function changeState () {
-      if($input.prop("checked")) {
-        $context.addClass("_checked");
-      } else {
-        $context.removeClass("_checked");
-      }
-    }
-
-    changeState();
-    $input.on("change", changeState);
-  });
-});
-
 // Слайдер сертификатов
 $(function () {
   $(".b-cert-slider").livequery(function () {
@@ -1277,6 +1258,25 @@ $(function () {
       autoScrollingStep: 1,
       autoScrollingInterval: 20
     });
+  });
+});
+
+// Чек-бокс
+$(function () {
+  $(".b-checkbox").livequery(function () {
+    var $context = $(this);
+    var $input = $("input[type=\"checkbox\"]", $context);
+
+    function changeState () {
+      if($input.prop("checked")) {
+        $context.addClass("_checked");
+      } else {
+        $context.removeClass("_checked");
+      }
+    }
+
+    changeState();
+    $input.on("change", changeState);
   });
 });
 
@@ -5052,11 +5052,6 @@ $(function () {
   });
 });
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Информация о наличии товара
 $(function () {
   $(".b-stock-info").livequery(function () {
@@ -5199,6 +5194,11 @@ $(function () {
 
     $context.adaptBlock(adaptParams);
   });
+});
+
+// comments
+$(function () {
+  // code here...
 });
 
 // comments

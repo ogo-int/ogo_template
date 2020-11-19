@@ -1,0 +1,34 @@
+extends ../layout/page-template
+
+block head
+	title Магазины и точки выдачи ОГО
+
+block breadcrumbs
+
+block caption
+
+block head-scripts
+	script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
+block inner-content
+	section.c-contacts-list
+		.c-contacts-list__header
+			.h1.c-contacts-list__caption Магазины и&nbsp;точки выдачи ОГО
+
+		.c-contacts-list__main-holder
+			.c-contacts-list__map
+				.b-tabs.b-tabs_lined(data-collapse=1)
+					ul.b-tabs__cols.c-contacts-list__switcher
+						li.b-tabs__col.b-tabs__col_active
+							a.b-tabs__link(href="#")
+								span.b-tabs__link-text На&nbsp;карте
+						li.b-tabs__col
+							a.b-tabs__link(href="#")
+								span.b-tabs__link-text На&nbsp;схеме метро
+
+					ul.b-tabs__holders
+						li.b-tabs__holder.b-tabs__holder_active
+							+map-contacts()
+
+						li.b-tabs__holder
+							+metro-map()
