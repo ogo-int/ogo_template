@@ -1,17 +1,15 @@
 mixin map-contacts()
   .b-map-contacts.iblock&attributes(attributes)
     .b-map-contacts__cols
+      .b-map-contacts__town-col
+        .b-shops-list__town-holder
+          select.b-shops-list__town.select2
+            option Москва и&nbsp;подмосковье
+            option Санкт-Петербург
+            option Казань
+            
       .b-map-contacts__list-col
         .b-shops-list.iblock
-          .b-shops-list__town-holder
-            select.b-shops-list__town.select2
-              option Москва и&nbsp;подмосковье
-              option Санкт-Петербург
-              option Казань
-
-          .b-map-contacts__map-col
-            +ymap()
-
           .b-shops-list__section
             .b-shops-list__section-name Москва
             .b-shops-list__section-content
@@ -21,14 +19,14 @@ mixin map-contacts()
                   ul.b-shops-list__items
                     li.b-shops-list__item
                       .b-shops-list__shop(data-coords='55.793227,37.559883' data-link="ajax/shop-detail.html")
-                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffcb31;"></span> Площадь Ильича
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Динамо
                         .b-shops-list__shop-address Театральная аллея, д. 3, стр.&nbsp;1
                         .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
                         .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
 
                     li.b-shops-list__item
                       .b-shops-list__shop(data-coords='55.754973,37.690534' data-link="ajax/shop-detail.html")
-                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #54871d;"></span> Динамо
+                        .b-shops-list__shop-title <span class="b-shops-list__metro" style="background-color: #ffcb31;"></span> Площадь Ильича
                         .b-shops-list__shop-address Золоторожский Вал, д. 4, стр. 4
                         .b-shops-list__shop-phone <nobr>+7 495 229-56-53</nobr>
                         .b-shops-list__shop-hours Ежедневно с&nbsp;10:00 до&nbsp;22:00
@@ -106,3 +104,6 @@ mixin map-contacts()
             .b-shops-list__section-content
               a.b-shops-list__qiwi-btn.button(href="#") Найти терминал
               a.b-shops-list__qiwi-more.button-gray(href="#") Подробнее
+
+      .b-map-contacts__map-col
+        +ymap()

@@ -1,0 +1,70 @@
+.b-map-pickup {
+  &__select {
+    @include margin(20/20);
+  }
+
+  &__map {
+    @include mtop(20/20);
+    @include mbot(25/20);
+    height: 500px;
+  }
+
+  &__options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    border-top: 1px solid #f1f1f1;
+  }
+
+  &__option {
+    display: none;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__caption {
+    @include margin(10/20);
+  }
+
+  &__text {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__remark {
+    @include margin(10/20);
+    font-size: 14/16*100%;
+    font-weight: 200;
+    color: #969696;
+  }
+
+  &__time {
+    display: none;
+  }
+
+  &__choose-btn {
+    font-size: 14/16*100%;
+    font-weight: 200;
+  }
+
+  &__choose-holder {
+    @include margin(20/20);
+    display: none;
+
+    &._active {
+      display: block;
+    }
+  }
+
+  &__map-section {
+    display: none;
+
+    &._active {
+      display: block;
+    }
+  }
+}

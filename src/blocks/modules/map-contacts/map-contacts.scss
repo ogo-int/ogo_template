@@ -1,24 +1,67 @@
+/* CONTACTS LIST */
 .b-map-contacts {
   &__cols {
-    @include clearfix;
+    //@include clearfix;
+    display: flex;
+    flex-flow: column wrap;
     position: relative;
-    min-height: 700px;
+    height: 700px;
+    //max-height: 900px;
+    &:after {
+      display: none;
+    }
+  }
+  &__town-col {
+    width: 280px;
+    flex: 0 1 auto;
+    margin-right: 20px;
   }
 
   &__list-col {
-    float: left;
+    float: none;
     width: 280px;
+    height: calc(100% - 50px);
+    flex: 0 1 auto;
+    margin: 15px 20px 0 0;
   }
 
   &__map-col {
-    position: absolute;
+    position: static;
+    flex: 3 3 auto;
+    width: calc(100% - 300px);
+    height: 100%;
     top: 0;
     right: 0;
-    bottom: 132px;
-    left: 280px;
+    bottom: 0; //132px;
+    left: 0; //280px;
     overflow: hidden;
-    padding-left: 10px;
+    padding-left: 0; //10px;
   }
+
+}
+@include w768 {
+  .b-map-contacts {
+    &__cols {
+      flex-flow: column nowrap;
+      height: auto;
+    }
+    &__town-col {
+      order: 1;
+      width: 100%;
+      margin-right: 0;
+    }
+    &__list-col {
+      order: 3;
+      margin-right: 0;
+    }
+    &__map-col {
+      order: 2;
+      width: 100%;
+    }
+  }
+}
+@include w480 {
+ 
 }
 
 @mixin mx880($mod: "") {
@@ -47,3 +90,5 @@
     @include mx880;
   }
 }
+
+/* endof CONTACTS LIST */

@@ -1,8 +1,3 @@
-// comments
-$(function () {
-  // code here...
-});
-
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -29,6 +24,11 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
+
+// comments
+$(function () {
+  // code here...
+});
 
 // Добавить аксессуары
 $(function () {
@@ -3090,16 +3090,16 @@ $(function () {
 $(function () {
   $(".b-map-contacts").livequery(function () {
     var $context = $(this);
-    var $cols = $(".b-map-contacts__cols", $context);
+    //var $cols = $(".b-map-contacts__cols", $context); не используется
     var $shops = $(".b-shops-list__shop", $context);
     var $map = $(".b-ymap");
 
-    function equalize () {
-      $cols.css("height", "");
-      setTimeout(function () {
-        $cols.css("height", $cols.height());
-      }, 200);
-    }
+    //function equalize () {
+    //  $cols.css("height", "");
+    //  setTimeout(function () {
+    //    $cols.css("height", $cols.height());
+    //  }, 200);
+    //}
 
     function fillMap() {
       $shops.each(function () {
@@ -3107,27 +3107,29 @@ $(function () {
         $map.trigger("resetPlacemarks.block");
         setTimeout(function () {
           $map.trigger("setPlacemark.block",[{
-            coords: $shop.data("coords").split(","),
+            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
             address: $(".b-shops-list__shop-address", $shop).html(),
+            metro: $shop.children('.b-shops-list__shop-title').html(),
+            coords: $shop.data("coords").split(","),
             phone: $(".b-shops-list__shop-phone", $shop).html(),
             hours: $(".b-shops-list__shop-hours", $shop).html(),
-            link: $shop.data("link"),
-            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title")
+            link: $shop.data("link")
           }]);
         }, 300);
       });
+      
     }
 
     function showShop() {
-      $map.trigger("setCenter.block", [$(this).data("coords").split(","), 14]);
+      $map.trigger("setCenter.block", [$(this).data("coords").split(","), 16]);
       return false;
     }
 
     $shops.on("click", showShop);
 
-    equalize();
-    $(window).on("resize", equalize);
-    $context.on("resize.block", equalize);
+    //equalize();
+    //$(window).on("resize", equalize);
+    //$context.on("resize.block", equalize);
 
     $map.on("mapReady.block", fillMap);
 
@@ -3137,6 +3139,134 @@ $(function () {
       }
     });
   });
+});
+
+// Точки получения заказа на отдельной карте
+$(function () {
+  $(".b-map-pickup").livequery(function () {
+    var $context = $(this);
+    var $points = $(".b-map-point__option", $context);
+    var $map = $(".b-ymap", $context);
+    var $mapHolder = $(".b-map-point__map-section", $context);
+    var $select = $(".b-map-point__select select", $context);
+    var $chooseHolder = $(".b-map-point__choose-holder", $context);
+    var $chooseBtn = $(".b-map-point__choose-btn", $context);
+
+    function setPlacemarks() {
+      $points.each(function () {
+        var $point = $(this);
+        var $address = $(".b-map-point__address", $point);
+        var $time = $(".b-map-point__time", $point);
+        var $metro = $(".b-map-point__metro", $point);
+        var metroList = [];
+
+        $metro.each(function () {
+          metroList.push($(this).html());
+        });
+
+        $map.trigger("setPlacemark.block", [{
+          coords: $point.data("coords").split(","),
+          address: $address.html(),
+          hours: $time.html(),
+          type: $address.html(),
+          data: {
+            metro: metroList,
+            index: $points.index($point)
+          },
+
+          // Шаблонизация https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Template-docpage
+          // Если будут использоваться внешние данные, то необходимо обойти использование |raw, иначе возможен XSS. Используется в основном для типографики.
+          balloonTemplate:
+              "<div class=\"b-ymap__balloon-inner _qiwi\">" +
+                "<div class=\"b-ymap__balloon-header\">" +
+                  "<div class=\"b-ymap__balloon__close\"></div>" +
+                  "<div class=\"b-ymap__balloon-type\">{{properties.type|raw}}</div>" +
+                  "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
+                "</div>" +
+                "<div class=\"b-ymap__balloon-content\">" +
+                  "{% if properties.metro.length != 0 %}" +
+                  "<ul class=\"b-ymap__metro-items\">" +
+                    "{% for metro in properties.metro %}" +
+                      "<li class=\"b-ymap__metro-item\">{{metro|raw}}</li>"+
+                    "{% endfor %}" +
+                  "</ul>" +
+                  "{% endif %}" +
+                  "<div class=\"b-ymap__balloon-hours\">{{properties.hours|raw}}</div>" +
+                  "<a href=\"#\" class=\"b-ymap__balloon-apply button\" data-index=\"{{properties.index}}\"\">Заберу отсюда</a>" +
+                "</div>" +
+              "</div>",
+
+          markTemplate:
+              "<div class=\"b-ymap__placemark _qiwi\">" +
+                "<div class=\"b-ymap__placemark-round\"></div>" +
+                "<div class=\"b-ymap__placemark-text\">" +
+                  "{{ properties.iconContent }}" +
+                "</div>" +
+              "</div>",
+
+          buildCallback: balloonBehavior
+        }]);
+      });
+
+      $map.off("mapReady.block", setPlacemarks);
+    }
+
+    // Тут можно определить поведение балуна
+    function balloonBehavior () {
+      var template = this;
+      var placemark = template.getParentElement();
+      var $balloon = $(placemark).find(".b-ymap__balloon-inner");
+      var $applyBtn = $(".b-ymap__balloon-apply", $balloon);
+
+      $applyBtn.on("click", function (e) {
+        var index = $(this).data("index");
+        $select.get(0).selectedIndex = index;
+        $select.change();
+        setMode("save");
+        template.onCloseClick(e);
+      });
+    }
+
+    function changeBySelect(e) {
+      var index = this.selectedIndex;
+      var mapTarget = $points.eq(index).data("coords");
+      $points.removeClass("_active");
+      $points.eq(index).addClass("_active");
+      $map.trigger("setCenter.block", [mapTarget.split(","), 14]);
+    }
+
+    function setMode(mode) {
+      if(mode == "edit") {
+        $chooseHolder.removeClass("_active");
+        $mapHolder.addClass("_active");
+      } else {
+        $chooseHolder.addClass("_active");
+        $mapHolder.removeClass("_active");
+      }
+    }
+
+    $map.on("mapReady.block", setPlacemarks);
+
+    $chooseBtn.on("click", function (e) {
+      setMode("edit");
+      e.preventDefault();
+    });
+
+    $select.on("change", changeBySelect);
+  });
+});
+
+$(".b-shops-list__shop").on("click",function () {
+  var w = screen.width;
+  var mapContent = document.getElementsByClassName("b-map-contacts__cols");
+  var mapContentHeight = parseInt(window.getComputedStyle(mapContent[0]).height);
+  var scroll = mapContentHeight/2;  
+
+  if(w > 768) {
+    window.scrollTo(0,scroll);
+  } else {
+    mapContent[0].scrollIntoView(top);
+  }
 });
 
 // Точки получения заказа на отдельной карте
@@ -3178,6 +3308,7 @@ $(function () {
               "<div class=\"b-ymap__balloon-inner _qiwi\">" +
                 "<div class=\"b-ymap__balloon-header\">" +
                   "<div class=\"b-ymap__balloon__close\"></div>" +
+                  "<div class=\"b-ymap__balloon-type\">{{properties.type|raw}}</div>" +
                   "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
                 "</div>" +
                 "<div class=\"b-ymap__balloon-content\">" +
@@ -5052,6 +5183,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Информация о наличии товара
 $(function () {
   $(".b-stock-info").livequery(function () {
@@ -5194,11 +5330,6 @@ $(function () {
 
     $context.adaptBlock(adaptParams);
   });
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -5536,12 +5667,13 @@ $(function () {
 });
 
 $(function () {
-  $(".b-ymap").livequery(function () {
+  $('.b-ymap').livequery(function () {
     var $context = $(this);
-    var $mapHolder = $(".b-ymap__map", $context);
-    var $marks = $(".b-ymap__point", $context);
+    var $mapHolder = $('.b-ymap__map', $context);
+    var $marks = $('.b-ymap__point', $context);
     var map;
-    var placemarks = [];
+    window.shopPlacemarksList = [];
+    var placemarks = window.shopPlacemarksList;
 
     // Шаблонизация https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Template-docpage
     // Если будут использоваться внешние данные, то необходимо обойти использование |raw, иначе возможен XSS. Нужен в основном для типографики.
@@ -5549,7 +5681,9 @@ $(function () {
       "<div class=\"b-ymap__balloon-inner\">" +
         "<div class=\"b-ymap__balloon-header\">" +
           "<div class=\"b-ymap__balloon__close\"></div>" +
+          "<div class=\"b-ymap__balloon-type\">{{properties.type|raw}}</div>" +
           "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
+          "<div class=\"b-ymap__balloon-metro\">{{properties.metro|raw}}</div>" +
         "</div>" +
         "<div class=\"b-ymap__balloon-content\">" +
           "<div class=\"b-ymap__balloon-phone\">{{properties.phone|raw}}</div>" +
@@ -5561,37 +5695,50 @@ $(function () {
       "</div>";
 
     var defaultLayoutTemplate =
-      "<div class=\"b-ymap__balloon-outer\">" +
-        "<div class=\"b-ymap__balloon-outer-holder\">" +
-        "$[[options.contentLayout]]" +
-        "</div>" +
-      "</div>";
+      '<div class="b-ymap__balloon-outer">' +
+        '<div class="b-ymap__balloon-outer-holder">' +
+        '$[[options.contentLayout]]' +
+        '</div>' +
+      '</div>';
 
     var defaultMarkTemplate =
-      "<div class=\"b-ymap__placemark\">" +
-        "<div class=\"b-ymap__placemark-round\"></div>" +
-        "<div class=\"b-ymap__placemark-text\">" +
-        "{{ properties.iconContent }}" +
-        "</div>" +
-      "</div>";
+      '<div class="b-ymap__placemark">' +
+        '<div class="b-ymap__placemark-round"></div>' +
+        '<div class="b-ymap__placemark-text">' +
+        '{{ properties.iconContent }}' +
+        '</div>' +
+      '</div>';
 
     // Основные функции
     function createMap() {
       map = new ymaps.Map($mapHolder.get(0), {
-        center: $mapHolder.data("center").split(","),
-        zoom: 15,
-        controls: ["default"]
+        center: $mapHolder.data('center').split(','),
+        zoom: 16,
+        controls: ['default']
       });
 
-      map.behaviors.disable("scrollZoom");
+      map.behaviors.enable('scrollZoom');
     }
 
     function setPlacemark(mark) {
-      var placemark;
+      var placemark, icon, hint, icon_size;
+
+      if (mark.type == 'Гипермаркет ОГО!') {
+        icon = '/assets/img/icons/pin-red.svg';
+        hint = 'Гипермаркет ОГО!';
+        icon_size = [48, 48]; //[81, 53];
+      } else {
+        icon = '/assets/img/icons/pin-red.svg';
+        hint = 'Точка выдачи ОГО!';
+        icon_size = [48, 48]; //[109, 55];
+      }
 
       placemark = new ymaps.Placemark(
         [parseFloat(mark.coords[0]), parseFloat(mark.coords[1])],
         $.extend({
+          type: mark.type,
+          metro: mark.metro,
+          hintContent: hint,
           address: mark.address,
           phone: mark.phone,
           hours: mark.hours,
@@ -5600,16 +5747,17 @@ $(function () {
           details: mark.details
         }, mark.data), {
           // Изображение метки
-          iconLayout: markTemplateing(mark.markTemplate),
+          iconLayout: 'default#image',
+          iconImageHref: icon,
+          iconImageSize: icon_size,
           iconShape: {
-            type: "Rectangle",
+            type: 'Rectangle',
             coordinates: [
               [0, -46],
               [178, 0]
             ]
           },
           hideIconOnBalloonOpen: true,
-
           // Свойства балуна
           balloonShadow: false,
           balloonContentLayout: balloonInnerTemplating(mark.balloonTemplate),
@@ -5617,9 +5765,12 @@ $(function () {
           balloonPanelMaxMapArea: 0
         }
       );
-
+      placemark.key = mark.key;
       placemarks.push(placemark);
       map.geoObjects.add(placemark);
+      if (placemarks.length <= 1) {
+        placemark.balloon.open();
+      }
     }
 
     function resetPlacemarks() {
@@ -5633,13 +5784,15 @@ $(function () {
         var $this = $(this);
 
         setPlacemark({
-          address: $(".b-ymap__point-address", $this).html(),
-          phone: $(".b-ymap__point-phone", $this).html(),
-          hours: $(".b-ymap__point-hours", $this).html(),
-          type: $(".b-ymap__point-type", $this).html(),
-          coords: $this.data("coords").split(","),
-          details: ($this.data("no-detail") !== undefined),
-          link: $this.data("link") || "/"
+          metro: $this.children('.b-ymap__point-title').html(),
+          address: $('.b-ymap__point-address', $this).html(),
+          phone: $('.b-ymap__point-phone', $this).html(),
+          hours: $('.b-ymap__point-hours', $this).html(),
+          type: $('.b-ymap__point-type', $this).html(),
+          coords: $this.data('coords').split(','),
+          details: ($this.data('no-detail') !== undefined),
+          link: $this.data('link') || '/',
+          key: $this.data('coords'),
         });
       });
     }
@@ -5647,7 +5800,7 @@ $(function () {
     function mappingInit() {
       createMap();
       if ($marks.length > 0) defaultPlacemarking($marks);
-      $context.triggerHandler("mapReady.block"); // without bubble up
+      $context.triggerHandler('mapReady.block'); // without bubble up
     }
 
     // Шаблонизаторы
@@ -5662,13 +5815,13 @@ $(function () {
     }
 
     function balloonLayoutTemplating(layoutTemplate, buildCallback) {
-      var _layoutTemplate = layoutTemplate || defaultLayoutTemplate;
+      var _layoutTemplate = layoutTemplate || defaultLayoutTemplate
 
       var balloonHolder = ymaps.templateLayoutFactory.createClass(_layoutTemplate, {
         build: function () {
           this.constructor.superclass.build.call(this);
 
-          this._$element = $(".b-ymap__balloon-outer", this.getParentElement());
+          this._$element = $('.b-ymap__balloon-outer', this.getParentElement());
 
           // $('body').on('click', $.proxy(this.closeOnBlur, this));
 
@@ -5676,12 +5829,12 @@ $(function () {
 
           this.applyElementOffset();
 
-          this._$element.find(".b-ymap__balloon__close")
-            .on("click", $.proxy(this.onCloseClick, this));
+          this._$element.find('.b-ymap__balloon__close')
+            .on('click', $.proxy(this.onCloseClick, this));
         },
 
         clear: function () {
-          $("body").off("click", this.closeOnBlur);
+          $('body').off('click', this.closeOnBlur);
           this.constructor.superclass.clear.call(this);
         },
 
@@ -5694,7 +5847,7 @@ $(function () {
 
           this.applyElementOffset();
 
-          this.events.fire("shapechange");
+          this.events.fire('shapechange');
         },
 
         applyElementOffset: function () {
@@ -5709,7 +5862,7 @@ $(function () {
           if ($target.is(this._$element) || $target.closest(this._$element).length) {
             return true;
           } else {
-            this.events.fire("userclose");
+            this.events.fire('userclose');
           }
         },
 
@@ -5731,7 +5884,7 @@ $(function () {
 
         onCloseClick: function (e) {
           e.preventDefault();
-          this.events.fire("userclose");
+          this.events.fire('userclose');
         },
 
         _isElement: function (element) {
@@ -5747,35 +5900,52 @@ $(function () {
     if (ymapAPIready) {
       mappingInit();
     } else {
-      $(document).on("ymapAPIready", mappingInit);
+      $(document).on('ymapAPIready', mappingInit);
     }
 
     // API блока
-    $context.on("resize.block", function (event) {
+    $context.on('resize.block', function (event) {
       setTimeout(function () {
         if (map != undefined) map.container.fitToViewport(true);
       }, 200);
       event.stopPropagation();
     });
 
-    $context.on("setPlacemark.block", function (event, mark) {
+    $context.on('setPlacemark.block', function (event, mark) {
       setPlacemark(mark);
       event.stopPropagation();
     });
 
-    $context.on("resetPlacemarks.block", function (event, mark) {
+    $context.on('resetPlacemarks.block', function (event, mark) {
       resetPlacemarks();
       event.stopPropagation();
     });
+    /*
+    $context.on('setCenter.block', function (event, center, zoom, coordsKey) {
+      map.setCenter(center, zoom, {
+        duration: 600,
+      }).then(function () {
+        var placemark = window.shopPlacemarksList.filter(function (el) {
+          return el.key === coordsKey;
+        })[0];
+        if (placemark) {
+          placemark.balloon.open();
+        }
+      }, function (err) {
 
+      });
+      event.stopPropagation();
+    });
+    */
+    
     $context.on("setCenter.block", function (event, center, zoom) {
       map.setCenter(center, zoom, {
         duration: 600
       });
       event.stopPropagation();
     });
-
-    $context.on("destroy.block", function () {
+    
+    $context.on('destroy.block', function () {
       if (map !== undefined) map.destroy();
       event.stopPropagation();
     });
@@ -5784,18 +5954,6 @@ $(function () {
 // comments
 $(function () {
   // code here...
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
 });
 
 // Промоблок 2
@@ -5823,6 +5981,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });

@@ -1,6 +1,6 @@
 // Точки получения заказа на отдельной карте
 $(function () {
-  $(".b-map-point").livequery(function () {
+  $(".b-map-pickup").livequery(function () {
     var $context = $(this);
     var $points = $(".b-map-point__option", $context);
     var $map = $(".b-ymap", $context);

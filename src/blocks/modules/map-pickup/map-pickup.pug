@@ -1,0 +1,32 @@
+mixin map-pickup()
+  .b-map-pickup.iblock&attributes(attributes)
+    .b-map-pickup__choose-holder._active
+      a.b-map-pickup__choose-btn.button(href="#") Найти другой терминал
+
+    .b-map-pickup__map-section
+      .b-map-pickup__select
+        select.select2
+          option М. Комсомольская, Ащеулов пер., д.9
+          option Золоторожский Вал, д. 4, стр. 2
+
+      .b-map-pickup__map
+        +ymap()
+
+    ul.b-map-pickup__options
+      li.b-map-pickup__option._active(data-coords="55.767701,37.634613")
+        .b-map-pickup__caption.
+          <span class="b-map-pickup__address">Ащеулов пер., д.9</span>,
+          <span class="b-map-pickup__metro"><span class="metro-icon">м</span>&nbsp;Сретенский Бульвар,</span>
+          <span class="b-map-pickup__metro"><span class="metro-icon">м</span>&nbsp;Чистые Пруды</span>
+        .b-map-pickup__text Между Ащеуловым и&nbsp;Луковым пер., вдоль стены, за&nbsp;шлагбаумом. Лучше подойти со&nbsp;стороны Лукового переулка пройти через шлагбаум вдоль стены.
+        .b-map-pickup__time Забрать заказ вы&nbsp;сможете сегодня (<nobr>03.09.2015</nobr>) после 18:00
+        .b-map-pickup__remark Ежедневно и&nbsp;круглосуточно, <nobr>8-800-333-51-46</nobr>
+
+      li.b-map-pickup__option(data-coords="55.754973,37.690534")
+        .b-map-pickup__caption.
+          <span class="b-map-pickup__address">Золоторожский Вал, д. 4, стр. 2</span>,
+          <span class="b-map-pickup__metro"><span class="metro-icon">м</span>&nbsp;Сретенский Бульвар</span>,
+          <span class="b-map-pickup__metro"><span class="metro-icon">м</span>&nbsp;Чистые Пруды</span>
+        .b-map-pickup__text Между Ащеуловым и&nbsp;Луковым пер., вдоль стены, за&nbsp;шлагбаумом. Лучше подойти со&nbsp;стороны Лукового переулка пройти через шлагбаум вдоль стены.
+        .b-map-pickup__time Забрать заказ вы&nbsp;сможете сегодня (<nobr>03.09.2015</nobr>) после 18:00
+        .b-map-pickup__remark Ежедневно и&nbsp;круглосуточно, <nobr>8-800-333-51-46</nobr>

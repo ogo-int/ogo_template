@@ -1583,19 +1583,19 @@
 /* Адреса магазинов */
 .c-contacts-list {
   &__header {
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 35px;
+    padding-right: 35px;
     padding-bottom: 20px;
   }
 
   &__main-holder {
-    padding: 6px 40px 20px;
-    background-color: #f8f8f8;
+    padding: 0 35px;
+    background-color: none;// #f8f8f8;
   }
 
   &__map {
-    padding: 20px;
-    padding-top: 5px;
+    padding: 0; //20px;
+    //padding-top: 5px;
     background-color: #fff;
 
     .b-tabs__link {
@@ -1604,7 +1604,7 @@
     }
 
     .b-tabs__col {
-      padding-left: 10px;
+      padding-left: 0;
       margin-right: 20px;
     }
 
@@ -1632,15 +1632,24 @@
 }
 
 @media #{$media-tablet} {
+  
 }
 
 @media #{$media-phone-landscape} {
+  .c-contacts-list {
+    &__caption {
+      text-align: left !important;
+    }
+    &__header,
+    &__main-holder {
+      padding: 0 15px;
+    }
+  }
 }
 
 @media #{$media-phone} {
+
 }
-
-
 /* Футер */
 .c-footer {
   &__features {

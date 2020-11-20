@@ -1,6 +1,8 @@
 .b-shops-list {
-  padding-left: 10px;
-  padding-right: 10px;
+  max-height: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  overflow: auto;
 
   &__town-holder {
     @include margin(5/20);
@@ -14,6 +16,9 @@
     padding-top: 10px;
     padding-bottom: 15px;
     border-top: 1px solid #f1f1f1;
+    &:first-child {
+      border-top: none;
+    }
   }
 
   &__section-name {
@@ -35,8 +40,8 @@
 
   &__group-name {
     @include margin(5/20);
-    font-size: 18/16*100%;
-    font-weight: 600;
+    font-size: rem(18);
+    font-weight: normal;
   }
 
   &__items {
@@ -48,28 +53,30 @@
   &__item {
     margin: 0;
   }
-
+  
+  /* CONTACTS LIST*/
   &__shop {
-    padding: 10px;
-    margin-left: -10px;
-    margin-right: -10px;
+    padding: 5px 10px;
+    margin-left: 0; //-10px;
+    margin-right: 10px; //-10px;
     transition: .2s background-color;
     cursor: pointer;
-
     &:hover, &._active {
       background-color: #f1f1f1;
     }
   }
-
   &__shop-title {
-    font-size: 14/16*100%;
+    position: relative;
+    padding-left: 20px;
+    font-size: rem(16);
   }
-
   &__shop-address {
-    font-size: 13/16*100%;
-    font-weight: 200;
+    padding-left: 20px;
+    font-size: rem(15);
+    font-weight: 300;
     color: #969696;
   }
+  /* endof CONTACTS LIST*/
 
   &__shop-phone {
     display: none;
@@ -80,22 +87,27 @@
   }
 
   &__metro {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: .35em;
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    margin-right: 0;
     background-color: #ffcb31;
     text-align: center;
     color: white;
+    border-radius: 50%;
 
     &:before {
-      @include ft-icon($ft-metro);
-      font-size: 10px;
-      line-height: 20px;
-      width: 1.2em;
+      display: none;
+      //@include ft-icon($ft-metro);
+      //font-size: 10px;
+      //line-height: 20px;
+      //width: 1.2em;
     }
   }
-
+  /* endof CONTACTS LIST*/
   &__qiwi-btn {
     font-size: 14/16*100%;
     margin-right: .5em;

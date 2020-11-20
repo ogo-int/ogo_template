@@ -10,14 +10,14 @@
 //@import "modules/modules";
 //@import "adaptive/adaptive";
 
-.h1 {
-  margin-bottom: 10px;
-}
 .full-width {
   padding-left: 35px;
   padding-right: 35px;
   text-align: left;
   word-wrap: break-word;
+}
+.h1 {
+  margin-bottom: 10px;
 }
 .hide {
   display: none;
@@ -25,7 +25,52 @@
 .text-left {
   text-align: left;
 }
-// components
+.show-for-large {
+  display: revert;
+  @include w1024 {
+    display: none;
+  }
+  @include w768 {
+    display: none;
+  }
+  @include w480 {
+    display: none;
+  }
+}
+/* Компоненты */
+/* Адреса магазинов */
+.c-contacts-list {
+  &__header {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 20px;
+  }
+  &__main-holder {
+    padding: 0 35px;
+    background: none;
+  }
+  &__map {
+    padding: 0;
+    padding-top: 0;
+  }
+  .b-tabs__col {
+    padding-left: 0;
+  }
+}
+@media #{$media-phone-landscape} {
+  .c-contacts-list {
+    &__caption {
+      text-align: left !important;
+    }
+    &__header,
+    &__main-holder {
+      padding: 0 15px;
+    }
+  }
+}
+/* endof Адреса магазинов */
+
+/* Карточка товара */
 .c-catalog {
   &__product-detail {
     display: flex;
@@ -293,9 +338,10 @@
     }
   }
 }
-// endof components
+/* endof Карточка товара */
+/* endof Компоненты */
 
-//modules
+/* Блоки */
 .b-plate-product {
   &__label {
     font-weight: 600;
@@ -1236,18 +1282,9 @@
     margin-top: 10px;
   }
 }
-// endofmodules
-
-.show-for-large {
-  display: revert;
-  @include w1024 {
-    display: none;
-  }
-  @include w768 {
-    display: none;
-  }
-  @include w480 {
-    display: none;
-  }
+.b-shops-list {
+  padding-left: 0px;
 }
+/* endof Блоки */
+
 /** endof TASKS */
