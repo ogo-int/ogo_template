@@ -180,7 +180,6 @@
   }
   &__balloon-metro {
     position: relative;
-    margin-bottom: 12px;
     padding-left: 20px;
     font-weight: 300;
     font-size: rem(14);
@@ -193,6 +192,16 @@
     width: 100%;
     font-size: 14/16*100%;
     text-align: center;
+  }
+  &__balloon-pickup {
+    font-size: rem(16);
+    line-height: rem(36);
+    b, strong {
+      font-weight: 600;
+    }
+  }
+  &__balloon-price {
+    color: #9a9a9a;
   }
   /* endof CONTACTS LIST*/
 

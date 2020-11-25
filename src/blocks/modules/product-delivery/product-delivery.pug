@@ -16,11 +16,9 @@ mixin product-delivery()
         span.b-product-delivery__date Ожидаемая дата доставки <b>08.10</b> от 340 ₽
   
   .b-product-delivery
-    a(href="#popup-shops").b-product-delivery__section.b-product-delivery__section--fixed.js-popup
+    a(href="#map-pickup" class="b-product-delivery__section b-product-delivery__section--fixed b-product-delivery__popup")
       .b-product-delivery__section-title <b>Самовывоз</b> из гипермаркетов и точек выдачи
         span.b-product-delivery__section-icon.package
-    .hide#shops
-      | test
 
     .b-product-delivery__section.b-product-delivery__section
       .b-product-delivery__section-title Как получить <a href="#">цифровой товар?</a>

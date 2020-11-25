@@ -19,6 +19,7 @@ $(function () {
         $map.trigger("resetPlacemarks.block");
         setTimeout(function () {
           $map.trigger("setPlacemark.block",[{
+            key: $shop.data('coords'),
             type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
             address: $(".b-shops-list__shop-address", $shop).html(),
             metro: $shop.children('.b-shops-list__shop-title').html(),
@@ -33,7 +34,11 @@ $(function () {
     }
 
     function showShop() {
-      $map.trigger("setCenter.block", [$(this).data("coords").split(","), 16]);
+      var thisCoordsString = $(this).data('coords');
+      $map.trigger(
+        'setCenter.block',
+        [thisCoordsString.split(','), 14, thisCoordsString],
+      );
       return false;
     }
 

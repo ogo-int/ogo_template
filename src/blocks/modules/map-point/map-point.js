@@ -113,6 +113,7 @@ $(function () {
   });
 });
 
+
 $(".b-shops-list__shop").on("click",function () {
   var w = screen.width;
   var mapContent = document.getElementsByClassName("b-map-contacts__cols");
@@ -120,7 +121,7 @@ $(".b-shops-list__shop").on("click",function () {
   var scroll = mapContentHeight/2;  
 
   if(w > 768) {
-    window.scrollTo(0,scroll);
+    window.scrollTo(0, scroll);
   } else {
     mapContent[0].scrollIntoView(top);
   }

@@ -1,9 +1,11 @@
 .b-shops-list {
+  /* CONTACTS LIST*/
   max-height: 100%;
-  padding-left: 0;
+  margin-left: -10px;
+  padding-left: 10px;
   padding-right: 0;
   overflow: auto;
-
+  /* endof CONTACTS LIST*/
   &__town-holder {
     @include margin(5/20);
 
@@ -55,6 +57,9 @@
   }
   
   /* CONTACTS LIST*/
+  &__group-content {
+    margin-left: -10px;
+  }
   &__shop {
     padding: 5px 10px;
     margin-left: 0; //-10px;
@@ -74,7 +79,43 @@
     padding-left: 20px;
     font-size: rem(15);
     font-weight: 300;
-    color: #969696;
+    color: #9a9a9a;
+  }
+  &__shop-metro {
+    display: inline-block;
+    position: relative;
+    margin-right: 0.33em;
+    padding-left: 20px;
+    font-size: rem(16);
+    font-weight: 300;
+    &-dot {
+      display: block;
+      position: absolute;
+      top: 6px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      margin-right: 0;
+      background-color: #ffcb31;
+      text-align: center;
+      color: white;
+      border-radius: 50%;
+    }
+    &:after {
+      content: ', ';
+    }
+  }
+  &__shop-pickup-time {
+    display: inline-block;
+    margin-right: 0.33em;
+    font-weight: 300;
+    b, strong {
+      font-weight: 600;
+    }
+  }
+  &__shop-pickup-price {
+    display: inline-block;
+    color: #9a9a9a;
   }
   /* endof CONTACTS LIST*/
 

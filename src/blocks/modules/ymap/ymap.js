@@ -45,7 +45,7 @@ $(function () {
     function createMap() {
       map = new ymaps.Map($mapHolder.get(0), {
         center: $mapHolder.data('center').split(','),
-        zoom: 16,
+        zoom: 10,
         controls: ['default']
       });
 
@@ -56,13 +56,9 @@ $(function () {
       var placemark, icon, hint, icon_size;
 
       if (mark.type == 'Гипермаркет ОГО!') {
-        icon = '/assets/img/icons/pin-red.svg';
         hint = 'Гипермаркет ОГО!';
-        icon_size = [48, 48]; //[81, 53];
       } else {
-        icon = '/assets/img/icons/pin-red.svg';
         hint = 'Точка выдачи ОГО!';
-        icon_size = [48, 48]; //[109, 55];
       }
 
       placemark = new ymaps.Placemark(
@@ -76,12 +72,13 @@ $(function () {
           hours: mark.hours,
           link: mark.link,
           iconContent: mark.type,
-          details: mark.details
+          details: mark.details,
+          pickup: mark.pickup
         }, mark.data), {
           // Изображение метки
           iconLayout: 'default#image',
-          iconImageHref: icon,
-          iconImageSize: icon_size,
+          iconImageHref: '/assets/img/icons/pin-red.svg',
+          iconImageSize: [32, 32],
           iconShape: {
             type: 'Rectangle',
             coordinates: [
@@ -252,27 +249,19 @@ $(function () {
       resetPlacemarks();
       event.stopPropagation();
     });
-    /*
+    
     $context.on('setCenter.block', function (event, center, zoom, coordsKey) {
       map.setCenter(center, zoom, {
         duration: 600,
       }).then(function () {
-        var placemark = window.shopPlacemarksList.filter(function (el) {
+        var placemark  = window.shopPlacemarksList.filter(function (el) {
           return el.key === coordsKey;
         })[0];
         if (placemark) {
           placemark.balloon.open();
         }
       }, function (err) {
-
-      });
-      event.stopPropagation();
-    });
-    */
-    
-    $context.on("setCenter.block", function (event, center, zoom) {
-      map.setCenter(center, zoom, {
-        duration: 600
+        
       });
       event.stopPropagation();
     });
