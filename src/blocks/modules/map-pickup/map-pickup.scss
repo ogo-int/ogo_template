@@ -71,6 +71,9 @@
       text-decoration: underline;
     }
   }
+  @media screen and (max-width: 1280px) {
+    width: 1000px;
+  }
   @media #{$media-desktop} {
     width: 768px;
     padding: 15px;
