@@ -77,7 +77,7 @@ $(function () {
         }, mark.data), {
           // Изображение метки
           iconLayout: 'default#image',
-          iconImageHref: '/assets/img/icons/pin-red.svg',
+          iconImageHref: 'assets/img/icons/pin-red.svg',
           iconImageSize: [32, 32],
           iconShape: {
             type: 'Rectangle',
@@ -223,7 +223,6 @@ $(function () {
 
       return balloonHolder;
     }
-
 
     // ymapAPIready глобальная переменная, true если был загужен api карт, иначе ждем события загрузки апи.
     if (ymapAPIready) {

@@ -12,10 +12,9 @@ $(function () {
         href: $(this).attr('href')
       }, {
         //options
-        autoSize: false,
+        type: 'inline',
+        autoSize: true,
         fitToView: true,
-        width: 'auto',
-        minWidth: 320,
         maxWidth: 1280,
         padding: 0
       })

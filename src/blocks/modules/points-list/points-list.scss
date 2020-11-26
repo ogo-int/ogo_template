@@ -2,7 +2,12 @@
   &__group {
     @include mmtop(20px);
     &-name {
+      display: inline-block;
+      align-self: flex-start;
+      position: sticky;
+      left: 0;
       margin-bottom: 10px;
+      padding-right: 20px;
       font-size: rem(18);
       font-weight: normal;
       line-height: rem(22);

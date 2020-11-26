@@ -3151,8 +3151,8 @@ $(function () {
   $(".b-map-pickup").livequery(function () {
     var $context = $(this),
         $shops = $(".b-points-list__point", $context),
-        $map = $(".b-ymap"),
-        $mapToggler = $('.b-map-pickup__toggler')
+        $map = $(".b-ymap");
+        //$mapToggler = $('.b-map-pickup__toggler')
  
     function fillMap() {
       $shops.each(function () {
@@ -3201,6 +3201,8 @@ $(function () {
 
     $map.on("mapReady.block", fillMap);
 
+    /* Переключатель видимости карты. Не используется
+
     $mapToggler.on('click', function(e){
       e.preventDefault();
       var $target = $('#' + $(this).data('target')),
@@ -3214,6 +3216,7 @@ $(function () {
         toggle == swap ? text : swap
       );
     });
+    */
   });
 });
 
@@ -4178,10 +4181,9 @@ $(function () {
         href: $(this).attr('href')
       }, {
         //options
-        autoSize: false,
+        type: 'inline',
+        autoSize: true,
         fitToView: true,
-        width: 'auto',
-        minWidth: 320,
         maxWidth: 1280,
         padding: 0
       })
@@ -5712,7 +5714,7 @@ $(function () {
         }, mark.data), {
           // Изображение метки
           iconLayout: 'default#image',
-          iconImageHref: '/assets/img/icons/pin-red.svg',
+          iconImageHref: 'assets/img/icons/pin-red.svg',
           iconImageSize: [32, 32],
           iconShape: {
             type: 'Rectangle',
@@ -5859,7 +5861,6 @@ $(function () {
       return balloonHolder;
     }
 
-
     // ymapAPIready глобальная переменная, true если был загужен api карт, иначе ждем события загрузки апи.
     if (ymapAPIready) {
       mappingInit();
@@ -5912,6 +5913,36 @@ $(function () {
   // code here...
 });
 
+// Промоблок 2
+$(function () {
+  $(".b-promo-block2").livequery(function () {
+    var $context = $(this);
+    var $expandLink = $(".b-promo-block2__expand-link", $context);
+    var $closeLink = $(".b-promo-block2__close", $context);
+
+    function expandBlock (e) {
+      $context.removeClass("_collapsed");
+      e.preventDefault();
+    }
+
+    function closeBlock (e) {
+      //$context.addClass('_collapsed');
+      $context.remove();
+      e.preventDefault();
+    }
+
+    $expandLink.on("click", expandBlock);
+    $closeLink.on("click", closeBlock);
+
+    $context.adaptBlock({
+      maxWidth: {
+        780: "_mx780",
+        700: "_mx700",
+      }
+    });
+  });
+});
+
 // Промоблок 1
 $(function () {
   $(".b-promo-block3").livequery(function () {
@@ -5960,48 +5991,6 @@ $(function () {
     });
   });
 });
-// Промоблок 2
-$(function () {
-  $(".b-promo-block2").livequery(function () {
-    var $context = $(this);
-    var $expandLink = $(".b-promo-block2__expand-link", $context);
-    var $closeLink = $(".b-promo-block2__close", $context);
-
-    function expandBlock (e) {
-      $context.removeClass("_collapsed");
-      e.preventDefault();
-    }
-
-    function closeBlock (e) {
-      //$context.addClass('_collapsed');
-      $context.remove();
-      e.preventDefault();
-    }
-
-    $expandLink.on("click", expandBlock);
-    $closeLink.on("click", closeBlock);
-
-    $context.adaptBlock({
-      maxWidth: {
-        780: "_mx780",
-        700: "_mx700",
-      }
-    });
-  });
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 4
 $(function () {
   $(".b-promo-block4").livequery(function () {
@@ -6023,6 +6012,18 @@ $(function () {
         1120: "_mx1120",
         900: "_mx900",
         500: "_mx500"
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });

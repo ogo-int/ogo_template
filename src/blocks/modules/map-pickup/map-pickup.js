@@ -3,8 +3,8 @@ $(function () {
   $(".b-map-pickup").livequery(function () {
     var $context = $(this),
         $shops = $(".b-points-list__point", $context),
-        $map = $(".b-ymap"),
-        $mapToggler = $('.b-map-pickup__toggler')
+        $map = $(".b-ymap");
+        //$mapToggler = $('.b-map-pickup__toggler')
  
     function fillMap() {
       $shops.each(function () {
@@ -53,6 +53,8 @@ $(function () {
 
     $map.on("mapReady.block", fillMap);
 
+    /* Переключатель видимости карты. Не используется
+
     $mapToggler.on('click', function(e){
       e.preventDefault();
       var $target = $('#' + $(this).data('target')),
@@ -66,5 +68,6 @@ $(function () {
         toggle == swap ? text : swap
       );
     });
+    */
   });
 });

@@ -2,8 +2,9 @@
   display: flex;
   flex-flow: row wrap;
   align-items: stretch;
-  
+  width: 1280px;
   padding: 35px;
+  @include box-sizing;
   * {
     @include box-sizing;
   }
@@ -29,7 +30,7 @@
     order: 1;
   }
   &__map-section {
-    display: none;
+    //display: none;
     width: 66%;
     height: 550px;
     order: 3;
@@ -39,10 +40,10 @@
     display: flex;
     flex-flow: column nowrap;
     flex: 1 1 435px;
-    max-width: calc(33% - 15px);
-    min-width: 320px;
+    max-width: 33%;
+    //min-width: 400px;
     height: 550px;
-    margin-right: 15px;
+    padding-right: 1%;
     padding-left: 34px;
     order: 2;
   }
@@ -63,13 +64,15 @@
     overflow: auto;
   }
   &__toggler {
+    display: none;
     align-self: flex-start;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
-  @include w1024 {
+  @media #{$media-desktop} {
+    width: 768px;
     padding: 15px;
     &__map-section,
     &__shops-section {
@@ -80,7 +83,8 @@
       padding-left: 0;
     }
   }
-  @include w768 {
+  @media #{$media-tablet} {
+    width: 100%;
     flex-flow: column;
     height: auto;
     &__header {
@@ -96,6 +100,7 @@
     &__shops-section {
       flex: 1 1 auto;
       max-width: 100%;
+      //min-width: none;
       margin-right: 0;
       margin-bottom: 15px;
       height: auto;
@@ -105,7 +110,7 @@
       order: 4;
     }
   }
-  @include w480 {
+  @media #{$media-phone-landscape} {
     &__title {
       font-size: rem(20);
     }
