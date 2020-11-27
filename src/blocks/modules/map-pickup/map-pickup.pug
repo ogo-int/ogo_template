@@ -1,0 +1,15 @@
+mixin map-pickup()
+  .b-map-pickup.iblock&attributes(attributes)
+    .b-map-pickup__header
+      .b-map-pickup__title Самовывоз из магазинов и точек выдачи
+   
+    .b-map-pickup__shops-section
+      .b-map-pickup__shops
+        +points-list()
+      
+    .b-map-pickup__map-section#pickup-map
+      .b-map-pickup__map
+        +ymap()
+    
+    //.b-map-pickup__footer
+    //  a(href="#" class="b-map-pickup__toggler" data-target="pickup-map") Посмотреть на карте

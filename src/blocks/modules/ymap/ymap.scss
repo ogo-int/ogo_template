@@ -77,13 +77,13 @@
       border-top-color: #dc3e48;
     }
   }
-
+  /* CONTACTS LIST*/
   &__balloon-outer {
     position: absolute;
-    min-width: 260px;
+    min-width: 306px;
     margin-top: -20px;
     background-color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     &:after {
       content: "";
@@ -108,57 +108,83 @@
   }
 
   &__balloon__close {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-top: -15px;
-    margin-right: -15px;
-    float: right;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    float: none;
+    z-index: 1;
+    &::before {
+      @include ft-icon($ft-close);
+      color: #7e7e7e;
+    }
+    &:hover {
+      cursor: pointer;
+      color: #dc3e48;
+    }
   }
 
-  &__balloon__close::before {
-    content: "\e811";
-    font-family: "fontello", serif;
-    color: #fff;
-    font-size: 16px;
-  }
+  //&__balloon__close::before {
+  //  content: "\e811";
+  //  font-family: "fontello", serif;
+  //  color: #fff;
+  //  font-size: 16px;
+  //}
 
   &__balloon-outer-holder {
   }
 
   &__balloon-header {
-    padding: 20px;
-    background-color: #a52e35;
-    text-align: center;
-    font-size: 18/16*100%;
+    position: relative;
+    padding: 14px 28px 14px 14px;
+    //background-color: #a52e35;
+    text-align: left;
+    font-size: 1rem; //18/16*100%;
     font-weight: 400;
     line-height: 1.22;
-    color: #fff;
+    color: inherit;
+    background: none;
   }
 
   &__balloon-content {
-    padding: 20px;
-    text-align: center;
+    padding: 0 14px 14px 14px;
+    text-align: left;
   }
-
+  &__balloon-type {
+    margin-bottom: 5px;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: rem(22);
+  }
+  &__balloon-address {
+    margin: 5px 0;
+  }
   &__balloon-phone {
     font-size: 14px;
     color: #3e8bdc;
   }
-
   &__balloon-hours {
     font-size: 14px;
     font-weight: 200;
     color: #969696;
   }
-
   &__balloon-details {
     @include mtop(15/20);
     @include box-sizing;
     width: 100%;
     font-size: 14px;
+    text-align: center;
   }
-
+  &__balloon-metro {
+    position: relative;
+    padding-left: 20px;
+    font-weight: 300;
+    font-size: rem(14);
+    line-height: rem(22);
+  }
   &__balloon-apply {
     @include margin(20/20);
     @include box-sizing;
@@ -167,6 +193,17 @@
     font-size: 14/16*100%;
     text-align: center;
   }
+  &__balloon-pickup {
+    font-size: rem(16);
+    line-height: rem(36);
+    b, strong {
+      font-weight: 600;
+    }
+  }
+  &__balloon-price {
+    color: #9a9a9a;
+  }
+  /* endof CONTACTS LIST*/
 
   &__metro-items {
     @include margin(15/20);

@@ -1171,7 +1171,7 @@
     {
       "uid": "ebe068be09baeefac352a2f45261249b",
       "css": "cloud",
-      "code": 59478,
+      "code": 59475,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -1185,7 +1185,7 @@
     {
       "uid": "6ad734a68de3284595d87d3df44d3489",
       "css": "gaming",
-      "code": 59477,
+      "code": 59476,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -1194,6 +1194,20 @@
       },
       "search": [
         "gaming"
+      ]
+    },
+    {
+      "uid": "cb474687b8c274ce48e9778b4e1a6dec",
+      "css": "pin",
+      "code": 59477,
+      "src": "custom_icons",
+      "selected": true,
+      "svg": {
+        "path": "M700 350C700 612.5 350 1000 350 1000 350 1000 0 612.5 0 350 0 156.5 156.5 0 350 0 543.5 0 700 156.5 700 350ZM350 200C267.1 200 200 267.1 200 350 200 432.9 267.1 500 350 500 432.9 500 500 432.9 500 350 500 267.1 432.9 200 350 200Z",
+        "width": 700
+      },
+      "search": [
+        "pin"
       ]
     }
   ]

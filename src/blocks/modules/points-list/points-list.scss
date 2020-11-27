@@ -1,0 +1,107 @@
+.b-points-list {
+  &__group {
+    @include mmtop(20px);
+    &-name {
+      display: inline-block;
+      align-self: flex-start;
+      position: sticky;
+      left: 0;
+      margin-bottom: 10px;
+      padding-right: 20px;
+      font-size: rem(18);
+      font-weight: normal;
+      line-height: rem(22);
+    }
+    &-content {
+      margin-left: -10px;
+    }
+  }
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__item {
+    margin: 0;
+    
+  }
+  &__point {
+    position: relative;
+    padding: 5px 10px 5px 30px;
+    transition: .2s background-color;
+    cursor: pointer;
+    &:hover,
+    &._active {
+      background-color: #f1f1f1;
+    }
+
+    &-metro {
+      display: inline-block;
+      margin-right: 0.33em;
+      font-size: rem(16);
+      font-weight: 300;
+      white-space: nowrap;
+      &-dot {
+        display: block;
+        position: absolute;
+        top: 11px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        margin-right: 0;
+        background-color: #ffcb31;
+        text-align: center;
+        color: white;
+        border-radius: 50%;
+        .b-ymap__balloon-metro & {
+          top: 5px;
+          left: 2px;
+        }
+      }
+      &:after {
+        content: ', ';
+      }
+    }
+    &-pickup-time {
+      display: inline-block;
+      margin-right: 0.33em;
+      font-weight: 300;
+      white-space: nowrap;
+      b,
+      strong {
+        font-weight: 600;
+      }
+      &:after {
+        content: ', ';
+      }
+    }
+    &-pickup-price {
+      display: inline-block;
+      color: #9a9a9a;
+    }
+  }
+
+  @include w1024 {}
+  @include w768 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    overflow: auto;
+    &__group {
+      display: flex;
+      flex-flow: column nowrap;
+      flex: 0;
+      margin-top: 0;
+    }
+    &__items {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    &__point {
+      display: flex;
+      flex-flow: column nowrap;
+      margin-right: 5px;
+    }
+  }
+  @include w480 {}
+}

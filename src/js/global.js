@@ -39,7 +39,7 @@ $(function () {
 });
 
 // Сообщаяем блокам о готовности ymaps API
-var ymapAPIready = false;
+ymapAPIready = false;
 
 if (typeof ymaps !== "undefined") {
   ymaps.ready(function () {
@@ -195,8 +195,9 @@ window.requestAnimFrame =
   aB.init();
 })(jQuery);
 
-
+/*
 BX.showWait = function (node, msg) //Переопределение функции для сокрытия прелоадера битрикса
 {
   return;
 };
+*/

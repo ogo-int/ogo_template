@@ -6,14 +6,6 @@ mixin product-delivery()
       .b-product-delivery__section-body.js-accordion-body
         span.b-product-delivery__type пр. Андропова, д. 22
         span.b-product-delivery__payment Мы не доставляем уцененные товары. Уцененные товары можно купить только в гипермаркете на м. Коломенская.
-
-    .b-product-delivery__section.js-accordion-item
-      .b-product-delivery__section-title.js-accordion-header <b>Самовывоз</b> из постаматов
-        span.b-product-delivery__section-icon.package
-      .b-product-delivery__section-body.js-accordion-body
-        span.b-product-delivery__type Транспортная компания
-        span.b-product-delivery__payment Оплата картой на сайте
-        span.b-product-delivery__date 436 Р — 2 дня<br>326 Р — 1-2 дня
     
     .b-product-delivery__section.js-accordion-item
       .b-product-delivery__section-title.js-accordion-header <b>Доставка</b> 8 августа бесплатно
@@ -24,8 +16,12 @@ mixin product-delivery()
         span.b-product-delivery__date Ожидаемая дата доставки <b>08.10</b> от 340 ₽
   
   .b-product-delivery
-    .b-product-delivery__section
-      .b-product-delivery__section-title-fix Как получить <a href="#">цифровой товар?</a>
+    a(href="#map-pickup" class="b-product-delivery__section b-product-delivery__section--fixed b-product-delivery__popup")
+      .b-product-delivery__section-title <b>Самовывоз</b> из гипермаркетов и точек выдачи
+        span.b-product-delivery__section-icon.package
+
+    .b-product-delivery__section.b-product-delivery__section
+      .b-product-delivery__section-title Как получить <a href="#">цифровой товар?</a>
         span.b-product-delivery__section-icon.cloud
 
     .b-product-delivery__desc
