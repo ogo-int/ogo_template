@@ -18,6 +18,6 @@ $(function () {
         maxWidth: 1280,
         padding: 0
       })
-    })
+    });
   });
 });

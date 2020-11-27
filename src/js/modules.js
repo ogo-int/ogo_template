@@ -5913,6 +5913,18 @@ $(function () {
   // code here...
 });
 
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
+      }
+    });
+  });
+});
+
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -6012,18 +6024,6 @@ $(function () {
         1120: "_mx1120",
         900: "_mx900",
         500: "_mx500"
-      }
-    });
-  });
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
       }
     });
   });

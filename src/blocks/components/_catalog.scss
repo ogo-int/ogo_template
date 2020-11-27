@@ -506,11 +506,17 @@
   .c-catalog__product-detail {
     flex-flow: row wrap;
   }
+  .c-catalog__product-info {
+    display: block;
+  }
   .c-catalog__product-price,
   .c-catalog__product-avail {
     display: block;
     width: auto;
     background: none;
+  }
+  .c-catalog__product-avail {
+    border-top: none;
   }
 }
 /** endof CATALOG CARD*/
@@ -613,13 +619,11 @@
       width: 100%;
       background: none;
     }
-
     &__product-avail {
       display: block;
       width: 100%;
       border-top: none;
     }
-
     &__product-rating {
       padding-left: 20px;
       padding-right: 20px;
@@ -796,18 +800,15 @@
       width: 100%;
       background: none;
     }
-
     &__product-avail {
       display: block;
       width: 100%;
       border-top: none;
     }
-
     &__product-rating {
       padding-left: 20px;
       padding-right: 20px;
     }
-
     &__product-discount {
       width: 60px;
       height: 60px;
