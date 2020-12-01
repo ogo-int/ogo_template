@@ -57,6 +57,33 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    &--vertical {
+      .social-btns__item {
+        display: block;
+        @include mmtop(5px);
+      }
+      .social-btns__btn {
+        width: auto;
+       
+        > span {
+          width: auto;
+          color: #1d1d1d;
+          font-size: rem(14);
+          line-height: 1.5;
+          background: none;
+          &:before {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            color: #fff;
+          }
+          &.fb:before {background-color: #2c82e8;}
+          &.tw:before {background-color: #87d7ff;}
+          &.inst:before {background-color: #8c837a;}
+          &.vk:before {background-color: #67a6f2;}
+        }
+      }
+    }
   }
 
   &__item {

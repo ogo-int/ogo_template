@@ -1,0 +1,75 @@
+mixin points-list()
+  .b-points-list&attributes(attributes)
+    .b-points-list__group
+      .b-points-list__group-name(data-map-title="Гипермаркет ОГО!") Гипермаркеты ОГО!
+      .b-points-list__group-content
+        ul.b-points-list__items
+          li.b-points-list__item
+            .b-points-list__point(data-address='Театральная аллея, д. 3, стр. 1' data-hours='Ежедневно с 10:00 до 22:00' data-coords='55.793227,37.559883' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #54871d;"></span> Динамо
+              span.b-points-list__point-pickup-time(data-alt="сегодня") <b>в наличии</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='Проспект Андропова, д. 22' data-hours='Ежедневно с 10:00 до 22:00' data-coords='55.683461,37.662139' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #54871d;"></span> Коломенская
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='Золоторожский Вал, д. 8' data-hours='Ежедневно с 10:00 до 22:00' data-coords='55.751500,37.686232' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #FEBF00;"></span> Площадь Ильича
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+                  
+    .b-points-list__group
+      .b-points-list__group-name(data-map-title="Точка выдачи ОГО!") Доставка в пункты выдачи ОГО!
+      .b-points-list__group-content
+        ul.b-points-list__items
+          li.b-points-list__item
+            .b-points-list__point(data-address='Алтуфьевское шоссе, дом 84, 2 этаж, павильон 36' data-hours='Ежедневно с 10:00 до 22:00' data-coords='55.896024,37.588224' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #bfbfbf;"></span> Алтуфьево
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='ул. Менжинского, д. 32, ТЦ Кондор, 2 этаж, павильон 177' data-hours='Ежедневно с 10:00 до 21:00' data-coords='55.869722,37.665642' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #F58232;"></span> Бабушкинская
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='Люблинская 102А. ТЦ «Марьинский пассаж»' data-hours='Ежедневно с 10:00 до 21:00' data-coords='55.652414,37.742193' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #B3D445;"></span> Марьино
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='Митинская улица, д. 31, 1 этаж (вход со двора)' data-hours='Ежедневно с 10:00 до 21:00' data-coords='55.846805,37.356405' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #0572B9;"></span> Митино
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='ул. Ярцевская, д.34, стр.1' data-hours='Ежедневно с 10:00 до 21:00' data-coords='55.742474,37.419287' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #007FCB;"></span> Молодежная
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='Свободный проспект, д.33А, павильон 2' data-hours='Пн-Сб 10:00 - 21:00, Вс 10:00 - 20:00' data-coords='55.752666,37.818198' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #FFCD1E;"></span> Новогиреево
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='пр. Вернадского, д.86Б, ТЦ "Альмирал", павильон 220' data-hours='Ежедневно 10:00 - 21:00' data-coords='55.661818,37.481163' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #EF1E25;"></span> Юго-Западная
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно
+          
+          li.b-points-list__item
+            .b-points-list__point(data-address='ул. Кировоградская, 9к4. ТЦ «Южный», сектор 1, павильон 34' data-hours='Ежедневно 10:00 - 20:00' data-coords='55.621961,37.611086' data-no-detail)
+              span.b-points-list__point-metro <span class="b-points-list__point-metro-dot" style="background-color: #ADACAC;"></span> Южная
+              span.b-points-list__point-pickup-time <b>завтра</b>
+              span.b-points-list__point-pickup-price бесплатно

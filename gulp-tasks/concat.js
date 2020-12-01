@@ -60,5 +60,5 @@ function concatComponentsJs() {
 }
 
 gulp.task("concat", (done) => {
-  return gulp.parallel(concatVendorPug, concatComponentsScss, concatModulesJs, concatComponentsJs)(done); //concatModulesPug, concatModulesScss,
+  return gulp.parallel(concatVendorPug, concatModulesJs, concatComponentsJs)(done); //concatModulesPug, concatModulesScss,
 });

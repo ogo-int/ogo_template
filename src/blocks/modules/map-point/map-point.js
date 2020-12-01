@@ -37,6 +37,7 @@ $(function () {
               "<div class=\"b-ymap__balloon-inner _qiwi\">" +
                 "<div class=\"b-ymap__balloon-header\">" +
                   "<div class=\"b-ymap__balloon__close\"></div>" +
+                  "<div class=\"b-ymap__balloon-type\">{{properties.type|raw}}</div>" +
                   "<div class=\"b-ymap__balloon-address\">{{properties.address|raw}}</div>" +
                 "</div>" +
                 "<div class=\"b-ymap__balloon-content\">" +
@@ -112,6 +113,7 @@ $(function () {
   });
 });
 
+
 $(".b-shops-list__shop").on("click",function () {
   var w = screen.width;
   var mapContent = document.getElementsByClassName("b-map-contacts__cols");
@@ -119,7 +121,7 @@ $(".b-shops-list__shop").on("click",function () {
   var scroll = mapContentHeight/2;  
 
   if(w > 768) {
-    window.scrollTo(0,scroll);
+    window.scrollTo(0, scroll);
   } else {
     mapContent[0].scrollIntoView(top);
   }

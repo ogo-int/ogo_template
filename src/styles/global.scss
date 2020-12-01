@@ -719,7 +719,7 @@ textarea {
 
   }
 }
-/** CATALOG CARD*/
+/** CATALOG_CARD */
 .button-abroad {
   @extend .button;
   padding: rem(9) rem(14);
@@ -754,7 +754,7 @@ textarea {
     background-color: #DC3E48;
   }
 }
-/** endof CATALOG CARD*/
+/** endof CATALOG_CARD */
 
 /* Select2 */
 select {
@@ -914,6 +914,14 @@ html.touch {
   }
 }
 
+/* TippyJS */
+.js-tippy {
+  &:hover {
+    cursor: pointer;
+  }
+}
+/*-- TippyJS --*/
+
 /*-- Структурные стили --*/
 
 body {
@@ -980,6 +988,9 @@ html._mobile-filter-opened {
   padding-right: 35px;
   text-align: left;
   word-wrap: break-word;
+}
+.hide {
+  display: none;
 }
 .text-left {
   text-align: left;
