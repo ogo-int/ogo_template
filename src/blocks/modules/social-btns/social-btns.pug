@@ -55,3 +55,17 @@ mixin social-btns_brand()
         a.social-btns__btn(href="#")
           span.vk
   // Конец блока: Соц.сети
+
+mixin social-share()
+  // Начало блока: Соц.сети
+  .social-btns.iblock&attributes(attributes)
+    ul.social-btns__list.social-btns__list--vertical
+      li.social-btns__item
+        a.social-btns__btn(href="#")
+          span.fb Facebook
+      li.social-btns__item
+        a.social-btns__btn(href="#")
+          span.tw Twitter
+      li.social-btns__item
+        a.social-btns__btn(href="#")
+          span.vk Вконтакте

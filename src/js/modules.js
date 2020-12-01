@@ -4181,13 +4181,32 @@ $(function () {
         href: $(this).attr('href')
       }, {
         //options
-        type: 'inline',
+        type: 'ajax',
         autoSize: true,
         fitToView: true,
         maxWidth: 1280,
-        padding: 0
+        padding: 0,
+        beforeShow: function () {
+          $('html').addClass('fancybox-margin fancybox-lock');
+          
+          if (typeof ymaps !== "undefined") {
+            ymaps.ready(function () {
+              $(document).trigger("ymapAPIready");
+              $(window).trigger("ymapAPIready");
+              ymapAPIready = true;
+            });
+          }
+          
+          $('.iblock', this.inner).trigger('resize.block');
+        },
+        beforeClose: function () {
+          $('.fancybox-inner .b-ymap').trigger('destroy.block');
+        },
+        afterShow: function () {
+          $('.fancybox-wrap').livequery();
+        }
       })
-    })
+    });
   });
 });
 
@@ -5690,7 +5709,7 @@ $(function () {
     }
 
     function setPlacemark(mark) {
-      var placemark, icon, hint, icon_size;
+      var placemark, hint;
 
       if (mark.type == 'Гипермаркет ОГО!') {
         hint = 'Гипермаркет ОГО!';
@@ -5719,8 +5738,8 @@ $(function () {
           iconShape: {
             type: 'Rectangle',
             coordinates: [
-              [0, -46],
-              [178, 0]
+              [0, -32],
+              [32, 0]
             ]
           },
           hideIconOnBalloonOpen: true,

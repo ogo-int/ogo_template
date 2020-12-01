@@ -53,7 +53,7 @@ $(function () {
     }
 
     function setPlacemark(mark) {
-      var placemark, icon, hint, icon_size;
+      var placemark, hint;
 
       if (mark.type == 'Гипермаркет ОГО!') {
         hint = 'Гипермаркет ОГО!';
@@ -82,8 +82,8 @@ $(function () {
           iconShape: {
             type: 'Rectangle',
             coordinates: [
-              [0, -46],
-              [178, 0]
+              [0, -32],
+              [32, 0]
             ]
           },
           hideIconOnBalloonOpen: true,

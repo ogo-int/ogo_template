@@ -77,7 +77,7 @@
       border-top-color: #dc3e48;
     }
   }
-  /* CONTACTS LIST*/
+
   &__balloon-outer {
     position: absolute;
     min-width: 306px;
@@ -203,8 +203,7 @@
   &__balloon-price {
     color: #9a9a9a;
   }
-  /* endof CONTACTS LIST*/
-
+ 
   &__metro-items {
     @include margin(15/20);
     margin: 0;

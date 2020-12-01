@@ -22,7 +22,9 @@ mixin product-price()
     .b-product-price__actions
       a(href="#" class="b-product-preview__favor") В избранное
       a(href="#" class="b-product-preview__compare") Сравнить
-      a(href="#" class="b-product-preview__share") Поделиться
+      span(class="b-product-preview__share js-tippy" data-popover-template="share") Поделиться
+      div(style="display: none;")
+        +social-share(id="share")
 
     .b-product-price__categories
       a(href="#").b-product-price__category Смотреть все чехлы

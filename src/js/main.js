@@ -2121,3 +2121,34 @@ function ajaxColorProduct(elem, e) {
   }
   return false;
 }
+// Определяем и запускаем тултипы
+function popover() {
+  tippy('.js-tippy', {
+    content(reference) {
+      var content = '<a class="tippy-close js-tippy-close"></a>' +
+      ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+      $(reference).data('popover-content');
+      const id = reference.getAttribute('data-popover-template');
+      const template = document.getElementById(id);
+      return template ? template.innerHTML : content;
+    },
+    trigger: 'click',
+    allowHTML: true,
+    interactive: true,
+    appendTo: function(reference) {
+      var wrapper = $(reference).parent()[0];
+      if ($(reference).data('popover-appendto') && $(reference).closest($(reference).data('popover-appendto')).length) {
+        wrapper = $(reference).closest($(reference).data('popover-appendto'))[0];
+      }
+      
+      return wrapper;
+    },
+    maxWidth: 400,
+    offset: [0, 15]
+  });
+
+  $(document).on('click', '.js-tippy-close', function(e) {
+    tippy.hideAll();
+    e.preventDefault();
+  });
+}
