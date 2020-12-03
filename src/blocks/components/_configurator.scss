@@ -1,28 +1,34 @@
 /* Конфигуратор */
 .c-configurator {
-  &__cols {
-    @include clearfix;
-    overflow: hidden;
-    padding: 25px;
-    background-color: #f8f8f8;
+  &__header {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0 35px 35px 35px;
+  }
+  &__body {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 35px;
+    background: #F8F8F8;
+  }
+  
+  &__main {
+    flex: 2;
+    margin: 0 14px 0 0;
   }
 
-  &__main-col {
-    @include clearfix;
-    margin-right: 290px;
-    padding-bottom: 10px;
+  &__aside {
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1;
+    &-plate {
+      @include mmtop(14px);
+      padding: 15px;
+      border: 1px solid #F1F1F1;
+      background: #fff; 
+    }
   }
-
-  &__main-wrap {
-    float: left;
-    width: 100%;
-  }
-
-  &__aside-col {
-    float: right;
-    width: 280px;
-  }
-
+  
   &__additional-items {
     @include margin(10/20);
   }
@@ -64,17 +70,17 @@
   }
 
   &__aside-guarantee {
-    @include margin(10/20);
-    @include bgr("../img/content/guarantee","png");
-    background-size: 47px 62px;
-    background-repeat: no-repeat;
-    background-position: 20px 15px;
-    background-color: #fff;
-    padding: 20px 20px 20px 85px;
-    font-size: 14/16*100%;
-    font-weight: 200;
-    line-height: (17/14);
-    color: #7c7c7c;
+    margin: 0;
+    color: #7e7e7e;
+    font-size: rem(13);
+    font-weight: 300;
+    line-height: 1.46;
+    background: none;
+    &:before {
+      @include ft-icon($ft-shield);
+      margin-right: 7px;
+      font-size: 1.25em;
+    }
   }
 
   &__save {
@@ -110,6 +116,12 @@
 
 @media #{$media-tablet} {
   .c-configurator {
+    &__header {
+      padding: 15px;
+    }
+    &__body {
+      padding: 15px;
+    }
     &__cols {
       padding: 20px;
     }

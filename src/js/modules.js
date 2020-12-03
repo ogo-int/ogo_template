@@ -5473,31 +5473,6 @@ $(function () {
   });
 });
 
-// Видеофрейм
-$(function () {
-  $(".b-video-frame").livequery(function () {
-    var $context = $(this);
-    var $iframe = $("iframe", $context);
-    var width = $iframe.width();
-    var height= $iframe.height();
-    var ratio = width / height;
-
-    function setFullVideo () {
-      ratio = width / height;
-      width = $context.parent().innerWidth();
-      height = width / ratio;
-
-      $iframe.width(width);
-      $iframe.height(height);
-    }
-
-    setFullVideo();
-    $(window).on("resize", setFullVideo);
-    $context.on("resize.block", setFullVideo);
-
-  });
-});
-
 $(function() {
   $.validator.addMethod("email", function(value, element) { 
     return this.optional(element) || /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(value);
@@ -5654,6 +5629,31 @@ $(".b-checkbox").on("click", function(){
     b.val("true");
   }
 });
+// Видеофрейм
+$(function () {
+  $(".b-video-frame").livequery(function () {
+    var $context = $(this);
+    var $iframe = $("iframe", $context);
+    var width = $iframe.width();
+    var height= $iframe.height();
+    var ratio = width / height;
+
+    function setFullVideo () {
+      ratio = width / height;
+      width = $context.parent().innerWidth();
+      height = width / ratio;
+
+      $iframe.width(width);
+      $iframe.height(height);
+    }
+
+    setFullVideo();
+    $(window).on("resize", setFullVideo);
+    $context.on("resize.block", setFullVideo);
+
+  });
+});
+
 $(function () {
   $('.b-ymap').livequery(function () {
     var $context = $(this);

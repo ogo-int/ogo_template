@@ -1,0 +1,22 @@
+.b-configurator-obligatory {
+  &__title {
+    margin-bottom: 10px;
+    color: #1d1d1d;
+    font-size: rem(18);
+    line-height: 1.22;
+  }
+  &__subtitle {
+    margin-bottom: 10px;
+    color: #1d1d1d;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: 1.43;
+  }
+  &__progress {
+    display: block;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 26px;
+    background: #f1f1f1;
+  }
+}

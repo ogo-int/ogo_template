@@ -12,23 +12,15 @@
   text-align: left;
   word-wrap: break-word;
 }
-
-.hide {
-  display: none;
-}
-
-.text-left {
-  text-align: left;
-}
-
 .h1 {
   margin-bottom: 10px;
 }
-
+.hide {
+  display: none;
+}
 .text-left {
   text-align: left;
 }
-
 .show-for-large {
   display: revert;
 }
@@ -54,20 +46,9 @@
 
 
 /* Компоненты */
-@import '../blocks/components/catalog';
-@import '../blocks/components/contacts-list';
+@import '../blocks/components/configurator';
 /* endof Компоненты */
 
 /* Блоки */
-@import '../blocks/modules/map-pickup/map-pickup';
-@import '../blocks/modules/plate-product/plate-product';
-@import '../blocks/modules/points-list/points-list';
-@import '../blocks/modules/product-art/product-art';
-@import '../blocks/modules/product-delivery/product-delivery';
-@import '../blocks/modules/product-images/product-images';
-@import '../blocks/modules/product-options/product-options';
-@import '../blocks/modules/product-preview/product-preview';
-@import '../blocks/modules/product-price/product-price';
-@import '../blocks/modules/product-status/product-status';
-@import '../blocks/modules/ymap/ymap';
+
 /* endof Блоки */
