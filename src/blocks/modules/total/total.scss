@@ -1,24 +1,30 @@
 .b-total {
-  @include box-sizing;
-  min-width: 270px;
-  padding: 30px 20px;
+  min-width: none;
+  padding: 0; //30px 20px;
   background-color: #fff;
 
+  &__line {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+  }
   &__title {
-    @include mbot(30/20);
-    font-size: 24/16*100%;
-    line-height: (29/24);
-    font-weight: 200;
-    color: #333;
-
+    flex: 1;
+    margin-bottom: 0;
+    font-size: rem(18);
+    line-height: 1.22;
+    font-weight: 400;
+    color: #1d1d1d;
     &_confirm {
-      font-size: 32/16*100%;
+      font-size: rem(32);
     }
   }
 
   &__price-holder {
-    @include margin(20/20);
-    font-size: 16px;
+    flex: 1;
+    margin: 0;
+    text-align: right;
   }
 
   &__link-holder {
@@ -31,27 +37,36 @@
   }
 
   &__current-price {
-    font-size: 26/16*100%;
+    color: #1d1d1d;
+    font-size: rem(32);
+    font-weight: 300;
     line-height: 1;
-    color: #35322f;
   }
 
-  &__old-price {
-    font-size: 18/16*100%;
-    text-decoration: line-through;
-    color: #dc3e48;
-    font-weight: 600;
-  }
+  //&__old-price {
+  //  font-size: 18/16*100%;
+  //  text-decoration: line-through;
+  //  color: #dc3e48;
+  //  font-weight: 600;
+  //}
 
   &__bonus {
-    font-size: 12/16*100%;
     color: #3e8bdc;
+    font-size: rem(13);
+    font-weight: 300;
+    line-height: 1.5;
+    &:first-letter {
+      font-size: 1.25em;
+    }
   }
 
   &__buy {
     @include box-sizing;
     width: 100%;
     text-align: center;
+    .c-configurator__bottom-section & {
+      width: auto;
+    }
   }
 
   &__score {
@@ -69,7 +84,6 @@
       color: #969696;
     }
   }
-
   &__print {
     @include box-sizing;
     width: 47.5%;
@@ -85,7 +99,6 @@
       color: #969696;
     }
   }
-
   &__mail {
     @include box-sizing;
     width: 47.5%;
@@ -101,6 +114,14 @@
       color: #969696;
     }
   }
+  &__btns-holder {
+    margin-top: 24px;
+    .c-configurator__bottom-section & {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
 
   &__bottom-btns {
     @include clearfix;

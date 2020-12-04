@@ -1,4 +1,15 @@
 .b-configurator {
+  &__btn {
+    color: #7e7e7e;
+    margin: 7px;
+    padding: rem(8) rem(12);
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      outline: none;
+    }
+  }
   &__newconfig {
     align-self: flex-end;
   }

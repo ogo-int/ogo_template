@@ -1,8 +1,8 @@
 mixin configurator-additional()
-  .b-configurator-additional.iblock&attributes(attributes)
-    .b-configurator-additional__caption Дополнительные компоненты
-    .b-configurator-additional__holder
-      ul.b-configurator-additional__items
+  .b-configurator-additional.iblock.js-accordion&attributes(attributes)
+    .b-configurator-additional__holder.js-accordion-item.active
+      .b-configurator-additional__caption.js-accordion-header Дополнительные компоненты
+      ul.b-configurator-additional__items.js-accordion-body
         li.b-configurator-additional__item
           a.b-configurator-additional__label.button-gray(href="#") Монитор
         li.b-configurator-additional__item

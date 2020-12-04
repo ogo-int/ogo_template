@@ -31,8 +31,13 @@ block inner-content
           +configurator-additional()
  
         .c-configurator__bottom-section
-          .c-configurator__total
-            +total()
+          +estimate()
+
+          .c-configurator__bottom-left
+            .c-configurator__bottom-guarantee Гарантия: 2 года при заказе сборки
+          .c-configurator__bottom-right
+            .c-configurator__total
+              +total()
       
       .c-configurator__aside
         .c-configurator__aside-plate
@@ -40,8 +45,8 @@ block inner-content
           .c-configurator__obligatory
             +configurator-obligatory()
 
-          .c-configurator__consult
-            +online-consult()
+          .c-configurator__expert
+            a(href="#expert-request-modal" class="c-configurator__consult-button js-modal button-gray text-center" id="configurator-consult" style="width: 100%") Бесплатная оценка специалиста
 
           .c-configurator__estimate
             +estimate()

@@ -1317,6 +1317,8 @@ $(function () {
 //       table.style.width = tdWidth * trLenght  + 'px';
 
 // }) ();
+// Компоненты конфигуратора
+
 // Дополнительные компоненты конфигуратора
 $(function () {
   $(".b-configurator-additional").livequery(function () {
@@ -1395,6 +1397,18 @@ $(function () {
     });
   });
 });
+// Конфигуратор - прогрессбар
+function configuratorProgress() {
+  const $statsProgress = $('.b-configurator-obligatory__progress-bar');
+  $statsProgress.each(function () {
+    progressValue = $(this).data('value');
+    $(this).css('width', progressValue + '%');
+  })
+}
+$(document).ready(function(){
+  configuratorProgress();
+});
+
 // Выбранные в конфигураторе продукт
 $(function () {
   $(".b-configurator-product").livequery(function () {
@@ -5932,18 +5946,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5969,6 +5971,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });

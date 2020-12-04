@@ -1,5 +1,12 @@
 /* Конфигуратор */
 .c-configurator {
+  @include box-sizing;
+  *,
+  *:before,
+  *:after {
+    @include box-sizing;
+  }
+
   &__header {
     display: flex;
     flex-flow: row nowrap;
@@ -15,6 +22,12 @@
   &__main {
     flex: 2;
     margin: 0 14px 0 0;
+    &-plate {
+      @include mmtop(14px);
+      padding: 20px;
+      border: 1px solid #F1F1F1;
+      background: #fff; 
+    }
   }
 
   &__aside {
@@ -30,28 +43,31 @@
   }
   
   &__additional-items {
-    @include margin(10/20);
+    margin: 14px 0;
+    border: 1px solid #F1F1F1;
+    background: #fff; 
   }
-
   &__bottom-section {
-    @include clearfix;
-    display: table;
+    display: flex;
+    flex-flow: row wrap;
     width: 100%;
+    padding: 20px;
+    border: 1px solid #F1F1F1;
+    background: #fff; 
+  }
+  &__bottom-right,
+  &__bottom-left {
+    flex: 1 0 50%;
+    width: 50%;
   }
 
   &__estimate {
-    @include box-sizing;
-    display: table-cell;
-    width: 50%;
-    height: 100%;
-    vertical-align: top;
-    padding-right: 5px;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
     background-color: #fff;
-
-    .b-estimate {
-      @include box-sizing;
-      height: 100%;
-    }
+    vertical-align: unset;
   }
 
   &__total {
@@ -68,9 +84,8 @@
       height: 100%;
     }
   }
-
+  &__bottom-guarantee,
   &__aside-guarantee {
-    margin: 0;
     color: #7e7e7e;
     font-size: rem(13);
     font-weight: 300;
@@ -82,7 +97,12 @@
       font-size: 1.25em;
     }
   }
-
+  &__aside-guarantee {
+    margin: 14px 0 0 0;
+  }
+  &__bottom-guarantee {
+    margin-top: 14px;
+  }
   &__save {
     @include margin(10/20)
       padding: 20px;
@@ -90,19 +110,23 @@
   }
 
   &__link {
-    @include margin(10/20)
-      padding: 20px;
+    @include margin(10/20);
+    padding: 20px;
     background-color: #fff;
   }
 
   &__socials {
-    @include margin(10/20)
-      padding: 20px;
+    @include margin(10/20);
+    padding: 14px;
     background-color: #fff;
+    border: 1px solid #f1f1f1;
   }
 
   &__consult {
     @include margin(20/20);
+  }
+  &__expert {
+    margin-bottom: 14px;
   }
 }
 

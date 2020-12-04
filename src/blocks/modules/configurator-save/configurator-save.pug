@@ -6,25 +6,29 @@ mixin configurator-save()
         input.b-configurator-save__input(type="text" placeholder="Мой компьютер #47089")
       fieldset.b-configurator-save__btn-holder
         button(type="submit").b-configurator-save__btn.button-gray Сохранить
-        button.b-configurator-save__btn.button-gray D
-        button.b-configurator-save__btn.button-gray L
-        button.b-configurator-save__btn.button-gray M
-        button.b-configurator-save__btn.button-gray P
+        button(type="button" data-popover-title="Скачать").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-download
+        button(type="button" data-popover-title="Копировать ссылку").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-link
+        button(type="button" data-popover-title="Отправить на почту").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-mail
+        button(type="button" data-popover-title="Распечатать").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-printer
 
 mixin configurator-saved()
   .b-configurator-save.iblock&attributes(attributes)
-  .b-configurator-save__title Мои конфигурации
+    .b-configurator-save__title Мои конфигурации
     .b-configurator-save__items-holder
       ul.b-configurator-save__items
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Мой компьютер #47085
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #47085
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Компьютер для мамы на дачу
+          a(href="#").b-configurator-save__item-link.button-gray Компьютер для мамы на дачу
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Мой самый крутой геймерский компьютер
+          a(href="#").b-configurator-save__item-link.button-gray Мой самый крутой геймерский компьютер
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Мой компьютер #47642
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #47642
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Мой компьютер #65199
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #65199
       
-      a(href="#") Посмотреть все конфигурации
+      a(href="#").b-configurator-save__items-all Посмотреть все конфигурации

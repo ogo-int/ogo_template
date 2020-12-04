@@ -8,65 +8,86 @@
   }
 
   &__item {
+    @include mmtop(14px);
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 20px;
     background-color: #fff;
+    border: 1px solid #f1f1f1;
   }
 
   &__hat {
-    @include clearfix;
-    @include box-sizing;
-    min-height: 56px;
-    padding: 15px 20px;
-    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: relative;
+    flex: 0 0 20%;
+    min-height: 20%;
+    margin: 0 20px 0 0;
+    border-bottom: none;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  &__labels {
+    position: absolute;
+    top: -10px;
+    left: 0
   }
 
   &__name {
     display: block;
-    float: left;
-    max-width: 50%;
-    margin-top: 6px;
-
-    &:before {
-      content: "";
-      display: inline-block;
-      position: absolute;
-      width: 21px;
-      height: 21px;
-      vertical-align: middle;
-      background-color: #f7f7f7;
-    }
-
+    float: none;
+    position: relative;
+    max-width: auto;
+    padding: 0 0 0 40px;
+    &:before,
     &:after {
-      content: "";
-      clear: both;
-      display: block;
-    }
-
-    &._checked {
-      &:before {
-        @include ft-icon($ft-conf-check);
-        position: relative;
-        font-size: 24px;
-        top: -3px;
-        color: #3e8bdc;
-        background: none;
-      }
-
-      .b-configurator-items__name-text {
-        color: #3e8bdc;
-      }
+      display: none;
     }
   }
 
   &__name-text {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 1.7em;
-    color: #333;
-    font-size: 18/16*100%;
-
+    display: block;
+    margin-left: 0;
+    color: #1d1d1d;
+    font-size: rem(18);
+    font-weight: 400;
+    line-height: 1.22;
     @media(max-width: 480px) {
-      width: 75%;
-      text-align: right;
+      width: auto;
+      text-align: left;
+    }
+  }
+
+  &__name-require {
+    display: none;
+  }
+  
+  &__name-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    &:before {
+      position: relative;
+      background: none;
+    }
+    &._checked {
+      &:before {
+        @include ft-icon($ft-conf-check);
+        color: #3e8bdc;
+        font-size: 1.5rem;
+      }
+    }
+    &._required {
+      &:before {
+        @include ft-icon($ft-warn);
+        color: #D1D1D1;
+        
+      }
     }
   }
 
@@ -87,8 +108,11 @@
   }
 
   &__contain {
-    @include clearfix;
-    padding: 20px;
+    padding: 0;
+    &:before,
+    &:after {
+      display: none;
+    }
   }
 
   &__choose {
