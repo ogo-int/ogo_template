@@ -11,6 +11,9 @@
     display: flex;
     flex-flow: row nowrap;
     padding: 0 35px 35px 35px;
+    .c-configurator__aside {
+      text-align: right;
+    }
   }
   &__body {
     display: flex;
@@ -20,7 +23,7 @@
   }
   
   &__main {
-    flex: 2;
+    flex: 2 2 calc(66.666% - 14px);
     margin: 0 14px 0 0;
     &-plate {
       @include mmtop(14px);
@@ -31,7 +34,7 @@
   }
 
   &__aside {
-    flex: 1;
+    flex: 1 1 calc(33.333% - 14px);
     &-plate {
       @include mmtop(14px);
       padding: 15px;
@@ -130,8 +133,11 @@
 
 @media #{$media-desktop} {
   .c-configurator {
-    &__cols {
-      padding: 10px;
+    &__body {
+      padding: 15px;
+    }
+    &__header {
+      padding-bottom: 15px;
     }
     &__main {
       flex: 3;
@@ -152,7 +158,7 @@
       padding: 15px;
     }
     &__main {
-      flex: 3;
+      flex: 2;
     }
     &__aside {
       flex: 1;
@@ -202,6 +208,22 @@
 
 @media #{$media-phone-landscape} {
   .c-configurator {
+    &__body,
+    &__header {
+      flex-flow: column nowrap;
+    }
+    &__header {
+      .c-configurator__aside {
+        text-align: left;
+      }
+    }
+    &__main {
+      flex: 1;
+      margin: 0 0 14px 0;
+    }
+    &__aside {
+      flex: 1;
+    }
     &__save {
       float: none;
       width: auto;

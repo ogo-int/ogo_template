@@ -1,0 +1,10 @@
+mixin configurator-placeholder(image, desc)
+  .b-configurator-placeholder
+    .b-configurator-placeholder__image-col
+      img.b-configurator-product__image(src=image, alt="")
+
+    .b-configurator-placeholder__desc-col
+      .b-configurator-placeholder__desc= desc
+
+    .b-configurator-placeholder__actions
+      a(href="#").b-configurator-placeholder__btn.button-gray Выбрать

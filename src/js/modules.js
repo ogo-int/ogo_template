@@ -1409,6 +1409,11 @@ $(document).ready(function(){
   configuratorProgress();
 });
 
+// Плейсхолдер в конфигураторе
+$(function () {
+
+});
+
 // Выбранные в конфигураторе продукт
 $(function () {
   $(".b-configurator-product").livequery(function () {
@@ -5430,6 +5435,14 @@ $(function () {
   });
 });
 
+// Выбор города
+$(function () {
+  $(".b-town-select").livequery(function () {
+    var $context = $(this);
+
+  });
+});
+
 // Форма выбора города
 $(function () {
   $(".b-town-modal").livequery(function () {
@@ -5440,14 +5453,6 @@ $(function () {
         450: "_mx450"
       }
     });
-  });
-});
-
-// Выбор города
-$(function () {
-  $(".b-town-select").livequery(function () {
-    var $context = $(this);
-
   });
 });
 
@@ -5950,6 +5955,18 @@ $(function () {
   // code here...
 });
 
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
+      }
+    });
+  });
+});
+
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5975,18 +5992,6 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
-      }
-    });
-  });
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
       }
     });
   });
