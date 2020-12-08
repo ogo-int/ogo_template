@@ -44,9 +44,26 @@
 }
 
 
+/* global.css*/
+.select2-container {
+  .select2-results {
+    &__option {
+      position: relative;
+      padding: 0 13px 0 13px;
+    }
+  }
+  .select2-selection {
+    &--single .select2-selection__rendered {
+      padding-left: 13px;
+      padding-right: 20px;
+    }
+  }
+}
+
+/* endof global.css*/
+
 
 /* Компоненты */
-
 //@import '../blocks/components/configurator';
 
 /* endof Компоненты */

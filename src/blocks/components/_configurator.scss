@@ -31,8 +31,6 @@
   }
 
   &__aside {
-    display: flex;
-    flex-flow: column nowrap;
     flex: 1;
     &-plate {
       @include mmtop(14px);
@@ -135,6 +133,12 @@
     &__cols {
       padding: 10px;
     }
+    &__main {
+      flex: 3;
+    }
+    &__aside {
+      flex: 1;
+    }
   }
 }
 
@@ -143,33 +147,40 @@
     &__header {
       padding: 15px;
     }
+    
     &__body {
       padding: 15px;
     }
-    &__cols {
-      padding: 20px;
+    &__main {
+      flex: 3;
     }
+    &__aside {
+      flex: 1;
+    }
+    //&__cols {
+    //  padding: 20px;
+    //}
 
-    &__aside-col {
-      display: none;
-    }
+    //&__aside-col {
+    //  display: none;
+    //}
 
-    &__main-col {
-      @include margin(10/20);
-      margin-right: 0;
-    }
+    //&__main-col {
+    //  @include margin(10/20);
+    //  margin-right: 0;
+    //}
 
-    &__aside-total {
-      display: none;
-    }
+    //&__aside-total {
+    //  display: none;
+    //}
 
-    &__link {
-      display: none;
-    }
+    //&__link {
+    //  display: none;
+    //}
 
-    &__aside-guarantee {
-      display: none;
-    }
+    //&__aside-guarantee {
+    //  display: none;
+    //}
 
     &__save {
       float: left;

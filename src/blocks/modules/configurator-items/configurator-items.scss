@@ -10,8 +10,10 @@
   &__item {
     @include mmtop(14px);
     display: flex;
+    position: relative;
     flex-flow: row nowrap;
-    padding: 20px;
+    min-height: 120px;
+    padding: 20px 130px 20px 20px;
     background-color: #fff;
     border: 1px solid #f1f1f1;
   }
@@ -23,7 +25,8 @@
     position: relative;
     flex: 0 0 20%;
     min-height: 20%;
-    margin: 0 20px 0 0;
+    min-width: 150px;
+    margin: 0 14px 0 0;
     border-bottom: none;
     &:before,
     &:after {
@@ -65,7 +68,7 @@
   &__name-require {
     display: none;
   }
-  
+
   &__name-icon {
     position: absolute;
     top: 50%;
@@ -86,28 +89,14 @@
       &:before {
         @include ft-icon($ft-warn);
         color: #D1D1D1;
-        
       }
     }
   }
 
-  &__require {
-    width: 66%;
-    max-width: 345px;
-    float: right;
-    margin-top: 9px;
-    color: #81c03d;
-    font-size: 14/16*100%;
-    font-weight: 200;
-    text-align: right;
-
-    @media(max-width: 768px) {
-      width: 60%;
-      padding-left: 0;
-    }
-  }
-
   &__contain {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     padding: 0;
     &:before,
     &:after {
@@ -115,53 +104,221 @@
     }
   }
 
-  &__choose {
-    float: right;
-    margin-left: 20px;
-    font-size: 14/16*100%;
-
-    @media(max-width: 425px) {
-      margin-top: 0;
+  &__placeholder {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-right: 20px;
+    &-icon {
+      flex: 0 0 60px;
+      max-width: 60px;
+      width: 60px;
+      margin-right: 14px;
+      padding: 5px;
+    }
+    &-text {
+      color: #969696;
+      font-size: rem(12);
+      font-weight: 300;
+      line-height: 1.5;
     }
   }
 
-  &__select-holder {
-    @include box-sizing;
-    float: left;
-    width: 50%;
-    min-width: 260px;
-    padding-right: 20px;
-
-    .select2 {
-      max-width: 100%;
+  &__custom {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    flex: 1 1 100%;
+    margin-right: 14px;
+    &-icon {
+      display: block;
+      flex: 0 0 30px;
+      width: 30px;
+      margin-right: 30px;
+    }
+    &-select {
+      display: block;
+      flex: 1 0 auto;
+      .select2-container {
+        display: block;
+      }
+    }
+    .b-configurator-items__actions {
+      text-align: right;
     }
   }
 
-  &__contain-price {
-    float: left;
-    width: 50%;
-    margin-top: 6px;
-    color: #35322f;
-    font-size: 18/16*100%;
+  &__actions {
+    display: flex;
+    position: absolute;
+    flex-flow: row nowrap;
+    width: 90px;
+    top: 15px;
+    right: 20px;
   }
 
-  &__name-price {
-    float: left;
-    margin-top: 6px;
-    color: #35322f;
-    font-size: 18/16*100%;
-
-    @media(max-width: 425px) {
-      margin-top: 0;
+  &__action {
+    display: block;
+    position: relative;
+    flex: 0 0 30px;
+    width: 30px;
+    max-width: 30px;
+    height: 30px;
+    color: #9a9a9a;
+    font-size: rem(12);
+    text-decoration: none;
+    &:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .2s color;
+    }
+    &:hover {
+      color: #3E8BDC;
+    }
+    &._compare {
+      &:before {
+        @include ft-icon($ft-comparsion);
+      }
+    }
+    &._favor {
+      &:before {
+        @include ft-icon($ft-like);
+      }
+      &:hover {
+        color: #6c6c6c;
+      }
+      &._active {
+        &:before {
+          @include ft-icon($ft-heart-full);
+          color: #dc3e48;
+        }
+      }
+    }
+    &._remove {
+      &:before {
+        @include ft-icon($ft-cancel);
+      }
+      &:hover {
+        color: #dc3e48;
+      }
     }
   }
-
-  &__name-right {
-    @include clearfix;
-    float: right;
-    width: 50%;
+  &__btns {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-flow: row nowrap;
   }
+  &__btn {
+    font-size: rem(14);
+  }
+
+  @include w1024 {
+    &__item {
+      flex-flow: row wrap;
+    }
+    &__hat {
+      flex: 0 1 auto;
+      margin: 0;
+    }
+    &__name {
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      margin-left: 74px;
+      padding-left: 0;
+      &-icon {
+        position: static;
+        order: 2;
+        margin-left: 14px;
+        transform: none;
+      }
+      &-text {
+        order: 1;
+      }
+      &-require {
+        
+      }
+    }
+    &__labels {
+      position: static;
+      order: 3;
+      margin-left: 14px;
+    }
+  }
+//  &__require {
+//    width: 66%;
+//    max-width: 345px;
+//    float: right;
+//    margin-top: 9px;
+//    color: #81c03d;
+//    font-size: 14/16*100%;
+//    font-weight: 200;
+//    text-align: right;//
+
+//    @media(max-width: 768px) {
+//      width: 60%;
+//      padding-left: 0;
+//    }
+//  }
+
+  
+
+//  &__choose {
+//    float: right;
+//    margin-left: 20px;
+//    font-size: 14/16*100%;
+//
+//    @media(max-width: 425px) {
+//      margin-top: 0;
+//    }
+//  }
+
+//  &__select-holder {
+//    @include box-sizing;
+//    float: left;
+//    width: 50%;
+//    min-width: 260px;
+//    padding-right: 20px;
+//
+//    .select2 {
+//      max-width: 100%;
+//    }
+//  }
+
+//  &__contain-price {
+//    float: left;
+//    width: 50%;
+//    margin-top: 6px;
+//    color: #35322f;
+//    font-size: 18/16*100%;
+//  }
+
+//  &__name-price {
+//    float: left;
+//    margin-top: 6px;
+//    color: #35322f;
+//    font-size: 18/16*100%;
+//
+//    @media(max-width: 425px) {
+//      margin-top: 0;
+//    }
+//  }
+
+//  &__name-right {
+//    @include clearfix;
+//    float: right;
+//    width: 50%;
+//  }
 }
+
+
+@media #{$media-phone-landscape} {}
+@media #{$media-phone} {}
+
 
 @mixin mx600($mod: "") {
   .b-configurator-items#{$mod} {

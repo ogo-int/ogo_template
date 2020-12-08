@@ -850,7 +850,7 @@ html.touch {
 
     &--single .select2-selection__rendered {
       padding-left: 13px;
-      padding-right: 30px;
+      padding-right: 20px;
     }
   }
 
@@ -878,7 +878,7 @@ html.touch {
   .select2-results {
     &__option {
       position: relative;
-      padding: 0 30px 0 13px;
+      padding: 0 13px 0 13px;
       line-height: 35px;
       white-space: nowrap;
       border-top: 1px solid transparent;
