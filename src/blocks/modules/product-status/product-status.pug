@@ -4,15 +4,6 @@ mixin product-status()
     span.b-product-status__available Доступен
     span.b-product-status__notavailable Нет в наличии
 
-mixin product-mark()
-  .b-product-marks&attributes(attributes)
-    span.b-product-mark__abroad Товар из-за рубежа
-    span.b-product-mark__warning Уцененный
-    span.b-product-mark__alert Не работает
-    span.b-product-mark__alert Не совместим
-    span.b-product-mark__secondary Товар дня
-    a(href="#" class="b-product-mark__link") Есть такой новый
-
 mixin product-discount()
   .b-product-discount&attributes(attributes)
     strong Причина уценки
