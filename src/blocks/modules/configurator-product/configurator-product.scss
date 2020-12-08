@@ -1,54 +1,108 @@
 .b-configurator-product {
-  @include box-sizing;
-  min-width: 260px;
+  min-width: auto;
   max-width: 100%;
 
   &__wrap {
-    @include box-sizing;
-    display: table;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
     width: 100%;
-    border: 1px solid #dfdfdf;
+    border: none;
   }
 
   &__image-col {
-    @include box-sizing;
-    display: table-cell;
-    width: 90px;
-    padding: 15px 0 20px 30px;
-    vertical-align: top;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    flex: 0;
+    width: 60px;
+    min-width: 60px;
+    margin-right: 14px;
+    padding: 0;
   }
 
   &__description-col {
-    display: table-cell;
-    width: 290px;
-    padding: 15px;
-    vertical-align: top;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: auto;
+    padding: 0;
     // max-width: 200px;
-    word-wrap: break-word;
+    //word-wrap: break-word;
   }
 
   &__qtty-col {
-    display: table-cell;
-    width: 70px;
-    padding: 15px;
-    vertical-align: top;
-    padding-top: 22px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    flex: 0 0 52px;
+    width: 52px;
+    margin: 0 14px;
+    padding: 0;
   }
 
   &__price-col {
-    display: inline-block;
-    width: 120px;
-    padding: 15px;
-    vertical-align: top;
-    padding-top: 20px;
+    display: block;
+    align-self: center;
+    flex-flow: column nowrap;
+    justify-content: center;
+    flex: 0 0 115px;
+    width: auto;
+    min-width: 115px;
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+  }
+
+  &__current-price,
+  &__new-price,
+  &__os-price {
+    display: block;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+    font-size: rem(26);
+    line-height: 1.15;
+  }
+  &__current-price {
+    color: #000;
+  }
+  &__new-price {
+    display: block;
+    margin: 5px 0;
+    color: #DC3E48;
+  }
+  &__old-price {
+    display: block;
+    margin: 5px 0;
+    white-space: nowrap;
+    font-size: rem(14);
+    line-height: 1.4;
+    text-decoration: line-through;
+    color: #000;
+  }
+  &__os-price {
+    color: #fff;
+  }
+
+  &__bonus {
+    display: block;
+    margin: 5px 0;
+    white-space: nowrap;
+    font-size: rem(12);
+    font-weight: 300;
+    line-height: 1.5;
+    color: #3e8bdc;
+    &:first-letter {
+      font-size: 125%;
+    }
   }
 
   &__ui-col {
-    @include box-sizing;
-    display: table-cell;
-    width: 130px;
-    padding: 15px;
-    vertical-align: top;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90px;
+    padding: 0;
   }
 
   &__image {
@@ -58,106 +112,22 @@
   }
 
   &__art {
-    @include margin(5/20);
-    font-size: 12/16*100%;
-    font-weight: 200;
-    line-height: (15/12);
-    color: #bfbfbf;
+    margin: 0 0 5px 0;
+    font-size: rem(12);
+    font-weight: 300;
+    line-height: 1.4;
+    color: #969696;
   }
 
   &__title {
-    font-size: 18/16*100%;
+    font-size: rem(14);
+    font-weight: 300;
+    line-height: 1.4;
     text-decoration: none;
-    line-height: (22/18);
-    color: #333;
-  }
-
-  &__current-price {
-    white-space: nowrap;
-    font-size: 18/16*100%;
-    line-height: (22/18);
-    color: #35322f;
-  }
-
-  &__old-price {
-    white-space: nowrap;
-    font-size: 14/16*100%;
-    line-height: (17/14);
-    text-decoration: line-through;
-    color: #dc3e48;
-  }
-
-  &__bonus {
-    white-space: nowrap;
-    font-size: 12/14*100%;
-    font-weight: 200;
-    line-height: (15/12);
-    color: #3e8bdc;
-  }
-
-  &__btns {
-    @include clearfix;
-    @include margin(15/20);
-    text-align: center;
-  }
-
-  &__favor {
-    float: left;
-    text-decoration: none;
-    color: #bfbfbf;
-
-    &:before {
-      @include ft-icon($ft-heart);
-      position: relative;
-      top: 2px;
-      transition: .2s color;
-      font-size: 22px;
-    }
-
+    color: #000;
     &:hover {
-      color: #6c6c6c;
+      color: #3e8bdc;
     }
-  }
-
-  &__compare {
-    text-decoration: none;
-    color: #bfbfbf;
-
-    &:before {
-      @include ft-icon($ft-scale);
-      transition: .2s color;
-      font-size: 26px;
-    }
-
-    &:hover {
-      color: #6c6c6c;
-    }
-  }
-
-  &__remove {
-    width: 23px;
-    height: 20px;
-    float: right;
-    margin-top: 2px;
-    text-decoration: none;
-    color: #bfbfbf;
-
-    &:before {
-      @include ft-icon($ft-close);
-      position: relative;
-      top: 1px;
-    }
-
-    &:hover {
-      color: #6c6c6c;
-    }
-  }
-
-  &__change-btn {
-    @include box-sizing;
-    width: 100%;
-    font-size: 14/16*100%;
-    text-align: center;
   }
 }
 

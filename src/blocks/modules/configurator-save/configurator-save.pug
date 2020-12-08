@@ -1,15 +1,34 @@
 mixin configurator-save()
   .b-configurator-save.iblock&attributes(attributes)
-    .b-configurator-save__title Сохранить комплект
-    .b-configurator-save__ui
-      .b-configurator-save__input-holder
-        input.b-configurator-save__input(type="text" placeholder="Название")
-      .b-configurator-save__btn-holder
-        a.b-configurator-save__btn.button-gray(href="#") Сохранить
+    .b-configurator-save__title Сохранить конфигурацию
+    form.b-configurator-save__ui
+      fieldset.b-configurator-save__input-holder
+        input.b-configurator-save__input(type="text" placeholder="Мой компьютер #47089")
+      fieldset.b-configurator-save__btn-holder
+        button(type="submit").b-configurator-save__btn.button-gray Сохранить
+        button(type="button" data-popover-title="Скачать").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-download
+        button(type="button" data-popover-title="Копировать ссылку").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-link
+        button(type="button" data-popover-title="Отправить на почту").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-mail
+        button(type="button" data-popover-title="Распечатать").b-configurator__btn.button-gray.js-tippy
+          span.icon.icon-printer
 
+mixin configurator-saved()
+  .b-configurator-save.iblock&attributes(attributes)
+    .b-configurator-save__title Мои конфигурации
     .b-configurator-save__items-holder
       ul.b-configurator-save__items
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Комп для игр
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #47085
         li.b-configurator-save__item
-          a.b-configurator-save__item-link(href="#") Компьютер маме
+          a(href="#").b-configurator-save__item-link.button-gray Компьютер для мамы на дачу
+        li.b-configurator-save__item
+          a(href="#").b-configurator-save__item-link.button-gray Мой самый крутой геймерский компьютер
+        li.b-configurator-save__item
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #47642
+        li.b-configurator-save__item
+          a(href="#").b-configurator-save__item-link.button-gray Мой компьютер #65199
+      
+      a(href="#").b-configurator-save__items-all Посмотреть все конфигурации

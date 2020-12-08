@@ -1,48 +1,71 @@
 .b-configurator-save {
   &__title {
     @include margin(20/20);
-    font-size: 18/16*100%;
-    line-height: (22/18);
-    color: #333;
+    margin: 0 0 14px 0;
+    font-size: rem(18);
+    line-height: 1.22;
+    color: #1d1d1d;
   }
 
   &__input {
-    @include box-sizing;
-    font-size: 14/16*100%;
+    font-size: rem(14);
+    font-weight: 300;
     width: 100%;
-  }
-
-  &__btn-holder {
-    @include margin(10/20);
-    font-size: 14/16*100%;
+    &-holder {
+      margin: 0 0 14px 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
   }
 
   &__btn {
-    @include box-sizing;
-    width: 108px;
-    max-width: 100%;
-    text-align: center;
+    flex: 0;
+    width: auto;
+    max-width: none;
+    margin: 7px;
+    padding-top: rem(8);
+    padding-bottom: rem(9);
+    font-size: rem(14);
+    text-align: inherit;
+    &-holder {
+      display: flex;
+      flex-flow: row wrap;
+      margin: -7px;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      outline: none;
+    }
   }
 
   &__items-holder {
     @include margin(20/20);
   }
-
+  &__items-all {
+    font-size: rem(16);
+    font-weight: 300;
+    line-height: 1.37;
+  }
   &__items {
-    margin: 0;
+    margin: 0 0 14px 0;
     padding: 0;
     list-style: none;
   }
 
   &__item-link {
-    @include box-sizing;
-    display: inline-block;
+    display: block;
     width: 100%;
-    border: 1px solid #e8e8e8;
-    padding: 5px 15px;
-    text-align: center;
+    padding: 0.75em 1em;
+    font-size: rem(14);
+    color: #1d1d1d;
     text-decoration: none;
-    font-size: 14/16*100%;
-    color: #333;
+    text-align: left;
+    border: none;
   }
 }

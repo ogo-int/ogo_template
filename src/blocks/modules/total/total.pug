@@ -1,38 +1,26 @@
 mixin total()
   .b-total.iblock&attributes(attributes)
-    .b-total__title Итоговая сумма
+    .b-total__line
+      .b-total__title Итоговая стоимость:
 
-    .b-total__price-holder
-      .b-total__current-price 199&nbsp;156 <span class="rub">i</span>
-      .b-total__old-price 205&nbsp;996 <span class="rub">i</span>
-      .b-total__bonus +4&nbsp;999 бонусов
+      .b-total__price-holder
+        .b-total__current-price 267&nbsp;990&nbsp;₽
+        .b-total__bonus +4&nbsp;999 бонусов
 
     .b-total__btns-holder
-      .b-total__top-btns
-        a.b-total__buy.button-buy(href="#") Добавить в&nbsp;корзину
-      .b-total__bottom-btns
-        a.b-total__score.button-gray.js-modal(href="#expert-request-modal") Оценка эксперта
-        a.b-total__print.button-gray(href="#") Распечатать
-
-    .b-total__link-holder
-      +configurator-link()
+      a.b-total__buy.button(href="#") Добавить в&nbsp;корзину
 
 mixin total_aside()
   .b-total.iblock&attributes(attributes)
-    .b-total__title Итоговая сумма
+    .b-total__line
+      .b-total__title Итоговая стоимость:
 
-    .b-total__price-holder
-      .b-total__current-price 199&nbsp;156 <span class="rub">i</span>
-      .b-total__old-price 205&nbsp;996 <span class="rub">i</span>
-      .b-total__bonus +4&nbsp;999 бонусов
+      .b-total__price-holder
+        .b-total__current-price 267&nbsp;990&nbsp;₽
+        .b-total__bonus +4&nbsp;999 бонусов
 
     .b-total__btns-holder
-      .b-total__top-btns
-        a.b-total__buy.button-buy(href="#") Добавить в&nbsp;корзину
-      .b-total__bottom-btns
-        a.b-total__score._icon.button-gray.js-modal(href="#expert-request-modal") Оценка эксперта
-        a.b-total__print._icon.button-gray(href="#") Распечатать
-        a.b-total__mail._icon.button-gray(href="#") Отправить на почту
+      a.b-total__buy.button(href="#") Добавить в&nbsp;корзину
 
 mixin total_checkout()
   .b-total.iblock&attributes(attributes)

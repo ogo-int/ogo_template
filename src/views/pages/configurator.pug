@@ -1,54 +1,71 @@
 extends ../layout/page-template
 
 block head
-	title Конфигуратор
+  title Конфигуратор ПК
 
 block head-scripts
 
 block vars
-	- var isInner = true; // раскрывать ли подменю в главном меню
-	- var isTotalStyling = true; // Использовать бандл
-	- var modHeader = '_breadcrumbs';
+  - var isInner = true; // раскрывать ли подменю в главном меню
+  - var isTotalStyling = true; // Использовать бандл
+  - var modHeader = '_breadcrumbs';
 
 block caption
-	h1.full-width Конфигуратор
+  h1.full-width Конфигуратор ПК
 
 block inner-content
-	section.c-configurator
-		.c-configurator__intro
-			+promo-block2()
+  section.c-configurator
 
-		.c-configurator__cols
-			.c-configurator__aside-col
-				.c-configurator__aside-total
-					+total_aside()
+    .c-configurator__header
+      .c-configurator__main
+        p Конфигуратор не дает 100% гарантии совместимости. Наши специалисты всегда рады помочь в подборе оптимальной конфигурации. <a href="#">Авторизуйтесь</a> в личном кабинете, чтобы сохранить ваши конфигурации.
+      .c-configurator__aside
+        a.button-gray.b-configurator__newconfig(href="#") Новая конфигурация
 
-				.c-configurator__aside-guarantee 2 года гарантии на&nbsp;компьютер при заказе сборки
+    .c-configurator__body
+      .c-configurator__main
+        .c-configurator__items
+          +configurator-items()
 
-				.c-configurator__save
-					+configurator-save()
+        .c-configurator__additional-items
+          +configurator-additional()
+ 
+        .c-configurator__bottom-section
+          +estimate()
 
-				.c-configurator__link
-					+configurator-link_aside()
+          .c-configurator__bottom-left
+            .c-configurator__bottom-guarantee Гарантия: 2 года при заказе сборки
+          .c-configurator__bottom-right
+            .c-configurator__total
+              +total()
+      
+      .c-configurator__aside
+        .c-configurator__aside-plate
+          
+          .c-configurator__obligatory
+            +configurator-obligatory()
 
-				.c-configurator__socials
-					+social-btns_aside()
+          .c-configurator__expert
+            a(href="#expert-request-modal" class="c-configurator__consult-button js-modal button-gray text-center" id="configurator-consult" style="width: 100%") Бесплатная оценка специалиста
 
-				.c-configurator__consult
-					+online-consult()
+          .c-configurator__estimate
+            +estimate()
 
-			.c-configurator__main-col
-				.c-configurator__main-wrap
-					.c-configurator__items
-						+configurator-items()
-					.c-configurator__additional-items
-						+configurator-additional()
+          .c-configurator__aside-total
+            +total_aside()
 
-					.c-configurator__bottom-section
-						.c-configurator__estimate
-							+estimate()
+          .c-configurator__aside-guarantee Гарантия: 2 года при заказе сборки
+        
+        .c-configurator__aside-plate
+          +configurator-save()
 
-						.c-configurator__total
-							+total()
+        .c-configurator__aside-plate
+          +configurator-saved()
 
-		+expert-request()(id="expert-request-modal")
+        //.c-configurator__link
+        //  +configurator-link_aside()
+
+        .c-configurator__socials
+          +social-btns_aside()
+
+    +expert-request()(id="expert-request-modal")

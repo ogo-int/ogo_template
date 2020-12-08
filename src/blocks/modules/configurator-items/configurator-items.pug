@@ -1,70 +1,193 @@
 mixin configurator-items()
   .b-configurator-items.iblock&attributes(attributes)
     ul.b-configurator-items__list
-      li.b-configurator-items__item
+      li.b-configurator-items__item(data-mandatory="true")
         .b-configurator-items__hat
-          .b-configurator-items__name._checked
+          .b-configurator-items__name
+            span.b-configurator-items__name-icon._checked
             span.b-configurator-items__name-text Корпус компьютера
-
-          .b-configurator-items__name-right
-            .b-configurator-items__require Обязательный компонент
+            span.b-configurator-items__name-require Обязательный компонент
+            .b-configurator-items__labels
+              span.b-product-mark__alert Не совместим
 
         .b-configurator-items__contain
           +configurator-product()
 
-      li.b-configurator-items__item
+        .b-configurator-items__actions
+          a.b-configurator-items__action._compare(href="#")
+          a.b-configurator-items__action._favor(href="#")
+          a.b-configurator-items__action._remove(href="#")
+
+        .b-configurator-items__btns
+          a.b-configurator-items__btn.button-gray(href="#") Изменить
+
+      li.b-configurator-items__item(data-mandatory="true")
         .b-configurator-items__hat
-          label.b-configurator-items__name
+          .b-configurator-items__name
+            span.b-configurator-items__name-icon._checked
             span.b-configurator-items__name-text Блок питания
+            span.b-configurator-items__name-require Обязательный компонент
+            .b-configurator-items__labels
+              span.b-product-mark__alert Не совместим
 
-          .b-configurator-items__name-right
-            a.b-configurator-items__choose.button-gray(href="#") Выбрать
-            .b-configurator-items__require Обязательный компонент
+        .b-configurator-items__contain
+          +configurator-product-alt()
+
+        .b-configurator-items__actions
+          a.b-configurator-items__action._compare(href="#")
+          a.b-configurator-items__action._favor(href="#")
+          a.b-configurator-items__action._remove(href="#")
+
+        .b-configurator-items__btns
+          a.b-configurator-items__btn.button-gray(href="#") Изменить
+
+      //-- li.b-configurator-items__item(data-mandatory="true")
+        +configurator-product-placeholder(category="Материнская плата", image="assets/img/configurator/motherboard.svg", desc="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi enim eum commodi nemo, odit corrupti voluptate in laborum velit blanditiis sint, perferendis deserunt magnam qui quam temporibus accusantium at ut.", required=true)
 
       li.b-configurator-items__item
         .b-configurator-items__hat
           .b-configurator-items__name
+            span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
             span.b-configurator-items__name-text Материнская плата
+            span.b-configurator-items__name-require Обязательный компонент
 
-          .b-configurator-items__name-right
-            a.b-configurator-items__choose.button-gray(href="#") Выбрать
+        .b-configurator-items__placeholder
+          .b-configurator-items__placeholder-icon
+            img(src="assets/img/configurator/motherboard.svg", alt="Материнская плата")
+          .b-configurator-items__placeholder-text
+            | Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi enim eum commodi nemo, odit corrupti voluptate in laborum velit blanditiis sint, perferendis deserunt magnam qui quam temporibus accusantium at ut.
+        .b-configurator-items__actions
+          a(href="#").b-configurator-items__button.button-gray Выбрать
 
-      li.b-configurator-items__item
-        .b-configurator-items__hat
-          .b-configurator-items__name
-            span.b-configurator-items__name-text Жесткий диск
+        li.b-configurator-items__item
+          .b-configurator-items__hat
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
+              span.b-configurator-items__name-text Процессор
+              span.b-configurator-items__name-require Обязательный компонент
+              .b-configurator-items__labels
 
-          .b-configurator-items__name-right
-            a.b-configurator-items__choose.button-gray(href="#") Выбрать
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/cpu.svg", alt="Процессор")
+            .b-configurator-items__placeholder-text
+              | Ключевой компонент системы. Число ядер, разрядность, частота, объем кэш-памяти характеризуют вычислительную мощь CPU, соответственно быстродействие системы.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+        
+        li.b-configurator-items__item
+          .b-configurator-items__hat
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon
+              span.b-configurator-items__name-text Охлаждение
+              .b-configurator-items__labels
+              
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/cooler.svg", alt="Охлаждение")
+            .b-configurator-items__placeholder-text
+              | Делится на два типа: воздушное и жидкостное. Задача отводить тепловое излучение, выделяемое центральным процессором, делая температуру приемлемой для стабильной работы.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+        
+        li.b-configurator-items__item
+          .b-configurator-items__hat
+            .b-configurator-items__labels
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon
+              span.b-configurator-items__name-text Оперативная память
+              
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/ram.svg", alt="Оперативная память")
+            .b-configurator-items__placeholder-text
+              | Необходима для хранения временных файлов операционной системы и пользовательских программ. Недостаточный объем RAM-памяти — причина некорректной работы приложений. 
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+        
+        li.b-configurator-items__item
+          .b-configurator-items__hat
+            .b-configurator-items__labels
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
+              span.b-configurator-items__name-text Жесткий диск
+              span.b-configurator-items__name-require Обязательный компонент
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/hdd.svg", alt="Жесткий диск")
+            .b-configurator-items__placeholder-text
+              | В современных системах устанавливают носители общим объемом от 500 гигабайт до 1-15 терабайт. При сборке ПК ориентируйтесь на объем накопителя, от этого зависит максимальный массив данных.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+        
+        li.b-configurator-items__item
+          .b-configurator-items__hat
+            .b-configurator-items__labels
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon
+              span.b-configurator-items__name-text SSD накопитель
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/ssd.svg", alt="SSD накопитель")
+            .b-configurator-items__placeholder-text
+              | Диск SSD представляет собой твердотельный носитель для хранения данных, используется в основном для установки операционной системы. Главным преимуществом считается быстродействие и бесшумность.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+        
+        li.b-configurator-items__item
+          .b-configurator-items__hat 
+            .b-configurator-items__labels
+            .b-configurator-items__name
+              span.b-configurator-items__name-text Видеокарта
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/gpu.svg", alt="Видеокарта")
+            .b-configurator-items__placeholder-text
+              | Графическая карта отвечает за комфортный геймплей в игровых приложениях. Плавный ход мыши в онлайн шутерах, четкая картинка, детализация при высоком разрешении —  все это заслуга видеокарты.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
 
-      li.b-configurator-items__item
-        .b-configurator-items__hat
-          .b-configurator-items__name
-            span.b-configurator-items__name-text Операционная система
-        .b-configurator-items__contain
-          .b-configurator-items__select-holder
-            select.select2
-              option(selected) Без операционной системы
-              option Debian
-              option Ubuntu
-              option OSX
-              option Windows
-          .b-configurator-items__contain-price 0 <span class="rub">i</span>
-
-      li.b-configurator-items__item
-        .b-configurator-items__hat
-          .b-configurator-items__name
-            span.b-configurator-items__name-text Сборка системного блока
-
-          .b-configurator-items__name-right
-            .b-configurator-items__name-price 500 <span class="rub">i</span>
-
-            a.b-configurator-items__choose.button-gray(href="#") Выбрать
-
-      li.b-configurator-items__item
-        .b-configurator-items__hat
-          .b-configurator-items__name._checked
-            span.b-configurator-items__name-text Колонки
-
-        .b-configurator-items__contain
-          +configurator-product()
+        li.b-configurator-items__item
+          .b-configurator-items__hat 
+            .b-configurator-items__labels
+            .b-configurator-items__name
+              span.b-configurator-items__name-icon._checked
+              span.b-configurator-items__name-text Веб камеры
+          .b-configurator-items__placeholder
+            .b-configurator-items__placeholder-icon
+              img(src="assets/img/configurator/gpu.svg", alt="Веб камеры")
+            .b-configurator-items__placeholder-text
+              | Графическая карта отвечает за комфортный геймплей в игровых приложениях. Плавный ход мыши в онлайн шутерах, четкая картинка, детализация при высоком разрешении —  все это заслуга видеокарты.
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать
+      //-
+        li.b-configurator-items__custom._os
+          .b-configurator-items__hat 
+            .b-configurator-items__name
+              span.b-configurator-items__name-text._checked Операционная система
+          .b-configurator-items__contain
+            .b-configurator-items__custom-icon
+              img(src="assets/img/configurator/windows.svg", alt="Операционная система")
+            .b-configurator-items__custom-select
+              select.select2
+                option Нет
+                option Free DOS (бесплатно)
+                option Microsoft Windows 10 Home 64bit Key (5000 ₽)
+                option Microsoft Windows 10 Pro 64bit Box (12000 ₽)
+          .b-configurator-items__actions
+            .b-configurator-product__price-col
+              span.b-configurator-product__os-price 7&nbsp;790&nbsp;₽
+       
+        li.b-configurator-items__custom._assembly
+          .b-configurator-items__hat 
+            .b-configurator-items__name
+              span.b-configurator-items__name-text Сборка
+          .b-configurator-items__contain
+            .b-configurator-items__custom-icon
+              img(src="assets/img/configurator/gear.png", alt="Сборка")
+            .b-configurator-items__custom-select
+              select.select2
+                option Сборка (+500₽)
+                option Не собирать (Фарход просто привезет коробки)
+          .b-configurator-items__actions
+            a(href="#").b-configurator-items__button.button-gray Выбрать

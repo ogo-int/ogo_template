@@ -12,23 +12,15 @@
   text-align: left;
   word-wrap: break-word;
 }
-
-.hide {
-  display: none;
-}
-
-.text-left {
-  text-align: left;
-}
-
 .h1 {
   margin-bottom: 10px;
 }
-
+.hide {
+  display: none;
+}
 .text-left {
   text-align: left;
 }
-
 .show-for-large {
   display: revert;
 }
@@ -52,10 +44,28 @@
 }
 
 
+/* global.css*/
+.select2-container {
+  .select2-results {
+    &__option {
+      position: relative;
+      padding: 0 13px 0 13px;
+    }
+  }
+  .select2-selection {
+    &--single .select2-selection__rendered {
+      padding-left: 13px;
+      padding-right: 20px;
+    }
+  }
+}
+
+/* endof global.css*/
+
 
 /* Компоненты */
-@import '../blocks/components/catalog';
-@import '../blocks/components/contacts-list';
+//@import '../blocks/components/configurator';
+
 /* endof Компоненты */
 
 /* Блоки */
