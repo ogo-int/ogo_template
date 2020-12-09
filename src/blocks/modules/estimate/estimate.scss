@@ -33,6 +33,8 @@
   &__item-name {
     display: inline-flex;
     flex: 1;
+    padding-top: 0;
+    padding-bottom: 0;
     font-size: rem(14);
     font-weight: 300;
     line-height: 1.43;
@@ -51,6 +53,8 @@
     display: inline-flex;
     width: auto;
     flex: 0;
+    padding-top: 0;
+    padding-bottom: 0;
     border-bottom: none; //1px solid #f1f1f1;
     white-space: nowrap;
     vertical-align: unset;

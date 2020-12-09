@@ -19,7 +19,7 @@
     width: 60px;
     min-width: 60px;
     margin-right: 14px;
-    padding: 0;
+    padding: 5px;
   }
 
   &__description-col {
@@ -113,6 +113,7 @@
   }
 
   &__art {
+    display: block;
     margin: 0 0 5px 0;
     font-size: rem(12);
     font-weight: 300;
@@ -260,136 +261,140 @@
   }
 }
 
-//@mixin mx620($mod: "") {
-//  .b-configurator-product#{$mod} {
-//    .b-configurator-product {
-//      &__wrap {
-//        @include clearfix;
-//        position: relative;
-//        padding: 20px;
-//        padding-left: 120px;
-//      }
-//
-//      &__image-col {
-//        position: absolute;
-//        top: 0;
-//        left: 0;
-//        width: 120px;
-//        padding-right: 0;
-//        padding-left: 0;
-//        padding-top: 25px;
-//        text-align: center;
-//      }
-//
-//      &__description-col {
-//        @include mbot(15/20);
-//        display: block;
-//        padding: 0;
-//      }
-//
-//      &__qtty-col {
-//        display: inline-block;
-//        vertical-align: middle;
-//        padding: 0;
-//      }
-//
-//      &__price-col {
-//        display: inline-block;
-//        vertical-align: middle;
-//        padding: 0;
-//        margin-left: 1em;
-//      }
-//
-//      &__ui-col {
-//        @include margin(20/20);
-//        @include clearfix;
-//        display: block;
-//        width: 230px;
-//        padding: 0;
-//      }
-//
-//      &__current-price {
-//        display: inline-block;
-//      }
-//
-//      &__old-price {
-//        display: inline-block;
-//        margin-left: .5em;
-//      }
-//
-//      &__change {
-//        float: left;
-//        margin-left: 0;
-//        width: 120px;
-//      }
-//
-//      &__btns {
-//        float: right;
-//        width: 80px;
-//        margin-top: 6px;
-//      }
-//    }
-//  }
-//}
-//
-//@mixin mx415($mod: "") {
-//  .b-configurator-product#{$mod} {
-//    .b-configurator-product {
-//
-//      &__wrap {
-//        padding-left: 20px;
-//      }
-//
-//      &__price-col {
-//        margin-left: 20px;
-//        width: 150px;
-//      }
-//
-//      &__description-col {
-//        width: 50%;
-//        min-height: 95px;
-//        overflow: hidden;
-//      }
-//
-//      &__image-col {
-//        display: block;
-//        position: relative;
-//        width: 90px;
-//        padding: 0;
-//        float: left;
-//        margin-bottom: 20px;
-//        margin-right: 20px;
-//      }
-//
-//      &__qtty-col {
-//        display: inline-block;
-//        width: 90px;
-//        clear: both;
-//      }
-//
-//      &__old-price {
-//        margin-left: 0;
-//      }
-//    }
-//  }
-//}
-//
-//@mixin mx350($mod: "") {
-//  .b-configurator-product#{$mod} {
-//    .b-configurator-product {
-//      &__wrap {
-//        padding: 15px;
-//      }
-//      &__price-col {
-//        width: 120px;
-//      }
-//    }
-//  }
-//}
-//
-//@include mx620("._mx620");
-//@include mx415("._mx415");
-//@include mx350("._mx350");
+@mixin mx620($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+      //&__wrap {
+      //  @include clearfix;
+      //  position: relative;
+      //  padding: 20px;
+      //  padding-left: 120px;
+      //}
+
+      &__image-col {
+        position: static;
+        //top: 0;
+        //left: 0;
+        //width: 60px;
+        //padding-right: 0;
+        //padding-left: 0;
+        //padding-top: 25px;
+        margin-bottom: 20px;
+        padding: 0;
+        text-align: center;
+      }
+
+      &__description-col {
+        //@include mbot(15/20);
+        display: block;
+        margin: 0 0 20px 0;
+        padding: 0;
+      }
+
+      &__qtty-col {
+        display: block; //inline-block;
+        //@at-root: middle;
+        padding: 0;
+      }
+
+      &__price-col {
+        display: block;
+        //vertical-align: middle;
+        padding: 0;
+        margin-left: 0;
+      }
+
+      &__ui-col {
+        //@include margin(20/20);
+        //@include clearfix;
+        display: block;
+        width: auto;
+        margin: 0;
+        padding: 0;
+      }
+
+      &__current-price {
+        display: block;
+      }
+
+      &__old-price {
+        display: block;
+        margin-left: 0;
+      }
+
+      &__change {
+        float: none;
+        margin-left: 0;
+        width: auto;
+      }
+
+      &__btns {
+        float: none;
+        width: 90px;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@mixin mx415($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+
+      &__wrap {
+        padding-left: 0;
+      }
+
+      &__price-col {
+        margin-left: 0;
+        width: auto;
+      }
+
+      &__description-col {
+        width: auto;
+        min-height: auto;
+        overflow: hidden;
+      }
+
+      &__image-col {
+        display: block;
+        position: relative;
+        width: 60px;
+        padding: 0;
+        float: none;
+        margin-bottom: 20px;
+        margin-right: 10px;
+      }
+
+      &__qtty-col {
+        display: block;
+        width: auto;
+        clear: both;
+      }
+
+      &__old-price {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@mixin mx350($mod: "") {
+  .b-configurator-product#{$mod} {
+    .b-configurator-product {
+      &__wrap {
+        padding: 0; //15px;
+      }
+      &__price-col {
+        width: auto; //120px;
+      }
+    }
+  }
+}
+
+@include mx620("._mx620");
+@include mx415("._mx415");
+@include mx350("._mx350");
 //
 //.b-configurator-product__description-col {
 //  @media (max-width: 1101px) {
@@ -432,17 +437,17 @@
 //  }
 //}
 //
-//.c-configurator__items {
-//  @media (max-width: 700px) {
-//    @include mx620();
-//  }
-//
-//  @media (max-width: 455px) {
-//    @include mx415();
-//  }
-//
-//  @media (max-width: 400px) {
-//    @include mx350();
-//  }
-//}
+.c-configurator__items {
+  @media (max-width: 700px) {
+    @include mx620();
+  }
+
+  @media (max-width: 455px) {
+    @include mx415();
+  }
+
+  @media (max-width: 400px) {
+    @include mx350();
+  }
+}
 //

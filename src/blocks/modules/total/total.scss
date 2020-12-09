@@ -226,11 +226,11 @@
       &__price-holder {
         text-align: left;
       }
-    }
-    @include w480 {
       &__line {
         align-items: flex-start;
       }
+    }
+    @include w480 {
       &__title {
         margin-top: 5px;
         white-space: nowrap;

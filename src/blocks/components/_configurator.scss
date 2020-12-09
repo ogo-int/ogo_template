@@ -76,7 +76,7 @@
     display: block;
     width: auto;
     height: auto;
-    //padding-left: 10px;
+    padding-left: 0;
     //vertical-align: top;
     //.b-configurator-total {
     //  @include box-sizing;
@@ -98,6 +98,7 @@
   }
   &__aside-guarantee {
     margin: 14px 0 0 0;
+    padding: 0;
   }
   &__bottom-guarantee {
     margin-top: 3px;
@@ -138,10 +139,10 @@
       padding-bottom: 15px;
     }
     &__main {
-      flex: 3;
+      flex: 2 2 calc(66.666% - 14px);
     }
     &__aside {
-      flex: 1;
+      flex: 1 1 calc(33.333% - 14px);
     }
   }
 }
@@ -156,10 +157,10 @@
       padding: 15px;
     }
     &__main {
-      flex: 2;
+      flex: 3 3 calc(75% - 14px);
     }
     &__aside {
-      flex: 1;
+      flex: 1 1 calc(25% - 14px);
     }
     &__bottom-left,
     &__bottom-right {
@@ -181,9 +182,9 @@
     //  margin-right: 0;
     //}
 
-    //&__aside-total {
-    //  display: none;
-    //}
+    &__aside-total {
+      display: block;
+    }
 
     //&__link {
     //  display: none;

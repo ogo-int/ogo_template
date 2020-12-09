@@ -45,6 +45,36 @@
 
 
 /* global.css*/
+/* Иконки*/
+.icon {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  color: currentColor;
+  line-height: 0;
+  &:before {
+    @include ft-icon();
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 125%;
+    transform: translate(-50%, -50%);
+  }
+  &-download:before {
+    content: $ft-download;
+  }
+  &-link:before {
+    content: $ft-link;
+  }
+  &-mail:before {
+    content: $ft-mail;
+  }
+  &-printer:before {
+    content: $ft-printer;
+  }
+}
+/*Селекты*/
 .select2-container {
   .select2-results {
     &__option {
@@ -64,18 +94,20 @@
 
 
 /* Компоненты */
-//@import '../blocks/components/configurator';
+@import '../blocks/components/configurator';
 
 /* endof Компоненты */
 
 /* Блоки */
-//@import '../blocks/modules/configurator/configurator';
-//@import '../blocks/modules/configurator-additional/configurator-additional';
-//@import '../blocks/modules/configurator-custom/configurator-custom';
-//@import '../blocks/modules/configurator-items/configurator-items';
-//@import '../blocks/modules/configurator-link/configurator-link';
-//@import '../blocks/modules/configurator-obligatory/configurator-obligatory';
-//@import '../blocks/modules/configurator-product/configurator-save';
-//@import '../blocks/modules/configurator-save/configurator-product';
-
+@import '../blocks/modules/configurator/configurator';
+@import '../blocks/modules/configurator-additional/configurator-additional';
+@import '../blocks/modules/configurator-custom/configurator-custom';
+@import '../blocks/modules/configurator-items/configurator-items';
+@import '../blocks/modules/configurator-link/configurator-link';
+@import '../blocks/modules/configurator-obligatory/configurator-obligatory';
+@import '../blocks/modules/configurator-placeholder/configurator-placeholder';
+@import '../blocks/modules/configurator-product/configurator-product';
+@import '../blocks/modules/configurator-save/configurator-save';
+@import '../blocks/modules/estimate/estimate';
+@import '../blocks/modules/total/total';
 /* endof Блоки */

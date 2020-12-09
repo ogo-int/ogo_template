@@ -47,6 +47,7 @@
     flex: 0 0 20%;
     min-width: 150px;
     margin: 0 14px 0 0;
+    padding: 0;
     border-bottom: none;
     &:before,
     &:after {
@@ -65,6 +66,7 @@
     float: none;
     position: relative;
     max-width: none;
+    margin: 0;
     padding: 0 0 0 40px;
     &:before,
     &:after {
@@ -199,6 +201,7 @@
       align-items: center;
       flex: 0 1 auto;
       min-height: 38px;
+      margin-bottom: 10px;
     }
     &__name {
       display: flex;
@@ -296,79 +299,77 @@
 //  }
 }
 
+@mixin mx600($mod: "") {
+  .b-configurator-items#{$mod} {
+    .b-configurator-items {
+      &__name {
+        float: none;
+        width: auto;
+        max-width: none;
+      }
+      &__name-text {
+        width: auto;
+        float: none;
+        text-align: left;
+        @media(max-width: 320px) {
+          width: auto;
+        }
+      }
+      &__name-right {
+        float: none;
+        width: auto;
+        text-align: left;
+        margin-top: 10px;
+        //white-space: nowrap;
+      }
 
-//@mixin mx600($mod: "") {
-//  .b-configurator-items#{$mod} {
-//    .b-configurator-items {
-//      &__name {
-//        float: none;
-//        width: auto;
-//        max-width: none;
-//      }
-//
-//      &__name-right {
-//        float: none;
-//        width: auto;
-//        text-align: left;
-//        margin-top: 10px;
-//        //white-space: nowrap;
-//      }
-//
-//      &__choose {
-//        float: none;
-//        margin-left: 0;
-//      }
-//
-//      &__require {
-//        display: inline-block;
-//        //margin-left: 25px;
-//        float: right;
-//        width: 70%;
-//        text-align: right;
-//        white-space: normal;
-//        margin-top: 0;
-//
-//        @media(max-width: 480px) {
-//          margin-top: 20px;
-//        }
-//      }
-//
-//      &__name-price {
-//        margin-right: 25px;
-//      }
-//      &__name-text {
-//        width: 80%;
-//        float: right;
-//        text-align: right;
-//
-//        @media(max-width: 320px) {
-//          width: 70%;
-//        }
-//      }
-//    }
-//  }
-//}
-//
-//@mixin mx350($mod: "") {
-//  .b-configurator-items#{$mod} {
-//    .b-configurator-items {
-//      &__require {
-//        margin-left: 5px;
-//        width: 67%;
-//      }
-//    }
-//  }
-//}
-//
-//@include mx600("._mx600");
-//@include mx350("._mx350");
-//
-//.c-configurator__items {
-//  @media (max-width: 640px) {
-//    @include mx600();
-//  }
-//
-//  @media (max-width: 390px) {
-//    @include mx350();
-//  }
-//}
+      &__choose {
+        float: none;
+        margin-left: 0;
+      }
+
+      &__require {
+        display: block;
+        //margin-left: 25px;
+        float: none;
+        width: auto;
+        text-align: left;
+        white-space: normal;
+        margin-top: 0;
+
+        @media(max-width: 480px) {
+          margin-top: 0;
+        }
+      }
+
+      //&__name-price {
+      //  margin-right: 25px;
+      //}
+      
+    }
+  }
+}
+
+@mixin mx350($mod: "") {
+  .b-configurator-items#{$mod} {
+    .b-configurator-items {
+      &__require {
+        margin-left: 0;
+        width: auto;
+      }
+    }
+  }
+}
+
+@include mx600("._mx600");
+@include mx350("._mx350");
+
+.c-configurator__items {
+  @media (max-width: 640px) {
+    @include mx600(); 
+  }
+
+  @media (max-width: 390px) {
+    @include mx350();
+  }
+}

@@ -14,4 +14,9 @@
     align-self: flex-end;
     white-space: nowrap;
   }
+  @include w480 {
+    &__newconfig {
+      margin: 15px 0 0 15px;
+    }
+  }
 }
