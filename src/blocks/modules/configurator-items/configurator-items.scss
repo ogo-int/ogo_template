@@ -1,5 +1,5 @@
 .b-configurator-items {
-  min-width: 300px;
+  min-width: auto;
 
   &__list {
     margin: 0;
@@ -12,10 +12,31 @@
     display: flex;
     position: relative;
     flex-flow: row nowrap;
+    align-items: center;
     min-height: 120px;
     padding: 20px;
     background-color: #fff;
     border: 1px solid #f1f1f1;
+    //&._empty {}
+    &._custom {
+      flex-flow: row nowrap;
+      justify-content: stretch;
+      min-height: auto;
+      .b-configurator-items__hat {
+        min-width: 190px;
+      }
+      .b-configurator-items__name-icon {
+        &._checked:before {
+          color: #fff;
+        }
+      }
+      .b-configurator-items__name-text {
+        color: #fff;
+      }
+      .b-configurator-items__contain {
+
+      }
+    }
   }
 
   &__hat {
@@ -24,7 +45,6 @@
     justify-content: center;
     position: relative;
     flex: 0 0 20%;
-    min-height: 20%;
     min-width: 150px;
     margin: 0 14px 0 0;
     border-bottom: none;
@@ -51,6 +71,7 @@
       display: none;
     }
   }
+
   &__name-text {
     display: block;
     margin-left: 0;
@@ -63,6 +84,7 @@
       text-align: left;
     }
   }
+
   &__name-require {
     display: none;
     color: #9a9a9a;
@@ -70,6 +92,7 @@
     font-weight: 300;
     line-height: 1.5;
   }
+
   &__name-icon {
     position: absolute;
     top: 50%;
@@ -105,33 +128,20 @@
       display: none;
     }
   }
-  &__custom {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    flex: 1 1 100%;
-    margin-right: 14px;
-    &-icon {
-      display: block;
-      flex: 0 0 30px;
-      width: 30px;
-      margin-right: 30px;
-    }
-    &-select {
-      display: block;
-      flex: 1 0 auto;
-      .select2-container {
-        display: block;
-      }
-    }
-    .b-configurator-items__actions {
-      text-align: right;
-    }
+  &__foot {
+    flex: 0 0 130px;
+    min-width: 130px;
   }
-  
-  @include w1024 {
+  &__price {
+    color: #fff;
+    text-align: center;
+  }
+  &__current-price {
+    font-size: rem(26);
+    font-weight: 300;
+    line-height: 1.15;
+  }
 
-  }
   @include w768 {
     &__item {
       flex-flow: row wrap;
@@ -156,6 +166,29 @@
           }
           &-require {
             display: block;
+          }
+        }
+      }
+      &._custom {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .b-configurator-items {
+          &__hat {
+            order: 1;
+            flex: 1;
+            min-width: auto;
+            max-width: 50%;
+          }
+          &__contain {
+            order: 3;
+            width: 100%;
+            margin-top: 14px;
+          }
+          &__foot {
+            flex: 0;
+            order: 2;
+            min-width: auto;
+            max-width: 50%;
           }
         }
       }
@@ -186,8 +219,9 @@
         font-weight: 400;
         line-height: 1.4;
       }
-      &-require {
-
+      &-require {}
+      &._no-icon {
+        padding-left: 0;
       }
     }
     &__labels {

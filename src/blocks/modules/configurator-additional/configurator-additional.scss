@@ -8,6 +8,9 @@
     font-weight: 300;
     color: #1d1d1d;
     border-bottom: none; //1px solid #f1f1f1;
+    &:after {
+      right: 5px;
+    }
   }
 
   &__holder {
@@ -33,8 +36,8 @@
     flex: 1 0 calc(33% - 14px);
     max-width: calc(33% - 14px);
     padding-right: 0;
-    margin-top: 10px;
-    margin-bottom: 0;
+    //margin-top: 7px;
+    //margin-bottom: 0;
     margin: 7px;
     &:first-child {
       margin-top: 7px;
@@ -56,6 +59,22 @@
     display: block;
     @extend .button-gray;
     font-size: rem(14);
+  }
+  @include w768 {
+    &__item {
+      flex: 1 0 calc(50% - 14px);
+      max-width: calc(50% - 14px);
+      &:first-child {
+        margin-top: 7px;
+      }
+    }
+  }
+  @include w480 {
+    &__item {
+      @include mmtop(14px);
+      flex: 1 1 100%;
+      max-width: none;
+    }
   }
 }
 
@@ -84,7 +103,7 @@
         float: none;
         width: auto;
         padding-right: 0;
-        max-width: 250px;
+        max-width: none;
         margin-left: auto;
         margin-right: auto;
       }
@@ -92,11 +111,11 @@
       &__label {
         @include box-sizing;
         width: 100%;
-        text-align: center;
+        text-align: left;
       }
 
       &__caption {
-        text-align: center;
+        text-align: left;
       }
     }
   }

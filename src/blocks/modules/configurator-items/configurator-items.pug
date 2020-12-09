@@ -85,3 +85,48 @@ mixin configurator-items()
             span.b-configurator-items__name-text Видеокарта
         .b-configurator-items__contain
           +configurator-placeholder("assets/img/configurator/gpu.svg", "Графическая карта отвечает за комфортный геймплей в игровых приложениях. Плавный ход мыши в онлайн шутерах, четкая картинка, детализация при высоком разрешении —  все это заслуга видеокарты.")
+      
+      li.b-configurator-items__item._custom(style="background-color: #3E8BDC")
+        .b-configurator-items__hat 
+          .b-configurator-items__labels
+          .b-configurator-items__name
+            span.b-configurator-items__name-icon._checked
+            span.b-configurator-items__name-text Операционная система
+        .b-configurator-items__contain
+          .b-configurator-custom
+            .b-configurator-custom__image-col
+              img.b-configurator-custom__image(src="assets/img/configurator/windows.svg", alt="Операционная система")
+            .b-configurator-custom__select-col
+              select.select2.b-configurator-custom__select
+                option Нет
+                option Free DOS
+                option Microsoft Windows 10 Home 64bit OEM
+                option Microsoft Windows 10 Pro 64bit BOX
+            
+        .b-configurator-items__foot
+          .b-configurator-items__price
+            span.b-configurator-items__current-price 7&nbsp;790&nbsp;₽
+      
+      
+      li.b-configurator-items__item._custom(style="background-color: #9A9A9A")
+        .b-configurator-items__hat 
+          .b-configurator-items__labels
+          .b-configurator-items__name._no-icon
+            span.b-configurator-items__name-text Сборка
+        .b-configurator-items__contain
+          .b-configurator-custom
+            .b-configurator-custom__image-col
+              img.b-configurator-custom__image(src="assets/img/configurator/gear.png", alt="Сборка")
+            .b-configurator-custom__select-col
+              select.select2.b-configurator-custom__select
+                option Без сборки
+                option Бюджетная сборка
+                option Комфорт сборка 
+                option Бизнес сборка
+                option Премиум сборка
+                option Элитная сборка
+                option Президентская сборка
+          
+        .b-configurator-items__foot
+          .b-configurator-items__price
+            span.b-configurator-items__current-price

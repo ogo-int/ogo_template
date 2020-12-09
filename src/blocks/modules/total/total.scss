@@ -7,7 +7,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    align-items: baseline;
+    
   }
   &__title {
     flex: 1;
@@ -64,9 +64,6 @@
     @include box-sizing;
     width: 100%;
     text-align: center;
-    .c-configurator__bottom-section & {
-      width: auto;
-    }
   }
 
   &__score {
@@ -116,12 +113,7 @@
   }
   &__btns-holder {
     margin-top: 24px;
-    .c-configurator__bottom-section & {
-      display: flex;
-      justify-content: flex-end;
-    }
   }
-
 
   &__bottom-btns {
     @include clearfix;
@@ -213,6 +205,66 @@
     @include box-sizing;
     width: 100%;
     text-align: center;
+  }
+
+  @include w1024 {
+    &__title {
+      margin-bottom: 5px;
+    }
+  }
+  @include w768 {
+    &__price-holder {
+      text-align: left;
+    }
+  }
+
+  .c-configurator__aside & {
+    &__line {
+      align-items: baseline;
+    }
+    @include w1024 {
+      &__price-holder {
+        text-align: left;
+      }
+    }
+    @include w480 {
+      &__line {
+        align-items: flex-start;
+      }
+      &__title {
+        margin-top: 5px;
+        white-space: nowrap;
+      }
+      &__current-price {
+        font-size: rem(28);
+      }
+      &__price-holder {
+        text-align: right;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      &__price-holder {
+        text-align: left;
+      }
+    }
+  }
+  .c-configurator__bottom-section & {
+    &__buy {
+      width: auto;
+    }
+    &__btns-holder {
+      display: flex;
+      justify-content: flex-end;
+    }
+    @include w768 {
+      &__line {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+      }
+      &__btns-holder {
+        justify-content: flex-start;
+      }
+    }
   }
 }
 

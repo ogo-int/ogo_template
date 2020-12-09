@@ -58,8 +58,8 @@
   }
   &__bottom-right,
   &__bottom-left {
-    flex: 1 0 50%;
-    width: 50%;
+    flex: 1 0 auto;
+    width: auto;
   }
 
   &__estimate {
@@ -73,17 +73,15 @@
 
   &__total {
     @include box-sizing;
-    display: table-cell;
-    width: 50%;
-    height: 100%;
-    padding-left: 10px;
-    vertical-align: top;
-
-
-    .b-configurator-total {
-      @include box-sizing;
-      height: 100%;
-    }
+    display: block;
+    width: auto;
+    height: auto;
+    //padding-left: 10px;
+    //vertical-align: top;
+    //.b-configurator-total {
+    //  @include box-sizing;
+    //  height: 100%;
+    //}
   }
   &__bottom-guarantee,
   &__aside-guarantee {
@@ -102,7 +100,7 @@
     margin: 14px 0 0 0;
   }
   &__bottom-guarantee {
-    margin-top: 14px;
+    margin-top: 3px;
   }
   &__save {
     @include margin(10/20)
@@ -162,6 +160,13 @@
     }
     &__aside {
       flex: 1;
+    }
+    &__bottom-left,
+    &__bottom-right {
+      flex: 1 0 100%;
+    }
+    &__bottom-left {
+      margin-bottom: 14px;
     }
     //&__cols {
     //  padding: 20px;
@@ -261,6 +266,25 @@
 
 @media #{$media-phone} {
   .c-configurator {
+    &__main {
+      margin-bottom: 0;
+    }
+    &__aside {
+      margin-right: -15px;
+      margin-left: -15px;
+      &-plate {
+        @include mmtop(0);
+        border-right: none;
+        border-left: none;
+        &:not(:first-child) {
+          border-top: none;
+        }
+      }
+    }
+    &__bottom-section {
+      display: none;
+      padding: 15px;
+    }
     &__cols {
       padding: 5px;
     }

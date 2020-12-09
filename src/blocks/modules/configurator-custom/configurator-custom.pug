@@ -1,0 +1,20 @@
+// Миксин нигде не вызвается. Но нужен для примера
+// А так этот конетнт есть в модуле configurator-items
+mixin configurator-custom()
+  .b-configurator-custom.iblock&attributes(attributes)
+    .b-configurator-custom__image-col
+      img.b-configurator-custom__image(src="assets/img/configurator/gear.png", alt="Сборка")
+
+    .b-configurator-custom__select-col
+      select.select2.b-configurator-custom__select
+        option Без сборки
+        option Бюджетная сборка
+        option Комфорт сборка 
+        option Бизнес сборка
+        option Премиум сборка
+        option Элитная сборка
+        option Президентская сборка
+    
+    .b-configurator-custom__price-col
+      .b-configurator-custom__price
+        span.b-configurator-custom__current-price 7&nbsp;790&nbsp;₽

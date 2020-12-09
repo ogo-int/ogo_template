@@ -4,10 +4,7 @@
   background-color: unset;
   background: none;
   border-bottom: 1px solid #f1f1f1;
-  .c-configurator__bottom-section & {
-    width: 100%;
-    margin-top: 0;
-  }
+  
   &__title {
     margin-bottom: 10px;
     font-size: rem(18);
@@ -62,7 +59,24 @@
     font-weight: normal;
     line-height: 1.22;
   }
+  @include w1024 {
+    .c-configurator__aside & {
+      margin: 16px 0;
+      padding-bottom: 16px;
+      &__item {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        &-name:after {
+          display: none;
+        }
+      }
+    }
+  }
 
+  .c-configurator__bottom-section & {
+    width: 100%;
+    margin-top: 0;
+  }
 //  &__sub-title {
 //    @include mtop(20/20);
 //    @include mbot(10/20);
