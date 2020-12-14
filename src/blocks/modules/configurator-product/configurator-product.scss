@@ -1,10 +1,11 @@
 .b-configurator-product {
   display: flex;
   flex-flow: row nowrap;
-  align-items: stretch;
+  align-items: center;
   min-width: auto;
   max-width: 100%;
   width: 100%;
+  min-height: 80px;
   padding-right: 104px;
   border: none;
 //  &__wrap {
@@ -12,18 +13,16 @@
 //  }
 
   &__image-col {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    flex: 0;
+    display: block;
+    align-self: center;
     width: 60px;
-    min-width: 60px;
     margin-right: 14px;
     padding: 5px;
   }
 
   &__description-col {
     display: flex;
+    flex: 1;
     flex-flow: column nowrap;
     justify-content: center;
     width: auto;
@@ -200,8 +199,8 @@
 
   &__btn {
     display: block;
-    flex: 0 1 100%;
-    width: 100%;
+    //flex: 0 1 100%;
+    //width: 100%;
     font-size: rem(14);
     text-align: center;
   }

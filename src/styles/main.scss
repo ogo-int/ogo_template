@@ -89,6 +89,10 @@
     }
   }
 }
+/*Утилиты*/
+.text-center {
+  text-align: center;
+}
 
 /* endof global.css*/
 
@@ -104,10 +108,13 @@
 @import '../blocks/modules/configurator-custom/configurator-custom';
 @import '../blocks/modules/configurator-items/configurator-items';
 @import '../blocks/modules/configurator-link/configurator-link';
-@import '../blocks/modules/configurator-obligatory/configurator-obligatory';
+@import '../blocks/modules/configurator-mail-modal/configurator-mail-modal';
+@import '../blocks/modules/configurator-mandatory/configurator-mandatory';
 @import '../blocks/modules/configurator-placeholder/configurator-placeholder';
 @import '../blocks/modules/configurator-product/configurator-product';
 @import '../blocks/modules/configurator-save/configurator-save';
 @import '../blocks/modules/estimate/estimate';
+@import '../blocks/modules/simple-form/simple-form';
+@import '../blocks/modules/expert-request-modal/expert-request-modal';
 @import '../blocks/modules/total/total';
 /* endof Блоки */

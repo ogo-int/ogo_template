@@ -10,7 +10,7 @@
   &:hover {
     .b-checkbox {
       &__text {
-        color: #3e8bdc;
+        color: currentColor; // #3e8bdc;
       }
     }
   }
@@ -81,7 +81,8 @@
     }
 
     &__text {
-      color: #3e8bdc;
+      //color: #3e8bdc;
+      color: currentColor;
     }
   }
 }

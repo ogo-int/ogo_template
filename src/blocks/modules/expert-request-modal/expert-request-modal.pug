@@ -3,18 +3,34 @@ mixin expert-request()
     .b-expert-request__caption Запрос оценки эксперта
     .b-expert-request__content
       form(action='#' data-validate='Y')
-        label.b-simple-form__field
-          .b-simple-form__field-label Ваша электронная почта
-          .b-simple-form__field-inputs
-            input.email(type="email" name="email" required)
+        .b-expert-request__fields-row
+          label.b-simple-form__field
+            span.b-simple-form__field-label Имя<sup> *</sup>
+            .b-simple-form__field-inputs
+              input.name(type="text" name="name" required)
+          
+          label.b-simple-form__field
+            span.b-simple-form__field-label Email<sup> *</sup>
+            .b-simple-form__field-inputs
+              input.email(type="email" name="email" required)
+        
+        .b-simple-form__field
+          ul.b-simple-form__list
+            li.b-simple-form__list-item
+              +checkbox('Соглашаюсь с <a href="#" class="b-simple-form__field-link">политикой</a> обработки и защиты персональных данных')(checked)
+              input.checkbox-vadidator(type='text' required)
+  
         .b-simple-form__field
           .b-simple-form__field-inputs
-            input.button(type="submit" value="Отправить")
+            button.button-gray(type="submit") Отправить
+      
+      .b-expert-request__desc Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты
+
       .b-expert-request__error
-        h5 Не выбраны обязательны компоненты:
+        h5 Не выбраны обязательныe компоненты:
         ul
           li Корпус
           li Материнская плата
           li Процессор
 
-      p Наш эксперт проведет оценку конфигурации и после этого свяжется с вами по указанному адресу электронной почты
+      

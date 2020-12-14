@@ -25,7 +25,7 @@ block inner-content
     .c-configurator__body
       .c-configurator__main
         .c-configurator__items
-          +configurator-items()
+          +configurator-items()(id="configurator-items")
 
         .c-configurator__additional-items
           +configurator-additional()
@@ -41,12 +41,18 @@ block inner-content
       
       .c-configurator__aside
         .c-configurator__aside-plate
+          h5 Modals
+          .button-group
+            a(href="#expert-request-modal" data-popover-title="Отправить на почту").button-gray.js-tippy.js-modal Запрос оценки
+            a(href="#configurator-mail-modal" data-popover-title="Отправить на почту").button-gray.js-tippy.js-modal Отправить на почту
           
-          .c-configurator__obligatory
-            +configurator-obligatory()
+        .c-configurator__aside-plate
+          
+          .c-configurator__mandatory
+            +configurator-mandatory()
 
           .c-configurator__expert
-            a(href="#expert-request-modal" class="c-configurator__consult-button js-modal button-gray text-center" id="configurator-consult" style="width: 100%") Бесплатная оценка специалиста
+            a(href="#expert-request-modal" class="c-configurator__consult-button js-modal button-gray text-center" id="expert-request" style="width: 100%") Бесплатная оценка специалиста
 
           .c-configurator__estimate
             +estimate()
@@ -69,3 +75,4 @@ block inner-content
           +social-btns_aside()
 
     +expert-request()(id="expert-request-modal")
+    +configurator-mail()(id="configurator-mail-modal")

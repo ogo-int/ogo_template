@@ -3,24 +3,26 @@
   &__field {
     @include margin(20/20);
     display: block;
-    font-size: 14/16*100%;
-    color: #333;
-    font-weight: 200;
+    color: #1d1d1d;
+    font-size: rem(13);//14/16*100%;
+    font-weight: 300;
   }
 
   &__field-label {
     @include mbot(10/20);
-    font-weight: 200;
+    color: #7E7E7E;
+    font-weight: 300;
   }
 
   &__field-link {
-    font-weight: 200;
-    color: #969696;
-    text-decoration: none;
-    border-bottom: 1px dotted #969696;
+    font-weight: 300;
+    color: #3E8BDC;
+    text-decoration: underline;// none;
+    border-bottom: none; //1px dotted #969696;
 
     &:hover {
-      border-bottom: 1px dotted #dc3e48;
+      text-decoration: none;
+      border-bottom: none; //1px dotted #dc3e48;
       color: #dc3e48;
     }
   }

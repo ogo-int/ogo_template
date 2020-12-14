@@ -1,8 +1,3 @@
-// comments
-$(function () {
-  // code here...
-});
-
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -29,6 +24,11 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
+
+// comments
+$(function () {
+  // code here...
+});
 
 // Добавить аксессуары
 $(function () {
@@ -1318,6 +1318,23 @@ $(function () {
 
 // }) ();
 // Компоненты конфигуратора
+const $items = $('#configurator-items'),
+      $progress = $('.b-configurator-mandatory'),
+      $progress_text = $progress.find('.b-configurator-mandatory__status'),
+      $progress_bar = $progress.find('.b-configurator-mandatory__progress-bar'),
+      $expert = $('#expert-request');
+
+function checkMandatory() {
+
+}
+
+function configuratorValidate(){
+
+}
+
+$(document).ready(function(){
+  configuratorValidate();
+});
 
 // Дополнительные компоненты конфигуратора
 $(function () {
@@ -1331,6 +1348,21 @@ $(function () {
       },
       minWidth: {
         1000: "_mn1000"
+      }
+    });
+  });
+});
+
+// Выбранные в конфигураторе продукт
+$(function () {
+  $(".b-configurator-product").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        620: "_mx620",
+        415: "_mx415",
+        350: "_mx350"
       }
     });
   });
@@ -1355,6 +1387,37 @@ $(function () {
   });
 });
 
+// Попап запроса оценки эксперта
+$(function () {
+  $(".b-configurator-mail").livequery(function () {
+    var $context = $(this);
+    var $form = $("form", $context);
+
+    function sendChangesToServer(e) {
+      e.preventDefault();
+
+      //if(!checkMandatory())
+      //  return;
+
+      $form.ajaxSubmit({
+        success: function () {
+          $.fancybox.close();
+          $.fancybox.open({
+            href: "#form-success-modal"
+          });
+          console.log("good");
+        },
+
+        error: function () {
+          console.log("bad");
+        }
+      });
+    }
+
+    $form.on("submit", function(e) {sendChangesToServer(e);});
+
+  });
+});
 // Ссылка на конфигуратор
 $(function () {
   $(".b-configurator-link").livequery(function () {
@@ -1398,21 +1461,7 @@ $(function () {
   });
 });
 // Конфигуратор - прогрессбар
-function configuratorProgress() {
-  const $statsProgress = $('.b-configurator-obligatory__progress-bar');
-  $statsProgress.each(function () {
-    progressValue = $(this).data('value');
-    $(this).css('width', progressValue + '%');
-  })
-}
-$(document).ready(function(){
-  configuratorProgress();
-});
 
-// Плейсхолдер в конфигураторе
-$(function () {
-
-});
 
 // Выбранные в конфигураторе продукт
 $(function () {
@@ -1429,9 +1478,9 @@ $(function () {
   });
 });
 
-// comments
+// Плейсхолдер в конфигураторе
 $(function () {
-  // code here...
+
 });
 
 // comments
@@ -1476,6 +1525,11 @@ $(function () {
 
   });
 });
+// comments
+$(function () {
+  // code here...
+});
+
 // Календарь
 $(function () {
   $(".b-datepicker").livequery(function () {
@@ -1958,6 +2012,13 @@ $(function () {
     });
   });
 });
+// Список вопросов в ЛК
+$(function () {
+  $(".b-faq-list").livequery(function() {
+    var $context = $(this);
+  });
+});
+
 // Блок вопрос-ответ
 $(function () {
   $(".b-faq-block").livequery(function () {
@@ -2042,26 +2103,6 @@ $(function () {
   });
 });
 
-// Список вопросов в ЛК
-$(function () {
-  $(".b-faq-list").livequery(function() {
-    var $context = $(this);
-  });
-});
-
-// Купить в 1 клик
-$(function () {
-  $(".b-fast-buy").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        620: "_mx620"
-      }
-    });
-  });
-});
-
 // Преимущества
 $(function () {
   $(".b-features").livequery(function () {
@@ -2123,17 +2164,14 @@ $(function () {
   });
 });
 
-// Форма добавления адреса
+// Купить в 1 клик
 $(function () {
-  $(".b-feedback-form").livequery(function () {
+  $(".b-fast-buy").livequery(function () {
     var $context = $(this);
-    var $townInput = $(".b-feedback-form__town-input", $context);
 
     $context.adaptBlock({
       maxWidth: {
-        500: "_mx500"
-      },
-      minWidth: {
+        620: "_mx620"
       }
     });
   });
@@ -2269,6 +2307,22 @@ $(function () {
       maxWidth: {
         610: "_mx610",
         480: "_mx480"
+      }
+    });
+  });
+});
+
+// Форма добавления адреса
+$(function () {
+  $(".b-feedback-form").livequery(function () {
+    var $context = $(this);
+    var $townInput = $(".b-feedback-form__town-input", $context);
+
+    $context.adaptBlock({
+      maxWidth: {
+        500: "_mx500"
+      },
+      minWidth: {
       }
     });
   });
@@ -2797,11 +2851,6 @@ $(function () {
     });
   });
 });
-// comments
-$(function () {
-  // code here...
-});
-
 // Что нужно знать перед покупкой
 $(function () {
   $(".b-know-how").livequery(function () {
@@ -2833,6 +2882,11 @@ $(function () {
       }
     });
   });
+});
+
+// comments
+$(function () {
+  // code here...
 });
 
 // comments
@@ -2893,6 +2947,21 @@ $(function () {
   });
 });
 
+// Ключевые преимущества
+$(function () {
+  $(".b-main-advantages").livequery(function() {
+    var $context = $(this);
+    var $itemsHolder = $(".b-main-advantages__items", $context);
+
+    $context.adaptBlock({
+      maxWidth: {
+        1000: "_mx1000",
+        480: "_mx480"
+      }
+    });
+  });
+});
+
 // Слайдер логотипов партнеров
 $(function () {
   $(".b-logo-tape").livequery(function () {
@@ -2938,21 +3007,6 @@ $(function () {
     });
   });
 });
-// Ключевые преимущества
-$(function () {
-  $(".b-main-advantages").livequery(function() {
-    var $context = $(this);
-    var $itemsHolder = $(".b-main-advantages__items", $context);
-
-    $context.adaptBlock({
-      maxWidth: {
-        1000: "_mx1000",
-        480: "_mx480"
-      }
-    });
-  });
-});
-
 // Блок консультанта на главной
 $(function () {
   $(".b-main-consult").livequery(function () {
@@ -3100,66 +3154,6 @@ $(function () {
         960: "_mx960",
         740: "_mx740",
         475: "_mx475"
-      }
-    });
-  });
-});
-
-// Список салонов на карте
-$(function () {
-  $(".b-map-contacts").livequery(function () {
-    var $context = $(this);
-    //var $cols = $(".b-map-contacts__cols", $context); не используется
-    var $shops = $(".b-shops-list__shop", $context);
-    var $map = $(".b-ymap");
-
-    //function equalize () {
-    //  $cols.css("height", "");
-    //  setTimeout(function () {
-    //    $cols.css("height", $cols.height());
-    //  }, 200);
-    //}
-
-    function fillMap() {
-      $shops.each(function () {
-        var $shop = $(this);
-        $map.trigger("resetPlacemarks.block");
-        setTimeout(function () {
-          $map.trigger("setPlacemark.block",[{
-            key: $shop.data('coords'),
-            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
-            address: $(".b-shops-list__shop-address", $shop).html(),
-            metro: $shop.children('.b-shops-list__shop-title').html(),
-            coords: $shop.data("coords").split(","),
-            phone: $(".b-shops-list__shop-phone", $shop).html(),
-            hours: $(".b-shops-list__shop-hours", $shop).html(),
-            link: $shop.data("link")
-          }]);
-        }, 300);
-      });
-      
-    }
-
-    function showShop() {
-      var thisCoordsString = $(this).data('coords');
-      $map.trigger(
-        'setCenter.block',
-        [thisCoordsString.split(','), 14, thisCoordsString],
-      );
-      return false;
-    }
-
-    $shops.on("click", showShop);
-
-    //equalize();
-    //$(window).on("resize", equalize);
-    //$context.on("resize.block", equalize);
-
-    $map.on("mapReady.block", fillMap);
-
-    $context.adaptBlock({
-      maxWidth: {
-        880: "_mx880"
       }
     });
   });
@@ -3719,6 +3713,66 @@ $(function () {
   // code here...
 });
 
+// Список салонов на карте
+$(function () {
+  $(".b-map-contacts").livequery(function () {
+    var $context = $(this);
+    //var $cols = $(".b-map-contacts__cols", $context); не используется
+    var $shops = $(".b-shops-list__shop", $context);
+    var $map = $(".b-ymap");
+
+    //function equalize () {
+    //  $cols.css("height", "");
+    //  setTimeout(function () {
+    //    $cols.css("height", $cols.height());
+    //  }, 200);
+    //}
+
+    function fillMap() {
+      $shops.each(function () {
+        var $shop = $(this);
+        $map.trigger("resetPlacemarks.block");
+        setTimeout(function () {
+          $map.trigger("setPlacemark.block",[{
+            key: $shop.data('coords'),
+            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
+            address: $(".b-shops-list__shop-address", $shop).html(),
+            metro: $shop.children('.b-shops-list__shop-title').html(),
+            coords: $shop.data("coords").split(","),
+            phone: $(".b-shops-list__shop-phone", $shop).html(),
+            hours: $(".b-shops-list__shop-hours", $shop).html(),
+            link: $shop.data("link")
+          }]);
+        }, 300);
+      });
+      
+    }
+
+    function showShop() {
+      var thisCoordsString = $(this).data('coords');
+      $map.trigger(
+        'setCenter.block',
+        [thisCoordsString.split(','), 14, thisCoordsString],
+      );
+      return false;
+    }
+
+    $shops.on("click", showShop);
+
+    //equalize();
+    //$(window).on("resize", equalize);
+    //$context.on("resize.block", equalize);
+
+    $map.on("mapReady.block", fillMap);
+
+    $context.adaptBlock({
+      maxWidth: {
+        880: "_mx880"
+      }
+    });
+  });
+});
+
 // comments
 $(function () {
   // code here...
@@ -3809,19 +3863,6 @@ $(function () {
         780: "_mx780",
         590: "_mx590",
         479: "_mx479"
-      }
-    });
-  });
-});
-
-// Получатель заказа
-$(function () {
-  $(".b-order-recipient").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        520: "_mx520"
       }
     });
   });
@@ -4993,6 +5034,19 @@ $(".shop-slider-nav").slick({
 
 });
 
+// Получатель заказа
+$(function () {
+  $(".b-order-recipient").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        520: "_mx520"
+      }
+    });
+  });
+});
+
 // comments
 $(function () {
   // code here...
@@ -5435,14 +5489,6 @@ $(function () {
   });
 });
 
-// Выбор города
-$(function () {
-  $(".b-town-select").livequery(function () {
-    var $context = $(this);
-
-  });
-});
-
 // Форма выбора города
 $(function () {
   $(".b-town-modal").livequery(function () {
@@ -5453,6 +5499,14 @@ $(function () {
         450: "_mx450"
       }
     });
+  });
+});
+
+// Выбор города
+$(function () {
+  $(".b-town-select").livequery(function () {
+    var $context = $(this);
+
   });
 });
 
