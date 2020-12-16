@@ -1,3 +1,8 @@
+// comments
+$(function () {
+  // code here...
+});
+
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -24,11 +29,6 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
-
-// comments
-$(function () {
-  // code here...
-});
 
 // Добавить аксессуары
 $(function () {
@@ -1318,24 +1318,95 @@ $(function () {
 
 // }) ();
 // Компоненты конфигуратора
-const $items = $('#configurator-items'),
-      $progress = $('.b-configurator-mandatory'),
-      $progress_text = $progress.find('.b-configurator-mandatory__status'),
-      $progress_bar = $progress.find('.b-configurator-mandatory__progress-bar'),
-      $expert = $('#expert-request');
+function configurator() {
+  const $configurator = $('.c-configurator'),
+      // ось и сборка не учитываются
+      $items = $configurator.find('.b-configurator-items__item').not('.b-configurator-items__item._custom'),
+      //$progressText = $configurator.find('.b-configurator-mandatory__status'),
+      $progressBar = $configurator.find('.b-configurator-mandatory__progress'),
+      $expertButton = $configurator.find('#expert-request');
+  
+  let compatible = false,
+      required = true,
+      complete = false;
 
-function checkMandatory() {
+  // количество заполненных элементов  * 100 / всего элементов = прогресс в %
+  function setProgressValue() {
+    let itemsSelected = 0;
+    $items.each(function(){
+      if ($(this).find('.b-configurator-product').length) itemsSelected++
+    })
+    $progressBar.val(Math.round(itemsSelected * 100 / $items.length));
+  }
 
-}
+  // если есть элементы с data-compatible=false, то класс прогрессбара = _incompatible
+  // оверкилл: считаем количество несовместимых элементов, может быть пригодится
+  function checkCompatible() {
+    let itemsIncompatible = 0;
+    $items.each(function(){
+      if ($(this).data('compatible') == false) {
+        if ($(this).find('.b-configurator-product').length != 0) {
+          itemsIncompatible++
+          console.log('Несовместимо: ' + itemsIncompatible);
+        }
+      }
+    })
 
-function configuratorValidate(){
+    if (itemsIncompatible > 0) {
+      compatible = false;
+      $progressBar.addClass('_incompatible');
+    } else {
+      compatible = true;
+      $progressBar.removeClass('_incompatible');
+    }
 
+  }
+
+  // проверим обязательные элементы
+  function checkRequired() {
+    let itemsRequired = 0;
+    $items.each(function(){
+      if ($(this).data('mandatory') == true) {
+        if ($(this).find('.b-configurator-product').length == 0) {
+          itemsRequired++
+          console.log('Обязательно еще: ' + itemsRequired);
+        }
+      }
+    })
+
+    if (itemsRequired > 0) {
+      required = true;
+      $progressBar.addClass('_required');
+    } else {
+      required = false;
+      $progressBar.removeClass('_required');
+    }
+    //console.log(itemsRequired)
+  }
+
+  // проверим полное заполнение
+  function checkComplete(compatible, required) {
+    if (compatible == true) {
+      $progressBar.removeClass('_incompatible');
+    }
+    if (required == false) {
+      $progressBar.removeClass('_required');
+    }
+    if ( (compatible == true) && (required == false)) {
+      $progressBar.addClass('_complete');
+      $expertButton.attr('disabled', false).removeClass('_disabled');
+    }
+  }
+  
+  setProgressValue();
+  checkCompatible();
+  checkRequired();
+  checkComplete(compatible, required);
 }
 
 $(document).ready(function(){
-  configuratorValidate();
+  configurator();
 });
-
 // Дополнительные компоненты конфигуратора
 $(function () {
   $(".b-configurator-additional").livequery(function () {
@@ -1353,19 +1424,9 @@ $(function () {
   });
 });
 
-// Выбранные в конфигураторе продукт
+// Другие элементы конфигуратора
 $(function () {
-  $(".b-configurator-product").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        620: "_mx620",
-        415: "_mx415",
-        350: "_mx350"
-      }
-    });
-  });
+ 
 });
 
 // Список товаров конфигуратора
@@ -1387,37 +1448,6 @@ $(function () {
   });
 });
 
-// Попап запроса оценки эксперта
-$(function () {
-  $(".b-configurator-mail").livequery(function () {
-    var $context = $(this);
-    var $form = $("form", $context);
-
-    function sendChangesToServer(e) {
-      e.preventDefault();
-
-      //if(!checkMandatory())
-      //  return;
-
-      $form.ajaxSubmit({
-        success: function () {
-          $.fancybox.close();
-          $.fancybox.open({
-            href: "#form-success-modal"
-          });
-          console.log("good");
-        },
-
-        error: function () {
-          console.log("bad");
-        }
-      });
-    }
-
-    $form.on("submit", function(e) {sendChangesToServer(e);});
-
-  });
-});
 // Ссылка на конфигуратор
 $(function () {
   $(".b-configurator-link").livequery(function () {
@@ -1460,8 +1490,44 @@ $(function () {
     });
   });
 });
+// Попап запроса оценки эксперта
+$(function () {
+  $(".b-configurator-mail").livequery(function () {
+    var $context = $(this);
+    var $form = $("form", $context);
+
+    function sendChangesToServer(e) {
+      e.preventDefault();
+
+      //if(!checkMandatory())
+      //  return;
+
+      $form.ajaxSubmit({
+        success: function () {
+          $.fancybox.close();
+          $.fancybox.open({
+            href: "#form-success-modal"
+          });
+          console.log("good");
+        },
+
+        error: function () {
+          console.log("bad");
+        }
+      });
+    }
+
+    $form.on("submit", function(e) {sendChangesToServer(e);});
+
+  });
+});
 // Конфигуратор - прогрессбар
 
+
+// Плейсхолдер в конфигураторе
+$(function () {
+
+});
 
 // Выбранные в конфигураторе продукт
 $(function () {
@@ -1478,9 +1544,9 @@ $(function () {
   });
 });
 
-// Плейсхолдер в конфигураторе
+// comments
 $(function () {
-
+  // code here...
 });
 
 // comments
@@ -1525,11 +1591,6 @@ $(function () {
 
   });
 });
-// comments
-$(function () {
-  // code here...
-});
-
 // Календарь
 $(function () {
   $(".b-datepicker").livequery(function () {
@@ -2012,13 +2073,6 @@ $(function () {
     });
   });
 });
-// Список вопросов в ЛК
-$(function () {
-  $(".b-faq-list").livequery(function() {
-    var $context = $(this);
-  });
-});
-
 // Блок вопрос-ответ
 $(function () {
   $(".b-faq-block").livequery(function () {
@@ -2103,6 +2157,26 @@ $(function () {
   });
 });
 
+// Список вопросов в ЛК
+$(function () {
+  $(".b-faq-list").livequery(function() {
+    var $context = $(this);
+  });
+});
+
+// Купить в 1 клик
+$(function () {
+  $(".b-fast-buy").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        620: "_mx620"
+      }
+    });
+  });
+});
+
 // Преимущества
 $(function () {
   $(".b-features").livequery(function () {
@@ -2164,14 +2238,17 @@ $(function () {
   });
 });
 
-// Купить в 1 клик
+// Форма добавления адреса
 $(function () {
-  $(".b-fast-buy").livequery(function () {
+  $(".b-feedback-form").livequery(function () {
     var $context = $(this);
+    var $townInput = $(".b-feedback-form__town-input", $context);
 
     $context.adaptBlock({
       maxWidth: {
-        620: "_mx620"
+        500: "_mx500"
+      },
+      minWidth: {
       }
     });
   });
@@ -2307,22 +2384,6 @@ $(function () {
       maxWidth: {
         610: "_mx610",
         480: "_mx480"
-      }
-    });
-  });
-});
-
-// Форма добавления адреса
-$(function () {
-  $(".b-feedback-form").livequery(function () {
-    var $context = $(this);
-    var $townInput = $(".b-feedback-form__town-input", $context);
-
-    $context.adaptBlock({
-      maxWidth: {
-        500: "_mx500"
-      },
-      minWidth: {
       }
     });
   });
@@ -2851,6 +2912,11 @@ $(function () {
     });
   });
 });
+// comments
+$(function () {
+  // code here...
+});
+
 // Что нужно знать перед покупкой
 $(function () {
   $(".b-know-how").livequery(function () {
@@ -2882,11 +2948,6 @@ $(function () {
       }
     });
   });
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -2947,21 +3008,6 @@ $(function () {
   });
 });
 
-// Ключевые преимущества
-$(function () {
-  $(".b-main-advantages").livequery(function() {
-    var $context = $(this);
-    var $itemsHolder = $(".b-main-advantages__items", $context);
-
-    $context.adaptBlock({
-      maxWidth: {
-        1000: "_mx1000",
-        480: "_mx480"
-      }
-    });
-  });
-});
-
 // Слайдер логотипов партнеров
 $(function () {
   $(".b-logo-tape").livequery(function () {
@@ -3007,6 +3053,21 @@ $(function () {
     });
   });
 });
+// Ключевые преимущества
+$(function () {
+  $(".b-main-advantages").livequery(function() {
+    var $context = $(this);
+    var $itemsHolder = $(".b-main-advantages__items", $context);
+
+    $context.adaptBlock({
+      maxWidth: {
+        1000: "_mx1000",
+        480: "_mx480"
+      }
+    });
+  });
+});
+
 // Блок консультанта на главной
 $(function () {
   $(".b-main-consult").livequery(function () {
@@ -3154,6 +3215,66 @@ $(function () {
         960: "_mx960",
         740: "_mx740",
         475: "_mx475"
+      }
+    });
+  });
+});
+
+// Список салонов на карте
+$(function () {
+  $(".b-map-contacts").livequery(function () {
+    var $context = $(this);
+    //var $cols = $(".b-map-contacts__cols", $context); не используется
+    var $shops = $(".b-shops-list__shop", $context);
+    var $map = $(".b-ymap");
+
+    //function equalize () {
+    //  $cols.css("height", "");
+    //  setTimeout(function () {
+    //    $cols.css("height", $cols.height());
+    //  }, 200);
+    //}
+
+    function fillMap() {
+      $shops.each(function () {
+        var $shop = $(this);
+        $map.trigger("resetPlacemarks.block");
+        setTimeout(function () {
+          $map.trigger("setPlacemark.block",[{
+            key: $shop.data('coords'),
+            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
+            address: $(".b-shops-list__shop-address", $shop).html(),
+            metro: $shop.children('.b-shops-list__shop-title').html(),
+            coords: $shop.data("coords").split(","),
+            phone: $(".b-shops-list__shop-phone", $shop).html(),
+            hours: $(".b-shops-list__shop-hours", $shop).html(),
+            link: $shop.data("link")
+          }]);
+        }, 300);
+      });
+      
+    }
+
+    function showShop() {
+      var thisCoordsString = $(this).data('coords');
+      $map.trigger(
+        'setCenter.block',
+        [thisCoordsString.split(','), 14, thisCoordsString],
+      );
+      return false;
+    }
+
+    $shops.on("click", showShop);
+
+    //equalize();
+    //$(window).on("resize", equalize);
+    //$context.on("resize.block", equalize);
+
+    $map.on("mapReady.block", fillMap);
+
+    $context.adaptBlock({
+      maxWidth: {
+        880: "_mx880"
       }
     });
   });
@@ -3713,66 +3834,6 @@ $(function () {
   // code here...
 });
 
-// Список салонов на карте
-$(function () {
-  $(".b-map-contacts").livequery(function () {
-    var $context = $(this);
-    //var $cols = $(".b-map-contacts__cols", $context); не используется
-    var $shops = $(".b-shops-list__shop", $context);
-    var $map = $(".b-ymap");
-
-    //function equalize () {
-    //  $cols.css("height", "");
-    //  setTimeout(function () {
-    //    $cols.css("height", $cols.height());
-    //  }, 200);
-    //}
-
-    function fillMap() {
-      $shops.each(function () {
-        var $shop = $(this);
-        $map.trigger("resetPlacemarks.block");
-        setTimeout(function () {
-          $map.trigger("setPlacemark.block",[{
-            key: $shop.data('coords'),
-            type: $shop.closest(".b-shops-list__group").find(".b-shops-list__group-name").data("map-title"),
-            address: $(".b-shops-list__shop-address", $shop).html(),
-            metro: $shop.children('.b-shops-list__shop-title').html(),
-            coords: $shop.data("coords").split(","),
-            phone: $(".b-shops-list__shop-phone", $shop).html(),
-            hours: $(".b-shops-list__shop-hours", $shop).html(),
-            link: $shop.data("link")
-          }]);
-        }, 300);
-      });
-      
-    }
-
-    function showShop() {
-      var thisCoordsString = $(this).data('coords');
-      $map.trigger(
-        'setCenter.block',
-        [thisCoordsString.split(','), 14, thisCoordsString],
-      );
-      return false;
-    }
-
-    $shops.on("click", showShop);
-
-    //equalize();
-    //$(window).on("resize", equalize);
-    //$context.on("resize.block", equalize);
-
-    $map.on("mapReady.block", fillMap);
-
-    $context.adaptBlock({
-      maxWidth: {
-        880: "_mx880"
-      }
-    });
-  });
-});
-
 // comments
 $(function () {
   // code here...
@@ -3863,6 +3924,19 @@ $(function () {
         780: "_mx780",
         590: "_mx590",
         479: "_mx479"
+      }
+    });
+  });
+});
+
+// Получатель заказа
+$(function () {
+  $(".b-order-recipient").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        520: "_mx520"
       }
     });
   });
@@ -5032,19 +5106,6 @@ $(".shop-slider-nav").slick({
     },        
   }]
 
-});
-
-// Получатель заказа
-$(function () {
-  $(".b-order-recipient").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        520: "_mx520"
-      }
-    });
-  });
 });
 
 // comments

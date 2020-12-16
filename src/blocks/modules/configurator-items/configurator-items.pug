@@ -1,7 +1,10 @@
 mixin configurator-items()
   .b-configurator-items.iblock&attributes(attributes)
     ul.b-configurator-items__list
-      li.b-configurator-items__item(data-mandatory="true" data-compatible="true")
+      // data-mandatory - обязательные элементы, проверяются тут на наличие внутри .b-configurator-product
+      // data-compatible - совместимость комплектующих, все должны быть true 
+
+      li.b-configurator-items__item(data-mandatory="false" data-compatible="true")
         .b-configurator-items__hat
           .b-configurator-items__name
             span.b-configurator-items__name-icon._checked
@@ -14,7 +17,7 @@ mixin configurator-items()
         .b-configurator-items__contain
           +configurator-product()
 
-      li.b-configurator-items__item(data-mandatory="false" data-compatible="false")
+      li.b-configurator-items__item(data-mandatory="false" data-compatible="true")
         .b-configurator-items__hat
           .b-configurator-items__name
             span.b-configurator-items__name-icon._checked
@@ -27,7 +30,7 @@ mixin configurator-items()
         .b-configurator-items__contain
           +configurator-product-alt()
 
-      li.b-configurator-items__item(data-mandatory="true" data-compatible="true")._empty
+      li.b-configurator-items__item(data-mandatory="false" data-compatible="false")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
             span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
@@ -36,7 +39,7 @@ mixin configurator-items()
         .b-configurator-items__contain
           +configurator-placeholder("assets/img/configurator/motherboard.svg", "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi enim eum commodi nemo, odit corrupti voluptate in laborum velit blanditiis sint, perferendis deserunt magnam qui quam temporibus accusantium at ut.")
 
-      li.b-configurator-items__item(data-mandatory="true" data-compatible="true")._empty
+      li.b-configurator-items__item(data-mandatory="false" data-compatible="true")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
             span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
@@ -61,7 +64,7 @@ mixin configurator-items()
         .b-configurator-items__contain
           +configurator-placeholder("assets/img/configurator/ram.svg", "Необходима для хранения временных файлов операционной системы и пользовательских программ. Недостаточный объем RAM-памяти — причина некорректной работы приложений")
       
-      li.b-configurator-items__item(data-mandatory="true" data-compatible="true")._empty
+      li.b-configurator-items__item(data-mandatory="false" data-compatible="true")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
             span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")

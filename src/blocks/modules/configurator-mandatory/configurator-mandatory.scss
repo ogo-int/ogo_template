@@ -7,7 +7,9 @@
     line-height: 1.22;
   }
   &__status {
-    margin-bottom: 10px;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
     color: #1d1d1d;
     font-size: rem(14);
     font-weight: 300;
@@ -19,6 +21,7 @@
     width: 100%;
     flex: auto;
     height: 26px;
+    margin-top: 10px;
     overflow: hidden;
     -webkit-appearance: none;
        -moz-appearance: none;
@@ -32,14 +35,21 @@
     &::-webkit-progress-bar {
       background: #f1f1f1;
     }
+    &::-webkit-progress-value {
+      transition: width 0.25s ease-out;
+    }
+    ._complete {
+      color:  #3E8BDC;
+    }
     ._required {
       color: #E96263; 
     }
     ._incompatible {
       color: #FEBF00;
     }
-    ._complete {
-      color:  #3E8BDC;
+    
+    &._complete::-webkit-progress-value {
+      background: #3E8BDC;
     }
     &._required::-webkit-progress-value {
       background: #E96263;
@@ -47,20 +57,21 @@
     &._incompatible::-webkit-progress-value {
       background: #FEBF00;
     }
-    &._complete::-webkit-progress-value {
+    
+    &._complete::-moz-progress-bar {
       background: #3E8BDC;
     }
-
     &._required::-moz-progress-bar {
       background: #E96263;
     }
     &._incompatible::-moz-progress-bar {
       background: #FEBF00;
     }
-    &._complete::-moz-progress-bar {
-      background: #3E8BDC;
+    
+    &._complete::-ms-fill {
+      border: none;
+      background-color: #3E8BDC;
     }
-
     &._required::-ms-fill {
       border: none;
       background-color: #E96263;
@@ -69,10 +80,7 @@
       border: none;
       background-color: #FEBF00;
     }
-    &._complete::-ms-fill {
-      border: none;
-      background-color: #3E8BDC;
-    }
+    
 
     &-bar {
       position: absolute;
