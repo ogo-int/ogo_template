@@ -256,7 +256,9 @@
     &__aside-total {
       display: block;
     }
-
+    &__aside-guarantee {
+      display: block;
+    }
     //&__link {
     //  display: none;
     //}
@@ -321,7 +323,7 @@
     }
 
     &__bottom-section {
-      display: block;
+      display: none;
     }
 
     &__estimate {

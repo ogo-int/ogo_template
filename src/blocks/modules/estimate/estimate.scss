@@ -76,6 +76,19 @@
       }
     }
   }
+  @include w480 {
+    .c-configurator__aside & {
+      &__item {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+        width: 100%;
+        &-name:after {
+          display: inline-flex;
+        }
+      }
+    }
+  }
 
   .c-configurator__bottom-section & {
     width: 100%;
