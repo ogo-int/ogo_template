@@ -1,6 +1,7 @@
 /* Конфигуратор */
 .c-configurator {
   @include box-sizing;
+
   *,
   *:before,
   *:after {
@@ -12,53 +13,59 @@
     flex-flow: row nowrap;
     justify-content: space-between;
     padding: 0 35px 35px 35px;
+
     .c-configurator__aside {
       text-align: right;
     }
   }
+
   &__body {
     display: flex;
     flex-flow: row nowrap;
     padding: 35px;
     background: #F8F8F8;
   }
-  
+
   &__main {
     flex: 2 2 calc(66.666% - 14px);
     max-width: calc(66.666% - 14px);
     margin: 0 14px 0 0;
+
     &-plate {
       @include mmtop(14px);
       padding: 20px;
       border: 1px solid #F1F1F1;
-      background: #fff; 
+      background: #fff;
     }
   }
 
   &__aside {
     flex: 1 1 33.333%;
     max-width: 33.333%;
+
     &-plate {
       @include mmtop(14px);
       padding: 15px;
       border: 1px solid #F1F1F1;
-      background: #fff; 
+      background: #fff;
     }
   }
-  
+
   &__additional-items {
     margin: 14px 0;
     border: 1px solid #F1F1F1;
-    background: #fff; 
+    background: #fff;
   }
+
   &__bottom-section {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
     padding: 20px;
     border: 1px solid #F1F1F1;
-    background: #fff; 
+    background: #fff;
   }
+
   &__bottom-right,
   &__bottom-left {
     flex: 1 0 auto;
@@ -86,6 +93,7 @@
     //  height: 100%;
     //}
   }
+
   &__bottom-guarantee,
   &__aside-guarantee {
     color: #7e7e7e;
@@ -93,22 +101,26 @@
     font-weight: 300;
     line-height: 1.46;
     background: none;
+
     &:before {
       @include ft-icon($ft-shield);
       margin-right: 7px;
       font-size: 1.25em;
     }
   }
+
   &__aside-guarantee {
     margin: 14px 0 0 0;
     padding: 0;
   }
+
   &__bottom-guarantee {
     margin-top: 3px;
   }
+
   &__save {
-    @include margin(10/20)
-      padding: 20px;
+    @include margin(10/20);
+    padding: 20px;
     background-color: #fff;
   }
 
@@ -128,8 +140,52 @@
   &__consult {
     @include margin(20/20);
   }
+
   &__expert {
     margin-bottom: 14px;
+  }
+
+  .tippy {
+    &-arrow {
+      color: #fff;
+    }
+
+    &-box {
+      color: #1d1d1d;
+      background: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      &[data-theme~=tooltip] {
+        .tippy-title {
+          font-weight: 400;
+        }
+        .tippy-content {
+          min-width: auto;
+          padding: 5px 10px;
+        }
+      }
+    }
+
+    &-close {
+      top: 10px;
+      right: 10px;
+    }
+
+    &-content {
+      min-width: 250px;
+      padding: 20px 20px;
+      color: #1d1d1d;
+      font-size: rem(14);
+      font-weight: 400;
+    }
+
+    &-title {
+      margin: 0;
+      padding: 0;
+      color: #1d1d1d;
+      font-size: rem(14);
+      font-weight: 600;
+      line-height: rem(20);
+    }
   }
 }
 
@@ -138,13 +194,16 @@
     &__body {
       padding: 15px;
     }
+
     &__header {
       padding-bottom: 15px;
     }
+
     &__main {
       flex: 3 3 calc(75% - 14px);
       max-width: calc(75% - 14px);
     }
+
     &__aside {
       flex: 1 1 25%;
       max-width: 25%;
@@ -157,25 +216,30 @@
     &__header {
       padding: 15px;
     }
-    
+
     &__body {
       padding: 15px;
     }
+
     &__main {
       flex: 2 2 calc(66.666% - 14px);
       max-width: calc(66.666% - 14px);
     }
+
     &__aside {
       flex: 1 1 33.333%;
       max-width: 33.333%;
     }
+
     &__bottom-left,
     &__bottom-right {
       flex: 1 0 100%;
     }
+
     &__bottom-left {
       margin-bottom: 14px;
     }
+
     //&__cols {
     //  padding: 20px;
     //}
@@ -221,24 +285,29 @@
 
 @media #{$media-phone-landscape} {
   .c-configurator {
+
     &__body,
     &__header {
       flex-flow: column nowrap;
     }
+
     &__header {
       .c-configurator__aside {
         text-align: left;
       }
     }
+
     &__main {
       flex: 1 0 100%;
       max-width: 100%;
       margin: 0 0 14px 0;
     }
+
     &__aside {
       flex: 1 0 100%;
       max-width: 100%;
     }
+
     &__save {
       float: none;
       width: auto;
@@ -280,24 +349,29 @@
       flex: 1;
       margin-bottom: 0;
     }
+
     &__aside {
       flex: 1 1 100%;
       margin-right: -15px;
       margin-left: -15px;
       max-width: calc(100% + 30px);
+
       &-plate {
         @include mmtop(0);
         border-right: none;
         border-left: none;
+
         &:not(:first-child) {
           border-top: none;
         }
       }
     }
+
     &__bottom-section {
       display: none;
       padding: 15px;
     }
+
     &__cols {
       padding: 5px;
     }

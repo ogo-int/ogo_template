@@ -803,7 +803,7 @@ html.touch {
 
 .select2-container {
   font-size: 14px;
-
+  z-index: 9998;
   .select2-selection {
     height: 35px;
     border: 2px solid #e5e5e5;

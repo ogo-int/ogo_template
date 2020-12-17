@@ -5,7 +5,6 @@
 @import 'helpers/css3-mixins';
 @import 'helpers/mixins';
 
-
 .full-width {
   padding-left: 35px;
   padding-right: 35px;
@@ -17,9 +16,6 @@
 }
 .hide {
   display: none;
-}
-.text-left {
-  text-align: left;
 }
 .show-for-large {
   display: revert;
@@ -76,6 +72,7 @@
 }
 /*Селекты*/
 .select2-container {
+  z-index: 9998;
   .select2-results {
     &__option {
       position: relative;
@@ -93,13 +90,16 @@
 .text-center {
   text-align: center;
 }
-
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 /* endof global.css*/
-
 
 /* Компоненты */
 @import '../blocks/components/configurator';
-
 /* endof Компоненты */
 
 /* Блоки */

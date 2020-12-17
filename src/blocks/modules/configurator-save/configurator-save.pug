@@ -6,13 +6,13 @@ mixin configurator-save()
         input.b-configurator-save__input(type="text" placeholder="Мой компьютер #47089")
       fieldset.b-configurator-save__btn-holder
         button(type="submit").b-configurator-save__btn.button-gray Сохранить
-        button(type="button" data-popover-title="Скачать").b-configurator__btn.button-gray.js-tippy
+        button(type="button" data-popover-title="Скачать").b-configurator__btn.button-gray.js-tooltip
           span.icon.icon-download
-        button(type="button" data-popover-title="Копировать ссылку").b-configurator__btn.button-gray.js-tippy
+        button(type="button" data-popover-title="Копировать ссылку").b-configurator__btn.button-gray.js-tooltip
           span.icon.icon-link
-        a(href="#configurator-mail-modal" data-popover-title="Отправить на почту").b-configurator__btn.button-gray.js-tippy.js-modal
+        a(href="#configurator-mail-modal" data-popover-title="Отправить на почту").b-configurator__btn.button-gray.js-tooltip.js-modal
           span.icon.icon-mail
-        button(type="button" data-popover-title="Распечатать").b-configurator__btn.button-gray.js-tippy
+        button(type="button" data-popover-title="Распечатать").b-configurator__btn.button-gray.js-tooltip
           span.icon.icon-printer
 
 mixin configurator-saved()

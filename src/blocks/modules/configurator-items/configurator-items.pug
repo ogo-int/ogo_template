@@ -25,7 +25,7 @@ mixin configurator-items()
             span.b-configurator-items__name-require Обязательный компонент
             .b-configurator-items__labels
               .b-product-marks
-                span.b-product-mark.b-product-mark--alert Не совместим
+                span.b-product-mark.b-product-mark--alert.js-tippy(data-popover-title="Не совместим с:" data-popover-content="Материнская плата Gigabyte B450 AORUS Pro Socket-AM4 AMD B450 4xDDR4, 6xSATA3, RAID, 2xM.2, ATX Ret") Не совместим
 
         .b-configurator-items__contain
           +configurator-product-alt()
@@ -33,7 +33,7 @@ mixin configurator-items()
       li.b-configurator-items__item(data-mandatory="false" data-compatible="false")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
-            span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
+            span.b-configurator-items__name-icon._required.js-tooltip(data-popover-title="Обязательный&nbsp;компонент")
             span.b-configurator-items__name-text Материнская плата
             span.b-configurator-items__name-require Обязательный компонент
         .b-configurator-items__contain
@@ -42,7 +42,7 @@ mixin configurator-items()
       li.b-configurator-items__item(data-mandatory="false" data-compatible="true")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
-            span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
+            span.b-configurator-items__name-icon._required.js-tooltip(data-popover-title="Обязательный&nbsp;компонент")
             span.b-configurator-items__name-text Процессор
             span.b-configurator-items__name-require Обязательный компонент
         .b-configurator-items__contain
@@ -67,7 +67,7 @@ mixin configurator-items()
       li.b-configurator-items__item(data-mandatory="false" data-compatible="true")._empty
         .b-configurator-items__hat
           .b-configurator-items__name
-            span.b-configurator-items__name-icon._required.js-tippy(data-popover-title="Обязательный компонент")
+            span.b-configurator-items__name-icon._required.js-tooltip(data-popover-title="Обязательный&nbsp;компонент")
             span.b-configurator-items__name-text Жесткий диск
             span.b-configurator-items__name-require Обязательный компонент
         .b-configurator-items__contain
