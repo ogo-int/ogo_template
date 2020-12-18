@@ -1,0 +1,14 @@
+mixin configurator-mail()
+  .b-configurator-mail.iblock&attributes(attributes)
+    .b-configurator-mail__caption Отправка конфигурации на&nbsp;почту
+    .b-configurator-mail__content
+      form(action='#' data-validate='Y')
+        .b-configurator-mail__fields-row
+          label.b-simple-form__field
+            .b-simple-form__field-label Ваша электронная почта
+            .b-simple-form__field-inputs
+              input.email(type="email" name="email" required)
+          .b-simple-form__field
+            .b-simple-form__field-inputs
+              .b-simple-form__field-label &nbsp;
+              button.button-gray(type="submit") Отправить

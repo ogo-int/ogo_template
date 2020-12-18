@@ -4,10 +4,7 @@
   background-color: unset;
   background: none;
   border-bottom: 1px solid #f1f1f1;
-  .c-configurator__bottom-section & {
-    width: 100%;
-    margin-top: 0;
-  }
+  
   &__title {
     margin-bottom: 10px;
     font-size: rem(18);
@@ -35,7 +32,9 @@
 
   &__item-name {
     display: inline-flex;
-    flex: 1;
+    flex: 1 1 auto;
+    padding-top: 0;
+    padding-bottom: 0;
     font-size: rem(14);
     font-weight: 300;
     line-height: 1.43;
@@ -53,7 +52,9 @@
   &__item-cost {
     display: inline-flex;
     width: auto;
-    flex: 0;
+    flex: 0 0 auto;
+    padding-top: 0;
+    padding-bottom: 0;
     border-bottom: none; //1px solid #f1f1f1;
     white-space: nowrap;
     vertical-align: unset;
@@ -62,7 +63,37 @@
     font-weight: normal;
     line-height: 1.22;
   }
+  @include w1024 {
+    .c-configurator__aside & {
+      margin: 16px 0;
+      padding-bottom: 16px;
+      &__item {
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        &-name:after {
+          display: none;
+        }
+      }
+    }
+  }
+  @include w480 {
+    .c-configurator__aside & {
+      &__item {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: flex-end;
+        width: 100%;
+        &-name:after {
+          display: inline-flex;
+        }
+      }
+    }
+  }
 
+  .c-configurator__bottom-section & {
+    width: 100%;
+    margin-top: 0;
+  }
 //  &__sub-title {
 //    @include mtop(20/20);
 //    @include mbot(10/20);

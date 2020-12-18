@@ -20,7 +20,8 @@
   }
 
   &__btn {
-    flex: 0;
+    display: block;
+    flex: 0 0 auto;
     width: auto;
     max-width: none;
     margin: 7px;

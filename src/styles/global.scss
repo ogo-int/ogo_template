@@ -803,7 +803,7 @@ html.touch {
 
 .select2-container {
   font-size: 14px;
-
+  z-index: 9998;
   .select2-selection {
     height: 35px;
     border: 2px solid #e5e5e5;
@@ -1022,7 +1022,9 @@ html._mobile-filter-opened {
 .text-left {
   text-align: left;
 }
-
+.text-center {
+  text-align: center;
+}
 .page-wrapper {
   position: relative;
   left: 0;

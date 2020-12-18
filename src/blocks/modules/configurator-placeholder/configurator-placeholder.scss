@@ -1,0 +1,38 @@
+.b-configurator-placeholder {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  &__image-col {
+    flex: 0 0 60px;
+    max-width: 60px;
+    width: 60px;
+    margin-right: 14px;
+    padding: 5px;
+  }
+  &__desc-col {
+    margin-right: 14px;
+    color: #969696;
+    font-size: rem(12);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  &__actions {
+    display: flex;
+    flex: 0 0 90px;
+    flex-flow: column;
+    justify-content: center;
+    align-items: stretch;
+    align-self: stretch;
+    min-width: 90px;
+  }
+  &__btn {
+    font-size: rem(14);
+    text-align: center;
+  }
+  @include w768 {
+    &__image-col,
+    &__desc-col {
+      display: none;
+    }
+  }
+}
