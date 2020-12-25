@@ -17,12 +17,6 @@ $(function () {
       autoplaySpeed: 5000
     });
 
-    $context.adaptBlock({
-      maxWidth: {
-
-      }
-    });
-
     $context.on("resize.block", function () {
       $slider.slick("setPosition");
     });

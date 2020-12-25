@@ -4253,6 +4253,32 @@ $(function () {
     $context.on("click", ".b-photo-slider__pager-link", pagerLinksHandler);
   });
 });
+// Точка самовывоза
+$(function () {
+  $(".b-pickpoint").livequery(function () {
+    var $context = $(this);
+    var $input = $(".b-pickpoint__radio-input", $context);
+
+    function checkState(event, isOther) {
+      if($input.prop("checked")) {
+        $context.addClass("_checked");
+      } else {
+        $context.removeClass("_checked");
+      }
+      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
+    }
+
+    checkState();
+    $input.on("change", checkState);
+
+    $context.adaptBlock({
+      maxWidth: {
+        530: "_mx530"
+      }
+    });
+  });
+});
+
 // Точка получения заказа
 $(function () {
   $(".b-pickpoint-confirm").livequery(function () {
@@ -4278,32 +4304,6 @@ $(function () {
       }
     });
 
-  });
-});
-
-// Точка самовывоза
-$(function () {
-  $(".b-pickpoint").livequery(function () {
-    var $context = $(this);
-    var $input = $(".b-pickpoint__radio-input", $context);
-
-    function checkState(event, isOther) {
-      if($input.prop("checked")) {
-        $context.addClass("_checked");
-      } else {
-        $context.removeClass("_checked");
-      }
-      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
-    }
-
-    checkState();
-    $input.on("change", checkState);
-
-    $context.adaptBlock({
-      maxWidth: {
-        530: "_mx530"
-      }
-    });
   });
 });
 
@@ -4984,20 +4984,6 @@ $(function () {
   });
 });
 
-// Попап регистрации
-$(function () {
-  $(".b-registration-modal").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        610: "_mx610",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Строка поиска
 $(function () {
   $(".b-search-line").livequery(function () {
@@ -5042,6 +5028,20 @@ $(function () {
     }
   });
 });
+// Попап регистрации
+$(function () {
+  $(".b-registration-modal").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        610: "_mx610",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -5839,6 +5839,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 $(function () {
   $('.b-ymap').livequery(function () {
     var $context = $(this);
@@ -6112,11 +6117,6 @@ $(function () {
     });
   });
 });
-// comments
-$(function () {
-  // code here...
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
