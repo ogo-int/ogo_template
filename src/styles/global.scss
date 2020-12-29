@@ -753,7 +753,23 @@ textarea {
     background-color: #DC3E48;
   }
 }
-
+.button-blue-outline {
+  @extend .button;
+  padding: rem(9) rem(14);
+  color: #1d1d1d;
+  font-size: rem(14);
+  font-weight: 400;
+  text-align: center;
+  background: none;
+  border: 2px solid #3E8BDC;
+  &:hover {
+    color: #fff;
+    background-color: #3E8BDC;
+    &:before {
+      color: #fff;
+    }
+  }
+}
 /* Иконки*/
 .icon {
   display: inline-block;
