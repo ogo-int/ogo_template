@@ -36,6 +36,14 @@
     font-weight: 300;
     text-decoration: line-through;
   }
+  &__friends {
+    display: block;
+    margin-bottom: 5px;
+    color: #F86F55;
+    font-size: rem(14);
+    line-height: rem(18);
+    text-decoration-line: underline;
+  }
   &__notavail {
     color: #1D1D1D;
     font-size: rem(32);

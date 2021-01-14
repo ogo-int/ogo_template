@@ -1457,6 +1457,11 @@ $(function () {
 
   });
 });
+// comments
+$(function () {
+  // code here...
+});
+
 // Календарь
 $(function () {
   $(".b-datepicker").livequery(function () {
@@ -1483,11 +1488,6 @@ $(function () {
       onSelect: changeDate
     });
   });
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // Адрес курьерской доставки

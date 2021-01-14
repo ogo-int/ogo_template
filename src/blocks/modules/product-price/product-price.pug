@@ -3,6 +3,7 @@ mixin product-price()
   .b-product-price.iblock&attributes(attributes)
     .b-product-price__prices-holder
       .b-product-price__main
+        .b-product-price__friends Для своих дешевле: 77&nbsp;777&nbsp;₽
         .b-product-price__current 100&nbsp;990&nbsp;₽
         .b-product-price__old 107&nbsp;990&nbsp;₽
         .b-product-price__notavail 107&nbsp;990&nbsp;₽
@@ -18,6 +19,8 @@ mixin product-price()
           span Купить за 97&nbsp;000&nbsp;₽<span class="show-for-large"> из-за рубежа</span>
         a.b-product-price__buy.button-analog(href="#")
           span Смотреть популярные аналоги
+        a.b-product-price__buy.button-credit(href="#")
+          span В кредит
 
     .b-product-price__actions
       a(href="#" class="b-product-preview__favor") В избранное
