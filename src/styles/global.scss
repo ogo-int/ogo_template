@@ -754,6 +754,28 @@ textarea {
     background-color: #DC3E48;
   }
 }
+.button-credit {
+  @extend .button;
+  padding: 4px 9px 0 !important;
+  color: #fff;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  background: #3CBD63;
+  border: 1px solid #3CBD63;
+  &:hover {
+    color: #fff;
+    background-color: #02ad5a;
+    border-color:  #02ad5a;
+  }
+  &:before {
+    content: url('../img/icons/credit-sber.svg');
+    display: inline-block;
+    width: 1.1em;
+    height: auto;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+}
 /** endof CATALOG_CARD */
 
 /* Select2 */

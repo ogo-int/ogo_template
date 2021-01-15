@@ -3,7 +3,10 @@ mixin product-price()
   .b-product-price.iblock&attributes(attributes)
     .b-product-price__prices-holder
       .b-product-price__main
-        .b-product-price__friends Для своих дешевле: 77&nbsp;777&nbsp;₽
+        a(href="#modal-price-for-registered").b-product-price__registered.js-modal Для своих дешевле: 77&nbsp;777&nbsp;₽
+        div(style="display: none;")
+          +modal-registered(id="modal-price-for-registered")
+
         .b-product-price__current 100&nbsp;990&nbsp;₽
         .b-product-price__old 107&nbsp;990&nbsp;₽
         .b-product-price__notavail 107&nbsp;990&nbsp;₽
@@ -13,18 +16,20 @@ mixin product-price()
         span.b-product-price__bonus-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст") ?
 
       .b-product-price__cta
-        a.b-product-price__buy.button(href="#")
+        a(href="#").b-product-price__buy.button
           span Купить
-        a.b-product-price__buy.button-abroad(href="#")
+        a(href="#").b-product-price__buy.button-abroad
           span Купить за 97&nbsp;000&nbsp;₽<span class="show-for-large"> из-за рубежа</span>
-        a.b-product-price__buy.button-analog(href="#")
+        a(href="#").b-product-price__buy.button-analog
           span Смотреть популярные аналоги
-        a.b-product-price__buy.button-credit(href="#")
+        a(href="#modal-credit").b-product-price__buy.button-credit.js-modal
           span В кредит
+        div(style="display: none;")
+          +modal-credit(id="modal-credit")
 
     .b-product-price__actions
-      a(href="#" class="b-product-preview__favor") В избранное
-      a(href="#" class="b-product-preview__compare") Сравнить
+      a(href="#").b-product-preview__favor В избранное
+      a(href="#").b-product-preview__compare Сравнить
       span(class="b-product-preview__share js-tippy" data-popover-template="share") Поделиться
       div(style="display: none;")
         +social-share(id="share")
@@ -89,3 +94,24 @@ mixin product-price_conf()
             .b-product-price__right-btns
               a.b-product-preview__favor(href="#")
               a.b-product-preview__compare(href="#")
+
+mixin modal-registered()
+  .b-modal-registered&attributes(attributes)
+    h4 Этот товар можно купить дешевле!
+    p Зарегистрированные пользователи могут покупать многие товары дешевле, в том числе и этот.
+    p Цена “для своих” может быть ниже до 20%!
+    p Войдите с паролем или зарегистрируйтесь на сайте, цена станет ниже.
+    .button-group
+      a(href="#").button Зарегистрироваться
+      a(href="#").button-gray Войти
+
+mixin modal-credit()
+ .b-modal-credit&attributes(attributes)
+    h4 Этот товар можно купить  в кредит. Оформить кредит можно на этапе оформления заказа.
+    ul
+      li - Сумма кредите от 3 000 до 300 000 ₽
+      li - Гражданство РФ
+      li - держатель дебетовой карты
+      li - Возраст от 21 до 65
+      li - Наличие регистрации РФ
+    a(href="#").button-gray Подробнее
