@@ -1413,7 +1413,7 @@ function tooltips() {
     hideOnClick: true,
     maxWidth: 400,
     offset: [0, 15],
-    trigger: 'mouseenter click',
+    trigger: 'click',
     content: function(reference) {
       var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
       return content;
@@ -4253,6 +4253,32 @@ $(function () {
     $context.on("click", ".b-photo-slider__pager-link", pagerLinksHandler);
   });
 });
+// Точка самовывоза
+$(function () {
+  $(".b-pickpoint").livequery(function () {
+    var $context = $(this);
+    var $input = $(".b-pickpoint__radio-input", $context);
+
+    function checkState(event, isOther) {
+      if($input.prop("checked")) {
+        $context.addClass("_checked");
+      } else {
+        $context.removeClass("_checked");
+      }
+      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
+    }
+
+    checkState();
+    $input.on("change", checkState);
+
+    $context.adaptBlock({
+      maxWidth: {
+        530: "_mx530"
+      }
+    });
+  });
+});
+
 // Точка получения заказа
 $(function () {
   $(".b-pickpoint-confirm").livequery(function () {
@@ -4278,32 +4304,6 @@ $(function () {
       }
     });
 
-  });
-});
-
-// Точка самовывоза
-$(function () {
-  $(".b-pickpoint").livequery(function () {
-    var $context = $(this);
-    var $input = $(".b-pickpoint__radio-input", $context);
-
-    function checkState(event, isOther) {
-      if($input.prop("checked")) {
-        $context.addClass("_checked");
-      } else {
-        $context.removeClass("_checked");
-      }
-      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
-    }
-
-    checkState();
-    $input.on("change", checkState);
-
-    $context.adaptBlock({
-      maxWidth: {
-        530: "_mx530"
-      }
-    });
   });
 });
 
@@ -5042,6 +5042,40 @@ $(function () {
     }
   });
 });
+// Карточка магазина
+$(function () {
+  $(".b-shop-card").livequery(function () {
+    var $context = $(this);
+    var $tabLinks = $(".b-shop-card__way-link", $context);
+    var $tabContainers = $(".b-shop-card__way-tab", $context);
+
+    function changeTab () {
+      var $link = $(this);
+      var index = $tabLinks.index($link);
+
+      if($link.hasClass("_active")) return false;
+
+      $tabLinks.removeClass("_active");
+      $tabContainers.removeClass("_active");
+      $link.addClass("_active");
+      $tabContainers.eq(index).addClass("_active");
+
+      return false;
+    }
+
+    $tabLinks.on("click", changeTab);
+
+    $context.adaptBlock({
+      maxWidth: {
+        700: "_mx700",
+        625: "_mx625",
+        570: "_mx570",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -5087,40 +5121,6 @@ $(function () {
     });
   });
 });
-// Карточка магазина
-$(function () {
-  $(".b-shop-card").livequery(function () {
-    var $context = $(this);
-    var $tabLinks = $(".b-shop-card__way-link", $context);
-    var $tabContainers = $(".b-shop-card__way-tab", $context);
-
-    function changeTab () {
-      var $link = $(this);
-      var index = $tabLinks.index($link);
-
-      if($link.hasClass("_active")) return false;
-
-      $tabLinks.removeClass("_active");
-      $tabContainers.removeClass("_active");
-      $link.addClass("_active");
-      $tabContainers.eq(index).addClass("_active");
-
-      return false;
-    }
-
-    $tabLinks.on("click", changeTab);
-
-    $context.adaptBlock({
-      maxWidth: {
-        700: "_mx700",
-        625: "_mx625",
-        570: "_mx570",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 $(".shop-slider").slick({
   slidesToShow: 1,
   asNavFor: ".shop-slider-nav",
@@ -6117,36 +6117,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 2
-$(function () {
-  $(".b-promo-block2").livequery(function () {
-    var $context = $(this);
-    var $expandLink = $(".b-promo-block2__expand-link", $context);
-    var $closeLink = $(".b-promo-block2__close", $context);
-
-    function expandBlock (e) {
-      $context.removeClass("_collapsed");
-      e.preventDefault();
-    }
-
-    function closeBlock (e) {
-      //$context.addClass('_collapsed');
-      $context.remove();
-      e.preventDefault();
-    }
-
-    $expandLink.on("click", expandBlock);
-    $closeLink.on("click", closeBlock);
-
-    $context.adaptBlock({
-      maxWidth: {
-        780: "_mx780",
-        700: "_mx700",
-      }
-    });
-  });
-});
-
 // Промоблок 1
 $(function () {
   $(".b-promo-block1").livequery(function () {
@@ -6207,13 +6177,31 @@ $(function () {
     });
   });
 });
-// Промоблок 4
+// Промоблок 2
 $(function () {
-  $(".b-promo-block4").livequery(function () {
+  $(".b-promo-block2").livequery(function () {
     var $context = $(this);
+    var $expandLink = $(".b-promo-block2__expand-link", $context);
+    var $closeLink = $(".b-promo-block2__close", $context);
+
+    function expandBlock (e) {
+      $context.removeClass("_collapsed");
+      e.preventDefault();
+    }
+
+    function closeBlock (e) {
+      //$context.addClass('_collapsed');
+      $context.remove();
+      e.preventDefault();
+    }
+
+    $expandLink.on("click", expandBlock);
+    $closeLink.on("click", closeBlock);
+
     $context.adaptBlock({
       maxWidth: {
-        580: "_mx580"
+        780: "_mx780",
+        700: "_mx700",
       }
     });
   });
@@ -6221,13 +6209,11 @@ $(function () {
 
 // Промоблок 4
 $(function () {
-  $(".b-promo-block5").livequery(function () {
+  $(".b-promo-block4").livequery(function () {
     var $context = $(this);
     $context.adaptBlock({
       maxWidth: {
-        1120: "_mx1120",
-        900: "_mx900",
-        500: "_mx500"
+        580: "_mx580"
       }
     });
   });
@@ -6243,6 +6229,20 @@ $(function () {
         950: "_mx950",
         630: "_mx630"
       },
+    });
+  });
+});
+
+// Промоблок 4
+$(function () {
+  $(".b-promo-block5").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        1120: "_mx1120",
+        900: "_mx900",
+        500: "_mx500"
+      }
     });
   });
 });

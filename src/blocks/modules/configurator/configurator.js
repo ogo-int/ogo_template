@@ -94,7 +94,7 @@ function tooltips() {
     hideOnClick: true,
     maxWidth: 400,
     offset: [0, 15],
-    trigger: 'mouseenter click',
+    trigger: 'click',
     content: function(reference) {
       var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
       return content;
