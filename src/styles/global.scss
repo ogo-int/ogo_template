@@ -720,6 +720,19 @@ textarea {
   }
 }
 /** CATALOG_CARD */
+.button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.button-group > .button,
+.button-group > [class ^= 'button-'] {
+  margin-right: 14px;
+}
+.button-group > .button:last-child,
+.button-group > [class ^= 'button-']:last-child {
+  margin-right: 0;
+}
 .button-abroad {
   @extend .button;
   padding: rem(9) rem(14);
@@ -777,6 +790,17 @@ textarea {
   }
 }
 /** endof CATALOG_CARD */
+
+/* Модальные окна */
+.b-modal {}
+.b-modal__title {}
+.b-modal__title-image {
+  display: inline-block;
+  max-width: 42px;
+  max-height: 42px;
+  margin-right: 20px;
+  vertical-align: bottom;
+}
 
 /* Select2 */
 select {

@@ -3,7 +3,8 @@ mixin product-price()
   .b-product-price.iblock&attributes(attributes)
     .b-product-price__prices-holder
       .b-product-price__main
-        a(href="#modal-price-for-registered").b-product-price__registered.js-modal Для своих дешевле: 77&nbsp;777&nbsp;₽
+        span.b-product-price__registered.js-tooltip(data-popover-content="Для Вас цена ниже потому что вы состоите в нашей программе лояльности") Цена для своих:
+        a(href="#modal-price-for-registered").b-product-price__unregistered.js-modal Для своих дешевле: 77&nbsp;777&nbsp;₽
         div(style="display: none;")
           +modal-registered(id="modal-price-for-registered")
 
@@ -96,18 +97,18 @@ mixin product-price_conf()
               a.b-product-preview__compare(href="#")
 
 mixin modal-registered()
-  .b-modal-registered&attributes(attributes)
-    h4 Этот товар можно купить дешевле!
-    p Зарегистрированные пользователи могут покупать многие товары дешевле, в том числе и этот.
-    p Цена “для своих” может быть ниже до 20%!
-    p Войдите с паролем или зарегистрируйтесь на сайте, цена станет ниже.
+  .b-product-price__modal&attributes(attributes)
+    h3.b-modal__title 
+      img(src="assets/img/thumbs-up.png", alt="").b-modal__title-image 
+      | Этот товар можно купить дешевле!
+    p Зарегистрированные пользователи могут покупать многие товары дешевле, в том числе и этот.<br>Цена “для своих” может быть ниже до 20%!<br>Войдите с паролем или зарегистрируйтесь на сайте, цена станет ниже.
     .button-group
       a(href="#").button Зарегистрироваться
       a(href="#").button-gray Войти
 
 mixin modal-credit()
- .b-modal-credit&attributes(attributes)
-    h4 Этот товар можно купить  в кредит. Оформить кредит можно на этапе оформления заказа.
+ .b-product-price__modal&attributes(attributes)
+    h3.b-modal__title Этот товар можно купить  в кредит. Оформить кредит можно на этапе оформления заказа.
     ul
       li - Сумма кредите от 3 000 до 300 000 ₽
       li - Гражданство РФ
