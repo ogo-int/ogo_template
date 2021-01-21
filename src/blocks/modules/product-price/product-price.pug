@@ -19,11 +19,11 @@ mixin product-price()
       .b-product-price__cta
         a(href="#").b-product-price__buy.button
           span Купить
-        a(href="#").b-product-price__buy.button-abroad
+        a(href="#").b-product-price__btn.button-abroad
           span Купить за 97&nbsp;000&nbsp;₽<span class="show-for-large"> из-за рубежа</span>
-        a(href="#").b-product-price__buy.button-analog
+        a(href="#").b-product-price__btn.button-analog
           span Смотреть популярные аналоги
-        a(href="#modal-credit").b-product-price__buy.button-credit.js-modal
+        a(href="#modal-credit").b-product-price__btn.button-credit.js-modal
           span В кредит
         div(style="display: none;")
           +modal-credit(id="modal-credit")
@@ -107,12 +107,12 @@ mixin modal-registered()
       a(href="#").button-gray Войти
 
 mixin modal-credit()
- .b-product-price__modal&attributes(attributes)
-    h3.b-modal__title Этот товар можно купить  в кредит. Оформить кредит можно на этапе оформления заказа.
-    ul
-      li - Сумма кредите от 3 000 до 300 000 ₽
-      li - Гражданство РФ
-      li - держатель дебетовой карты
-      li - Возраст от 21 до 65
-      li - Наличие регистрации РФ
+ .b-product-price__modal.b-product-price__modal--narrow&attributes(attributes)
+    h3.b-modal__title Этот товар можно купить  в кредит.<br>Оформить кредит можно на этапе оформления заказа.
+    ul.b-list__dashed
+      li Сумма кредите от 3 000 до 300 000 ₽
+      li Гражданство РФ
+      li держатель дебетовой карты
+      li Возраст от 21 до 65
+      li Наличие регистрации РФ
     a(href="#").button-gray Подробнее

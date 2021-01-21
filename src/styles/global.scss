@@ -178,7 +178,17 @@ ol.horizontal {
 ul.attention {
   font-weight: 400;
 }
-
+ul.b-list__dashed {
+  margin-left: 0;
+  padding-left: 0;
+  > li {
+    list-style: none;
+    &:before {
+      content: '— ';
+      margin-right: 1rem;
+    }
+  }
+}
 .content-area {
   li {
 

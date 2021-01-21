@@ -89,6 +89,7 @@
       vertical-align: text-top;
     }
   }
+  &__btn,
   &__buy {
     @include box-sizing;
     display: block;
@@ -100,9 +101,6 @@
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
-    //&:before {
-    //  display: none;
-    //}
     &:first-child {
       margin-top: 0;
     }
@@ -342,6 +340,9 @@
   }
   &__modal {
     padding: 20px 30px 30px;
+    &--narrow {
+      max-width: 550px;
+    }
   }
 }
 @include w1024 {

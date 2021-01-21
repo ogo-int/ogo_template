@@ -184,10 +184,12 @@
       background: #FEBF00;
     }
     &--delivery {
-      background-image: url('../img/icon-delivery.svg');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 22px 18px;
+      &:before {
+        @include ft-icon($ft-truck);
+        width: auto;
+        color: #fff;
+        font-size: 1.75em;
+      }
     }
     &--gift {
       background-image: url('../img/icon-gift.svg');
