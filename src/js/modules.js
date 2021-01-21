@@ -644,6 +644,19 @@ $(function () {
   });
 });
 
+// Промоблок с картой
+$(function () {
+  $(".b-bonus-promo").each(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        700: "_mx700"
+      }
+    });
+  });
+});
+
 // Баннер с инструкциями к бонусной карте
 $(function () {
   $(".b-bonus-instruction").livequery(function () {
@@ -653,19 +666,6 @@ $(function () {
       maxWidth: {
         760: "_mx760",
         420: "_mx420"
-      }
-    });
-  });
-});
-
-// Промоблок с картой
-$(function () {
-  $(".b-bonus-promo").each(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        700: "_mx700"
       }
     });
   });
@@ -1403,28 +1403,28 @@ function configurator() {
   checkRequired();
   checkComplete(compatible, required);
 }
-
-function tooltips() {
+// Определяем тултипы
+function popover() {
   tippy('.js-tippy', {
-    allowHTML: true,
-    delay: 250,
-    inlinePositioning: true,
-    interactive: false,
-    hideOnClick: true,
-    maxWidth: 400,
-    offset: [0, 15],
     trigger: 'click',
-    content: function(reference) {
-      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
-      return content;
+    allowHTML: true,
+    interactive: true,
+    content(reference) {
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
+      const id = reference.getAttribute('data-popover-template');
+      const template = document.getElementById(id);
+      return template ? template.innerHTML : content;
     },
-    appendTo: function (reference) {
+    appendTo: function(reference) {
       var wrapper = $(reference).parent()[0];
       if ($(reference).data('popover-appendto') && $(reference).closest($(reference).data('popover-appendto')).length) {
         wrapper = $(reference).closest($(reference).data('popover-appendto'))[0];
       }
       return wrapper;
-    }
+    },
+    maxWidth: 400,
+    offset: [0, 15]
   });
   tippy('.js-tooltip', {
     allowHTML: true,
@@ -1437,7 +1437,8 @@ function tooltips() {
     offset: [0, 15],
     trigger: 'mouseenter click',
     content: function(reference) {
-      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
       return content;
     },
     appendTo: function (reference) {
@@ -1448,11 +1449,14 @@ function tooltips() {
       return wrapper;
     }
   });
+  $(document).on('click', '.js-tippy-close', function(e) {
+    tippy.hideAll();
+    e.preventDefault();
+  });
 }
-
 $(document).ready(function () {
-  tooltips();
   configurator();
+  popover();
 });
 // Дополнительные компоненты конфигуратора
 $(function () {
@@ -5042,40 +5046,6 @@ $(function () {
     }
   });
 });
-// Карточка магазина
-$(function () {
-  $(".b-shop-card").livequery(function () {
-    var $context = $(this);
-    var $tabLinks = $(".b-shop-card__way-link", $context);
-    var $tabContainers = $(".b-shop-card__way-tab", $context);
-
-    function changeTab () {
-      var $link = $(this);
-      var index = $tabLinks.index($link);
-
-      if($link.hasClass("_active")) return false;
-
-      $tabLinks.removeClass("_active");
-      $tabContainers.removeClass("_active");
-      $link.addClass("_active");
-      $tabContainers.eq(index).addClass("_active");
-
-      return false;
-    }
-
-    $tabLinks.on("click", changeTab);
-
-    $context.adaptBlock({
-      maxWidth: {
-        700: "_mx700",
-        625: "_mx625",
-        570: "_mx570",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -5121,6 +5091,40 @@ $(function () {
     });
   });
 });
+// Карточка магазина
+$(function () {
+  $(".b-shop-card").livequery(function () {
+    var $context = $(this);
+    var $tabLinks = $(".b-shop-card__way-link", $context);
+    var $tabContainers = $(".b-shop-card__way-tab", $context);
+
+    function changeTab () {
+      var $link = $(this);
+      var index = $tabLinks.index($link);
+
+      if($link.hasClass("_active")) return false;
+
+      $tabLinks.removeClass("_active");
+      $tabContainers.removeClass("_active");
+      $link.addClass("_active");
+      $tabContainers.eq(index).addClass("_active");
+
+      return false;
+    }
+
+    $tabLinks.on("click", changeTab);
+
+    $context.adaptBlock({
+      maxWidth: {
+        700: "_mx700",
+        625: "_mx625",
+        570: "_mx570",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 $(".shop-slider").slick({
   slidesToShow: 1,
   asNavFor: ".shop-slider-nav",
@@ -6129,6 +6133,36 @@ $(function () {
   });
 });
 
+// Промоблок 2
+$(function () {
+  $(".b-promo-block2").livequery(function () {
+    var $context = $(this);
+    var $expandLink = $(".b-promo-block2__expand-link", $context);
+    var $closeLink = $(".b-promo-block2__close", $context);
+
+    function expandBlock (e) {
+      $context.removeClass("_collapsed");
+      e.preventDefault();
+    }
+
+    function closeBlock (e) {
+      //$context.addClass('_collapsed');
+      $context.remove();
+      e.preventDefault();
+    }
+
+    $expandLink.on("click", expandBlock);
+    $closeLink.on("click", closeBlock);
+
+    $context.adaptBlock({
+      maxWidth: {
+        780: "_mx780",
+        700: "_mx700",
+      }
+    });
+  });
+});
+
 // Промоблок 1
 $(function () {
   $(".b-promo-block3").livequery(function () {
@@ -6177,36 +6211,6 @@ $(function () {
     });
   });
 });
-// Промоблок 2
-$(function () {
-  $(".b-promo-block2").livequery(function () {
-    var $context = $(this);
-    var $expandLink = $(".b-promo-block2__expand-link", $context);
-    var $closeLink = $(".b-promo-block2__close", $context);
-
-    function expandBlock (e) {
-      $context.removeClass("_collapsed");
-      e.preventDefault();
-    }
-
-    function closeBlock (e) {
-      //$context.addClass('_collapsed');
-      $context.remove();
-      e.preventDefault();
-    }
-
-    $expandLink.on("click", expandBlock);
-    $closeLink.on("click", closeBlock);
-
-    $context.adaptBlock({
-      maxWidth: {
-        780: "_mx780",
-        700: "_mx700",
-      }
-    });
-  });
-});
-
 // Промоблок 4
 $(function () {
   $(".b-promo-block4").livequery(function () {
@@ -6215,20 +6219,6 @@ $(function () {
       maxWidth: {
         580: "_mx580"
       }
-    });
-  });
-});
-
-// Промоблок 4
-$(function () {
-  $(".b-promo-block6").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        1020: "_mx1020",
-        950: "_mx950",
-        630: "_mx630"
-      },
     });
   });
 });
@@ -6247,6 +6237,16 @@ $(function () {
   });
 });
 
+// Промоблок 4
 $(function () {
-  $(document).trigger("blocksReady");
+  $(".b-promo-block6").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        1020: "_mx1020",
+        950: "_mx950",
+        630: "_mx630"
+      },
+    });
+  });
 });

@@ -5,7 +5,7 @@ import {
 } from "../gulpfile.babel";
 import gulp from "gulp";
 import gulpif from "gulp-if";
-import rename from "gulp-rename";
+//import rename from "gulp-rename";
 import sass from "gulp-sass";
 import mincss from "gulp-clean-css";
 import groupmedia from "gulp-group-css-media-queries";
@@ -53,9 +53,9 @@ gulp.task("styles", () => {
         }
       }
     })))
-    .pipe(gulpif(production, rename({
-      suffix: ".min"
-    })))
+    //.pipe(gulpif(production, rename({
+    //  suffix: ".min"
+    //})))
     .pipe(plumber.stop())
     .pipe(gulpif(!production, sourcemaps.write("./maps/")))
     .pipe(gulp.dest(paths.styles.dist))

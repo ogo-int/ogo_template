@@ -84,28 +84,28 @@ function configurator() {
   checkRequired();
   checkComplete(compatible, required);
 }
-
-function tooltips() {
+// Определяем тултипы
+function popover() {
   tippy('.js-tippy', {
-    allowHTML: true,
-    delay: 250,
-    inlinePositioning: true,
-    interactive: false,
-    hideOnClick: true,
-    maxWidth: 400,
-    offset: [0, 15],
     trigger: 'click',
-    content: function(reference) {
-      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
-      return content;
+    allowHTML: true,
+    interactive: true,
+    content(reference) {
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
+      const id = reference.getAttribute('data-popover-template');
+      const template = document.getElementById(id);
+      return template ? template.innerHTML : content;
     },
-    appendTo: function (reference) {
+    appendTo: function(reference) {
       var wrapper = $(reference).parent()[0];
       if ($(reference).data('popover-appendto') && $(reference).closest($(reference).data('popover-appendto')).length) {
         wrapper = $(reference).closest($(reference).data('popover-appendto'))[0];
       }
       return wrapper;
-    }
+    },
+    maxWidth: 400,
+    offset: [0, 15]
   });
   tippy('.js-tooltip', {
     allowHTML: true,
@@ -118,7 +118,8 @@ function tooltips() {
     offset: [0, 15],
     trigger: 'mouseenter click',
     content: function(reference) {
-      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') + ($(reference).data('popover-content') ? $(reference).data('popover-content') : '')
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
       return content;
     },
     appendTo: function (reference) {
@@ -129,9 +130,12 @@ function tooltips() {
       return wrapper;
     }
   });
+  $(document).on('click', '.js-tippy-close', function(e) {
+    tippy.hideAll();
+    e.preventDefault();
+  });
 }
-
 $(document).ready(function () {
-  tooltips();
   configurator();
+  popover();
 });

@@ -1,203 +1,252 @@
 // Прижимаем футер
-$(function () {
-  var $page = $(".page-wrapper");
-  var $footer = $(".page-footer");
-  var isSet = false;
-  var footerHeight;
-  var contentHeight;
-  var winHeight;
+	$(function () {
+		var $page = $('.page-wrapper');
+		var $footer = $('.page-footer');
+		var isSet = false;
+		var footerHeight;
+		var contentHeight;
+		var winHeight;
 
-  function footerBottom() {
-    winHeight = $(window).height();
-    footerHeight = $footer.height();
-    contentHeight = $page.height();
+		function footerBottom () {
+			winHeight = $(window).height();
+			footerHeight = $footer.height();
+			contentHeight = $page.height();
 
-    if (contentHeight < winHeight) {
-      $("html, body").css("height", "100%");
-      $(".page-wrapper").css("height", "100%");
-      $(".wrap-for-footer").css({
-        minHeight: "100%",
-        paddingBottom: footerHeight
-      });
-      $(".page-footer").css({
-        marginTop: -footerHeight
-      });
-      isSet = true;
-    } else if (isSet) {
-      $("html, body, .page-wrapper, .wrap-for-footer, .page-footer").css({
-        height: "",
-        minHeight: "",
-        paddingBottom: "",
-        marginTop: "",
-      });
-      isSet = false;
-    }
-  }
+			if(contentHeight < winHeight) {
+				$('html, body').css('height', '100%');
+				$('.page-wrapper').css('height', '100%');
+				$('.wrap-for-footer').css({
+					minHeight: '100%',
+					paddingBottom: footerHeight
+				});
+				$('.page-footer').css({
+					marginTop: - footerHeight
+				});
+				isSet = true;
+			} else if(isSet) {
+				$('html, body, .page-wrapper, .wrap-for-footer, .page-footer').css({
+					height: '',
+					minHeight: '',
+					paddingBottom: '',
+					marginTop: '',
+				});
+				isSet = false;
+			}
+		}
 
-  footerBottom();
-  $(window).on("resize", footerBottom);
-});
+		footerBottom();
+		$(window).on('resize', footerBottom);
+	});
 
 // Сообщаяем блокам о готовности ymaps API
-ymapAPIready = false;
+	var ymapAPIready = false;
 
-if (typeof ymaps !== "undefined") {
-  ymaps.ready(function () {
-    $(document).trigger("ymapAPIready");
-    $(window).trigger("ymapAPIready");
-    ymapAPIready = true;
-  });
-}
+	if(typeof ymaps !== 'undefined') {
+		ymaps.ready(function () {
+			$(document).trigger('ymapAPIready');
+			$(window).trigger('ymapAPIready');
+			ymapAPIready = true;
+		});
+	}
 
 // Кроссбраузерный requestAnimationFrame
-window.requestAnimFrame =
-  window.requestAnimationFrame ||
-  window.webkitRequestAnimationFrame ||
-  window.mozRequestAnimationFrame ||
-  window.oRequestAnimationFrame ||
-  window.msRequestAnimationFrame ||
-  function (callback, element) {
-    callback();
-  };
+ 	window.requestAnimFrame =
+		window.requestAnimationFrame       ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    window.oRequestAnimationFrame      ||
+    window.msRequestAnimationFrame     ||
+    function(callback, element){
+     callback();
+    };
 
 // jQuery-плагин для адаптации блоков от ширины контекста, а не от ширины экрана
-(function ($) {
-  var aB = $.adaptBlock = {
-    _blocks: [],
-    _oldWidndowWidth: $(window).width(),
-    _newWindowWidth: 0,
+	(function($){
+		var aB = $.adaptBlock = {
+			_blocks: [],
+			_oldWidndowWidth: $(window).width(),
+			_newWindowWidth: 0,
 
-    params: {
-      resizeTimeout: 80
-    },
+			params: {
+				resizeTimeout: 80
+			},
 
-    windowResizeHandler: function (e) {
-      aB._newWindowWidth = $(window).width();
+			windowResizeHandler: function (e) {
+				aB._newWindowWidth = $(window).width();
 
-      if (aB._oldWidndowWidth == aB._newWindowWidth) {
-        aB._oldWidndowWidth = aB._newWindowWidth;
-        return;
-      }
+				if(aB._oldWidndowWidth == aB._newWindowWidth) {
+					aB._oldWidndowWidth = aB._newWindowWidth;
+					return;
+				}
 
-      aB._oldWidndowWidth = aB._newWindowWidth;
+				aB._oldWidndowWidth = aB._newWindowWidth;
 
-      if (aB.resizeTimeout !== undefined) clearTimeout(aB.resizeTimeout);
+				if(aB.resizeTimeout !== undefined) clearTimeout(aB.resizeTimeout);
 
-      aB.resizeTimeout = setTimeout(function () {
-        aB.resizeElems();
-      }, aB.params.resizeTimeout);
-    },
+				aB.resizeTimeout = setTimeout(function() {
+					aB.resizeElems();
+				}, aB.params.resizeTimeout);
+			},
 
-    resizeElems: function () {
-      for (var i = 0; i < aB._blocks.length; i++) {
-        aB.setMedia(aB._blocks[i]);
-      }
-    },
+			resizeElems: function () {
+				for(var i = 0; i < aB._blocks.length; i++) {
+					aB.setMedia(aB._blocks[i]);
+				}
+			},
 
-    setMedia: function (block) {
-      var $el = block.elem;
-      var params = block.params;
+			setMedia: function (block) {
+				var $el = block.elem;
+				var params = block.params;
 
-      if (!$el.is(":visible")) return;
+				if(!$el.is(':visible')) return;
 
-      var width = block.width = $el.parent().width();
+				var width = block.width = $el.parent().width();
 
-      if (width < block.scope.max[0] || width > block.scope.max[1] || !block.scope.maxIsSet) {
-        block.scope.max[1] = Infinity;
-        block.scope.max[0] = 0;
+				if(width < block.scope.max[0] || width > block.scope.max[1] || !block.scope.maxIsSet) {
+					block.scope.max[1] = Infinity;
+					block.scope.max[0] = 0;
 
-        $.each(block.maxWidthArray, function (key, value) {
-          if (width <= value) {
-            $el.addClass(params.maxWidth[value]);
-            block.scope.max[1] = Math.min(value, block.scope.max[1]);
-          } else {
-            $el.removeClass(params.maxWidth[value]);
-            block.scope.max[0] = Math.max(value, block.scope.max[0]);
-          }
-        });
-        block.scope.maxIsSet = true;
-      }
+					$.each(block.maxWidthArray, function (key, value) {
+						if(width <= value) {
+							$el.addClass(params.maxWidth[value]);
+							block.scope.max[1] = Math.min(value, block.scope.max[1]);
+						} else {
+							$el.removeClass(params.maxWidth[value]);
+							block.scope.max[0] = Math.max(value, block.scope.max[0]);
+						}
+					});
+					block.scope.maxIsSet = true;
+				}
 
-      $.each(block.minWidthArray, function (key, value) {
-        if (width >= value) {
-          $el.addClass(params.minWidth[value]);
-        } else {
-          $el.removeClass(params.minWidth[value]);
-        }
-      });
+				$.each(block.minWidthArray, function (key, value) {
+					if(width >= value) {
+						$el.addClass(params.minWidth[value]);
+					} else {
+						$el.removeClass(params.minWidth[value]);
+					}
+				});
 
 
-      if (block.params.watch) console.log(block);
-    },
+				if(block.params.watch) console.log(block);
+			},
 
-    initMedia: function (block) {
-      var params = block.params;
+			initMedia: function (block) {
+				var params = block.params;
 
-      if (block.scope == null) {
-        block.scope = {
-          max: [0, Infinity],
-          min: [0, Infinity],
-          isSet: false
-        };
-      }
+				if(block.scope == null) {
+					block.scope = {
+						max: [0, Infinity],
+						min: [0, Infinity],
+						isSet: false
+					}
+				}
 
-      $.each(params.maxWidth, function (key, value) {
-        block.maxWidthArray.push(parseInt(key));
-      });
+				$.each(params.maxWidth, function (key, value) {
+					block.maxWidthArray.push(parseInt(key));
+				});
 
-      $.each(params.minWidth, function (key, value) {
-        block.minWidthArray.push(parseInt(key));
-      });
-    },
+				$.each(params.minWidth, function (key, value) {
+					block.minWidthArray.push(parseInt(key));
+				});
+			},
 
-    addBlock: function (elem, options) {
-      var block = {
-        elem: elem,
-        params: options,
-        maxWidthArray: [],
-        minWidthArray: []
-      };
+			addBlock: function (elem, options) {
+				var block = {
+					elem: elem,
+					params: options,
+					maxWidthArray: [],
+					minWidthArray: []
+				}
 
-      aB._blocks.push(block);
-      aB.initMedia(block);
-      aB.setMedia(block);
+				aB._blocks.push(block);
+				aB.initMedia(block);
+				aB.setMedia(block);
 
-      block.elem.on("resize.block", function (e) {
-        requestAnimFrame(function () {
-          aB.setMedia(block);
-        });
-        e.stopPropagation();
-      });
-    },
+				block.elem.on('resize.block', function (e)  {
+					requestAnimFrame(function () { aB.setMedia(block) });
+					e.stopPropagation();
+				})
+			},
 
-    init: function () {
-      $(window).on("resize", aB.windowResizeHandler);
-    }
-  };
+			init: function () {
+				$(window).on('resize', aB.windowResizeHandler);
+			}
+		}
 
-  $.fn.adaptBlock = function (options) {
-    var params = $.extend({
-      maxWidth: {},
-      minWidth: {}
-    }, options);
+		$.fn.adaptBlock = function (options) {
+			var params = $.extend({
+				maxWidth: {},
+				minWidth: {}
+			}, options);
 
-    function init() {
-      var $elem = $(this);
+			function init() {
+				var $elem = $(this);
 
-      if ($elem.hasClass("_flexible")) {
-        aB.addBlock($(this), params);
-      }
-    }
+				if($elem.hasClass('_flexible')) {
+					aB.addBlock($(this), params);
+				}
+			}
 
-    return this.each(init);
-  };
+			return this.each(init);
+		}
 
-  aB.init();
-})(jQuery);
+		aB.init();
+	})(jQuery);
 
-/*
-BX.showWait = function (node, msg) //Переопределение функции для сокрытия прелоадера битрикса
+
+BX.showWait = function(node, msg) //Переопределение функции для сокрытия прелоадера битрикса
 {
-  return;
+	return;
 };
-*/
+
+// Определяем тултипы
+function popover() {
+  tippy('.js-tippy', {
+    trigger: 'click',
+    allowHTML: true,
+    interactive: true,
+    content(reference) {
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
+      const id = reference.getAttribute('data-popover-template');
+      const template = document.getElementById(id);
+      return template ? template.innerHTML : content;
+    },
+    appendTo: function(reference) {
+      var wrapper = $(reference).parent()[0];
+      if ($(reference).data('popover-appendto') && $(reference).closest($(reference).data('popover-appendto')).length) {
+        wrapper = $(reference).closest($(reference).data('popover-appendto'))[0];
+      }
+      return wrapper;
+    },
+    maxWidth: 400,
+    offset: [0, 15]
+  });
+  tippy('.js-tooltip', {
+    allowHTML: true,
+    theme: 'tooltip',
+    delay: 250,
+    inlinePositioning: true,
+    interactive: false,
+    hideOnClick: true,
+    maxWidth: 400,
+    offset: [0, 15],
+    trigger: 'mouseenter click',
+    content: function(reference) {
+      var content = ($(reference).data('popover-title') ? '<div class="tippy-title">' + $(reference).data('popover-title') + '</div>' : '') +
+                    ($(reference).data('popover-content') ? '<div class="tippy-content">' + $(reference).data('popover-content') + '</div>' : '')
+      return content;
+    },
+    appendTo: function (reference) {
+      var wrapper = $(reference).parent()[0];
+      if ($(reference).data('popover-appendto') && $(reference).closest($(reference).data('popover-appendto')).length) {
+        wrapper = $(reference).closest($(reference).data('popover-appendto'))[0];
+      }
+      return wrapper;
+    }
+  });
+  $(document).on('click', '.js-tippy-close', function(e) {
+    tippy.hideAll();
+    e.preventDefault();
+  });
+}

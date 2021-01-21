@@ -24,7 +24,7 @@ function concatVendorPug() {
 }
 
 function concatModulesJs() {
-  return gulp.src([paths.modules.src + "/**/*.js", paths.scripts.stage + "modulesTrigger.js"]) //, paths.helpers + 'blockTrigger.js'
+  return gulp.src([paths.modules.src + "/**/*.js"]) //, paths.helpers + 'blockTrigger.js'
     .pipe(concat("modules.js"))
     .pipe(gulp.dest(paths.scripts.stage))
     .pipe(debug({
