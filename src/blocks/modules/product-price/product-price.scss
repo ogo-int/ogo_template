@@ -36,6 +36,25 @@
     font-weight: 300;
     text-decoration: line-through;
   }
+  &__unregistered {
+    display: block;
+    margin-bottom: 5px;
+    color: #F86F55;
+    font-size: rem(14);
+    line-height: rem(18);
+    text-decoration-line: underline;
+  }
+  &__registered {
+    display: block;
+    margin-bottom: 5px;
+    color: #F86F55;
+    font-size: rem(14);
+    line-height: rem(18);
+    &:before {
+      @include ft-icon($ft-star);
+      margin-right: 5px;
+    }
+  }
   &__notavail {
     color: #1D1D1D;
     font-size: rem(32);
@@ -70,6 +89,7 @@
       vertical-align: text-top;
     }
   }
+  &__btn,
   &__buy {
     @include box-sizing;
     display: block;
@@ -81,9 +101,6 @@
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
-    //&:before {
-    //  display: none;
-    //}
     &:first-child {
       margin-top: 0;
     }
@@ -266,8 +283,6 @@
     color: #4a4a4a;
   }
 
-  
-
   &__fast {
     display: inline-block;
     position: relative;
@@ -323,6 +338,12 @@
       }
     }
   }
+  &__modal {
+    padding: 20px 30px 30px;
+    &--narrow {
+      max-width: 550px;
+    }
+  }
 }
 @include w1024 {
   .b-product-price {
@@ -332,6 +353,10 @@
     }
   }
 }
-@include w768 {}
+@include w768 {
+  &__modal {
+    padding: 14px 15px 15px;
+  }
+}
 @include w480 {}
 /** endof CATALOG CARD*/

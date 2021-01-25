@@ -178,7 +178,17 @@ ol.horizontal {
 ul.attention {
   font-weight: 400;
 }
-
+ul.b-list__dashed {
+  margin-left: 0;
+  padding-left: 0;
+  > li {
+    list-style: none;
+    &:before {
+      content: '— ';
+      margin-right: 1rem;
+    }
+  }
+}
 .content-area {
   li {
 
@@ -719,6 +729,20 @@ textarea {
 
   }
 }
+/** CATALOG_CARD */
+.button-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.button-group > .button,
+.button-group > [class ^= 'button-'] {
+  margin-right: 14px;
+}
+.button-group > .button:last-child,
+.button-group > [class ^= 'button-']:last-child {
+  margin-right: 0;
+}
 .button-abroad {
   @extend .button;
   padding: rem(9) rem(14);
@@ -753,35 +777,39 @@ textarea {
     background-color: #DC3E48;
   }
 }
-
-/* Иконки*/
-.icon {
-  display: inline-block;
-  position: relative;
-  width: 1em;
-  height: 1em;
-  color: currentColor;
-  line-height: 0;
+.button-credit {
+  @extend .button;
+  padding: 4px 9px 0 !important;
+  color: #fff;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+  background: #3CBD63;
+  border: 1px solid #3CBD63;
+  &:hover {
+    color: #fff;
+    background-color: #02ad5a;
+    border-color:  #02ad5a;
+  }
   &:before {
-    @include ft-icon();
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    font-size: 125%;
-    transform: translate(-50%, -50%);
+    content: url('../img/icons/credit-sber.svg');
+    display: inline-block;
+    width: 1.1em;
+    height: auto;
+    margin-right: 0.5em;
+    vertical-align: middle;
   }
-  &-download:before {
-    content: $ft-download;
-  }
-  &-link:before {
-    content: $ft-link;
-  }
-  &-mail:before {
-    content: $ft-mail;
-  }
-  &-printer:before {
-    content: $ft-printer;
-  }
+}
+/** endof CATALOG_CARD */
+
+/* Модальные окна */
+.b-modal {}
+.b-modal__title {}
+.b-modal__title-image {
+  display: inline-block;
+  max-width: 42px;
+  max-height: 42px;
+  margin-right: 20px;
+  vertical-align: bottom;
 }
 
 /* Select2 */

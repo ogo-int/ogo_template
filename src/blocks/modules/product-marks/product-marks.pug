@@ -1,8 +1,8 @@
 mixin product-marks()
   .b-product-marks&attributes(attributes)
-    span.b-product-mark.b-product-mark--abroad Товар из-за рубежа
-    span.b-product-mark.b-product-mark--warning Уцененный
-    span.b-product-mark.b-product-mark--alert Не работает
-    span.b-product-mark.b-product-mark--alert Не совместим
-    span.b-product-mark.b-product-mark--secondary Товар дня
+    span.b-product-mark__abroad Товар из-за рубежа
+    span.b-product-mark__warning Уцененный
+    span.b-product-mark__alert.js-tooltip(data-popover-title="Не совместим с:" data-popover-content="Материнская плата ASUS Prime B450M-A B450 Socket AM4 4xDDR4, 6xSATA3, RAID, 1xM.2, 1xPCI-E16x, 6xUSB3.1, D-Sub, DVI-D, HDMI, Glan, mATX") Не работает
+    span.b-product-mark__alert.js-tooltip(data-popover-title="Не совместим с:" data-popover-content="Материнская плата ASUS Prime B450M-A B450 Socket AM4 4xDDR4, 6xSATA3, RAID, 1xM.2, 1xPCI-E16x, 6xUSB3.1, D-Sub, DVI-D, HDMI, Glan, mATX") Не совместим
+    span.b-product-mark__secondary Товар дня
     a(href="#" class="b-product-mark__link") Есть такой новый
