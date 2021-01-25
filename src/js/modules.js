@@ -1,8 +1,3 @@
-// comments
-$(function () {
-  // code here...
-});
-
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -29,6 +24,11 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
+
+// comments
+$(function () {
+  // code here...
+});
 
 // Добавить аксессуары
 $(function () {
@@ -671,11 +671,6 @@ $(function () {
   });
 });
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Нижнее меню
 $(function () {
   $(".b-bottom-menu").livequery(function() {
@@ -780,6 +775,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Кнопка мобильного меню
 $(function () {
   $(".b-burger-btn").livequery(function () {
@@ -829,21 +829,6 @@ $(function () {
     $context.adaptBlock({
       maxWidth: {
         350: "_mx350"
-      }
-    });
-  });
-});
-
-// Выбранные в конфигураторе продукт
-$(function () {
-  $(".b-cart-product").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        950: "_mx950",
-        850: "_mx850",
-        730: "_mx730"
       }
     });
   });
@@ -925,6 +910,21 @@ $(function () {
   });
 
 
+});
+
+// Выбранные в конфигураторе продукт
+$(function () {
+  $(".b-cart-product").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        950: "_mx950",
+        850: "_mx850",
+        730: "_mx730"
+      }
+    });
+  });
 });
 
 // Список товаров каталога плиткой
@@ -2403,6 +2403,31 @@ $(function () {
   });
 });
 
+// Ссылки в футере
+$(function () {
+  $(".b-footer-links").livequery(function () {
+    var $context = $(this);
+    var $captions = $(".b-footer-links__caption", $context);
+    var $holders = $(".b-footer-links__menu", $context);
+
+    function expandLinks() {
+      var $caption = $(this);
+      $caption.toggleClass("b-footer-links__caption_open");
+
+      $caption.next().toggleClass("b-footer-links__menu_open");
+    }
+
+    $captions.on("click", expandLinks);
+
+    $context.adaptBlock({
+      maxWidth: {
+        670: "_mx670",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Шкала в фильтре
 $(function () {
   $(".b-filter-scale").livequery(function () {
@@ -2464,31 +2489,6 @@ $(function () {
 
     $maxInput.on("change", changeMaxVal);
     $minInput.on("change", changeMinVal);
-  });
-});
-
-// Ссылки в футере
-$(function () {
-  $(".b-footer-links").livequery(function () {
-    var $context = $(this);
-    var $captions = $(".b-footer-links__caption", $context);
-    var $holders = $(".b-footer-links__menu", $context);
-
-    function expandLinks() {
-      var $caption = $(this);
-      $caption.toggleClass("b-footer-links__caption_open");
-
-      $caption.next().toggleClass("b-footer-links__menu_open");
-    }
-
-    $captions.on("click", expandLinks);
-
-    $context.adaptBlock({
-      maxWidth: {
-        670: "_mx670",
-        450: "_mx450"
-      }
-    });
   });
 });
 
@@ -3620,6 +3620,20 @@ $(function () {
     });
   });
 });
+// Преимущества в цифрах
+$(function () {
+  $(".b-nums-features").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        650: "_mx650",
+        380: "_mx380"
+      }
+    });
+  });
+});
+
 // Слайдер новостей
 $(function () {
   $(".b-news-slider").livequery(function () {
@@ -3667,20 +3681,6 @@ $(function () {
     });
   });
 });
-// Преимущества в цифрах
-$(function () {
-  $(".b-nums-features").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        650: "_mx650",
-        380: "_mx380"
-      }
-    });
-  });
-});
-
 // Окно консультанта
 $(function () {
   $(".b-online-consult").livequery(function () {
@@ -4240,13 +4240,16 @@ $(function () {
   });
 
   $slider.slick({
+    asNavFor: $thumbs,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     adaptiveHeight: false,
     speed: 400,
     fade: true,
-    asNavFor: $thumbs,
+    infinite: false,
+    focusOnSelect: true,
+    swipeToSlide: true,
     prevArrow: '<button type="button" class="slick-arrow slick-prev"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M27.5 45L12.5 30L27.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
     nextArrow: '<button type="button" class="slick-arrow slick-next"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M22.5 45L37.5 30L22.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
     responsive: [
@@ -4259,10 +4262,10 @@ $(function () {
     ]
   });
   $thumbs.slick({
+    asNavFor: $slider,
     slidesToShow: 5,
     slidesToScroll: 1,
-    asNavFor: $slider,
-    arrows: false,
+    arrows: true,
     dots: false,
     centerMode: true,
     centerPadding: 0,
@@ -4271,8 +4274,8 @@ $(function () {
     infinite: false,
     focusOnSelect: true,
     swipeToSlide: true,
-    prevArrow: '<button type="button" class="slick-arrow slick-prev"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M27.5 45L12.5 30L27.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
-    nextArrow: '<button type="button" class="slick-arrow slick-next"><svg width="50" height="60" viewBox="0 0 50 60" fill="none" xmlns="http://www.w3.org/2000/svg"><g><path d="M22.5 45L37.5 30L22.5 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></button>',
+    prevArrow: '<button type="button" class="slick-arrow slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-arrow slick-next"></button>',
     responsive: [
       {
         breakpoint: 767,
@@ -4280,61 +4283,6 @@ $(function () {
       }
     ]
   });
-  /*
-  $(".b-product-images").livequery(function () {
-    var $context = $(this);
-    var $thumbs = $(".b-product-images__thumb", $context);
-    var $thumbLinks = $(".b-product-images__thumb-link", $context);
-    var $slider = $(".b-product-images__slider", $context);
-    var $prev = $(".b-product-images__prev", $context);
-    var $next = $(".b-product-images__next", $context);
-    var $thumb = $(".b-product-images__thumbs", $context);
-
-    $context.removeClass("_nojs");
-
-    //Слайдер
-    function initSlider() {
-      $slider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        prevArrow: $prev,
-        nextArrow: $next,
-        adaptiveHeight: true,
-        speed: 400,
-        fade: true,
-        asNavFor: $thumb
-      });
-
-      $thumbs.slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        asNavFor: $slider,
-        dots: false,
-        centerMode: true,
-        centerPadding: 0,
-        vertical: true,
-        verticalSwiping: true,
-        infinite: false,
-        focusOnSelect: true
-      });
-    }
-
-    initSlider();
-
-    //$thumbLinks.on('click', changeMainImage);
-
-    $context.on("resize.block", function () {
-      $slider.slick("setPosition");
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        540: "_mx540",
-        420: "_mx420"
-      }
-    });
-  });
-  */
 });
 // Ссылки на содержимое карточки продукта
 $(function () {
@@ -4803,20 +4751,6 @@ $(function () {
   });
 });
 
-// Попап регистрации
-$(function () {
-  $(".b-registration-modal").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        610: "_mx610",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Строка поиска
 $(function () {
   $(".b-search-line").livequery(function () {
@@ -4861,6 +4795,20 @@ $(function () {
     }
   });
 });
+// Попап регистрации
+$(function () {
+  $(".b-registration-modal").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        610: "_mx610",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -5229,6 +5177,32 @@ $(function () {
   });
 });
 
+// Строка поиска
+$(function () {
+  $(".b-search-line").livequery(function () {
+    var $context = $(this);
+    var $placeholder = $(".b-search-line__placeholder", $context);
+    var $field = $(".b-search-line__field", $context);
+    var $input = $("input[type=\"text\"]", $context);
+
+    $placeholder.on("click", function () {
+      $(this)
+        .closest(".b-search-line__field")
+        .find("input[type=\"text\"]")
+        .focus();
+    });
+
+    $input.blur(function () {
+      if($(this).val() != "") {
+        $(this).closest(".b-search-line__field").addClass("_filled");
+      } else {
+        $(this).closest(".b-search-line__field").removeClass("_filled");
+
+      }
+    });
+  });
+});
+
 // Промослайдер
 $(function () {
   $(".b-subcategory-slider").livequery(function () {
@@ -5256,32 +5230,6 @@ $(function () {
 
     $context.on("resize.block", function () {
       $slider.slick("setPosition");
-    });
-  });
-});
-
-// Строка поиска
-$(function () {
-  $(".b-search-line").livequery(function () {
-    var $context = $(this);
-    var $placeholder = $(".b-search-line__placeholder", $context);
-    var $field = $(".b-search-line__field", $context);
-    var $input = $("input[type=\"text\"]", $context);
-
-    $placeholder.on("click", function () {
-      $(this)
-        .closest(".b-search-line__field")
-        .find("input[type=\"text\"]")
-        .focus();
-    });
-
-    $input.blur(function () {
-      if($(this).val() != "") {
-        $(this).closest(".b-search-line__field").addClass("_filled");
-      } else {
-        $(this).closest(".b-search-line__field").removeClass("_filled");
-
-      }
     });
   });
 });

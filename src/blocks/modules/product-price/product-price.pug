@@ -14,7 +14,7 @@ mixin product-price()
       .b-product-price__jur Для организаций по б/н 62&nbsp;210&nbsp;₽
       .b-product-price__bonus 
         span.b-product-price__bonus-text +223 бонуса
-        span.b-product-price__bonus-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст") ?
+        span.b-product-price__bonus-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст" data-tippy-placement="right") ?
 
       .b-product-price__cta
         a(href="#").b-product-price__buy.button
@@ -31,9 +31,10 @@ mixin product-price()
     .b-product-price__actions
       a(href="#").b-product-preview__favor В избранное
       a(href="#").b-product-preview__compare Сравнить
-      span(class="b-product-preview__share js-tippy" data-popover-template="share") Поделиться
+      span(class="b-product-preview__share js-tippy" data-popover-template="share" data-tippy-placement="bottom") Поделиться
       div(style="display: none;")
-        +social-share(id="share")
+        div#share
+          +social-share()
 
     .b-product-price__categories
       a(href="#").b-product-price__category Смотреть все чехлы
