@@ -1,3 +1,8 @@
+// comments
+$(function () {
+  // code here...
+});
+
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -24,11 +29,6 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
-
-// comments
-$(function () {
-  // code here...
-});
 
 // Добавить аксессуары
 $(function () {
@@ -630,20 +630,6 @@ $(function () {
     });
   });
 });
-// История начислений и списаний
-$(function () {
-  $(".b-bonus-history").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        550: "_mx550",
-        420: "_mx420"
-      }
-    });
-  });
-});
-
 // Баннер с инструкциями к бонусной карте
 $(function () {
   $(".b-bonus-instruction").livequery(function () {
@@ -652,6 +638,20 @@ $(function () {
     $context.adaptBlock({
       maxWidth: {
         760: "_mx760",
+        420: "_mx420"
+      }
+    });
+  });
+});
+
+// История начислений и списаний
+$(function () {
+  $(".b-bonus-history").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        550: "_mx550",
         420: "_mx420"
       }
     });
@@ -669,6 +669,11 @@ $(function () {
       }
     });
   });
+});
+
+// comments
+$(function () {
+  // code here...
 });
 
 // Нижнее меню
@@ -775,11 +780,6 @@ $(function () {
   });
 });
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Кнопка мобильного меню
 $(function () {
   $(".b-burger-btn").livequery(function () {
@@ -829,6 +829,21 @@ $(function () {
     $context.adaptBlock({
       maxWidth: {
         350: "_mx350"
+      }
+    });
+  });
+});
+
+// Выбранные в конфигураторе продукт
+$(function () {
+  $(".b-cart-product").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        950: "_mx950",
+        850: "_mx850",
+        730: "_mx730"
       }
     });
   });
@@ -910,21 +925,6 @@ $(function () {
   });
 
 
-});
-
-// Выбранные в конфигураторе продукт
-$(function () {
-  $(".b-cart-product").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        950: "_mx950",
-        850: "_mx850",
-        730: "_mx730"
-      }
-    });
-  });
 });
 
 // Список товаров каталога плиткой
@@ -2403,31 +2403,6 @@ $(function () {
   });
 });
 
-// Ссылки в футере
-$(function () {
-  $(".b-footer-links").livequery(function () {
-    var $context = $(this);
-    var $captions = $(".b-footer-links__caption", $context);
-    var $holders = $(".b-footer-links__menu", $context);
-
-    function expandLinks() {
-      var $caption = $(this);
-      $caption.toggleClass("b-footer-links__caption_open");
-
-      $caption.next().toggleClass("b-footer-links__menu_open");
-    }
-
-    $captions.on("click", expandLinks);
-
-    $context.adaptBlock({
-      maxWidth: {
-        670: "_mx670",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Шкала в фильтре
 $(function () {
   $(".b-filter-scale").livequery(function () {
@@ -2489,6 +2464,31 @@ $(function () {
 
     $maxInput.on("change", changeMaxVal);
     $minInput.on("change", changeMinVal);
+  });
+});
+
+// Ссылки в футере
+$(function () {
+  $(".b-footer-links").livequery(function () {
+    var $context = $(this);
+    var $captions = $(".b-footer-links__caption", $context);
+    var $holders = $(".b-footer-links__menu", $context);
+
+    function expandLinks() {
+      var $caption = $(this);
+      $caption.toggleClass("b-footer-links__caption_open");
+
+      $caption.next().toggleClass("b-footer-links__menu_open");
+    }
+
+    $captions.on("click", expandLinks);
+
+    $context.adaptBlock({
+      maxWidth: {
+        670: "_mx670",
+        450: "_mx450"
+      }
+    });
   });
 });
 
@@ -3620,20 +3620,6 @@ $(function () {
     });
   });
 });
-// Преимущества в цифрах
-$(function () {
-  $(".b-nums-features").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        650: "_mx650",
-        380: "_mx380"
-      }
-    });
-  });
-});
-
 // Слайдер новостей
 $(function () {
   $(".b-news-slider").livequery(function () {
@@ -3681,6 +3667,20 @@ $(function () {
     });
   });
 });
+// Преимущества в цифрах
+$(function () {
+  $(".b-nums-features").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        650: "_mx650",
+        380: "_mx380"
+      }
+    });
+  });
+});
+
 // Окно консультанта
 $(function () {
   $(".b-online-consult").livequery(function () {
@@ -4751,6 +4751,20 @@ $(function () {
   });
 });
 
+// Попап регистрации
+$(function () {
+  $(".b-registration-modal").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        610: "_mx610",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Строка поиска
 $(function () {
   $(".b-search-line").livequery(function () {
@@ -4795,20 +4809,6 @@ $(function () {
     }
   });
 });
-// Попап регистрации
-$(function () {
-  $(".b-registration-modal").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        610: "_mx610",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -5177,32 +5177,6 @@ $(function () {
   });
 });
 
-// Строка поиска
-$(function () {
-  $(".b-search-line").livequery(function () {
-    var $context = $(this);
-    var $placeholder = $(".b-search-line__placeholder", $context);
-    var $field = $(".b-search-line__field", $context);
-    var $input = $("input[type=\"text\"]", $context);
-
-    $placeholder.on("click", function () {
-      $(this)
-        .closest(".b-search-line__field")
-        .find("input[type=\"text\"]")
-        .focus();
-    });
-
-    $input.blur(function () {
-      if($(this).val() != "") {
-        $(this).closest(".b-search-line__field").addClass("_filled");
-      } else {
-        $(this).closest(".b-search-line__field").removeClass("_filled");
-
-      }
-    });
-  });
-});
-
 // Промослайдер
 $(function () {
   $(".b-subcategory-slider").livequery(function () {
@@ -5230,6 +5204,32 @@ $(function () {
 
     $context.on("resize.block", function () {
       $slider.slick("setPosition");
+    });
+  });
+});
+
+// Строка поиска
+$(function () {
+  $(".b-search-line").livequery(function () {
+    var $context = $(this);
+    var $placeholder = $(".b-search-line__placeholder", $context);
+    var $field = $(".b-search-line__field", $context);
+    var $input = $("input[type=\"text\"]", $context);
+
+    $placeholder.on("click", function () {
+      $(this)
+        .closest(".b-search-line__field")
+        .find("input[type=\"text\"]")
+        .focus();
+    });
+
+    $input.blur(function () {
+      if($(this).val() != "") {
+        $(this).closest(".b-search-line__field").addClass("_filled");
+      } else {
+        $(this).closest(".b-search-line__field").removeClass("_filled");
+
+      }
     });
   });
 });
@@ -5364,6 +5364,14 @@ $(function () {
   });
 });
 
+// Выбор города
+$(function () {
+  $(".b-town-select").livequery(function () {
+    var $context = $(this);
+
+  });
+});
+
 // Форма выбора города
 $(function () {
   $(".b-town-modal").livequery(function () {
@@ -5374,14 +5382,6 @@ $(function () {
         450: "_mx450"
       }
     });
-  });
-});
-
-// Выбор города
-$(function () {
-  $(".b-town-select").livequery(function () {
-    var $context = $(this);
-
   });
 });
 
@@ -5884,18 +5884,6 @@ $(function () {
   // code here...
 });
 
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
-      }
-    });
-  });
-});
-
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5921,6 +5909,18 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
+      }
+    });
+  });
+});
+
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
       }
     });
   });
