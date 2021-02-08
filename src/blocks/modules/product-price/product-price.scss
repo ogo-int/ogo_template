@@ -38,6 +38,7 @@
   }
   &__unregistered {
     display: block;
+    width: 100%;
     margin-bottom: 5px;
     color: #F86F55;
     font-size: rem(14);
@@ -46,6 +47,7 @@
   }
   &__registered {
     display: block;
+    width: 100%;
     margin-bottom: 5px;
     color: #F86F55;
     font-size: rem(14);
