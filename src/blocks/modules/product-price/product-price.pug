@@ -14,7 +14,7 @@ mixin product-price()
       .b-product-price__jur Для организаций по б/н 62&nbsp;210&nbsp;₽
       .b-product-price__bonus 
         span.b-product-price__bonus-text +223 бонуса
-        span.b-product-price__bonus-helper.js-tippy(data-popover-title="Заголовок" data-popover-content="Текст" data-tippy-placement="right") ?
+        span.b-product-price__bonus-helper.js-tooltip(data-popover-title="Заголовок" data-popover-content="Текст" data-tippy-placement="right") ?
 
       .b-product-price__cta
         a(href="#").b-product-price__buy.button
@@ -23,8 +23,8 @@ mixin product-price()
           span Купить за 97&nbsp;000&nbsp;₽<span class="show-for-large"> из-за рубежа</span>
         a(href="#").b-product-price__btn.button-analog
           span Смотреть популярные аналоги
-        a(href="#modal-credit").b-product-price__btn.button-credit.js-modal
-          span В кредит
+        a(href="#modal-credit").b-product-price__credit.js-modal
+          //span В кредит
         div(style="display: none;")
           +modal-credit(id="modal-credit")
 

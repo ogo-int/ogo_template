@@ -1,3 +1,8 @@
+// comments
+$(function () {
+  // code here...
+});
+
 // Fn to allow an event to fire after all images are loaded
 $.fn.imagesLoaded = function () {
 
@@ -24,11 +29,6 @@ $.fn.imagesLoaded = function () {
   return $.when.apply($,dfds);
 
 };
-
-// comments
-$(function () {
-  // code here...
-});
 
 // Добавить аксессуары
 $(function () {
@@ -671,6 +671,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Нижнее меню
 $(function () {
   $(".b-bottom-menu").livequery(function() {
@@ -780,6 +785,11 @@ $(function () {
   // code here...
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Кнопка мобильного меню
 $(function () {
   $(".b-burger-btn").livequery(function () {
@@ -793,16 +803,6 @@ $(function () {
       }
     });
   });
-});
-
-// comments
-$(function () {
-  // code here...
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -829,6 +829,21 @@ $(function () {
     $context.adaptBlock({
       maxWidth: {
         350: "_mx350"
+      }
+    });
+  });
+});
+
+// Выбранные в конфигураторе продукт
+$(function () {
+  $(".b-cart-product").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        950: "_mx950",
+        850: "_mx850",
+        730: "_mx730"
       }
     });
   });
@@ -910,21 +925,6 @@ $(function () {
   });
 
 
-});
-
-// Выбранные в конфигураторе продукт
-$(function () {
-  $(".b-cart-product").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        950: "_mx950",
-        850: "_mx850",
-        730: "_mx730"
-      }
-    });
-  });
 });
 
 // Список товаров каталога плиткой
@@ -2584,31 +2584,6 @@ $(function () {
   });
 });
 
-// Ссылки в футере
-$(function () {
-  $(".b-footer-links").livequery(function () {
-    var $context = $(this);
-    var $captions = $(".b-footer-links__caption", $context);
-    var $holders = $(".b-footer-links__menu", $context);
-
-    function expandLinks() {
-      var $caption = $(this);
-      $caption.toggleClass("b-footer-links__caption_open");
-
-      $caption.next().toggleClass("b-footer-links__menu_open");
-    }
-
-    $captions.on("click", expandLinks);
-
-    $context.adaptBlock({
-      maxWidth: {
-        670: "_mx670",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 // Шкала в фильтре
 $(function () {
   $(".b-filter-scale").livequery(function () {
@@ -2670,6 +2645,31 @@ $(function () {
 
     $maxInput.on("change", changeMaxVal);
     $minInput.on("change", changeMinVal);
+  });
+});
+
+// Ссылки в футере
+$(function () {
+  $(".b-footer-links").livequery(function () {
+    var $context = $(this);
+    var $captions = $(".b-footer-links__caption", $context);
+    var $holders = $(".b-footer-links__menu", $context);
+
+    function expandLinks() {
+      var $caption = $(this);
+      $caption.toggleClass("b-footer-links__caption_open");
+
+      $caption.next().toggleClass("b-footer-links__menu_open");
+    }
+
+    $captions.on("click", expandLinks);
+
+    $context.adaptBlock({
+      maxWidth: {
+        670: "_mx670",
+        450: "_mx450"
+      }
+    });
   });
 });
 
@@ -3002,6 +3002,51 @@ $(function () {
   // code here...
 });
 
+// Слайдер логотипов партнеров
+$(function () {
+  $(".b-logo-tape").livequery(function () {
+    var $context = $(this);
+    var $slider = $(".b-logo-tape__items", $context);
+    $context.removeClass("_nojs");
+
+    $slider.slick({
+      slidesToShow: 7,
+      slidesToScroll: 1,
+      // autoplay: true,
+      arrows: false,
+      draggable: false,
+      autoplaySpeed: 2500,
+      speed: 500,
+      respondTo: "slider",
+      responsive: [{
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+      ]
+    });
+
+
+    $context.on("resize.block", function () {
+      $slider.slick("checkResponsive");
+      $slider.slick("setPosition");
+    });
+
+    $context.adaptBlock({
+      maxWidth: {
+        960: "_mx960",
+        600: "_mx600"
+      }
+    });
+  });
+});
 // comments
 $(function () {
   $(".b-list-product").livequery(function () {
@@ -3055,51 +3100,6 @@ $(function () {
   });
 });
 
-// Слайдер логотипов партнеров
-$(function () {
-  $(".b-logo-tape").livequery(function () {
-    var $context = $(this);
-    var $slider = $(".b-logo-tape__items", $context);
-    $context.removeClass("_nojs");
-
-    $slider.slick({
-      slidesToShow: 7,
-      slidesToScroll: 1,
-      // autoplay: true,
-      arrows: false,
-      draggable: false,
-      autoplaySpeed: 2500,
-      speed: 500,
-      respondTo: "slider",
-      responsive: [{
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 5
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3
-        }
-      }
-      ]
-    });
-
-
-    $context.on("resize.block", function () {
-      $slider.slick("checkResponsive");
-      $slider.slick("setPosition");
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        960: "_mx960",
-        600: "_mx600"
-      }
-    });
-  });
-});
 // Ключевые преимущества
 $(function () {
   $(".b-main-advantages").livequery(function() {
@@ -3801,20 +3801,6 @@ $(function () {
     });
   });
 });
-// Преимущества в цифрах
-$(function () {
-  $(".b-nums-features").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        650: "_mx650",
-        380: "_mx380"
-      }
-    });
-  });
-});
-
 // Слайдер новостей
 $(function () {
   $(".b-news-slider").livequery(function () {
@@ -3862,6 +3848,20 @@ $(function () {
     });
   });
 });
+// Преимущества в цифрах
+$(function () {
+  $(".b-nums-features").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        650: "_mx650",
+        380: "_mx380"
+      }
+    });
+  });
+});
+
 // Окно консультанта
 $(function () {
   $(".b-online-consult").livequery(function () {
@@ -4020,11 +4020,6 @@ $(function () {
 });
 
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Смена пароля
 $(function () {
   $(".b-password-change").livequery(function () {
@@ -4123,6 +4118,11 @@ $(function () {
     });
   });
 });
+// comments
+$(function () {
+  // code here...
+});
+
 // comments
 $(function () {
   $(".b-password-input").livequery(function () {
@@ -4932,50 +4932,6 @@ $(function () {
   });
 });
 
-// Строка поиска
-$(function () {
-  $(".b-search-line").livequery(function () {
-    var $context = $(this);
-    var $placeholder = $(".b-search-line__placeholder", $context);
-    var $field = $(".b-search-line__field", $context);
-    var $input = $("input[type=\"text\"]", $context);
-
-    $placeholder.on("click", function () {
-      $(this)
-        .closest(".b-search-line__field")
-        .find("input[type=\"text\"]")
-        .focus();
-    });
-
-    $input.blur(function () {
-      if ($(this).val() != "") {
-        $(this).closest(".b-search-line__field").addClass("_filled");
-      } else {
-        $(this).closest(".b-search-line__field").removeClass("_filled");
-
-      }
-    });
-  });
-});
-
-$(function () {
-  $(document).on("click", function (e) {
-    var targ = $(e.target);
-    var className = $(".b-search-line__field-drop");
-
-    if (targ.is(".b-search-line__input")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__ph-pre")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__ph-main")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__placeholder")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else {
-      className.removeClass("b-search-line__field-drop__active");
-    }
-  });
-});
 // Попап регистрации
 $(function () {
   $(".b-registration-modal").livequery(function () {
@@ -5033,6 +4989,50 @@ $(function () {
       $slider.slick("checkResponsive");
       $slider.slick("setPosition");
     });
+  });
+});
+// Строка поиска
+$(function () {
+  $(".b-search-line").livequery(function () {
+    var $context = $(this);
+    var $placeholder = $(".b-search-line__placeholder", $context);
+    var $field = $(".b-search-line__field", $context);
+    var $input = $("input[type=\"text\"]", $context);
+
+    $placeholder.on("click", function () {
+      $(this)
+        .closest(".b-search-line__field")
+        .find("input[type=\"text\"]")
+        .focus();
+    });
+
+    $input.blur(function () {
+      if ($(this).val() != "") {
+        $(this).closest(".b-search-line__field").addClass("_filled");
+      } else {
+        $(this).closest(".b-search-line__field").removeClass("_filled");
+
+      }
+    });
+  });
+});
+
+$(function () {
+  $(document).on("click", function (e) {
+    var targ = $(e.target);
+    var className = $(".b-search-line__field-drop");
+
+    if (targ.is(".b-search-line__input")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__ph-pre")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__ph-main")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__placeholder")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else {
+      className.removeClass("b-search-line__field-drop__active");
+    }
   });
 });
 // Карточка магазина
@@ -5358,32 +5358,6 @@ $(function () {
   });
 });
 
-// Строка поиска
-$(function () {
-  $(".b-search-line").livequery(function () {
-    var $context = $(this);
-    var $placeholder = $(".b-search-line__placeholder", $context);
-    var $field = $(".b-search-line__field", $context);
-    var $input = $("input[type=\"text\"]", $context);
-
-    $placeholder.on("click", function () {
-      $(this)
-        .closest(".b-search-line__field")
-        .find("input[type=\"text\"]")
-        .focus();
-    });
-
-    $input.blur(function () {
-      if($(this).val() != "") {
-        $(this).closest(".b-search-line__field").addClass("_filled");
-      } else {
-        $(this).closest(".b-search-line__field").removeClass("_filled");
-
-      }
-    });
-  });
-});
-
 // Промослайдер
 $(function () {
   $(".b-subcategory-slider").livequery(function () {
@@ -5411,6 +5385,32 @@ $(function () {
 
     $context.on("resize.block", function () {
       $slider.slick("setPosition");
+    });
+  });
+});
+
+// Строка поиска
+$(function () {
+  $(".b-search-line").livequery(function () {
+    var $context = $(this);
+    var $placeholder = $(".b-search-line__placeholder", $context);
+    var $field = $(".b-search-line__field", $context);
+    var $input = $("input[type=\"text\"]", $context);
+
+    $placeholder.on("click", function () {
+      $(this)
+        .closest(".b-search-line__field")
+        .find("input[type=\"text\"]")
+        .focus();
+    });
+
+    $input.blur(function () {
+      if($(this).val() != "") {
+        $(this).closest(".b-search-line__field").addClass("_filled");
+      } else {
+        $(this).closest(".b-search-line__field").removeClass("_filled");
+
+      }
     });
   });
 });

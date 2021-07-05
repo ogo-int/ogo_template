@@ -1,31 +1,39 @@
 .b-product-params {
   &__caption {
-    @include margin(30/20);
-    font-size: 32/16*100%;
-    font-weight: 200;
-    color: #333;
+    margin: 20px 0 30px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #1d1d1d;
   }
 
   &__sections {
     list-style: none;
-    margin: 0;
+    margin: 0 0 34px 0;
     padding: 0;
+    border: 1px solid #F1F1F1;
   }
 
   &__section {
     margin: 0;
+    border-bottom: 1px solid #F1F1F1;
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   &__section-caption {
     position: relative;
-    padding: 10px 20px 10px 0;
-    border-bottom: 1px solid #f1f1f1;
-    color: #dc3e48;
-    font-size: 18/16*100%;
+    padding: 20px;
+    border-bottom: none; //1px solid #f1f1f1;
+    color: #1d1d1d;
+    font-size: 18px;
+    line-height: 20px;
     font-weight: 400;
     cursor: pointer;
-    transition: .2s border-bottom-color;
-
+    transition: none; //.2s border-bottom-color;
+    &:hover {
+      color: #dc3e48;
+    }
     &:after {
       @include ft-icon($ft-arrow-down);
       position: absolute;
@@ -53,33 +61,80 @@
 
   &__params {
     @include box-sizing;
-    display: table;
+    display: block;
     width: 100%;
     margin: 0;
-    padding: 0;
-    font-weight: 200;
-    font-size: 14/16*100%;
+    padding: 0 20px 20px 20px;
+    font-weight: 300;
+    font-size: 16px;
   }
 
   &__param {
-    display: table-row;
-    margin: 0;
-    background-color: #f9f9f9;
-
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    list-style: none;
+    margin: 0 0 10px 0;
+    background: none;
+    background-color: unset;
+    &:nth-child(odd),
+    &:nth-child(even),
     &:nth-child(2n) {
-      background-color: #fcfcfc;
+      background-color: unset;
     }
   }
 
   &__param-label {
-    display: table-cell;
+    flex: 0 0 65%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 65%;
     width: 65%;
-    padding: 10px 15px;
-    vertical-align: top;
+    padding: 0;
+    > span {
+      display: block;
+      flex: 0 1 auto;
+    }
+    &-helper {
+      display: inline-block;
+      min-width: 14px;
+      height: 14px;
+      margin-left: 5px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 14px;
+      text-align: center;
+      background: #3E8BDC;
+      border-radius: 14px;
+      vertical-align: middle;
+    }
+    &:after {
+      display: block;
+      content: '';
+      flex: 1 0 auto;
+      margin: 0 10px;
+      border-bottom: 2px dotted #f1f1f1;
+    }
   }
 
   &__param-value {
-    display: table-cell;
-    padding: 10px;
+    flex: 0 0 35%;
+    display: block;
+    max-width: 35%;
+    padding: 0;
   }
+
+  &__desc {
+    font-weight: 300;
+  }
+}
+
+.b-product-params__param:nth-child(2n) .b-product-params__param-label,
+.b-product-params__param:nth-child(2n) .b-product-params__param-value,
+.b-product-params__param .b-product-params__param-label,
+.b-product-params__param .b-product-params__param-value {
+  background-color: unset !important; 
 }
