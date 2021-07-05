@@ -630,20 +630,6 @@ $(function () {
     });
   });
 });
-// Баннер с инструкциями к бонусной карте
-$(function () {
-  $(".b-bonus-instruction").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        760: "_mx760",
-        420: "_mx420"
-      }
-    });
-  });
-});
-
 // История начислений и списаний
 $(function () {
   $(".b-bonus-history").livequery(function () {
@@ -652,6 +638,20 @@ $(function () {
     $context.adaptBlock({
       maxWidth: {
         550: "_mx550",
+        420: "_mx420"
+      }
+    });
+  });
+});
+
+// Баннер с инструкциями к бонусной карте
+$(function () {
+  $(".b-bonus-instruction").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        760: "_mx760",
         420: "_mx420"
       }
     });
@@ -780,6 +780,16 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
+// comments
+$(function () {
+  // code here...
+});
+
 // Кнопка мобильного меню
 $(function () {
   $(".b-burger-btn").livequery(function () {
@@ -793,16 +803,6 @@ $(function () {
       }
     });
   });
-});
-
-// comments
-$(function () {
-  // code here...
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -2821,6 +2821,51 @@ $(function () {
   // code here...
 });
 
+// Слайдер логотипов партнеров
+$(function () {
+  $(".b-logo-tape").livequery(function () {
+    var $context = $(this);
+    var $slider = $(".b-logo-tape__items", $context);
+    $context.removeClass("_nojs");
+
+    $slider.slick({
+      slidesToShow: 7,
+      slidesToScroll: 1,
+      // autoplay: true,
+      arrows: false,
+      draggable: false,
+      autoplaySpeed: 2500,
+      speed: 500,
+      respondTo: "slider",
+      responsive: [{
+        breakpoint: 960,
+        settings: {
+          slidesToShow: 5
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3
+        }
+      }
+      ]
+    });
+
+
+    $context.on("resize.block", function () {
+      $slider.slick("checkResponsive");
+      $slider.slick("setPosition");
+    });
+
+    $context.adaptBlock({
+      maxWidth: {
+        960: "_mx960",
+        600: "_mx600"
+      }
+    });
+  });
+});
 // comments
 $(function () {
   $(".b-list-product").livequery(function () {
@@ -2874,51 +2919,6 @@ $(function () {
   });
 });
 
-// Слайдер логотипов партнеров
-$(function () {
-  $(".b-logo-tape").livequery(function () {
-    var $context = $(this);
-    var $slider = $(".b-logo-tape__items", $context);
-    $context.removeClass("_nojs");
-
-    $slider.slick({
-      slidesToShow: 7,
-      slidesToScroll: 1,
-      // autoplay: true,
-      arrows: false,
-      draggable: false,
-      autoplaySpeed: 2500,
-      speed: 500,
-      respondTo: "slider",
-      responsive: [{
-        breakpoint: 960,
-        settings: {
-          slidesToShow: 5
-        }
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 3
-        }
-      }
-      ]
-    });
-
-
-    $context.on("resize.block", function () {
-      $slider.slick("checkResponsive");
-      $slider.slick("setPosition");
-    });
-
-    $context.adaptBlock({
-      maxWidth: {
-        960: "_mx960",
-        600: "_mx600"
-      }
-    });
-  });
-});
 // Ключевые преимущества
 $(function () {
   $(".b-main-advantages").livequery(function() {
@@ -3839,11 +3839,6 @@ $(function () {
 });
 
 
-// comments
-$(function () {
-  // code here...
-});
-
 // Смена пароля
 $(function () {
   $(".b-password-change").livequery(function () {
@@ -3942,6 +3937,11 @@ $(function () {
     });
   });
 });
+// comments
+$(function () {
+  // code here...
+});
+
 // comments
 $(function () {
   $(".b-password-input").livequery(function () {
@@ -4765,50 +4765,6 @@ $(function () {
   });
 });
 
-// Строка поиска
-$(function () {
-  $(".b-search-line").livequery(function () {
-    var $context = $(this);
-    var $placeholder = $(".b-search-line__placeholder", $context);
-    var $field = $(".b-search-line__field", $context);
-    var $input = $("input[type=\"text\"]", $context);
-
-    $placeholder.on("click", function () {
-      $(this)
-        .closest(".b-search-line__field")
-        .find("input[type=\"text\"]")
-        .focus();
-    });
-
-    $input.blur(function () {
-      if ($(this).val() != "") {
-        $(this).closest(".b-search-line__field").addClass("_filled");
-      } else {
-        $(this).closest(".b-search-line__field").removeClass("_filled");
-
-      }
-    });
-  });
-});
-
-$(function () {
-  $(document).on("click", function (e) {
-    var targ = $(e.target);
-    var className = $(".b-search-line__field-drop");
-
-    if (targ.is(".b-search-line__input")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__ph-pre")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__ph-main")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else if (targ.is(".b-search-line__placeholder")) {
-      className.addClass("b-search-line__field-drop__active");
-    } else {
-      className.removeClass("b-search-line__field-drop__active");
-    }
-  });
-});
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -4852,6 +4808,50 @@ $(function () {
       $slider.slick("checkResponsive");
       $slider.slick("setPosition");
     });
+  });
+});
+// Строка поиска
+$(function () {
+  $(".b-search-line").livequery(function () {
+    var $context = $(this);
+    var $placeholder = $(".b-search-line__placeholder", $context);
+    var $field = $(".b-search-line__field", $context);
+    var $input = $("input[type=\"text\"]", $context);
+
+    $placeholder.on("click", function () {
+      $(this)
+        .closest(".b-search-line__field")
+        .find("input[type=\"text\"]")
+        .focus();
+    });
+
+    $input.blur(function () {
+      if ($(this).val() != "") {
+        $(this).closest(".b-search-line__field").addClass("_filled");
+      } else {
+        $(this).closest(".b-search-line__field").removeClass("_filled");
+
+      }
+    });
+  });
+});
+
+$(function () {
+  $(document).on("click", function (e) {
+    var targ = $(e.target);
+    var className = $(".b-search-line__field-drop");
+
+    if (targ.is(".b-search-line__input")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__ph-pre")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__ph-main")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else if (targ.is(".b-search-line__placeholder")) {
+      className.addClass("b-search-line__field-drop__active");
+    } else {
+      className.removeClass("b-search-line__field-drop__active");
+    }
   });
 });
 // Карточка магазина
@@ -5364,14 +5364,6 @@ $(function () {
   });
 });
 
-// Выбор города
-$(function () {
-  $(".b-town-select").livequery(function () {
-    var $context = $(this);
-
-  });
-});
-
 // Форма выбора города
 $(function () {
   $(".b-town-modal").livequery(function () {
@@ -5382,6 +5374,14 @@ $(function () {
         450: "_mx450"
       }
     });
+  });
+});
+
+// Выбор города
+$(function () {
+  $(".b-town-select").livequery(function () {
+    var $context = $(this);
+
   });
 });
 
@@ -5884,6 +5884,18 @@ $(function () {
   // code here...
 });
 
+// Промоблок 1
+$(function () {
+  $(".b-promo-block1").livequery(function () {
+    var $context = $(this);
+    $context.adaptBlock({
+      maxWidth: {
+        400: "_mx400"
+      }
+    });
+  });
+});
+
 // Промоблок 2
 $(function () {
   $(".b-promo-block2").livequery(function () {
@@ -5909,18 +5921,6 @@ $(function () {
       maxWidth: {
         780: "_mx780",
         700: "_mx700",
-      }
-    });
-  });
-});
-
-// Промоблок 1
-$(function () {
-  $(".b-promo-block1").livequery(function () {
-    var $context = $(this);
-    $context.adaptBlock({
-      maxWidth: {
-        400: "_mx400"
       }
     });
   });

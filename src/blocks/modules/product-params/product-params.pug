@@ -1,69 +1,122 @@
 mixin product-params()
   .b-product-params.iblock&attributes(attributes)
-    .b-product-params__caption Технические характеристики
-    ul.b-product-params__sections
-      li.b-product-params__section
+    h3.b-product-params__caption Технические характеристики
+    .b-product-params__sections
+      .b-product-params__section
         .b-product-params__section-caption.b-product-params__section-caption_active Самое главное
         .b-product-params__section-holder.b-product-params__section-holder_active
           ul.b-product-params__params
             li.b-product-params__param
-              .b-product-params__param-label Подавление эффекта красных глаз
-              .b-product-params__param-value Да
+              .b-product-params__param-label
+                span Подавление эффекта красных глаз
+                  span.b-product-params__param-label-helper.js-tooltip(data-popover-content="Тяжесть, определяемая какой-то мерой (Википедия)" data-tippy-placement="right") ?
+              .b-product-params__param-value
+                span Да
             li.b-product-params__param
-              .b-product-params__param-label Дисплей (дюймы)
-              .b-product-params__param-value 3.0
+              .b-product-params__param-label
+                span Дисплей (дюймы)
+              .b-product-params__param-value
+                span 3.0
             li.b-product-params__param
-              .b-product-params__param-label Карта памяти
-              .b-product-params__param-value SDXC, SDHC, SD
+              .b-product-params__param-label
+                span Карта памяти
+              .b-product-params__param-value
+                span SDXC, SDHC, SD
             li.b-product-params__param
-              .b-product-params__param-label Вспышка
-              .b-product-params__param-value Встроенная выдвижная, &laquo;горячий&raquo; башмак
+              .b-product-params__param-label
+                span Вспышка
+              .b-product-params__param-value
+                span Встроенная выдвижная, &laquo;горячий&raquo; башмак
             li.b-product-params__param
-              .b-product-params__param-label Стабилизатор
-              .b-product-params__param-value Нет
+              .b-product-params__param-label
+                span Стабилизатор
+              .b-product-params__param-value
+                span Нет
             li.b-product-params__param
-              .b-product-params__param-label Формат записи
-              .b-product-params__param-value Фото: RAW, JPEG, Видео: MOV (H.264)
+              .b-product-params__param-label
+                span Формат записи
+              .b-product-params__param-value
+                span Фото: RAW, JPEG, Видео: MOV (H.264)
             li.b-product-params__param
-              .b-product-params__param-label Материал корпуса
-              .b-product-params__param-value Пластик
+              .b-product-params__param-label
+                span Материал корпуса
+              .b-product-params__param-value
+                span Пластик
             li.b-product-params__param
-              .b-product-params__param-label Сенсорный дисплей
-              .b-product-params__param-value Нет
+              .b-product-params__param-label
+                span Сенсорный дисплей
+              .b-product-params__param-value
+                span Нет
             li.b-product-params__param
-              .b-product-params__param-label Сменный обьектив
-              .b-product-params__param-value Да
+              .b-product-params__param-label
+                span Сменный обьектив
+              .b-product-params__param-value
+                span Да
             li.b-product-params__param
-              .b-product-params__param-label Съемка в&nbsp;RAW
-              .b-product-params__param-value Да
+              .b-product-params__param-label
+                span Съемка в&nbsp;RAW
+              .b-product-params__param-value
+                span Да
             li.b-product-params__param
-              .b-product-params__param-label 3D съёмка
-              .b-product-params__param-value Нет
+              .b-product-params__param-label
+                span 3D съёмка
+              .b-product-params__param-value
+                span Нет
 
-      li.b-product-params__section
+      .b-product-params__section
         .b-product-params__section-caption Габариты и&nbsp;вес
         .b-product-params__section-holder
           ul.b-product-params__params
             li.b-product-params__param
-              .b-product-params__param-label Подавление эффекта красных глаз
-              .b-product-params__param-value Да
+              .b-product-params__param-label
+                span Подавление эффекта красных глаз
+              .b-product-params__param-value
+                span Да
             li.b-product-params__param
-              .b-product-params__param-label Дисплей (дюймы)
-              .b-product-params__param-value 3.0
+              .b-product-params__param-label
+                span Дисплей (дюймы)
+              .b-product-params__param-value
+                span 3.0
             li.b-product-params__param
-              .b-product-params__param-label Карта памяти
-              .b-product-params__param-value SDXC, SDHC, SD
+              .b-product-params__param-label
+                span Карта памяти
+              .b-product-params__param-value
+                span SDXC, SDHC, SD
 
-      li.b-product-params__section
+      .b-product-params__section
         .b-product-params__section-caption Размер упаковки
         .b-product-params__section-holder
           ul.b-product-params__params
             li.b-product-params__param
-              .b-product-params__param-label Подавление эффекта красных глаз
-              .b-product-params__param-value Да
+              .b-product-params__param-label
+                span Подавление эффекта красных глаз
+              .b-product-params__param-value
+                span Да
             li.b-product-params__param
-              .b-product-params__param-label Дисплей (дюймы)
-              .b-product-params__param-value 3.0
+              .b-product-params__param-label
+                span Дисплей (дюймы)
+              .b-product-params__param-value
+                span 3.0
             li.b-product-params__param
-              .b-product-params__param-label Карта памяти
-              .b-product-params__param-value SDXC, SDHC, SD
+              .b-product-params__param-label
+                span Карта памяти
+              .b-product-params__param-value
+                span SDXC, SDHC, SD
+
+    .b-product-params__desc
+      h4 Самое прочное стекло iPhone.
+      p Передняя и задняя стеклянные панели закалены методом двойного ионного обмена.
+
+      h4 Защита от воды. Теперь в два раза глубже.
+      p iPhone 11 ещё лучше защищён от воды: он выдерживает погружение на глубину до 2 метров длительностью до 30 минут.
+
+      h4 Выходит на полный рабочий день.
+      p Целый день без подзарядки. Аппаратное и программное обеспечение слаженно работают вместе, поэтому заряд аккумулятора используется с максимальной эффективностью. А возможность быстрой зарядки позволяет быстро вернуть разряженный телефон в строй.
+
+      h4 Сертификаты
+      a(href="assets/img/content/catalog_card/product-photo1.png" class="image-thumb gallery" rel="gallery")
+        img(src="assets/img/content/catalog_card/product-photo1.png", alt="")
+      .hidden(style="display: none")
+        a(href="assets/img/content/catalog_card/product-photo2.png" class="gallery" rel="gallery")
+        a(href="assets/img/content/catalog_card/product-photo3.png" class="gallery" rel="gallery")
+        a(href="assets/img/content/catalog_card/product-photo4.png" class="gallery" rel="gallery")

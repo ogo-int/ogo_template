@@ -248,7 +248,12 @@
       font-weight: 400;
     }
   }
-
+  &__credit {
+  display: inline-block;
+  width: 155px;
+  height: 38px;
+  background: url('../img/sber.png')no-repeat center center / 155px 38px;
+  }
 //  &__sku-holder {
 //    padding: 15px 10px 5px;
 //    background-color: #f1f1f1;
