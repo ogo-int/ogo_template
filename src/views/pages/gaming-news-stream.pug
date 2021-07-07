@@ -17,5 +17,53 @@ block head-scripts
 block caption
 
 block inner-content
-  section.c-gaming
+  section.c-gaming.c-gaming--stream
     section.b-gaming-section
+      .b-gaming-divider
+      img(src="https://dummyimage.com/1200x350/eee/000" style="max-width: 100%")
+    
+    section.b-gaming-section
+      .b-gaming-stream-grid
+        .b-gaming-stream-grid__start
+          h2.b-gaming-stream__title Друзья, мы безумно рады вернуться к вам в прямом эфире!
+          p Врываемся в наш первый стрим 2021 с одной из самых популярных технологий NVIDIA DLSS.
+
+          .b-gaming-divider
+          .b-gaming-divider
+          .b-gaming-divider
+
+          h2.b-gaming-stream__title Программа стрима:
+          ul.b-gaming__list(style="font-weight: 300")
+            li Расскажем про суть работы и развеем популярные мифы
+            li Порубимся в игры и проведем тесты качества и производительности
+            li Ответим на вопросы в режиме онлайн
+            li Проведём викторину, подарим подарки и разыграем 4К монитор
+
+        .b-gaming-stream-grid__middle
+          .b-gaming-section.b-gaming-section--light
+            .b-gaming-stream-info
+              h2.b-gaming-stream__title 28 марта | 14:00 МСК
+              .b-gaming-streamer
+                .b-gaming-streamer__image
+                  img(src="assets/img/gaming/gaming-streamer.png")
+                span.b-gaming-streamer__name Лёша Пчёлкин
+                span.b-gaming-streamer__info Ведущий
+              .b-gaming-stream-info__footer
+                .b-gaming-stream-info__footer-time
+                  img(src="assets/img/gaming/live-streaming.png").b-gaming-stream-info__footer-image
+                  span.b-gaming-stream__title(style="margin-bottom: 0;") 1,5 - 2 часа
+                  span.b-gaming-stream__misc Продолжительность
+                .b-gaming-stream-info__footer-place
+                  img(src="assets/img/gaming/vk.png").b-gaming-stream-info__footer-image
+                  span.b-gaming-stream__title(style="margin-bottom: 0;") VKontakte
+                  span.b-gaming-stream__misc Место проведения
+            .b-gaming-divider
+
+        .b-gaming-stream-grid__end
+          p Следите за новостями и не забывайте подписываться на <a href="#">нашу группу</a> для участия в конкурсах.
+          p <a href="#" class="button-gaming" style="font-size: 16px; font-weight: 600">Перейти в VKontakte</a>
+          p(style="color: #9a9a9a") Ссылка на стрим появится в день трансляции
+    section.b-gaming-section
+      a(href="#").b-gaming__cta
+        img(src="assets/img/gaming/cta-big.png", alt="Перейти на игровой сайт").b-gaming__cta-image
+        img(src="assets/img/gaming/cta-small.png", alt="Перейти на игровой сайт").b-gaming__cta-image-sm

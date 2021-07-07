@@ -780,6 +780,11 @@ $(function () {
   });
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Кнопка мобильного меню
 $(function () {
   $(".b-burger-btn").livequery(function () {
@@ -793,11 +798,6 @@ $(function () {
       }
     });
   });
-});
-
-// comments
-$(function () {
-  // code here...
 });
 
 // comments
@@ -1871,37 +1871,6 @@ $(function () {
   });
 });
 
-// Контент в экспандере
-$(function () {
-  $(".b-expand-content").livequery(function () {
-    var $context  = $(this);
-    var $link = $(".b-expand-content__link", $context);
-    var $holder = $(".b-expand-content__content-holder", $context);
-
-    function toggleContainer () {
-      if($link.hasClass("_open")){
-        $link.removeClass("_open");
-        $holder.slideUp(300);
-      } else {
-        $link.addClass("_open");
-        $holder.slideDown(300, function () {
-          $("*", $holder).trigger("resize.block");
-        });
-      }
-
-      return false;
-    }
-
-    if($link.hasClass("_open")) {
-      $holder.slideDown(300);
-    } else {
-      $holder.slideUp(300);
-    }
-
-    $link.on("click", toggleContainer);
-  });
-});
-
 // Попап запроса оценки эксперта
 $(function () {
   $(".b-expert-request").livequery(function () {
@@ -2020,6 +1989,37 @@ $(function () {
         400: "_mx400"
       }
     });
+  });
+});
+
+// Контент в экспандере
+$(function () {
+  $(".b-expand-content").livequery(function () {
+    var $context  = $(this);
+    var $link = $(".b-expand-content__link", $context);
+    var $holder = $(".b-expand-content__content-holder", $context);
+
+    function toggleContainer () {
+      if($link.hasClass("_open")){
+        $link.removeClass("_open");
+        $holder.slideUp(300);
+      } else {
+        $link.addClass("_open");
+        $holder.slideDown(300, function () {
+          $("*", $holder).trigger("resize.block");
+        });
+      }
+
+      return false;
+    }
+
+    if($link.hasClass("_open")) {
+      $holder.slideDown(300);
+    } else {
+      $holder.slideUp(300);
+    }
+
+    $link.on("click", toggleContainer);
   });
 });
 
@@ -2322,6 +2322,20 @@ $(function () {
   });
 });
 
+// Сортировка отзывов
+$(function () {
+  $(".b-feedback-sort").livequery(function () {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        620: "_mx620",
+        380: "_mx380"
+      }
+    });
+  });
+});
+
 // Отзывы о продукте
 $(function () {
   $(".b-feedback-product").livequery(function () {
@@ -2389,20 +2403,6 @@ $(function () {
     });
   });
 });
-// Сортировка отзывов
-$(function () {
-  $(".b-feedback-sort").livequery(function () {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        620: "_mx620",
-        380: "_mx380"
-      }
-    });
-  });
-});
-
 // Шкала в фильтре
 $(function () {
   $(".b-filter-scale").livequery(function () {
@@ -3756,11 +3756,11 @@ $(function () {
   });
 });
 
-
 // comments
 $(function () {
   // code here...
 });
+
 
 // Смена пароля
 $(function () {
@@ -4016,6 +4016,32 @@ $(function () {
   });
 });
 
+// Точка самовывоза
+$(function () {
+  $(".b-pickpoint-qiwi").livequery(function () {
+    var $context = $(this);
+    var $input = $(".b-pickpoint-qiwi__radio-input", $context);
+
+    function checkState(event, isOther) {
+      if($input.prop("checked")) {
+        $context.addClass("_checked");
+      } else {
+        $context.removeClass("_checked");
+      }
+      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
+    }
+
+    checkState();
+    $input.on("change", checkState);
+
+    $context.adaptBlock({
+      maxWidth: {
+        530: "_mx530"
+      }
+    });
+  });
+});
+
 // Точка получения заказа
 $(function () {
   $(".b-pickpoint-confirm").livequery(function () {
@@ -4041,32 +4067,6 @@ $(function () {
       }
     });
 
-  });
-});
-
-// Точка самовывоза
-$(function () {
-  $(".b-pickpoint-qiwi").livequery(function () {
-    var $context = $(this);
-    var $input = $(".b-pickpoint-qiwi__radio-input", $context);
-
-    function checkState(event, isOther) {
-      if($input.prop("checked")) {
-        $context.addClass("_checked");
-      } else {
-        $context.removeClass("_checked");
-      }
-      if(!isOther) $("[name=\""+ $input.attr("name") +"\"]").not($input).trigger("change", true);
-    }
-
-    checkState();
-    $input.on("change", checkState);
-
-    $context.adaptBlock({
-      maxWidth: {
-        530: "_mx530"
-      }
-    });
   });
 });
 
@@ -4296,31 +4296,6 @@ $(function () {
   });
 });
 
-// Обзор продукта
-$(function () {
-  $(".b-product-review").livequery(function () {
-    var $context = $(this);
-    var $moreBtn = $(".b-product-review__more", $context);
-    var $moreHolder = $(".b-product-review__more-holder", $context);
-    var $moreText = $(".b-product-review__full-text", $context);
-
-    function showMore () {
-      $moreText.slideDown(400);
-      $moreHolder.addClass("_more-open");
-      $moreText.addClass("_more-open");
-      return false;
-    }
-
-    $moreBtn.on("click", showMore);
-
-    $context.adaptBlock({
-      maxWidth: {
-        930: "_mx930"
-      }
-    });
-  });
-});
-
 // Понравился товар?
 $(function () {
   $(".b-product-share").livequery(function () {
@@ -4394,6 +4369,31 @@ $(function () {
     });
   });
 });
+// Обзор продукта
+$(function () {
+  $(".b-product-review").livequery(function () {
+    var $context = $(this);
+    var $moreBtn = $(".b-product-review__more", $context);
+    var $moreHolder = $(".b-product-review__more-holder", $context);
+    var $moreText = $(".b-product-review__full-text", $context);
+
+    function showMore () {
+      $moreText.slideDown(400);
+      $moreHolder.addClass("_more-open");
+      $moreText.addClass("_more-open");
+      return false;
+    }
+
+    $moreBtn.on("click", showMore);
+
+    $context.adaptBlock({
+      maxWidth: {
+        930: "_mx930"
+      }
+    });
+  });
+});
+
 $(function (){
   function remove() {
     var hoverContent = $(".b-product-small__hover-content");
@@ -4728,6 +4728,40 @@ $(function () {
     }
   });
 });
+// Карточка магазина
+$(function () {
+  $(".b-shop-card").livequery(function () {
+    var $context = $(this);
+    var $tabLinks = $(".b-shop-card__way-link", $context);
+    var $tabContainers = $(".b-shop-card__way-tab", $context);
+
+    function changeTab () {
+      var $link = $(this);
+      var index = $tabLinks.index($link);
+
+      if($link.hasClass("_active")) return false;
+
+      $tabLinks.removeClass("_active");
+      $tabContainers.removeClass("_active");
+      $link.addClass("_active");
+      $tabContainers.eq(index).addClass("_active");
+
+      return false;
+    }
+
+    $tabLinks.on("click", changeTab);
+
+    $context.adaptBlock({
+      maxWidth: {
+        700: "_mx700",
+        625: "_mx625",
+        570: "_mx570",
+        450: "_mx450"
+      }
+    });
+  });
+});
+
 // Слайдер результатов поиска
 $(function () {
   $(".b-search-slider").each(function () {
@@ -4773,40 +4807,6 @@ $(function () {
     });
   });
 });
-// Карточка магазина
-$(function () {
-  $(".b-shop-card").livequery(function () {
-    var $context = $(this);
-    var $tabLinks = $(".b-shop-card__way-link", $context);
-    var $tabContainers = $(".b-shop-card__way-tab", $context);
-
-    function changeTab () {
-      var $link = $(this);
-      var index = $tabLinks.index($link);
-
-      if($link.hasClass("_active")) return false;
-
-      $tabLinks.removeClass("_active");
-      $tabContainers.removeClass("_active");
-      $link.addClass("_active");
-      $tabContainers.eq(index).addClass("_active");
-
-      return false;
-    }
-
-    $tabLinks.on("click", changeTab);
-
-    $context.adaptBlock({
-      maxWidth: {
-        700: "_mx700",
-        625: "_mx625",
-        570: "_mx570",
-        450: "_mx450"
-      }
-    });
-  });
-});
-
 $(".shop-slider").slick({
   slidesToShow: 1,
   asNavFor: ".shop-slider-nav",
@@ -5201,6 +5201,11 @@ $(function () {
   // code here...
 });
 
+// comments
+$(function () {
+  // code here...
+});
+
 // Продукт с отзывом
 $(function () {
   $(".b-top-product").livequery(function () {
@@ -5214,9 +5219,22 @@ $(function () {
   });
 });
 
-// comments
+// Стоимость набора конфигуратора
 $(function () {
-  // code here...
+  $(".b-total").livequery(function() {
+    var $context = $(this);
+
+    $context.adaptBlock({
+      maxWidth: {
+        540: "_mx540",
+        440: "_mx440",
+        375: "_mx375"
+      },
+      minWidth: {
+        460: "_mn460"
+      }
+    });
+  });
 });
 
 // Слайдер топовых продуктов
@@ -5251,24 +5269,6 @@ $(function () {
     });
   });
 });
-// Стоимость набора конфигуратора
-$(function () {
-  $(".b-total").livequery(function() {
-    var $context = $(this);
-
-    $context.adaptBlock({
-      maxWidth: {
-        540: "_mx540",
-        440: "_mx440",
-        375: "_mx375"
-      },
-      minWidth: {
-        460: "_mn460"
-      }
-    });
-  });
-});
-
 // Баннер о доставке в ваш город
 $(function () {
   $(".b-town-delivery").livequery(function () {

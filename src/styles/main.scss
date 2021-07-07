@@ -9,26 +9,3 @@
 //@import "components/components";
 //@import "modules/modules";
 //@import "adaptive/adaptive";
-
-.ololo {
-  color: red;
-}
-/** TASKS */
-
-/** #1487 CATALOG CARD*/
-  
-/** endof #1487 CATALOG CARD*/
-
-.show-for-large {
-  display: revert;
-  @include w1024 {
-    display: none;
-  }
-  @include w768 {
-    display: none;
-  }
-  @include w480 {
-    display: none;
-  }
-}
-/** endof TASKS */
